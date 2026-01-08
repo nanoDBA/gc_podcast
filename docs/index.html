@@ -288,20 +288,22 @@
     }
 
     // Set up one-click subscribe links
+    // Reference: https://github.com/nathangathright/podcast-platform-links
     const feedUrl = baseUrl + '/audio.xml';
+    const feedUrlNoProtocol = feedUrl.replace(/^https?:\/\//, '');
     const encodedFeed = encodeURIComponent(feedUrl);
 
-    // Apple Podcasts (uses podcast:// protocol or web URL)
-    document.getElementById('appleLink').href = 'podcast://' + feedUrl.replace(/^https?:\/\//, '');
+    // Apple Podcasts - uses podcast:// with URL (no protocol)
+    document.getElementById('appleLink').href = 'podcast://' + feedUrlNoProtocol;
 
-    // Overcast
+    // Overcast - only app that requires full URL with protocol
     document.getElementById('overcastLink').href = 'overcast://x-callback-url/add?url=' + encodedFeed;
 
-    // Pocket Casts
-    document.getElementById('pocketcastsLink').href = 'pktc://subscribe/' + feedUrl;
+    // Pocket Casts - uses pktc://subscribe/ with URL (no protocol)
+    document.getElementById('pocketcastsLink').href = 'pktc://subscribe/' + feedUrlNoProtocol;
 
-    // Castro
-    document.getElementById('castroLink').href = 'castro://subscribe/' + encodedFeed;
+    // Castro - uses castros:// (note the 's') with URL (no protocol)
+    document.getElementById('castroLink').href = 'castros://subscribe/' + feedUrlNoProtocol;
 
     // RSS Feed (direct link)
     document.getElementById('rssLink').href = feedUrl;
