@@ -4,13 +4,22 @@ Podcast RSS feed generator for General Conference audio from The Church of Jesus
 
 ## Subscribe
 
-Add one of these feed URLs to your podcast app:
+Add a feed URL to your podcast app:
 
-| Language | Feed URL |
-|----------|----------|
-| English | `https://nanodba.github.io/gc_podcast/audio.xml` |
-| Spanish | `https://nanodba.github.io/gc_podcast/audio-es.xml` |
-| Portuguese | `https://nanodba.github.io/gc_podcast/audio-pt.xml` |
+**English:**
+```
+https://nanodba.github.io/gc_podcast/audio.xml
+```
+
+**Spanish:**
+```
+https://nanodba.github.io/gc_podcast/audio-es.xml
+```
+
+**Portuguese:**
+```
+https://nanodba.github.io/gc_podcast/audio-pt.xml
+```
 
 Works with Apple Podcasts, Overcast, Pocket Casts, Castro, and any RSS reader.
 
