@@ -309,7 +309,7 @@ export function generateRssFeed(
 
   // Build RSS feed
   const langSuffix = opts.language === 'eng' ? '' : `-${LANGUAGE_CONFIG[opts.language || 'eng']?.language || 'en'}`;
-  const feedUrl = `${opts.feedBaseUrl}/gc-audio${langSuffix}.xml`;
+  const feedUrl = `${opts.feedBaseUrl}/gc-podcast-audio${langSuffix}.xml`;
   const buildDate = formatRfc2822Date(new Date());
 
   return `<?xml version="1.0" encoding="UTF-8"?>

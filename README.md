@@ -1,158 +1,148 @@
 # General Conference Podcast
 
-A podcast RSS feed generator for General Conference talks from The Church of Jesus Christ of Latter-day Saints.
+Podcast RSS feed generator for General Conference audio from The Church of Jesus Christ of Latter-day Saints.
 
-## Features
+## Subscribe
 
-- **Podcast RSS Feed**: iTunes-compatible RSS feed with full metadata
-- **Full Sessions**: Complete 2-hour session recordings
-- **Individual Talks**: Each talk available separately (10-20 minutes)
-- **Historical Archives**: Conferences dating back to the 1970s
-- **Multi-Language Support**: English, Spanish, Portuguese
-- **Auto-Updates**: GitHub Actions workflow updates the feed automatically
+Add one of these feed URLs to your podcast app:
 
-## Subscribe to the Podcast
+| Language | Feed URL |
+|----------|----------|
+| English | `https://YOUR_USERNAME.github.io/gc_podcast/gc-podcast-audio.xml` |
+| Spanish | `https://YOUR_USERNAME.github.io/gc_podcast/gc-podcast-audio-es.xml` |
+| Portuguese | `https://YOUR_USERNAME.github.io/gc_podcast/gc-podcast-audio-pt.xml` |
 
-Copy the feed URL and add it to your podcast app:
+Works with Apple Podcasts, Overcast, Pocket Casts, Castro, and any RSS reader.
 
-```
-https://YOUR_USERNAME.github.io/gc_podcast/feed.xml
-```
+## What's Included
 
-Works with:
-- Apple Podcasts
-- Overcast
-- Pocket Casts
-- Castro
-- Google Podcasts
-- Any RSS reader
+- **Full Sessions**: Complete 2-hour session recordings with all talks and music
+- **Individual Talks**: Each speaker's talk separately (10-20 min)
+- **Recent Conferences**: 2024-2025 currently available
 
-## Usage
+## Setup Your Own Feed
 
-### Prerequisites
+### 1. Fork and Configure
 
-- Node.js 18+
-- npm
+1. Fork this repository
+2. Enable GitHub Pages: Settings > Pages > Source: `Deploy from a branch` > Branch: `main`, folder: `/docs`
+3. Your feed will be at `https://YOUR_USERNAME.github.io/gc_podcast/gc-podcast-audio.xml`
 
-### Installation
+### 2. Scrape Conferences
 
 ```bash
 npm install
+
+# Scrape recent conferences (last 2 years)
+npm run scrape-all -- --recent
+
+# Or scrape a specific range
+npm run scrape-all -- -s 2020 -e 2025
+
+# Or scrape all available (1971+)
+npm run scrape-all -- --all
 ```
 
-### Scrape a Conference
+### 3. Generate Feeds
 
 ```bash
-# Scrape October 2025 (default)
-npm run dev
+# Generate all language feeds
+npm run feed -- --all-languages -b https://YOUR_USERNAME.github.io/gc_podcast
 
-# Scrape a specific conference
-npm run dev -- -y 2024 -m 4
+# Or single language
+npm run feed -- -l eng -b https://YOUR_USERNAME.github.io/gc_podcast
+```
 
-# Scrape in Spanish
-npm run dev -- -y 2025 -m 10 -l spa
+### 4. Commit and Push
+
+```bash
+git add output/ docs/
+git commit -m "Update conference data"
+git push
+```
+
+## Automated Updates
+
+The included GitHub Actions workflow (`.github/workflows/update-feed.yml`) can update feeds automatically. It runs on the 15th of April and October to catch new conferences.
+
+To trigger manually: Actions > "Update Podcast Feed" > Run workflow
+
+## CLI Reference
+
+### Scrape Single Conference
+
+```bash
+npm run dev -- -y 2024 -m 4           # April 2024
+npm run dev -- -y 2025 -m 10 -l spa   # October 2025, Spanish
 ```
 
 ### Scrape Multiple Conferences
 
 ```bash
-# Last 5 years (default)
-npm run scrape-all
-
-# Last 2 years
-npm run scrape-all -- --recent
-
-# All available conferences (1971+)
-npm run scrape-all -- --all
-
-# Specific range
-npm run scrape-all -- -s 2020 -e 2025
+npm run scrape-all                    # Last 5 years
+npm run scrape-all -- --recent        # Last 2 years
+npm run scrape-all -- --all           # All (1971+)
+npm run scrape-all -- -s 2020 -e 2025 # Specific range
+npm run scrape-all -- -l spa          # Spanish
 ```
 
-### Generate RSS Feed
+### Generate Feed
 
 ```bash
-# Generate feed from scraped data
-npm run feed
-
-# With custom base URL
-npm run feed -- -b https://myuser.github.io/gc_podcast
+npm run feed                                    # English only
+npm run feed -- --all-languages                 # All languages
+npm run feed -- -l spa -f ./docs/feed-spa.xml   # Custom output
+npm run feed -- --no-sessions                   # Talks only
+npm run feed -- --no-talks                      # Sessions only
 ```
-
-### Full Update
-
-```bash
-# Scrape recent conferences and regenerate feed
-npm run update
-```
-
-## Deployment
-
-### GitHub Pages (Recommended)
-
-1. Fork this repository
-2. Enable GitHub Pages in repository settings (source: `docs` folder)
-3. Update the feed URL in `docs/index.html`
-4. The GitHub Action will automatically update the feed monthly
-
-### Manual Deployment
-
-1. Run `npm run update` to scrape conferences and generate the feed
-2. Deploy the `docs/` folder to any static hosting service
 
 ## Project Structure
 
 ```
 gc_podcast/
 ├── src/
-│   ├── index.ts           # CLI entry point for single conference
+│   ├── index.ts           # CLI for single conference
 │   ├── scraper.ts         # Conference scraping logic
-│   ├── scrape-all.ts      # Batch scraping multiple conferences
-│   ├── rss-generator.ts   # RSS/podcast feed generator
+│   ├── scrape-all.ts      # Batch scraping
+│   ├── rss-generator.ts   # RSS feed generator
 │   ├── generate-feed.ts   # CLI for feed generation
 │   ├── html-parser.ts     # HTML parsing utilities
-│   └── types.ts           # TypeScript type definitions
-├── output/                # Scraped conference JSON files
-├── docs/                  # GitHub Pages site
-│   ├── feed.xml          # Podcast RSS feed
-│   └── index.html        # Landing page
-├── .github/workflows/
-│   └── update-feed.yml   # Auto-update workflow
-├── SPEC.md               # Data specification
-└── package.json
+│   └── types.ts           # TypeScript types
+├── output/                # Scraped conference JSON
+├── docs/                  # GitHub Pages
+│   ├── gc-podcast-audio.xml      # English feed
+│   ├── gc-podcast-audio-es.xml   # Spanish feed
+│   ├── gc-podcast-audio-pt.xml   # Portuguese feed
+│   └── index.html                # Landing page
+└── .github/workflows/
+    └── update-feed.yml    # Auto-update workflow
 ```
 
 ## Data Format
 
-Each conference is saved as JSON with this structure:
+Conference data is stored as JSON:
 
 ```json
 {
-  "scraped_at": "2026-01-08T12:00:00.000Z",
+  "scraped_at": "2025-01-08T12:00:00.000Z",
   "version": "1.0",
   "conference": {
     "year": 2025,
-    "month": 10,
-    "name": "October 2025 general conference",
+    "month": 4,
+    "name": "April 2025 general conference",
     "sessions": [
       {
         "name": "Saturday Morning Session",
-        "audio": {
-          "url": "https://assets.churchofjesuschrist.org/...-128k-en.mp3",
-          "duration_ms": 7032458
-        },
+        "audio": { "url": "...", "duration_ms": 7032458 },
         "talks": [
           {
-            "title": "Blessed Are the Peacemakers",
+            "title": "Talk Title",
             "speaker": {
-              "name": "Elder Gary E. Stevenson",
+              "name": "Elder Name",
               "role_tag": "quorum-of-the-twelve",
               "calling": "Of the Quorum of the Twelve Apostles"
             },
-            "audio": {
-              "url": "https://assets.churchofjesuschrist.org/...-128k-en.mp3",
-              "duration_ms": 795561
-            }
+            "audio": { "url": "...", "duration_ms": 795561 }
           }
         ]
       }
@@ -161,33 +151,18 @@ Each conference is saved as JSON with this structure:
 }
 ```
 
-## Speaker Role Tags
-
-Speakers are classified by role at the time of their talk:
+### Speaker Role Tags
 
 | Role Tag | Description |
 |----------|-------------|
 | `first-presidency` | President, First/Second Counselor |
 | `quorum-of-the-twelve` | Members of the Quorum of the Twelve |
-| `null` | All other speakers (Seventies, Relief Society, etc.) |
-
-## API
-
-The scraper uses the Church's content API:
-
-```
-https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content?lang=eng&uri=/general-conference/2025/10/12stevenson
-```
-
-This returns JSON with:
-- `meta.audio[]` - Audio MP3 URLs
-- `meta.title` - Talk title
-- `content.body` - HTML with speaker info and duration
+| `null` | All other speakers |
 
 ## License
 
-MIT License - See LICENSE file for details.
+MIT
 
 ## Disclaimer
 
-This is an unofficial project for personal use. Audio content is sourced from and hosted by The Church of Jesus Christ of Latter-day Saints at churchofjesuschrist.org.
+Unofficial project for personal use. Audio content is from churchofjesuschrist.org.
