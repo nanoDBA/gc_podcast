@@ -17,7 +17,7 @@ const PODCAST_CONFIG = {
   category: 'Religion & Spirituality',
   subcategory: 'Christianity',
   explicit: false,
-  imageUrl: 'https://www.churchofjesuschrist.org/imgs/gc-podcast-artwork.jpg',
+  imageUrl: 'https://www.churchofjesuschrist.org/imgs/nivn2mb3of0ew2b7qthi5ra6etm2pupessmvzvqs/full/!500,/0/default',
   websiteUrl: 'https://www.churchofjesuschrist.org/study/general-conference',
   copyright: `© ${new Date().getFullYear()} by Intellectual Reserve, Inc. All rights reserved.`,
 };

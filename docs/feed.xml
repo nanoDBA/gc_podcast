@@ -9,8 +9,8 @@
     <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     <language>en</language>
     <copyright>© 2026 by Intellectual Reserve, Inc. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 08 Jan 2026 14:16:38 GMT</lastBuildDate>
-    <atom:link href="https://example.github.io/gc_podcast/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Thu, 08 Jan 2026 14:35:23 GMT</lastBuildDate>
+    <atom:link href="https://nanodba.github.io/gc_podcast/feed.xml" rel="self" type="application/rss+xml"/>
 
     <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
     <itunes:summary><![CDATA[Audio recordings from General Conference of The Church of Jesus Christ of Latter-day Saints. Includes talks from Church leaders delivered during the semi-annual worldwide broadcasts.]]></itunes:summary>
@@ -23,9 +23,9 @@
     <itunes:category text="Religion &amp; Spirituality">
       <itunes:category text="Christianity"/>
     </itunes:category>
-    <itunes:image href="https://www.churchofjesuschrist.org/imgs/gc-podcast-artwork.jpg"/>
+    <itunes:image href="https://www.churchofjesuschrist.org/imgs/nivn2mb3of0ew2b7qthi5ra6etm2pupessmvzvqs/full/!500,/0/default"/>
     <image>
-      <url>https://www.churchofjesuschrist.org/imgs/gc-podcast-artwork.jpg</url>
+      <url>https://www.churchofjesuschrist.org/imgs/nivn2mb3of0ew2b7qthi5ra6etm2pupessmvzvqs/full/!500,/0/default</url>
       <title>General Conference - The Church of Jesus Christ of Latter-day Saints</title>
       <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     </image>
