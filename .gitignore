@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Cache
+.cache/
+
+# Build output
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Downloaded/reference files (not part of the project)
+*.html
+!docs/index.html
+*_files/
+*.pdf
+*.png
+*.jpg
+*.jpeg
+
+# Logs
+*.log
+npm-debug.log*

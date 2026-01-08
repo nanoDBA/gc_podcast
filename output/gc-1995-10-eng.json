@@ -1,0 +1,782 @@
+{
+  "scraped_at": "2026-01-08T14:05:20.641Z",
+  "version": "1.0",
+  "conference": {
+    "year": 1995,
+    "month": 10,
+    "name": "October 1995",
+    "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10?lang=eng",
+    "language": "eng",
+    "sessions": [
+      {
+        "name": "Saturday Morning Session",
+        "slug": "saturday-morning-session",
+        "order": 1,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/saturday-morning-session?lang=eng",
+        "talks": [
+          {
+            "title": "As We Gather Together",
+            "slug": "as-we-gather-together",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/as-we-gather-together?lang=eng",
+            "speaker": {
+              "name": "President Gordon B. Hinckley",
+              "role_tag": "first-presidency",
+              "calling": "President of the Church",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-gordon-b-hinckley?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/028d433632d711ec8868eeeeac1e3d38e7570cb2-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 317183
+            },
+            "duration_ms": 317183
+          },
+          {
+            "title": "Hyrum Smith: “Firm As the Pillars of Heaven”",
+            "slug": "hyrum-smith-firm-as-the-pillars-of-heaven",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/hyrum-smith-firm-as-the-pillars-of-heaven?lang=eng",
+            "speaker": {
+              "name": "Elder M. Russell Ballard",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-m-russell-ballard?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/9b93937332e411eca29deeeeac1e03f99dddc3cb-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1023055
+            },
+            "duration_ms": 1023055
+          },
+          {
+            "title": "Spiritual Mountaintops",
+            "slug": "spiritual-mountaintops",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/spiritual-mountaintops?lang=eng",
+            "speaker": {
+              "name": "Elder Jack H Goaslind",
+              "role_tag": null,
+              "calling": "Of the Presidency of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-jack-h-goaslind?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/7e44c0a032d111ec8193eeeeac1ebf62a7c64c17-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 786585
+            },
+            "duration_ms": 786585
+          },
+          {
+            "title": "The Power of Goodness",
+            "slug": "the-power-of-goodness",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/the-power-of-goodness?lang=eng",
+            "speaker": {
+              "name": "Janette Hales Beckham",
+              "role_tag": null,
+              "calling": "Young Women General President",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/janette-hales-beckham?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/c252778732e911eca29deeeeac1e03f90cb92efd-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 621821
+            },
+            "duration_ms": 621821
+          },
+          {
+            "title": "Encircled in the Savior’s Love",
+            "slug": "encircled-in-the-saviors-love",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/encircled-in-the-saviors-love?lang=eng",
+            "speaker": {
+              "name": "Elder W. Craig Zwick",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-w-craig-zwick?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/0b94a73d32e811ecbd0feeeeac1efb1dae362a1f-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 437000
+            },
+            "duration_ms": 437000
+          },
+          {
+            "title": "Redeemer of Israel",
+            "slug": "redeemer-of-israel",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/redeemer-of-israel?lang=eng",
+            "speaker": {
+              "name": "Elder Bruce D. Porter",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-bruce-d-porter?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/c31f8b8732e911ec8aafeeeeac1e5e366222bf57-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 412278
+            },
+            "duration_ms": 412278
+          },
+          {
+            "title": "Trust in the Lord",
+            "slug": "trust-in-the-lord",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/trust-in-the-lord?lang=eng",
+            "speaker": {
+              "name": "Elder Richard G. Scott",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-richard-g-scott?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/3226e05c32e711ec8aafeeeeac1e5e3638b9f943-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 912211
+            },
+            "duration_ms": 912211
+          },
+          {
+            "title": "The Brilliant Morning of Forgiveness",
+            "slug": "the-brilliant-morning-of-forgiveness",
+            "order": 8,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/the-brilliant-morning-of-forgiveness?lang=eng",
+            "speaker": {
+              "name": "President Boyd K. Packer",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Acting President of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-boyd-k-packer?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/c0e065b032e811eca29deeeeac1e03f9469a2038-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1000000
+            },
+            "duration_ms": 1000000
+          }
+        ]
+      },
+      {
+        "name": "Saturday Afternoon Session",
+        "slug": "saturday-afternoon-session",
+        "order": 2,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/saturday-afternoon-session?lang=eng",
+        "talks": [
+          {
+            "title": "“Swallowed Up in the Will of the Father”",
+            "slug": "swallowed-up-in-the-will-of-the-father",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/swallowed-up-in-the-will-of-the-father?lang=eng",
+            "speaker": {
+              "name": "Elder Neal A. Maxwell",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-neal-a-maxwell?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/82f8a8c932e211eca29deeeeac1e03f9f31919e9-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 981914
+            },
+            "duration_ms": 981914
+          },
+          {
+            "title": "Powerful Ideas",
+            "slug": "powerful-ideas",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/powerful-ideas?lang=eng",
+            "speaker": {
+              "name": "Elder Dallin H. Oaks",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-dallin-h-oaks?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/3d2a04eb32db11ecac35eeeeac1e7c595d13c771-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1130462
+            },
+            "duration_ms": 1130462
+          },
+          {
+            "title": "Witnesses",
+            "slug": "witnesses",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/witnesses?lang=eng",
+            "speaker": {
+              "name": "Elder Loren C. Dunn",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-loren-c-dunn?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/f7feb2eb32e211eca29deeeeac1e03f994c58811-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 624056
+            },
+            "duration_ms": 624056
+          },
+          {
+            "title": "The Book of Mormon: A Sacred Ancient Record",
+            "slug": "the-book-of-mormon-a-sacred-ancient-record",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/the-book-of-mormon-a-sacred-ancient-record?lang=eng",
+            "speaker": {
+              "name": "Elder Ted E. Brewerton",
+              "role_tag": null,
+              "calling": "Emeritus Member of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-ted-e-brewerton?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/1888a00332e311ec8aafeeeeac1e5e364dad8f47-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 599000
+            },
+            "duration_ms": 599000
+          },
+          {
+            "title": "Blessings of the Priesthood",
+            "slug": "blessings-of-the-priesthood",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/blessings-of-the-priesthood?lang=eng",
+            "speaker": {
+              "name": "Elder Robert D. Hales",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-robert-d-hales?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/2edee14532e711ec83ebeeeeac1e20b3bae88365-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1026000
+            },
+            "duration_ms": 1026000
+          },
+          {
+            "title": "“If Ye Are Prepared Ye Shall Not Fear”",
+            "slug": "if-ye-are-prepared-ye-shall-not-fear",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/if-ye-are-prepared-ye-shall-not-fear?lang=eng",
+            "speaker": {
+              "name": "Elder L. Tom Perry",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-l-tom-perry?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/b7035c3f32d311eca0a3eeeeac1ed903f42343c7-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 954000
+            },
+            "duration_ms": 954000
+          }
+        ]
+      },
+      {
+        "name": "Priesthood Session",
+        "slug": "priesthood-session",
+        "order": 3,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/priesthood-session?lang=eng",
+        "talks": [
+          {
+            "title": "To Touch a Life with Faith",
+            "slug": "to-touch-a-life-with-faith",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/to-touch-a-life-with-faith?lang=eng",
+            "speaker": {
+              "name": "Elder Henry B. Eyring",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-henry-b-eyring?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/c4682aee32da11eca4deeeeeac1e54b66663a008-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1067366
+            },
+            "duration_ms": 1067366
+          },
+          {
+            "title": "Sacrifice in the Service",
+            "slug": "sacrifice-in-the-service",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/sacrifice-in-the-service?lang=eng",
+            "speaker": {
+              "name": "Elder Harold G. Hillam",
+              "role_tag": null,
+              "calling": "Of the Presidency of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-harold-g-hillam?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/c5ec745632cb11eca0a3eeeeac1ed9036d84e709-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 754220
+            },
+            "duration_ms": 754220
+          },
+          {
+            "title": "“I Will Go”",
+            "slug": "i-will-go",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/i-will-go?lang=eng",
+            "speaker": {
+              "name": "Bishop H. David Burton",
+              "role_tag": null,
+              "calling": "First Counselor in the Presiding Bishopric",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/bishop-h-david-burton?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/493b876d32d911ec95e0eeeeac1ece4563d3c42d-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 769000
+            },
+            "duration_ms": 769000
+          },
+          {
+            "title": "Acting for Ourselves and Not Being Acted Upon",
+            "slug": "acting-for-ourselves-and-not-being-acted-upon",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/acting-for-ourselves-and-not-being-acted-upon?lang=eng",
+            "speaker": {
+              "name": "President James E. Faust",
+              "role_tag": "first-presidency",
+              "calling": "Second Counselor in the First Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-james-e-faust?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/e462b85b32ca11ecac35eeeeac1e7c592834dffb-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1028000
+            },
+            "duration_ms": 1028000
+          },
+          {
+            "title": "Who Honors God, God Honors",
+            "slug": "who-honors-god-god-honors",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/who-honors-god-god-honors?lang=eng",
+            "speaker": {
+              "name": "President Thomas S. Monson",
+              "role_tag": "first-presidency",
+              "calling": "First Counselor in the First Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-thomas-s-monson?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/4e84c58c32e211ec89b6eeeeac1e02ba459f22d6-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1255000
+            },
+            "duration_ms": 1255000
+          },
+          {
+            "title": "Of Missions, Temples, and Stewardship",
+            "slug": "of-missions-temples-and-stewardship",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/of-missions-temples-and-stewardship?lang=eng",
+            "speaker": {
+              "name": "President Gordon B. Hinckley",
+              "role_tag": "first-presidency",
+              "calling": "President of the Church",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-gordon-b-hinckley?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/78d1d44432ea11ec8aafeeeeac1e5e365d1c8198-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1732997
+            },
+            "duration_ms": 1732997
+          }
+        ]
+      },
+      {
+        "name": "Sunday Morning Session",
+        "slug": "sunday-morning-session",
+        "order": 4,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/sunday-morning-session?lang=eng",
+        "talks": [
+          {
+            "title": "Patience—A Heavenly Virtue",
+            "slug": "patience-a-heavenly-virtue",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/patience-a-heavenly-virtue?lang=eng",
+            "speaker": {
+              "name": "President Thomas S. Monson",
+              "role_tag": "first-presidency",
+              "calling": "First Counselor in the First Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-thomas-s-monson?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/632c06cd32dd11ecbd0feeeeac1efb1d361fe71d-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1270402
+            },
+            "duration_ms": 1270402
+          },
+          {
+            "title": "Priesthood Blessings",
+            "slug": "priesthood-blessings",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/priesthood-blessings?lang=eng",
+            "speaker": {
+              "name": "President James E. Faust",
+              "role_tag": "first-presidency",
+              "calling": "Second Counselor in the First Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-james-e-faust?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/5ef6252a32dd11ec83ebeeeeac1e20b33ac77101-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1158190
+            },
+            "duration_ms": 1158190
+          },
+          {
+            "title": "Our Message to the World",
+            "slug": "our-message-to-the-world",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/our-message-to-the-world?lang=eng",
+            "speaker": {
+              "name": "Elder Robert E. Wells",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-robert-e-wells?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/06790cb732d511ec83ebeeeeac1e20b3d8da3be9-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 601000
+            },
+            "duration_ms": 601000
+          },
+          {
+            "title": "“This Do in Remembrance of Me”",
+            "slug": "this-do-in-remembrance-of-me",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/this-do-in-remembrance-of-me?lang=eng",
+            "speaker": {
+              "name": "Elder Jeffrey R. Holland",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-jeffrey-r-holland?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/4cb60d5b32d611eca29deeeeac1e03f9e0c49cd4-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1137402
+            },
+            "duration_ms": 1137402
+          },
+          {
+            "title": "Stay the Course—Keep the Faith",
+            "slug": "stay-the-course-keep-the-faith",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/stay-the-course-keep-the-faith?lang=eng",
+            "speaker": {
+              "name": "President Gordon B. Hinckley",
+              "role_tag": "first-presidency",
+              "calling": "President of the Church",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-gordon-b-hinckley?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/a2cabc9032df11eca29deeeeac1e03f97c98356f-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1200065
+            },
+            "duration_ms": 1200065
+          }
+        ]
+      },
+      {
+        "name": "Sunday Afternoon Session",
+        "slug": "sunday-afternoon-session",
+        "order": 5,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/sunday-afternoon-session?lang=eng",
+        "talks": [
+          {
+            "title": "Seek First the Kingdom of God",
+            "slug": "seek-first-the-kingdom-of-god",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/seek-first-the-kingdom-of-god?lang=eng",
+            "speaker": {
+              "name": "Elder David B. Haight",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-david-b-haight?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/933e389d32e011eca0a3eeeeac1ed90368068511-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1037000
+            },
+            "duration_ms": 1037000
+          },
+          {
+            "title": "Windows of Light and Truth",
+            "slug": "windows-of-light-and-truth",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/windows-of-light-and-truth?lang=eng",
+            "speaker": {
+              "name": "Elder Joseph B. Wirthlin",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-joseph-b-wirthlin?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/e2f4837b32d811ecb890eeeeac1e0eb4529ddf35-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 971136
+            },
+            "duration_ms": 971136
+          },
+          {
+            "title": "Eternal Laws of Happiness",
+            "slug": "eternal-laws-of-happiness",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/eternal-laws-of-happiness?lang=eng",
+            "speaker": {
+              "name": "Elder Lynn A. Mickelsen",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-lynn-a-mickelsen?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/f483009b32ed11ec95e0eeeeac1ece45c338342a-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 624457
+            },
+            "duration_ms": 624457
+          },
+          {
+            "title": "Touch the Hearts of the Children",
+            "slug": "touch-the-hearts-of-the-children",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/touch-the-hearts-of-the-children?lang=eng",
+            "speaker": {
+              "name": "Anne G. Wirthlin",
+              "role_tag": null,
+              "calling": "First Counselor in the Primary General Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/anne-g-wirthlin?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/71d8f6f432e911ec8ef9eeeeac1e99aa247261f4-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 657000
+            },
+            "duration_ms": 657000
+          },
+          {
+            "title": "“Lord, to Whom Shall We Go?”",
+            "slug": "lord-to-whom-shall-we-go",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/lord-to-whom-shall-we-go?lang=eng",
+            "speaker": {
+              "name": "Elder Hans B. Ringger",
+              "role_tag": null,
+              "calling": "Emeritus Member of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-hans-b-ringger?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/eac15ce732d311ec8aafeeeeac1e5e36b5dbb3e9-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 530730
+            },
+            "duration_ms": 530730
+          },
+          {
+            "title": "A Strategy for War",
+            "slug": "a-strategy-for-war",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/a-strategy-for-war?lang=eng",
+            "speaker": {
+              "name": "Elder Durrel A. Woolsey",
+              "role_tag": null,
+              "calling": "Released Member of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-durrel-a-woolsey?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/3706da2532ed11ec83ebeeeeac1e20b35cd11fad-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 530000
+            },
+            "duration_ms": 530000
+          },
+          {
+            "title": "Perfection Pending",
+            "slug": "perfection-pending",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/perfection-pending?lang=eng",
+            "speaker": {
+              "name": "Elder Russell M. Nelson",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-russell-m-nelson?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/bfa1c95132da11ec8193eeeeac1ebf62012a8207-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 947079
+            },
+            "duration_ms": 947079
+          },
+          {
+            "title": "The Fabric of Faith and Testimony",
+            "slug": "the-fabric-of-faith-and-testimony",
+            "order": 8,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/the-fabric-of-faith-and-testimony?lang=eng",
+            "speaker": {
+              "name": "President Gordon B. Hinckley",
+              "role_tag": "first-presidency",
+              "calling": "President of the Church",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-gordon-b-hinckley?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/cf5aa0e832ec11eca29deeeeac1e03f9438306d2-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 361461
+            },
+            "duration_ms": 361461
+          }
+        ]
+      },
+      {
+        "name": "General Relief Society Meeting",
+        "slug": "relief-society-session",
+        "order": 6,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/relief-society-session?lang=eng",
+        "talks": [
+          {
+            "title": "Relief Society: A Balm in Gilead",
+            "slug": "relief-society-a-balm-in-gilead",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/relief-society-a-balm-in-gilead?lang=eng",
+            "speaker": {
+              "name": "Elaine L. Jack",
+              "role_tag": null,
+              "calling": "Relief Society General President",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elaine-l-jack?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/04ee9fb732ea11ecac35eeeeac1e7c59a4949219-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1157756
+            },
+            "duration_ms": 1157756
+          },
+          {
+            "title": "A Living Network",
+            "slug": "a-living-network",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/a-living-network?lang=eng",
+            "speaker": {
+              "name": "Chieko N. Okazaki",
+              "role_tag": null,
+              "calling": "First Counselor in the Relief Society General Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/chieko-n-okazaki?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/05bb175432ea11ecbd0feeeeac1efb1d454325da-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 879000
+            },
+            "duration_ms": 879000
+          },
+          {
+            "title": "What Is Relief Society For?",
+            "slug": "what-is-relief-society-for",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/what-is-relief-society-for?lang=eng",
+            "speaker": {
+              "name": "Aileen H. Clyde",
+              "role_tag": null,
+              "calling": "Second Counselor in the Relief Society General Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/aileen-h-clyde?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/0694392a32ea11ecbcf7eeeeac1e744e8b102126-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 811143
+            },
+            "duration_ms": 811143
+          },
+          {
+            "title": "Stand Strong against the Wiles of the World",
+            "slug": "stand-strong-against-the-wiles-of-the-world",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/stand-strong-against-the-wiles-of-the-world?lang=eng",
+            "speaker": {
+              "name": "President Gordon B. Hinckley",
+              "role_tag": "first-presidency",
+              "calling": "President of the Church",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-gordon-b-hinckley?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/075edc0332ea11ecbc25eeeeac1e29620e4cc0af-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1669701
+            },
+            "duration_ms": 1669701
+          },
+          {
+            "title": "The Family: A Proclamation to the World",
+            "slug": "the-family-a-proclamation-to-the-world",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1995/10/the-family-a-proclamation-to-the-world?lang=eng",
+            "speaker": {
+              "name": "The First Presidency and Council of the Twelve Apostles of The Church of Jesus Christ of Latter-day Saints",
+              "role_tag": null,
+              "bio_url": "https://www.churchofjesuschrist.org/learn/the-first-presidency-and-council-of-the-twelve-apostles-of-the-church-of-jesus-christ-of-latter-day-saints?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/084459f432ea11ec89b6eeeeac1e02ba667d3baa-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 506973
+            },
+            "duration_ms": 506973
+          }
+        ]
+      }
+    ]
+  }
+}

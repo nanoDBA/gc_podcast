@@ -1,0 +1,153 @@
+name: Update Podcast Feed
+
+on:
+  # Run on schedule - check for new conferences monthly
+  schedule:
+    - cron: '0 12 1 * *'  # 1st of each month at noon UTC
+  # Allow manual trigger
+  workflow_dispatch:
+    inputs:
+      force_scrape:
+        description: 'Force re-scrape all conferences'
+        required: false
+        default: 'false'
+        type: boolean
+      start_year:
+        description: 'Start year for scraping'
+        required: false
+        default: ''
+        type: string
+
+jobs:
+  update-feed:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: gc-cache-${{ github.run_id }}
+          restore-keys: |
+            gc-cache-
+
+      - name: Scrape conferences
+        run: |
+          if [ "${{ inputs.force_scrape }}" = "true" ]; then
+            npx tsx src/scrape-all.ts --recent --force
+          elif [ -n "${{ inputs.start_year }}" ]; then
+            npx tsx src/scrape-all.ts --start ${{ inputs.start_year }} --force
+          else
+            npx tsx src/scrape-all.ts --recent
+          fi
+
+      - name: Generate RSS feed
+        run: |
+          mkdir -p docs
+          npx tsx src/generate-feed.ts \
+            --output ./output \
+            --feed ./docs/feed.xml \
+            --base-url "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+
+      - name: Copy index page
+        run: |
+          if [ ! -f docs/index.html ]; then
+            cat > docs/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>General Conference Podcast</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+              body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; }
+              h1 { color: #1a3a5c; }
+              a { color: #0066cc; }
+              .feed-link { background: #f0f7ff; padding: 15px; border-radius: 8px; margin: 20px 0; }
+              code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; }
+            </style>
+          </head>
+          <body>
+            <h1>General Conference Podcast</h1>
+            <p>Audio recordings from General Conference of The Church of Jesus Christ of Latter-day Saints.</p>
+
+            <div class="feed-link">
+              <strong>Subscribe to the podcast:</strong><br>
+              <a href="feed.xml">feed.xml</a>
+            </div>
+
+            <h2>How to Subscribe</h2>
+            <ol>
+              <li>Copy the feed URL: <code>https://YOUR_USERNAME.github.io/gc_podcast/feed.xml</code></li>
+              <li>Open your podcast app (Apple Podcasts, Overcast, Pocket Casts, etc.)</li>
+              <li>Find "Add by URL" or "Add RSS Feed"</li>
+              <li>Paste the feed URL</li>
+            </ol>
+
+            <h2>What's Included</h2>
+            <ul>
+              <li>Full session recordings (2+ hours each)</li>
+              <li>Individual talk recordings (10-20 minutes each)</li>
+              <li>Multiple years of conference archives</li>
+            </ul>
+
+            <p><small>Generated automatically from <a href="https://churchofjesuschrist.org">churchofjesuschrist.org</a></small></p>
+          </body>
+          </html>
+          EOF
+          fi
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add output/ docs/
+          git diff --staged --quiet || git commit -m "Update podcast feed [automated]"
+          git push
+
+  deploy:
+    needs: update-feed
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Pull latest changes
+        run: git pull
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

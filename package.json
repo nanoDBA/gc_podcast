@@ -1,0 +1,29 @@
+{
+  "name": "gc-podcast-scraper",
+  "version": "1.0.0",
+  "description": "General Conference metadata and audio link extractor",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "scrape": "node dist/index.js",
+    "dev": "npx tsx src/index.ts",
+    "feed": "npx tsx src/generate-feed.ts",
+    "scrape-all": "npx tsx src/scrape-all.ts",
+    "update": "npm run scrape-all && npm run feed"
+  },
+  "keywords": ["general-conference", "lds", "podcast", "scraper"],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0"
+  },
+  "dependencies": {
+  }
+}

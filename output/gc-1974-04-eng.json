@@ -1,0 +1,895 @@
+{
+  "scraped_at": "2026-01-08T14:06:27.044Z",
+  "version": "1.0",
+  "conference": {
+    "year": 1974,
+    "month": 4,
+    "name": "April 1974",
+    "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04?lang=eng",
+    "language": "eng",
+    "sessions": [
+      {
+        "name": "Friday Morning Session",
+        "slug": "friday-morning-session",
+        "order": 1,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/friday-morning-session?lang=eng",
+        "talks": [
+          {
+            "title": "Guidelines to Carry Forth the Work of God in Cleanliness",
+            "slug": "guidelines-to-carry-forth-the-work-of-god-in-cleanliness",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/guidelines-to-carry-forth-the-work-of-god-in-cleanliness?lang=eng",
+            "speaker": {
+              "name": "President Spencer W. Kimball",
+              "role_tag": "first-presidency",
+              "calling": "President of the Church",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-spencer-w-kimball?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/c8928c9032ea11ecac35eeeeac1e7c5904d37509-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1553919
+            },
+            "duration_ms": 1553919
+          },
+          {
+            "title": "Strength of the Spirit",
+            "slug": "strength-of-the-spirit",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/strength-of-the-spirit?lang=eng",
+            "speaker": {
+              "name": "Elder Joseph Anderson",
+              "role_tag": null,
+              "calling": "Assistant to the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-joseph-anderson?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/c947ab8232ea11ecb675eeeeac1e6a698cfbbff7-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 800132
+            },
+            "duration_ms": 800132
+          },
+          {
+            "title": "Touchstone of Truth",
+            "slug": "touchstone-of-truth",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/touchstone-of-truth?lang=eng",
+            "speaker": {
+              "name": "Elder John H. Vandenberg",
+              "role_tag": null,
+              "calling": "Assistant to the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-john-h-vandenberg?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/cad6afeb32ea11eca4deeeeeac1e54b688dd6062-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 775708
+            },
+            "duration_ms": 775708
+          },
+          {
+            "title": "Parents, Teach Your Children",
+            "slug": "parents-teach-your-children",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/parents-teach-your-children?lang=eng",
+            "speaker": {
+              "name": "President Paul H. Dunn",
+              "role_tag": null,
+              "calling": "Of the First Council of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-paul-h-dunn?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/ce0ad8df32ea11eca4deeeeeac1e54b6a9aca66a-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 875107
+            },
+            "duration_ms": 875107
+          },
+          {
+            "title": "His Final Hours",
+            "slug": "his-final-hours",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/his-final-hours?lang=eng",
+            "speaker": {
+              "name": "Elder Howard W. Hunter",
+              "role_tag": null,
+              "calling": "Of the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-howard-w-hunter?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/d2e29ff832ea11ecac35eeeeac1e7c59585e40aa-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1076375
+            },
+            "duration_ms": 1076375
+          }
+        ]
+      },
+      {
+        "name": "Friday Afternoon Session",
+        "slug": "friday-afternoon-session",
+        "order": 2,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/friday-afternoon-session?lang=eng",
+        "talks": [
+          {
+            "title": "Statistical Report 1973",
+            "slug": "statistical-report-1973",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/statistical-report-1973?lang=eng",
+            "speaker": {
+              "name": "Presented by Francis M. Gibbons",
+              "role_tag": null,
+              "bio_url": "https://www.churchofjesuschrist.org/learn/presented-by-francis-m-gibbons?lang=eng"
+            }
+          },
+          {
+            "title": "Church Finance Committee Report",
+            "slug": "church-finance-committee-report",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/church-finance-committee-report?lang=eng",
+            "speaker": {
+              "name": "Presented by Wilford G. Edling",
+              "role_tag": null,
+              "bio_url": "https://www.churchofjesuschrist.org/learn/presented-by-wilford-g-edling?lang=eng"
+            }
+          },
+          {
+            "title": "The Marriage That Endures",
+            "slug": "the-marriage-that-endures",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/the-marriage-that-endures?lang=eng",
+            "speaker": {
+              "name": "Elder Gordon B. Hinckley",
+              "role_tag": null,
+              "calling": "Of the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-gordon-b-hinckley?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/3d2ffd2532d811ec8aafeeeeac1e5e36595674b8-128k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 962000
+            },
+            "duration_ms": 962000
+          },
+          {
+            "title": "Three Important Questions",
+            "slug": "three-important-questions",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/three-important-questions?lang=eng",
+            "speaker": {
+              "name": "Elder ElRay L. Christiansen",
+              "role_tag": null,
+              "calling": "Assistant to the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-elray-l-christiansen?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/8bf8c58732d511eca0a3eeeeac1ed903cf3c045c-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 735768
+            },
+            "duration_ms": 735768
+          },
+          {
+            "title": "Hanging On",
+            "slug": "hanging-on",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/hanging-on?lang=eng",
+            "speaker": {
+              "name": "President Loren C. Dunn",
+              "role_tag": null,
+              "calling": "Of the First Council of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-loren-c-dunn?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/2c76fcb832df11ecb675eeeeac1e6a69b35945bc-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 655221
+            },
+            "duration_ms": 655221
+          },
+          {
+            "title": "Justice and Mercy",
+            "slug": "justice-and-mercy",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/justice-and-mercy?lang=eng",
+            "speaker": {
+              "name": "Elder James A. Cullimore",
+              "role_tag": null,
+              "calling": "Assistant to the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-james-a-cullimore?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/e05878df32e911ec95e0eeeeac1ece45661e9163-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 720853
+            },
+            "duration_ms": 720853
+          },
+          {
+            "title": "Mother, Catch the Vision of Your Call",
+            "slug": "mother-catch-the-vision-of-your-call",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/mother-catch-the-vision-of-your-call?lang=eng",
+            "speaker": {
+              "name": "Bishop H. Burke Peterson",
+              "role_tag": null,
+              "calling": "First Counselor in the Presiding Bishopric",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/bishop-h-burke-peterson?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/dbf86ef632e811ec8868eeeeac1e3d389d876dd5-128k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 738404
+            },
+            "duration_ms": 738404
+          },
+          {
+            "title": "Inertia",
+            "slug": "inertia",
+            "order": 8,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/inertia?lang=eng",
+            "speaker": {
+              "name": "Elder William H. Bennett",
+              "role_tag": null,
+              "calling": "Assistant to the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-william-h-bennett?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/887bffe932d211ec8aafeeeeac1e5e369b1b9df9-128k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 690000
+            },
+            "duration_ms": 690000
+          },
+          {
+            "title": "A Time of Urgency",
+            "slug": "a-time-of-urgency",
+            "order": 9,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/a-time-of-urgency?lang=eng",
+            "speaker": {
+              "name": "Elder Marvin J. Ashton",
+              "role_tag": null,
+              "calling": "Of the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-marvin-j-ashton?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/55e58b4e32dc11ecb890eeeeac1e0eb4e4cfe348-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1046278
+            },
+            "duration_ms": 1046278
+          }
+        ]
+      },
+      {
+        "name": "Saturday Morning Session",
+        "slug": "saturday-morning-session",
+        "order": 3,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/saturday-morning-session?lang=eng",
+        "talks": [
+          {
+            "title": "What Do We Hear?",
+            "slug": "what-do-we-hear",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/what-do-we-hear?lang=eng",
+            "speaker": {
+              "name": "President Spencer W. Kimball",
+              "role_tag": "first-presidency",
+              "calling": "President of the Church",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-spencer-w-kimball?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/d5849ac432ea11eca4deeeeeac1e54b627df5825-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 963000
+            },
+            "duration_ms": 963000
+          },
+          {
+            "title": "The Paths Jesus Walked",
+            "slug": "the-paths-jesus-walked",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/the-paths-jesus-walked?lang=eng",
+            "speaker": {
+              "name": "Elder Thomas S. Monson",
+              "role_tag": null,
+              "calling": "Of the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-thomas-s-monson?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/d7a0009732ea11ec8aafeeeeac1e5e3630a50a89-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1062000
+            },
+            "duration_ms": 1062000
+          },
+          {
+            "title": "The Importance of Prayer",
+            "slug": "the-importance-of-prayer",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/the-importance-of-prayer?lang=eng",
+            "speaker": {
+              "name": "President N. Eldon Tanner",
+              "role_tag": "first-presidency",
+              "calling": "First Counselor in the First Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-n-eldon-tanner?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/da86a5eb32ea11ecb675eeeeac1e6a69c872833a-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1180479
+            },
+            "duration_ms": 1180479
+          }
+        ]
+      },
+      {
+        "name": "Saturday Afternoon Session",
+        "slug": "saturday-afternoon-session",
+        "order": 4,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/saturday-afternoon-session?lang=eng",
+        "talks": [
+          {
+            "title": "The People Say “Amen”",
+            "slug": "the-people-say-amen",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/the-people-say-amen?lang=eng",
+            "speaker": {
+              "name": "Elder Mark E. Petersen",
+              "role_tag": null,
+              "calling": "Of the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-mark-e-petersen?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/dd83b95332ea11eca0a3eeeeac1ed903e626b5e1-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1020119
+            },
+            "duration_ms": 1020119
+          },
+          {
+            "title": "Testimony",
+            "slug": "testimony",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/testimony?lang=eng",
+            "speaker": {
+              "name": "Elder Franklin D. Richards",
+              "role_tag": null,
+              "calling": "Assistant to the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-franklin-d-richards?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/dee767f632ea11ec8ef9eeeeac1e99aa060b6607-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 729628
+            },
+            "duration_ms": 729628
+          },
+          {
+            "title": "That the Scriptures Might Be Fulfilled",
+            "slug": "that-the-scriptures-might-be-fulfilled",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/that-the-scriptures-might-be-fulfilled?lang=eng",
+            "speaker": {
+              "name": "Elder S. Dilworth Young",
+              "role_tag": null,
+              "calling": "Of the First Council of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-s-dilworth-young?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/e1987e6732ea11ecbd0feeeeac1efb1d357c2242-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 746879
+            },
+            "duration_ms": 746879
+          },
+          {
+            "title": "The Power of Elijah",
+            "slug": "the-power-of-elijah",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/the-power-of-elijah?lang=eng",
+            "speaker": {
+              "name": "Elder Theodore M. Burton",
+              "role_tag": null,
+              "calling": "Assistant to the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-theodore-m-burton?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/e74bb0fc32ea11ecbcf7eeeeac1e744eef6a62e5-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 799000
+            },
+            "duration_ms": 799000
+          },
+          {
+            "title": "The Family—A Divine Blessing",
+            "slug": "the-family-a-divine-blessing",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/the-family-a-divine-blessing?lang=eng",
+            "speaker": {
+              "name": "Elder Rex D. Pinegar",
+              "role_tag": null,
+              "calling": "Of the First Council of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-rex-d-pinegar?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/e931129f32ea11ec8aafeeeeac1e5e36cf2d2cee-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 735000
+            },
+            "duration_ms": 735000
+          },
+          {
+            "title": "What Does Jesus Mean to Modern Man?",
+            "slug": "what-does-jesus-mean-to-modern-man",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/what-does-jesus-mean-to-modern-man?lang=eng",
+            "speaker": {
+              "name": "Elder David B. Haight",
+              "role_tag": null,
+              "calling": "Assistant to the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-david-b-haight?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/ec07d93b32ea11ecb890eeeeac1e0eb4ba107345-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 717183
+            },
+            "duration_ms": 717183
+          },
+          {
+            "title": "God Foreordains His Prophets and His People",
+            "slug": "god-foreordains-his-prophets-and-his-people",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/god-foreordains-his-prophets-and-his-people?lang=eng",
+            "speaker": {
+              "name": "Elder Bruce R. McConkie",
+              "role_tag": null,
+              "calling": "Of the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-bruce-r-mcconkie?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/ef8eb62532ea11eca29deeeeac1e03f9283dcdfc-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 990000
+            },
+            "duration_ms": 990000
+          }
+        ]
+      },
+      {
+        "name": "Priesthood Session",
+        "slug": "priesthood-session",
+        "order": 5,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/priesthood-session?lang=eng",
+        "talks": [
+          {
+            "title": "Aaronic Priesthood Stewardship",
+            "slug": "aaronic-priesthood-stewardship",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/aaronic-priesthood-stewardship?lang=eng",
+            "speaker": {
+              "name": "Bishop Victor L. Brown",
+              "role_tag": null,
+              "calling": "Presiding Bishop",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/bishop-victor-l-brown?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/cbbddba632ea11eca0a3eeeeac1ed9030e5bdc06-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 901667
+            },
+            "duration_ms": 901667
+          },
+          {
+            "title": "Boys Need Men",
+            "slug": "boys-need-men",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/boys-need-men?lang=eng",
+            "speaker": {
+              "name": "Elder Marion D. Hanks",
+              "role_tag": null,
+              "calling": "Assistant to the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-marion-d-hanks?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/ceb7e1ae32ea11ecbc25eeeeac1e296254be2954-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1160259
+            },
+            "duration_ms": 1160259
+          },
+          {
+            "title": "Be Ye Clean That Bear the Vessels of the Lord",
+            "slug": "be-ye-clean-that-bear-the-vessels-of-the-lord",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/be-ye-clean-that-bear-the-vessels-of-the-lord?lang=eng",
+            "speaker": {
+              "name": "President Marion G. Romney",
+              "role_tag": "first-presidency",
+              "calling": "Second Counselor in the First Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-marion-g-romney?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/d3bd486a32ea11ecbd0feeeeac1efb1d4c5b9104-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1042000
+            },
+            "duration_ms": 1042000
+          },
+          {
+            "title": "Chosen of the Lord",
+            "slug": "chosen-of-the-lord",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/chosen-of-the-lord?lang=eng",
+            "speaker": {
+              "name": "President N. Eldon Tanner",
+              "role_tag": "first-presidency",
+              "calling": "First Counselor in the First Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-n-eldon-tanner?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/d63f5f2232ea11eca29deeeeac1e03f90c43e641-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1203268
+            },
+            "duration_ms": 1203268
+          },
+          {
+            "title": "Planning for a Full and Abundant Life",
+            "slug": "planning-for-a-full-and-abundant-life",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/planning-for-a-full-and-abundant-life?lang=eng",
+            "speaker": {
+              "name": "President Spencer W. Kimball",
+              "role_tag": "first-presidency",
+              "calling": "President of the Church",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-spencer-w-kimball?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/d9cf8ad632ea11ecbc25eeeeac1e2962b93eb5ac-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1420000
+            },
+            "duration_ms": 1420000
+          }
+        ]
+      },
+      {
+        "name": "Sunday Morning Session",
+        "slug": "sunday-morning-session",
+        "order": 6,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/sunday-morning-session?lang=eng",
+        "talks": [
+          {
+            "title": "The Holy Ghost",
+            "slug": "the-holy-ghost",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/the-holy-ghost?lang=eng",
+            "speaker": {
+              "name": "President Marion G. Romney",
+              "role_tag": "first-presidency",
+              "calling": "Second Counselor in the First Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-marion-g-romney?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/dc14bfe532ea11ec95e0eeeeac1ece45e7036c7c-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1160893
+            },
+            "duration_ms": 1160893
+          },
+          {
+            "title": "We Believe All That God Has Revealed",
+            "slug": "we-believe-all-that-god-has-revealed",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/we-believe-all-that-god-has-revealed?lang=eng",
+            "speaker": {
+              "name": "Elder Boyd K. Packer",
+              "role_tag": null,
+              "calling": "Of the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-boyd-k-packer?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/dcd32df932ea11eca4deeeeeac1e54b654dec7d4-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1091824
+            },
+            "duration_ms": 1091824
+          },
+          {
+            "title": "Build Your Shield of Faith",
+            "slug": "build-your-shield-of-faith",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/build-your-shield-of-faith?lang=eng",
+            "speaker": {
+              "name": "Elder L. Tom Perry",
+              "role_tag": null,
+              "calling": "Of the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-l-tom-perry?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/de3c33cb32ea11ecbc25eeeeac1e2962fcb92df2-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 588220
+            },
+            "duration_ms": 588220
+          },
+          {
+            "title": "Three Days in the Tomb",
+            "slug": "three-days-in-the-tomb",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/three-days-in-the-tomb?lang=eng",
+            "speaker": {
+              "name": "Elder Eldred G. Smith",
+              "role_tag": null,
+              "calling": "Patriarch to the Church",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-eldred-g-smith?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/e0c10a0632ea11eca0a3eeeeac1ed90326fffd8b-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 649448
+            },
+            "duration_ms": 649448
+          },
+          {
+            "title": "Commitment to Serve",
+            "slug": "commitment-to-serve",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/commitment-to-serve?lang=eng",
+            "speaker": {
+              "name": "Elder J. Thomas Fyans",
+              "role_tag": null,
+              "calling": "Assistant to the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-j-thomas-fyans?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/e2723c3632ea11ecb890eeeeac1e0eb47d5fc40e-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 416000
+            },
+            "duration_ms": 416000
+          },
+          {
+            "title": "The Savior’s Ministry",
+            "slug": "the-saviors-ministry",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/the-saviors-ministry?lang=eng",
+            "speaker": {
+              "name": "Elder Delbert L. Stapley",
+              "role_tag": null,
+              "calling": "Of the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-delbert-l-stapley?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/e59a576432ea11ec83ebeeeeac1e20b30ddae0a6-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 957556
+            },
+            "duration_ms": 957556
+          }
+        ]
+      },
+      {
+        "name": "Sunday Afternoon Session",
+        "slug": "sunday-afternoon-session",
+        "order": 7,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/sunday-afternoon-session?lang=eng",
+        "talks": [
+          {
+            "title": "Missionary Work: A Major Responsibility",
+            "slug": "missionary-work-a-major-responsibility",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/missionary-work-a-major-responsibility?lang=eng",
+            "speaker": {
+              "name": "President Ezra Taft Benson",
+              "role_tag": null,
+              "calling": "President of the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-ezra-taft-benson?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/ea3b56d232ea11ec8868eeeeac1e3d386790b761-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1167000
+            },
+            "duration_ms": 1167000
+          },
+          {
+            "title": "“I Will … Pour You Out a Blessing”",
+            "slug": "i-will-pour-you-out-a-blessing",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/i-will-pour-you-out-a-blessing?lang=eng",
+            "speaker": {
+              "name": "Elder Henry D. Taylor",
+              "role_tag": null,
+              "calling": "Assistant to the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-henry-d-taylor?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/eeb916b032ea11ec95e0eeeeac1ece45bf10f934-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 684884
+            },
+            "duration_ms": 684884
+          },
+          {
+            "title": "The Strength of Testimony",
+            "slug": "the-strength-of-testimony",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/the-strength-of-testimony?lang=eng",
+            "speaker": {
+              "name": "President Hartman Rector, Jr.",
+              "role_tag": null,
+              "calling": "Of the First Council of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-hartman-rector-jr?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/c9f1801b32ea11ecbcf7eeeeac1e744e04562087-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 837000
+            },
+            "duration_ms": 837000
+          },
+          {
+            "title": "Response to a Call",
+            "slug": "response-to-a-call",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/response-to-a-call?lang=eng",
+            "speaker": {
+              "name": "Elder Neal A. Maxwell",
+              "role_tag": null,
+              "calling": "Assistant to the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-neal-a-maxwell?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/cf63640732ea11ecb675eeeeac1e6a69a1d2b75a-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 223000
+            },
+            "duration_ms": 223000
+          },
+          {
+            "title": "Hearken unto the Voice of God",
+            "slug": "hearken-unto-the-voice-of-god",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/hearken-unto-the-voice-of-god?lang=eng",
+            "speaker": {
+              "name": "Elder Bernard P. Brockbank",
+              "role_tag": null,
+              "calling": "Assistant to the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-bernard-p-brockbank?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/d4a8b9bc32ea11eca0a3eeeeac1ed903dd8304e2-64k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 747379
+            },
+            "duration_ms": 747379
+          },
+          {
+            "title": "Prophecy",
+            "slug": "prophecy",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/prophecy?lang=eng",
+            "speaker": {
+              "name": "Elder LeGrand Richards",
+              "role_tag": null,
+              "calling": "Of the Council of the Twelve",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-legrand-richards?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/d9236c3132ea11ecb890eeeeac1e0eb4ff602551-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1117000
+            },
+            "duration_ms": 1117000
+          },
+          {
+            "title": "The Cause Is Just and Worthy",
+            "slug": "the-cause-is-just-and-worthy",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/the-cause-is-just-and-worthy?lang=eng",
+            "speaker": {
+              "name": "President Spencer W. Kimball",
+              "role_tag": "first-presidency",
+              "calling": "President of the Church",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-spencer-w-kimball?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/db54562632ea11ec8193eeeeac1ebf62a770b8f1-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1005000
+            },
+            "duration_ms": 1005000
+          }
+        ]
+      },
+      {
+        "name": "Welfare Session",
+        "slug": "welfare-session",
+        "order": 8,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/welfare-session?lang=eng",
+        "talks": [
+          {
+            "title": "Address Given by President Marion G. Romney at the Welfare Services Meeting Saturday, April 6, 1974",
+            "slug": "welfare-services-romney",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/welfare-services-romney?lang=eng",
+            "speaker": {
+              "name": "President Marion G. Romney",
+              "role_tag": "first-presidency",
+              "calling": "Second Counselor in the First Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-marion-g-romney?lang=eng"
+            }
+          },
+          {
+            "title": "Address Given by President N. Eldon Tanner at the Welfare Services Meeting Saturday, April 6, 1974",
+            "slug": "welfare-services-tanner",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/welfare-services-tanner?lang=eng",
+            "speaker": {
+              "name": "President N. Eldon Tanner",
+              "role_tag": "first-presidency",
+              "calling": "First Counselor in the First Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-n-eldon-tanner?lang=eng"
+            }
+          },
+          {
+            "title": "Address Given by President Spencer W. Kimball at the Welfare Services Meeting Saturday, April 6, 1974",
+            "slug": "welfare-services-kimball",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/1974/04/welfare-services-kimball?lang=eng",
+            "speaker": {
+              "name": "President Spencer W. Kimball",
+              "role_tag": "first-presidency",
+              "calling": "President of the Church",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-spencer-w-kimball?lang=eng"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
