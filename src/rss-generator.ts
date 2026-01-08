@@ -110,6 +110,14 @@ function generateGuid(conference: Conference, session: Session, talk?: Talk): st
 }
 
 /**
+ * Format conference name for display (e.g., "October 2025" or "April 1974")
+ */
+function formatConferenceShortName(conference: Conference): string {
+  const monthName = conference.month === 4 ? 'April' : 'October';
+  return `${monthName} ${conference.year}`;
+}
+
+/**
  * Generate RSS item for a talk
  */
 function generateTalkItem(
@@ -121,7 +129,9 @@ function generateTalkItem(
   if (!talk.audio?.url) return '';
 
   const guid = generateGuid(conference, session, talk);
-  const title = `${talk.title} - ${talk.speaker.name}`;
+  const confName = formatConferenceShortName(conference);
+  // Format: "Speaker Name | Talk Title | October 2025"
+  const title = `${talk.speaker.name} | ${talk.title} | ${confName}`;
   const description = buildTalkDescription(conference, session, talk);
   const duration = formatDuration(talk.duration_ms);
   const fileSize = estimateFileSize(talk.duration_ms);
