@@ -74,7 +74,16 @@ git push
 
 ## Automated Updates
 
-The included GitHub Actions workflow (`.github/workflows/update-feed.yml`) can update feeds automatically. It runs on the 15th of April and October to catch new conferences.
+The GitHub Actions workflow automatically checks for new conference content:
+
+- **Conference weekend (Apr/Oct 1-7):** Checks 3x daily (8 AM, 12 PM, 8 PM MDT)
+- **Following week (Apr/Oct 8-14):** Checks daily at noon MDT
+- **Rest of year:** Monthly check on the 15th
+
+This aggressive schedule during conference weekend catches content as it drops:
+
+- Full session recordings typically appear same day
+- Individual talk recordings usually follow within 5-7 days
 
 To trigger manually: Actions > "Update Podcast Feed" > Run workflow
 
