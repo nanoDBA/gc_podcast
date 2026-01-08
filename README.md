@@ -82,8 +82,9 @@ The GitHub Actions workflow automatically checks for new conference content:
 
 This schedule aligns with the Church's [official release timeline](https://www.churchofjesuschrist.org/learn/ways-to-watch-general-conference?lang=eng):
 
-- Full session audio: available shortly after each session
-- Individual talks: on Gospel Library by Wednesday after conference weekend
+- **Full session audio:** Gospel Library within 24 hours of each session
+- **Individual talks:** Gospel Library by Wednesday after conference weekend
+- **All languages:** Text within 2 weeks (audio varies)
 
 To trigger manually: Actions > "Update Podcast Feed" > Run workflow
 
