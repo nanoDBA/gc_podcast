@@ -143,7 +143,7 @@ function generateTalkItem(
       <enclosure url="${escapeXml(talk.audio.url)}" length="${fileSize}" type="audio/mpeg"/>
       <guid isPermaLink="false">${guid}</guid>
       <pubDate>${formatRfc2822Date(pubDate)}</pubDate>
-      <itunes:title>${escapeXml(talk.title)}</itunes:title>
+      <itunes:title>${escapeXml(title)}</itunes:title>
       <itunes:author>${escapeXml(talk.speaker.name)}</itunes:author>
       <itunes:duration>${duration}</itunes:duration>
       <itunes:summary><![CDATA[${description}]]></itunes:summary>
