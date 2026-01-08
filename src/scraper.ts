@@ -532,13 +532,20 @@ export class ConferenceScraper {
 
   /**
    * Classify speaker role based on calling text
+   *
+   * Note on apostolic interregnum: When a Church President dies, the First
+   * Presidency is dissolved. The President of the Quorum of the Twelve
+   * becomes the presiding authority until a new First Presidency is organized.
+   * Former counselors return to their seniority in the Twelve. This logic
+   * correctly handles that case since callings reflect "Quorum of the Twelve"
+   * or "President of the Quorum" during that period, not "First Presidency".
    */
   private classifyRole(calling: string): SpeakerRoleTag {
     if (!calling) return null;
 
     const lowerCalling = calling.toLowerCase();
 
-    // First Presidency - must be specifically "The First Presidency" or "of The Church"
+    // First Presidency - must be specifically "The First Presidency" or "President of The Church"
     if (
       lowerCalling.includes('president of the church') ||
       lowerCalling.includes('the first presidency') ||
@@ -549,11 +556,12 @@ export class ConferenceScraper {
       return 'first-presidency';
     }
 
-    // Quorum of the Twelve
+    // Quorum of the Twelve (includes "President of the Quorum" during interregnum)
     if (
       lowerCalling.includes('quorum of the twelve') ||
       lowerCalling.includes('twelve apostles') ||
-      lowerCalling.includes('acting president of the quorum')
+      lowerCalling.includes('acting president of the quorum') ||
+      lowerCalling.includes('president of the quorum')
     ) {
       return 'quorum-of-the-twelve';
     }
