@@ -8,9 +8,9 @@ Add one of these feed URLs to your podcast app:
 
 | Language | Feed URL |
 |----------|----------|
-| English | `https://YOUR_USERNAME.github.io/gc_podcast/gc-podcast-audio.xml` |
-| Spanish | `https://YOUR_USERNAME.github.io/gc_podcast/gc-podcast-audio-es.xml` |
-| Portuguese | `https://YOUR_USERNAME.github.io/gc_podcast/gc-podcast-audio-pt.xml` |
+| English | `https://YOUR_USERNAME.github.io/gc_podcast/audio.xml` |
+| Spanish | `https://YOUR_USERNAME.github.io/gc_podcast/audio-es.xml` |
+| Portuguese | `https://YOUR_USERNAME.github.io/gc_podcast/audio-pt.xml` |
 
 Works with Apple Podcasts, Overcast, Pocket Casts, Castro, and any RSS reader.
 
@@ -26,7 +26,7 @@ Works with Apple Podcasts, Overcast, Pocket Casts, Castro, and any RSS reader.
 
 1. Fork this repository
 2. Enable GitHub Pages: Settings > Pages > Source: `Deploy from a branch` > Branch: `main`, folder: `/docs`
-3. Your feed will be at `https://YOUR_USERNAME.github.io/gc_podcast/gc-podcast-audio.xml`
+3. Your feed will be at `https://YOUR_USERNAME.github.io/gc_podcast/audio.xml`
 
 ### 2. Scrape Conferences
 
@@ -110,9 +110,9 @@ gc_podcast/
 │   └── types.ts           # TypeScript types
 ├── output/                # Scraped conference JSON
 ├── docs/                  # GitHub Pages
-│   ├── gc-podcast-audio.xml      # English feed
-│   ├── gc-podcast-audio-es.xml   # Spanish feed
-│   ├── gc-podcast-audio-pt.xml   # Portuguese feed
+│   ├── audio.xml      # English feed
+│   ├── audio-es.xml   # Spanish feed
+│   ├── audio-pt.xml   # Portuguese feed
 │   └── index.html                # Landing page
 └── .github/workflows/
     └── update-feed.yml    # Auto-update workflow

@@ -110,8 +110,8 @@
 
   <div class="feed-box">
     <strong>Podcast Feed URL:</strong>
-    <div class="feed-url" id="feedUrl">https://YOUR_USERNAME.github.io/gc_podcast/gc-podcast-audio.xml</div>
-    <a href="gc-podcast-audio.xml" class="btn">View Feed</a>
+    <div class="feed-url" id="feedUrl">https://YOUR_USERNAME.github.io/gc_podcast/audio.xml</div>
+    <a href="audio.xml" class="btn">View Feed</a>
     <button class="btn btn-secondary" onclick="copyFeedUrl()">Copy URL</button>
   </div>
 
@@ -136,9 +136,9 @@
 
   <h2>Available Feeds</h2>
   <ul>
-    <li><strong>English:</strong> <a href="gc-podcast-audio.xml">gc-podcast-audio.xml</a></li>
-    <li><strong>Spanish:</strong> <a href="gc-podcast-audio-es.xml">gc-podcast-audio-es.xml</a></li>
-    <li><strong>Portuguese:</strong> <a href="gc-podcast-audio-pt.xml">gc-podcast-audio-pt.xml</a></li>
+    <li><strong>English:</strong> <a href="audio.xml">audio.xml</a></li>
+    <li><strong>Spanish:</strong> <a href="audio-es.xml">audio-es.xml</a></li>
+    <li><strong>Portuguese:</strong> <a href="audio-pt.xml">audio-pt.xml</a></li>
   </ul>
 
   <h2>How to Subscribe</h2>
@@ -187,7 +187,7 @@
     }
     // Auto-update URL based on current location
     if (window.location.hostname !== 'localhost') {
-      const feedUrl = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '') + '/gc-podcast-audio.xml';
+      const feedUrl = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '') + '/audio.xml';
       document.getElementById('feedUrl').textContent = feedUrl;
     }
   </script>
