@@ -8,7 +8,7 @@ async function main() {
   const args = process.argv.slice(2);
 
   let outputDir = './output';
-  let feedPath = './docs/feed.xml';
+  let feedPath = './docs/gc-audio.xml';
   let feedBaseUrl = 'https://your-username.github.io/gc_podcast';
   let includeSessions = true;
   let includeTalks = true;
@@ -40,9 +40,9 @@ async function main() {
   if (generateAll) {
     // Generate feeds for all languages
     const languages = [
-      { code: 'eng', file: 'feed.xml' },
-      { code: 'spa', file: 'feed-spa.xml' },
-      { code: 'por', file: 'feed-por.xml' },
+      { code: 'eng', file: 'gc-audio.xml' },
+      { code: 'spa', file: 'gc-audio-es.xml' },
+      { code: 'por', file: 'gc-audio-pt.xml' },
     ];
 
     console.log('Generating RSS feeds for all languages...');
@@ -50,7 +50,7 @@ async function main() {
     console.log(`  Base URL: ${feedBaseUrl}`);
 
     for (const lang of languages) {
-      const langFeedPath = feedPath.replace('feed.xml', lang.file);
+      const langFeedPath = feedPath.replace('gc-audio.xml', lang.file);
       console.log(`\nGenerating ${lang.code.toUpperCase()} feed: ${langFeedPath}`);
 
       try {
