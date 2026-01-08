@@ -1,0 +1,715 @@
+{
+  "scraped_at": "2026-01-08T15:04:45.028Z",
+  "version": "1.0",
+  "conference": {
+    "year": 2025,
+    "month": 4,
+    "name": "Conferencia General de abril de 2025",
+    "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04?lang=spa",
+    "language": "spa",
+    "sessions": [
+      {
+        "name": "Sesión del sábado por la mañana",
+        "slug": "saturday-morning-session",
+        "order": 1,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/saturday-morning-session?lang=spa",
+        "talks": [
+          {
+            "title": "Informe del Departamento de Auditorías de la Iglesia, 2024",
+            "slug": "12larson",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/12larson?lang=spa",
+            "speaker": {
+              "name": "Presentado por Jared B. Larson",
+              "role_tag": null,
+              "calling": "Director gerente del Departamento de Auditorías de la Iglesia",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/presentado-por-jared-b-larson?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/cha37jrrguv29x308k68kdjwbnfacg8xdydyhvvf-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 103966
+            },
+            "duration_ms": 103966
+          },
+          {
+            "title": "Como un niño pequeñito",
+            "slug": "13holland",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/13holland?lang=spa",
+            "speaker": {
+              "name": "Por el presidente Jeffrey R. Holland",
+              "role_tag": null,
+              "calling": "Presidente en Funciones del Cuórum de los Doce Apóstoles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-presidente-jeffrey-r-holland?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/22ykkcnmcm6iici2scci0i8y8heyytr82323602z-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 909700
+            },
+            "duration_ms": 909700
+          },
+          {
+            "title": "Espiritualmente sanos en Él",
+            "slug": "14johnson",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/14johnson?lang=spa",
+            "speaker": {
+              "name": "Por la presidenta Camille N. Johnson",
+              "role_tag": null,
+              "calling": "Presidenta General de la Sociedad de Socorro",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-la-presidenta-camille-n-johnson?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/vpbthxsui72n0xje4rqgpqirxcic4e1os9o8bw8r-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 688933
+            },
+            "duration_ms": 688933
+          },
+          {
+            "title": "Ante nuestros ojos",
+            "slug": "15rasband",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/15rasband?lang=spa",
+            "speaker": {
+              "name": "Por el élder Ronald A. Rasband",
+              "role_tag": null,
+              "calling": "Del Cuórum de los Doce Apóstoles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-ronald-a-rasband?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/xzd27ptflpdu5yvnmip56zmfmp2wwjmerhrvo0lj-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 840566
+            },
+            "duration_ms": 840566
+          },
+          {
+            "title": "La Expiación de Jesucristo proporciona el rescate definitivo",
+            "slug": "16cook",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/16cook?lang=spa",
+            "speaker": {
+              "name": "Por el élder Quentin L. Cook",
+              "role_tag": null,
+              "calling": "Del Cuórum de los Doce Apóstoles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-quentin-l-cook?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/1z7gtheq61t09e50rychfonc77s873aaiwp6vn2l-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 855700
+            },
+            "duration_ms": 855700
+          },
+          {
+            "title": "Mi amor por el Salvador es mi “porqué”",
+            "slug": "17gimenez",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/17gimenez?lang=spa",
+            "speaker": {
+              "name": "Por el élder Ricardo P. Giménez",
+              "role_tag": null,
+              "calling": "De los Setenta",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-ricardo-p-gimnez?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/hj26sbyccp1pnxi3me08gyjzpja7fab6ytug199h-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 629866
+            },
+            "duration_ms": 629866
+          },
+          {
+            "title": "“Allegaos a mí”",
+            "slug": "18eyring",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/18eyring?lang=spa",
+            "speaker": {
+              "name": "Por el presidente Henry B. Eyring",
+              "role_tag": null,
+              "calling": "Segundo Consejero de la Primera Presidencia",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-presidente-henry-b-eyring?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/wu4dp0i3s5g1ot2lwdkgtl1mpbadf7kcv3wzor4a-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 1024833
+            },
+            "duration_ms": 1024833
+          }
+        ],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/sz7194kzemprlj3uocw8elkskfyba4kl9balcyzj-128k-es.mp3",
+          "quality": "128k",
+          "language": "es",
+          "duration_ms": 7219466
+        },
+        "duration_ms": 7219466
+      },
+      {
+        "name": "Sesión del sábado por la tarde",
+        "slug": "saturday-afternoon-session",
+        "order": 2,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/saturday-afternoon-session?lang=spa",
+        "talks": [
+          {
+            "title": "Valorar la vida",
+            "slug": "21andersen",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/21andersen?lang=spa",
+            "speaker": {
+              "name": "Por el élder Neil L. Andersen",
+              "role_tag": null,
+              "calling": "Del Cuórum de los Doce Apóstoles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-neil-l-andersen?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/l0r0d2n56jhqsnuq93s1rcmra3qgq1goculrgvkz-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 849666
+            },
+            "duration_ms": 849666
+          },
+          {
+            "title": "Autoridad divina, jóvenes sublimes",
+            "slug": "22lund",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/22lund?lang=spa",
+            "speaker": {
+              "name": "Por el presidente Steven J. Lund",
+              "role_tag": null,
+              "calling": "Presidente General de los Hombres Jóvenes",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-presidente-steven-j-lund?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/5ninhiny9ajdclv52mpvj53ps8iv58tkktoekdnz-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 704300
+            },
+            "duration_ms": 704300
+          },
+          {
+            "title": "“Volve[d] a mí […] para que yo os sane”",
+            "slug": "23palmer",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/23palmer?lang=spa",
+            "speaker": {
+              "name": "Por el élder S. Mark Palmer",
+              "role_tag": null,
+              "calling": "De la Presidencia de los Setenta",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-s-mark-palmer?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/01aamddpszelxq4gmmd2gi5q4qmbsjw3dh8lka2y-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 662566
+            },
+            "duration_ms": 662566
+          },
+          {
+            "title": "La fe: Un vínculo de confianza y lealtad",
+            "slug": "24roman",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/24roman?lang=spa",
+            "speaker": {
+              "name": "Por el élder Sandino Román",
+              "role_tag": null,
+              "calling": "De los Setenta",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-sandino-romn?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/pltp1peblyx71643uynkbi6zjhcbn26v4el6uho4-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 676700
+            },
+            "duration_ms": 676700
+          },
+          {
+            "title": "Preparación personal para comparecer ante el Salvador",
+            "slug": "25renlund",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/25renlund?lang=spa",
+            "speaker": {
+              "name": "Por el élder Dale G. Renlund",
+              "role_tag": null,
+              "calling": "Del Cuórum de los Doce Apóstoles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-dale-g-renlund?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/tc0w701slnwt3rd1kiwd4b9uyvil0zalqvg65cfk-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 849800
+            },
+            "duration_ms": 849800
+          },
+          {
+            "title": "Firmes creced en la fe que guardamos",
+            "slug": "26boom",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/26boom?lang=spa",
+            "speaker": {
+              "name": "Por el élder Hans T. Boom",
+              "role_tag": null,
+              "calling": "De los Setenta",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-hans-t-boom?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/55hhjto4t0kham2ecsfbn397wk15t3tvxh1yr260-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 660400
+            },
+            "duration_ms": 660400
+          },
+          {
+            "title": "“En esto conocerán todos que ustedes son mis discípulos”",
+            "slug": "27uchtdorf",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/27uchtdorf?lang=spa",
+            "speaker": {
+              "name": "Por el élder Dieter F. Uchtdorf",
+              "role_tag": null,
+              "calling": "Del Cuórum de los Doce Apóstoles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-dieter-f-uchtdorf?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/ojfh4go7tsq5z9q744uheteiawv3smurqwos3a5z-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 904566
+            },
+            "duration_ms": 904566
+          }
+        ],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/mfvs0i69c2oc08tuu24pp22fm629yrd3q5qw133e-128k-es.mp3",
+          "quality": "128k",
+          "language": "es",
+          "duration_ms": 7056800
+        },
+        "duration_ms": 7056800
+      },
+      {
+        "name": "Sesión del sábado por la noche",
+        "slug": "saturday-evening-session",
+        "order": 3,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/saturday-evening-session?lang=spa",
+        "talks": [
+          {
+            "title": "Y hablamos de Cristo",
+            "slug": "31stevenson",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/31stevenson?lang=spa",
+            "speaker": {
+              "name": "Por el élder Gary E. Stevenson",
+              "role_tag": null,
+              "calling": "Del Cuórum de los Doce Apóstoles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-gary-e-stevenson?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/3579h1obg3v78ru6m2czi44cnwmoires46jhp8sl-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 866900
+            },
+            "duration_ms": 866900
+          },
+          {
+            "title": "Tú eres el Cristo",
+            "slug": "32wright",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/32wright?lang=spa",
+            "speaker": {
+              "name": "Por la hermana Amy A. Wright",
+              "role_tag": null,
+              "calling": "Primera Consejera de la Presidencia General de la Primaria",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-la-hermana-amy-a-wright?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/mjyfohz2orhozr64bphzwy7fcru14k5874tb4phf-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 671933
+            },
+            "duration_ms": 671933
+          },
+          {
+            "title": "El plan de misericordia",
+            "slug": "33rasband",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/33rasband?lang=spa",
+            "speaker": {
+              "name": "Por el élder James R. Rasband",
+              "role_tag": null,
+              "calling": "De los Setenta",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-james-r-rasband?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/bhhhr4n1g5ftefi5urjgvniethih2sl10v1xyh6s-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 665000
+            },
+            "duration_ms": 665000
+          },
+          {
+            "title": "Nuestro sistema de guía celestial",
+            "slug": "34vargas",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/34vargas?lang=spa",
+            "speaker": {
+              "name": "Por el élder Sergio R. Vargas",
+              "role_tag": null,
+              "calling": "De los Setenta",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-sergio-r-vargas?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/g1y4xhhj4pmat0uh9nbvqan9myw8s7q3ztyou5md-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 648233
+            },
+            "duration_ms": 648233
+          },
+          {
+            "title": "La adoración",
+            "slug": "35christofferson",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/35christofferson?lang=spa",
+            "speaker": {
+              "name": "Por el élder D. Todd Christofferson",
+              "role_tag": null,
+              "calling": "Del Cuórum de los Doce Apóstoles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-d-todd-christofferson?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/mcnttanpzabozvpokqqhsm0d1iqjo7y2h3dc27oc-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 854100
+            },
+            "duration_ms": 854100
+          }
+        ],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/pjap8wk14a5pd8540xwgm902kd7qyyq3gcbd6e60-128k-es.mp3",
+          "quality": "128k",
+          "language": "es",
+          "duration_ms": 5318266
+        },
+        "duration_ms": 5318266
+      },
+      {
+        "name": "Sesión del domingo por la mañana",
+        "slug": "sunday-morning-session",
+        "order": 4,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/sunday-morning-session?lang=spa",
+        "talks": [
+          {
+            "title": "Los tiempos de la restauración de todas las cosas",
+            "slug": "41bednar",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/41bednar?lang=spa",
+            "speaker": {
+              "name": "Por el élder David A. Bednar",
+              "role_tag": null,
+              "calling": "Del Cuórum de los Doce Apóstoles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-david-a-bednar?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/a2kl1i26sqd0fg456xnxwuzyf1phzh0unr9gceh5-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 921100
+            },
+            "duration_ms": 921100
+          },
+          {
+            "title": "Participar para prepararse para el regreso de Cristo",
+            "slug": "42shumway",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/42shumway?lang=spa",
+            "speaker": {
+              "name": "Por el élder Steven D. Shumway",
+              "role_tag": null,
+              "calling": "De los Setenta",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-steven-d-shumway?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/4ojbkp2c1bs2hhuc2wj5h4916ut72qzp0dvco0p7-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 683833
+            },
+            "duration_ms": 683833
+          },
+          {
+            "title": "Su arrepentimiento no es una carga para Jesucristo, sino que intensifica Su gozo",
+            "slug": "43runia",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/43runia?lang=spa",
+            "speaker": {
+              "name": "Por la hermana Tamara W. Runia",
+              "role_tag": null,
+              "calling": "Primera Consejera de la Presidencia General de las Mujeres Jóvenes",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-la-hermana-tamara-w-runia?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/l7u4oveug1g7z62vnwjno0yg95xwrxokkibnwtop-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 704400
+            },
+            "duration_ms": 704400
+          },
+          {
+            "title": "Bendiciones compensatorias",
+            "slug": "44causse",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/44causse?lang=spa",
+            "speaker": {
+              "name": "Por el obispo Gérald Caussé",
+              "role_tag": null,
+              "calling": "Obispo presidente",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-obispo-grald-causs?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/hbreg6o5517tejaskrs5shzmjihdsgr3hvypbnbb-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 678733
+            },
+            "duration_ms": 678733
+          },
+          {
+            "title": "Los grandes dones de la eternidad: la Expiación de Jesucristo, Su Resurrección y Restauración",
+            "slug": "45gong",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/45gong?lang=spa",
+            "speaker": {
+              "name": "Por el élder Gerrit W. Gong",
+              "role_tag": null,
+              "calling": "Del Cuórum de los Doce Apóstoles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-gerrit-w-gong?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/uiac9uem0wvpwl4beu24av1p4cihrxfyoz5nrtap-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 836833
+            },
+            "duration_ms": 836833
+          },
+          {
+            "title": "Gozo mediante el discipulado por convenio",
+            "slug": "46mccune",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/46mccune?lang=spa",
+            "speaker": {
+              "name": "Por el élder John A. McCune",
+              "role_tag": null,
+              "calling": "De los Setenta",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-john-a-mccune?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/0u9dc6ixa5hogxsw5vohmusolostqg562wshih3a-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 658366
+            },
+            "duration_ms": 658366
+          },
+          {
+            "title": "Ayudas divinas para la vida terrenal",
+            "slug": "47oaks",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/47oaks?lang=spa",
+            "speaker": {
+              "name": "Por el presidente Dallin H. Oaks",
+              "role_tag": null,
+              "calling": "Primer Consejero de la Primera Presidencia",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-presidente-dallin-h-oaks?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/purtrnof8io04r55zzyujmk6pklorw69lo0z18yd-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 880666
+            },
+            "duration_ms": 880666
+          }
+        ],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/hnq4xzdmu8pzvmrr243pdtr1fm2occz5n4zeiop3-128k-es.mp3",
+          "quality": "128k",
+          "language": "es",
+          "duration_ms": 7109000
+        },
+        "duration_ms": 7109000
+      },
+      {
+        "name": "Sesión del domingo por la tarde",
+        "slug": "sunday-afternoon-session",
+        "order": 5,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/sunday-afternoon-session?lang=spa",
+        "talks": [
+          {
+            "title": "Reverencia por las cosas sagradas",
+            "slug": "51soares",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/51soares?lang=spa",
+            "speaker": {
+              "name": "Por el élder Ulisses Soares",
+              "role_tag": null,
+              "calling": "Del Cuórum de los Doce Apóstoles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-ulisses-soares?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/oh1d6sqwmvqkioqnyglj4nxs9e0onvdqflqn3wg9-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 889033
+            },
+            "duration_ms": 889033
+          },
+          {
+            "title": "La caridad: Una señal del verdadero discipulado",
+            "slug": "52strong",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/52strong?lang=spa",
+            "speaker": {
+              "name": "Por el élder Michael B. Strong",
+              "role_tag": null,
+              "calling": "De los Setenta",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-michael-b-strong?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/47q0bllnlqev61coq7eqcs7rqw2fb31x4378oguq-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 689233
+            },
+            "duration_ms": 689233
+          },
+          {
+            "title": "Cuídense de la segunda tentación",
+            "slug": "53whiting",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/53whiting?lang=spa",
+            "speaker": {
+              "name": "Por el élder Scott D. Whiting",
+              "role_tag": null,
+              "calling": "De los Setenta",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-scott-d-whiting?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/wgcy6mvutkmjnsu5k6gvk5389uruuwrfub6vnsvn-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 695933
+            },
+            "duration_ms": 695933
+          },
+          {
+            "title": "No endurezcan su corazón",
+            "slug": "54kim",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/54kim?lang=spa",
+            "speaker": {
+              "name": "Por el élder Christopher H. Kim",
+              "role_tag": null,
+              "calling": "De los Setenta",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-christopher-h-kim?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/ntysk227hmm6rl0sxggitomnicw61eh5kgqdcwlf-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 665866
+            },
+            "duration_ms": 665866
+          },
+          {
+            "title": "Reciban Su don",
+            "slug": "55kearon",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/55kearon?lang=spa",
+            "speaker": {
+              "name": "Por el élder Patrick Kearon",
+              "role_tag": null,
+              "calling": "Del Cuórum de los Doce Apóstoles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-patrick-kearon?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/jua2t5ql1w1aih1f3wt01456622lyea8cdhqip1l-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 844910
+            },
+            "duration_ms": 844910
+          },
+          {
+            "title": "El amor de Dios",
+            "slug": "56tai",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/56tai?lang=spa",
+            "speaker": {
+              "name": "Por el élder Benjamin M. Z. Tai",
+              "role_tag": null,
+              "calling": "De los Setenta",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-benjamin-m-z-tai?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/iwrybkb2fs0nn31c5cslzg4o7jranb2lbunjh745-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 634433
+            },
+            "duration_ms": 634433
+          },
+          {
+            "title": "Confianza en la presencia de Dios",
+            "slug": "57nelson",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/57nelson?lang=spa",
+            "speaker": {
+              "name": "Por el presidente Russell M. Nelson",
+              "role_tag": null,
+              "calling": "Presidente de La Iglesia de Jesucristo de los Santos de los Últimos Días",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-presidente-russell-m-nelson?lang=spa"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/070tso6p2krgoa6xqy1tpn3jgzuijwht4hg5aeo9-128k-es.mp3",
+              "quality": "128k",
+              "language": "es",
+              "duration_ms": 719000
+            },
+            "duration_ms": 719000
+          }
+        ],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/c0j0cp1squzdv70l1sydu8k08fcq9big70ad7m74-128k-es.mp3",
+          "quality": "128k",
+          "language": "es",
+          "duration_ms": 6845171
+        },
+        "duration_ms": 6845171
+      }
+    ]
+  }
+}

@@ -35,7 +35,35 @@ interface RssGeneratorOptions {
   description?: string;
   /** Custom artwork URL */
   imageUrl?: string;
+  /** Language filter (eng, spa, por) */
+  language?: string;
 }
+
+// Language-specific podcast metadata
+const LANGUAGE_CONFIG: Record<string, { language: string; title: string; description: string }> = {
+  eng: {
+    language: 'en',
+    title: 'General Conference - The Church of Jesus Christ of Latter-day Saints',
+    description: 'Audio recordings from General Conference of The Church of Jesus Christ of Latter-day Saints. Includes talks from Church leaders delivered during the semi-annual worldwide broadcasts.',
+  },
+  spa: {
+    language: 'es',
+    title: 'Conferencia General - La Iglesia de Jesucristo de los Santos de los Últimos Días',
+    description: 'Grabaciones de audio de la Conferencia General de La Iglesia de Jesucristo de los Santos de los Últimos Días. Incluye discursos de líderes de la Iglesia de las transmisiones mundiales semestrales.',
+  },
+  por: {
+    language: 'pt',
+    title: 'Conferência Geral - A Igreja de Jesus Cristo dos Santos dos Últimos Dias',
+    description: 'Gravações de áudio da Conferência Geral de A Igreja de Jesus Cristo dos Santos dos Últimos Dias. Inclui discursos de líderes da Igreja das transmissões mundiais semestrais.',
+  },
+};
+
+// Month names by language
+const MONTH_NAMES: Record<string, { 4: string; 10: string }> = {
+  eng: { 4: 'April', 10: 'October' },
+  spa: { 4: 'Abril', 10: 'Octubre' },
+  por: { 4: 'Abril', 10: 'Outubro' },
+};
 
 const DEFAULT_OPTIONS: RssGeneratorOptions = {
   includeSessions: true,
@@ -231,10 +259,12 @@ export function generateRssFeed(
   options: RssGeneratorOptions = {}
 ): string {
   const opts = { ...DEFAULT_OPTIONS, ...options };
+  const langConfig = LANGUAGE_CONFIG[opts.language || 'eng'] || LANGUAGE_CONFIG.eng;
   const config = {
     ...PODCAST_CONFIG,
-    title: opts.title || PODCAST_CONFIG.title,
-    description: opts.description || PODCAST_CONFIG.description,
+    language: langConfig.language,
+    title: opts.title || langConfig.title,
+    description: opts.description || langConfig.description,
     imageUrl: opts.imageUrl || PODCAST_CONFIG.imageUrl,
   };
 
@@ -319,15 +349,22 @@ ${items.join('\n')}
 
 /**
  * Load all conference JSON files from a directory
+ * @param language - Filter by language code (eng, spa, por). If not specified, loads only English.
  */
-export async function loadConferences(outputDir: string): Promise<ConferenceOutput[]> {
+export async function loadConferences(outputDir: string, language: string = 'eng'): Promise<ConferenceOutput[]> {
   const files = await fs.readdir(outputDir);
-  const jsonFiles = files.filter(f => f.endsWith('.json') && f.startsWith('gc-'));
+  // Filter by language: gc-2025-10-eng.json, gc-2025-10-spa.json, etc.
+  const langSuffix = `-${language}.json`;
+  const jsonFiles = files.filter(f => f.endsWith(langSuffix) && f.startsWith('gc-'));
 
   const conferences: ConferenceOutput[] = [];
   for (const file of jsonFiles) {
     const content = await fs.readFile(path.join(outputDir, file), 'utf-8');
-    conferences.push(JSON.parse(content));
+    const conf = JSON.parse(content);
+    // Only include conferences that have sessions (skip empty ones)
+    if (conf.conference?.sessions?.length > 0) {
+      conferences.push(conf);
+    }
   }
 
   return conferences;
@@ -341,7 +378,8 @@ export async function generateAndSaveFeed(
   feedPath: string,
   options?: RssGeneratorOptions
 ): Promise<void> {
-  const conferences = await loadConferences(outputDir);
+  const language = options?.language || 'eng';
+  const conferences = await loadConferences(outputDir, language);
   const feed = generateRssFeed(conferences, options);
   await fs.writeFile(feedPath, feed, 'utf-8');
 }
