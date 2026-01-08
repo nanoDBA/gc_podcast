@@ -8,11 +8,13 @@ Add one of these feed URLs to your podcast app:
 
 | Language | Feed URL |
 |----------|----------|
-| English | `https://YOUR_USERNAME.github.io/gc_podcast/audio.xml` |
-| Spanish | `https://YOUR_USERNAME.github.io/gc_podcast/audio-es.xml` |
-| Portuguese | `https://YOUR_USERNAME.github.io/gc_podcast/audio-pt.xml` |
+| English | `https://nanodba.github.io/gc_podcast/audio.xml` |
+| Spanish | `https://nanodba.github.io/gc_podcast/audio-es.xml` |
+| Portuguese | `https://nanodba.github.io/gc_podcast/audio-pt.xml` |
 
 Works with Apple Podcasts, Overcast, Pocket Casts, Castro, and any RSS reader.
+
+> **Note:** If you fork this repo, your feed URLs will be at `https://YOUR_USERNAME.github.io/gc_podcast/audio.xml`
 
 ## What's Included
 
