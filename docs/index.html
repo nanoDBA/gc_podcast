@@ -56,6 +56,39 @@
       border: 1px solid #0066cc;
     }
     .btn-secondary:hover { background: #f0f7ff; }
+    .feed-list { margin: 20px 0; }
+    .feed-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .feed-item strong { min-width: 90px; }
+    .feed-url-small {
+      flex: 1;
+      font-family: 'SF Mono', Monaco, monospace;
+      font-size: 13px;
+      color: #4a5568;
+      background: #f7fafc;
+      padding: 6px 10px;
+      border-radius: 4px;
+      word-break: break-all;
+    }
+    .btn-copy {
+      background: #0066cc;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .btn-copy:hover { background: #0052a3; }
+    .btn-copy.copied { background: #38a169; }
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -135,11 +168,23 @@
   </div>
 
   <h2>Available Feeds</h2>
-  <ul>
-    <li><strong>English:</strong> <a href="audio.xml">audio.xml</a></li>
-    <li><strong>Spanish:</strong> <a href="audio-es.xml">audio-es.xml</a></li>
-    <li><strong>Portuguese:</strong> <a href="audio-pt.xml">audio-pt.xml</a></li>
-  </ul>
+  <div class="feed-list">
+    <div class="feed-item">
+      <strong>English</strong>
+      <span class="feed-url-small" id="feedEng">audio.xml</span>
+      <button class="btn-copy" onclick="copyFeed('feedEng')">Copy</button>
+    </div>
+    <div class="feed-item">
+      <strong>Spanish</strong>
+      <span class="feed-url-small" id="feedSpa">audio-es.xml</span>
+      <button class="btn-copy" onclick="copyFeed('feedSpa')">Copy</button>
+    </div>
+    <div class="feed-item">
+      <strong>Portuguese</strong>
+      <span class="feed-url-small" id="feedPor">audio-pt.xml</span>
+      <button class="btn-copy" onclick="copyFeed('feedPor')">Copy</button>
+    </div>
+  </div>
 
   <h2>How to Subscribe</h2>
   <ol class="steps">
@@ -174,21 +219,39 @@
       This is an unofficial feed for personal use.
     </p>
     <p>
-      <a href="https://github.com/YOUR_USERNAME/gc_podcast">View on GitHub</a>
+      <a href="https://github.com/nanoDBA/gc_podcast">View on GitHub</a>
     </p>
   </footer>
 
   <script>
+    const baseUrl = window.location.hostname !== 'localhost'
+      ? window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '')
+      : 'https://nanodba.github.io/gc_podcast';
+
+    // Update all feed URLs
+    document.getElementById('feedUrl').textContent = baseUrl + '/audio.xml';
+    document.getElementById('feedEng').textContent = baseUrl + '/audio.xml';
+    document.getElementById('feedSpa').textContent = baseUrl + '/audio-es.xml';
+    document.getElementById('feedPor').textContent = baseUrl + '/audio-pt.xml';
+
     function copyFeedUrl() {
-      const url = document.getElementById('feedUrl').textContent;
-      navigator.clipboard.writeText(url).then(() => {
-        alert('Feed URL copied to clipboard!');
-      });
+      copyToClipboard(document.getElementById('feedUrl').textContent, event.target);
     }
-    // Auto-update URL based on current location
-    if (window.location.hostname !== 'localhost') {
-      const feedUrl = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '') + '/audio.xml';
-      document.getElementById('feedUrl').textContent = feedUrl;
+
+    function copyFeed(id) {
+      copyToClipboard(document.getElementById(id).textContent, event.target);
+    }
+
+    function copyToClipboard(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 1500);
+      });
     }
   </script>
 </body>
