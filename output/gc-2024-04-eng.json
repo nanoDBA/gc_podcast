@@ -1,0 +1,734 @@
+{
+  "scraped_at": "2026-01-08T15:01:53.804Z",
+  "version": "1.0",
+  "conference": {
+    "year": 2024,
+    "month": 4,
+    "name": "April 2024 general conference",
+    "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04?lang=eng",
+    "language": "eng",
+    "sessions": [
+      {
+        "name": "Saturday Morning Session",
+        "slug": "saturday-morning-session",
+        "order": 1,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/saturday-morning-session?lang=eng",
+        "talks": [
+          {
+            "title": "Sustaining of General Authorities, Area Seventies, and General Officers",
+            "slug": "11oaks",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/11oaks?lang=eng",
+            "speaker": {
+              "name": "Presented by President Dallin H. Oaks",
+              "role_tag": "first-presidency",
+              "calling": "First Counselor in the First Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/presented-by-president-dallin-h-oaks?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/5916c5f1f45b11ee9f70eeeeac1e8b16a785aac7-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 524123
+            },
+            "duration_ms": 524123
+          },
+          {
+            "title": "Church Auditing Department Report, 2023",
+            "slug": "12larson",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/12larson?lang=eng",
+            "speaker": {
+              "name": "Presented by Jared B. Larson",
+              "role_tag": null,
+              "calling": "Managing Director, Church Auditing Department",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/presented-by-jared-b-larson?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/60cdcd07f45d11ee83f8eeeeac1ea7be12b2ec70-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 105538
+            },
+            "duration_ms": 105538
+          },
+          {
+            "title": "Motions of a Hidden Fire",
+            "slug": "13holland",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/13holland?lang=eng",
+            "speaker": {
+              "name": "President Jeffrey R. Holland",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Acting President of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-jeffrey-r-holland?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/40caa6d5f45e11eeb86ceeeeac1e727001aef98a-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 808174
+            },
+            "duration_ms": 808174
+          },
+          {
+            "title": "Put Ye On the Lord Jesus Christ",
+            "slug": "14dennis",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/14dennis?lang=eng",
+            "speaker": {
+              "name": "Sister J. Anette Dennis",
+              "role_tag": null,
+              "calling": "First Counselor in the Relief Society General Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/sister-j-anette-dennis?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/f1be502ff44b11ee87fbeeeeac1e390ce8347a89-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 716282
+            },
+            "duration_ms": 716282
+          },
+          {
+            "title": "Pillars and Rays",
+            "slug": "15dushku",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/15dushku?lang=eng",
+            "speaker": {
+              "name": "Elder Alexander Dushku",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-alexander-dushku?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/b6cec4d4f44c11ee8652eeeeac1e0c79188a59a1-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 677343
+            },
+            "duration_ms": 677343
+          },
+          {
+            "title": "Covenant Confidence through Jesus Christ",
+            "slug": "16soares",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/16soares?lang=eng",
+            "speaker": {
+              "name": "Elder Ulisses Soares",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-ulisses-soares?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/e88e4983f46411ee8249eeeeac1e1294d61aea0b-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 868534
+            },
+            "duration_ms": 868534
+          },
+          {
+            "title": "Integrity: A Christlike Attribute",
+            "slug": "17gerard",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/17gerard?lang=eng",
+            "speaker": {
+              "name": "Elder Jack N. Gerard",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-jack-n-gerard?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/cc7d45f4f45a11ee9247eeeeac1e29c65678898d-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 684750
+            },
+            "duration_ms": 684750
+          },
+          {
+            "title": "All Will Be Well Because of Temple Covenants",
+            "slug": "18eyring",
+            "order": 8,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/18eyring?lang=eng",
+            "speaker": {
+              "name": "President Henry B. Eyring",
+              "role_tag": "first-presidency",
+              "calling": "Second Counselor in the First Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-henry-b-eyring?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/6ac5796df45811ee9f70eeeeac1e8b1627206161-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 992558
+            },
+            "duration_ms": 992558
+          }
+        ],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/ef168f33f47811eea2b7eeeeac1ea65bd752ffd2-32k-en.mp3",
+          "quality": "128k",
+          "language": "en",
+          "duration_ms": 7258651
+        },
+        "duration_ms": 7258651
+      },
+      {
+        "name": "Saturday Afternoon Session",
+        "slug": "saturday-afternoon-session",
+        "order": 2,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/saturday-afternoon-session?lang=eng",
+        "talks": [
+          {
+            "title": "“Be Still, and Know That I Am God”",
+            "slug": "21bednar",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/21bednar?lang=eng",
+            "speaker": {
+              "name": "Elder David A. Bednar",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-david-a-bednar?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/234e54d6f53211eeae01eeeeac1e2f2f69691ddc-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 884583
+            },
+            "duration_ms": 884583
+          },
+          {
+            "title": "Rise! He Calleth Thee",
+            "slug": "22de-feo",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/22de-feo?lang=eng",
+            "speaker": {
+              "name": "Elder Massimo De Feo",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-massimo-de-feo?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/0fda65a1f4f511eeabdceeeeac1ebfc2000e29db-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 681814
+            },
+            "duration_ms": 681814
+          },
+          {
+            "title": "A Record of What I Have Both Seen and Heard",
+            "slug": "23nielson",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/23nielson?lang=eng",
+            "speaker": {
+              "name": "Elder Brent H. Nielson",
+              "role_tag": null,
+              "calling": "Of the Presidency of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-brent-h-nielson?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/fecc57e9f48011ee88a3eeeeac1e29d8986e6876-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 709141
+            },
+            "duration_ms": 709141
+          },
+          {
+            "title": "Jesus Christ at the Center of Our Lives",
+            "slug": "24alonso",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/24alonso?lang=eng",
+            "speaker": {
+              "name": "Elder Jose L. Alonso",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-jose-l-alonso?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/437c1dd0f4f011eeadb4eeeeac1e21390cd10692-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 697000
+            },
+            "duration_ms": 697000
+          },
+          {
+            "title": "All Things for Our Good",
+            "slug": "25gong",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/25gong?lang=eng",
+            "speaker": {
+              "name": "Elder Gerrit W. Gong",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-gerrit-w-gong?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/09fa5f7cf53111eea55ceeeeac1e27776cae59f4-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 853652
+            },
+            "duration_ms": 853652
+          },
+          {
+            "title": "In Support of the Rising Generation",
+            "slug": "26nelson",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/26nelson?lang=eng",
+            "speaker": {
+              "name": "Brother Michael T. Nelson",
+              "role_tag": null,
+              "calling": "Second Counselor in the Young Men General Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/brother-michael-t-nelson?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/23038b85f5b311ee855deeeeac1edfbbad7c0698-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 680000
+            },
+            "duration_ms": 680000
+          },
+          {
+            "title": "Be One with Christ",
+            "slug": "27cook",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/27cook?lang=eng",
+            "speaker": {
+              "name": "Elder Quentin L. Cook",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-quentin-l-cook?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/a123d53cf48211eeae01eeeeac1e2f2f2a0f66f0-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 905504
+            },
+            "duration_ms": 905504
+          }
+        ],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/d3ba828df4f311eeae01eeeeac1e2f2f5ecc8bd5-32k-en.mp3",
+          "quality": "128k",
+          "language": "en",
+          "duration_ms": 7109202
+        },
+        "duration_ms": 7109202
+      },
+      {
+        "name": "Saturday Evening Session",
+        "slug": "saturday-evening-session",
+        "order": 3,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/saturday-evening-session?lang=eng",
+        "talks": [
+          {
+            "title": "Miracles, Angels, and Priesthood Power",
+            "slug": "31bowen",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/31bowen?lang=eng",
+            "speaker": {
+              "name": "Elder Shayne M. Bowen",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-shayne-m-bowen?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/afc45924f53011eebd9deeeeac1e481b342229d5-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 703502
+            },
+            "duration_ms": 703502
+          },
+          {
+            "title": "Foreordained to Serve",
+            "slug": "32bangerter",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/32bangerter?lang=eng",
+            "speaker": {
+              "name": "Elder Steven R. Bangerter",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-steven-r-bangerter?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/cae8d1d2f5b711eebc46eeeeac1ea65b7d0e1c84-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 689689
+            },
+            "duration_ms": 689689
+          },
+          {
+            "title": "Faithful to the End",
+            "slug": "33spannaus",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/33spannaus?lang=eng",
+            "speaker": {
+              "name": "Sister Andrea Muñoz Spannaus",
+              "role_tag": null,
+              "calling": "Second Counselor in the Young Women General Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/sister-andrea-muoz-spannaus?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/d277109df5b811eeb065eeeeac1e0c4ce66db2b1-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 685384
+            },
+            "duration_ms": 685384
+          },
+          {
+            "title": "Fruit That Remains",
+            "slug": "34carpenter",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/34carpenter?lang=eng",
+            "speaker": {
+              "name": "Elder Matthew L. Carpenter",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-matthew-l-carpenter?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/ae0ac3faf5b911eebc46eeeeac1ea65b47976a79-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 699432
+            },
+            "duration_ms": 699432
+          },
+          {
+            "title": "A Higher Joy",
+            "slug": "35uchtdorf",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/35uchtdorf?lang=eng",
+            "speaker": {
+              "name": "Elder Dieter F. Uchtdorf",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-dieter-f-uchtdorf?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/c0115260f53011ee8042eeeeac1ec0e2684b48d8-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 937136
+            },
+            "duration_ms": 937136
+          }
+        ],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/754d1788f51c11eeaa88eeeeac1e3d1db39ffa79-32k-en.mp3",
+          "quality": "128k",
+          "language": "en",
+          "duration_ms": 5309937
+        },
+        "duration_ms": 5309937
+      },
+      {
+        "name": "Sunday Morning Session",
+        "slug": "sunday-morning-session",
+        "order": 4,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/sunday-morning-session?lang=eng",
+        "talks": [
+          {
+            "title": "Words Matter",
+            "slug": "41rasband",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/41rasband?lang=eng",
+            "speaker": {
+              "name": "Elder Ronald A. Rasband",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-ronald-a-rasband?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/eaa9528ef52e11ee88a3eeeeac1e29d8c11841bd-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 838000
+            },
+            "duration_ms": 838000
+          },
+          {
+            "title": "Pray, He Is There",
+            "slug": "42porter",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/42porter?lang=eng",
+            "speaker": {
+              "name": "President Susan H. Porter",
+              "role_tag": null,
+              "calling": "Primary General President",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-susan-h-porter?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/9831fbcff52d11ee8363eeeeac1e3b3b939e997f-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 683000
+            },
+            "duration_ms": 683000
+          },
+          {
+            "title": "The Powerful, Virtuous Cycle of the Doctrine of Christ",
+            "slug": "43renlund",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/43renlund?lang=eng",
+            "speaker": {
+              "name": "Elder Dale G. Renlund",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-dale-g-renlund?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/07f18fa6f5d311eea4dfeeeeac1eb9c4ae33571c-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 847847
+            },
+            "duration_ms": 847847
+          },
+          {
+            "title": "Trust in the Lord",
+            "slug": "44pieper",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/44pieper?lang=eng",
+            "speaker": {
+              "name": "Elder Paul B. Pieper",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-paul-b-pieper?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/1db5683df52f11eea5d1eeeeac1e22e5fa55bede-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 752000
+            },
+            "duration_ms": 752000
+          },
+          {
+            "title": "God’s Intent Is to Bring You Home",
+            "slug": "45kearon",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/45kearon?lang=eng",
+            "speaker": {
+              "name": "Elder Patrick Kearon",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-patrick-kearon?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/e02b7868f52e11eea8a9eeeeac1e8b215959c465-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 694827
+            },
+            "duration_ms": 694827
+          },
+          {
+            "title": "Swallowed Up in the Joy of Christ",
+            "slug": "46taylor",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/46taylor?lang=eng",
+            "speaker": {
+              "name": "Elder Brian K. Taylor",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-brian-k-taylor?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/32c3930af52f11ee8670eeeeac1edabdf6e2c046-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 695000
+            },
+            "duration_ms": 695000
+          },
+          {
+            "title": "Covenants and Responsibilities",
+            "slug": "47oaks",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/47oaks?lang=eng",
+            "speaker": {
+              "name": "President Dallin H. Oaks",
+              "role_tag": "first-presidency",
+              "calling": "First Counselor in the First Presidency",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-dallin-h-oaks?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/d6e51f97f5c011eea29deeeeac1efafb76ef2ac5-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 910000
+            },
+            "duration_ms": 910000
+          }
+        ],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/c7304afef52511eeadb4eeeeac1e21397a990418-32k-en.mp3",
+          "quality": "128k",
+          "language": "en",
+          "duration_ms": 7204000
+        },
+        "duration_ms": 7204000
+      },
+      {
+        "name": "Sunday Afternoon Session",
+        "slug": "sunday-afternoon-session",
+        "order": 5,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/sunday-afternoon-session?lang=eng",
+        "talks": [
+          {
+            "title": "The Testimony of Jesus",
+            "slug": "51christofferson",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/51christofferson?lang=eng",
+            "speaker": {
+              "name": "Elder D. Todd Christofferson",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-d-todd-christofferson?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/df05d7b4f56811eeb360eeeeac1ef60c52f33313-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 861227
+            },
+            "duration_ms": 861227
+          },
+          {
+            "title": "Call, Don’t Fall",
+            "slug": "52godoy",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/52godoy?lang=eng",
+            "speaker": {
+              "name": "Elder Taylor G. Godoy",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-taylor-g-godoy?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/acc1e4c6f5c311ee855deeeeac1edfbb8faaa7a4-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 598464
+            },
+            "duration_ms": 598464
+          },
+          {
+            "title": "Bridging the Two Great Commandments",
+            "slug": "53stevenson",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/53stevenson?lang=eng",
+            "speaker": {
+              "name": "Elder Gary E. Stevenson",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-gary-e-stevenson?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/1a378e1ef53e11eeb065eeeeac1e0c4c3c570330-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 854000
+            },
+            "duration_ms": 854000
+          },
+          {
+            "title": "Opposition in All Things",
+            "slug": "54held",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/54held?lang=eng",
+            "speaker": {
+              "name": "Elder Mathias Held",
+              "role_tag": null,
+              "calling": "Of the Seventy",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-mathias-held?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/9f319176f56211eeb419eeeeac1e2e04930c7c77-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 668868
+            },
+            "duration_ms": 668868
+          },
+          {
+            "title": "Temples, Houses of the Lord Dotting the Earth",
+            "slug": "55andersen",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/55andersen?lang=eng",
+            "speaker": {
+              "name": "Elder Neil L. Andersen",
+              "role_tag": "quorum-of-the-twelve",
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-neil-l-andersen?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/d1d6d3f2f5ca11eeaf21eeeeac1ebaa1a8d11bec-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 835568
+            },
+            "duration_ms": 835568
+          },
+          {
+            "title": "It Is Wisdom in the Lord That We Should Have the Book of Mormon",
+            "slug": "56pace",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/56pace?lang=eng",
+            "speaker": {
+              "name": "President Mark L. Pace",
+              "role_tag": null,
+              "calling": "Sunday School General President",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-mark-l-pace?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/a297635cf53b11eea478eeeeac1e5b9f2f9ea0a3-32k-en.mp3",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 672905
+            },
+            "duration_ms": 672905
+          },
+          {
+            "title": "Rejoice in the Gift of Priesthood Keys",
+            "slug": "57nelson",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/57nelson?lang=eng",
+            "speaker": {
+              "name": "President Russell M. Nelson",
+              "role_tag": "first-presidency",
+              "calling": "President of The Church of Jesus Christ of Latter-day Saints",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/president-russell-m-nelson?lang=eng"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/a9cdff95f5cb11eea130eeeeac1ef0179dd0f596-32k-en.m4a",
+              "quality": "128k",
+              "language": "en",
+              "duration_ms": 1143000
+            },
+            "duration_ms": 1143000
+          }
+        ],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/89cb934ff54611eeaf21eeeeac1ebaa188f8dfb1-32k-en.mp3",
+          "quality": "128k",
+          "language": "en",
+          "duration_ms": 7108434
+        },
+        "duration_ms": 7108434
+      }
+    ]
+  }
+}
