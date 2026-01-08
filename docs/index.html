@@ -89,6 +89,30 @@
     }
     .btn-copy:hover { background: #0052a3; }
     .btn-copy.copied { background: #38a169; }
+    .subscribe-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .subscribe-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      color: white;
+      transition: opacity 0.2s;
+    }
+    .subscribe-btn:hover { opacity: 0.9; }
+    .subscribe-btn.apple { background: linear-gradient(135deg, #9b4dca, #d64292); }
+    .subscribe-btn.overcast { background: #fc7e0f; }
+    .subscribe-btn.pocketcasts { background: #f43e37; }
+    .subscribe-btn.castro { background: linear-gradient(135deg, #00ccbf, #00b265); }
+    .subscribe-btn.rss { background: #f26522; }
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -186,12 +210,21 @@
     </div>
   </div>
 
-  <h2>How to Subscribe</h2>
+  <h2>One-Click Subscribe</h2>
+  <div class="subscribe-buttons" id="subscribeButtons">
+    <a class="subscribe-btn apple" href="#" id="appleLink">Apple Podcasts</a>
+    <a class="subscribe-btn overcast" href="#" id="overcastLink">Overcast</a>
+    <a class="subscribe-btn pocketcasts" href="#" id="pocketcastsLink">Pocket Casts</a>
+    <a class="subscribe-btn castro" href="#" id="castroLink">Castro</a>
+    <a class="subscribe-btn rss" href="#" id="rssLink">RSS Feed</a>
+  </div>
+
+  <h2>Manual Subscribe</h2>
   <ol class="steps">
-    <li>Copy the podcast feed URL above</li>
-    <li>Open your preferred podcast app (Apple Podcasts, Overcast, Pocket Casts, etc.)</li>
-    <li>Look for "Add by URL" or "Subscribe by RSS"</li>
-    <li>Paste the feed URL and confirm</li>
+    <li>Copy a feed URL above</li>
+    <li>Open your podcast app</li>
+    <li>Look for "Add by URL" or "Add RSS Feed"</li>
+    <li>Paste the URL and confirm</li>
   </ol>
 
   <h2>Episode Types</h2>
@@ -253,6 +286,25 @@
         }, 1500);
       });
     }
+
+    // Set up one-click subscribe links
+    const feedUrl = baseUrl + '/audio.xml';
+    const encodedFeed = encodeURIComponent(feedUrl);
+
+    // Apple Podcasts (uses podcast:// protocol or web URL)
+    document.getElementById('appleLink').href = 'podcast://' + feedUrl.replace(/^https?:\/\//, '');
+
+    // Overcast
+    document.getElementById('overcastLink').href = 'overcast://x-callback-url/add?url=' + encodedFeed;
+
+    // Pocket Casts
+    document.getElementById('pocketcastsLink').href = 'pktc://subscribe/' + feedUrl;
+
+    // Castro
+    document.getElementById('castroLink').href = 'castro://subscribe/' + encodedFeed;
+
+    // RSS Feed (direct link)
+    document.getElementById('rssLink').href = feedUrl;
   </script>
 </body>
 </html>
