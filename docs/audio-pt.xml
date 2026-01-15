@@ -9,8 +9,8 @@
     <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     <language>pt</language>
     <copyright>© 2026 by Intellectual Reserve, Inc. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 08 Jan 2026 15:31:18 GMT</lastBuildDate>
-    <atom:link href="https://nanodba.github.io/gc_podcast/gc-audio-pt.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Thu, 15 Jan 2026 12:12:17 GMT</lastBuildDate>
+    <atom:link href="https://nanoDBA.github.io/gc_podcast/audio-pt.xml" rel="self" type="application/rss+xml"/>
 
     <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
     <itunes:summary><![CDATA[Gravações de áudio da Conferência Geral de A Igreja de Jesus Cristo dos Santos dos Últimos Dias. Inclui discursos de líderes da Igreja das transmissões mundiais semestrais.]]></itunes:summary>
@@ -35,7 +35,7 @@
       <description><![CDATA[<p><strong>Sessão da manhã de sábado</strong></p><p>Conferência Geral de Outubro de 2025</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li>Presidente Dallin H. Oaks - "Introdução"</li><li>Élder Gary E. Stevenson - "“Bem-aventurados os pacificadores”"</li><li>Irmã Tracy Y. Browning - "Sintonizar o coração com Jesus Cristo: O dom sagrado da música da Primária"</li><li>Élder Ronald M. Barcellos - "O Senhor olha para o coração"</li><li>Élder Brik V. Eyre - "Saber quem realmente somos"</li><li>Élder Kelly R. Johnson - "Reconciliar-se com Deus"</li><li>Élder Dieter F. Uchtdorf - "Façam sua parte de todo o coração"</li></ul>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/asoyx7i7r2xy2sdy3k9hjfxs7fi3r5xwdj37vhbj-128k-pt.mp3" length="112520000" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-morning-session-full</guid>
-      <pubDate>Sat, 04 Oct 2025 14:00:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:00:00 GMT</pubDate>
       <itunes:title>Sessão da manhã de sábado (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:57:12</itunes:duration>
@@ -51,7 +51,7 @@
       <description><![CDATA[<p><strong>Introdução</strong></p><p>By Presidente Dallin H. Oaks<br/><em>Presidente do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/9wwlchuyw0wypwtmc7sxj22gu9gh949bhjttffgp-128k-pt.mp3" length="3431456" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-morning-session-19oaks</guid>
-      <pubDate>Sat, 04 Oct 2025 14:15:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:15:00 GMT</pubDate>
       <itunes:title>Presidente Dallin H. Oaks | Introdução | October 2025</itunes:title>
       <itunes:author>Presidente Dallin H. Oaks</itunes:author>
       <itunes:duration>00:03:34</itunes:duration>
@@ -67,7 +67,7 @@
       <description><![CDATA[<p><strong>“Bem-aventurados os pacificadores”</strong></p><p>By Élder Gary E. Stevenson<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/8slvpewgn0du1ginen41wq16byvcf52vs7aa8jlv-128k-pt.mp3" length="12739200" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-morning-session-12stevenson</guid>
-      <pubDate>Sat, 04 Oct 2025 14:30:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:30:00 GMT</pubDate>
       <itunes:title>Élder Gary E. Stevenson | “Bem-aventurados os pacificadores” | October 2025</itunes:title>
       <itunes:author>Élder Gary E. Stevenson</itunes:author>
       <itunes:duration>00:13:16</itunes:duration>
@@ -83,7 +83,7 @@
       <description><![CDATA[<p><strong>Sintonizar o coração com Jesus Cristo: O dom sagrado da música da Primária</strong></p><p>By Irmã Tracy Y. Browning<br/><em>Segunda conselheira na presidência geral da Primária</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/ubev80tr070ty6vg873qc3esk5swfvmfbbjeo6bm-128k-pt.mp3" length="10188800" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-morning-session-13browning</guid>
-      <pubDate>Sat, 04 Oct 2025 14:45:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:45:00 GMT</pubDate>
       <itunes:title>Irmã Tracy Y. Browning | Sintonizar o coração com Jesus Cristo: O dom sagrado da música da Primária | October 2025</itunes:title>
       <itunes:author>Irmã Tracy Y. Browning</itunes:author>
       <itunes:duration>00:10:36</itunes:duration>
@@ -99,7 +99,7 @@
       <description><![CDATA[<p><strong>O Senhor olha para o coração</strong></p><p>By Élder Ronald M. Barcellos<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/yfywvi88bgoskw21e1qwwurat8z1dc85qft1iy4z-128k-pt.mp3" length="10260256" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-morning-session-14barcellos</guid>
-      <pubDate>Sat, 04 Oct 2025 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:00:00 GMT</pubDate>
       <itunes:title>Élder Ronald M. Barcellos | O Senhor olha para o coração | October 2025</itunes:title>
       <itunes:author>Élder Ronald M. Barcellos</itunes:author>
       <itunes:duration>00:10:41</itunes:duration>
@@ -115,7 +115,7 @@
       <description><![CDATA[<p><strong>Saber quem realmente somos</strong></p><p>By Élder Brik V. Eyre<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/kepaao78yoa8v9kdxlf1eawaxqvnec06o2bjx7xm-128k-pt.mp3" length="10337056" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-morning-session-15eyre</guid>
-      <pubDate>Sat, 04 Oct 2025 15:15:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:15:00 GMT</pubDate>
       <itunes:title>Élder Brik V. Eyre | Saber quem realmente somos | October 2025</itunes:title>
       <itunes:author>Élder Brik V. Eyre</itunes:author>
       <itunes:duration>00:10:46</itunes:duration>
@@ -131,7 +131,7 @@
       <description><![CDATA[<p><strong>Reconciliar-se com Deus</strong></p><p>By Élder Kelly R. Johnson<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/majgbckj81to9zceadyvaadzsib818fec0ckb41z-128k-pt.mp3" length="9948256" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-morning-session-17johnson</guid>
-      <pubDate>Sat, 04 Oct 2025 15:30:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:30:00 GMT</pubDate>
       <itunes:title>Élder Kelly R. Johnson | Reconciliar-se com Deus | October 2025</itunes:title>
       <itunes:author>Élder Kelly R. Johnson</itunes:author>
       <itunes:duration>00:10:21</itunes:duration>
@@ -147,7 +147,7 @@
       <description><![CDATA[<p><strong>Façam sua parte de todo o coração</strong></p><p>By Élder Dieter F. Uchtdorf<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/jkr2h7n7dl2oijshcqxmlwbzyb2j39773039am4n-128k-pt.mp3" length="14758928" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-morning-session-16uchtdorf</guid>
-      <pubDate>Sat, 04 Oct 2025 15:45:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:45:00 GMT</pubDate>
       <itunes:title>Élder Dieter F. Uchtdorf | Façam sua parte de todo o coração | October 2025</itunes:title>
       <itunes:author>Élder Dieter F. Uchtdorf</itunes:author>
       <itunes:duration>00:15:22</itunes:duration>
@@ -163,7 +163,7 @@
       <description><![CDATA[<p><strong>Sessão da tarde de sábado</strong></p><p>Conferência Geral de Outubro de 2025</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li>Élder Ronald A. Rasband - "A proclamação sobre a família — Palavras de Deus"</li><li>Irmão Chad H. Webb - "Para que todos sejam edificados"</li><li>Élder Jeremy R. Jaggi - "De joelhos no altar"</li><li>Élder Kevin G. Brown - "O eterno dom do testemunho"</li><li>Élder Gerrit W. Gong - "Ninguém se senta sozinho"</li><li>Élder Michael Cziesla - "Simplicidade em Cristo"</li><li>Élder Quentin L. Cook - "O Senhor está acelerando Sua obra"</li></ul>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/2cv7ucnlp0jhfengoaxq5m9mxsu7k9uah235zjr2-128k-pt.mp3" length="117558496" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-afternoon-session-full</guid>
-      <pubDate>Sat, 04 Oct 2025 14:00:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:00:00 GMT</pubDate>
       <itunes:title>Sessão da tarde de sábado (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>02:02:27</itunes:duration>
@@ -179,7 +179,7 @@
       <description><![CDATA[<p><strong>A proclamação sobre a família — Palavras de Deus</strong></p><p>By Élder Ronald A. Rasband<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/dm417grec1vnsrh6g1hicgbierzl37cjacfnoepi-128k-pt.mp3" length="13404800" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-afternoon-session-21rasband</guid>
-      <pubDate>Sat, 04 Oct 2025 14:15:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:15:00 GMT</pubDate>
       <itunes:title>Élder Ronald A. Rasband | A proclamação sobre a família — Palavras de Deus | October 2025</itunes:title>
       <itunes:author>Élder Ronald A. Rasband</itunes:author>
       <itunes:duration>00:13:57</itunes:duration>
@@ -195,7 +195,7 @@
       <description><![CDATA[<p><strong>Para que todos sejam edificados</strong></p><p>By Irmão Chad H. Webb<br/><em>Primeiro conselheiro na presidência geral da Escola Dominical</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/y338xph68awr88loysj5kwdj89bo6whvz2llwo3i-128k-pt.mp3" length="10902624" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-afternoon-session-22webb</guid>
-      <pubDate>Sat, 04 Oct 2025 14:30:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:30:00 GMT</pubDate>
       <itunes:title>Irmão Chad H. Webb | Para que todos sejam edificados | October 2025</itunes:title>
       <itunes:author>Irmão Chad H. Webb</itunes:author>
       <itunes:duration>00:11:21</itunes:duration>
@@ -211,7 +211,7 @@
       <description><![CDATA[<p><strong>De joelhos no altar</strong></p><p>By Élder Jeremy R. Jaggi<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/gwymttiaoz5oodw4u1jee37lnm9gsryk2fgp7hom-128k-pt.mp3" length="10944528" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-afternoon-session-23jaggi</guid>
-      <pubDate>Sat, 04 Oct 2025 14:45:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:45:00 GMT</pubDate>
       <itunes:title>Élder Jeremy R. Jaggi | De joelhos no altar | October 2025</itunes:title>
       <itunes:author>Élder Jeremy R. Jaggi</itunes:author>
       <itunes:duration>00:11:24</itunes:duration>
@@ -227,7 +227,7 @@
       <description><![CDATA[<p><strong>O eterno dom do testemunho</strong></p><p>By Élder Kevin G. Brown<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/ugcradp8jjsdh0vkzczh21t30ogt2w95dirjewqk-128k-pt.mp3" length="11792000" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-afternoon-session-24brown</guid>
-      <pubDate>Sat, 04 Oct 2025 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:00:00 GMT</pubDate>
       <itunes:title>Élder Kevin G. Brown | O eterno dom do testemunho | October 2025</itunes:title>
       <itunes:author>Élder Kevin G. Brown</itunes:author>
       <itunes:duration>00:12:17</itunes:duration>
@@ -243,7 +243,7 @@
       <description><![CDATA[<p><strong>Ninguém se senta sozinho</strong></p><p>By Élder Gerrit W. Gong<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/z18ja9jw0y5q8d4cc1gdxqjmtennge0qvmegcs6v-128k-pt.mp3" length="13486928" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-afternoon-session-25gong</guid>
-      <pubDate>Sat, 04 Oct 2025 15:15:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:15:00 GMT</pubDate>
       <itunes:title>Élder Gerrit W. Gong | Ninguém se senta sozinho | October 2025</itunes:title>
       <itunes:author>Élder Gerrit W. Gong</itunes:author>
       <itunes:duration>00:14:02</itunes:duration>
@@ -259,7 +259,7 @@
       <description><![CDATA[<p><strong>Simplicidade em Cristo</strong></p><p>By Élder Michael Cziesla<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/qwla3sfh4ghqnt2xafe1pcw4xc7fvb1xd29nu3yj-128k-pt.mp3" length="10853328" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-afternoon-session-26cziesla</guid>
-      <pubDate>Sat, 04 Oct 2025 15:30:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:30:00 GMT</pubDate>
       <itunes:title>Élder Michael Cziesla | Simplicidade em Cristo | October 2025</itunes:title>
       <itunes:author>Élder Michael Cziesla</itunes:author>
       <itunes:duration>00:11:18</itunes:duration>
@@ -275,7 +275,7 @@
       <description><![CDATA[<p><strong>O Senhor está acelerando Sua obra</strong></p><p>By Élder Quentin L. Cook<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/xdfkoe6cox4ib1rszv0rki1rfnl1ioxwdvirlgwx-128k-pt.mp3" length="14324800" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-afternoon-session-27cook</guid>
-      <pubDate>Sat, 04 Oct 2025 15:45:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:45:00 GMT</pubDate>
       <itunes:title>Élder Quentin L. Cook | O Senhor está acelerando Sua obra | October 2025</itunes:title>
       <itunes:author>Élder Quentin L. Cook</itunes:author>
       <itunes:duration>00:14:55</itunes:duration>
@@ -291,7 +291,7 @@
       <description><![CDATA[<p><strong>Sessão da noite de sábado</strong></p><p>Conferência Geral de Outubro de 2025</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li>Élder Patrick Kearon - "Jesus Cristo e o recomeço para nós"</li><li>Irmã J. Anette Dennis - "Incentivar uns aos outros"</li><li>Élder Steven C. Barlow - "“Amas-me?”"</li><li>Élder William K. Jackson - "Lembrar-se das ovelhas"</li><li>Élder Neil L. Andersen - "O amor expiatório de Jesus Cristo"</li></ul>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/iteo8ph4u4pf29cd1lb4kyqx2f9281puq6l04flw-128k-pt.mp3" length="91569600" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-evening-session-full</guid>
-      <pubDate>Sat, 04 Oct 2025 14:00:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:00:00 GMT</pubDate>
       <itunes:title>Sessão da noite de sábado (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:35:23</itunes:duration>
@@ -307,7 +307,7 @@
       <description><![CDATA[<p><strong>Jesus Cristo e o recomeço para nós</strong></p><p>By Élder Patrick Kearon<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da noite de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/299ff0sfyatm199uld53b0e7k9nsk997ccqcf5mf-128k-pt.mp3" length="13753056" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-evening-session-31kearon</guid>
-      <pubDate>Sat, 04 Oct 2025 14:15:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:15:00 GMT</pubDate>
       <itunes:title>Élder Patrick Kearon | Jesus Cristo e o recomeço para nós | October 2025</itunes:title>
       <itunes:author>Élder Patrick Kearon</itunes:author>
       <itunes:duration>00:14:19</itunes:duration>
@@ -323,7 +323,7 @@
       <description><![CDATA[<p><strong>Incentivar uns aos outros</strong></p><p>By Irmã J. Anette Dennis<br/><em>Primeira conselheira na presidência geral da Sociedade de Socorro</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da noite de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/5fajf9f9wfu8fky0umg5g8vxiz6xicenpxq7lohb-128k-pt.mp3" length="11406928" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-evening-session-32dennis</guid>
-      <pubDate>Sat, 04 Oct 2025 14:30:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:30:00 GMT</pubDate>
       <itunes:title>Irmã J. Anette Dennis | Incentivar uns aos outros | October 2025</itunes:title>
       <itunes:author>Irmã J. Anette Dennis</itunes:author>
       <itunes:duration>00:11:52</itunes:duration>
@@ -339,7 +339,7 @@
       <description><![CDATA[<p><strong>“Amas-me?”</strong></p><p>By Élder Steven C. Barlow<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da noite de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/viic0fnq4u2y7ybjk3il62vegt58i8dkay4st31b-128k-pt.mp3" length="11238400" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-evening-session-33barlow</guid>
-      <pubDate>Sat, 04 Oct 2025 14:45:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:45:00 GMT</pubDate>
       <itunes:title>Élder Steven C. Barlow | “Amas-me?” | October 2025</itunes:title>
       <itunes:author>Élder Steven C. Barlow</itunes:author>
       <itunes:duration>00:11:42</itunes:duration>
@@ -355,7 +355,7 @@
       <description><![CDATA[<p><strong>Lembrar-se das ovelhas</strong></p><p>By Élder William K. Jackson<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da noite de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/6etz7cjxwpsopnq7hgyz1elapjs78jubwuecnkv4-128k-pt.mp3" length="11750400" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-evening-session-34jackson</guid>
-      <pubDate>Sat, 04 Oct 2025 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:00:00 GMT</pubDate>
       <itunes:title>Élder William K. Jackson | Lembrar-se das ovelhas | October 2025</itunes:title>
       <itunes:author>Élder William K. Jackson</itunes:author>
       <itunes:duration>00:12:14</itunes:duration>
@@ -371,7 +371,7 @@
       <description><![CDATA[<p><strong>O amor expiatório de Jesus Cristo</strong></p><p>By Élder Neil L. Andersen<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da noite de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/7p07aiqpsarebxe8iyr20uld7keksfbgyn6xs90w-128k-pt.mp3" length="13984000" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-saturday-evening-session-35andersen</guid>
-      <pubDate>Sat, 04 Oct 2025 15:15:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:15:00 GMT</pubDate>
       <itunes:title>Élder Neil L. Andersen | O amor expiatório de Jesus Cristo | October 2025</itunes:title>
       <itunes:author>Élder Neil L. Andersen</itunes:author>
       <itunes:duration>00:14:34</itunes:duration>
@@ -387,7 +387,7 @@
       <description><![CDATA[<p><strong>Sessão da manhã de domingo</strong></p><p>Conferência Geral de Outubro de 2025</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li>Élder Jeffrey R. Holland - "Agora vejo"</li><li>Élder James E. Evanson - "“Vai, e faze da mesma maneira”"</li><li>Élder Ulisses Soares - "Revestidos com a virtude da temperança"</li><li>Élder Peter M. Johnson - "O poder de ministrar um a um"</li><li>Élder D. Todd Christofferson - "“[Confia] em Deus para que vivas”"</li><li>Irmã Andrea Muñoz Spannaus - "Profetas de Deus"</li><li>Élder Henry B. Eyring - "Testados e fortalecidos em Cristo"</li></ul>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/izc2z14vgdww82mdpjvk1ogpg9450uubfdqdx1yh-128k-pt.mp3" length="114700800" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-morning-session-full</guid>
-      <pubDate>Sat, 04 Oct 2025 14:00:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:00:00 GMT</pubDate>
       <itunes:title>Sessão da manhã de domingo (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:59:28</itunes:duration>
@@ -403,7 +403,7 @@
       <description><![CDATA[<p><strong>Agora vejo</strong></p><p>By Élder Jeffrey R. Holland<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/r0hyzfd7atpspdk8fkyka43bfw4ajc3oawq8kyg6-128k-pt.mp3" length="16700800" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-morning-session-41holland</guid>
-      <pubDate>Sat, 04 Oct 2025 14:15:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:15:00 GMT</pubDate>
       <itunes:title>Élder Jeffrey R. Holland | Agora vejo | October 2025</itunes:title>
       <itunes:author>Élder Jeffrey R. Holland</itunes:author>
       <itunes:duration>00:17:23</itunes:duration>
@@ -419,7 +419,7 @@
       <description><![CDATA[<p><strong>“Vai, e faze da mesma maneira”</strong></p><p>By Élder James E. Evanson<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/nbotzweqdwneqqb7ok0e2e36t73c3tufkmnj03w7-128k-pt.mp3" length="10052800" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-morning-session-42evanson</guid>
-      <pubDate>Sat, 04 Oct 2025 14:30:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:30:00 GMT</pubDate>
       <itunes:title>Élder James E. Evanson | “Vai, e faze da mesma maneira” | October 2025</itunes:title>
       <itunes:author>Élder James E. Evanson</itunes:author>
       <itunes:duration>00:10:28</itunes:duration>
@@ -435,7 +435,7 @@
       <description><![CDATA[<p><strong>Revestidos com a virtude da temperança</strong></p><p>By Élder Ulisses Soares<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/iv5mzdzlhrpnwd3du26x1bqne26pg4zwoigs640g-128k-pt.mp3" length="14523296" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-morning-session-43soares</guid>
-      <pubDate>Sat, 04 Oct 2025 14:45:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:45:00 GMT</pubDate>
       <itunes:title>Élder Ulisses Soares | Revestidos com a virtude da temperança | October 2025</itunes:title>
       <itunes:author>Élder Ulisses Soares</itunes:author>
       <itunes:duration>00:15:07</itunes:duration>
@@ -451,7 +451,7 @@
       <description><![CDATA[<p><strong>O poder de ministrar um a um</strong></p><p>By Élder Peter M. Johnson<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/6e9uxl8bdlyhpazd4nvzqd5jokdsoicr02q0klg1-128k-pt.mp3" length="10050656" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-morning-session-44johnson</guid>
-      <pubDate>Sat, 04 Oct 2025 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:00:00 GMT</pubDate>
       <itunes:title>Élder Peter M. Johnson | O poder de ministrar um a um | October 2025</itunes:title>
       <itunes:author>Élder Peter M. Johnson</itunes:author>
       <itunes:duration>00:10:28</itunes:duration>
@@ -467,7 +467,7 @@
       <description><![CDATA[<p><strong>“[Confia] em Deus para que vivas”</strong></p><p>By Élder D. Todd Christofferson<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/9c7f7znd0jd7idon7nru8a87dwhobctk19ki72zd-128k-pt.mp3" length="13662400" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-morning-session-45christofferson</guid>
-      <pubDate>Sat, 04 Oct 2025 15:15:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:15:00 GMT</pubDate>
       <itunes:title>Élder D. Todd Christofferson | “[Confia] em Deus para que vivas” | October 2025</itunes:title>
       <itunes:author>Élder D. Todd Christofferson</itunes:author>
       <itunes:duration>00:14:13</itunes:duration>
@@ -483,7 +483,7 @@
       <description><![CDATA[<p><strong>Profetas de Deus</strong></p><p>By Irmã Andrea Muñoz Spannaus<br/><em>Segunda conselheira na presidência geral das Moças</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/j7m0c918mnwxnvv6x6ktho5e53amu6fbgjf266w4-128k-pt.mp3" length="10691200" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-morning-session-46spannaus</guid>
-      <pubDate>Sat, 04 Oct 2025 15:30:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:30:00 GMT</pubDate>
       <itunes:title>Irmã Andrea Muñoz Spannaus | Profetas de Deus | October 2025</itunes:title>
       <itunes:author>Irmã Andrea Muñoz Spannaus</itunes:author>
       <itunes:duration>00:11:08</itunes:duration>
@@ -499,7 +499,7 @@
       <description><![CDATA[<p><strong>Testados e fortalecidos em Cristo</strong></p><p>By Élder Henry B. Eyring<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/ugg1vfb1vw7s8ckpb4llyx0nfbif50zduqw9hjcx-128k-pt.mp3" length="12660256" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-morning-session-47eyring</guid>
-      <pubDate>Sat, 04 Oct 2025 15:45:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:45:00 GMT</pubDate>
       <itunes:title>Élder Henry B. Eyring | Testados e fortalecidos em Cristo | October 2025</itunes:title>
       <itunes:author>Élder Henry B. Eyring</itunes:author>
       <itunes:duration>00:13:11</itunes:duration>
@@ -515,7 +515,7 @@
       <description><![CDATA[<p><strong>Sessão da tarde de domingo</strong></p><p>Conferência Geral de Outubro de 2025</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li>Élder David A. Bednar - "“Eles são seus próprios árbitros”"</li><li>Élder B. Corey Cuvelier - "O nome pelo qual sois chamados"</li><li>Élder Matthew S. Holland - "Não abandonem a sua própria misericórdia"</li><li>Élder Carlos A. Godoy - "Sorrisos radiantes e corações agradecidos"</li><li>Élder Dale G. Renlund - "Tomar sobre nós o nome de Jesus Cristo"</li><li>Élder John D. Amos - "A receita de boas novas"</li><li>Élder Ozani Farias - "O Livro de Mórmon — Um tesouro imensurável em nossa jornada"</li><li>Presidente Dallin H. Oaks - "O evangelho de Jesus Cristo centralizado na família"</li></ul>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/cyv8d2jlsxkma1z71k3ltex412zfqcb6t25mm348-128k-pt.mp3" length="119297056" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-afternoon-session-full</guid>
-      <pubDate>Sat, 04 Oct 2025 14:00:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:00:00 GMT</pubDate>
       <itunes:title>Sessão da tarde de domingo (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>02:04:16</itunes:duration>
@@ -531,7 +531,7 @@
       <description><![CDATA[<p><strong>“Eles são seus próprios árbitros”</strong></p><p>By Élder David A. Bednar<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/ebfvjlpg8yv9wkfl7rracfsqq7lv2amcxa55vw8g-128k-pt.mp3" length="13853856" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-afternoon-session-51bednar</guid>
-      <pubDate>Sat, 04 Oct 2025 14:15:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:15:00 GMT</pubDate>
       <itunes:title>Élder David A. Bednar | “Eles são seus próprios árbitros” | October 2025</itunes:title>
       <itunes:author>Élder David A. Bednar</itunes:author>
       <itunes:duration>00:14:25</itunes:duration>
@@ -547,7 +547,7 @@
       <description><![CDATA[<p><strong>O nome pelo qual sois chamados</strong></p><p>By Élder B. Corey Cuvelier<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/cz15f137zep3v5u3cj8qf2jxy3b3t11hu4h8ftod-128k-pt.mp3" length="10575360" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-afternoon-session-52cuvelier</guid>
-      <pubDate>Sat, 04 Oct 2025 14:30:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:30:00 GMT</pubDate>
       <itunes:title>Élder B. Corey Cuvelier | O nome pelo qual sois chamados | October 2025</itunes:title>
       <itunes:author>Élder B. Corey Cuvelier</itunes:author>
       <itunes:duration>00:11:00</itunes:duration>
@@ -563,7 +563,7 @@
       <description><![CDATA[<p><strong>Não abandonem a sua própria misericórdia</strong></p><p>By Élder Matthew S. Holland<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/ncybeqnetg0u0lx73594cssgatbz2nx5bfu4k5ym-128k-pt.mp3" length="10294928" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-afternoon-session-53holland</guid>
-      <pubDate>Sat, 04 Oct 2025 14:45:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 10:45:00 GMT</pubDate>
       <itunes:title>Élder Matthew S. Holland | Não abandonem a sua própria misericórdia | October 2025</itunes:title>
       <itunes:author>Élder Matthew S. Holland</itunes:author>
       <itunes:duration>00:10:43</itunes:duration>
@@ -579,7 +579,7 @@
       <description><![CDATA[<p><strong>Sorrisos radiantes e corações agradecidos</strong></p><p>By Élder Carlos A. Godoy<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/adxhv6dxnix22vimlsh5w06txg2fcmssia8h1iku-128k-pt.mp3" length="10442656" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-afternoon-session-54godoy</guid>
-      <pubDate>Sat, 04 Oct 2025 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:00:00 GMT</pubDate>
       <itunes:title>Élder Carlos A. Godoy | Sorrisos radiantes e corações agradecidos | October 2025</itunes:title>
       <itunes:author>Élder Carlos A. Godoy</itunes:author>
       <itunes:duration>00:10:52</itunes:duration>
@@ -595,7 +595,7 @@
       <description><![CDATA[<p><strong>Tomar sobre nós o nome de Jesus Cristo</strong></p><p>By Élder Dale G. Renlund<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/811lpv4ez0isl2qoaoxt3wdqd16xf39fsintxy7l-128k-pt.mp3" length="12836800" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-afternoon-session-55renlund</guid>
-      <pubDate>Sat, 04 Oct 2025 15:15:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:15:00 GMT</pubDate>
       <itunes:title>Élder Dale G. Renlund | Tomar sobre nós o nome de Jesus Cristo | October 2025</itunes:title>
       <itunes:author>Élder Dale G. Renlund</itunes:author>
       <itunes:duration>00:13:22</itunes:duration>
@@ -611,7 +611,7 @@
       <description><![CDATA[<p><strong>A receita de boas novas</strong></p><p>By Élder John D. Amos<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/lqnzj5itms48lc004m1l2bw59i5nmc382uq6sogx-128k-pt.mp3" length="10225056" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-afternoon-session-56amos</guid>
-      <pubDate>Sat, 04 Oct 2025 15:30:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:30:00 GMT</pubDate>
       <itunes:title>Élder John D. Amos | A receita de boas novas | October 2025</itunes:title>
       <itunes:author>Élder John D. Amos</itunes:author>
       <itunes:duration>00:10:39</itunes:duration>
@@ -627,7 +627,7 @@
       <description><![CDATA[<p><strong>O Livro de Mórmon — Um tesouro imensurável em nossa jornada</strong></p><p>By Élder Ozani Farias<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/gko4h7no1h4m72s0jd499ltsi1uk0uo1z29efzsq-128k-pt.mp3" length="9399456" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-afternoon-session-57farias</guid>
-      <pubDate>Sat, 04 Oct 2025 15:45:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 11:45:00 GMT</pubDate>
       <itunes:title>Élder Ozani Farias | O Livro de Mórmon — Um tesouro imensurável em nossa jornada | October 2025</itunes:title>
       <itunes:author>Élder Ozani Farias</itunes:author>
       <itunes:duration>00:09:47</itunes:duration>
@@ -643,7 +643,7 @@
       <description><![CDATA[<p><strong>O evangelho de Jesus Cristo centralizado na família</strong></p><p>By Presidente Dallin H. Oaks<br/><em>Presidente do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2025 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/lw0rorjqd6i1ktgfo22u0bm5l91ck3wjfwglucy4-128k-pt.mp3" length="16692256" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-10-sunday-afternoon-session-58oaks</guid>
-      <pubDate>Sat, 04 Oct 2025 16:00:00 GMT</pubDate>
+      <pubDate>Sat, 04 Oct 2025 12:00:00 GMT</pubDate>
       <itunes:title>Presidente Dallin H. Oaks | O evangelho de Jesus Cristo centralizado na família | October 2025</itunes:title>
       <itunes:author>Presidente Dallin H. Oaks</itunes:author>
       <itunes:duration>00:17:23</itunes:duration>
@@ -659,7 +659,7 @@
       <description><![CDATA[<p><strong>Sessão da manhã de sábado</strong></p><p>Conferência Geral de Abril de 2025</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li>Apresentado por Jared B. Larson - "Relatório do Departamento de Auditoria da Igreja, 2024"</li><li>Presidente Jeffrey R. Holland - "“Como uma criança”"</li><li>Presidente Camille N. Johnson - "Espiritualmente salvos Nele"</li><li>Élder Ronald A. Rasband - "Bem diante de nossos olhos"</li><li>Élder Quentin L. Cook - "A Expiação de Jesus Cristo proporciona o resgate supremo"</li><li>Élder Ricardo P. Giménez - "Meu amor pelo Salvador é o meu “porquê”"</li><li>Presidente Henry B. Eyring - "“Achegai-vos a mim”"</li></ul>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/xa92er8mxl5m9vcb1wpcelcoaut651yjbtkdrnd8-128k-pt.mp3" length="115511456" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-morning-session-full</guid>
-      <pubDate>Sat, 05 Apr 2025 14:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:00:00 GMT</pubDate>
       <itunes:title>Sessão da manhã de sábado (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>02:00:19</itunes:duration>
@@ -675,7 +675,7 @@
       <description><![CDATA[<p><strong>Relatório do Departamento de Auditoria da Igreja, 2024</strong></p><p>By Apresentado por Jared B. Larson<br/><em>Diretor administrativo, Departamento de Auditoria da Igreja</em></p><p>Conferência Geral de Abril de 2025 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/y742gg57ppas6flbf03brvqpdsl93g15ibkzpd8c-128k-pt.mp3" length="1663456" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-morning-session-12larson</guid>
-      <pubDate>Sat, 05 Apr 2025 14:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:15:00 GMT</pubDate>
       <itunes:title>Apresentado por Jared B. Larson | Relatório do Departamento de Auditoria da Igreja, 2024 | April 2025</itunes:title>
       <itunes:author>Apresentado por Jared B. Larson</itunes:author>
       <itunes:duration>00:01:43</itunes:duration>
@@ -691,7 +691,7 @@
       <description><![CDATA[<p><strong>“Como uma criança”</strong></p><p>By Presidente Jeffrey R. Holland<br/><em>Presidente em exercício do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Abril de 2025 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/t6h9wal6zh72njkth1sbmjh8ps3bzrq5owesikya-128k-pt.mp3" length="14555200" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-morning-session-13holland</guid>
-      <pubDate>Sat, 05 Apr 2025 14:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:30:00 GMT</pubDate>
       <itunes:title>Presidente Jeffrey R. Holland | “Como uma criança” | April 2025</itunes:title>
       <itunes:author>Presidente Jeffrey R. Holland</itunes:author>
       <itunes:duration>00:15:09</itunes:duration>
@@ -707,7 +707,7 @@
       <description><![CDATA[<p><strong>Espiritualmente salvos Nele</strong></p><p>By Presidente Camille N. Johnson<br/><em>Presidente geral da Sociedade de Socorro</em></p><p>Conferência Geral de Abril de 2025 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/jc8cc0ydfe5y55lr6jrlc5ckt8ulv6q9kwwrllcp-128k-pt.mp3" length="11022928" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-morning-session-14johnson</guid>
-      <pubDate>Sat, 05 Apr 2025 14:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:45:00 GMT</pubDate>
       <itunes:title>Presidente Camille N. Johnson | Espiritualmente salvos Nele | April 2025</itunes:title>
       <itunes:author>Presidente Camille N. Johnson</itunes:author>
       <itunes:duration>00:11:28</itunes:duration>
@@ -723,7 +723,7 @@
       <description><![CDATA[<p><strong>Bem diante de nossos olhos</strong></p><p>By Élder Ronald A. Rasband<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Abril de 2025 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/gr1mkvl174z2oq8dgoi4spzxxvxmd5x2nfrt1ihn-128k-pt.mp3" length="13449056" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-morning-session-15rasband</guid>
-      <pubDate>Sat, 05 Apr 2025 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:00:00 GMT</pubDate>
       <itunes:title>Élder Ronald A. Rasband | Bem diante de nossos olhos | April 2025</itunes:title>
       <itunes:author>Élder Ronald A. Rasband</itunes:author>
       <itunes:duration>00:14:00</itunes:duration>
@@ -739,7 +739,7 @@
       <description><![CDATA[<p><strong>A Expiação de Jesus Cristo proporciona o resgate supremo</strong></p><p>By Élder Quentin L. Cook<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Abril de 2025 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/yuvdcqpbxqkdlbg91lg0a78tdpw8iv2djp52y49p-128k-pt.mp3" length="13691200" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-morning-session-16cook</guid>
-      <pubDate>Sat, 05 Apr 2025 15:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:15:00 GMT</pubDate>
       <itunes:title>Élder Quentin L. Cook | A Expiação de Jesus Cristo proporciona o resgate supremo | April 2025</itunes:title>
       <itunes:author>Élder Quentin L. Cook</itunes:author>
       <itunes:duration>00:14:15</itunes:duration>
@@ -755,7 +755,7 @@
       <description><![CDATA[<p><strong>Meu amor pelo Salvador é o meu “porquê”</strong></p><p>By Élder Ricardo P. Giménez<br/><em>Dos setenta</em></p><p>Conferência Geral de Abril de 2025 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/21blha6teyxfbil286dubmimswr6j3uqni55mp2f-128k-pt.mp3" length="10077856" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-morning-session-17gimenez</guid>
-      <pubDate>Sat, 05 Apr 2025 15:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:30:00 GMT</pubDate>
       <itunes:title>Élder Ricardo P. Giménez | Meu amor pelo Salvador é o meu “porquê” | April 2025</itunes:title>
       <itunes:author>Élder Ricardo P. Giménez</itunes:author>
       <itunes:duration>00:10:29</itunes:duration>
@@ -771,7 +771,7 @@
       <description><![CDATA[<p><strong>“Achegai-vos a mim”</strong></p><p>By Presidente Henry B. Eyring<br/><em>Segundo conselheiro na Primeira Presidência</em></p><p>Conferência Geral de Abril de 2025 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/62br8o8yd7u7oooyvs142cpqvlczl2vdne0i8kt5-128k-pt.mp3" length="16397328" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-morning-session-18eyring</guid>
-      <pubDate>Sat, 05 Apr 2025 15:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:45:00 GMT</pubDate>
       <itunes:title>Presidente Henry B. Eyring | “Achegai-vos a mim” | April 2025</itunes:title>
       <itunes:author>Presidente Henry B. Eyring</itunes:author>
       <itunes:duration>00:17:04</itunes:duration>
@@ -787,7 +787,7 @@
       <description><![CDATA[<p><strong>Sessão da tarde de sábado</strong></p><p>Conferência Geral de Abril de 2025</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li>Élder Neil L. Andersen - "Valorizar a vida"</li><li>Presidente Steven J. Lund - "Autoridade divina, rapazes valorosos"</li><li>Élder S. Mark Palmer - "“Volvereis a mim (…) para que eu vos cure”"</li><li>Élder Sandino Roman - "Fé: Um vínculo de confiança e lealdade"</li><li>Élder Dale G. Renlund - "Preparação pessoal para se encontrar com o Salvador"</li><li>Élder Hans T. Boom - "“Sempre fiéis nossa fé guardaremos”"</li><li>Élder Dieter F. Uchtdorf - "“Com isso todos saberão que vocês são meus discípulos”"</li></ul>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/is9bqcbw9q4l5dlcz8v84plcz9unyqo0rwg2bi2q-128k-pt.mp3" length="112908800" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-afternoon-session-full</guid>
-      <pubDate>Sat, 05 Apr 2025 14:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:00:00 GMT</pubDate>
       <itunes:title>Sessão da tarde de sábado (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:57:36</itunes:duration>
@@ -803,7 +803,7 @@
       <description><![CDATA[<p><strong>Valorizar a vida</strong></p><p>By Élder Neil L. Andersen<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Abril de 2025 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/hzfqjr420w5k3cg6js9rtseqffwzcs7eglv4sxql-128k-pt.mp3" length="13594656" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-afternoon-session-21andersen</guid>
-      <pubDate>Sat, 05 Apr 2025 14:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:15:00 GMT</pubDate>
       <itunes:title>Élder Neil L. Andersen | Valorizar a vida | April 2025</itunes:title>
       <itunes:author>Élder Neil L. Andersen</itunes:author>
       <itunes:duration>00:14:09</itunes:duration>
@@ -819,7 +819,7 @@
       <description><![CDATA[<p><strong>Autoridade divina, rapazes valorosos</strong></p><p>By Presidente Steven J. Lund<br/><em>Presidente geral dos Rapazes</em></p><p>Conferência Geral de Abril de 2025 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/32b6yiy08empxfusdqte6mwit9h4mrcdc3k05k07-128k-pt.mp3" length="11268800" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-afternoon-session-22lund</guid>
-      <pubDate>Sat, 05 Apr 2025 14:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:30:00 GMT</pubDate>
       <itunes:title>Presidente Steven J. Lund | Autoridade divina, rapazes valorosos | April 2025</itunes:title>
       <itunes:author>Presidente Steven J. Lund</itunes:author>
       <itunes:duration>00:11:44</itunes:duration>
@@ -835,7 +835,7 @@
       <description><![CDATA[<p><strong>“Volvereis a mim (…) para que eu vos cure”</strong></p><p>By Élder S. Mark Palmer<br/><em>Da presidência dos setenta</em></p><p>Conferência Geral de Abril de 2025 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/eglpwh025scklgg24lar73m89khq3vdbanvdxqur-128k-pt.mp3" length="10601056" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-afternoon-session-23palmer</guid>
-      <pubDate>Sat, 05 Apr 2025 14:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:45:00 GMT</pubDate>
       <itunes:title>Élder S. Mark Palmer | “Volvereis a mim (…) para que eu vos cure” | April 2025</itunes:title>
       <itunes:author>Élder S. Mark Palmer</itunes:author>
       <itunes:duration>00:11:02</itunes:duration>
@@ -851,7 +851,7 @@
       <description><![CDATA[<p><strong>Fé: Um vínculo de confiança e lealdade</strong></p><p>By Élder Sandino Roman<br/><em>Dos setenta</em></p><p>Conferência Geral de Abril de 2025 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/2uydk965cmg057kc6mxbiekqxqwxa21i40kkwp0h-128k-pt.mp3" length="10827200" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-afternoon-session-24roman</guid>
-      <pubDate>Sat, 05 Apr 2025 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:00:00 GMT</pubDate>
       <itunes:title>Élder Sandino Roman | Fé: Um vínculo de confiança e lealdade | April 2025</itunes:title>
       <itunes:author>Élder Sandino Roman</itunes:author>
       <itunes:duration>00:11:16</itunes:duration>
@@ -867,7 +867,7 @@
       <description><![CDATA[<p><strong>Preparação pessoal para se encontrar com o Salvador</strong></p><p>By Élder Dale G. Renlund<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Abril de 2025 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/geammf7fl0kz9j2kajp9wil2hj73woi63hbexf0f-128k-pt.mp3" length="13596800" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-afternoon-session-25renlund</guid>
-      <pubDate>Sat, 05 Apr 2025 15:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:15:00 GMT</pubDate>
       <itunes:title>Élder Dale G. Renlund | Preparação pessoal para se encontrar com o Salvador | April 2025</itunes:title>
       <itunes:author>Élder Dale G. Renlund</itunes:author>
       <itunes:duration>00:14:09</itunes:duration>
@@ -883,7 +883,7 @@
       <description><![CDATA[<p><strong>“Sempre fiéis nossa fé guardaremos”</strong></p><p>By Élder Hans T. Boom<br/><em>Dos setenta</em></p><p>Conferência Geral de Abril de 2025 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/4lyuh5nfshzb8lgwrccmtb5w0noqzgj71cshqph6-128k-pt.mp3" length="10566400" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-afternoon-session-26boom</guid>
-      <pubDate>Sat, 05 Apr 2025 15:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:30:00 GMT</pubDate>
       <itunes:title>Élder Hans T. Boom | “Sempre fiéis nossa fé guardaremos” | April 2025</itunes:title>
       <itunes:author>Élder Hans T. Boom</itunes:author>
       <itunes:duration>00:11:00</itunes:duration>
@@ -899,7 +899,7 @@
       <description><![CDATA[<p><strong>“Com isso todos saberão que vocês são meus discípulos”</strong></p><p>By Élder Dieter F. Uchtdorf<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Abril de 2025 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/5krbv1nowy8cfg2ryox3xv2k4xsxubr69kwz01sm-128k-pt.mp3" length="14473056" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-afternoon-session-27uchtdorf</guid>
-      <pubDate>Sat, 05 Apr 2025 15:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:45:00 GMT</pubDate>
       <itunes:title>Élder Dieter F. Uchtdorf | “Com isso todos saberão que vocês são meus discípulos” | April 2025</itunes:title>
       <itunes:author>Élder Dieter F. Uchtdorf</itunes:author>
       <itunes:duration>00:15:04</itunes:duration>
@@ -915,7 +915,7 @@
       <description><![CDATA[<p><strong>Sessão da noite de sábado</strong></p><p>Conferência Geral de Abril de 2025</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li>Élder Gary E. Stevenson - "“E falamos de Cristo”"</li><li>Irmã Amy A. Wright - "“Tu és o Cristo”"</li><li>Élder James R. Rasband - "O plano de misericórdia"</li><li>Élder Sergio R. Vargas - "Nosso sistema de orientação celestial"</li><li>Élder D. Todd Christofferson - "Adoração"</li></ul>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/u2wasd6dnmaon0k86552xf6wj1is4562u2ojc2bq-128k-pt.mp3" length="85092256" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-evening-session-full</guid>
-      <pubDate>Sat, 05 Apr 2025 14:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:00:00 GMT</pubDate>
       <itunes:title>Sessão da noite de sábado (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:28:38</itunes:duration>
@@ -931,7 +931,7 @@
       <description><![CDATA[<p><strong>“E falamos de Cristo”</strong></p><p>By Élder Gary E. Stevenson<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Abril de 2025 - Sessão da noite de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/0ijtp03uxjr8l9olzfqxtntcaa7kv5v2ihim19u1-32k-pt.m4a" length="13870400" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-evening-session-31stevenson</guid>
-      <pubDate>Sat, 05 Apr 2025 14:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:15:00 GMT</pubDate>
       <itunes:title>Élder Gary E. Stevenson | “E falamos de Cristo” | April 2025</itunes:title>
       <itunes:author>Élder Gary E. Stevenson</itunes:author>
       <itunes:duration>00:14:26</itunes:duration>
@@ -947,7 +947,7 @@
       <description><![CDATA[<p><strong>“Tu és o Cristo”</strong></p><p>By Irmã Amy A. Wright<br/><em>Primeira conselheira na presidência geral da Primária</em></p><p>Conferência Geral de Abril de 2025 - Sessão da noite de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/5a9fhi57d0zumh0p5e3src7ug2phgjspx3sf0tqk-128k-pt.mp3" length="10750928" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-evening-session-32wright</guid>
-      <pubDate>Sat, 05 Apr 2025 14:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:30:00 GMT</pubDate>
       <itunes:title>Irmã Amy A. Wright | “Tu és o Cristo” | April 2025</itunes:title>
       <itunes:author>Irmã Amy A. Wright</itunes:author>
       <itunes:duration>00:11:11</itunes:duration>
@@ -963,7 +963,7 @@
       <description><![CDATA[<p><strong>O plano de misericórdia</strong></p><p>By Élder James R. Rasband<br/><em>Dos setenta</em></p><p>Conferência Geral de Abril de 2025 - Sessão da noite de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/vwsow9qqkrtzglgebfj1h1muwnaa5u38uiqjl98c-64k-pt.mp3" length="10652800" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-evening-session-33rasband</guid>
-      <pubDate>Sat, 05 Apr 2025 14:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:45:00 GMT</pubDate>
       <itunes:title>Élder James R. Rasband | O plano de misericórdia | April 2025</itunes:title>
       <itunes:author>Élder James R. Rasband</itunes:author>
       <itunes:duration>00:11:05</itunes:duration>
@@ -979,7 +979,7 @@
       <description><![CDATA[<p><strong>Nosso sistema de orientação celestial</strong></p><p>By Élder Sergio R. Vargas<br/><em>Dos setenta</em></p><p>Conferência Geral de Abril de 2025 - Sessão da noite de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/1p8gux0jzklki7klsc15d4kr4i91gq5ugxro56f1-128k-pt.mp3" length="10371728" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-evening-session-34vargas</guid>
-      <pubDate>Sat, 05 Apr 2025 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:00:00 GMT</pubDate>
       <itunes:title>Élder Sergio R. Vargas | Nosso sistema de orientação celestial | April 2025</itunes:title>
       <itunes:author>Élder Sergio R. Vargas</itunes:author>
       <itunes:duration>00:10:48</itunes:duration>
@@ -995,7 +995,7 @@
       <description><![CDATA[<p><strong>Adoração</strong></p><p>By Élder D. Todd Christofferson<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Abril de 2025 - Sessão da noite de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/vop20j5sqx8iummnm3ejlmoq5aikio1t25dmum0y-128k-pt.mp3" length="13665600" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-saturday-evening-session-35christofferson</guid>
-      <pubDate>Sat, 05 Apr 2025 15:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:15:00 GMT</pubDate>
       <itunes:title>Élder D. Todd Christofferson | Adoração | April 2025</itunes:title>
       <itunes:author>Élder D. Todd Christofferson</itunes:author>
       <itunes:duration>00:14:14</itunes:duration>
@@ -1011,7 +1011,7 @@
       <description><![CDATA[<p><strong>Sessão da manhã de domingo</strong></p><p>Conferência Geral de Abril de 2025</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li>Élder David A. Bednar - "“Os tempos da restauração de todas as coisas”"</li><li>Élder Steven D. Shumway - "Participar a fim de se preparar para o retorno de Cristo"</li><li>Irmã Tamara W. Runia - "Seu arrependimento não sobrecarrega Jesus Cristo, mas torna a alegria Dele mais radiante"</li><li>Bispo Gérald Caussé - "Bênçãos compensatórias"</li><li>Élder Gerrit W. Gong - "As grandes dádivas da eternidade: A Expiação de Jesus Cristo, a Ressurreição e a Restauração"</li><li>Élder John A. McCune - "Alegria por meio do discipulado por convênio"</li><li>Presidente Dallin H. Oaks - "Auxílios divinos para a mortalidade"</li></ul>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/1htpzj0gnoyr4cz0iw3o67hp8hqn7a1bqzo7q9nu-128k-pt.mp3" length="113744000" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-morning-session-full</guid>
-      <pubDate>Sat, 05 Apr 2025 14:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:00:00 GMT</pubDate>
       <itunes:title>Sessão da manhã de domingo (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:58:29</itunes:duration>
@@ -1027,7 +1027,7 @@
       <description><![CDATA[<p><strong>“Os tempos da restauração de todas as coisas”</strong></p><p>By Élder David A. Bednar<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Abril de 2025 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/a7v9s0yfmptiiu8tteub9na4cgqt41qcz8pk6l6t-128k-pt.mp3" length="14737600" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-morning-session-41bednar</guid>
-      <pubDate>Sat, 05 Apr 2025 14:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:15:00 GMT</pubDate>
       <itunes:title>Élder David A. Bednar | “Os tempos da restauração de todas as coisas” | April 2025</itunes:title>
       <itunes:author>Élder David A. Bednar</itunes:author>
       <itunes:duration>00:15:21</itunes:duration>
@@ -1043,7 +1043,7 @@
       <description><![CDATA[<p><strong>Participar a fim de se preparar para o retorno de Cristo</strong></p><p>By Élder Steven D. Shumway<br/><em>Dos setenta</em></p><p>Conferência Geral de Abril de 2025 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/ty5rl4uwkwbw9jouzeeabh0mgiwq5d898lbw9qwx-128k-pt.mp3" length="10941328" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-morning-session-42shumway</guid>
-      <pubDate>Sat, 05 Apr 2025 14:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:30:00 GMT</pubDate>
       <itunes:title>Élder Steven D. Shumway | Participar a fim de se preparar para o retorno de Cristo | April 2025</itunes:title>
       <itunes:author>Élder Steven D. Shumway</itunes:author>
       <itunes:duration>00:11:23</itunes:duration>
@@ -1059,7 +1059,7 @@
       <description><![CDATA[<p><strong>Seu arrependimento não sobrecarrega Jesus Cristo, mas torna a alegria Dele mais radiante</strong></p><p>By Irmã Tamara W. Runia<br/><em>Primeira conselheira na presidência geral das Moças</em></p><p>Conferência Geral de Abril de 2025 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/cs3y5aqhgkft9nkirqvbi99tn2ie2sil5u7lf7ub-128k-pt.mp3" length="11270400" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-morning-session-43runia</guid>
-      <pubDate>Sat, 05 Apr 2025 14:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:45:00 GMT</pubDate>
       <itunes:title>Irmã Tamara W. Runia | Seu arrependimento não sobrecarrega Jesus Cristo, mas torna a alegria Dele mais radiante | April 2025</itunes:title>
       <itunes:author>Irmã Tamara W. Runia</itunes:author>
       <itunes:duration>00:11:44</itunes:duration>
@@ -1075,7 +1075,7 @@
       <description><![CDATA[<p><strong>Bênçãos compensatórias</strong></p><p>By Bispo Gérald Caussé<br/><em>Bispo presidente</em></p><p>Conferência Geral de Abril de 2025 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/7twym0njbv04vxl1kteok47c70p6ieboyq60hohq-128k-pt.mp3" length="10859728" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-morning-session-44causse</guid>
-      <pubDate>Sat, 05 Apr 2025 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:00:00 GMT</pubDate>
       <itunes:title>Bispo Gérald Caussé | Bênçãos compensatórias | April 2025</itunes:title>
       <itunes:author>Bispo Gérald Caussé</itunes:author>
       <itunes:duration>00:11:18</itunes:duration>
@@ -1091,7 +1091,7 @@
       <description><![CDATA[<p><strong>As grandes dádivas da eternidade: A Expiação de Jesus Cristo, a Ressurreição e a Restauração</strong></p><p>By Élder Gerrit W. Gong<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Abril de 2025 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/125508ocqt732p11pcmbywshw489wniixkh89npv-128k-pt.mp3" length="13389328" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-morning-session-45gong</guid>
-      <pubDate>Sat, 05 Apr 2025 15:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:15:00 GMT</pubDate>
       <itunes:title>Élder Gerrit W. Gong | As grandes dádivas da eternidade: A Expiação de Jesus Cristo, a Ressurreição e a Restauração | April 2025</itunes:title>
       <itunes:author>Élder Gerrit W. Gong</itunes:author>
       <itunes:duration>00:13:56</itunes:duration>
@@ -1107,7 +1107,7 @@
       <description><![CDATA[<p><strong>Alegria por meio do discipulado por convênio</strong></p><p>By Élder John A. McCune<br/><em>Dos setenta</em></p><p>Conferência Geral de Abril de 2025 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/omc4h5wxalwwx5ydt2s1ghvs54wnmckomkilnxlo-128k-pt.mp3" length="10533856" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-morning-session-46mccune</guid>
-      <pubDate>Sat, 05 Apr 2025 15:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:30:00 GMT</pubDate>
       <itunes:title>Élder John A. McCune | Alegria por meio do discipulado por convênio | April 2025</itunes:title>
       <itunes:author>Élder John A. McCune</itunes:author>
       <itunes:duration>00:10:58</itunes:duration>
@@ -1123,7 +1123,7 @@
       <description><![CDATA[<p><strong>Auxílios divinos para a mortalidade</strong></p><p>By Presidente Dallin H. Oaks<br/><em>Primeiro conselheiro na Primeira Presidência</em></p><p>Conferência Geral de Abril de 2025 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/vdgifq6k6q95yhu29dqcz52fatd8o994b8duhhoe-128k-pt.mp3" length="14090656" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-morning-session-47oaks</guid>
-      <pubDate>Sat, 05 Apr 2025 15:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:45:00 GMT</pubDate>
       <itunes:title>Presidente Dallin H. Oaks | Auxílios divinos para a mortalidade | April 2025</itunes:title>
       <itunes:author>Presidente Dallin H. Oaks</itunes:author>
       <itunes:duration>00:14:40</itunes:duration>
@@ -1139,7 +1139,7 @@
       <description><![CDATA[<p><strong>Sessão da tarde de domingo</strong></p><p>Conferência Geral de Abril de 2025</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li>Élder Ulisses Soares - "Reverência pelas coisas sagradas"</li><li>Élder Michael B. Strong - "Caridade — Um sinal do verdadeiro discipulado"</li><li>Élder Scott D. Whiting - "Cuidado com a segunda tentação"</li><li>Élder Christopher H. Kim - "Não endureçais o vosso coração"</li><li>Élder Patrick Kearon - "Receber a dádiva do Senhor"</li><li>Élder Benjamin M. Z. Tai - "O amor de Deus"</li><li>Presidente Russell M. Nelson - "Confiança na presença de Deus"</li></ul>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/3fmbx4g5mep29c9vv4weqdvicquzw375zyy21jfv-128k-pt.mp3" length="109522736" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-afternoon-session-full</guid>
-      <pubDate>Sat, 05 Apr 2025 14:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:00:00 GMT</pubDate>
       <itunes:title>Sessão da tarde de domingo (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:54:05</itunes:duration>
@@ -1155,7 +1155,7 @@
       <description><![CDATA[<p><strong>Reverência pelas coisas sagradas</strong></p><p>By Élder Ulisses Soares<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Abril de 2025 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/y0u2j7u7lv8i3zlh3bfp8poo4c0y4k1hfmbjq6tv-128k-pt.mp3" length="14224528" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-afternoon-session-51soares</guid>
-      <pubDate>Sat, 05 Apr 2025 14:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:15:00 GMT</pubDate>
       <itunes:title>Élder Ulisses Soares | Reverência pelas coisas sagradas | April 2025</itunes:title>
       <itunes:author>Élder Ulisses Soares</itunes:author>
       <itunes:duration>00:14:49</itunes:duration>
@@ -1171,7 +1171,7 @@
       <description><![CDATA[<p><strong>Caridade — Um sinal do verdadeiro discipulado</strong></p><p>By Élder Michael B. Strong<br/><em>Dos setenta</em></p><p>Conferência Geral de Abril de 2025 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/c9upbbadu968fcy1ybmi2l29v1ked41j66q5ydst-128k-pt.mp3" length="11027728" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-afternoon-session-52strong</guid>
-      <pubDate>Sat, 05 Apr 2025 14:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:30:00 GMT</pubDate>
       <itunes:title>Élder Michael B. Strong | Caridade — Um sinal do verdadeiro discipulado | April 2025</itunes:title>
       <itunes:author>Élder Michael B. Strong</itunes:author>
       <itunes:duration>00:11:29</itunes:duration>
@@ -1187,7 +1187,7 @@
       <description><![CDATA[<p><strong>Cuidado com a segunda tentação</strong></p><p>By Élder Scott D. Whiting<br/><em>Dos setenta</em></p><p>Conferência Geral de Abril de 2025 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/cd44cjcn1ytc8diuhz4in0lpgfxi376ypuwspx1t-128k-pt.mp3" length="11134928" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-afternoon-session-53whiting</guid>
-      <pubDate>Sat, 05 Apr 2025 14:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 10:45:00 GMT</pubDate>
       <itunes:title>Élder Scott D. Whiting | Cuidado com a segunda tentação | April 2025</itunes:title>
       <itunes:author>Élder Scott D. Whiting</itunes:author>
       <itunes:duration>00:11:35</itunes:duration>
@@ -1203,7 +1203,7 @@
       <description><![CDATA[<p><strong>Não endureçais o vosso coração</strong></p><p>By Élder Christopher H. Kim<br/><em>Dos setenta</em></p><p>Conferência Geral de Abril de 2025 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/06d4nxygc4gi3tdk2i5c3aardervmemp2brl0y8t-128k-pt.mp3" length="10653856" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-afternoon-session-54kim</guid>
-      <pubDate>Sat, 05 Apr 2025 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:00:00 GMT</pubDate>
       <itunes:title>Élder Christopher H. Kim | Não endureçais o vosso coração | April 2025</itunes:title>
       <itunes:author>Élder Christopher H. Kim</itunes:author>
       <itunes:duration>00:11:05</itunes:duration>
@@ -1219,7 +1219,7 @@
       <description><![CDATA[<p><strong>Receber a dádiva do Senhor</strong></p><p>By Élder Patrick Kearon<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Abril de 2025 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/paf7lozenwl389nrmsndlfvdxqmku8mtmc66hqwh-128k-pt.mp3" length="13518560" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-afternoon-session-55kearon</guid>
-      <pubDate>Sat, 05 Apr 2025 15:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:15:00 GMT</pubDate>
       <itunes:title>Élder Patrick Kearon | Receber a dádiva do Senhor | April 2025</itunes:title>
       <itunes:author>Élder Patrick Kearon</itunes:author>
       <itunes:duration>00:14:04</itunes:duration>
@@ -1235,7 +1235,7 @@
       <description><![CDATA[<p><strong>O amor de Deus</strong></p><p>By Élder Benjamin M. Z. Tai<br/><em>Dos setenta</em></p><p>Conferência Geral de Abril de 2025 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/tdr9g7910l8of2b7g2kbcd43rfyecrxrtg30nlpb-128k-pt.mp3" length="10150928" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-afternoon-session-56tai</guid>
-      <pubDate>Sat, 05 Apr 2025 15:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:30:00 GMT</pubDate>
       <itunes:title>Élder Benjamin M. Z. Tai | O amor de Deus | April 2025</itunes:title>
       <itunes:author>Élder Benjamin M. Z. Tai</itunes:author>
       <itunes:duration>00:10:34</itunes:duration>
@@ -1251,7 +1251,7 @@
       <description><![CDATA[<p><strong>Confiança na presença de Deus</strong></p><p>By Presidente Russell M. Nelson<br/><em>Presidente de A Igreja de Jesus Cristo dos Santos dos Últimos Dias</em></p><p>Conferência Geral de Abril de 2025 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/btlobbu4gpj8rp9zgm0yu5sgxxloind7hzx5bbux-128k-pt.mp3" length="11504000" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2025-4-sunday-afternoon-session-57nelson</guid>
-      <pubDate>Sat, 05 Apr 2025 15:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Apr 2025 11:45:00 GMT</pubDate>
       <itunes:title>Presidente Russell M. Nelson | Confiança na presença de Deus | April 2025</itunes:title>
       <itunes:author>Presidente Russell M. Nelson</itunes:author>
       <itunes:duration>00:11:59</itunes:duration>
@@ -1267,7 +1267,7 @@
       <description><![CDATA[<p><strong>Sessão da manhã de sábado</strong></p><p>Conferência Geral de Outubro de 2024</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li>Apresentado pelo presidente Henry B. Eyring - "Apoio às autoridades gerais, aos setentas de área e aos líderes gerais"</li><li>Élder Neil L. Andersen - "O triunfo da esperança"</li><li>Presidente Emily Belle Freeman - "Viver à altura de seus privilégios"</li><li>Élder Karl D. Hirst - "Os favoritos de Deus"</li><li>Élder Dale G. Renlund - "“Este é o meu evangelho” — “Esta é a minha igreja”"</li><li>Élder David P. Homer - "Confiar no Pai"</li><li>Élder Gregorio E. Casillas - "Deus ama todos os Seus filhos"</li><li>Presidente Dallin H. Oaks - "Seguir a Cristo"</li></ul>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/2a33e220803511efa27d0286e0573c63ff82af5d-128k-pt.mp3" length="112783600" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-morning-session-full</guid>
-      <pubDate>Sat, 05 Oct 2024 14:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:00:00 GMT</pubDate>
       <itunes:title>Sessão da manhã de sábado (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:57:28</itunes:duration>
@@ -1283,7 +1283,7 @@
       <description><![CDATA[<p><strong>Apoio às autoridades gerais, aos setentas de área e aos líderes gerais</strong></p><p>By Apresentado pelo presidente Henry B. Eyring<br/><em>Segundo conselheiro na Primeira Presidência</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/2a1ba163803511ef86bc063a8fac2bb3adb71fe2-128k-pt.mp3" length="4104528" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-morning-session-11eyring</guid>
-      <pubDate>Sat, 05 Oct 2024 14:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:15:00 GMT</pubDate>
       <itunes:title>Apresentado pelo presidente Henry B. Eyring | Apoio às autoridades gerais, aos setentas de área e aos líderes gerais | October 2024</itunes:title>
       <itunes:author>Apresentado pelo presidente Henry B. Eyring</itunes:author>
       <itunes:duration>00:04:16</itunes:duration>
@@ -1299,7 +1299,7 @@
       <description><![CDATA[<p><strong>O triunfo da esperança</strong></p><p>By Élder Neil L. Andersen<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/2cc214b6803511efa44102d0ea8598458c21af73-128k-pt.mp3" length="12988800" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-morning-session-12andersen</guid>
-      <pubDate>Sat, 05 Oct 2024 14:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:30:00 GMT</pubDate>
       <itunes:title>Élder Neil L. Andersen | O triunfo da esperança | October 2024</itunes:title>
       <itunes:author>Élder Neil L. Andersen</itunes:author>
       <itunes:duration>00:13:31</itunes:duration>
@@ -1315,7 +1315,7 @@
       <description><![CDATA[<p><strong>Viver à altura de seus privilégios</strong></p><p>By Presidente Emily Belle Freeman<br/><em>Presidente geral das Moças</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/33549e6b803511efa27d0286e0573c63013ade05-128k-pt.mp3" length="11289056" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-morning-session-13freeman</guid>
-      <pubDate>Sat, 05 Oct 2024 14:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:45:00 GMT</pubDate>
       <itunes:title>Presidente Emily Belle Freeman | Viver à altura de seus privilégios | October 2024</itunes:title>
       <itunes:author>Presidente Emily Belle Freeman</itunes:author>
       <itunes:duration>00:11:45</itunes:duration>
@@ -1331,7 +1331,7 @@
       <description><![CDATA[<p><strong>Os favoritos de Deus</strong></p><p>By Élder Karl D. Hirst<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/356507fc803511efa27d0286e0573c63de137c6c-128k-pt.mp3" length="10102400" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-morning-session-14hirst</guid>
-      <pubDate>Sat, 05 Oct 2024 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:00:00 GMT</pubDate>
       <itunes:title>Élder Karl D. Hirst | Os favoritos de Deus | October 2024</itunes:title>
       <itunes:author>Élder Karl D. Hirst</itunes:author>
       <itunes:duration>00:10:31</itunes:duration>
@@ -1347,7 +1347,7 @@
       <description><![CDATA[<p><strong>“Este é o meu evangelho” — “Esta é a minha igreja”</strong></p><p>By Élder Dale G. Renlund<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/30c47d46803511efa27d0286e0573c6348a44770-128k-pt.mp3" length="13264000" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-morning-session-15renlund</guid>
-      <pubDate>Sat, 05 Oct 2024 15:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:15:00 GMT</pubDate>
       <itunes:title>Élder Dale G. Renlund | “Este é o meu evangelho” — “Esta é a minha igreja” | October 2024</itunes:title>
       <itunes:author>Élder Dale G. Renlund</itunes:author>
       <itunes:duration>00:13:49</itunes:duration>
@@ -1363,7 +1363,7 @@
       <description><![CDATA[<p><strong>Confiar no Pai</strong></p><p>By Élder David P. Homer<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/3680ff82803511efa27d0286e0573c637353f3be-128k-pt.mp3" length="9920000" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-morning-session-16homer</guid>
-      <pubDate>Sat, 05 Oct 2024 15:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:30:00 GMT</pubDate>
       <itunes:title>Élder David P. Homer | Confiar no Pai | October 2024</itunes:title>
       <itunes:author>Élder David P. Homer</itunes:author>
       <itunes:duration>00:10:20</itunes:duration>
@@ -1379,7 +1379,7 @@
       <description><![CDATA[<p><strong>Deus ama todos os Seus filhos</strong></p><p>By Élder Gregorio E. Casillas<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/3c40b5aa803511efa27d0286e0573c63126a14ac-128k-pt.mp3" length="9224528" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-morning-session-17casillas</guid>
-      <pubDate>Sat, 05 Oct 2024 15:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:45:00 GMT</pubDate>
       <itunes:title>Élder Gregorio E. Casillas | Deus ama todos os Seus filhos | October 2024</itunes:title>
       <itunes:author>Élder Gregorio E. Casillas</itunes:author>
       <itunes:duration>00:09:36</itunes:duration>
@@ -1395,7 +1395,7 @@
       <description><![CDATA[<p><strong>Seguir a Cristo</strong></p><p>By Presidente Dallin H. Oaks<br/><em>Primeiro conselheiro na Primeira Presidência</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da manhã de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/2e323b52803511ef86bc063a8fac2bb39eeccf95-128k-pt.mp3" length="12975616" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-morning-session-18oaks</guid>
-      <pubDate>Sat, 05 Oct 2024 16:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 12:00:00 GMT</pubDate>
       <itunes:title>Presidente Dallin H. Oaks | Seguir a Cristo | October 2024</itunes:title>
       <itunes:author>Presidente Dallin H. Oaks</itunes:author>
       <itunes:duration>00:13:30</itunes:duration>
@@ -1411,7 +1411,7 @@
       <description><![CDATA[<p><strong>Sessão da tarde de sábado</strong></p><p>Conferência Geral de Outubro de 2024</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li>Élder D. Todd Christofferson - "Enterrar nossas armas de rebelião"</li><li>Élder José A. Teixeira - "Ligados a Jesus Cristo: Tornar-se o sal da Terra"</li><li>Élder Juan Pablo Villar - "A mão do Senhor está pronta para nos ajudar"</li><li>Élder Patrick Kearon - "Bem-vindos à Igreja da alegria"</li><li>Élder David L. Buckner - "“Sois meus amigos”"</li><li>Élder D. Martin Goury - "“Sê limpo”"</li><li>Élder Aroldo B. Cavalcante - "O vento não deixou de soprar"</li><li>Élder Ulisses Soares - "Alinhar nossos desejos aos Dele"</li></ul>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/94c67f9280fa11ef9b3a0626c361eb55732d95a5-128k-pt.mp3" length="111826656" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-afternoon-session-full</guid>
-      <pubDate>Sat, 05 Oct 2024 14:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:00:00 GMT</pubDate>
       <itunes:title>Sessão da tarde de sábado (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:56:29</itunes:duration>
@@ -1427,7 +1427,7 @@
       <description><![CDATA[<p><strong>Enterrar nossas armas de rebelião</strong></p><p>By Élder D. Todd Christofferson<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/91da0bf980fa11ef9b3a0626c361eb5582469dac-128k-pt.mp3" length="12665056" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-afternoon-session-21christofferson</guid>
-      <pubDate>Sat, 05 Oct 2024 14:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:15:00 GMT</pubDate>
       <itunes:title>Élder D. Todd Christofferson | Enterrar nossas armas de rebelião | October 2024</itunes:title>
       <itunes:author>Élder D. Todd Christofferson</itunes:author>
       <itunes:duration>00:13:11</itunes:duration>
@@ -1443,7 +1443,7 @@
       <description><![CDATA[<p><strong>Ligados a Jesus Cristo: Tornar-se o sal da Terra</strong></p><p>By Élder José A. Teixeira<br/><em>Da presidência dos setenta</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/9320487b80fa11ef9b3a0626c361eb55396d4bd1-128k-pt.mp3" length="10391456" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-afternoon-session-22teixeira</guid>
-      <pubDate>Sat, 05 Oct 2024 14:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:30:00 GMT</pubDate>
       <itunes:title>Élder José A. Teixeira | Ligados a Jesus Cristo: Tornar-se o sal da Terra | October 2024</itunes:title>
       <itunes:author>Élder José A. Teixeira</itunes:author>
       <itunes:duration>00:10:49</itunes:duration>
@@ -1459,7 +1459,7 @@
       <description><![CDATA[<p><strong>A mão do Senhor está pronta para nos ajudar</strong></p><p>By Élder Juan Pablo Villar<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/93a900dd80fa11ef9b3a0626c361eb5544b58927-128k-pt.mp3" length="9814928" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-afternoon-session-23villar</guid>
-      <pubDate>Sat, 05 Oct 2024 14:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:45:00 GMT</pubDate>
       <itunes:title>Élder Juan Pablo Villar | A mão do Senhor está pronta para nos ajudar | October 2024</itunes:title>
       <itunes:author>Élder Juan Pablo Villar</itunes:author>
       <itunes:duration>00:10:13</itunes:duration>
@@ -1475,7 +1475,7 @@
       <description><![CDATA[<p><strong>Bem-vindos à Igreja da alegria</strong></p><p>By Élder Patrick Kearon<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/94311cff80fa11ef9b3a0626c361eb55d0f017f7-128k-pt.mp3" length="12508256" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-afternoon-session-24kearon</guid>
-      <pubDate>Sat, 05 Oct 2024 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:00:00 GMT</pubDate>
       <itunes:title>Élder Patrick Kearon | Bem-vindos à Igreja da alegria | October 2024</itunes:title>
       <itunes:author>Élder Patrick Kearon</itunes:author>
       <itunes:duration>00:13:01</itunes:duration>
@@ -1491,7 +1491,7 @@
       <description><![CDATA[<p><strong>“Sois meus amigos”</strong></p><p>By Élder David L. Buckner<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/92919ca780fa11ef9b3a0626c361eb55371e5a7a-128k-pt.mp3" length="10382928" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-afternoon-session-25buckner</guid>
-      <pubDate>Sat, 05 Oct 2024 15:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:15:00 GMT</pubDate>
       <itunes:title>Élder David L. Buckner | “Sois meus amigos” | October 2024</itunes:title>
       <itunes:author>Élder David L. Buckner</itunes:author>
       <itunes:duration>00:10:48</itunes:duration>
@@ -1507,7 +1507,7 @@
       <description><![CDATA[<p><strong>“Sê limpo”</strong></p><p>By Élder D. Martin Goury<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/91d8ac6880fa11ef9b3a0626c361eb55f7fb28ec-128k-pt.mp3" length="9333328" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-afternoon-session-26goury</guid>
-      <pubDate>Sat, 05 Oct 2024 15:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:30:00 GMT</pubDate>
       <itunes:title>Élder D. Martin Goury | “Sê limpo” | October 2024</itunes:title>
       <itunes:author>Élder D. Martin Goury</itunes:author>
       <itunes:duration>00:09:43</itunes:duration>
@@ -1523,7 +1523,7 @@
       <description><![CDATA[<p><strong>O vento não deixou de soprar</strong></p><p>By Élder Aroldo B. Cavalcante<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/90e990d180fa11ef9b3a0626c361eb55d0a6dadc-128k-pt.mp3" length="9373328" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-afternoon-session-27cavalcante</guid>
-      <pubDate>Sat, 05 Oct 2024 15:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:45:00 GMT</pubDate>
       <itunes:title>Élder Aroldo B. Cavalcante | O vento não deixou de soprar | October 2024</itunes:title>
       <itunes:author>Élder Aroldo B. Cavalcante</itunes:author>
       <itunes:duration>00:09:45</itunes:duration>
@@ -1539,7 +1539,7 @@
       <description><![CDATA[<p><strong>Alinhar nossos desejos aos Dele</strong></p><p>By Élder Ulisses Soares<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da tarde de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/954dd86480fa11ef9b3a0626c361eb5580e51ad7-128k-pt.mp3" length="14720528" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-afternoon-session-28soares</guid>
-      <pubDate>Sat, 05 Oct 2024 16:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 12:00:00 GMT</pubDate>
       <itunes:title>Élder Ulisses Soares | Alinhar nossos desejos aos Dele | October 2024</itunes:title>
       <itunes:author>Élder Ulisses Soares</itunes:author>
       <itunes:duration>00:15:20</itunes:duration>
@@ -1555,7 +1555,7 @@
       <description><![CDATA[<p><strong>Sessão da noite de sábado</strong></p><p>Conferência Geral de Outubro de 2024</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li>Élder Gerrit W. Gong - "Santidade ao Senhor na vida diária"</li><li>Irmã Kristin M. Yee - "A alegria de nossa redenção"</li><li>Élder Kyle S. McKay - "Hoje, ao profeta louvemos"</li><li>Élder Jorge M. Alvarado - "Abraçar o dom do arrependimento dado pelo Senhor"</li><li>Élder David A. Bednar - "No espaço de não muitos anos"</li></ul>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/ed68b92780fc11ef8bff02d0ea859845ad49bab3-128k-pt.mp3" length="90060256" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-evening-session-full</guid>
-      <pubDate>Sat, 05 Oct 2024 14:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:00:00 GMT</pubDate>
       <itunes:title>Sessão da noite de sábado (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:33:48</itunes:duration>
@@ -1571,7 +1571,7 @@
       <description><![CDATA[<p><strong>Santidade ao Senhor na vida diária</strong></p><p>By Élder Gerrit W. Gong<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da noite de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/fc52729d80fc11ef91a7063a8fac2bb38f177272-128k-pt.mp3" length="13715200" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-evening-session-31gong</guid>
-      <pubDate>Sat, 05 Oct 2024 14:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:15:00 GMT</pubDate>
       <itunes:title>Élder Gerrit W. Gong | Santidade ao Senhor na vida diária | October 2024</itunes:title>
       <itunes:author>Élder Gerrit W. Gong</itunes:author>
       <itunes:duration>00:14:17</itunes:duration>
@@ -1587,7 +1587,7 @@
       <description><![CDATA[<p><strong>A alegria de nossa redenção</strong></p><p>By Irmã Kristin M. Yee<br/><em>Segunda conselheira na presidência geral da Sociedade de Socorro</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da noite de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/f50b593580fc11ef91a7063a8fac2bb3faae277e-128k-pt.mp3" length="11670928" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-evening-session-32yee</guid>
-      <pubDate>Sat, 05 Oct 2024 14:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:30:00 GMT</pubDate>
       <itunes:title>Irmã Kristin M. Yee | A alegria de nossa redenção | October 2024</itunes:title>
       <itunes:author>Irmã Kristin M. Yee</itunes:author>
       <itunes:duration>00:12:09</itunes:duration>
@@ -1603,7 +1603,7 @@
       <description><![CDATA[<p><strong>Hoje, ao profeta louvemos</strong></p><p>By Élder Kyle S. McKay<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da noite de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/f6eeed9b80fc11ef8bff02d0ea8598458a13ccb5-128k-pt.mp3" length="10689056" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-evening-session-33mckay</guid>
-      <pubDate>Sat, 05 Oct 2024 14:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:45:00 GMT</pubDate>
       <itunes:title>Élder Kyle S. McKay | Hoje, ao profeta louvemos | October 2024</itunes:title>
       <itunes:author>Élder Kyle S. McKay</itunes:author>
       <itunes:duration>00:11:08</itunes:duration>
@@ -1619,7 +1619,7 @@
       <description><![CDATA[<p><strong>Abraçar o dom do arrependimento dado pelo Senhor</strong></p><p>By Élder Jorge M. Alvarado<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da noite de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/f76ab08e80fc11ef95e00286e0573c63cf54b451-128k-pt.mp3" length="11113600" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-evening-session-34alvarado</guid>
-      <pubDate>Sat, 05 Oct 2024 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:00:00 GMT</pubDate>
       <itunes:title>Élder Jorge M. Alvarado | Abraçar o dom do arrependimento dado pelo Senhor | October 2024</itunes:title>
       <itunes:author>Élder Jorge M. Alvarado</itunes:author>
       <itunes:duration>00:11:34</itunes:duration>
@@ -1635,7 +1635,7 @@
       <description><![CDATA[<p><strong>No espaço de não muitos anos</strong></p><p>By Élder David A. Bednar<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da noite de sábado</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/ed524e4780fc11ef95e00286e0573c633de0b9c7-128k-pt.mp3" length="15622400" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-saturday-evening-session-35bednar</guid>
-      <pubDate>Sat, 05 Oct 2024 15:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:15:00 GMT</pubDate>
       <itunes:title>Élder David A. Bednar | No espaço de não muitos anos | October 2024</itunes:title>
       <itunes:author>Élder David A. Bednar</itunes:author>
       <itunes:duration>00:16:16</itunes:duration>
@@ -1651,7 +1651,7 @@
       <description><![CDATA[<p><strong>Sessão da manhã de domingo</strong></p><p>Conferência Geral de Outubro de 2024</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li>Presidente Jeffrey R. Holland - "“Sou eu”"</li><li>Irmã Tracy Y. Browning - "Buscar respostas para dúvidas espirituais"</li><li>Élder Brook P. Hales - "A mortalidade vale a pena!"</li><li>Bispo L. Todd Budge - "Buscar ao Senhor de todo o coração"</li><li>Élder Gary E. Stevenson - "Dias inesquecíveis"</li><li>Bradley R. Wilcox - "Ó jovens de nobre estirpe"</li><li>Presidente Henry B. Eyring - "A doutrina de Jesus Cristo é simples"</li></ul>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/7439aa9c80fd11ef8bff02d0ea859845f6bfa5bf-128k-pt.mp3" length="117697840" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-morning-session-full</guid>
-      <pubDate>Sat, 05 Oct 2024 14:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:00:00 GMT</pubDate>
       <itunes:title>Sessão da manhã de domingo (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>02:02:36</itunes:duration>
@@ -1667,7 +1667,7 @@
       <description><![CDATA[<p><strong>“Sou eu”</strong></p><p>By Presidente Jeffrey R. Holland<br/><em>Presidente em exercício do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/7f066bc180fd11ef95e00286e0573c63ca153a6a-128k-pt.mp3" length="14774928" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-morning-session-41holland</guid>
-      <pubDate>Sat, 05 Oct 2024 14:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:15:00 GMT</pubDate>
       <itunes:title>Presidente Jeffrey R. Holland | “Sou eu” | October 2024</itunes:title>
       <itunes:author>Presidente Jeffrey R. Holland</itunes:author>
       <itunes:duration>00:15:23</itunes:duration>
@@ -1683,7 +1683,7 @@
       <description><![CDATA[<p><strong>Buscar respostas para dúvidas espirituais</strong></p><p>By Irmã Tracy Y. Browning<br/><em>Segunda conselheira na presidência geral da Primária</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/754d3d9b80fd11ef8bff02d0ea859845d12dab82-128k-pt.mp3" length="11955728" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-morning-session-42browning</guid>
-      <pubDate>Sat, 05 Oct 2024 14:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:30:00 GMT</pubDate>
       <itunes:title>Irmã Tracy Y. Browning | Buscar respostas para dúvidas espirituais | October 2024</itunes:title>
       <itunes:author>Irmã Tracy Y. Browning</itunes:author>
       <itunes:duration>00:12:27</itunes:duration>
@@ -1699,7 +1699,7 @@
       <description><![CDATA[<p><strong>A mortalidade vale a pena!</strong></p><p>By Élder Brook P. Hales<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/7b2ba26b80fd11ef95e00286e0573c63588498cd-128k-pt.mp3" length="10548656" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-morning-session-43hales</guid>
-      <pubDate>Sat, 05 Oct 2024 14:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:45:00 GMT</pubDate>
       <itunes:title>Élder Brook P. Hales | A mortalidade vale a pena! | October 2024</itunes:title>
       <itunes:author>Élder Brook P. Hales</itunes:author>
       <itunes:duration>00:10:59</itunes:duration>
@@ -1715,7 +1715,7 @@
       <description><![CDATA[<p><strong>Buscar ao Senhor de todo o coração</strong></p><p>By Bispo L. Todd Budge<br/><em>Segundo conselheiro no Bispado Presidente</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/7d9d3be480fd11ef8bff02d0ea859845631fb01d-128k-pt.mp3" length="11577056" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-morning-session-45budge</guid>
-      <pubDate>Sat, 05 Oct 2024 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:00:00 GMT</pubDate>
       <itunes:title>Bispo L. Todd Budge | Buscar ao Senhor de todo o coração | October 2024</itunes:title>
       <itunes:author>Bispo L. Todd Budge</itunes:author>
       <itunes:duration>00:12:03</itunes:duration>
@@ -1731,7 +1731,7 @@
       <description><![CDATA[<p><strong>Dias inesquecíveis</strong></p><p>By Élder Gary E. Stevenson<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/7f741edc80fd11ef8bff02d0ea8598455e9ca078-128k-pt.mp3" length="13744528" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-morning-session-44stevenson</guid>
-      <pubDate>Sat, 05 Oct 2024 15:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:15:00 GMT</pubDate>
       <itunes:title>Élder Gary E. Stevenson | Dias inesquecíveis | October 2024</itunes:title>
       <itunes:author>Élder Gary E. Stevenson</itunes:author>
       <itunes:duration>00:14:19</itunes:duration>
@@ -1747,7 +1747,7 @@
       <description><![CDATA[<p><strong>Ó jovens de nobre estirpe</strong></p><p>By Bradley R. Wilcox<br/><em>Primeiro conselheiro na presidência geral dos Rapazes</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/741ea88a80fd11ef8bff02d0ea859845d2c6408d-128k-pt.mp3" length="12046400" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-morning-session-46wilcox</guid>
-      <pubDate>Sat, 05 Oct 2024 15:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:30:00 GMT</pubDate>
       <itunes:title>Bradley R. Wilcox | Ó jovens de nobre estirpe | October 2024</itunes:title>
       <itunes:author>Bradley R. Wilcox</itunes:author>
       <itunes:duration>00:12:32</itunes:duration>
@@ -1763,7 +1763,7 @@
       <description><![CDATA[<p><strong>A doutrina de Jesus Cristo é simples</strong></p><p>By Presidente Henry B. Eyring<br/><em>Segundo conselheiro na Primeira Presidência</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da manhã de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/791cbc5780fd11ef8bff02d0ea859845f2d04137-128k-pt.mp3" length="15463456" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-morning-session-47eyring</guid>
-      <pubDate>Sat, 05 Oct 2024 15:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:45:00 GMT</pubDate>
       <itunes:title>Presidente Henry B. Eyring | A doutrina de Jesus Cristo é simples | October 2024</itunes:title>
       <itunes:author>Presidente Henry B. Eyring</itunes:author>
       <itunes:duration>00:16:06</itunes:duration>
@@ -1779,7 +1779,7 @@
       <description><![CDATA[<p><strong>Sessão da tarde de domingo</strong></p><p>Conferência Geral de Outubro de 2024</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li>Élder Dieter F. Uchtdorf - "Nutram as raízes, e os ramos crescerão"</li><li>Élder Takashi Wada - "As palavras de Cristo e o Espírito Santo nos levarão à verdade"</li><li>Élder Ronald A. Rasband - "“Eis que eu sou a luz que levantareis”"</li><li>Élder Quentin L. Cook - "Escrituras sagradas — O alicerce da fé"</li><li>Élder Rubén V. Alliaud - "Filhos e filhas de Deus"</li><li>Élder I. Raymond Egbo - "Concentrar-se em Jesus Cristo e em Seu evangelho"</li><li>Presidente Russell M. Nelson - "O Senhor Jesus Cristo voltará"</li></ul>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/027a9d5780fe11ef95e00286e0573c63e8aa1866-128k-pt.mp3" length="108562320" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-afternoon-session-full</guid>
-      <pubDate>Sat, 05 Oct 2024 14:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:00:00 GMT</pubDate>
       <itunes:title>Sessão da tarde de domingo (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:53:05</itunes:duration>
@@ -1795,7 +1795,7 @@
       <description><![CDATA[<p><strong>Nutram as raízes, e os ramos crescerão</strong></p><p>By Élder Dieter F. Uchtdorf<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/fff416da80fd11ef8bff02d0ea8598454bb14910-128k-pt.mp3" length="13944528" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-afternoon-session-51uchtdorf</guid>
-      <pubDate>Sat, 05 Oct 2024 14:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:15:00 GMT</pubDate>
       <itunes:title>Élder Dieter F. Uchtdorf | Nutram as raízes, e os ramos crescerão | October 2024</itunes:title>
       <itunes:author>Élder Dieter F. Uchtdorf</itunes:author>
       <itunes:duration>00:14:31</itunes:duration>
@@ -1811,7 +1811,7 @@
       <description><![CDATA[<p><strong>As palavras de Cristo e o Espírito Santo nos levarão à verdade</strong></p><p>By Élder Takashi Wada<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/05c74d0680fe11ef91a7063a8fac2bb384f09460-128k-pt.mp3" length="9705056" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-afternoon-session-52wada</guid>
-      <pubDate>Sat, 05 Oct 2024 14:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:30:00 GMT</pubDate>
       <itunes:title>Élder Takashi Wada | As palavras de Cristo e o Espírito Santo nos levarão à verdade | October 2024</itunes:title>
       <itunes:author>Élder Takashi Wada</itunes:author>
       <itunes:duration>00:10:06</itunes:duration>
@@ -1827,7 +1827,7 @@
       <description><![CDATA[<p><strong>“Eis que eu sou a luz que levantareis”</strong></p><p>By Élder Ronald A. Rasband<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/0944e32d80fe11ef8bff02d0ea8598453dfff499-128k-pt.mp3" length="12944528" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-afternoon-session-53rasband</guid>
-      <pubDate>Sat, 05 Oct 2024 14:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 10:45:00 GMT</pubDate>
       <itunes:title>Élder Ronald A. Rasband | “Eis que eu sou a luz que levantareis” | October 2024</itunes:title>
       <itunes:author>Élder Ronald A. Rasband</itunes:author>
       <itunes:duration>00:13:29</itunes:duration>
@@ -1843,7 +1843,7 @@
       <description><![CDATA[<p><strong>Escrituras sagradas — O alicerce da fé</strong></p><p>By Élder Quentin L. Cook<br/><em>Do Quórum dos Doze Apóstolos</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/09404f4b80fe11ef8bff02d0ea859845259dfcb2-128k-pt.mp3" length="13556256" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-afternoon-session-54cook</guid>
-      <pubDate>Sat, 05 Oct 2024 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:00:00 GMT</pubDate>
       <itunes:title>Élder Quentin L. Cook | Escrituras sagradas — O alicerce da fé | October 2024</itunes:title>
       <itunes:author>Élder Quentin L. Cook</itunes:author>
       <itunes:duration>00:14:07</itunes:duration>
@@ -1859,7 +1859,7 @@
       <description><![CDATA[<p><strong>Filhos e filhas de Deus</strong></p><p>By Élder Rubén V. Alliaud<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/0cc4b32d80fe11ef91a7063a8fac2bb358c09976-128k-pt.mp3" length="9565328" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-afternoon-session-55alliaud</guid>
-      <pubDate>Sat, 05 Oct 2024 15:15:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:15:00 GMT</pubDate>
       <itunes:title>Élder Rubén V. Alliaud | Filhos e filhas de Deus | October 2024</itunes:title>
       <itunes:author>Élder Rubén V. Alliaud</itunes:author>
       <itunes:duration>00:09:57</itunes:duration>
@@ -1875,7 +1875,7 @@
       <description><![CDATA[<p><strong>Concentrar-se em Jesus Cristo e em Seu evangelho</strong></p><p>By Élder I. Raymond Egbo<br/><em>Dos setenta</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/05f1c07380fe11ef8bff02d0ea859845a845c629-128k-pt.mp3" length="10404800" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-afternoon-session-56egbo</guid>
-      <pubDate>Sat, 05 Oct 2024 15:30:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:30:00 GMT</pubDate>
       <itunes:title>Élder I. Raymond Egbo | Concentrar-se em Jesus Cristo e em Seu evangelho | October 2024</itunes:title>
       <itunes:author>Élder I. Raymond Egbo</itunes:author>
       <itunes:duration>00:10:50</itunes:duration>
@@ -1891,7 +1891,7 @@
       <description><![CDATA[<p><strong>O Senhor Jesus Cristo voltará</strong></p><p>By Presidente Russell M. Nelson<br/><em>Presidente de A Igreja de Jesus Cristo dos Santos dos Últimos Dias</em></p><p>Conferência Geral de Outubro de 2024 - Sessão da tarde de domingo</p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/0918304580fe11ef95e00286e0573c63369751b0-128k-pt.mp3" length="14235552" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2024-10-sunday-afternoon-session-57nelson</guid>
-      <pubDate>Sat, 05 Oct 2024 15:45:00 GMT</pubDate>
+      <pubDate>Sat, 05 Oct 2024 11:45:00 GMT</pubDate>
       <itunes:title>Presidente Russell M. Nelson | O Senhor Jesus Cristo voltará | October 2024</itunes:title>
       <itunes:author>Presidente Russell M. Nelson</itunes:author>
       <itunes:duration>00:14:49</itunes:duration>
