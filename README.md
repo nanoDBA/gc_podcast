@@ -76,8 +76,7 @@ git push
 
 The GitHub Actions workflow automatically checks for new conference content:
 
-- **Conference weekend (Apr/Oct 1-7):** Checks 3x daily (8 AM, 12 PM, 8 PM MDT)
-- **Following week (Apr/Oct 8-14):** Checks daily at noon MDT
+- **Conference window (Apr/Oct 1-13):** Checks 3x daily (8 AM, 12 PM, 8 PM MDT)
 - **Rest of year:** Monthly check on the 15th
 
 This schedule aligns with the Church's [official release timeline](https://www.churchofjesuschrist.org/learn/ways-to-watch-general-conference?lang=eng):
