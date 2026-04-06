@@ -105,13 +105,15 @@ async function main() {
   // Build list of conferences to scrape
   for (let year = config.startYear; year <= config.endYear; year++) {
     // April conference (skip if in future)
-    const aprilDate = new Date(year, 3, 15); // Mid-April
+    // Conference is first weekend of the month; use the 1st as cutoff
+    // so we start scraping as soon as conference weekend arrives
+    const aprilDate = new Date(year, 3, 1); // April 1
     if (aprilDate <= new Date()) {
       conferences.push({ year, month: 4 });
     }
 
     // October conference (skip if in future)
-    const octoberDate = new Date(year, 9, 15); // Mid-October
+    const octoberDate = new Date(year, 9, 1); // October 1
     if (octoberDate <= new Date()) {
       conferences.push({ year, month: 10 });
     }
