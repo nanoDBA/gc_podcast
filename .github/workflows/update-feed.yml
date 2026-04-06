@@ -6,17 +6,13 @@ on:
     # Audio release pattern: full sessions same day, individual talks within ~7 days
     #
     # Schedule tiers:
-    # 1. Conference weekend (1st-7th): Check 3x daily to catch drops quickly
-    # 2. Following week (8th-14th): Check daily for remaining individual talks
-    # 3. Rest of year: Monthly maintenance check
+    # 1. Conference window (1st-13th): Check 3x daily to catch drops quickly
+    # 2. Rest of year: Monthly maintenance check
 
-    # Conference weekend - 3x daily (morning, afternoon, evening MDT)
-    - cron: '0 14 1-7 4,10 *'    # 8 AM MDT
-    - cron: '0 18 1-7 4,10 *'    # 12 PM MDT
-    - cron: '0 2 2-8 4,10 *'     # 8 PM MDT (next UTC day for 2nd-8th)
-
-    # Following week - daily check
-    - cron: '0 18 8-14 4,10 *'   # 12 PM MDT, Apr/Oct 8-14
+    # Conference window - 3x daily (morning, afternoon, evening MDT)
+    - cron: '0 14 1-13 4,10 *'   # 8 AM MDT
+    - cron: '0 18 1-13 4,10 *'   # 12 PM MDT
+    - cron: '0 2 2-14 4,10 *'    # 8 PM MDT (next UTC day for 2nd-14th)
 
     # Monthly maintenance (rest of year)
     - cron: '0 12 15 1-3,5-9,11-12 *'  # 15th of non-conference months
