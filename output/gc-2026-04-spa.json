@@ -1,0 +1,69 @@
+{
+  "scraped_at": "2026-04-06T12:32:25.140Z",
+  "version": "1.0",
+  "conference": {
+    "year": 2026,
+    "month": 4,
+    "name": "Conferencia General de abril de 2026",
+    "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04?lang=spa",
+    "language": "spa",
+    "sessions": [
+      {
+        "name": "Sesión del sábado por la mañana",
+        "slug": "saturday-morning-session",
+        "order": 1,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-morning-session?lang=spa",
+        "talks": [],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/86au11so9zecph6r3emlvc502ct4p95okhh9afyc-128k-es.mp3",
+          "quality": "128k",
+          "language": "es",
+          "duration_ms": 7109200
+        },
+        "duration_ms": 7109200
+      },
+      {
+        "name": "Sesión del sábado por la tarde",
+        "slug": "saturday-afternoon-session",
+        "order": 2,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-afternoon-session?lang=spa",
+        "talks": [],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/hni10kbq409p2ml2zezewkil2srrn7c3lnizw2as-128k-es.mp3",
+          "quality": "128k",
+          "language": "es",
+          "duration_ms": 7109470
+        },
+        "duration_ms": 7109470
+      },
+      {
+        "name": "Sesión del domingo por la mañana",
+        "slug": "sunday-morning-session",
+        "order": 3,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-morning-session?lang=spa",
+        "talks": [],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/zyptdh6sw1r43n24cyeg5rp7xr9w4wjlwm7xaytu-128k-es.mp3",
+          "quality": "128k",
+          "language": "es",
+          "duration_ms": 7123620
+        },
+        "duration_ms": 7123620
+      },
+      {
+        "name": "Sesión del domingo por la tarde",
+        "slug": "sunday-afternoon-session",
+        "order": 4,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-afternoon-session?lang=spa",
+        "talks": [],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/nlcx0q3hwmv169jdivywid083rj5e8ij94xlhda8-128k-es.mp3",
+          "quality": "128k",
+          "language": "es",
+          "duration_ms": 7109100
+        },
+        "duration_ms": 7109100
+      }
+    ]
+  }
+}
