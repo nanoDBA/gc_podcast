@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "server",
+  "dolt_database": "gc_podcast",
+  "project_id": "b70b2ede-ffdc-4570-9d0c-45f75a5d16db"
+}
