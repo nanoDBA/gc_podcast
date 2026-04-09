@@ -9,7 +9,7 @@ async function main() {
 
   let outputDir = './output';
   let feedPath = './docs/audio.xml';
-  let feedBaseUrl = 'https://your-username.github.io/gc_podcast';
+  let feedBaseUrl = 'https://nanodba.github.io/gc_podcast';
   let includeSessions = true;
   let includeTalks = true;
   let language = 'eng';

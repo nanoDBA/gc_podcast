@@ -70,7 +70,7 @@ const MONTH_NAMES: Record<string, { 4: string; 10: string }> = {
 const DEFAULT_OPTIONS: RssGeneratorOptions = {
   includeSessions: true,
   includeTalks: true,
-  feedBaseUrl: 'https://your-username.github.io/gc_podcast',
+  feedBaseUrl: 'https://nanodba.github.io/gc_podcast',
 };
 
 /**

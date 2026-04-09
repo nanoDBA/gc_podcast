@@ -21,9 +21,10 @@ function parseArgs(): {
 } {
   const args = process.argv.slice(2);
 
-  // Default to October 2025
-  let year = 2025;
-  let month: 4 | 10 = 10;
+  // Default to most recent conference
+  const now = new Date();
+  let year = now.getFullYear();
+  let month: 4 | 10 = now.getMonth() >= 9 ? 10 : 4;
   let language: Language = 'eng';
   let outputDir = './output';
 
@@ -69,15 +70,15 @@ General Conference Podcast Scraper
 Usage: npm run dev -- [options]
 
 Options:
-  -y, --year <year>     Conference year (default: 2025)
-  -m, --month <month>   Conference month: 4 or 10 (default: 10)
+  -y, --year <year>     Conference year (default: current year)
+  -m, --month <month>   Conference month: 4 or 10 (default: current)
   -l, --lang <lang>     Language: eng, spa, por (default: eng)
   -o, --output <dir>    Output directory (default: ./output)
   -h, --help            Show this help message
 
 Examples:
-  npm run dev                           # Scrape October 2025 English
-  npm run dev -- -y 2024 -m 4           # Scrape April 2024 English
+  npm run dev                           # Scrape most recent conference
+  npm run dev -- -y 2026 -m 4           # Scrape April 2026 English
   npm run dev -- -y 1995 -m 10 -l spa   # Scrape October 1995 Spanish
 `);
 }

@@ -15,6 +15,7 @@ import {
   extractJsonValue,
   extractJsonNumber,
   getAttr,
+  ParsedElement,
 } from './html-parser.js';
 import {
   Conference,
@@ -82,14 +83,20 @@ export class ConferenceScraper {
 
     console.log(`Scraping conference: ${conferenceUrl}`);
 
-    // Fetch and parse the conference index page
-    const html = await this.fetchWithRateLimit(conferenceUrl);
+    // Try API-first approach for discovery, fall back to direct HTML
+    let conferenceName: string;
+    let sessions: Session[];
 
-    // Extract conference name
-    const conferenceName = this.extractConferenceName(html, year, month);
-
-    // Extract sessions and talks from the index
-    const sessions = await this.extractSessionsFromIndex(html, year, monthStr, langCode);
+    const apiResult = await this.discoverViaApi(year, monthStr, langCode);
+    if (apiResult) {
+      conferenceName = apiResult.name;
+      sessions = apiResult.sessions;
+    } else {
+      console.log('  [fallback] API discovery failed, using direct HTML scraping');
+      const html = await this.fetchWithRateLimit(conferenceUrl);
+      conferenceName = this.extractConferenceName(html, year, month);
+      sessions = await this.extractSessionsFromIndex(html, year, monthStr, langCode);
+    }
 
     // Optionally fetch audio for each session and talk
     if (this.config.includeSessionAudio || this.config.includeTalkAudio) {
@@ -104,6 +111,43 @@ export class ConferenceScraper {
       language: this.config.language,
       sessions,
     };
+  }
+
+  /**
+   * API-first discovery: fetch conference index via the content API and parse
+   * the body HTML. Returns null if the API call fails or yields no sessions.
+   */
+  private async discoverViaApi(
+    year: number,
+    monthStr: string,
+    langCode: string
+  ): Promise<{ name: string; sessions: Session[] } | null> {
+    const uri = `/general-conference/${year}/${monthStr}`;
+    const apiUrl = `${API_BASE}?lang=${langCode}&uri=${uri}`;
+
+    try {
+      const jsonStr = await this.fetchWithRateLimit(apiUrl);
+      const apiResponse: ApiResponse = JSON.parse(jsonStr);
+
+      const name = apiResponse.meta.title || `${monthStr === '04' ? 'April' : 'October'} ${year} General Conference`;
+      const bodyHtml = apiResponse.content.body;
+
+      if (!bodyHtml) {
+        return null;
+      }
+
+      // Parse the API body HTML using existing extraction strategies
+      const sessions = await this.extractSessionsFromIndex(bodyHtml, year, monthStr, langCode);
+      if (sessions.length === 0) {
+        return null;
+      }
+
+      console.log(`  [api] Discovered ${sessions.length} sessions via API`);
+      return { name, sessions };
+    } catch (error) {
+      console.warn(`  [api] Discovery failed: ${error instanceof Error ? error.message : error}`);
+      return null;
+    }
   }
 
   /**
@@ -128,7 +172,8 @@ export class ConferenceScraper {
   }
 
   /**
-   * Extract sessions and talks from the conference index page
+   * Extract sessions and talks from the conference index page.
+   * Tries multiple strategies in order: doc-map (API body), data-content-type, class-based.
    */
   private async extractSessionsFromIndex(
     html: string,
@@ -136,15 +181,98 @@ export class ConferenceScraper {
     monthStr: string,
     langCode: string
   ): Promise<Session[]> {
-    // Try data-content-type approach first (works for older conferences)
+    // Strategy 1: doc-map / list-tile structure (API body and newer site markup)
+    const docMapSessions = this.extractSessionsViaDocMap(html, langCode);
+    if (docMapSessions.length > 0) {
+      console.log('  [info] Using doc-map parser for conference index');
+      return docMapSessions;
+    }
+
+    // Strategy 2: data-content-type attributes (older conferences)
     const sessions = this.extractSessionsViaDataContentType(html, langCode);
     if (sessions.length > 0) {
       return sessions;
     }
 
-    // Fallback: class-based navigation structure (2026+ site redesign)
+    // Strategy 3: class-based navigation structure (2026+ rendered page)
     console.log('  [info] Using class-based parser for conference index');
     return this.extractSessionsViaClassNames(html, year, monthStr, langCode);
+  }
+
+  /**
+   * Extract sessions from doc-map / list-tile structure.
+   * This is the structure returned by the content API for both old and new conferences.
+   * Pattern: <nav class="manifest"> > <ul class="doc-map"> > <li> per session
+   *   Each session has <h2 class="label"><p class="title">Session Name</p></h2>
+   *   followed by nested <ul class="doc-map"> with <a class="list-tile"> per talk.
+   */
+  private extractSessionsViaDocMap(html: string, langCode: string): Session[] {
+    const sessions: Session[] = [];
+
+    // Match top-level session blocks: <li> containing <h2 class="label"> and a nested doc-map
+    // Split by session headings
+    const sessionHeaderPattern = /<h2\s+class="label"[^>]*>\s*<p\s+class="title"[^>]*>([^<]+)<\/p>/g;
+    const headers: Array<{ title: string; position: number }> = [];
+    let match;
+
+    while ((match = sessionHeaderPattern.exec(html)) !== null) {
+      headers.push({ title: match[1].trim(), position: match.index });
+    }
+
+    if (headers.length === 0) return sessions;
+
+    for (let i = 0; i < headers.length; i++) {
+      const header = headers[i];
+      const nextPos = i + 1 < headers.length ? headers[i + 1].position : html.length;
+      const sectionHtml = html.substring(header.position, nextPos);
+
+      // Extract talks via list-tile links within this section
+      const talkPattern = /<a\s+href="([^"]+)"\s+class="list-tile"[^>]*>([\s\S]*?)<\/a>/g;
+      const talks: Talk[] = [];
+      let sessionSlug = '';
+      let sessionUrl = '';
+      let talkOrder = 0;
+      let talkMatch;
+
+      while ((talkMatch = talkPattern.exec(sectionHtml)) !== null) {
+        const href = talkMatch[1];
+        const tileContent = talkMatch[2];
+
+        // The first list-tile with "session" in the URL is the session link itself
+        if (href.includes('session')) {
+          sessionSlug = this.extractSlugFromUrl(href);
+          sessionUrl = this.normalizeUrl(href, langCode);
+          continue;
+        }
+
+        talkOrder++;
+        const speakerMatch = tileContent.match(/<p\s+class="primaryMeta"[^>]*>([^<]+)<\/p>/);
+        const titleMatch = tileContent.match(/<p\s+class="title"[^>]*>([^<]+)<\/p>/);
+
+        talks.push({
+          title: titleMatch ? titleMatch[1].trim() : `Talk ${talkOrder}`,
+          slug: this.extractSlugFromUrl(href),
+          order: talkOrder,
+          url: this.normalizeUrl(href, langCode),
+          speaker: {
+            name: speakerMatch ? speakerMatch[1].trim() : 'Unknown Speaker',
+            role_tag: null,
+          },
+        });
+      }
+
+      if (talks.length > 0) {
+        sessions.push({
+          name: header.title,
+          slug: sessionSlug || `session-${i + 1}`,
+          order: i + 1,
+          url: sessionUrl,
+          talks,
+        });
+      }
+    }
+
+    return sessions;
   }
 
   /**
@@ -164,7 +292,7 @@ export class ConferenceScraper {
     interface IndexItem {
       type: 'session' | 'talk';
       position: number;
-      element: { content: string; outerHtml: string; attrs: Record<string, string> };
+      element: ParsedElement;
     }
 
     const items: IndexItem[] = [];

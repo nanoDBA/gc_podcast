@@ -29,14 +29,14 @@ Works with Apple Podcasts, Overcast, Pocket Casts, Castro, and any RSS reader.
 
 - **Full Sessions**: Complete 2-hour session recordings with all talks and music
 - **Individual Talks**: Each speaker's talk separately (10-20 min)
-- **Recent Conferences**: 2024-2025 currently available
+- **Recent Conferences**: 2026 currently available
 
 ## Setup Your Own Feed
 
 ### 1. Fork and Configure
 
 1. Fork this repository
-2. Enable GitHub Pages: Settings > Pages > Source: `Deploy from a branch` > Branch: `main`, folder: `/docs`
+2. Enable GitHub Pages: Settings > Pages > Build and deployment > Source: `GitHub Actions`
 3. Your feed will be at `https://YOUR_USERNAME.github.io/gc_podcast/audio.xml`
 
 ### 2. Scrape Conferences
@@ -130,10 +130,10 @@ gc_podcast/
 │   └── types.ts           # TypeScript types
 ├── output/                # Scraped conference JSON
 ├── docs/                  # GitHub Pages
-│   ├── audio.xml      # English feed
-│   ├── audio-es.xml   # Spanish feed
-│   ├── audio-pt.xml   # Portuguese feed
-│   └── index.html                # Landing page
+│   ├── audio.xml          # English feed
+│   ├── audio-es.xml       # Spanish feed
+│   ├── audio-pt.xml       # Portuguese feed
+│   └── index.html         # Landing page
 └── .github/workflows/
     └── update-feed.yml    # Auto-update workflow
 ```
