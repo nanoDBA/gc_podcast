@@ -14,6 +14,7 @@ async function main() {
   let includeTalks = true;
   let language = 'eng';
   let generateAll = false;
+  let minYear: number | undefined;
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
@@ -31,6 +32,8 @@ async function main() {
       language = args[++i];
     } else if (arg === '--all-languages') {
       generateAll = true;
+    } else if (arg === '--min-year') {
+      minYear = parseInt(args[++i], 10);
     } else if (arg === '--help' || arg === '-h') {
       printHelp();
       process.exit(0);
@@ -59,6 +62,7 @@ async function main() {
           includeSessions,
           includeTalks,
           language: lang.code,
+          minYear,
         });
         console.log(`  Done!`);
       } catch (error) {
@@ -83,6 +87,7 @@ async function main() {
         includeSessions,
         includeTalks,
         language,
+        minYear,
       });
       console.log('\nFeed generated successfully!');
     } catch (error) {
@@ -104,6 +109,7 @@ Options:
   -b, --base-url <url>   Base URL where feed will be hosted
   -l, --language <code>  Language code: eng, spa, por (default: eng)
   --all-languages        Generate feeds for all languages (feed.xml, feed-spa.xml, feed-por.xml)
+  --min-year <year>      Only include conferences from this year onward
   --no-sessions          Exclude full session recordings
   --no-talks             Exclude individual talk recordings
   -h, --help             Show this help message

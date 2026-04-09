@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-04-06T12:32:27.910Z",
+  "scraped_at": "2026-04-09T12:01:38.224Z",
   "version": "1.0",
   "conference": {
     "year": 2026,
@@ -13,7 +13,163 @@
         "slug": "saturday-morning-session",
         "order": 1,
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-morning-session?lang=por",
-        "talks": [],
+        "talks": [
+          {
+            "title": "Dallin H. Oaks",
+            "slug": "11oaks",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/11oaks?lang=por",
+            "speaker": {
+              "name": "Dallin H. Oaks",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/fozrhzk4k8pbhn334j7q4p83xwzxh6la412umuqm-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 159090
+            },
+            "duration_ms": 159090
+          },
+          {
+            "title": "Assembleia solene",
+            "slug": "12christofferson",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/12christofferson?lang=por",
+            "speaker": {
+              "name": "Apresentada pelo presidente D. Todd Christofferson",
+              "role_tag": null,
+              "calling": "Segundo conselheiro na Primeira Presidência",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/apresentada-pelo-presidente-d-todd-christofferson?lang=por"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/0qu1ws69wt0miq0utmsd9y7xuuob2gidm50iulz8-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 578410
+            },
+            "duration_ms": 578410
+          },
+          {
+            "title": "Patrick Kearon",
+            "slug": "13kearon",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/13kearon?lang=por",
+            "speaker": {
+              "name": "Patrick Kearon",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/dnw3tfg22dmuh4058tbhiu3k5quskor1g1foocow-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 680180
+            },
+            "duration_ms": 680180
+          },
+          {
+            "title": "Kristin M. Yee",
+            "slug": "14yee",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/14yee?lang=por",
+            "speaker": {
+              "name": "Kristin M. Yee",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/1yyfewcwqn9b0tojb87aet8zprs6x0iupl0el4o2-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 535070
+            },
+            "duration_ms": 535070
+          },
+          {
+            "title": "Clark G. Gilbert",
+            "slug": "15gilbert",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/15gilbert?lang=por",
+            "speaker": {
+              "name": "Clark G. Gilbert",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/2feyy5nz83xrjuhi8mvpfh9rxxn5yxurpkde52z5-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 787020
+            },
+            "duration_ms": 787020
+          },
+          {
+            "title": "David A. Bednar",
+            "slug": "16bednar",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/16bednar?lang=por",
+            "speaker": {
+              "name": "David A. Bednar",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/ev751yz43bv9l8yawg1tk3hul02e72koi7dv50ss-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 778010
+            },
+            "duration_ms": 778010
+          },
+          {
+            "title": "Michael John U. Teh",
+            "slug": "17teh",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/17teh?lang=por",
+            "speaker": {
+              "name": "Michael John U. Teh",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/a5oqenwr9t91ln0deqtyvdhff5eby1w5ps5jpw6n-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 487990
+            },
+            "duration_ms": 487990
+          },
+          {
+            "title": "Jorge T. Becerra",
+            "slug": "18becerra",
+            "order": 8,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/18becerra?lang=por",
+            "speaker": {
+              "name": "Jorge T. Becerra",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/ahsofgxi7cz2bvd6s8cwauf6l5dcakxynwz0j47o-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 510780
+            },
+            "duration_ms": 510780
+          },
+          {
+            "title": "Henry B. Eyring",
+            "slug": "19eyring",
+            "order": 9,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/19eyring?lang=por",
+            "speaker": {
+              "name": "Henry B. Eyring",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/3a2cdtx86ic1mob6k9ixmkyk6yd60axb2eif6v9i-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 792090
+            },
+            "duration_ms": 792090
+          }
+        ],
         "audio": {
           "url": "https://assets.churchofjesuschrist.org/shmdrf8v7j0gb1gx4j3feg7wmssyaiy7k9wqqsmh-128k-pt.mp3",
           "quality": "128k",
@@ -27,7 +183,163 @@
         "slug": "saturday-afternoon-session",
         "order": 2,
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-afternoon-session?lang=por",
-        "talks": [],
+        "talks": [
+          {
+            "title": "Jared B. Larson",
+            "slug": "22larson",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/22larson?lang=por",
+            "speaker": {
+              "name": "Jared B. Larson",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/f5qo5zyfbzomms84sr12z30u5rvqfakq2xb5vzez-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 104340
+            },
+            "duration_ms": 104340
+          },
+          {
+            "title": "Gary E. Stevenson",
+            "slug": "23stevenson",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/23stevenson?lang=por",
+            "speaker": {
+              "name": "Gary E. Stevenson",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/4ynvhyqhlwdifxkhsr6f42dpvhd2mac2lz91untm-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 675410
+            },
+            "duration_ms": 675410
+          },
+          {
+            "title": "Eduardo F. Ortega",
+            "slug": "24ortega",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/24ortega?lang=por",
+            "speaker": {
+              "name": "Eduardo F. Ortega",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/ylr12nrk99ffheb0zkbyeidbomtf2pzuzr4pgbhk-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 508810
+            },
+            "duration_ms": 508810
+          },
+          {
+            "title": "Wan-Liang Wu",
+            "slug": "25wu",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/25wu?lang=por",
+            "speaker": {
+              "name": "Wan-Liang Wu",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/y7ofqds5hf0v9d55j1g0awt6d9ps99903kx6qmkh-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 504870
+            },
+            "duration_ms": 504870
+          },
+          {
+            "title": "David J. Wunderli",
+            "slug": "26wunderli",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/26wunderli?lang=por",
+            "speaker": {
+              "name": "David J. Wunderli",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/w1ez62m90m9kjin7kd0v9tlfuu0z165hxo55tgej-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 556190
+            },
+            "duration_ms": 556190
+          },
+          {
+            "title": "Ame a todos, ame a cada um",
+            "slug": "27causse",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/27causse?lang=por",
+            "speaker": {
+              "name": "Élder Gérald Caussé",
+              "role_tag": null,
+              "calling": "Do Quórum dos Doze Apóstolos",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/lder-grald-causs?lang=por"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/1tn2yl6im756powr864edt9kiukp490ozflhe7cz-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 686590
+            },
+            "duration_ms": 686590
+          },
+          {
+            "title": "Brian J. Holmes",
+            "slug": "28holmes",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/28holmes?lang=por",
+            "speaker": {
+              "name": "Brian J. Holmes",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/1qsu5aio67pkh6trqdf05mjamjv94j75d8m3ujml-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 494590
+            },
+            "duration_ms": 494590
+          },
+          {
+            "title": "Clement M. Matswagothata",
+            "slug": "29matswagothata",
+            "order": 8,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/29matswagothata?lang=por",
+            "speaker": {
+              "name": "Clement M. Matswagothata",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/lny5zqa676qr4a8r441cqplh5akcjyqlbp7u79xg-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 568370
+            },
+            "duration_ms": 568370
+          },
+          {
+            "title": "Ulisses Soares",
+            "slug": "210soares",
+            "order": 9,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/210soares?lang=por",
+            "speaker": {
+              "name": "Ulisses Soares",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/z8qo01vuhhynzoqdd1ru3bc078wa3zuoxy2ojgis-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 699530
+            },
+            "duration_ms": 699530
+          }
+        ],
         "audio": {
           "url": "https://assets.churchofjesuschrist.org/xsup2hs8k4j97ma7uh8gi2f7qnw1gvqxeg0o0e7o-128k-pt.mp3",
           "quality": "128k",
@@ -41,7 +353,161 @@
         "slug": "sunday-morning-session",
         "order": 3,
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-morning-session?lang=por",
-        "talks": [],
+        "talks": [
+          {
+            "title": "Dieter F. Uchtdorf",
+            "slug": "41uchtdorf",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/41uchtdorf?lang=por",
+            "speaker": {
+              "name": "Dieter F. Uchtdorf",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/koctkw8neeukrsbdybk6gjl0uf9a47foeehb09xr-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 747180
+            },
+            "duration_ms": 747180
+          },
+          {
+            "title": "Emily Belle Freeman",
+            "slug": "42freeman",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/42freeman?lang=por",
+            "speaker": {
+              "name": "Emily Belle Freeman",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/neyzk4zbgz9e43yu7xoh21ynmngafdigyvpe3265-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 518950
+            },
+            "duration_ms": 518950
+          },
+          {
+            "title": "Pedro X. Larreal",
+            "slug": "43larreal",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/43larreal?lang=por",
+            "speaker": {
+              "name": "Pedro X. Larreal",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/3ogaryfx5tb93d5tr1io9s9cipb2mx2rfc1dk5hh-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 473940
+            },
+            "duration_ms": 473940
+          },
+          {
+            "title": "Edward B. Rowe",
+            "slug": "44rowe",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/44rowe?lang=por",
+            "speaker": {
+              "name": "Edward B. Rowe",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/9ssgr2bzm1ot5beiq7x5u80zd4a2gyj4vivd2lou-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 560290
+            },
+            "duration_ms": 560290
+          },
+          {
+            "title": "Ronald A. Rasband",
+            "slug": "45rasband",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/45rasband?lang=por",
+            "speaker": {
+              "name": "Ronald A. Rasband",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/r7pd6t2teawgdnrb9wv74iiczdmbplqiidrfsxg3-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 620550
+            },
+            "duration_ms": 620550
+          },
+          {
+            "title": "Dale G. Renlund",
+            "slug": "46renlund",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/46renlund?lang=por",
+            "speaker": {
+              "name": "Dale G. Renlund",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/bhyf8bl2w6bfjp43drz3xlzf216ds1uwv61s3pnv-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 659930
+            },
+            "duration_ms": 659930
+          },
+          {
+            "title": "Thierry K. Mutombo",
+            "slug": "47mutombo",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/47mutombo?lang=por",
+            "speaker": {
+              "name": "Thierry K. Mutombo",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/vd4q14zz2fnzpwyig6vtb6dfijsp755rxsz9yhrq-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 618920
+            },
+            "duration_ms": 618920
+          },
+          {
+            "title": "Alan R. Walker",
+            "slug": "48walker",
+            "order": 8,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/48walker?lang=por",
+            "speaker": {
+              "name": "Alan R. Walker",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/eixzvv7jm2tdv5ajwmiewowi7zow27vhy7tjovu0-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 503270
+            },
+            "duration_ms": 503270
+          },
+          {
+            "title": "Dallin H. Oaks",
+            "slug": "49oaks",
+            "order": 9,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/49oaks?lang=por",
+            "speaker": {
+              "name": "Dallin H. Oaks",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/ypzn9d7tegq0xe412i1564210lms46c7kqemhtjb-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 817450
+            },
+            "duration_ms": 817450
+          }
+        ],
         "audio": {
           "url": "https://assets.churchofjesuschrist.org/j1mvptm4qpgtv226w1d291oli4nctwzu5eqzt9qh-128k-pt.mp3",
           "quality": "128k",
@@ -55,7 +521,154 @@
         "slug": "sunday-afternoon-session",
         "order": 4,
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-afternoon-session?lang=por",
-        "talks": [],
+        "talks": [
+          {
+            "title": "D. Todd Christofferson",
+            "slug": "51christofferson",
+            "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/51christofferson?lang=por",
+            "speaker": {
+              "name": "D. Todd Christofferson",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/1gqwe07ar4myt4c9mdgmgsbawm4rni7ro4e44ca1-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 730200
+            },
+            "duration_ms": 730200
+          },
+          {
+            "title": "Lembrai-vos, lembrai-vos",
+            "slug": "52wong",
+            "order": 2,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/52wong?lang=por",
+            "speaker": {
+              "name": "Conferência Geral de Abril de 2026",
+              "role_tag": null
+            }
+          },
+          {
+            "title": "Aaron T. Hall",
+            "slug": "53hall",
+            "order": 3,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/53hall?lang=por",
+            "speaker": {
+              "name": "Aaron T. Hall",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/klfboy2dgd4j0wj7pgma20qk7xzof4u8766oyxma-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 508340
+            },
+            "duration_ms": 508340
+          },
+          {
+            "title": "Susan H. Porter",
+            "slug": "54porter",
+            "order": 4,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/54porter?lang=por",
+            "speaker": {
+              "name": "Susan H. Porter",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/rcax9bqjylv1ocdk5pol99mvqycqy8d0ofuwt1hx-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 523059
+            },
+            "duration_ms": 523059
+          },
+          {
+            "title": "Neil L. Andersen",
+            "slug": "55andersen",
+            "order": 5,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=por",
+            "speaker": {
+              "name": "Neil L. Andersen",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/49cs3x10hfibekxos2lum39gdjyyyvvkc48wo0sd-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 701530
+            },
+            "duration_ms": 701530
+          },
+          {
+            "title": "Quentin L. Cook",
+            "slug": "56cook",
+            "order": 6,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/56cook?lang=por",
+            "speaker": {
+              "name": "Quentin L. Cook",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/440rk6vi37t6d82sn3jn3vkipdfocruc9m6hu5e6-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 691820
+            },
+            "duration_ms": 691820
+          },
+          {
+            "title": "Taniela B. Wakolo",
+            "slug": "57wakolo",
+            "order": 7,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/57wakolo?lang=por",
+            "speaker": {
+              "name": "Taniela B. Wakolo",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/fhtwftvmo5f2onwmongkqfd15mrkgu5njjw1l2fu-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 516549
+            },
+            "duration_ms": 516549
+          },
+          {
+            "title": "Gerrit W. Gong",
+            "slug": "58gong",
+            "order": 8,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=por",
+            "speaker": {
+              "name": "Gerrit W. Gong",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/4rw9bh9w45tcxma0h2xua43apc91hd2w8y0uub3t-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 668700
+            },
+            "duration_ms": 668700
+          },
+          {
+            "title": "Dallin H. Oaks",
+            "slug": "59oaks",
+            "order": 9,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/59oaks?lang=por",
+            "speaker": {
+              "name": "Dallin H. Oaks",
+              "role_tag": null
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/896u3ub5j71e62nodt76o2fgt0d0pj6bej0yjm25-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 175510
+            },
+            "duration_ms": 175510
+          }
+        ],
         "audio": {
           "url": "https://assets.churchofjesuschrist.org/lc7xhk3zatf75mznt3d8d26730yau21d9qoh28aa-128k-pt.mp3",
           "quality": "128k",

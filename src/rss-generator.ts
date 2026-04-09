@@ -37,6 +37,8 @@ interface RssGeneratorOptions {
   imageUrl?: string;
   /** Language filter (eng, spa, por) */
   language?: string;
+  /** Minimum conference year to include (e.g. 2026) */
+  minYear?: number;
 }
 
 // Language-specific podcast metadata
@@ -268,8 +270,13 @@ export function generateRssFeed(
     imageUrl: opts.imageUrl || PODCAST_CONFIG.imageUrl,
   };
 
+  // Filter by minimum year if specified
+  const filtered = opts.minYear
+    ? conferences.filter(c => c.conference.year >= opts.minYear!)
+    : conferences;
+
   // Sort conferences by date (newest first)
-  const sortedConferences = [...conferences].sort((a, b) => {
+  const sortedConferences = [...filtered].sort((a, b) => {
     const dateA = a.conference.year * 100 + a.conference.month;
     const dateB = b.conference.year * 100 + b.conference.month;
     return dateB - dateA;
@@ -282,7 +289,10 @@ export function generateRssFeed(
     const conf = confOutput.conference;
     const baseDate = getConferenceDate(conf.year, conf.month as 4 | 10);
 
-    for (const session of conf.sessions) {
+    // Sort sessions by order explicitly
+    const sortedSessions = [...conf.sessions].sort((a, b) => a.order - b.order);
+
+    for (const session of sortedSessions) {
       // Determine session day offset (Saturday = 0, Sunday = 1)
       const isSunday = session.name.toLowerCase().includes('sunday');
       const sessionDate = new Date(baseDate);
@@ -293,9 +303,10 @@ export function generateRssFeed(
         items.push(generateSessionItem(conf, session, sessionDate));
       }
 
-      // Add talk episodes
+      // Add talk episodes (sorted by order)
       if (opts.includeTalks) {
-        for (const talk of session.talks) {
+        const sortedTalks = [...session.talks].sort((a, b) => a.order - b.order);
+        for (const talk of sortedTalks) {
           if (talk.audio?.url) {
             // Stagger talk times by order
             const talkDate = new Date(sessionDate);
@@ -383,4 +394,8 @@ export async function generateAndSaveFeed(
   const conferences = await loadConferences(outputDir, language);
   const feed = generateRssFeed(conferences, options);
   await fs.writeFile(feedPath, feed, 'utf-8');
+  const filteredCount = options?.minYear
+    ? conferences.filter(c => c.conference.year >= options.minYear!).length
+    : conferences.length;
+  console.log(`  ${filteredCount} conferences, feed written to ${feedPath}`);
 }

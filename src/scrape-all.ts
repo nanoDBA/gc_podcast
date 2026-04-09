@@ -89,6 +89,23 @@ async function fileExists(filePath: string): Promise<boolean> {
   }
 }
 
+/**
+ * Check if a scraped conference file is incomplete.
+ * A conference is incomplete if any session has an empty talks array,
+ * which means individual talks hadn't been published yet when scraped.
+ */
+async function isIncomplete(filePath: string): Promise<boolean> {
+  try {
+    const content = await fs.readFile(filePath, 'utf-8');
+    const data: ConferenceOutput = JSON.parse(content);
+    const sessions = data.conference?.sessions;
+    if (!sessions || sessions.length === 0) return true;
+    return sessions.some(s => !s.talks || s.talks.length === 0);
+  } catch {
+    return true;
+  }
+}
+
 async function main() {
   const config = parseArgs();
 
@@ -131,10 +148,17 @@ async function main() {
     const outputPath = path.join(config.outputDir, filename);
 
     // Skip if file exists and skipExisting is true
+    // But re-scrape incomplete files (sessions with no talks)
+    let disableCache = false;
     if (config.skipExisting && await fileExists(outputPath)) {
-      console.log(`[skip] ${filename} (already exists)`);
-      skipped++;
-      continue;
+      if (await isIncomplete(outputPath)) {
+        console.log(`[rescrape] ${filename} (incomplete - missing talks)`);
+        disableCache = true;
+      } else {
+        console.log(`[skip] ${filename} (already exists)`);
+        skipped++;
+        continue;
+      }
     }
 
     console.log(`[scrape] ${conf.year} ${conf.month === 4 ? 'April' : 'October'}...`);
@@ -142,7 +166,7 @@ async function main() {
     try {
       const conference = await scrapeConference(conf.year, conf.month, {
         language: config.language,
-        useCache: true,
+        useCache: !disableCache,
         cacheDir: '.cache',
       });
 

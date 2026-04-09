@@ -136,6 +136,21 @@ export class ConferenceScraper {
     monthStr: string,
     langCode: string
   ): Promise<Session[]> {
+    // Try data-content-type approach first (works for older conferences)
+    const sessions = this.extractSessionsViaDataContentType(html, langCode);
+    if (sessions.length > 0) {
+      return sessions;
+    }
+
+    // Fallback: class-based navigation structure (2026+ site redesign)
+    console.log('  [info] Using class-based parser for conference index');
+    return this.extractSessionsViaClassNames(html, year, monthStr, langCode);
+  }
+
+  /**
+   * Original extraction using data-content-type attributes
+   */
+  private extractSessionsViaDataContentType(html: string, langCode: string): Session[] {
     const sessions: Session[] = [];
     let currentSession: Session | null = null;
     let sessionOrder = 0;
@@ -220,6 +235,86 @@ export class ConferenceScraper {
     // Don't forget the last session
     if (currentSession) {
       sessions.push(currentSession);
+    }
+
+    return sessions;
+  }
+
+  /**
+   * Fallback extraction using class-based navigation (sectionTitle / item classes)
+   * Handles the 2026+ site redesign where data-content-type is no longer on elements
+   */
+  private extractSessionsViaClassNames(
+    html: string,
+    year: number,
+    monthStr: string,
+    langCode: string
+  ): Session[] {
+    const sessions: Session[] = [];
+    const confPath = `/general-conference/${year}/${monthStr}/`;
+
+    // Find all sectionTitle links that point to session pages
+    const sectionPattern = /<a\s+class="sectionTitle[^"]*"\s+href="([^"]+)"[^>]*>[\s\S]*?<span>([^<]+)<\/span>/g;
+    const sessionMatches: Array<{ url: string; title: string; position: number }> = [];
+    let match;
+
+    while ((match = sectionPattern.exec(html)) !== null) {
+      const href = match[1];
+      const title = match[2].trim();
+      // Only include links that are session pages (contain "session" in URL)
+      if (href.includes(confPath) && href.includes('session')) {
+        sessionMatches.push({ url: href, title, position: match.index });
+      }
+    }
+
+    if (sessionMatches.length === 0) return sessions;
+
+    // For each session, extract talks between this session and the next
+    for (let i = 0; i < sessionMatches.length; i++) {
+      const sessionMatch = sessionMatches[i];
+      const nextSessionPos = i + 1 < sessionMatches.length ? sessionMatches[i + 1].position : html.length;
+      const sectionHtml = html.substring(sessionMatch.position, nextSessionPos);
+      const sessionSlug = this.extractSlugFromUrl(sessionMatch.url);
+
+      const session: Session = {
+        name: sessionMatch.title,
+        slug: sessionSlug || `session-${i + 1}`,
+        order: i + 1,
+        url: this.normalizeUrl(sessionMatch.url, langCode),
+        talks: [],
+      };
+
+      // Find talk items within this session's section
+      // Talk links are <a class="item-..." href="/study/general-conference/YYYY/MM/slug">
+      // with <span>Title</span> and <p class="subtitle-...">Speaker</p>
+      const talkPattern = /<a\s+class="item[^"]*"\s+href="([^"]+)"[^>]*>[\s\S]*?<span>([^<]+)<\/span>(?:[\s\S]*?<p\s+class="subtitle[^"]*">([^<]+)<\/p>)?/g;
+      let talkMatch;
+      let talkOrder = 0;
+
+      while ((talkMatch = talkPattern.exec(sectionHtml)) !== null) {
+        const talkHref = talkMatch[1];
+        const talkTitle = talkMatch[2].trim();
+        const speakerName = talkMatch[3]?.trim() || '';
+
+        // Only include links within this conference that aren't session links
+        if (talkHref.includes(confPath) && !talkHref.includes('session')) {
+          talkOrder++;
+          const talkSlug = this.extractSlugFromUrl(talkHref);
+
+          session.talks.push({
+            title: talkTitle,
+            slug: talkSlug || `talk-${talkOrder}`,
+            order: talkOrder,
+            url: this.normalizeUrl(talkHref, langCode),
+            speaker: {
+              name: speakerName || 'Unknown Speaker',
+              role_tag: null,
+            },
+          });
+        }
+      }
+
+      sessions.push(session);
     }
 
     return sessions;
