@@ -513,6 +513,86 @@ export async function checkAudioUrl(url: string): Promise<AudioUrlCheckResult> {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Bio URL validation helpers (gc_podcast-0ta)
+// ---------------------------------------------------------------------------
+
+/**
+ * Generate one alternative slug from a speaker display name.
+ *
+ * Covers the most common reasons that a primary slug 404s:
+ *   - Name suffixes like "-jr", "-sr", "-ii", "-iii" that the church site
+ *     sometimes omits from the slug.
+ *   - Middle initials (e.g. "jeffrey-r-holland" → "jeffrey-holland").
+ *   - Accented characters that should be normalised to ASCII equivalents
+ *     (e.g. "dieter-f-uchtdorf" already works; "jose-a-teixeira" → ok).
+ *
+ * If none of the transforms produce a different slug, returns undefined
+ * (indicating no useful alternative exists).
+ */
+export function generateAltBioSlug(primarySlug: string): string | undefined {
+  // 1. Strip common suffixes: -jr, -sr, -ii, -iii, -iv
+  const suffixRemoved = primarySlug.replace(/-(?:jr|sr|ii|iii|iv)$/, '');
+  if (suffixRemoved !== primarySlug) return suffixRemoved;
+
+  // 2. Remove a single-character middle segment (e.g. "jeffrey-r-holland" → "jeffrey-holland")
+  const middleRemoved = primarySlug.replace(/-[a-z]-/, '-');
+  if (middleRemoved !== primarySlug) return middleRemoved;
+
+  // 3. Remove trailing single-character segment (e.g. "name-a" → "name")
+  const trailingRemoved = primarySlug.replace(/-[a-z]$/, '');
+  if (trailingRemoved !== primarySlug) return trailingRemoved;
+
+  return undefined;
+}
+
+/**
+ * HEAD-check a bio URL and attempt one alternative slug variant if the
+ * primary URL returns 404. Returns the first URL that returns 2xx, or
+ * undefined if neither succeeds.
+ *
+ * On network error: returns the primary URL unchanged (assume transient;
+ * let the image-extractor path decide whether to retry).
+ */
+export async function validateBioUrl(
+  primaryUrl: string
+): Promise<string | undefined> {
+  // Extract the slug from the path: /learn/<slug>?lang=...
+  const urlObj = new URL(primaryUrl);
+  const pathParts = urlObj.pathname.split('/').filter(Boolean);
+  const primarySlug = pathParts[pathParts.length - 1] ?? '';
+
+  async function headCheck(url: string): Promise<boolean> {
+    try {
+      const response = await fetchWithRetry(url, { method: 'HEAD' });
+      // 2xx is a hit; everything else is a miss.
+      return response.status >= 200 && response.status < 300;
+    } catch (err) {
+      if (err instanceof FetchRetryExhaustedError && err.lastStatus !== undefined) {
+        // HTTP failure (e.g. 404 exhausted) → miss.
+        return false;
+      }
+      // Network error → treat primary URL as valid (transient).
+      return true;
+    }
+  }
+
+  if (await headCheck(primaryUrl)) {
+    return primaryUrl;
+  }
+
+  const altSlug = generateAltBioSlug(primarySlug);
+  if (!altSlug) return undefined;
+
+  // Build the alt URL by replacing the slug in the path.
+  const altUrl = primaryUrl.replace(`/learn/${primarySlug}`, `/learn/${altSlug}`);
+  if (await headCheck(altUrl)) {
+    return altUrl;
+  }
+
+  return undefined;
+}
+
 /**
  * Main scraper class
  */
@@ -1122,6 +1202,30 @@ export class ConferenceScraper {
                   ? { error: error.message, stack: error.stack, name: error.name }
                   : { error: String(error) }),
               });
+            }
+
+            // Bio URL validation (gc_podcast-0ta): HEAD-check the constructed
+            // bio URL before using it. On 404, try one alternative slug
+            // variant. If neither resolves, clear bio_url so the image-
+            // extractor fallback doesn't fire against a dead URL.
+            if (talk.speaker?.bio_url) {
+              const validatedBioUrl = await validateBioUrl(talk.speaker.bio_url);
+              if (validatedBioUrl !== talk.speaker.bio_url) {
+                if (validatedBioUrl === undefined) {
+                  log.debug('bio URL unresolvable, clearing', {
+                    speakerName: talk.speaker.name,
+                    originalBioUrl: talk.speaker.bio_url,
+                  });
+                  talk.speaker.bio_url = undefined;
+                } else {
+                  log.debug('bio URL resolved via alt slug', {
+                    speakerName: talk.speaker.name,
+                    originalBioUrl: talk.speaker.bio_url,
+                    resolvedBioUrl: validatedBioUrl,
+                  });
+                  talk.speaker.bio_url = validatedBioUrl;
+                }
+              }
             }
 
             // Bio fallback: if talk page yielded no image, try speaker bio.
