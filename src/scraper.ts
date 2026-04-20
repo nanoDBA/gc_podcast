@@ -593,6 +593,38 @@ export async function validateBioUrl(
   return undefined;
 }
 
+// ---------------------------------------------------------------------------
+// Authoritative speaker directory helpers (gc_podcast-3wj)
+// ---------------------------------------------------------------------------
+
+const DIRECTORY_URL =
+  'https://www.churchofjesuschrist.org/learn/global-leadership-of-the-church?lang=eng';
+
+/**
+ * Honorific prefixes stripped from speaker names when building the normalised
+ * lookup key for the authoritative directory map.
+ */
+const HONORIFIC_RE =
+  /^(?:President|Elder|Bishop|Sister|Brother|Dr\.)\s+/i;
+
+/**
+ * Normalise a speaker display name for directory lookup.
+ *
+ * Steps applied (in order):
+ *   1. Trim leading/trailing whitespace.
+ *   2. Collapse interior runs of whitespace to a single space.
+ *   3. Lowercase.
+ *   4. Strip a leading honorific (President|Elder|Bishop|Sister|Brother|Dr.).
+ *
+ * Both the directory keys and the `resolveBioUrl` query are normalised the
+ * same way so the comparison is always apples-to-apples.
+ */
+export function normaliseSpeakerName(name: string): string {
+  let n = name.trim().replace(/\s+/g, ' ').toLowerCase();
+  n = n.replace(HONORIFIC_RE, '');
+  return n.trim();
+}
+
 /**
  * Main scraper class
  */
@@ -605,6 +637,13 @@ export class ConferenceScraper {
    * Each speaker's bio page is fetched at most once per scraper instance.
    */
   private bioImageCache = new Map<string, Promise<string | undefined>>();
+
+  /**
+   * Lazy singleton Promise for the authoritative speaker directory (gc_podcast-3wj).
+   * Set on the first call to fetchAuthoritativeDirectory(); reused on all
+   * subsequent calls within the same scraper run.
+   */
+  private directoryPromise: Promise<Map<string, string>> | null = null;
 
   constructor(config: Partial<ScraperConfig> = {}) {
     this.config = { ...DEFAULT_CONFIG, ...config };
@@ -1204,27 +1243,30 @@ export class ConferenceScraper {
               });
             }
 
-            // Bio URL validation (gc_podcast-0ta): HEAD-check the constructed
-            // bio URL before using it. On 404, try one alternative slug
-            // variant. If neither resolves, clear bio_url so the image-
-            // extractor fallback doesn't fire against a dead URL.
-            if (talk.speaker?.bio_url) {
-              const validatedBioUrl = await validateBioUrl(talk.speaker.bio_url);
-              if (validatedBioUrl !== talk.speaker.bio_url) {
-                if (validatedBioUrl === undefined) {
+            // Bio URL resolution (gc_podcast-3wj / gc_podcast-0ta):
+            // resolveBioUrl() tries the authoritative directory first, then
+            // falls back to slug-guessing with HEAD-check (and alt-slug
+            // variant). If both fail, bio_url is cleared so the image-
+            // extractor fallback does not fire against a dead URL.
+            if (talk.speaker?.name) {
+              const resolvedBioUrl = await this.resolveBioUrl(talk.speaker.name);
+              if (resolvedBioUrl === null) {
+                if (talk.speaker.bio_url) {
                   log.debug('bio URL unresolvable, clearing', {
                     speakerName: talk.speaker.name,
                     originalBioUrl: talk.speaker.bio_url,
                   });
-                  talk.speaker.bio_url = undefined;
-                } else {
-                  log.debug('bio URL resolved via alt slug', {
+                }
+                talk.speaker.bio_url = undefined;
+              } else {
+                if (resolvedBioUrl !== talk.speaker.bio_url) {
+                  log.debug('bio URL resolved', {
                     speakerName: talk.speaker.name,
                     originalBioUrl: talk.speaker.bio_url,
-                    resolvedBioUrl: validatedBioUrl,
+                    resolvedBioUrl,
                   });
-                  talk.speaker.bio_url = validatedBioUrl;
                 }
+                talk.speaker.bio_url = resolvedBioUrl;
               }
             }
 
@@ -1309,6 +1351,121 @@ export class ConferenceScraper {
         }
       }
     }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Authoritative speaker → bio URL directory (gc_podcast-3wj)
+  // ---------------------------------------------------------------------------
+
+  /**
+   * Fetch the Church's authoritative speaker directory ONCE per scraper run.
+   *
+   * The directory page lists every current General Authority with a link to
+   * their /learn/<slug> bio page. We parse all `<a href="/learn/<slug>?lang=eng">`
+   * links and build a Map keyed by the normalised speaker display name.
+   *
+   * Failure is non-fatal: if the page returns non-200 or parsing fails we log
+   * a warning and return an empty Map so callers fall back to slug-guessing.
+   *
+   * The result is memoised — subsequent calls within the same scraper instance
+   * return the same Promise without making a second network request.
+   */
+  fetchAuthoritativeDirectory(): Promise<Map<string, string>> {
+    if (this.directoryPromise !== null) {
+      return this.directoryPromise;
+    }
+
+    this.directoryPromise = this._loadAuthoritativeDirectory();
+    return this.directoryPromise;
+  }
+
+  private async _loadAuthoritativeDirectory(): Promise<Map<string, string>> {
+    const map = new Map<string, string>();
+    try {
+      const response = await fetchWithRetry(DIRECTORY_URL);
+      if (!response.ok) {
+        log.warn('authoritative directory fetch returned non-200', {
+          url: DIRECTORY_URL,
+          status: response.status,
+        });
+        return map;
+      }
+      const html = await response.text();
+      if (!html) {
+        log.warn('authoritative directory response was empty', { url: DIRECTORY_URL });
+        return map;
+      }
+
+      // Parse every <a href="/learn/<slug>?lang=eng">…name text…</a> anchor.
+      // The href may include ?lang=eng or similar query params.
+      const linkRe =
+        /<a\s[^>]*href\s*=\s*["'](\/learn\/[^"'?]+[^"']*)["'][^>]*>([\s\S]*?)<\/a>/gi;
+      let m: RegExpExecArray | null;
+      while ((m = linkRe.exec(html)) !== null) {
+        const href = m[1];
+        const innerHtml = m[2];
+        // Strip tags from inner HTML to get the display name text.
+        const rawName = innerHtml.replace(/<[^>]+>/g, '').trim();
+        if (!rawName) continue;
+
+        // Build the full URL. The href is already absolute-path, so prepend base.
+        let bioUrl = href;
+        if (!bioUrl.startsWith('http')) {
+          bioUrl = `${BASE_URL}${bioUrl}`;
+        }
+        // Ensure lang param is present.
+        if (!bioUrl.includes('lang=')) {
+          const langCode = LANGUAGES[this.config.language]?.urlParam ?? 'eng';
+          bioUrl += `?lang=${langCode}`;
+        }
+
+        const key = normaliseSpeakerName(rawName);
+        if (key) {
+          map.set(key, bioUrl);
+        }
+      }
+
+      log.info('authoritative directory loaded', {
+        url: DIRECTORY_URL,
+        speakerCount: map.size,
+      });
+    } catch (err) {
+      log.warn('authoritative directory fetch failed', {
+        url: DIRECTORY_URL,
+        ...(err instanceof Error
+          ? { error: err.message }
+          : { error: String(err) }),
+      });
+    }
+    return map;
+  }
+
+  /**
+   * Resolve the bio URL for a speaker.
+   *
+   * Look-up order:
+   *   1. Authoritative directory (fetched once per run via fetchAuthoritativeDirectory).
+   *   2. Slug-generated URL (existing constructBioUrl logic), HEAD-checked via
+   *      validateBioUrl (which also tries an alt-slug variant).
+   *
+   * Returns null when both paths fail (no directory match AND HEAD-check fails
+   * for both primary and alt slug). Returns null for empty/falsy names.
+   */
+  async resolveBioUrl(speakerName: string): Promise<string | null> {
+    if (!speakerName) return null;
+
+    // 1. Check the authoritative directory.
+    const directory = await this.fetchAuthoritativeDirectory();
+    const key = normaliseSpeakerName(speakerName);
+    const directoryUrl = directory.get(key);
+    if (directoryUrl) {
+      return directoryUrl;
+    }
+
+    // 2. Fall back to slug-guessing with HEAD-check.
+    const slugUrl = this.constructBioUrl(speakerName);
+    const validated = await validateBioUrl(slugUrl);
+    return validated ?? null;
   }
 
   /**
