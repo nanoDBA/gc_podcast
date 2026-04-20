@@ -954,3 +954,33 @@ export async function scrapeConference(
   const scraper = new ConferenceScraper(config);
   return scraper.scrapeConference(year, month);
 }
+
+/**
+ * Test-only export: exposes the three index-page parser strategies so smoke
+ * tests can invoke each one directly against an HTML fixture. Not part of the
+ * public API — do not rely on this from production code.
+ */
+export function __parsersForTesting(config: Partial<ScraperConfig> = {}) {
+  const scraper = new ConferenceScraper(config) as unknown as {
+    extractSessionsViaDocMap(html: string, langCode: string): Session[];
+    extractSessionsViaDataContentType(html: string, langCode: string): Session[];
+    extractSessionsViaClassNames(
+      html: string,
+      year: number,
+      monthStr: string,
+      langCode: string
+    ): Session[];
+  };
+  return {
+    viaDocMap: (html: string, langCode = 'eng') =>
+      scraper.extractSessionsViaDocMap(html, langCode),
+    viaDataContentType: (html: string, langCode = 'eng') =>
+      scraper.extractSessionsViaDataContentType(html, langCode),
+    viaClassNames: (
+      html: string,
+      year: number,
+      monthStr: string,
+      langCode = 'eng'
+    ) => scraper.extractSessionsViaClassNames(html, year, monthStr, langCode),
+  };
+}

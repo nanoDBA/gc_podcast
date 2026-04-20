@@ -11,7 +11,9 @@
     "dev": "npx tsx src/index.ts",
     "feed": "npx tsx src/generate-feed.ts",
     "scrape-all": "npx tsx src/scrape-all.ts",
-    "update": "npm run scrape-all && npm run feed"
+    "update": "npm run scrape-all && npm run feed",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "keywords": ["general-conference", "lds", "podcast", "scraper"],
   "author": "",
@@ -22,7 +24,8 @@
   "devDependencies": {
     "typescript": "^5.3.0",
     "@types/node": "^20.0.0",
-    "tsx": "^4.0.0"
+    "tsx": "^4.0.0",
+    "vitest": "^2.1.0"
   },
   "dependencies": {
   }

@@ -18,6 +18,7 @@ Thumbs.db
 # Downloaded/reference files (not part of the project)
 *.html
 !docs/index.html
+!tests/fixtures/*.html
 *_files/
 *.pdf
 *.png
