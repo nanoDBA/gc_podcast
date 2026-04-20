@@ -625,8 +625,162 @@ Structure supports `language` fields for future expansion to Spanish, Portuguese
 
 ---
 
+---
+
+## 12. Data Format and Stability Guarantees
+
+This section documents the stability guarantees that applications consuming this feed can rely upon.
+
+### 12.1 Purpose
+
+This document is the source of truth for developers consuming the `output/gc-*.json` feed data and the generated RSS feeds. It provides concrete guarantees that enable applications to cache and depend on URL stability, GUID immutability, and other critical properties.
+
+**Audience:**
+- Feed consumers (mobile apps, web apps, RSS readers)
+- Contributors extending the scraper
+- Anyone relying on feed URLs for bookmarks, subscriptions, or automation
+
+### 12.2 Feed GUID Stability (STABILITY GUARANTEE)
+
+**Guarantee:** The channel `<podcast:guid>` is a UUID v5 derived from the canonical feed URL. Removing a feed and re-adding it under the same URL produces the identical GUID.
+
+**Implications:**
+- Podcast apps use the GUID to detect when a feed URL changes but represents the same logical podcast
+- The same feed can be hosted at multiple URLs with the same GUID (e.g., `audio.xml` and a CDN mirror)
+- Changing the canonical feed URL produces a new GUID and will appear as a new podcast to subscribers
+- Once a GUID is released publicly, it should be treated as immutable
+
+**Example:**
+
+```
+English feed URL: https://nanodba.github.io/gc_podcast/audio.xml
+Generated GUID: (deterministic UUID v5 based on above URL)
+
+If the file moves to: https://cdn.example.com/gc_podcast/audio.xml
+New URL = New GUID (treated as a different podcast)
+```
+
+**Non-breaking changes** (GUID unchanged):
+- Adding new episodes
+- Updating episode metadata (title, description, speaker info)
+- Changing CDN hosting (if URL remains stable)
+
+**Breaking changes** (GUID changes):
+- Changing the canonical feed URL
+- Splitting into multiple feeds (by language, time period, etc.)
+- Merging multiple feeds
+
+### 12.3 Item GUID Stability (STABILITY GUARANTEE)
+
+**Guarantee:** Each `<item><guid>` is deterministically derived from the set `{conference_year, conference_month, session_order, item_slug}`. Re-scraping the same conference with the same scraper produces the same GUID.
+
+**Implications:**
+- Podcast apps use the item GUID to detect duplicate episodes when updating the feed
+- Episodes can be identified by their GUID across app instances, devices, and backups
+- Changing the scraper logic (e.g., slug format) may change GUIDs unintentionally — breaking subscriptions
+- Once an episode GUID is published, it is permanent for that {year, month, session, slug} tuple
+
+**Example:**
+
+```
+Conference: October 2025
+Session 1 (Saturday Morning), Item 3 (slug: "12stevenson")
+GUID: (deterministic hash of "2025-10-1-12stevenson")
+
+Re-scraping October 2025 in March 2026:
+Same GUID = Same episode (no duplicate created)
+```
+
+**Non-breaking changes** (GUID stable):
+- Updating talk metadata (title, speaker name, duration)
+- Fixing speaker role tags
+- Adding/updating audio URLs
+- Adding per-item artwork
+
+**Breaking changes** (GUID changes):
+- Changing the slug derivation logic
+- Re-ordering sessions or talks
+- Splitting/merging sessions
+- Removing and re-adding a talk with a different slug
+
+### 12.4 Audio URL Stability
+
+**Guarantee:** Audio URLs point directly to the Church of Jesus Christ CDN (`assets.churchofjesuschrist.org`). These URLs are cache-friendly and stable within a release cycle, but may change if the Church re-hosts content.
+
+**Implications:**
+- Podcast clients that cache audio aggressively will continue playing cached episodes even if the URL changes
+- Direct HTTP requests to these URLs are supported for duration detection and metadata extraction
+- The URL format is `https://assets.churchofjesuschrist.org/{asset-hash}-{quality}-{language}.mp3`
+- Asset hashes are content-addressed (same audio = same hash), so re-hosting produces the same URL
+
+**Non-guaranteed:**
+- Long-term availability (Church may re-host or remove content)
+- Indefinite CDN presence (URLs may 404 after months/years)
+- Multiple language versions of the same asset (some talks may only be available in one language)
+
+### 12.5 Image URL Stability
+
+**Guarantee** _(When gc_podcast-mnu is released)_: Per-item `<itunes:image>` URLs are IIIF hashes on the Church CDN. They are content-addressed and stable per-revision.
+
+**Implications:**
+- Two instances of the same image (e.g., same speaker photo) produce the same URL
+- Image URLs are permanent for their content; changing the image URL changes the content
+- Once an image is published in a feed, the URL is immutable
+
+**Non-guaranteed:**
+- The image remains at that URL indefinitely (CDN garbage collection)
+- Image versions track audio changes (an updated talk audio may have original artwork)
+
+### 12.6 Schema Version
+
+**Current version:** `1.0` (present in `output/gc-*.json`)
+
+**Stability guarantee:** Within `1.0`, fields added are always additive (backward-compatible). Removing or renaming fields triggers a major version bump to `2.0`.
+
+**Version bumps trigger:**
+- Major version change (e.g., `1.0` → `2.0`): Breaking changes to structure
+  - Removed fields
+  - Renamed fields
+  - Type changes
+- Minor version change (e.g., `1.0` → `1.1`): Additive changes (new optional fields)
+- Patch version change (e.g., `1.0` → `1.0.1`): Bug fixes, documentation updates (no schema changes)
+
+**Breaking change process:**
+1. Announce version 2.0 in README and GitHub releases
+2. Publish migration guide with field mappings
+3. Maintain 1.0 feeds for 1 release cycle
+4. Archive 1.0 documentation in versioned branch
+
+**Note:** Runtime version enforcement and version validation is tracked separately (see gc_podcast-hjq / gc_podcast-0uc issues). This section documents the published schema only.
+
+### 12.7 What is NOT Guaranteed
+
+The following fields **may change without notice** because they reflect Church-published data:
+
+| Field | Reason | Example |
+|-------|--------|---------|
+| `talk.title` | Church edits conference transcripts | "Blessed Are..." → "Blessed Are the Peacemakers" |
+| `speaker.name` | Name corrections, canonicalization | "D. Todd Christofferson" → "President D. Todd Christofferson" |
+| `speaker.calling` | Church restructures; callings change | "Apostle" → "First Presidency member" |
+| `duration_ms` | Audio re-editing, remastering | Duration may shift by seconds |
+| `audio.url` | Church re-hosts or removes content | CDN migration, takedowns |
+| `speaker.bio_url` | Path changes if Church restructures | URL structure may change |
+
+**Consequence for consumers:** Applications must be prepared to handle these changes gracefully (e.g., display "Calling updated" notices; re-fetch episodes periodically).
+
+### 12.8 Guarantee Change Log
+
+This section tracks breaking changes and major updates to the stability guarantees documented above.
+
+| Date | Change | Reason |
+|------|--------|--------|
+| 2026-04-20 | Initial stability guarantees (v1.0) | Establish baseline for feed consumers |
+
+---
+
 ## Revision History
 
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2026-01-08 | Initial specification |
+| 1.1 | 2026-04-20 | Added Section 12: Data Format and Stability Guarantees |

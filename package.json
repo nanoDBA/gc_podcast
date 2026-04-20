@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "npx tsx src/index.ts",
     "feed": "npx tsx src/generate-feed.ts",
+    "generate-index": "npx tsx src/generate-index.ts",
     "scrape-all": "npx tsx src/scrape-all.ts",
     "update": "npm run scrape-all && npm run feed",
     "test": "vitest run",
