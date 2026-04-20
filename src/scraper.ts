@@ -84,6 +84,236 @@ export class ParserCircuitBreakerError extends Error {
   }
 }
 
+/**
+ * Thrown when {@link fetchWithRetry} has exhausted all retry attempts against
+ * a transient failure class (HTTP 429/5xx or network error). Carries the full
+ * context required to triage the outage from logs alone.
+ */
+export class FetchRetryExhaustedError extends Error {
+  public readonly url: string;
+  public readonly attempts: number;
+  public readonly lastStatus: number | undefined;
+  public readonly lastError: string | undefined;
+
+  constructor(params: {
+    url: string;
+    attempts: number;
+    lastStatus?: number;
+    lastError?: string;
+  }) {
+    const tail =
+      params.lastStatus !== undefined
+        ? `HTTP ${params.lastStatus}`
+        : (params.lastError ?? 'unknown error');
+    super(
+      `Fetch failed for ${params.url} after ${params.attempts} attempt(s): ${tail}`
+    );
+    this.name = 'FetchRetryExhaustedError';
+    this.url = params.url;
+    this.attempts = params.attempts;
+    this.lastStatus = params.lastStatus;
+    this.lastError = params.lastError;
+  }
+}
+
+/**
+ * Exponential-backoff base (ms) used by {@link fetchWithRetry}. Exported as a
+ * mutable ref object so tests can shrink the delay to keep the suite fast
+ * without exposing a private setter.
+ */
+export const __retryTuning = {
+  /** Base backoff in ms. delay = BASE * 2^attempt + jitter. */
+  backoffBaseMs: 500,
+  /** Additional uniform jitter bound in ms. */
+  jitterMaxMs: 250,
+  /** Maximum retry attempts (total requests = maxRetries + 1). */
+  maxRetries: 3,
+};
+
+/** HTTP statuses we treat as transient and worth retrying. */
+const RETRYABLE_STATUSES = new Set<number>([429, 500, 502, 503, 504]);
+
+/** Node/undici error codes we treat as transient network blips. */
+const RETRYABLE_ERROR_CODES = new Set<string>([
+  'ECONNRESET',
+  'ETIMEDOUT',
+  'ECONNREFUSED',
+  'EAI_AGAIN',
+  'UND_ERR_SOCKET',
+  'UND_ERR_CONNECT_TIMEOUT',
+  'UND_ERR_HEADERS_TIMEOUT',
+  'UND_ERR_BODY_TIMEOUT',
+]);
+
+function isRetryableNetworkError(err: unknown): boolean {
+  // The fetch() spec surfaces network failures as TypeError. Node's undici
+  // also attaches a `cause` with an errno-style code we can whitelist.
+  if (err instanceof TypeError) return true;
+  if (err && typeof err === 'object') {
+    const maybeCode = (err as { code?: unknown }).code;
+    if (typeof maybeCode === 'string' && RETRYABLE_ERROR_CODES.has(maybeCode)) {
+      return true;
+    }
+    const cause = (err as { cause?: unknown }).cause;
+    if (cause && typeof cause === 'object') {
+      const causeCode = (cause as { code?: unknown }).code;
+      if (
+        typeof causeCode === 'string' &&
+        RETRYABLE_ERROR_CODES.has(causeCode)
+      ) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+/**
+ * Parse a `Retry-After` header value. Supports both the delta-seconds form
+ * and the HTTP-date form per RFC 7231 §7.1.3. Returns ms, or undefined if the
+ * header is missing/unparseable.
+ */
+function parseRetryAfter(headerValue: string | null): number | undefined {
+  if (!headerValue) return undefined;
+  const trimmed = headerValue.trim();
+  if (trimmed === '') return undefined;
+  // delta-seconds: a non-negative decimal integer
+  if (/^\d+(?:\.\d+)?$/.test(trimmed)) {
+    const seconds = parseFloat(trimmed);
+    if (Number.isFinite(seconds) && seconds >= 0) {
+      return Math.round(seconds * 1000);
+    }
+    return undefined;
+  }
+  // HTTP-date
+  const dateMs = Date.parse(trimmed);
+  if (!Number.isNaN(dateMs)) {
+    const delta = dateMs - Date.now();
+    return delta > 0 ? delta : 0;
+  }
+  return undefined;
+}
+
+function computeBackoffMs(attempt: number): number {
+  const exp = __retryTuning.backoffBaseMs * Math.pow(2, attempt);
+  const jitter = Math.random() * __retryTuning.jitterMaxMs;
+  return Math.round(exp + jitter);
+}
+
+function sleepMs(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * Perform a single HTTP GET with exponential-backoff retry on transient
+ * failures. Retries on HTTP 429 and 5xx (500/502/503/504) and on network
+ * errors (TypeError from fetch, ECONNRESET/ETIMEDOUT, etc). Permanent 4xx
+ * responses (404/410/etc) are NOT retried.
+ *
+ * On 429, honors a `Retry-After` header (seconds or HTTP-date) when present
+ * and uses that instead of the computed backoff, ensuring we don't hammer a
+ * server that's explicitly asking for a pause.
+ *
+ * Exhausting retries throws {@link FetchRetryExhaustedError} with full
+ * context (url, attempts, lastStatus, lastError).
+ */
+export async function fetchWithRetry(
+  url: string,
+  init?: RequestInit
+): Promise<Response> {
+  const maxAttempts = __retryTuning.maxRetries + 1;
+  let lastStatus: number | undefined;
+  let lastError: string | undefined;
+
+  for (let attempt = 0; attempt < maxAttempts; attempt++) {
+    log.debug('fetch attempt', { url, attempt: attempt + 1, maxAttempts });
+    let response: Response | undefined;
+    try {
+      response = await fetch(url, init);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      lastError = message;
+      lastStatus = undefined;
+      if (!isRetryableNetworkError(err) || attempt === maxAttempts - 1) {
+        if (attempt === maxAttempts - 1) {
+          log.error('fetch exhausted retries (network)', {
+            url,
+            attempts: attempt + 1,
+            lastError: message,
+          });
+          throw new FetchRetryExhaustedError({
+            url,
+            attempts: attempt + 1,
+            lastError: message,
+          });
+        }
+        // Non-retryable network error: surface unchanged.
+        throw err;
+      }
+      const delay = computeBackoffMs(attempt);
+      log.warn('fetch failed, retrying', {
+        url,
+        attempt: attempt + 1,
+        error: message,
+        nextDelayMs: delay,
+      });
+      await sleepMs(delay);
+      continue;
+    }
+
+    if (response.ok) {
+      return response;
+    }
+
+    lastStatus = response.status;
+    lastError = `HTTP ${response.status} ${response.statusText}`;
+
+    if (!RETRYABLE_STATUSES.has(response.status)) {
+      // Permanent failure — do NOT retry (404/410/400/401/403/etc).
+      return response;
+    }
+
+    if (attempt === maxAttempts - 1) {
+      log.error('fetch exhausted retries (status)', {
+        url,
+        attempts: attempt + 1,
+        lastStatus,
+      });
+      throw new FetchRetryExhaustedError({
+        url,
+        attempts: attempt + 1,
+        lastStatus,
+        lastError,
+      });
+    }
+
+    // Honor Retry-After on 429.
+    let delay = computeBackoffMs(attempt);
+    if (response.status === 429) {
+      const retryAfterMs = parseRetryAfter(response.headers.get('retry-after'));
+      if (retryAfterMs !== undefined) {
+        delay = retryAfterMs;
+      }
+    }
+    log.warn('fetch failed, retrying', {
+      url,
+      attempt: attempt + 1,
+      status: response.status,
+      nextDelayMs: delay,
+    });
+    await sleepMs(delay);
+  }
+
+  // Loop invariant: we either return a Response or throw above. This is a
+  // safety net for TS's control-flow analysis.
+  throw new FetchRetryExhaustedError({
+    url,
+    attempts: maxAttempts,
+    lastStatus,
+    lastError,
+  });
+}
+
 // Language code mapping for URLs and audio files
 const LANG_URL_MAP: Record<Language, string> = {
   eng: 'eng',
@@ -1045,7 +1275,7 @@ export class ConferenceScraper {
     console.log(`  [fetch] ${this.truncateUrl(url)}`);
     this.lastRequestTime = Date.now();
 
-    const response = await fetch(url, {
+    const response = await fetchWithRetry(url, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -1054,6 +1284,8 @@ export class ConferenceScraper {
     });
 
     if (!response.ok) {
+      // Permanent failure (non-retryable status): surface as before so
+      // callers see the same error shape they always have.
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
 
