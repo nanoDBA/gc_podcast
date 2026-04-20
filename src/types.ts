@@ -3,8 +3,10 @@
  * Based on SPEC.md v1.0
  */
 
-// Supported languages
-export type Language = 'eng' | 'spa' | 'por';
+// Supported languages — re-exported from ./languages.js as the single source of truth.
+// New callers should import LanguageCode directly from ./languages.js.
+import type { LanguageCode } from './languages.js';
+export type Language = LanguageCode;
 
 // Simplified role classification for filtering/display purposes
 export type SpeakerRoleTag = 'first-presidency' | 'quorum-of-the-twelve' | null;

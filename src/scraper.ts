@@ -24,10 +24,10 @@ import {
   Speaker,
   AudioAsset,
   SpeakerRoleTag,
-  Language,
   ScraperConfig,
   DEFAULT_CONFIG,
 } from './types.js';
+import { LANGUAGES } from './languages.js';
 import { ApiResponseSchema } from './schemas.js';
 import { log } from './logger.js';
 
@@ -314,19 +314,6 @@ export async function fetchWithRetry(
   });
 }
 
-// Language code mapping for URLs and audio files
-const LANG_URL_MAP: Record<Language, string> = {
-  eng: 'eng',
-  spa: 'spa',
-  por: 'por',
-};
-
-const LANG_AUDIO_MAP: Record<Language, string> = {
-  eng: 'en',
-  spa: 'es',
-  por: 'pt',
-};
-
 // API response interfaces
 interface ApiAudioEntry {
   mediaUrl: string;
@@ -359,7 +346,7 @@ export class ConferenceScraper {
    * Scrape a complete conference
    */
   async scrapeConference(year: number, month: 4 | 10): Promise<Conference> {
-    const langCode = LANG_URL_MAP[this.config.language];
+    const langCode = LANGUAGES[this.config.language].urlParam;
     const monthStr = month.toString().padStart(2, '0');
     const conferenceUrl = `${BASE_URL}/study/general-conference/${year}/${monthStr}?lang=${langCode}`;
 
@@ -1018,7 +1005,7 @@ export class ConferenceScraper {
     return {
       url: audioEntry.mediaUrl,
       quality: '128k',
-      language: LANG_AUDIO_MAP[this.config.language],
+      language: LANGUAGES[this.config.language].audioSuffix,
       duration_ms: duration,
     };
   }
@@ -1074,7 +1061,7 @@ export class ConferenceScraper {
     return {
       url: mp3Url,
       quality: '128k',
-      language: LANG_AUDIO_MAP[this.config.language],
+      language: LANGUAGES[this.config.language].audioSuffix,
       duration_ms: duration,
     };
   }
@@ -1084,7 +1071,7 @@ export class ConferenceScraper {
    */
   private findMp3Url(html: string): string | undefined {
     // Method 1: Look for assets.churchofjesuschrist.org MP3 URLs with language suffix
-    const langSuffix = LANG_AUDIO_MAP[this.config.language];
+    const langSuffix = LANGUAGES[this.config.language].audioSuffix;
     const specificMp3Regex = new RegExp(
       `https://assets\\.churchofjesuschrist\\.org/[a-z0-9]+-128k-${langSuffix}\\.mp3`,
       'gi'
@@ -1249,7 +1236,7 @@ export class ConferenceScraper {
       .replace(/\s+/g, '-')
       .replace(/[^a-z0-9-]/g, '');
 
-    return `${BASE_URL}/learn/${slug}?lang=${LANG_URL_MAP[this.config.language]}`;
+    return `${BASE_URL}/learn/${slug}?lang=${LANGUAGES[this.config.language].urlParam}`;
   }
 
   /**

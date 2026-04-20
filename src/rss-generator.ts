@@ -6,6 +6,7 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { ConferenceOutput, Conference, Session, Talk } from './types.js';
+import { LANGUAGES, LanguageCode } from './languages.js';
 
 // Podcast metadata
 const PODCAST_CONFIG = {
@@ -41,24 +42,23 @@ interface RssGeneratorOptions {
   minYear?: number;
 }
 
-// Language-specific podcast metadata
-const LANGUAGE_CONFIG: Record<string, { language: string; title: string; description: string }> = {
-  eng: {
-    language: 'en',
-    title: 'General Conference - The Church of Jesus Christ of Latter-day Saints',
-    description: 'Audio recordings from General Conference of The Church of Jesus Christ of Latter-day Saints. Includes talks from Church leaders delivered during the semi-annual worldwide broadcasts.',
-  },
-  spa: {
-    language: 'es',
-    title: 'Conferencia General - La Iglesia de Jesucristo de los Santos de los Últimos Días',
-    description: 'Grabaciones de audio de la Conferencia General de La Iglesia de Jesucristo de los Santos de los Últimos Días. Incluye discursos de líderes de la Iglesia de las transmisiones mundiales semestrales.',
-  },
-  por: {
-    language: 'pt',
-    title: 'Conferência Geral - A Igreja de Jesus Cristo dos Santos dos Últimos Dias',
-    description: 'Gravações de áudio da Conferência Geral de A Igreja de Jesus Cristo dos Santos dos Últimos Dias. Inclui discursos de líderes da Igreja das transmissões mundiais semestrais.',
-  },
-};
+/**
+ * Per-language RSS channel metadata — sourced from `./languages.js` as the
+ * single source of truth. Do not hardcode language-specific values here;
+ * extend `LANGUAGES` instead.
+ */
+function getLanguageRssConfig(code: string): {
+  language: string;
+  title: string;
+  description: string;
+} {
+  const cfg = LANGUAGES[code as LanguageCode] ?? LANGUAGES.eng;
+  return {
+    language: cfg.rssLanguageTag,
+    title: cfg.channelTitle,
+    description: cfg.channelDescription,
+  };
+}
 
 // Month names by language
 const MONTH_NAMES: Record<string, { 4: string; 10: string }> = {
@@ -261,7 +261,7 @@ export function generateRssFeed(
   options: RssGeneratorOptions = {}
 ): string {
   const opts = { ...DEFAULT_OPTIONS, ...options };
-  const langConfig = LANGUAGE_CONFIG[opts.language || 'eng'] || LANGUAGE_CONFIG.eng;
+  const langConfig = getLanguageRssConfig(opts.language || 'eng');
   const config = {
     ...PODCAST_CONFIG,
     language: langConfig.language,
@@ -319,7 +319,7 @@ export function generateRssFeed(
   }
 
   // Build RSS feed
-  const langSuffix = opts.language === 'eng' ? '' : `-${LANGUAGE_CONFIG[opts.language || 'eng']?.language || 'en'}`;
+  const langSuffix = opts.language === 'eng' ? '' : `-${getLanguageRssConfig(opts.language || 'eng').language}`;
   const feedUrl = `${opts.feedBaseUrl}/audio${langSuffix}.xml`;
   const buildDate = formatRfc2822Date(new Date());
 

@@ -88,6 +88,10 @@ jobs:
             npx tsx src/scrape-all.ts --recent -l eng
           fi
 
+      # NOTE: Per-language scrape steps are currently hardcoded. The canonical
+      # list of supported language codes lives in `src/languages.ts`
+      # (LANGUAGES / LANGUAGE_CODES). Adding a new language here is a separate
+      # follow-up — ideally a matrix refactor that reads from that config.
       - name: Scrape conferences (Spanish)
         if: ${{ inputs.languages == 'all' || inputs.languages == 'spa' || inputs.languages == '' }}
         run: npx tsx src/scrape-all.ts --recent -l spa
