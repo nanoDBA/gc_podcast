@@ -751,7 +751,21 @@ Same GUID = Same episode (no duplicate created)
 3. Maintain 1.0 feeds for 1 release cycle
 4. Archive 1.0 documentation in versioned branch
 
-**Note:** Runtime version enforcement and version validation is tracked separately (see gc_podcast-hjq / gc_podcast-0uc issues). This section documents the published schema only.
+**Runtime enforcement (implemented in gc_podcast-0uc and gc_podcast-hjq):**
+
+Every site that reads a persisted `output/gc-*.json` file routes through
+`validateVersion()` in `src/migrations.ts`:
+
+- `src/scrape-all.ts` `isIncomplete()` — a version mismatch flags the file as
+  incomplete so the conference is re-scraped rather than silently consumed.
+- `src/rss-generator.ts` `loadConferences()` — a version mismatch logs a
+  warning and skips the file, so one bad file cannot silently corrupt a feed.
+
+New migrations for future version bumps register in the `MIGRATIONS` map
+keyed by `"fromVersion->toVersion"`. A migration must update the `version`
+field on the object it returns so subsequent `validateVersion()` calls see
+the new version. See `src/migrations.ts` for the registry and
+`tests/migrations.test.ts` for the expected contract.
 
 ### 12.7 What is NOT Guaranteed
 
@@ -776,6 +790,9 @@ This section tracks breaking changes and major updates to the stability guarante
 |------|--------|--------|
 | 2026-04-20 | Initial stability guarantees (v1.0) | Establish baseline for feed consumers |
 | 2026-04-20 | Added `speaker.role_observed` field (§12.9) | Document temporal role semantics |
+| 2026-04-20 | Added `talk.image_url` and `speaker.image_url` fields | Per-item `<itunes:image>` support |
+| 2026-04-20 | Runtime schema enforcement wired into scrape-all and rss-generator | Fail-loud on version mismatch instead of silent acceptance |
+| 2026-04-20 | RSS channel now emits `<generator>` tag with semver from package.json | Feed consumers can identify generator version for debugging |
 
 ---
 
@@ -820,4 +837,5 @@ value is reserved for a future enrichment pass.
 |---------|------|---------|
 | 1.0 | 2026-01-08 | Initial specification |
 | 1.1 | 2026-04-20 | Added Section 12: Data Format and Stability Guarantees |
+| 1.2 | 2026-04-20 | Runtime schema enforcement (§12.6); image URL fields (§12.5); RSS `<generator>` tag |
 | 1.2 | 2026-04-20 | Added §12.9: Temporal speaker-role semantics (role_observed) |

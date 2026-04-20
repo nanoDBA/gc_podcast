@@ -8,6 +8,8 @@ import * as path from 'path';
 import { ConferenceOutput, Conference, Session, Talk } from './types.js';
 import { LANGUAGES, LanguageCode } from './languages.js';
 import { uuidv5 } from './uuid.js';
+import { GENERATOR_STRING } from './version.js';
+import { validateVersion, VersionMismatchError } from './migrations.js';
 
 /**
  * Podcasting 2.0 namespace UUID for `<podcast:guid>` derivation.
@@ -438,6 +440,7 @@ export function generateRssFeed(
     <language>${config.language}</language>
     <copyright>${escapeXml(config.copyright)}</copyright>
     <lastBuildDate>${buildDate}</lastBuildDate>
+    <generator>${escapeXml(GENERATOR_STRING)}</generator>
     <atom:link href="${escapeXml(feedUrl)}" rel="self" type="application/rss+xml"/>
     <podcast:guid>${podcastGuid}</podcast:guid>
 
@@ -475,8 +478,25 @@ export async function loadConferences(outputDir: string, language: string = 'eng
 
   const conferences: ConferenceOutput[] = [];
   for (const file of jsonFiles) {
-    const content = await fs.readFile(path.join(outputDir, file), 'utf-8');
-    const conf = JSON.parse(content);
+    const filePath = path.join(outputDir, file);
+    const content = await fs.readFile(filePath, 'utf-8');
+    const raw = JSON.parse(content);
+
+    // Enforce schema version at runtime (gc_podcast-hjq). A file with a
+    // wrong version and no registered migration is skipped with a warning
+    // rather than silently consumed, so a future breaking-change bump will
+    // surface immediately instead of producing a subtly-wrong feed.
+    let conf: ConferenceOutput;
+    try {
+      conf = validateVersion(raw) as unknown as ConferenceOutput;
+    } catch (err) {
+      if (err instanceof VersionMismatchError) {
+        console.warn(`  skipping ${file}: ${err.message}`);
+        continue;
+      }
+      throw err;
+    }
+
     // Only include conferences that have sessions (skip empty ones)
     if (conf.conference?.sessions?.length > 0) {
       conferences.push(conf);
