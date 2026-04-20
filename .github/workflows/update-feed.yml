@@ -144,13 +144,29 @@ jobs:
 
       - name: Scrape conferences (English)
         run: |
-          if [ "${{ inputs.force_scrape }}" = "true" ]; then
-            npx tsx src/scrape-all.ts --recent --force -l eng
-          elif [ -n "${{ inputs.start_year }}" ]; then
-            npx tsx src/scrape-all.ts --start ${{ inputs.start_year }} --force -l eng
-          else
-            npx tsx src/scrape-all.ts --recent -l eng
-          fi
+          # Retry with exponential backoff: 3 attempts with 30s, 60s, 120s delays
+          ATTEMPT=1
+          while [ $ATTEMPT -le 3 ]; do
+            echo "Scrape attempt $ATTEMPT/3..."
+
+            if [ "${{ inputs.force_scrape }}" = "true" ]; then
+              npx tsx src/scrape-all.ts --recent --force -l eng && exit 0
+            elif [ -n "${{ inputs.start_year }}" ]; then
+              npx tsx src/scrape-all.ts --start ${{ inputs.start_year }} --force -l eng && exit 0
+            else
+              npx tsx src/scrape-all.ts --recent -l eng && exit 0
+            fi
+
+            ATTEMPT=$((ATTEMPT + 1))
+            if [ $ATTEMPT -le 3 ]; then
+              DELAY=$((30 * ATTEMPT))
+              echo "Attempt failed. Retrying in ${DELAY}s..."
+              sleep $DELAY
+            fi
+          done
+
+          # All retries exhausted
+          exit 1
 
       # NOTE: Per-language scrape steps are currently hardcoded. The canonical
       # list of supported language codes lives in `src/languages.ts`
@@ -158,12 +174,44 @@ jobs:
       # follow-up — ideally a matrix refactor that reads from that config.
       - name: Scrape conferences (Spanish)
         if: ${{ inputs.languages == 'all' || inputs.languages == 'spa' || inputs.languages == '' }}
-        run: npx tsx src/scrape-all.ts --recent -l spa
+        run: |
+          # Retry with exponential backoff: 3 attempts with 30s, 60s, 120s delays
+          ATTEMPT=1
+          while [ $ATTEMPT -le 3 ]; do
+            echo "Scrape attempt $ATTEMPT/3..."
+            npx tsx src/scrape-all.ts --recent -l spa && exit 0
+
+            ATTEMPT=$((ATTEMPT + 1))
+            if [ $ATTEMPT -le 3 ]; then
+              DELAY=$((30 * ATTEMPT))
+              echo "Attempt failed. Retrying in ${DELAY}s..."
+              sleep $DELAY
+            fi
+          done
+
+          # All retries exhausted; allow workflow to continue
+          exit 1
         continue-on-error: true
 
       - name: Scrape conferences (Portuguese)
         if: ${{ inputs.languages == 'all' || inputs.languages == 'por' || inputs.languages == '' }}
-        run: npx tsx src/scrape-all.ts --recent -l por
+        run: |
+          # Retry with exponential backoff: 3 attempts with 30s, 60s, 120s delays
+          ATTEMPT=1
+          while [ $ATTEMPT -le 3 ]; do
+            echo "Scrape attempt $ATTEMPT/3..."
+            npx tsx src/scrape-all.ts --recent -l por && exit 0
+
+            ATTEMPT=$((ATTEMPT + 1))
+            if [ $ATTEMPT -le 3 ]; then
+              DELAY=$((30 * ATTEMPT))
+              echo "Attempt failed. Retrying in ${DELAY}s..."
+              sleep $DELAY
+            fi
+          done
+
+          # All retries exhausted; allow workflow to continue
+          exit 1
         continue-on-error: true
 
       - name: Generate RSS feeds (all languages)
