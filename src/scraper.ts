@@ -461,7 +461,15 @@ export class ConferenceScraper {
         // preserve existing output, continue the run).
         throw error;
       }
-      console.warn(`  [api] Discovery failed: ${error instanceof Error ? error.message : error}`);
+      log.warn('API discovery failed, will fall back to HTML', {
+        url: apiUrl,
+        year,
+        month: monthStr,
+        language: langCode,
+        ...(error instanceof Error
+          ? { error: error.message, stack: error.stack, name: error.name }
+          : { error: String(error) }),
+      });
       return null;
     }
   }
@@ -882,7 +890,13 @@ export class ConferenceScraper {
    * Enrich sessions and talks with audio information
    */
   private async enrichWithAudio(sessions: Session[]): Promise<void> {
+    const enrichLog = log.child({ language: this.config.language });
     for (const session of sessions) {
+      const sessionLog = enrichLog.child({
+        sessionName: session.name,
+        sessionSlug: session.slug,
+        sessionUrl: session.url,
+      });
       // Fetch session audio if configured
       if (this.config.includeSessionAudio && session.url) {
         try {
@@ -892,7 +906,11 @@ export class ConferenceScraper {
             session.duration_ms = sessionData.audio.duration_ms;
           }
         } catch (error) {
-          console.warn(`  Failed to fetch session audio for ${session.name}:`, error);
+          sessionLog.warn('Failed to fetch session audio', {
+            ...(error instanceof Error
+              ? { error: error.message, stack: error.stack, name: error.name }
+              : { error: String(error) }),
+          });
         }
       }
 
@@ -910,7 +928,15 @@ export class ConferenceScraper {
                 talk.speaker = talkData.speaker;
               }
             } catch (error) {
-              console.warn(`  Failed to fetch talk details for ${talk.title}:`, error);
+              sessionLog.warn('Failed to fetch talk details', {
+                talkTitle: talk.title,
+                talkSlug: talk.slug,
+                talkUrl: talk.url,
+                speakerName: talk.speaker?.name,
+                ...(error instanceof Error
+                  ? { error: error.message, stack: error.stack, name: error.name }
+                  : { error: String(error) }),
+              });
             }
           }
         }
@@ -960,7 +986,14 @@ export class ConferenceScraper {
 
       return { audio, speaker };
     } catch (error) {
-      console.warn(`  API failed for ${url}, falling back to HTML scraping`);
+      log.warn('API fetch failed, falling back to HTML scraping', {
+        url,
+        apiUrl,
+        language: lang,
+        ...(error instanceof Error
+          ? { error: error.message, stack: error.stack, name: error.name }
+          : { error: String(error) }),
+      });
       const html = await this.fetchWithRateLimit(url);
       return {
         audio: this.extractAudioFromHtml(html),

@@ -179,6 +179,7 @@ async function main() {
   let scraped = 0;
   let skipped = 0;
   let failed = 0;
+  const startTime = Date.now();
 
   for (const conf of conferences) {
     const monthStr = conf.month.toString().padStart(2, '0');
@@ -234,16 +235,45 @@ async function main() {
         });
         console.error(`  [circuit-breaker] ${error.message}`);
       } else {
+        log.error('Conference scrape failed', {
+          year: conf.year,
+          month: conf.month,
+          language: config.language,
+          outputPath,
+          ...(error instanceof Error
+            ? { error: error.message, stack: error.stack, name: error.name }
+            : { error: String(error) }),
+        });
         console.error(`  [error] Failed: ${error}`);
       }
       failed++;
     }
   }
 
+  const duration_ms = Date.now() - startTime;
+
   console.log('\n=== Summary ===');
   console.log(`Scraped: ${scraped}`);
   console.log(`Skipped: ${skipped}`);
   console.log(`Failed: ${failed}`);
+
+  log.info('Scrape run complete', {
+    scraped,
+    skipped,
+    failed,
+    duration_ms,
+    startYear: config.startYear,
+    endYear: config.endYear,
+    language: config.language,
+    outputDir: config.outputDir,
+  });
 }
 
-main().catch(console.error);
+main().catch((err) => {
+  log.error('Fatal error in scrape-all main', {
+    ...(err instanceof Error
+      ? { error: err.message, stack: err.stack, name: err.name }
+      : { error: String(err) }),
+  });
+  console.error(err);
+});
