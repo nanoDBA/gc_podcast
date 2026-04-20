@@ -350,12 +350,20 @@ function generateHtml(conferences: RecentConference[]): string {
       <p>Each talk available separately (10-20 minutes each)</p>
     </div>
     <div class="feature">
-      <h3>Recent Conferences</h3>
-      <p>Multiple years of General Conference audio</p>
+      <h3>Per-Episode Artwork</h3>
+      <p>Speaker portraits appear beside every talk in supported apps</p>
     </div>
     <div class="feature">
       <h3>Multi-Language</h3>
       <p>English, Spanish, and Portuguese feeds</p>
+    </div>
+    <div class="feature">
+      <h3>Podcasting 2.0</h3>
+      <p>Stable <code>&lt;podcast:guid&gt;</code> so your subscription survives URL changes</p>
+    </div>
+    <div class="feature">
+      <h3>Seasonal Channel Art</h3>
+      <p>Channel image rotates each April and October to match the current conference</p>
     </div>
   </div>
 
