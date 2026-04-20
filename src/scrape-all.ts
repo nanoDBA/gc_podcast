@@ -9,9 +9,14 @@ import * as path from 'path';
 import { scrapeConference, ParserCircuitBreakerError } from './scraper.js';
 import { ConferenceOutput, Language } from './types.js';
 import { ConferenceOutputSchema } from './schemas.js';
+import { validateVersion, VersionMismatchError, CURRENT_SCHEMA_VERSION } from './migrations.js';
 import { log } from './logger.js';
 
-const SPEC_VERSION = '1.0';
+/**
+ * Version string written into every freshly-scraped output JSON.
+ * Derived from CURRENT_SCHEMA_VERSION so there is exactly one source of truth.
+ */
+const SPEC_VERSION = CURRENT_SCHEMA_VERSION;
 
 /**
  * Write a file atomically by writing to `<path>.tmp` first, then renaming
@@ -149,7 +154,22 @@ export async function isIncomplete(filePath: string): Promise<IncompleteResult> 
 
   try {
     const content = await fs.readFile(filePath, 'utf-8');
-    data = JSON.parse(content);
+    const raw = JSON.parse(content);
+
+    // Runtime version check + migration (gc_podcast-0uc). If the version is
+    // wrong and no migration exists we flag it as incomplete so the conference
+    // is re-scraped rather than silently consumed.
+    let migrated: Record<string, unknown>;
+    try {
+      migrated = validateVersion(raw);
+    } catch (err) {
+      const msg = err instanceof VersionMismatchError ? err.message : String(err);
+      return {
+        incomplete: true,
+        reasons: [`schema version check failed: ${msg}`],
+      };
+    }
+    data = migrated as unknown as ConferenceOutput;
   } catch (err) {
     return {
       incomplete: true,
