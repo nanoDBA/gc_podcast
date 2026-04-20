@@ -28,8 +28,51 @@ import {
   DEFAULT_CONFIG,
 } from './types.js';
 import { LANGUAGES } from './languages.js';
-import { ApiResponseSchema } from './schemas.js';
+import { ApiResponseSchema, detectApiDrift } from './schemas.js';
 import { log } from './logger.js';
+
+/**
+ * Per-run dedup of API drift warnings. Keyed on the JSON-stringified union
+ * of unknownKeys + softSignals so the same signal fires at most once per
+ * process lifetime, keeping logs readable during backfills that hit the
+ * same endpoint shape hundreds of times.
+ */
+const __driftWarningSeen = new Set<string>();
+
+/** Test-only: clear the drift dedup cache between runs. */
+export function __resetDriftWarningCache(): void {
+  __driftWarningSeen.clear();
+}
+
+/**
+ * Central helper: validate an API response with zod AND report drift signals
+ * (unknown keys, soft signals) via log.warn, rate-limited to once per signal
+ * signature per run.
+ */
+function reportApiDrift(url: string, apiResponse: unknown): void {
+  const report = detectApiDrift(apiResponse, ApiResponseSchema);
+  if (!report.ok) {
+    log.warn('API response failed schema validation', {
+      url,
+      issues: report.issues,
+    });
+    return;
+  }
+  if (report.unknownKeys.length === 0 && report.softSignals.length === 0) {
+    return;
+  }
+  const signature = JSON.stringify({
+    unknownKeys: report.unknownKeys.slice().sort(),
+    softSignals: report.softSignals.slice().sort(),
+  });
+  if (__driftWarningSeen.has(signature)) return;
+  __driftWarningSeen.add(signature);
+  log.warn('API response has unknown fields (possible drift)', {
+    url,
+    unknownKeys: report.unknownKeys,
+    softSignals: report.softSignals,
+  });
+}
 
 const BASE_URL = 'https://www.churchofjesuschrist.org';
 const API_BASE = 'https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content';
@@ -405,15 +448,9 @@ export class ConferenceScraper {
       const jsonStr = await this.fetchWithRateLimit(apiUrl);
       const apiResponse: ApiResponse = JSON.parse(jsonStr);
 
-      // Runtime schema check — warn on drift but continue; HTML fallback
-      // still kicks in downstream if the shape is unusable.
-      const validation = ApiResponseSchema.safeParse(apiResponse);
-      if (!validation.success) {
-        log.warn('API response failed schema validation', {
-          url: apiUrl,
-          issues: validation.error.issues,
-        });
-      }
+      // Runtime schema check + drift signals — warn but continue; HTML
+      // fallback still kicks in downstream if the shape is unusable.
+      reportApiDrift(apiUrl, apiResponse);
 
       const name = apiResponse.meta.title || `${monthStr === '04' ? 'April' : 'October'} ${year} General Conference`;
       const bodyHtml = apiResponse.content.body;
@@ -960,13 +997,7 @@ export class ConferenceScraper {
       const jsonStr = await this.fetchWithRateLimit(apiUrl);
       const apiResponse: ApiResponse = JSON.parse(jsonStr);
 
-      const validation = ApiResponseSchema.safeParse(apiResponse);
-      if (!validation.success) {
-        log.warn('API response failed schema validation', {
-          url: apiUrl,
-          issues: validation.error.issues,
-        });
-      }
+      reportApiDrift(apiUrl, apiResponse);
 
       const audio = this.extractAudioFromApi(apiResponse);
       const speaker = this.extractSpeakerFromApi(apiResponse);
