@@ -34,6 +34,56 @@ import { log } from './logger.js';
 const BASE_URL = 'https://www.churchofjesuschrist.org';
 const API_BASE = 'https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content';
 
+/**
+ * Minimum HTML body size (bytes) below which we assume the response is a 404,
+ * stub, redirect, or otherwise not a real conference page. We do NOT trip the
+ * circuit breaker for such responses; they represent a different failure mode
+ * (expected non-match) rather than a parser contract break.
+ */
+export const MIN_PARSEABLE_HTML_BYTES = 5 * 1024;
+
+/**
+ * Per-parser result record used by the circuit breaker to record which
+ * strategies were attempted and how many sessions each one produced.
+ */
+export interface ParserAttempt {
+  parser: string;
+  sessionCount: number;
+}
+
+/**
+ * Thrown when every parser strategy returned zero sessions for an HTML body
+ * that was large enough to plausibly be a conference index page. This masks
+ * a contract break between the scraper and the upstream site markup, so we
+ * fail loudly rather than silently writing an empty JSON output.
+ */
+export class ParserCircuitBreakerError extends Error {
+  public readonly url: string;
+  public readonly httpStatus: number;
+  public readonly htmlLength: number;
+  public readonly parsersTried: ParserAttempt[];
+
+  constructor(params: {
+    url: string;
+    httpStatus: number;
+    htmlLength: number;
+    parsersTried: ParserAttempt[];
+  }) {
+    const parserSummary = params.parsersTried
+      .map((p) => `${p.parser}=${p.sessionCount}`)
+      .join(', ');
+    super(
+      `Parser circuit breaker tripped for ${params.url}: all parsers returned 0 sessions ` +
+        `(status=${params.httpStatus}, htmlLength=${params.htmlLength}, tried: ${parserSummary})`
+    );
+    this.name = 'ParserCircuitBreakerError';
+    this.url = params.url;
+    this.httpStatus = params.httpStatus;
+    this.htmlLength = params.htmlLength;
+    this.parsersTried = params.parsersTried;
+  }
+}
+
 // Language code mapping for URLs and audio files
 const LANG_URL_MAP: Record<Language, string> = {
   eng: 'eng',
@@ -97,7 +147,14 @@ export class ConferenceScraper {
       console.log('  [fallback] API discovery failed, using direct HTML scraping');
       const html = await this.fetchWithRateLimit(conferenceUrl);
       conferenceName = this.extractConferenceName(html, year, month);
-      sessions = await this.extractSessionsFromIndex(html, year, monthStr, langCode);
+      sessions = this.extractSessionsWithCircuitBreaker(
+        html,
+        year,
+        monthStr,
+        langCode,
+        conferenceUrl,
+        200
+      );
     }
 
     // Optionally fetch audio for each session and talk
@@ -148,8 +205,19 @@ export class ConferenceScraper {
         return null;
       }
 
-      // Parse the API body HTML using existing extraction strategies
-      const sessions = await this.extractSessionsFromIndex(bodyHtml, year, monthStr, langCode);
+      // Parse the API body HTML with the circuit breaker. When the API hands
+      // us a non-trivial body but all parsers return zero sessions, that's a
+      // contract break — bubble ParserCircuitBreakerError up to the caller so
+      // the orchestrator can mark this conference as failed rather than
+      // writing an empty JSON file.
+      const sessions = this.extractSessionsWithCircuitBreaker(
+        bodyHtml,
+        year,
+        monthStr,
+        langCode,
+        apiUrl,
+        200
+      );
       if (sessions.length === 0) {
         return null;
       }
@@ -157,6 +225,12 @@ export class ConferenceScraper {
       console.log(`  [api] Discovered ${sessions.length} sessions via API`);
       return { name, sessions };
     } catch (error) {
+      if (error instanceof ParserCircuitBreakerError) {
+        // Contract break — do not silently fall back to the HTML page. Let
+        // the top-level orchestrator decide the policy (fail this conference,
+        // preserve existing output, continue the run).
+        throw error;
+      }
       console.warn(`  [api] Discovery failed: ${error instanceof Error ? error.message : error}`);
       return null;
     }
@@ -186,29 +260,118 @@ export class ConferenceScraper {
   /**
    * Extract sessions and talks from the conference index page.
    * Tries multiple strategies in order: doc-map (API body), data-content-type, class-based.
+   *
+   * Preserved for backwards compatibility and the test harness. Prefer
+   * `extractSessionsWithCircuitBreaker` from production call sites so we can
+   * surface contract breaks loudly.
    */
-  private async extractSessionsFromIndex(
+  private extractSessionsFromIndex(
     html: string,
     year: number,
     monthStr: string,
     langCode: string
-  ): Promise<Session[]> {
+  ): Session[] {
+    return this.runParsers(html, year, monthStr, langCode).sessions;
+  }
+
+  /**
+   * Run every parser strategy in order, recording per-parser session counts.
+   * Returns the first non-empty result along with the attempt log so the
+   * caller can log parser-success / parser-empty telemetry and trip the
+   * circuit breaker when needed.
+   */
+  private runParsers(
+    html: string,
+    year: number,
+    monthStr: string,
+    langCode: string
+  ): { sessions: Session[]; attempts: ParserAttempt[]; successParser: string | null } {
+    const attempts: ParserAttempt[] = [];
+
     // Strategy 1: doc-map / list-tile structure (API body and newer site markup)
     const docMapSessions = this.extractSessionsViaDocMap(html, langCode);
+    attempts.push({ parser: 'doc-map', sessionCount: docMapSessions.length });
     if (docMapSessions.length > 0) {
-      console.log('  [info] Using doc-map parser for conference index');
-      return docMapSessions;
+      return { sessions: docMapSessions, attempts, successParser: 'doc-map' };
     }
 
     // Strategy 2: data-content-type attributes (older conferences)
-    const sessions = this.extractSessionsViaDataContentType(html, langCode);
-    if (sessions.length > 0) {
-      return sessions;
+    const dctSessions = this.extractSessionsViaDataContentType(html, langCode);
+    attempts.push({ parser: 'data-content-type', sessionCount: dctSessions.length });
+    if (dctSessions.length > 0) {
+      return { sessions: dctSessions, attempts, successParser: 'data-content-type' };
     }
 
     // Strategy 3: class-based navigation structure (2026+ rendered page)
-    console.log('  [info] Using class-based parser for conference index');
-    return this.extractSessionsViaClassNames(html, year, monthStr, langCode);
+    const classSessions = this.extractSessionsViaClassNames(html, year, monthStr, langCode);
+    attempts.push({ parser: 'class-names', sessionCount: classSessions.length });
+    if (classSessions.length > 0) {
+      return { sessions: classSessions, attempts, successParser: 'class-names' };
+    }
+
+    return { sessions: [], attempts, successParser: null };
+  }
+
+  /**
+   * Run parsers with a circuit breaker. When every parser returns zero
+   * sessions AND the HTML body is large enough to plausibly be a conference
+   * index page (>= MIN_PARSEABLE_HTML_BYTES), throws
+   * ParserCircuitBreakerError so callers can fail loudly rather than writing
+   * empty output. Small bodies (404s, redirects) fall through quietly as an
+   * empty array — that's a different, expected failure mode.
+   */
+  private extractSessionsWithCircuitBreaker(
+    html: string,
+    year: number,
+    monthStr: string,
+    langCode: string,
+    url: string,
+    httpStatus: number
+  ): Session[] {
+    const { sessions, attempts, successParser } = this.runParsers(
+      html,
+      year,
+      monthStr,
+      langCode
+    );
+
+    const talkCount = sessions.reduce((sum, s) => sum + s.talks.length, 0);
+
+    // Emit per-attempt telemetry: warn on zero-session parsers, info on the
+    // one that finally produced data (if any).
+    for (const attempt of attempts) {
+      if (attempt.sessionCount === 0) {
+        log.warn('Parser returned zero sessions', {
+          url,
+          parser: attempt.parser,
+          htmlLength: html.length,
+        });
+      }
+    }
+
+    if (successParser) {
+      log.info('Parser success', {
+        url,
+        parser: successParser,
+        sessionCount: sessions.length,
+        talkCount,
+      });
+      return sessions;
+    }
+
+    // Every parser returned empty. Decide: contract break, or just a tiny /
+    // non-conference body?
+    if (html.length >= MIN_PARSEABLE_HTML_BYTES) {
+      throw new ParserCircuitBreakerError({
+        url,
+        httpStatus,
+        htmlLength: html.length,
+        parsersTried: attempts,
+      });
+    }
+
+    // Small body — treat as an expected non-match, not a contract break.
+    return sessions;
   }
 
   /**
@@ -990,6 +1153,14 @@ export function __parsersForTesting(config: Partial<ScraperConfig> = {}) {
       monthStr: string,
       langCode: string
     ): Session[];
+    extractSessionsWithCircuitBreaker(
+      html: string,
+      year: number,
+      monthStr: string,
+      langCode: string,
+      url: string,
+      httpStatus: number
+    ): Session[];
   };
   return {
     viaDocMap: (html: string, langCode = 'eng') =>
@@ -1002,5 +1173,21 @@ export function __parsersForTesting(config: Partial<ScraperConfig> = {}) {
       monthStr: string,
       langCode = 'eng'
     ) => scraper.extractSessionsViaClassNames(html, year, monthStr, langCode),
+    withCircuitBreaker: (
+      html: string,
+      year: number,
+      monthStr: string,
+      langCode = 'eng',
+      url = 'https://example.test/fixture',
+      httpStatus = 200
+    ) =>
+      scraper.extractSessionsWithCircuitBreaker(
+        html,
+        year,
+        monthStr,
+        langCode,
+        url,
+        httpStatus
+      ),
   };
 }

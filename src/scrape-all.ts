@@ -6,7 +6,7 @@
 import * as fs from 'fs/promises';
 import * as fsSync from 'fs';
 import * as path from 'path';
-import { scrapeConference } from './scraper.js';
+import { scrapeConference, ParserCircuitBreakerError } from './scraper.js';
 import { ConferenceOutput, Language } from './types.js';
 import { ConferenceOutputSchema } from './schemas.js';
 import { log } from './logger.js';
@@ -218,7 +218,24 @@ async function main() {
       console.log(`  → ${conference.sessions.length} sessions, ${conference.sessions.reduce((t, s) => t + s.talks.length, 0)} talks`);
       scraped++;
     } catch (error) {
-      console.error(`  [error] Failed: ${error}`);
+      if (error instanceof ParserCircuitBreakerError) {
+        // Contract break with the upstream site markup. We deliberately do
+        // NOT write an output file — any existing JSON for this conference
+        // stays on disk untouched (atomic-write in -hv7 further guarantees
+        // we never corrupt it). Log with full context and continue.
+        log.error('Parser circuit breaker tripped — skipping conference output', {
+          year: conf.year,
+          month: conf.month,
+          url: error.url,
+          httpStatus: error.httpStatus,
+          htmlLength: error.htmlLength,
+          parsersTried: error.parsersTried,
+          outputPreserved: outputPath,
+        });
+        console.error(`  [circuit-breaker] ${error.message}`);
+      } else {
+        console.error(`  [error] Failed: ${error}`);
+      }
       failed++;
     }
   }
