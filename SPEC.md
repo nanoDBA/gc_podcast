@@ -775,6 +775,42 @@ This section tracks breaking changes and major updates to the stability guarante
 | Date | Change | Reason |
 |------|--------|--------|
 | 2026-04-20 | Initial stability guarantees (v1.0) | Establish baseline for feed consumers |
+| 2026-04-20 | Added `speaker.role_observed` field (§12.9) | Document temporal role semantics |
+
+---
+
+### 12.9 Temporal Speaker-Role Semantics (role_observed)
+
+**Context:** `speaker.role_tag` and `speaker.calling` are derived from the text
+displayed on the church talk page at scrape time. For *recent* conferences (last
+1–3 years) this is accurate. For *older* talks the church site may show the
+speaker's **current** calling rather than the calling they held when the talk
+was delivered.
+
+**Example:** Jeffrey R. Holland gave talks as a Seventy in 1990. By 1994 he was
+called as an Apostle. A scrape of his 1990 talks in 2026 will show his most
+recently held calling (Quorum of the Twelve / First Presidency), not "First
+Quorum of the Seventy."
+
+**The `role_observed` field** makes this semantic explicit on the `Speaker` object:
+
+| Value | Meaning |
+|-------|---------|
+| `"current"` (default) | role_tag / calling reflects what the church page shows *today* — may not match the speaker's role at conference time |
+| `"at-time-of-talk"` | role_tag / calling was explicitly resolved to the calling active at the conference date (via bio calling-history enrichment) |
+
+**Current implementation:** All scraped speakers default to `"current"` because
+role enrichment from bio calling-history is not yet implemented. The `"at-time-of-talk"`
+value is reserved for a future enrichment pass.
+
+**Consumer guidance:**
+- For any application where historical accuracy matters (e.g. listing a speaker's
+  role when they gave a 1995 talk), treat `role_observed: "current"` values with
+  caution for pre-2010 conferences.
+- The `calling` field (raw text from the page) is the canonical source; `role_tag`
+  is a derived classification that may be incorrect for historical talks.
+- When `role_observed` is absent from persisted JSON (older scrapes), treat it as
+  `"current"`.
 
 ---
 
@@ -784,3 +820,4 @@ This section tracks breaking changes and major updates to the stability guarante
 |---------|------|---------|
 | 1.0 | 2026-01-08 | Initial specification |
 | 1.1 | 2026-04-20 | Added Section 12: Data Format and Stability Guarantees |
+| 1.2 | 2026-04-20 | Added §12.9: Temporal speaker-role semantics (role_observed) |

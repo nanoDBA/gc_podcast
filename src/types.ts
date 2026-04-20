@@ -12,6 +12,26 @@ export type Language = LanguageCode;
 export type SpeakerRoleTag = 'first-presidency' | 'quorum-of-the-twelve' | null;
 
 /**
+ * Indicates whether `role_tag` and `calling` reflect the speaker's role at
+ * the time the talk was delivered or their current role as of the last scrape.
+ *
+ * - `"current"` (default): role was read from the church page during scraping
+ *   and reflects whatever role text the page shows today. For talks older than
+ *   a few years this is almost always the speaker's *current* calling, not
+ *   their calling when they gave the talk (e.g. a Seventy who later became an
+ *   Apostle will show "Apostle" in old talks).
+ *
+ * - `"at-time-of-talk"`: role was explicitly resolved to the calling the
+ *   speaker held at the conference date (e.g. via bio calling-history
+ *   enrichment). Currently not implemented; reserved for a future enrichment
+ *   pass. See gc_podcast-5tz and SPEC.md §12.9.
+ *
+ * Consumers who need historically accurate role data should treat `"current"`
+ * values for pre-2010 talks with caution.
+ */
+export type SpeakerRoleObserved = 'at-time-of-talk' | 'current';
+
+/**
  * Audio asset with URL and metadata
  */
 export interface AudioAsset {
@@ -30,6 +50,11 @@ export interface Speaker {
   calling?: string;                // Full calling text: "Of the Quorum of the Twelve Apostles"
   bio_url?: string;                // Link to speaker bio page
   image_url?: string;              // Speaker portrait URL, populated by Phase 4 bio page scraping.
+  /**
+   * Semantic provenance of `role_tag` / `calling`. Defaults to `"current"`
+   * (role as of scrape time). See SpeakerRoleObserved and SPEC.md §12.9.
+   */
+  role_observed?: SpeakerRoleObserved;
 }
 
 /**

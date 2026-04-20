@@ -20,6 +20,15 @@ export const SpeakerRoleTagSchema = z
   .enum(['first-presidency', 'quorum-of-the-twelve'])
   .nullable();
 
+/**
+ * Semantic provenance of role_tag / calling. See SpeakerRoleObserved in
+ * types.ts and SPEC.md §12.9 for the full explanation.
+ * Defaults to "current" (role as of scrape time).
+ */
+export const SpeakerRoleObservedSchema = z
+  .enum(['at-time-of-talk', 'current'])
+  .default('current');
+
 // --- Audio / Speaker --------------------------------------------------------
 
 export const AudioAssetSchema = z.object({
@@ -35,6 +44,12 @@ export const SpeakerSchema = z.object({
   calling: z.string().optional(),
   bio_url: z.string().optional(),
   image_url: z.string().optional(),
+  /**
+   * Semantic provenance of role_tag / calling. Optional; defaults to
+   * "current" when absent in persisted JSON (backward-compatible).
+   * See SPEC.md §12.9.
+   */
+  role_observed: SpeakerRoleObservedSchema.optional(),
 });
 
 // --- Talk / Session / Conference -------------------------------------------
