@@ -45,7 +45,8 @@ concurrency:
 
 jobs:
   update-feed:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
     permissions:
       contents: write
       pages: write
@@ -53,6 +54,34 @@ jobs:
       issues: write
 
     steps:
+      - name: Validate inputs
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          # languages must be one of: all, eng, spa, por, or empty
+          case "${{ inputs.languages }}" in
+            all|eng|spa|por|'') : ;;
+            *) echo "::error::Invalid languages input '${{ inputs.languages }}'. Must be one of: all, eng, spa, por, or empty."; exit 1 ;;
+          esac
+          # start_year must be empty or a 4-digit year between 1971 and current year+1
+          if [ -n "${{ inputs.start_year }}" ]; then
+            if ! echo "${{ inputs.start_year }}" | grep -Eq '^[0-9]{4}$'; then
+              echo "::error::start_year must be a 4-digit year or empty (got '${{ inputs.start_year }}')."
+              exit 1
+            fi
+            YEAR="${{ inputs.start_year }}"
+            MIN_OK=1971
+            MAX_OK=$(( $(date -u +%Y) + 1 ))
+            if [ "$YEAR" -lt "$MIN_OK" ] || [ "$YEAR" -gt "$MAX_OK" ]; then
+              echo "::error::start_year $YEAR out of range [${MIN_OK}, ${MAX_OK}]."
+              exit 1
+            fi
+          fi
+          # force_scrape + start_year combo: the existing scrape logic lets start_year
+          # silently override force_scrape. Warn (not fail) so users know.
+          if [ "${{ inputs.force_scrape }}" = "true" ] && [ -n "${{ inputs.start_year }}" ]; then
+            echo "::warning::start_year is set; force_scrape=true flag will be ignored by the scrape step chain."
+          fi
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -166,7 +195,8 @@ jobs:
 
   deploy:
     needs: update-feed
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
     permissions:
       pages: write
       id-token: write
@@ -180,8 +210,12 @@ jobs:
         with:
           ref: main
 
-      - name: Pull latest changes
-        run: git pull
+      - name: Fast-forward to latest main
+        run: |
+          git fetch origin main
+          # Fail explicitly if deploy can't fast-forward (means something
+          # else pushed diverging history while update-feed was running).
+          git merge --ff-only origin/main
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
