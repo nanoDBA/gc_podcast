@@ -115,33 +115,102 @@ async function fileExists(filePath: string): Promise<boolean> {
 }
 
 /**
- * Check if a scraped conference file is incomplete.
- * A conference is incomplete if any session has an empty talks array,
- * which means individual talks hadn't been published yet when scraped.
+ * Minimum number of sessions for a conference to be considered plausibly
+ * complete. A General Conference typically has 5 sessions; fewer than 3 is
+ * almost certainly the result of a partial scrape. Fewer than 5 is a soft
+ * signal but tolerated for older conferences, so 3 is the hard floor.
  */
-async function isIncomplete(filePath: string): Promise<boolean> {
+const MIN_SESSIONS_HARD_FLOOR = 3;
+
+/**
+ * Result of the `isIncomplete` check. When `incomplete` is true, `reasons`
+ * contains one or more human-readable strings describing why.
+ */
+export interface IncompleteResult {
+  incomplete: boolean;
+  reasons: string[];
+}
+
+/**
+ * Check if a scraped conference file is incomplete. A conference is flagged
+ * as incomplete if any of the following hold:
+ *   - the persisted JSON fails zod schema validation
+ *   - the conference has fewer than MIN_SESSIONS_HARD_FLOOR sessions
+ *   - any session has an empty talks array (talks not yet published)
+ *   - any session is missing an `audio.url` or the url is empty/whitespace
+ *   - any talk is missing `audio.url` or `audio.duration_ms`
+ *
+ * All matching reasons are collected and returned together so callers can
+ * log WHY a file is being re-scraped.
+ */
+export async function isIncomplete(filePath: string): Promise<IncompleteResult> {
+  const reasons: string[] = [];
+  let data: ConferenceOutput;
+
   try {
     const content = await fs.readFile(filePath, 'utf-8');
-    const data: ConferenceOutput = JSON.parse(content);
+    data = JSON.parse(content);
+  } catch (err) {
+    return {
+      incomplete: true,
+      reasons: [
+        `failed to read or parse file: ${err instanceof Error ? err.message : String(err)}`,
+      ],
+    };
+  }
 
-    // Validate persisted JSON against the current schema. If it fails, treat
-    // the file as incomplete so the caller re-scrapes rather than trusting
-    // a corrupt/stale file.
-    const validation = ConferenceOutputSchema.safeParse(data);
-    if (!validation.success) {
-      log.warn('Existing conference JSON failed schema validation', {
-        file: filePath,
-        issues: validation.error.issues,
-      });
-      return true;
+  // Validate persisted JSON against the current schema. If it fails, flag
+  // it as a reason rather than short-circuiting; we still collect any other
+  // partial-scrape indicators so the caller sees the full picture.
+  const validation = ConferenceOutputSchema.safeParse(data);
+  if (!validation.success) {
+    reasons.push(
+      `schema validation failed: ${validation.error.issues
+        .map(i => `${i.path.join('.') || '<root>'}: ${i.message}`)
+        .join('; ')}`,
+    );
+  }
+
+  const sessions = data?.conference?.sessions;
+  if (!sessions || sessions.length === 0) {
+    reasons.push('conference has no sessions');
+  } else {
+    if (sessions.length < MIN_SESSIONS_HARD_FLOOR) {
+      reasons.push(
+        `conference has only ${sessions.length} session(s); below hard floor of ${MIN_SESSIONS_HARD_FLOOR}`,
+      );
     }
 
-    const sessions = data.conference?.sessions;
-    if (!sessions || sessions.length === 0) return true;
-    return sessions.some(s => !s.talks || s.talks.length === 0);
-  } catch {
-    return true;
+    sessions.forEach((session, sIdx) => {
+      const sLabel = `session[${sIdx}]${session?.name ? ` "${session.name}"` : ''}`;
+
+      if (!session.talks || session.talks.length === 0) {
+        reasons.push(`${sLabel}: talks array is empty`);
+        return;
+      }
+
+      const sessionAudioUrl = session.audio?.url;
+      if (!sessionAudioUrl || sessionAudioUrl.trim() === '') {
+        reasons.push(`${sLabel}: missing session-level audio.url`);
+      }
+
+      session.talks.forEach((talk, tIdx) => {
+        const tLabel = `${sLabel} talk[${tIdx}]${talk?.title ? ` "${talk.title}"` : ''}`;
+        const talkAudioUrl = talk.audio?.url;
+        if (!talkAudioUrl || talkAudioUrl.trim() === '') {
+          reasons.push(`${tLabel}: missing audio.url`);
+        }
+        if (
+          talk.audio?.duration_ms === undefined ||
+          talk.audio?.duration_ms === null
+        ) {
+          reasons.push(`${tLabel}: missing audio.duration_ms`);
+        }
+      });
+    });
   }
+
+  return { incomplete: reasons.length > 0, reasons };
 }
 
 async function main() {
@@ -187,11 +256,20 @@ async function main() {
     const outputPath = path.join(config.outputDir, filename);
 
     // Skip if file exists and skipExisting is true
-    // But re-scrape incomplete files (sessions with no talks)
+    // But re-scrape incomplete files (missing talks, audio, or too few sessions)
     let disableCache = false;
     if (config.skipExisting && await fileExists(outputPath)) {
-      if (await isIncomplete(outputPath)) {
-        console.log(`[rescrape] ${filename} (incomplete - missing talks)`);
+      const result = await isIncomplete(outputPath);
+      if (result.incomplete) {
+        log.warn('Conference flagged as incomplete, will re-scrape', {
+          year: conf.year,
+          month: conf.month,
+          language: config.language,
+          reasons: result.reasons,
+        });
+        console.log(
+          `[rescrape] ${filename} (incomplete: ${result.reasons[0]}${result.reasons.length > 1 ? `; +${result.reasons.length - 1} more` : ''})`,
+        );
         disableCache = true;
       } else {
         console.log(`[skip] ${filename} (already exists)`);
