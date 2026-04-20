@@ -4,11 +4,34 @@
  */
 
 import * as fs from 'fs/promises';
+import * as fsSync from 'fs';
 import * as path from 'path';
 import { scrapeConference } from './scraper.js';
 import { ConferenceOutput, Language } from './types.js';
 
 const SPEC_VERSION = '1.0';
+
+/**
+ * Write a file atomically by writing to `<path>.tmp` first, then renaming
+ * into place. Prevents partial-write corruption of the destination file.
+ * On failure, attempts to clean up the temp file and rethrows.
+ */
+function atomicWriteFileSync(filePath: string, content: string): void {
+  const tmpPath = `${filePath}.tmp`;
+  try {
+    fsSync.writeFileSync(tmpPath, content, 'utf-8');
+    fsSync.renameSync(tmpPath, filePath);
+  } catch (err) {
+    try {
+      if (fsSync.existsSync(tmpPath)) {
+        fsSync.unlinkSync(tmpPath);
+      }
+    } catch {
+      // best-effort cleanup; swallow to surface original error
+    }
+    throw err;
+  }
+}
 
 interface ScrapeConfig {
   startYear: number;
@@ -176,7 +199,7 @@ async function main() {
         conference,
       };
 
-      await fs.writeFile(outputPath, JSON.stringify(output, null, 2), 'utf-8');
+      atomicWriteFileSync(outputPath, JSON.stringify(output, null, 2));
       console.log(`  → ${conference.sessions.length} sessions, ${conference.sessions.reduce((t, s) => t + s.talks.length, 0)} talks`);
       scraped++;
     } catch (error) {
