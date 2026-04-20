@@ -96,6 +96,13 @@ export interface Conference {
   url: string;                     // Full URL to conference index
   language: Language;              // "eng", "spa", "por"
   sessions: Session[];
+  /**
+   * Conference hero image URL, sourced from the Church's media-collection
+   * page for this conference (gc_podcast-8t0). Apple-compliant 1500×1500
+   * square crop via the IIIF square region parameter. null when the
+   * collection page (and fallback) were unavailable at scrape time.
+   */
+  conference_image_url?: string | null;
 }
 
 /**

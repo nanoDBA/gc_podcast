@@ -81,6 +81,37 @@ export function buildCanonicalImageUrl(hash: string): string {
   return `https://www.churchofjesuschrist.org/imgs/${hash}/full/!1400%2C1400/0/default.jpg`;
 }
 
+/**
+ * Build an Apple-compliant 1500×1500 square IIIF URL for a conference hero
+ * image (gc_podcast-8t0).
+ *
+ * Uses the IIIF `square` region parameter (geometric centre crop) followed by
+ * a 1500×1500 size, meeting the iTunes channel artwork minimum of 1400×1400
+ * with Apple's recommended 3000×3000 as the ceiling.
+ *
+ * This is intentionally DIFFERENT from buildCanonicalImageUrl: per-item images
+ * use the `full` region with best-fit sizing; channel images use `square` crop
+ * at a fixed 1500×1500.
+ */
+export function buildConferenceSquareImageUrl(hash: string): string {
+  return `https://www.churchofjesuschrist.org/imgs/${hash}/square/1500,1500/0/default`;
+}
+
+/**
+ * Extract the IIIF hash from any og:image meta tag in an HTML string.
+ *
+ * This is a thin public wrapper that combines extractOgImage + extractHash,
+ * usable for any page type (collection pages, feature pages, etc.) where the
+ * only goal is to retrieve the hash for downstream URL-building.
+ *
+ * Returns undefined when no Church IIIF og:image is present.
+ */
+export function extractOgImageHash(html: string): string | undefined {
+  const ogUrl = extractOgImage(html);
+  if (!ogUrl) return undefined;
+  return extractHash(ogUrl);
+}
+
 // ---------------------------------------------------------------------------
 // Internal helpers
 // ---------------------------------------------------------------------------

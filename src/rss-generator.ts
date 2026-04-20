@@ -371,6 +371,16 @@ export function generateRssFeed(
     return dateB - dateA;
   });
 
+  // Use the most-recent conference's branded image for the channel artwork
+  // (gc_podcast-8t0). Falls back to PODCAST_CONFIG.imageUrl when no
+  // conference has a populated conference_image_url.
+  const mostRecentWithImage = sortedConferences.find(
+    c => c.conference.conference_image_url
+  );
+  if (mostRecentWithImage?.conference.conference_image_url) {
+    config.imageUrl = mostRecentWithImage.conference.conference_image_url;
+  }
+
   // Generate items — newest first (conferences descending, sessions descending,
   // talks descending) so that <pubDate> is strictly monotonically decreasing
   // from the top item to the bottom item of the feed.

@@ -78,6 +78,8 @@ import { log } from './logger.js';
 import {
   extractImageFromTalkHtml,
   extractImageFromBioHtml,
+  extractOgImageHash,
+  buildConferenceSquareImageUrl,
 } from './image-extractor.js';
 
 /**
@@ -686,6 +688,9 @@ export class ConferenceScraper {
       await this.enrichWithAudio(sessions);
     }
 
+    // Fetch conference hero image (gc_podcast-8t0). Non-fatal — null on failure.
+    const conference_image_url = await this.fetchConferenceImage(year, month);
+
     return {
       year,
       month,
@@ -693,6 +698,7 @@ export class ConferenceScraper {
       url: conferenceUrl,
       language: this.config.language,
       sessions,
+      conference_image_url,
     };
   }
 
@@ -1351,6 +1357,78 @@ export class ConferenceScraper {
         }
       }
     }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Conference hero image (gc_podcast-8t0)
+  // ---------------------------------------------------------------------------
+
+  /**
+   * Fetch the conference-branded hero image for a specific conference.
+   *
+   * Source: `https://www.churchofjesuschrist.org/media/collection/<month>-<year>-general-conference?lang=eng`
+   * Fallback (404 on collection page): `https://www.churchofjesuschrist.org/feature/general-conference?lang=eng`
+   *
+   * Returns an Apple-compliant 1500×1500 square IIIF URL (built via
+   * buildConferenceSquareImageUrl), or null on failure (non-fatal).
+   *
+   * Only months 4 (April) and 10 (October) are valid GC months. Any other
+   * month value short-circuits to null without fetching.
+   */
+  async fetchConferenceImage(year: number, month: number): Promise<string | null> {
+    if (month !== 4 && month !== 10) {
+      return null;
+    }
+
+    const monthName = month === 4 ? 'april' : 'october';
+    const collectionUrl = `${BASE_URL}/media/collection/${monthName}-${year}-general-conference?lang=eng`;
+    const fallbackUrl = `${BASE_URL}/feature/general-conference?lang=eng`;
+
+    const tryFetchHash = async (url: string): Promise<string | null> => {
+      try {
+        const response = await fetchWithRetry(url);
+        if (!response.ok) {
+          return null;
+        }
+        const html = await response.text();
+        const hash = extractOgImageHash(html);
+        return hash ?? null;
+      } catch {
+        return null;
+      }
+    };
+
+    // Try collection page first.
+    let hash = await tryFetchHash(collectionUrl);
+    if (hash) {
+      log.info('conference image extracted from collection page', {
+        collectionUrl,
+        hash,
+      });
+      return buildConferenceSquareImageUrl(hash);
+    }
+
+    // 404 or failure — try the generic fallback.
+    log.warn('conference collection page unavailable, trying fallback', {
+      collectionUrl,
+      fallbackUrl,
+    });
+    hash = await tryFetchHash(fallbackUrl);
+    if (hash) {
+      log.warn('conference image extracted from fallback page', {
+        fallbackUrl,
+        hash,
+      });
+      return buildConferenceSquareImageUrl(hash);
+    }
+
+    log.warn('conference image unavailable (both collection and fallback failed)', {
+      collectionUrl,
+      fallbackUrl,
+      year,
+      month,
+    });
+    return null;
   }
 
   // ---------------------------------------------------------------------------
