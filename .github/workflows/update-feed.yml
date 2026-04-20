@@ -1,5 +1,19 @@
 name: Update Podcast Feed
 
+# Permissions model: This workflow operates on the least-privilege principle.
+# The top-level `permissions` default is set to `contents: read` (no write access).
+# Each job explicitly declares only the permissions it requires to function.
+#
+# Permission rationale:
+#   - update-feed job:
+#     * contents:write  — write scraped conference data and feed XMLs to output/ and docs/
+#     * pages:write     — enable GitHub Pages deployment via Pages API in deploy job
+#     * id-token:write  — OpenID Connect token for GitHub Pages environment
+#     * issues:write    — file alerts on scrape failures for operator review
+#   - deploy job:
+#     * pages:write     — deploy built artifacts to GitHub Pages
+#     * id-token:write  — OpenID Connect token for secure GitHub Pages deployment
+
 on:
   schedule:
     # General Conference is the first full weekend of April and October
@@ -35,6 +49,10 @@ on:
         required: false
         default: 'all'
         type: string
+
+# Default to minimal permissions (read-only). Jobs override with their specific needs.
+permissions:
+  contents: read
 
 concurrency:
   # Scheduled runs (3x daily during conference windows) can overlap with
