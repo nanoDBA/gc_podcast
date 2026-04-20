@@ -28,6 +28,8 @@ import {
   ScraperConfig,
   DEFAULT_CONFIG,
 } from './types.js';
+import { ApiResponseSchema } from './schemas.js';
+import { log } from './logger.js';
 
 const BASE_URL = 'https://www.churchofjesuschrist.org';
 const API_BASE = 'https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content';
@@ -128,6 +130,16 @@ export class ConferenceScraper {
     try {
       const jsonStr = await this.fetchWithRateLimit(apiUrl);
       const apiResponse: ApiResponse = JSON.parse(jsonStr);
+
+      // Runtime schema check — warn on drift but continue; HTML fallback
+      // still kicks in downstream if the shape is unusable.
+      const validation = ApiResponseSchema.safeParse(apiResponse);
+      if (!validation.success) {
+        log.warn('API response failed schema validation', {
+          url: apiUrl,
+          issues: validation.error.issues,
+        });
+      }
 
       const name = apiResponse.meta.title || `${monthStr === '04' ? 'April' : 'October'} ${year} General Conference`;
       const bodyHtml = apiResponse.content.body;
@@ -541,6 +553,14 @@ export class ConferenceScraper {
     try {
       const jsonStr = await this.fetchWithRateLimit(apiUrl);
       const apiResponse: ApiResponse = JSON.parse(jsonStr);
+
+      const validation = ApiResponseSchema.safeParse(apiResponse);
+      if (!validation.success) {
+        log.warn('API response failed schema validation', {
+          url: apiUrl,
+          issues: validation.error.issues,
+        });
+      }
 
       const audio = this.extractAudioFromApi(apiResponse);
       const speaker = this.extractSpeakerFromApi(apiResponse);

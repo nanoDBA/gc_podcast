@@ -31,18 +31,20 @@
     "node": ">=18.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.3.0",
     "@types/node": "^20.0.0",
-    "tsx": "^4.0.0",
-    "vitest": "^2.1.0",
-    "eslint": "^9.0.0",
-    "@typescript-eslint/parser": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "prettier": "^3.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
     "husky": "^9.0.0",
-    "lint-staged": "^15.0.0"
+    "lint-staged": "^15.0.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^2.1.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "zod": "^3.25.76"
+  },
   "lint-staged": {
     "src/**/*.ts": [
       "eslint --fix"

@@ -8,6 +8,8 @@ import * as fsSync from 'fs';
 import * as path from 'path';
 import { scrapeConference } from './scraper.js';
 import { ConferenceOutput, Language } from './types.js';
+import { ConferenceOutputSchema } from './schemas.js';
+import { log } from './logger.js';
 
 const SPEC_VERSION = '1.0';
 
@@ -121,6 +123,19 @@ async function isIncomplete(filePath: string): Promise<boolean> {
   try {
     const content = await fs.readFile(filePath, 'utf-8');
     const data: ConferenceOutput = JSON.parse(content);
+
+    // Validate persisted JSON against the current schema. If it fails, treat
+    // the file as incomplete so the caller re-scrapes rather than trusting
+    // a corrupt/stale file.
+    const validation = ConferenceOutputSchema.safeParse(data);
+    if (!validation.success) {
+      log.warn('Existing conference JSON failed schema validation', {
+        file: filePath,
+        issues: validation.error.issues,
+      });
+      return true;
+    }
+
     const sessions = data.conference?.sessions;
     if (!sessions || sessions.length === 0) return true;
     return sessions.some(s => !s.talks || s.talks.length === 0);
