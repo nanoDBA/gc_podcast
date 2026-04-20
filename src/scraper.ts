@@ -297,10 +297,10 @@ function sleepMs(ms: number): Promise<void> {
 }
 
 /**
- * Perform a single HTTP GET with exponential-backoff retry on transient
- * failures. Retries on HTTP 429 and 5xx (500/502/503/504) and on network
- * errors (TypeError from fetch, ECONNRESET/ETIMEDOUT, etc). Permanent 4xx
- * responses (404/410/etc) are NOT retried.
+ * Perform a single HTTP GET (or HEAD) with exponential-backoff retry on
+ * transient failures. Retries on HTTP 429 and 5xx (500/502/503/504) and on
+ * network errors (TypeError from fetch, ECONNRESET/ETIMEDOUT, etc). Permanent
+ * 4xx responses (404/410/etc) are NOT retried.
  *
  * On 429, honors a `Retry-After` header (seconds or HTTP-date) when present
  * and uses that instead of the computed backoff, ensuring we don't hammer a
@@ -308,10 +308,13 @@ function sleepMs(ms: number): Promise<void> {
  *
  * Exhausting retries throws {@link FetchRetryExhaustedError} with full
  * context (url, attempts, lastStatus, lastError).
+ *
+ * The optional `method` parameter defaults to `"GET"`. Pass `"HEAD"` for
+ * lightweight existence checks where the response body is not needed.
  */
 export async function fetchWithRetry(
   url: string,
-  init?: RequestInit
+  init?: RequestInit & { method?: string }
 ): Promise<Response> {
   const maxAttempts = __retryTuning.maxRetries + 1;
   let lastStatus: number | undefined;
@@ -421,6 +424,93 @@ interface ApiResponse {
   content: {
     body: string;
   };
+}
+
+// ---------------------------------------------------------------------------
+// Audio URL validation helpers (gc_podcast-7fq)
+// ---------------------------------------------------------------------------
+
+/**
+ * Whether audio URL validation via HEAD request is enabled. Controlled by
+ * the VALIDATE_AUDIO_URLS env var. Disabled by default so local dev and CI
+ * without network access are unaffected; set VALIDATE_AUDIO_URLS=1 (or any
+ * truthy string) to enable.
+ */
+export function isAudioValidationEnabled(): boolean {
+  const v = process.env.VALIDATE_AUDIO_URLS;
+  if (!v) return false;
+  return v !== '0' && v.toLowerCase() !== 'false';
+}
+
+/**
+ * Validated result for a single audio URL HEAD check.
+ *
+ * - `valid: true`  — 200 + content-length > 0 (or no content-length header
+ *                    but status is 200/206, e.g. servers that omit it)
+ * - `valid: false` — 4xx/5xx response; caller should DROP the audio entry
+ * - `valid: true`  on network error — treat as transient, KEEP the entry
+ */
+export interface AudioUrlCheckResult {
+  url: string;
+  valid: boolean;
+  /** Set when the check was skipped due to a network error (keep entry). */
+  networkError?: string;
+  /** HTTP status code when a response was received. */
+  status?: number;
+  /** Content-Type header value. */
+  contentType?: string;
+}
+
+/**
+ * Issue a HEAD request against an audio URL and decide whether to keep it.
+ *
+ * Policy:
+ *   - 200/206 + audio content-type OR no content-type → valid
+ *   - 200/206 + clearly wrong content-type (text/html, application/json) → invalid
+ *   - 404/4xx/5xx → invalid
+ *   - Network error → valid (transient; log warn)
+ */
+export async function checkAudioUrl(url: string): Promise<AudioUrlCheckResult> {
+  try {
+    const response = await fetchWithRetry(url, { method: 'HEAD' });
+    const status = response.status;
+    const contentType = response.headers.get('content-type') ?? '';
+
+    if (status === 200 || status === 206) {
+      // Reject clearly wrong content types (HTML error pages, JSON, etc.).
+      const lct = contentType.toLowerCase();
+      if (
+        lct.startsWith('text/html') ||
+        lct.startsWith('application/json') ||
+        lct.startsWith('application/xml') ||
+        lct.startsWith('text/xml')
+      ) {
+        return { url, valid: false, status, contentType };
+      }
+      return { url, valid: true, status, contentType };
+    }
+
+    // Any other status (404, 403, 5xx, etc.) → invalid.
+    return { url, valid: false, status, contentType };
+  } catch (err) {
+    // fetchWithRetry throws FetchRetryExhaustedError in two scenarios:
+    //   1. Retryable HTTP status (5xx/429) exhausted: lastStatus is set.
+    //      That's a definitive server failure → invalid (drop the entry).
+    //   2. Network-level failure exhausted (TypeError, ECONNRESET, etc.):
+    //      lastError is set, lastStatus is undefined.
+    //      That's a transient connectivity issue → keep the entry.
+    if (err instanceof FetchRetryExhaustedError) {
+      if (err.lastStatus !== undefined) {
+        // HTTP error (5xx/429 exhausted) → invalid.
+        return { url, valid: false, status: err.lastStatus };
+      }
+      // Network error (DNS, socket, etc.) → transient, keep entry.
+      return { url, valid: true, networkError: err.lastError ?? err.message };
+    }
+    // Any other thrown error is also treated as a transient network failure.
+    const message = err instanceof Error ? err.message : String(err);
+    return { url, valid: true, networkError: message };
+  }
 }
 
 /**
@@ -974,6 +1064,12 @@ export class ConferenceScraper {
    *   2. If the talk page yields no image, fall back to the speaker bio page
    *      (og:image > body-img). Bio pages are deduplicated within this run via
    *      bioImageCache — each speaker is fetched at most once.
+   *
+   * After enrichment, if VALIDATE_AUDIO_URLS is set, each audio URL is
+   * HEAD-checked (gc_podcast-7fq). Invalid entries (404/5xx/wrong content-type)
+   * are dropped from the output so downstream feed generation never emits
+   * broken enclosures. Network errors are logged at warn but the entry is kept
+   * (assume transient failure).
    */
   private async enrichWithAudio(sessions: Session[]): Promise<void> {
     const enrichLog = log.child({ language: this.config.language });
@@ -1042,6 +1138,69 @@ export class ConferenceScraper {
                 talk.speaker.image_url = bioImageUrl;
               }
             }
+          }
+        }
+      }
+    }
+
+    // Optional HEAD-check of audio URLs (gc_podcast-7fq).
+    if (isAudioValidationEnabled()) {
+      await this.validateAudioUrls(sessions);
+    }
+  }
+
+  /**
+   * HEAD-check every audio URL in the enriched session/talk tree and drop
+   * invalid entries (404/5xx/wrong content-type) from output JSON.
+   *
+   * Called only when VALIDATE_AUDIO_URLS is truthy. Network errors are
+   * logged at warn but the entry is kept (assume transient failure).
+   */
+  private async validateAudioUrls(sessions: Session[]): Promise<void> {
+    const validateLog = log.child({ phase: 'audio-validation' });
+    for (const session of sessions) {
+      if (session.audio?.url) {
+        const result = await checkAudioUrl(session.audio.url);
+        if (result.networkError) {
+          validateLog.warn('audio HEAD check: network error (keeping entry)', {
+            url: result.url,
+            error: result.networkError,
+            context: 'session',
+            sessionName: session.name,
+          });
+        } else if (!result.valid) {
+          validateLog.warn('audio HEAD check: invalid URL, dropping entry', {
+            url: result.url,
+            status: result.status,
+            contentType: result.contentType,
+            context: 'session',
+            sessionName: session.name,
+          });
+          session.audio = undefined;
+          session.duration_ms = undefined;
+        }
+      }
+
+      for (const talk of session.talks) {
+        if (talk.audio?.url) {
+          const result = await checkAudioUrl(talk.audio.url);
+          if (result.networkError) {
+            validateLog.warn('audio HEAD check: network error (keeping entry)', {
+              url: result.url,
+              error: result.networkError,
+              context: 'talk',
+              talkTitle: talk.title,
+            });
+          } else if (!result.valid) {
+            validateLog.warn('audio HEAD check: invalid URL, dropping entry', {
+              url: result.url,
+              status: result.status,
+              contentType: result.contentType,
+              context: 'talk',
+              talkTitle: talk.title,
+            });
+            talk.audio = undefined;
+            talk.duration_ms = undefined;
           }
         }
       }
