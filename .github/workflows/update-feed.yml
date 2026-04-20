@@ -36,6 +36,13 @@ on:
         default: 'all'
         type: string
 
+concurrency:
+  # Scheduled runs (3x daily during conference windows) can overlap with
+  # manual workflow_dispatch triggers. Serialize all runs on the same branch
+  # so they do not race on output/ JSON files or docs/*.xml.
+  group: update-feed-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   update-feed:
     runs-on: ubuntu-latest
@@ -57,6 +64,16 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Compute min year
+        id: minyear
+        # Latest two full years of conferences (current year and prior)
+        # keeps feed rolling without manual edits.
+        run: |
+          CURRENT_YEAR=$(date -u +%Y)
+          MIN_YEAR=$((CURRENT_YEAR - 1))
+          echo "min_year=${MIN_YEAR}" >> $GITHUB_OUTPUT
+          echo "Computed min_year=${MIN_YEAR}"
 
       - name: Type-check
         run: npx tsc --noEmit
@@ -109,7 +126,7 @@ jobs:
             --output ./output \
             --feed ./docs/audio.xml \
             --all-languages \
-            --min-year 2026 \
+            --min-year ${{ steps.minyear.outputs.min_year }} \
             --base-url "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
 
       - name: Check for changes
