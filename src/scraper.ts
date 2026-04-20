@@ -27,6 +27,51 @@ import {
   ScraperConfig,
   DEFAULT_CONFIG,
 } from './types.js';
+
+// ---------------------------------------------------------------------------
+// Cache TTL helpers (gc_podcast-6te)
+// ---------------------------------------------------------------------------
+
+/**
+ * Default cache TTL in days. Override with the CACHE_TTL_DAYS env var.
+ * A value of 0 disables TTL enforcement (never expire).
+ */
+export const DEFAULT_CACHE_TTL_DAYS = 30;
+
+/**
+ * Resolve the effective cache TTL in days from the environment, falling back
+ * to DEFAULT_CACHE_TTL_DAYS. Returns 0 if TTL is disabled.
+ */
+export function resolveCacheTtlDays(): number {
+  const raw = process.env.CACHE_TTL_DAYS;
+  if (raw === undefined) return DEFAULT_CACHE_TTL_DAYS;
+  const parsed = parseFloat(raw);
+  if (!Number.isFinite(parsed) || parsed < 0) return DEFAULT_CACHE_TTL_DAYS;
+  return parsed;
+}
+
+/**
+ * Check whether a cache file has exceeded the TTL.
+ * Returns { hit: false, ageDays: number } when the file is too old,
+ * Returns { hit: true,  ageDays: number } when fresh.
+ * Returns null when the file does not exist or stat fails.
+ */
+export async function checkCacheTtl(
+  cacheFile: string,
+  ttlDays: number
+): Promise<{ hit: boolean; ageDays: number } | null> {
+  try {
+    const stat = await fs.stat(cacheFile);
+    const ageMs = Date.now() - stat.mtimeMs;
+    const ageDays = ageMs / (1000 * 60 * 60 * 24);
+    if (ttlDays > 0 && ageDays > ttlDays) {
+      return { hit: false, ageDays };
+    }
+    return { hit: true, ageDays };
+  } catch {
+    return null;
+  }
+}
 import { LANGUAGES } from './languages.js';
 import { ApiResponseSchema, detectApiDrift } from './schemas.js';
 import { log } from './logger.js';
@@ -1514,14 +1559,37 @@ export class ConferenceScraper {
   }
 
   /**
-   * Read from cache
+   * Read from cache.
+   *
+   * Applies the effective TTL (CACHE_TTL_DAYS env var, default 30 days). If
+   * the cache file is older than the TTL it is treated as a miss so the caller
+   * refetches fresh content. Every hit and miss is logged at debug level with
+   * the URL and the measured cache age in days so operators can reason about
+   * cache hygiene without grepping through network logs.
    */
   private async readFromCache(url: string): Promise<string | null> {
     if (!this.config.cacheDir) return null;
 
     try {
       const cacheFile = path.join(this.config.cacheDir, this.getCacheKey(url));
+      const ttlDays = resolveCacheTtlDays();
+      const ttlResult = await checkCacheTtl(cacheFile, ttlDays);
+
+      if (ttlResult === null) {
+        // File does not exist — this is a normal cold-cache miss; no log needed.
+        return null;
+      }
+
+      const ageDaysRounded = Math.round(ttlResult.ageDays * 10) / 10;
+
+      if (!ttlResult.hit) {
+        log.debug('cache miss (expired)', { url, ageDays: ageDaysRounded, ttlDays });
+        return null;
+      }
+
+      // File is fresh — read it.
       const content = await fs.readFile(cacheFile, 'utf-8');
+      log.debug('cache hit', { url, ageDays: ageDaysRounded, ttlDays });
       return content;
     } catch {
       return null;
