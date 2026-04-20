@@ -720,7 +720,7 @@ Same GUID = Same episode (no duplicate created)
 
 ### 12.5 Image URL Stability
 
-**Guarantee** _(When gc_podcast-mnu is released)_: Per-item `<itunes:image>` URLs are IIIF hashes on the Church CDN. They are content-addressed and stable per-revision.
+**Guarantee:** Per-item `<itunes:image>` URLs are IIIF hashes on the Church CDN. They are content-addressed and stable per-revision. Populated from the talk page (primary) or speaker bio page (fallback).
 
 **Implications:**
 - Two instances of the same image (e.g., same speaker photo) produce the same URL

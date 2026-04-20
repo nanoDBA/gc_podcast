@@ -29,7 +29,11 @@ Works with Apple Podcasts, Overcast, Pocket Casts, Castro, and any RSS reader.
 
 - **Full Sessions**: Complete 2-hour session recordings with all talks and music
 - **Individual Talks**: Each speaker's talk separately (10-20 min)
-- **Recent Conferences**: 2026 currently available
+- **Per-Episode Artwork**: Speaker portraits appear next to each talk in supported podcast clients (`<itunes:image>` per item)
+- **Conference-Branded Channel Art**: Channel artwork rotates each April/October to match the current conference's hero imagery
+- **Podcasting 2.0 compliant**: Stable `<podcast:guid>` derived from the feed URL so clients can track you across URL changes
+- **Three Languages**: English, Spanish, Portuguese — each a separate feed with its own audio
+- **Recent Conferences**: The feed auto-updates as new conferences are published; default window is 2026+
 
 ## Setup Your Own Feed
 
@@ -121,35 +125,50 @@ npm run feed -- --no-talks                      # Sessions only
 ```
 gc_podcast/
 ├── src/
-│   ├── index.ts           # CLI for single conference
-│   ├── scraper.ts         # Conference scraping logic
-│   ├── scrape-all.ts      # Batch scraping
-│   ├── rss-generator.ts   # RSS feed generator
-│   ├── generate-feed.ts   # CLI for feed generation
-│   ├── html-parser.ts     # HTML parsing utilities
-│   └── types.ts           # TypeScript types
-├── output/                # Scraped conference JSON
-├── docs/                  # GitHub Pages
-│   ├── audio.xml          # English feed
-│   ├── audio-es.xml       # Spanish feed
-│   ├── audio-pt.xml       # Portuguese feed
-│   └── index.html         # Landing page
+│   ├── index.ts            # CLI for single-conference scrape
+│   ├── scraper.ts          # Conference scraping (API-first w/ HTML fallbacks)
+│   ├── scrape-all.ts       # Batch scraping across year ranges
+│   ├── rss-generator.ts    # RSS / Podcasting 2.0 feed generator
+│   ├── generate-feed.ts    # CLI for feed generation
+│   ├── generate-index.ts   # CLI that builds docs/index.html from feed data
+│   ├── image-extractor.ts  # IIIF hash parsing + canonical image URL builder
+│   ├── html-parser.ts      # HTML parsing utilities
+│   ├── languages.ts        # Per-language channel config (eng/spa/por)
+│   ├── logger.ts           # Structured JSON logging
+│   ├── migrations.ts       # Schema version enforcement + migration registry
+│   ├── schemas.ts          # zod runtime validation for scraped data
+│   ├── types.ts            # TypeScript types
+│   ├── uuid.ts             # UUID v5 (for podcast:guid)
+│   └── version.ts          # Package version → RSS <generator> tag
+├── output/                 # Scraped conference JSON (one file per conf × language)
+├── docs/                   # GitHub Pages (auto-generated, committed)
+│   ├── audio.xml           # English feed
+│   ├── audio-es.xml        # Spanish feed
+│   ├── audio-pt.xml        # Portuguese feed
+│   └── index.html          # Landing page (generate-index.ts)
+├── tests/                  # vitest unit + integration tests
+├── SPEC.md                 # Authoritative data-format & stability spec
 └── .github/workflows/
-    └── update-feed.yml    # Auto-update workflow
+    ├── update-feed.yml     # Scheduled scrape + feed regeneration
+    ├── codeql.yml          # CodeQL security scanning
+    └── dependency-review.yml  # PR dependency review
 ```
+
+See [SPEC.md](./SPEC.md) for the authoritative data-format specification, stability guarantees, and change log.
 
 ## Data Format
 
-Conference data is stored as JSON:
+Conference data is stored as JSON. See [SPEC.md](./SPEC.md) for the authoritative schema and stability guarantees.
 
 ```json
 {
-  "scraped_at": "2025-01-08T12:00:00.000Z",
+  "scraped_at": "2026-04-20T12:00:00.000Z",
   "version": "1.0",
   "conference": {
-    "year": 2025,
+    "year": 2026,
     "month": 4,
-    "name": "April 2025 general conference",
+    "name": "April 2026 general conference",
+    "conference_image_url": "https://www.churchofjesuschrist.org/imgs/<hash>/square/1500,1500/0/default",
     "sessions": [
       {
         "name": "Saturday Morning Session",
@@ -157,10 +176,14 @@ Conference data is stored as JSON:
         "talks": [
           {
             "title": "Talk Title",
+            "image_url": "https://www.churchofjesuschrist.org/imgs/<hash>/full/!1400,1400/0/default.jpg",
             "speaker": {
               "name": "Elder Name",
               "role_tag": "quorum-of-the-twelve",
-              "calling": "Of the Quorum of the Twelve Apostles"
+              "calling": "Of the Quorum of the Twelve Apostles",
+              "role_observed": "current",
+              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-name?lang=eng",
+              "image_url": "https://www.churchofjesuschrist.org/imgs/<hash>/full/!1400,1400/0/default.jpg"
             },
             "audio": { "url": "...", "duration_ms": 795561 }
           }
@@ -179,10 +202,46 @@ Conference data is stored as JSON:
 | `quorum-of-the-twelve` | Members of the Quorum of the Twelve |
 | `null` | All other speakers |
 
+### Speaker `role_observed` semantics
+
+| Value | Meaning |
+|-------|---------|
+| `"current"` (default) | `role_tag` / `calling` reflect what the church page shows *today*. For older talks this may not match the speaker's role at the time they gave the talk. |
+| `"at-time-of-talk"` | Role resolved to the calling active at the conference date (reserved for future enrichment). |
+
+See [SPEC.md §12.9](./SPEC.md) for the full temporal-role discussion.
+
+### Schema version
+
+The `version` field (currently `"1.0"`) is enforced at runtime. A mismatched version causes both the scraper and the feed generator to refuse the file rather than silently consuming stale data. Add migrations under `src/migrations.ts` to support future bumps.
+
+## Development
+
+### Testing
+
+```bash
+npm test              # Run the full test suite (vitest)
+npm run test:watch    # Watch mode
+npm run lint          # ESLint (src + tests)
+npm run format        # Prettier write
+npm run format:check  # Prettier check (CI)
+```
+
+### Quality gates
+
+Every push runs in CI:
+- TypeScript type-check (`tsc --noEmit`)
+- ESLint
+- Full vitest suite
+- CodeQL static analysis (JavaScript/TypeScript)
+- Dependency review (pull requests)
+
+See [.github/SECURITY.md](./.github/SECURITY.md) for security-reporting posture.
+
 ## License
 
 MIT
 
 ## Disclaimer
 
-Unofficial project for personal use. Audio content is from churchofjesuschrist.org.
+Unofficial project. This repository hosts code that generates podcast-friendly RSS feeds pointing at audio hosted by The Church of Jesus Christ of Latter-day Saints. Audio and imagery remain the property of their rightful owners; all URLs in the generated feeds hotlink back to `churchofjesuschrist.org`. The project author(s) are not affiliated with or endorsed by the Church.
