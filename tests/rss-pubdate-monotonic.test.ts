@@ -39,7 +39,7 @@ function makeSession(
   order: number,
   name: string,
   slug: string,
-  talks: ReturnType<typeof makeTalk>[]
+  talks: ReturnType<typeof makeTalk>[],
 ) {
   return {
     name,
@@ -169,10 +169,10 @@ describe('RSS feed pubDate monotonic ordering', () => {
     expect(apr25Items.length).toBeGreaterThan(0);
 
     const minOct = Math.min(
-      ...oct25Items.map((b) => Date.parse(b.match(/<pubDate>([^<]+)<\/pubDate>/)![1]))
+      ...oct25Items.map((b) => Date.parse(b.match(/<pubDate>([^<]+)<\/pubDate>/)![1])),
     );
     const maxApr = Math.max(
-      ...apr25Items.map((b) => Date.parse(b.match(/<pubDate>([^<]+)<\/pubDate>/)![1]))
+      ...apr25Items.map((b) => Date.parse(b.match(/<pubDate>([^<]+)<\/pubDate>/)![1])),
     );
     expect(minOct).toBeGreaterThan(maxApr);
   });
@@ -181,14 +181,12 @@ describe('RSS feed pubDate monotonic ordering', () => {
     // In the feed, talks appear in descending order (latest first).
     // Extract October 2025 Saturday Morning items specifically.
     const itemBlocks = feed.match(/<item>[\s\S]*?<\/item>/g) ?? [];
-    const oct25SatAmTalkItems = itemBlocks.filter((b) =>
-      b.includes('oct25-sat-am-t')
-    );
+    const oct25SatAmTalkItems = itemBlocks.filter((b) => b.includes('oct25-sat-am-t'));
     // There are 3 talks; they should appear in feed as t3, t2, t1 (descending).
     expect(oct25SatAmTalkItems.length).toBe(3);
 
     const talkTimestamps = oct25SatAmTalkItems.map((b) =>
-      Date.parse(b.match(/<pubDate>([^<]+)<\/pubDate>/)![1])
+      Date.parse(b.match(/<pubDate>([^<]+)<\/pubDate>/)![1]),
     );
     // Emitted descending in feed, so talkTimestamps[0] > [1] > [2]
     for (let i = 1; i < talkTimestamps.length; i++) {
@@ -203,22 +201,16 @@ describe('RSS feed pubDate monotonic ordering', () => {
 
     // Find the Saturday Morning full-session item for October 2025
     const sessionItem = itemBlocks.find((b) =>
-      b.includes('gc-2025-10-saturday-morning-session-full')
+      b.includes('gc-2025-10-saturday-morning-session-full'),
     );
     expect(sessionItem).toBeDefined();
-    const sessionTs = Date.parse(
-      sessionItem!.match(/<pubDate>([^<]+)<\/pubDate>/)![1]
-    );
+    const sessionTs = Date.parse(sessionItem!.match(/<pubDate>([^<]+)<\/pubDate>/)![1]);
 
     // Find all talk items for the same session
-    const talkItems = itemBlocks.filter((b) =>
-      b.includes('oct25-sat-am-t')
-    );
+    const talkItems = itemBlocks.filter((b) => b.includes('oct25-sat-am-t'));
     expect(talkItems.length).toBeGreaterThan(0);
     for (const talkItem of talkItems) {
-      const talkTs = Date.parse(
-        talkItem.match(/<pubDate>([^<]+)<\/pubDate>/)![1]
-      );
+      const talkTs = Date.parse(talkItem.match(/<pubDate>([^<]+)<\/pubDate>/)![1]);
       expect(sessionTs).toBeLessThan(talkTs);
     }
   });
@@ -234,12 +226,10 @@ describe('RSS feed pubDate monotonic ordering', () => {
 
     const itemBlocks = feed.match(/<item>[\s\S]*?<\/item>/g) ?? [];
     const sessionItem = itemBlocks.find((b) =>
-      b.includes('gc-2025-4-sunday-afternoon-session-full')
+      b.includes('gc-2025-4-sunday-afternoon-session-full'),
     );
     expect(sessionItem).toBeDefined();
-    const sessionTs = Date.parse(
-      sessionItem!.match(/<pubDate>([^<]+)<\/pubDate>/)![1]
-    );
+    const sessionTs = Date.parse(sessionItem!.match(/<pubDate>([^<]+)<\/pubDate>/)![1]);
     expect(sessionTs).toBe(expectedSessionStartMs);
   });
 
@@ -252,9 +242,7 @@ describe('RSS feed pubDate monotonic ordering', () => {
     const itemBlocks = feed.match(/<item>[\s\S]*?<\/item>/g) ?? [];
     const talkItem = itemBlocks.find((b) => b.includes('apr25-sun-pm-t2'));
     expect(talkItem).toBeDefined();
-    const talkTs = Date.parse(
-      talkItem!.match(/<pubDate>([^<]+)<\/pubDate>/)![1]
-    );
+    const talkTs = Date.parse(talkItem!.match(/<pubDate>([^<]+)<\/pubDate>/)![1]);
     expect(talkTs).toBe(expectedTalkMs);
   });
 });

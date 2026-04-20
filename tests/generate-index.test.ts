@@ -75,20 +75,14 @@ describe('generate-index.ts', () => {
 
     const outputDir = path.join(tempOutputDir, 'output');
     fs.mkdirSync(outputDir, { recursive: true });
-    fs.writeFileSync(
-      path.join(outputDir, 'gc-2026-04-eng.json'),
-      JSON.stringify(fixtureConf)
-    );
+    fs.writeFileSync(path.join(outputDir, 'gc-2026-04-eng.json'), JSON.stringify(fixtureConf));
 
     const indexPath = path.join(tempOutputDir, 'index.html');
 
     // Run generate-index
-    execSync(
-      `npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`,
-      {
-        cwd: projectRoot,
-      }
-    );
+    execSync(`npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`, {
+      cwd: projectRoot,
+    });
 
     // Verify file was created
     expect(fs.existsSync(indexPath)).toBe(true);
@@ -121,19 +115,13 @@ describe('generate-index.ts', () => {
 
     const outputDir = path.join(tempOutputDir, 'output');
     fs.mkdirSync(outputDir, { recursive: true });
-    fs.writeFileSync(
-      path.join(outputDir, 'gc-2026-04-eng.json'),
-      JSON.stringify(fixtureConf)
-    );
+    fs.writeFileSync(path.join(outputDir, 'gc-2026-04-eng.json'), JSON.stringify(fixtureConf));
 
     const indexPath = path.join(tempOutputDir, 'index.html');
 
-    execSync(
-      `npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`,
-      {
-        cwd: projectRoot,
-      }
-    );
+    execSync(`npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`, {
+      cwd: projectRoot,
+    });
 
     const html = fs.readFileSync(indexPath, 'utf-8');
 
@@ -192,22 +180,16 @@ describe('generate-index.ts', () => {
       };
 
       fs.writeFileSync(
-        path.join(
-          outputDir,
-          `gc-${conf.year}-${String(conf.month).padStart(2, '0')}-eng.json`
-        ),
-        JSON.stringify(fixture)
+        path.join(outputDir, `gc-${conf.year}-${String(conf.month).padStart(2, '0')}-eng.json`),
+        JSON.stringify(fixture),
       );
     }
 
     const indexPath = path.join(tempOutputDir, 'index.html');
 
-    execSync(
-      `npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`,
-      {
-        cwd: projectRoot,
-      }
-    );
+    execSync(`npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`, {
+      cwd: projectRoot,
+    });
 
     const html = fs.readFileSync(indexPath, 'utf-8');
 
@@ -240,19 +222,13 @@ describe('generate-index.ts', () => {
 
     const outputDir = path.join(tempOutputDir, 'output');
     fs.mkdirSync(outputDir, { recursive: true });
-    fs.writeFileSync(
-      path.join(outputDir, 'gc-2026-04-eng.json'),
-      JSON.stringify(fixtureConf)
-    );
+    fs.writeFileSync(path.join(outputDir, 'gc-2026-04-eng.json'), JSON.stringify(fixtureConf));
 
     const indexPath = path.join(tempOutputDir, 'index.html');
 
-    execSync(
-      `npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`,
-      {
-        cwd: projectRoot,
-      }
-    );
+    execSync(`npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`, {
+      cwd: projectRoot,
+    });
 
     const html = fs.readFileSync(indexPath, 'utf-8');
 
@@ -284,19 +260,13 @@ describe('generate-index.ts', () => {
 
     const outputDir = path.join(tempOutputDir, 'output');
     fs.mkdirSync(outputDir, { recursive: true });
-    fs.writeFileSync(
-      path.join(outputDir, 'gc-2026-04-eng.json'),
-      JSON.stringify(fixtureConf)
-    );
+    fs.writeFileSync(path.join(outputDir, 'gc-2026-04-eng.json'), JSON.stringify(fixtureConf));
 
     const indexPath = path.join(tempOutputDir, 'index.html');
 
-    execSync(
-      `npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`,
-      {
-        cwd: projectRoot,
-      }
-    );
+    execSync(`npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`, {
+      cwd: projectRoot,
+    });
 
     const html = fs.readFileSync(indexPath, 'utf-8');
 
@@ -322,19 +292,13 @@ describe('generate-index.ts', () => {
 
     const outputDir = path.join(tempOutputDir, 'output');
     fs.mkdirSync(outputDir, { recursive: true });
-    fs.writeFileSync(
-      path.join(outputDir, 'gc-2026-04-eng.json'),
-      JSON.stringify(fixtureConf)
-    );
+    fs.writeFileSync(path.join(outputDir, 'gc-2026-04-eng.json'), JSON.stringify(fixtureConf));
 
     const indexPath = path.join(tempOutputDir, 'index.html');
 
-    execSync(
-      `npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`,
-      {
-        cwd: projectRoot,
-      }
-    );
+    execSync(`npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`, {
+      cwd: projectRoot,
+    });
 
     const html = fs.readFileSync(indexPath, 'utf-8');
 
@@ -355,12 +319,9 @@ describe('generate-index.ts', () => {
     const indexPath = path.join(tempOutputDir, 'index.html');
 
     // Should not fail with empty directory
-    execSync(
-      `npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`,
-      {
-        cwd: projectRoot,
-      }
-    );
+    execSync(`npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`, {
+      cwd: projectRoot,
+    });
 
     expect(fs.existsSync(indexPath)).toBe(true);
 
@@ -388,10 +349,7 @@ describe('generate-index.ts', () => {
 
     const outputDir = path.join(tempOutputDir, 'output');
     fs.mkdirSync(outputDir, { recursive: true });
-    fs.writeFileSync(
-      path.join(outputDir, 'gc-2026-04-eng.json'),
-      JSON.stringify(fixtureConf)
-    );
+    fs.writeFileSync(path.join(outputDir, 'gc-2026-04-eng.json'), JSON.stringify(fixtureConf));
 
     const indexDir = path.join(tempOutputDir, 'new-docs-dir');
     const indexPath = path.join(indexDir, 'index.html');
@@ -399,12 +357,9 @@ describe('generate-index.ts', () => {
     // index directory doesn't exist yet
     expect(fs.existsSync(indexDir)).toBe(false);
 
-    execSync(
-      `npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`,
-      {
-        cwd: projectRoot,
-      }
-    );
+    execSync(`npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`, {
+      cwd: projectRoot,
+    });
 
     // Should create directory and file
     expect(fs.existsSync(indexPath)).toBe(true);
@@ -433,29 +388,21 @@ describe('generate-index.ts', () => {
           name: `${conf.month === 4 ? 'April' : 'October'} ${conf.year} general conference`,
           url: `https://www.churchofjesuschrist.org/study/general-conference/${conf.year}/${String(conf.month).padStart(2, '0')}?lang=eng`,
           language: 'eng',
-          sessions: [
-            { name: 'Sat Morning', slug: 'sat-morning', order: 1, talks: [] },
-          ],
+          sessions: [{ name: 'Sat Morning', slug: 'sat-morning', order: 1, talks: [] }],
         },
       };
 
       fs.writeFileSync(
-        path.join(
-          outputDir,
-          `gc-${conf.year}-${String(conf.month).padStart(2, '0')}-eng.json`
-        ),
-        JSON.stringify(fixture)
+        path.join(outputDir, `gc-${conf.year}-${String(conf.month).padStart(2, '0')}-eng.json`),
+        JSON.stringify(fixture),
       );
     }
 
     const indexPath = path.join(tempOutputDir, 'index.html');
 
-    execSync(
-      `npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`,
-      {
-        cwd: projectRoot,
-      }
-    );
+    execSync(`npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`, {
+      cwd: projectRoot,
+    });
 
     const html = fs.readFileSync(indexPath, 'utf-8');
 

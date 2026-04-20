@@ -16,18 +16,14 @@ import { z } from 'zod';
 
 export const LanguageSchema = z.enum(['eng', 'spa', 'por']);
 
-export const SpeakerRoleTagSchema = z
-  .enum(['first-presidency', 'quorum-of-the-twelve'])
-  .nullable();
+export const SpeakerRoleTagSchema = z.enum(['first-presidency', 'quorum-of-the-twelve']).nullable();
 
 /**
  * Semantic provenance of role_tag / calling. See SpeakerRoleObserved in
  * types.ts and SPEC.md §12.9 for the full explanation.
  * Defaults to "current" (role as of scrape time).
  */
-export const SpeakerRoleObservedSchema = z
-  .enum(['at-time-of-talk', 'current'])
-  .default('current');
+export const SpeakerRoleObservedSchema = z.enum(['at-time-of-talk', 'current']).default('current');
 
 // --- Audio / Speaker --------------------------------------------------------
 
@@ -189,11 +185,7 @@ function getSchemaKeys(schema: z.ZodTypeAny): Set<string> {
  * Compare a raw object's keys against a zod object schema and collect keys
  * present on the raw object that the schema does not declare.
  */
-function diffKeys(
-  raw: unknown,
-  schema: z.ZodTypeAny,
-  pathPrefix: string
-): string[] {
+function diffKeys(raw: unknown, schema: z.ZodTypeAny, pathPrefix: string): string[] {
   if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return [];
   const schemaKeys = getSchemaKeys(schema);
   if (schemaKeys.size === 0) return [];
@@ -214,10 +206,7 @@ function diffKeys(
  *
  * Non-fatal: callers should log drift signals, not throw.
  */
-export function detectApiDrift<T>(
-  parsed: unknown,
-  schema: z.ZodType<T>
-): DriftReport<T> {
+export function detectApiDrift<T>(parsed: unknown, schema: z.ZodType<T>): DriftReport<T> {
   const result = schema.safeParse(parsed);
   if (!result.success) {
     return {
@@ -241,8 +230,7 @@ export function detectApiDrift<T>(
     const raw = parsed as Record<string, unknown>;
 
     if (schemaKeys.has('meta')) {
-      const metaSchema = (schema as unknown as z.ZodObject<z.ZodRawShape>)
-        .shape?.meta;
+      const metaSchema = (schema as unknown as z.ZodObject<z.ZodRawShape>).shape?.meta;
       if (metaSchema) {
         unknownKeys.push(...diffKeys(raw.meta, metaSchema, 'meta'));
       }
@@ -260,8 +248,7 @@ export function detectApiDrift<T>(
     }
 
     if (schemaKeys.has('content')) {
-      const contentSchema = (schema as unknown as z.ZodObject<z.ZodRawShape>)
-        .shape?.content;
+      const contentSchema = (schema as unknown as z.ZodObject<z.ZodRawShape>).shape?.content;
       if (contentSchema) {
         unknownKeys.push(...diffKeys(raw.content, contentSchema, 'content'));
       }

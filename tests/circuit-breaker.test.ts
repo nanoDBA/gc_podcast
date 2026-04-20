@@ -44,7 +44,7 @@ describe('parser circuit breaker', () => {
         '04',
         'eng',
         'https://www.churchofjesuschrist.org/study/general-conference/2026/04?lang=eng',
-        200
+        200,
       );
     } catch (err) {
       caught = err;
@@ -76,7 +76,7 @@ describe('parser circuit breaker', () => {
       '04',
       'eng',
       'https://www.churchofjesuschrist.org/study/general-conference/2099/04?lang=eng',
-      404
+      404,
     );
 
     // Expected non-match — returns empty, must not throw.
@@ -92,7 +92,7 @@ describe('parser circuit breaker', () => {
       '04',
       'eng',
       'https://www.churchofjesuschrist.org/study/general-conference/2026/04?lang=eng',
-      200
+      200,
     );
     expect(result.length).toBeGreaterThan(0);
     expect(result[0].talks.length).toBeGreaterThan(0);

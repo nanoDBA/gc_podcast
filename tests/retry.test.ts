@@ -13,19 +13,11 @@
  * even with multiple retry rounds.
  */
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import {
-  fetchWithRetry,
-  FetchRetryExhaustedError,
-  __retryTuning,
-} from '../src/scraper.js';
+import { fetchWithRetry, FetchRetryExhaustedError, __retryTuning } from '../src/scraper.js';
 
 const originalTuning = { ...__retryTuning };
 
-function makeResponse(
-  status: number,
-  body = '',
-  headers: Record<string, string> = {}
-): Response {
+function makeResponse(status: number, body = '', headers: Record<string, string> = {}): Response {
   return new Response(body, { status, headers });
 }
 

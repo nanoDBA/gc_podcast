@@ -9,11 +9,7 @@ import { describe, it, expect, afterEach, beforeEach, vi } from 'vitest';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import * as os from 'os';
-import {
-  checkCacheTtl,
-  resolveCacheTtlDays,
-  DEFAULT_CACHE_TTL_DAYS,
-} from '../src/scraper.js';
+import { checkCacheTtl, resolveCacheTtlDays, DEFAULT_CACHE_TTL_DAYS } from '../src/scraper.js';
 
 // We write real temp files so utimes actually works across platforms.
 let tmpDir: string;

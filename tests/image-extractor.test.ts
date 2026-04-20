@@ -68,8 +68,7 @@ describe('unwrapDoubleEncoded', () => {
   });
 
   it('returns plain URLs unchanged', () => {
-    const plain =
-      'https://www.churchofjesuschrist.org/imgs/abc123/full/%21800%2C/0/default';
+    const plain = 'https://www.churchofjesuschrist.org/imgs/abc123/full/%21800%2C/0/default';
     expect(unwrapDoubleEncoded(plain)).toBe(plain);
   });
 });
@@ -83,7 +82,7 @@ describe('buildCanonicalImageUrl', () => {
     const hash = 'abc123def456abc1';
     const url = buildCanonicalImageUrl(hash);
     expect(url).toBe(
-      `https://www.churchofjesuschrist.org/imgs/${hash}/full/!1400%2C1400/0/default.jpg`
+      `https://www.churchofjesuschrist.org/imgs/${hash}/full/!1400%2C1400/0/default.jpg`,
     );
   });
 
@@ -106,7 +105,7 @@ describe('extractImageFromTalkHtml', () => {
     expect(result!.source).toBe('og-image');
     expect(result!.hash).toBe('abc123def456abc1');
     expect(result!.canonicalUrl).toBe(
-      'https://www.churchofjesuschrist.org/imgs/abc123def456abc1/full/!1400%2C1400/0/default.jpg'
+      'https://www.churchofjesuschrist.org/imgs/abc123def456abc1/full/!1400%2C1400/0/default.jpg',
     );
   });
 
@@ -167,7 +166,8 @@ describe('extractImageFromBioHtml', () => {
   });
 
   it('returns undefined when no Church imagery is present', () => {
-    const html = '<html><head><meta property="og:image" content="https://example.com/pic.jpg"></head><body></body></html>';
+    const html =
+      '<html><head><meta property="og:image" content="https://example.com/pic.jpg"></head><body></body></html>';
     expect(extractImageFromBioHtml(html)).toBeUndefined();
   });
 });

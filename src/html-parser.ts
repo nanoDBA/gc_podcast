@@ -36,13 +36,19 @@ export function findAll(html: string, selector: string): ParsedElement[] {
   let pattern: RegExp;
   if (tagName && attrName && attrValue) {
     // tag[attr="value"]
-    pattern = new RegExp(`<${tagName}[^>]*${attrName}\\s*=\\s*["']${escapeRegex(attrValue)}["'][^>]*>`, 'gi');
+    pattern = new RegExp(
+      `<${tagName}[^>]*${attrName}\\s*=\\s*["']${escapeRegex(attrValue)}["'][^>]*>`,
+      'gi',
+    );
   } else if (tagName && attrName) {
     // tag[attr]
     pattern = new RegExp(`<${tagName}[^>]*${attrName}\\s*=[^>]*>`, 'gi');
   } else if (attrName && attrValue) {
     // [attr="value"]
-    pattern = new RegExp(`<(\\w+)[^>]*${attrName}\\s*=\\s*["']${escapeRegex(attrValue)}["'][^>]*>`, 'gi');
+    pattern = new RegExp(
+      `<(\\w+)[^>]*${attrName}\\s*=\\s*["']${escapeRegex(attrValue)}["'][^>]*>`,
+      'gi',
+    );
   } else if (tagName) {
     // Just tag
     pattern = new RegExp(`<${tagName}[^>]*>`, 'gi');
@@ -115,7 +121,10 @@ export function getText(html: string): string {
  */
 export function findTextByClass(html: string, className: string): string {
   // Look for elements with this class
-  const pattern = new RegExp(`<[^>]+class\\s*=\\s*["'][^"']*${escapeRegex(className)}[^"']*["'][^>]*>([^<]*)`, 'gi');
+  const pattern = new RegExp(
+    `<[^>]+class\\s*=\\s*["'][^"']*${escapeRegex(className)}[^"']*["'][^>]*>([^<]*)`,
+    'gi',
+  );
   const match = pattern.exec(html);
   if (match) {
     return match[1].trim();
@@ -161,7 +170,9 @@ export function extractTitle(element: ParsedElement): string {
   if (titleByClass) return titleByClass;
 
   // Try <p class="title">
-  const pMatch = element.content.match(/<p[^>]*class\s*=\s*["'][^"']*title[^"']*["'][^>]*>([^<]+)/i);
+  const pMatch = element.content.match(
+    /<p[^>]*class\s*=\s*["'][^"']*title[^"']*["'][^>]*>([^<]+)/i,
+  );
   if (pMatch) return pMatch[1].trim();
 
   // Try any text in first text node

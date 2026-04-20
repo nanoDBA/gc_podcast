@@ -92,14 +92,14 @@ function writeOutput(data: ConferenceOutput): void {
 
 describe('isIncomplete — partial session detection', () => {
   it('returns { incomplete: false, reasons: [] } for a complete 5-session conference', async () => {
-    const sessions = [1, 2, 3, 4, 5].map(i => makeSession(i));
+    const sessions = [1, 2, 3, 4, 5].map((i) => makeSession(i));
     writeOutput(makeOutput(sessions));
     const result = await isIncomplete(tmpFile);
     expect(result).toEqual({ incomplete: false, reasons: [] });
   });
 
   it('flags a conference where one session has an empty talks array', async () => {
-    const sessions = [1, 2, 3, 4, 5].map(i => makeSession(i));
+    const sessions = [1, 2, 3, 4, 5].map((i) => makeSession(i));
     sessions[2].talks = [];
     writeOutput(makeOutput(sessions));
     const result = await isIncomplete(tmpFile);
@@ -111,7 +111,7 @@ describe('isIncomplete — partial session detection', () => {
   });
 
   it('flags a conference where a talk is missing audio.url', async () => {
-    const sessions = [1, 2, 3, 4, 5].map(i => makeSession(i));
+    const sessions = [1, 2, 3, 4, 5].map((i) => makeSession(i));
     // Wipe the audio.url on the second talk of session 0 (add a 2nd talk first)
     sessions[0].talks.push(
       makeTalk({ order: 2, slug: 's1-t2', audio: { url: '', duration_ms: 500 } }),
@@ -124,7 +124,7 @@ describe('isIncomplete — partial session detection', () => {
   });
 
   it('flags a conference where a talk is missing audio.duration_ms', async () => {
-    const sessions = [1, 2, 3, 4, 5].map(i => makeSession(i));
+    const sessions = [1, 2, 3, 4, 5].map((i) => makeSession(i));
     // Replace the talk in session 1 with one missing duration_ms
     sessions[1].talks = [
       makeTalk({
@@ -141,7 +141,7 @@ describe('isIncomplete — partial session detection', () => {
   });
 
   it('flags a conference with only 2 sessions (below the 3-session hard floor)', async () => {
-    const sessions = [1, 2].map(i => makeSession(i));
+    const sessions = [1, 2].map((i) => makeSession(i));
     writeOutput(makeOutput(sessions));
     const result = await isIncomplete(tmpFile);
     expect(result.incomplete).toBe(true);

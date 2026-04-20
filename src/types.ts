@@ -35,21 +35,21 @@ export type SpeakerRoleObserved = 'at-time-of-talk' | 'current';
  * Audio asset with URL and metadata
  */
 export interface AudioAsset {
-  url: string;                     // Full MP3 URL
-  quality?: string;                // "128k"
-  language?: string;               // "en", "es", "pt"
-  duration_ms?: number;            // Duration in milliseconds
+  url: string; // Full MP3 URL
+  quality?: string; // "128k"
+  language?: string; // "en", "es", "pt"
+  duration_ms?: number; // Duration in milliseconds
 }
 
 /**
  * Speaker information as displayed on talk page
  */
 export interface Speaker {
-  name: string;                    // "Gary E. Stevenson"
-  role_tag: SpeakerRoleTag;        // Simplified classification for filtering
-  calling?: string;                // Full calling text: "Of the Quorum of the Twelve Apostles"
-  bio_url?: string;                // Link to speaker bio page
-  image_url?: string;              // Speaker portrait URL, populated by Phase 4 bio page scraping.
+  name: string; // "Gary E. Stevenson"
+  role_tag: SpeakerRoleTag; // Simplified classification for filtering
+  calling?: string; // Full calling text: "Of the Quorum of the Twelve Apostles"
+  bio_url?: string; // Link to speaker bio page
+  image_url?: string; // Speaker portrait URL, populated by Phase 4 bio page scraping.
   /**
    * Semantic provenance of `role_tag` / `calling`. Defaults to `"current"`
    * (role as of scrape time). See SpeakerRoleObserved and SPEC.md §12.9.
@@ -61,40 +61,40 @@ export interface Speaker {
  * Individual talk within a session
  */
 export interface Talk {
-  title: string;                   // "Blessed Are the Peacemakers"
-  slug: string;                    // "12stevenson"
-  order: number;                   // 1-based position in session
-  url: string;                     // Full URL to talk page
+  title: string; // "Blessed Are the Peacemakers"
+  slug: string; // "12stevenson"
+  order: number; // 1-based position in session
+  url: string; // Full URL to talk page
   speaker: Speaker;
-  audio?: AudioAsset;              // Individual talk audio
-  duration_ms?: number;            // Talk duration in milliseconds
-  image_url?: string;              // Episode-level artwork. Optional. See SPEC.md.
+  audio?: AudioAsset; // Individual talk audio
+  duration_ms?: number; // Talk duration in milliseconds
+  image_url?: string; // Episode-level artwork. Optional. See SPEC.md.
 }
 
 /**
  * Session containing multiple talks
  */
 export interface Session {
-  name: string;                    // "Saturday Morning Session"
-  slug: string;                    // "saturday-morning-session"
-  order: number;                   // 1-based position in conference
-  url: string;                     // Full URL to session page
-  audio?: AudioAsset;              // Full session audio (if available)
-  duration_ms?: number;            // Total session duration
+  name: string; // "Saturday Morning Session"
+  slug: string; // "saturday-morning-session"
+  order: number; // 1-based position in conference
+  url: string; // Full URL to session page
+  audio?: AudioAsset; // Full session audio (if available)
+  duration_ms?: number; // Total session duration
   talks: Talk[];
-  image_url?: string;              // Episode-level artwork. Optional. See SPEC.md.
+  image_url?: string; // Episode-level artwork. Optional. See SPEC.md.
 }
 
 /**
  * Full conference data
  */
 export interface Conference {
-  year: number;                    // e.g., 2025
-  month: number;                   // 4 or 10
-  name: string;                    // "October 2025 General Conference"
-  ordinal?: string;                // "195th Semiannual" (if available)
-  url: string;                     // Full URL to conference index
-  language: Language;              // "eng", "spa", "por"
+  year: number; // e.g., 2025
+  month: number; // 4 or 10
+  name: string; // "October 2025 General Conference"
+  ordinal?: string; // "195th Semiannual" (if available)
+  url: string; // Full URL to conference index
+  language: Language; // "eng", "spa", "por"
   sessions: Session[];
   /**
    * Conference hero image URL, sourced from the Church's media-collection
@@ -109,33 +109,33 @@ export interface Conference {
  * Calling record from speaker bio page
  */
 export interface CallingRecord {
-  title: string;                   // "President of the Quorum of the Twelve Apostles"
-  organization: string;            // "Quorum of the Twelve Apostles"
-  call_date: string;               // ISO date: "2025-10-14"
-  call_date_ms?: number;           // Milliseconds timestamp
-  is_current: boolean;             // true if under "Calling(s)", false if "Last Held"
+  title: string; // "President of the Quorum of the Twelve Apostles"
+  organization: string; // "Quorum of the Twelve Apostles"
+  call_date: string; // ISO date: "2025-10-14"
+  call_date_ms?: number; // Milliseconds timestamp
+  is_current: boolean; // true if under "Calling(s)", false if "Last Held"
 }
 
 /**
  * Extended speaker bio data (optional enrichment)
  */
 export interface SpeakerBio {
-  name: string;                    // Display name: "Jeffrey R. Holland"
-  full_name?: string;              // Legal name: "Jeffrey Roy Holland"
-  bio_url: string;                 // URL to bio page
-  birth_date?: string;             // ISO date: "1940-12-03"
-  death_date?: string;             // ISO date if deceased: "2025-12-27"
-  birthplace?: string;             // "St. George, Utah, United States"
-  callings: CallingRecord[];       // Calling history
-  is_deceased: boolean;            // Derived from presence of death_date
+  name: string; // Display name: "Jeffrey R. Holland"
+  full_name?: string; // Legal name: "Jeffrey Roy Holland"
+  bio_url: string; // URL to bio page
+  birth_date?: string; // ISO date: "1940-12-03"
+  death_date?: string; // ISO date if deceased: "2025-12-27"
+  birthplace?: string; // "St. George, Utah, United States"
+  callings: CallingRecord[]; // Calling history
+  is_deceased: boolean; // Derived from presence of death_date
 }
 
 /**
  * Output file structure
  */
 export interface ConferenceOutput {
-  scraped_at: string;              // ISO timestamp of when data was scraped
-  version: string;                 // Spec version used
+  scraped_at: string; // ISO timestamp of when data was scraped
+  version: string; // Spec version used
   conference: Conference;
 }
 
@@ -146,10 +146,10 @@ export interface ScraperConfig {
   language: Language;
   includeSessionAudio: boolean;
   includeTalkAudio: boolean;
-  rateLimitMs: number;             // Delay between requests
-  maxConcurrent: number;           // Max concurrent requests
-  cacheDir?: string;               // Directory for caching responses
-  useCache: boolean;               // Whether to use cached responses
+  rateLimitMs: number; // Delay between requests
+  maxConcurrent: number; // Max concurrent requests
+  cacheDir?: string; // Directory for caching responses
+  useCache: boolean; // Whether to use cached responses
 }
 
 /**

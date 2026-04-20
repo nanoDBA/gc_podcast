@@ -30,7 +30,7 @@ export class VersionMismatchError extends Error {
     super(
       `Schema version mismatch: found ${foundStr}, expected "${expected}". ` +
         `No migration is registered for this version transition. ` +
-        `Re-scrape the conference to regenerate the file.`
+        `Re-scrape the conference to regenerate the file.`,
     );
     this.name = 'VersionMismatchError';
     this.foundVersion = found;
@@ -112,8 +112,7 @@ export function validateVersion(parsed: unknown): Record<string, unknown> {
   }
 
   const obj = parsed as Record<string, unknown>;
-  const version =
-    typeof obj.version === 'string' ? obj.version : undefined;
+  const version = typeof obj.version === 'string' ? obj.version : undefined;
 
   if (version === CURRENT_SCHEMA_VERSION) {
     return obj;

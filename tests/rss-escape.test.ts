@@ -21,7 +21,7 @@ describe('escapeXml', () => {
     expect(escapeXml('"quoted"')).toBe('&quot;quoted&quot;');
     expect(escapeXml("it's")).toBe('it&apos;s');
     expect(escapeXml('<a href="x">\'y\'</a>')).toBe(
-      '&lt;a href=&quot;x&quot;&gt;&apos;y&apos;&lt;/a&gt;'
+      '&lt;a href=&quot;x&quot;&gt;&apos;y&apos;&lt;/a&gt;',
     );
   });
 

@@ -140,7 +140,7 @@ describe('fetchAuthoritativeDirectory', () => {
     const map = await scraper.fetchAuthoritativeDirectory();
 
     expect(map.get('kevin g. brown')).toBe(
-      'https://www.churchofjesuschrist.org/learn/kevin-g-brown?lang=eng'
+      'https://www.churchofjesuschrist.org/learn/kevin-g-brown?lang=eng',
     );
   });
 
@@ -151,7 +151,7 @@ describe('fetchAuthoritativeDirectory', () => {
 
     // The anchor text is "Sister Kristin M. Yee"; after normalisation: "kristin m. yee"
     expect(map.get('kristin m. yee')).toBe(
-      'https://www.churchofjesuschrist.org/learn/kristin-m-yee?lang=eng'
+      'https://www.churchofjesuschrist.org/learn/kristin-m-yee?lang=eng',
     );
   });
 
@@ -161,7 +161,7 @@ describe('fetchAuthoritativeDirectory', () => {
     const map = await scraper.fetchAuthoritativeDirectory();
 
     expect(map.get('jeffrey r. holland')).toBe(
-      'https://www.churchofjesuschrist.org/learn/jeffrey-r-holland?lang=eng'
+      'https://www.churchofjesuschrist.org/learn/jeffrey-r-holland?lang=eng',
     );
   });
 
@@ -193,7 +193,7 @@ describe('fetchAuthoritativeDirectory', () => {
     const directoryCalls = mockFetch.mock.calls.filter(
       (call) =>
         typeof call[0] === 'string' &&
-        (call[0] as string).includes('global-leadership-of-the-church')
+        (call[0] as string).includes('global-leadership-of-the-church'),
     );
     expect(directoryCalls).toHaveLength(1);
   });
@@ -210,9 +210,7 @@ describe('resolveBioUrl', () => {
 
     // "Elder Kevin G. Brown" is in the directory
     const result = await scraper.resolveBioUrl('Kevin G. Brown');
-    expect(result).toBe(
-      'https://www.churchofjesuschrist.org/learn/kevin-g-brown?lang=eng'
-    );
+    expect(result).toBe('https://www.churchofjesuschrist.org/learn/kevin-g-brown?lang=eng');
   });
 
   it('returns directory URL when input name has honorific prefix', async () => {
@@ -221,9 +219,7 @@ describe('resolveBioUrl', () => {
 
     // Query with "Elder " prefix — should still match "Elder Kevin G. Brown" entry
     const result = await scraper.resolveBioUrl('Elder Kevin G. Brown');
-    expect(result).toBe(
-      'https://www.churchofjesuschrist.org/learn/kevin-g-brown?lang=eng'
-    );
+    expect(result).toBe('https://www.churchofjesuschrist.org/learn/kevin-g-brown?lang=eng');
   });
 
   it('falls back to slug-guessing when speaker not in directory (HEAD 200)', async () => {
@@ -240,9 +236,7 @@ describe('resolveBioUrl', () => {
 
     const result = await scraper.resolveBioUrl('Russell M. Nelson');
     // Slug for "Russell M. Nelson" → "russell-m-nelson"
-    expect(result).toBe(
-      'https://www.churchofjesuschrist.org/learn/russell-m-nelson?lang=eng'
-    );
+    expect(result).toBe('https://www.churchofjesuschrist.org/learn/russell-m-nelson?lang=eng');
   });
 
   it('returns null when directory miss AND HEAD-check fails for both slug variants', async () => {
@@ -287,7 +281,7 @@ describe('resolveBioUrl', () => {
     const directoryCalls = mockFetch.mock.calls.filter(
       (call) =>
         typeof call[0] === 'string' &&
-        (call[0] as string).includes('global-leadership-of-the-church')
+        (call[0] as string).includes('global-leadership-of-the-church'),
     );
     expect(directoryCalls).toHaveLength(1);
   });

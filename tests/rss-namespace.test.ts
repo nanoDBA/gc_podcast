@@ -46,8 +46,7 @@ function makeSynthetic(): ConferenceOutput[] {
   ];
 }
 
-const UUID_V5_REGEX =
-  /^[0-9a-f]{8}-[0-9a-f]{4}-5[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
+const UUID_V5_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-5[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
 
 describe('RSS feed Podcasting 2.0 namespace', () => {
   const feed = generateRssFeed(makeSynthetic(), {
@@ -56,9 +55,7 @@ describe('RSS feed Podcasting 2.0 namespace', () => {
   });
 
   it('declares the podcast namespace on the <rss> root', () => {
-    expect(feed).toContain(
-      'xmlns:podcast="https://podcastindex.org/namespace/1.0"'
-    );
+    expect(feed).toContain('xmlns:podcast="https://podcastindex.org/namespace/1.0"');
   });
 
   it('emits exactly one <podcast:guid> at channel level', () => {

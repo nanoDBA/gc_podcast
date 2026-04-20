@@ -34,8 +34,7 @@ export const LANGUAGES: Record<LanguageConfig['code'], LanguageConfig> = {
     audioSuffix: 'en',
     displayName: 'English',
     rssLanguageTag: 'en',
-    channelTitle:
-      'General Conference - The Church of Jesus Christ of Latter-day Saints',
+    channelTitle: 'General Conference - The Church of Jesus Christ of Latter-day Saints',
     channelDescription:
       'Audio recordings from General Conference of The Church of Jesus Christ of Latter-day Saints. Includes talks from Church leaders delivered during the semi-annual worldwide broadcasts.',
   },
@@ -56,8 +55,7 @@ export const LANGUAGES: Record<LanguageConfig['code'], LanguageConfig> = {
     audioSuffix: 'pt',
     displayName: 'Portuguese',
     rssLanguageTag: 'pt',
-    channelTitle:
-      'Conferência Geral - A Igreja de Jesus Cristo dos Santos dos Últimos Dias',
+    channelTitle: 'Conferência Geral - A Igreja de Jesus Cristo dos Santos dos Últimos Dias',
     channelDescription:
       'Gravações de áudio da Conferência Geral de A Igreja de Jesus Cristo dos Santos dos Últimos Dias. Inclui discursos de líderes da Igreja das transmissões mundiais semestrais.',
   },
@@ -65,6 +63,4 @@ export const LANGUAGES: Record<LanguageConfig['code'], LanguageConfig> = {
 
 export type LanguageCode = LanguageConfig['code'];
 
-export const LANGUAGE_CODES: LanguageCode[] = Object.keys(
-  LANGUAGES
-) as LanguageCode[];
+export const LANGUAGE_CODES: LanguageCode[] = Object.keys(LANGUAGES) as LanguageCode[];

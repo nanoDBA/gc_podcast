@@ -104,7 +104,7 @@ describe('loadConferences schema-version enforcement (gc_podcast-hjq)', () => {
     await fs.writeFile(
       path.join(tmpDir, 'gc-2026-04-eng.json'),
       JSON.stringify(synthetic()[0]),
-      'utf-8'
+      'utf-8',
     );
     const loaded = await loadConferences(tmpDir, 'eng');
     expect(loaded).toHaveLength(1);
@@ -113,11 +113,7 @@ describe('loadConferences schema-version enforcement (gc_podcast-hjq)', () => {
 
   it('skips files with a wrong version and no migration', async () => {
     const bad = { ...synthetic()[0], version: '99.0' };
-    await fs.writeFile(
-      path.join(tmpDir, 'gc-2026-04-eng.json'),
-      JSON.stringify(bad),
-      'utf-8'
-    );
+    await fs.writeFile(path.join(tmpDir, 'gc-2026-04-eng.json'), JSON.stringify(bad), 'utf-8');
     const warn = console.warn;
     const warnings: string[] = [];
     console.warn = (msg: string) => warnings.push(msg);
@@ -133,11 +129,7 @@ describe('loadConferences schema-version enforcement (gc_podcast-hjq)', () => {
   it('skips files with absent version field', async () => {
     const bad = synthetic()[0] as Partial<ConferenceOutput>;
     delete bad.version;
-    await fs.writeFile(
-      path.join(tmpDir, 'gc-2026-04-eng.json'),
-      JSON.stringify(bad),
-      'utf-8'
-    );
+    await fs.writeFile(path.join(tmpDir, 'gc-2026-04-eng.json'), JSON.stringify(bad), 'utf-8');
     const warn = console.warn;
     console.warn = () => {};
     try {
@@ -152,12 +144,12 @@ describe('loadConferences schema-version enforcement (gc_podcast-hjq)', () => {
     await fs.writeFile(
       path.join(tmpDir, 'gc-2026-04-eng.json'),
       JSON.stringify(synthetic()[0]),
-      'utf-8'
+      'utf-8',
     );
     await fs.writeFile(
       path.join(tmpDir, 'gc-2025-10-eng.json'),
       JSON.stringify({ ...synthetic()[0], version: '0.5' }),
-      'utf-8'
+      'utf-8',
     );
     const warn = console.warn;
     console.warn = () => {};

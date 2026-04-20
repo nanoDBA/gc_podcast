@@ -93,7 +93,7 @@ describe('RSS feed per-item <itunes:image>', () => {
       makeSynthetic((t) => {
         t.image_url = talkImage;
       }),
-      { feedBaseUrl: 'https://example.test/gc', language: 'eng' }
+      { feedBaseUrl: 'https://example.test/gc', language: 'eng' },
     );
     expect(countItemImageTags(feed)).toBe(1);
     expect(firstItemImageHref(feed)).toBe(talkImage);
@@ -105,7 +105,7 @@ describe('RSS feed per-item <itunes:image>', () => {
       makeSynthetic((t) => {
         t.speaker.image_url = speakerImage;
       }),
-      { feedBaseUrl: 'https://example.test/gc', language: 'eng' }
+      { feedBaseUrl: 'https://example.test/gc', language: 'eng' },
     );
     expect(countItemImageTags(feed)).toBe(1);
     expect(firstItemImageHref(feed)).toBe(speakerImage);

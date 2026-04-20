@@ -20,16 +20,13 @@ interface RecentConference {
   sessionCount: number;
 }
 
-async function loadConferenceData(
-  outputDir: string
-): Promise<RecentConference[]> {
+async function loadConferenceData(outputDir: string): Promise<RecentConference[]> {
   const conferences: RecentConference[] = [];
   const files = fs.readdirSync(outputDir);
 
   // Find all gc-*.json files
   const confFiles = files.filter(
-    (f) =>
-      f.startsWith('gc-') && f.endsWith('-eng.json') // Only read English to get unique conferences
+    (f) => f.startsWith('gc-') && f.endsWith('-eng.json'), // Only read English to get unique conferences
   );
 
   for (const file of confFiles) {

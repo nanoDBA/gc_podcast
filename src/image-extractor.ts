@@ -32,8 +32,7 @@ export interface ExtractedImage {
  * Matches both plain and percent-encoded variants:
  *   https://www.churchofjesuschrist.org/imgs/<HASH>/full/…
  */
-export const IIIF_HASH_RE =
-  /churchofjesuschrist\.org\/imgs\/([a-z0-9]+)\/full\//i;
+export const IIIF_HASH_RE = /churchofjesuschrist\.org\/imgs\/([a-z0-9]+)\/full\//i;
 
 /**
  * Unwrap a double-encoded IIIF URL.
@@ -122,11 +121,13 @@ export function extractOgImageHash(html: string): string | undefined {
  */
 function extractOgImage(html: string): string | undefined {
   // <meta property="og:image" content="…">  (attribute order may vary)
-  const match = html.match(
-    /<meta\b[^>]*\bproperty\s*=\s*["']og:image["'][^>]*\bcontent\s*=\s*["']([^"']+)["']/i
-  ) ?? html.match(
-    /<meta\b[^>]*\bcontent\s*=\s*["']([^"']+)["'][^>]*\bproperty\s*=\s*["']og:image["']/i
-  );
+  const match =
+    html.match(
+      /<meta\b[^>]*\bproperty\s*=\s*["']og:image["'][^>]*\bcontent\s*=\s*["']([^"']+)["']/i,
+    ) ??
+    html.match(
+      /<meta\b[^>]*\bcontent\s*=\s*["']([^"']+)["'][^>]*\bproperty\s*=\s*["']og:image["']/i,
+    );
   return match?.[1];
 }
 
@@ -138,7 +139,7 @@ function extractOgImage(html: string): string | undefined {
 function extractInitialStateImage(html: string): string | undefined {
   // Find the __INITIAL_STATE__ assignment block.
   const stateMatch = html.match(
-    /window\.__INITIAL_STATE__\s*=\s*(\{[\s\S]*?\})(?:\s*;|\s*<\/script>)/
+    /window\.__INITIAL_STATE__\s*=\s*(\{[\s\S]*?\})(?:\s*;|\s*<\/script>)/,
   );
   if (!stateMatch) return undefined;
 
@@ -164,7 +165,7 @@ function extractInitialStateImage(html: string): string | undefined {
 function extractBodyImg(html: string): string | undefined {
   // Match <img … src="…/imgs/<hash>/full/…" …>
   const match = html.match(
-    /<img\b[^>]*\bsrc\s*=\s*["']([^"']*churchofjesuschrist\.org\/imgs\/[^"']+\/full\/[^"']*)["']/i
+    /<img\b[^>]*\bsrc\s*=\s*["']([^"']*churchofjesuschrist\.org\/imgs\/[^"']+\/full\/[^"']*)["']/i,
   );
   return match?.[1];
 }

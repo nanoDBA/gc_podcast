@@ -32,14 +32,16 @@ function normalizeFeedUrlForGuid(url: string): string {
 // Podcast metadata
 const PODCAST_CONFIG = {
   title: 'General Conference - The Church of Jesus Christ of Latter-day Saints',
-  description: 'Audio recordings from General Conference of The Church of Jesus Christ of Latter-day Saints. Includes talks from Church leaders delivered during the semi-annual worldwide broadcasts.',
+  description:
+    'Audio recordings from General Conference of The Church of Jesus Christ of Latter-day Saints. Includes talks from Church leaders delivered during the semi-annual worldwide broadcasts.',
   author: 'The Church of Jesus Christ of Latter-day Saints',
   email: 'noreply@churchofjesuschrist.org',
   language: 'en',
   category: 'Religion & Spirituality',
   subcategory: 'Christianity',
   explicit: false,
-  imageUrl: 'https://www.churchofjesuschrist.org/imgs/5uahv05h1s6416y49vw745z70juiiffhiq0vn8a2/full/!1400,/0/default',
+  imageUrl:
+    'https://www.churchofjesuschrist.org/imgs/5uahv05h1s6416y49vw745z70juiiffhiq0vn8a2/full/!1400,/0/default',
   websiteUrl: 'https://www.churchofjesuschrist.org/study/general-conference',
   copyright: `© ${new Date().getFullYear()} by Intellectual Reserve, Inc. All rights reserved.`,
 };
@@ -167,7 +169,7 @@ function estimateFileSize(durationMs?: number): number {
 const SESSION_SCHEDULE: Record<number, { dayOffset: number; hourUtc: number }> = {
   1: { dayOffset: 0, hourUtc: 16 }, // Saturday Morning
   2: { dayOffset: 0, hourUtc: 20 }, // Saturday Afternoon
-  3: { dayOffset: 1, hourUtc: 0  }, // Saturday Evening (midnight UTC)
+  3: { dayOffset: 1, hourUtc: 0 }, // Saturday Evening (midnight UTC)
   4: { dayOffset: 1, hourUtc: 16 }, // Sunday Morning
   5: { dayOffset: 1, hourUtc: 20 }, // Sunday Afternoon
 };
@@ -191,8 +193,7 @@ function getSessionStartUtc(year: number, month: 4 | 10, sessionOrder: number): 
   // getUTCDay(): 0=Sun, 6=Sat
   const dayOfWeek = firstOfMonth.getUTCDay();
   const daysUntilSaturday = dayOfWeek === 6 ? 0 : (6 - dayOfWeek + 7) % 7;
-  const firstSaturdayMs =
-    firstOfMonth.getTime() + daysUntilSaturday * 24 * 60 * 60 * 1000;
+  const firstSaturdayMs = firstOfMonth.getTime() + daysUntilSaturday * 24 * 60 * 60 * 1000;
 
   const schedule = SESSION_SCHEDULE[sessionOrder] ?? {
     // Fallback for unexpected session orders: Sunday afternoon + extra hours
@@ -201,9 +202,7 @@ function getSessionStartUtc(year: number, month: 4 | 10, sessionOrder: number): 
   };
 
   return new Date(
-    firstSaturdayMs +
-      schedule.dayOffset * 24 * 60 * 60 * 1000 +
-      schedule.hourUtc * 60 * 60 * 1000
+    firstSaturdayMs + schedule.dayOffset * 24 * 60 * 60 * 1000 + schedule.hourUtc * 60 * 60 * 1000,
   );
 }
 
@@ -232,7 +231,7 @@ function generateTalkItem(
   conference: Conference,
   session: Session,
   talk: Talk,
-  pubDate: Date
+  pubDate: Date,
 ): string {
   if (!talk.audio?.url) return '';
 
@@ -271,11 +270,7 @@ function generateTalkItem(
 /**
  * Generate RSS item for a full session
  */
-function generateSessionItem(
-  conference: Conference,
-  session: Session,
-  pubDate: Date
-): string {
+function generateSessionItem(conference: Conference, session: Session, pubDate: Date): string {
   if (!session.audio?.url) return '';
 
   const guid = generateGuid(conference, session);
@@ -319,9 +314,10 @@ function buildTalkDescription(conference: Conference, session: Session, talk: Ta
   desc += `</p>`;
   desc += `<p>${conference.name} - ${session.name}</p>`;
   if (talk.speaker.role_tag) {
-    const roleLabel = talk.speaker.role_tag === 'first-presidency'
-      ? 'First Presidency'
-      : 'Quorum of the Twelve Apostles';
+    const roleLabel =
+      talk.speaker.role_tag === 'first-presidency'
+        ? 'First Presidency'
+        : 'Quorum of the Twelve Apostles';
     desc += `<p><small>Speaker: ${roleLabel}</small></p>`;
   }
   return desc;
@@ -347,7 +343,7 @@ function buildSessionDescription(conference: Conference, session: Session): stri
  */
 export function generateRssFeed(
   conferences: ConferenceOutput[],
-  options: RssGeneratorOptions = {}
+  options: RssGeneratorOptions = {},
 ): string {
   const opts = { ...DEFAULT_OPTIONS, ...options };
   const langConfig = getLanguageRssConfig(opts.language || 'eng');
@@ -361,7 +357,7 @@ export function generateRssFeed(
 
   // Filter by minimum year if specified
   const filtered = opts.minYear
-    ? conferences.filter(c => c.conference.year >= opts.minYear!)
+    ? conferences.filter((c) => c.conference.year >= opts.minYear!)
     : conferences;
 
   // Sort conferences by date (newest first)
@@ -374,9 +370,7 @@ export function generateRssFeed(
   // Use the most-recent conference's branded image for the channel artwork
   // (gc_podcast-8t0). Falls back to PODCAST_CONFIG.imageUrl when no
   // conference has a populated conference_image_url.
-  const mostRecentWithImage = sortedConferences.find(
-    c => c.conference.conference_image_url
-  );
+  const mostRecentWithImage = sortedConferences.find((c) => c.conference.conference_image_url);
   if (mostRecentWithImage?.conference.conference_image_url) {
     config.imageUrl = mostRecentWithImage.conference.conference_image_url;
   }
@@ -400,11 +394,7 @@ export function generateRssFeed(
     const sortedSessions = [...conf.sessions].sort((a, b) => b.order - a.order);
 
     for (const session of sortedSessions) {
-      const sessionStart = getSessionStartUtc(
-        conf.year,
-        conf.month as 4 | 10,
-        session.order
-      );
+      const sessionStart = getSessionStartUtc(conf.year, conf.month as 4 | 10, session.order);
 
       // Add talk episodes sorted DESCENDING — last talk first in feed,
       // highest pubDate first.
@@ -414,9 +404,7 @@ export function generateRssFeed(
           if (talk.audio?.url) {
             // Each talk's pubDate = sessionStart + (order × 60 s).
             // Order is 1-based, so talk 1 → +60 s, talk 2 → +120 s, etc.
-            const talkDate = new Date(
-              sessionStart.getTime() + talk.order * 60 * 1000
-            );
+            const talkDate = new Date(sessionStart.getTime() + talk.order * 60 * 1000);
             items.push(generateTalkItem(conf, session, talk, talkDate));
           }
         }
@@ -432,7 +420,8 @@ export function generateRssFeed(
   }
 
   // Build RSS feed
-  const langSuffix = opts.language === 'eng' ? '' : `-${getLanguageRssConfig(opts.language || 'eng').language}`;
+  const langSuffix =
+    opts.language === 'eng' ? '' : `-${getLanguageRssConfig(opts.language || 'eng').language}`;
   const feedUrl = `${opts.feedBaseUrl}/audio${langSuffix}.xml`;
   const buildDate = formatRfc2822Date(new Date());
   const podcastGuid = uuidv5(normalizeFeedUrlForGuid(feedUrl), PODCAST_NAMESPACE_UUID);
@@ -480,11 +469,14 @@ ${items.join('\n')}
  * Load all conference JSON files from a directory
  * @param language - Filter by language code (eng, spa, por). If not specified, loads only English.
  */
-export async function loadConferences(outputDir: string, language: string = 'eng'): Promise<ConferenceOutput[]> {
+export async function loadConferences(
+  outputDir: string,
+  language: string = 'eng',
+): Promise<ConferenceOutput[]> {
   const files = await fs.readdir(outputDir);
   // Filter by language: gc-2025-10-eng.json, gc-2025-10-spa.json, etc.
   const langSuffix = `-${language}.json`;
-  const jsonFiles = files.filter(f => f.endsWith(langSuffix) && f.startsWith('gc-'));
+  const jsonFiles = files.filter((f) => f.endsWith(langSuffix) && f.startsWith('gc-'));
 
   const conferences: ConferenceOutput[] = [];
   for (const file of jsonFiles) {
@@ -522,14 +514,14 @@ export async function loadConferences(outputDir: string, language: string = 'eng
 export async function generateAndSaveFeed(
   outputDir: string,
   feedPath: string,
-  options?: RssGeneratorOptions
+  options?: RssGeneratorOptions,
 ): Promise<void> {
   const language = options?.language || 'eng';
   const conferences = await loadConferences(outputDir, language);
   const feed = generateRssFeed(conferences, options);
   await fs.writeFile(feedPath, feed, 'utf-8');
   const filteredCount = options?.minYear
-    ? conferences.filter(c => c.conference.year >= options.minYear!).length
+    ? conferences.filter((c) => c.conference.year >= options.minYear!).length
     : conferences.length;
   console.log(`  ${filteredCount} conferences, feed written to ${feedPath}`);
 }

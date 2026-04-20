@@ -51,7 +51,7 @@ describe('SpeakerSchema role_observed', () => {
     // wraps it with .optional(), so parse of undefined input yields undefined.
     if (result.success) {
       expect(
-        result.data.role_observed === undefined || result.data.role_observed === 'current'
+        result.data.role_observed === undefined || result.data.role_observed === 'current',
       ).toBe(true);
     }
   });

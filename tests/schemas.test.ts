@@ -8,10 +8,7 @@
 import { describe, it, expect } from 'vitest';
 import * as fs from 'fs';
 import * as path from 'path';
-import {
-  ConferenceOutputSchema,
-  ApiResponseSchema,
-} from '../src/schemas.js';
+import { ConferenceOutputSchema, ApiResponseSchema } from '../src/schemas.js';
 
 const OUTPUT_DIR = path.join(__dirname, '..', 'output');
 
@@ -31,7 +28,7 @@ describe('ConferenceOutputSchema', () => {
     const result = ConferenceOutputSchema.safeParse(raw);
     expect(result.success).toBe(false);
     if (!result.success) {
-      const paths = result.error.issues.map(i => i.path.join('.'));
+      const paths = result.error.issues.map((i) => i.path.join('.'));
       expect(paths).toContain('conference');
     }
   });
@@ -55,9 +52,7 @@ describe('ApiResponseSchema', () => {
     const minimal = {
       meta: {
         title: 'Saturday Morning Session',
-        audio: [
-          { mediaUrl: 'https://example.com/a.mp3', variant: 'audio' },
-        ],
+        audio: [{ mediaUrl: 'https://example.com/a.mp3', variant: 'audio' }],
       },
       content: {
         body: '<html></html>',

@@ -6,11 +6,7 @@
  * in enrichWithAudio — is verified via the exported helpers.
  */
 import { describe, it, expect, afterEach, beforeEach, vi } from 'vitest';
-import {
-  generateAltBioSlug,
-  validateBioUrl,
-  __retryTuning,
-} from '../src/scraper.js';
+import { generateAltBioSlug, validateBioUrl, __retryTuning } from '../src/scraper.js';
 
 const originalTuning = { ...__retryTuning };
 
@@ -75,10 +71,8 @@ describe('validateBioUrl', () => {
       .mockResolvedValueOnce(makeResponse(200));
     vi.stubGlobal('fetch', mockFetch);
 
-    const primaryUrl =
-      'https://www.churchofjesuschrist.org/learn/jeffrey-r-holland?lang=eng';
-    const expectedAltUrl =
-      'https://www.churchofjesuschrist.org/learn/jeffrey-holland?lang=eng';
+    const primaryUrl = 'https://www.churchofjesuschrist.org/learn/jeffrey-r-holland?lang=eng';
+    const expectedAltUrl = 'https://www.churchofjesuschrist.org/learn/jeffrey-holland?lang=eng';
 
     const result = await validateBioUrl(primaryUrl);
     expect(result).toBe(expectedAltUrl);
@@ -87,20 +81,15 @@ describe('validateBioUrl', () => {
 
   it('returns undefined when both primary and alt slug 404', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue(makeResponse(404)));
-    const url =
-      'https://www.churchofjesuschrist.org/learn/henry-b-eyring?lang=eng';
+    const url = 'https://www.churchofjesuschrist.org/learn/henry-b-eyring?lang=eng';
     const result = await validateBioUrl(url);
     // No alt slug exists for this plain name → undefined
     expect(result).toBeUndefined();
   });
 
   it('returns primary URL on network error (transient keep)', async () => {
-    vi.stubGlobal(
-      'fetch',
-      vi.fn().mockRejectedValue(new TypeError('Network failure'))
-    );
-    const url =
-      'https://www.churchofjesuschrist.org/learn/russell-m-nelson?lang=eng';
+    vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new TypeError('Network failure')));
+    const url = 'https://www.churchofjesuschrist.org/learn/russell-m-nelson?lang=eng';
     const result = await validateBioUrl(url);
     // Network error → treat as valid, keep original URL.
     expect(result).toBe(url);
@@ -109,8 +98,7 @@ describe('validateBioUrl', () => {
   it('returns undefined when primary 404s, alt slug exists but also 404s', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue(makeResponse(404)));
     // "dieter-f-uchtdorf" has a middle initial → alt "dieter-uchtdorf"
-    const url =
-      'https://www.churchofjesuschrist.org/learn/dieter-f-uchtdorf?lang=eng';
+    const url = 'https://www.churchofjesuschrist.org/learn/dieter-f-uchtdorf?lang=eng';
     const result = await validateBioUrl(url);
     expect(result).toBeUndefined();
   });

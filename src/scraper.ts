@@ -58,7 +58,7 @@ export function resolveCacheTtlDays(): number {
  */
 export async function checkCacheTtl(
   cacheFile: string,
-  ttlDays: number
+  ttlDays: number,
 ): Promise<{ hit: boolean; ageDays: number } | null> {
   try {
     const stat = await fs.stat(cacheFile);
@@ -168,7 +168,7 @@ export class ParserCircuitBreakerError extends Error {
       .join(', ');
     super(
       `Parser circuit breaker tripped for ${params.url}: all parsers returned 0 sessions ` +
-        `(status=${params.httpStatus}, htmlLength=${params.htmlLength}, tried: ${parserSummary})`
+        `(status=${params.httpStatus}, htmlLength=${params.htmlLength}, tried: ${parserSummary})`,
     );
     this.name = 'ParserCircuitBreakerError';
     this.url = params.url;
@@ -189,19 +189,12 @@ export class FetchRetryExhaustedError extends Error {
   public readonly lastStatus: number | undefined;
   public readonly lastError: string | undefined;
 
-  constructor(params: {
-    url: string;
-    attempts: number;
-    lastStatus?: number;
-    lastError?: string;
-  }) {
+  constructor(params: { url: string; attempts: number; lastStatus?: number; lastError?: string }) {
     const tail =
       params.lastStatus !== undefined
         ? `HTTP ${params.lastStatus}`
         : (params.lastError ?? 'unknown error');
-    super(
-      `Fetch failed for ${params.url} after ${params.attempts} attempt(s): ${tail}`
-    );
+    super(`Fetch failed for ${params.url} after ${params.attempts} attempt(s): ${tail}`);
     this.name = 'FetchRetryExhaustedError';
     this.url = params.url;
     this.attempts = params.attempts;
@@ -251,10 +244,7 @@ function isRetryableNetworkError(err: unknown): boolean {
     const cause = (err as { cause?: unknown }).cause;
     if (cause && typeof cause === 'object') {
       const causeCode = (cause as { code?: unknown }).code;
-      if (
-        typeof causeCode === 'string' &&
-        RETRYABLE_ERROR_CODES.has(causeCode)
-      ) {
+      if (typeof causeCode === 'string' && RETRYABLE_ERROR_CODES.has(causeCode)) {
         return true;
       }
     }
@@ -316,7 +306,7 @@ function sleepMs(ms: number): Promise<void> {
  */
 export async function fetchWithRetry(
   url: string,
-  init?: RequestInit & { method?: string }
+  init?: RequestInit & { method?: string },
 ): Promise<Response> {
   const maxAttempts = __retryTuning.maxRetries + 1;
   let lastStatus: number | undefined;
@@ -556,9 +546,7 @@ export function generateAltBioSlug(primarySlug: string): string | undefined {
  * On network error: returns the primary URL unchanged (assume transient;
  * let the image-extractor path decide whether to retry).
  */
-export async function validateBioUrl(
-  primaryUrl: string
-): Promise<string | undefined> {
+export async function validateBioUrl(primaryUrl: string): Promise<string | undefined> {
   // Extract the slug from the path: /learn/<slug>?lang=...
   const urlObj = new URL(primaryUrl);
   const pathParts = urlObj.pathname.split('/').filter(Boolean);
@@ -606,8 +594,7 @@ const DIRECTORY_URL =
  * Honorific prefixes stripped from speaker names when building the normalised
  * lookup key for the authoritative directory map.
  */
-const HONORIFIC_RE =
-  /^(?:President|Elder|Bishop|Sister|Brother|Dr\.)\s+/i;
+const HONORIFIC_RE = /^(?:President|Elder|Bishop|Sister|Brother|Dr\.)\s+/i;
 
 /**
  * Normalise a speaker display name for directory lookup.
@@ -679,7 +666,7 @@ export class ConferenceScraper {
         monthStr,
         langCode,
         conferenceUrl,
-        200
+        200,
       );
     }
 
@@ -709,7 +696,7 @@ export class ConferenceScraper {
   private async discoverViaApi(
     year: number,
     monthStr: string,
-    langCode: string
+    langCode: string,
   ): Promise<{ name: string; sessions: Session[] } | null> {
     const uri = `/general-conference/${year}/${monthStr}`;
     const apiUrl = `${API_BASE}?lang=${langCode}&uri=${uri}`;
@@ -722,7 +709,9 @@ export class ConferenceScraper {
       // fallback still kicks in downstream if the shape is unusable.
       reportApiDrift(apiUrl, apiResponse);
 
-      const name = apiResponse.meta.title || `${monthStr === '04' ? 'April' : 'October'} ${year} General Conference`;
+      const name =
+        apiResponse.meta.title ||
+        `${monthStr === '04' ? 'April' : 'October'} ${year} General Conference`;
       const bodyHtml = apiResponse.content.body;
 
       if (!bodyHtml) {
@@ -740,7 +729,7 @@ export class ConferenceScraper {
         monthStr,
         langCode,
         apiUrl,
-        200
+        200,
       );
       if (sessions.length === 0) {
         return null;
@@ -801,7 +790,7 @@ export class ConferenceScraper {
     html: string,
     year: number,
     monthStr: string,
-    langCode: string
+    langCode: string,
   ): Session[] {
     return this.runParsers(html, year, monthStr, langCode).sessions;
   }
@@ -816,7 +805,7 @@ export class ConferenceScraper {
     html: string,
     year: number,
     monthStr: string,
-    langCode: string
+    langCode: string,
   ): { sessions: Session[]; attempts: ParserAttempt[]; successParser: string | null } {
     const attempts: ParserAttempt[] = [];
 
@@ -858,14 +847,9 @@ export class ConferenceScraper {
     monthStr: string,
     langCode: string,
     url: string,
-    httpStatus: number
+    httpStatus: number,
   ): Session[] {
-    const { sessions, attempts, successParser } = this.runParsers(
-      html,
-      year,
-      monthStr,
-      langCode
-    );
+    const { sessions, attempts, successParser } = this.runParsers(html, year, monthStr, langCode);
 
     const talkCount = sessions.reduce((sum, s) => sum + s.talks.length, 0);
 
@@ -918,7 +902,8 @@ export class ConferenceScraper {
 
     // Match top-level session blocks: <li> containing <h2 class="label"> and a nested doc-map
     // Split by session headings
-    const sessionHeaderPattern = /<h2\s+class="label"[^>]*>\s*<p\s+class="title"[^>]*>([^<]+)<\/p>/g;
+    const sessionHeaderPattern =
+      /<h2\s+class="label"[^>]*>\s*<p\s+class="title"[^>]*>([^<]+)<\/p>/g;
     const headers: Array<{ title: string; position: number }> = [];
     let match;
 
@@ -1046,7 +1031,7 @@ export class ConferenceScraper {
         const talkTitle = extractTitle(item.element) || `Talk ${talkOrder}`;
         const hrefs = findHrefs(item.element.content);
         // Find the talk link (not session link)
-        const talkLink = hrefs.find(h => !h.includes('session')) || hrefs[0] || '';
+        const talkLink = hrefs.find((h) => !h.includes('session')) || hrefs[0] || '';
         const talkSlug = this.extractSlugFromUrl(talkLink);
 
         // Try to extract speaker name from the element
@@ -1083,13 +1068,14 @@ export class ConferenceScraper {
     html: string,
     year: number,
     monthStr: string,
-    langCode: string
+    langCode: string,
   ): Session[] {
     const sessions: Session[] = [];
     const confPath = `/general-conference/${year}/${monthStr}/`;
 
     // Find all sectionTitle links that point to session pages
-    const sectionPattern = /<a\s+class="sectionTitle[^"]*"\s+href="([^"]+)"[^>]*>[\s\S]*?<span>([^<]+)<\/span>/g;
+    const sectionPattern =
+      /<a\s+class="sectionTitle[^"]*"\s+href="([^"]+)"[^>]*>[\s\S]*?<span>([^<]+)<\/span>/g;
     const sessionMatches: Array<{ url: string; title: string; position: number }> = [];
     let match;
 
@@ -1107,7 +1093,8 @@ export class ConferenceScraper {
     // For each session, extract talks between this session and the next
     for (let i = 0; i < sessionMatches.length; i++) {
       const sessionMatch = sessionMatches[i];
-      const nextSessionPos = i + 1 < sessionMatches.length ? sessionMatches[i + 1].position : html.length;
+      const nextSessionPos =
+        i + 1 < sessionMatches.length ? sessionMatches[i + 1].position : html.length;
       const sectionHtml = html.substring(sessionMatch.position, nextSessionPos);
       const sessionSlug = this.extractSlugFromUrl(sessionMatch.url);
 
@@ -1122,7 +1109,8 @@ export class ConferenceScraper {
       // Find talk items within this session's section
       // Talk links are <a class="item-..." href="/study/general-conference/YYYY/MM/slug">
       // with <span>Title</span> and <p class="subtitle-...">Speaker</p>
-      const talkPattern = /<a\s+class="item[^"]*"\s+href="([^"]+)"[^>]*>[\s\S]*?<span>([^<]+)<\/span>(?:[\s\S]*?<p\s+class="subtitle[^"]*">([^<]+)<\/p>)?/g;
+      const talkPattern =
+        /<a\s+class="item[^"]*"\s+href="([^"]+)"[^>]*>[\s\S]*?<span>([^<]+)<\/span>(?:[\s\S]*?<p\s+class="subtitle[^"]*">([^<]+)<\/p>)?/g;
       let talkMatch;
       let talkOrder = 0;
 
@@ -1168,7 +1156,7 @@ export class ConferenceScraper {
 
     // Look for second line of text (title is usually first, speaker second)
     const textContent = getText(content);
-    const lines = textContent.split(/\s{2,}/).filter(l => l.length > 0);
+    const lines = textContent.split(/\s{2,}/).filter((l) => l.length > 0);
     if (lines.length >= 2) {
       // The second part might be the speaker
       const potential = lines[1];
@@ -1281,7 +1269,7 @@ export class ConferenceScraper {
               const bioImageUrl = await this.fetchBioImageCached(
                 talk.speaker.name,
                 talk.speaker.bio_url,
-                sessionLog
+                sessionLog,
               );
               if (bioImageUrl) {
                 // Populate both the talk (for the itunes:image emission) and
@@ -1476,8 +1464,7 @@ export class ConferenceScraper {
 
       // Parse every <a href="/learn/<slug>?lang=eng">…name text…</a> anchor.
       // The href may include ?lang=eng or similar query params.
-      const linkRe =
-        /<a\s[^>]*href\s*=\s*["'](\/learn\/[^"'?]+[^"']*)["'][^>]*>([\s\S]*?)<\/a>/gi;
+      const linkRe = /<a\s[^>]*href\s*=\s*["'](\/learn\/[^"'?]+[^"']*)["'][^>]*>([\s\S]*?)<\/a>/gi;
       let m: RegExpExecArray | null;
       while ((m = linkRe.exec(html)) !== null) {
         const href = m[1];
@@ -1510,9 +1497,7 @@ export class ConferenceScraper {
     } catch (err) {
       log.warn('authoritative directory fetch failed', {
         url: DIRECTORY_URL,
-        ...(err instanceof Error
-          ? { error: err.message }
-          : { error: String(err) }),
+        ...(err instanceof Error ? { error: err.message } : { error: String(err) }),
       });
     }
     return map;
@@ -1558,7 +1543,7 @@ export class ConferenceScraper {
   private fetchBioImageCached(
     speakerName: string,
     bioUrl: string,
-    parentLog: ReturnType<typeof log.child>
+    parentLog: ReturnType<typeof log.child>,
   ): Promise<string | undefined> {
     const cached = this.bioImageCache.get(speakerName);
     if (cached !== undefined) {
@@ -1577,7 +1562,7 @@ export class ConferenceScraper {
   private async fetchBioImage(
     speakerName: string,
     bioUrl: string,
-    parentLog: ReturnType<typeof log.child>
+    parentLog: ReturnType<typeof log.child>,
   ): Promise<string | undefined> {
     const imgLog = parentLog.child({ module: 'image-extractor', speakerName, bioUrl });
     try {
@@ -1596,15 +1581,12 @@ export class ConferenceScraper {
       return undefined;
     } catch (error) {
       // 404 for deceased speakers is expected — log at debug, not warn.
-      const isNotFound =
-        error instanceof Error && error.message.startsWith('HTTP 404');
+      const isNotFound = error instanceof Error && error.message.startsWith('HTTP 404');
       if (isNotFound) {
         imgLog.debug('speaker bio page returned 404 (likely deceased)');
       } else {
         imgLog.warn('failed to fetch speaker bio image', {
-          ...(error instanceof Error
-            ? { error: error.message }
-            : { error: String(error) }),
+          ...(error instanceof Error ? { error: error.message } : { error: String(error) }),
         });
       }
       return undefined;
@@ -1710,7 +1692,7 @@ export class ConferenceScraper {
    */
   private extractAudioFromApi(apiResponse: ApiResponse): AudioAsset | undefined {
     // Get audio URL from meta.audio array
-    const audioEntry = apiResponse.meta.audio?.find(a => a.variant === 'audio');
+    const audioEntry = apiResponse.meta.audio?.find((a) => a.variant === 'audio');
     if (!audioEntry?.mediaUrl) {
       return undefined;
     }
@@ -1736,7 +1718,9 @@ export class ConferenceScraper {
     let calling = '';
 
     // Extract from author-name class
-    const nameMatch = html.match(/<p[^>]*class\s*=\s*["'][^"']*author-name[^"']*["'][^>]*>([^<]+)/i);
+    const nameMatch = html.match(
+      /<p[^>]*class\s*=\s*["'][^"']*author-name[^"']*["'][^>]*>([^<]+)/i,
+    );
     if (nameMatch) {
       name = nameMatch[1].trim();
       // Remove "By " prefix
@@ -1744,7 +1728,9 @@ export class ConferenceScraper {
     }
 
     // Extract from author-role class
-    const roleMatch = html.match(/<p[^>]*class\s*=\s*["'][^"']*author-role[^"']*["'][^>]*>([^<]+)/i);
+    const roleMatch = html.match(
+      /<p[^>]*class\s*=\s*["'][^"']*author-role[^"']*["'][^>]*>([^<]+)/i,
+    );
     if (roleMatch) {
       calling = roleMatch[1].trim();
     }
@@ -1790,7 +1776,7 @@ export class ConferenceScraper {
     const langSuffix = LANGUAGES[this.config.language].audioSuffix;
     const specificMp3Regex = new RegExp(
       `https://assets\\.churchofjesuschrist\\.org/[a-z0-9]+-128k-${langSuffix}\\.mp3`,
-      'gi'
+      'gi',
     );
     const specificMatches = html.match(specificMp3Regex);
     if (specificMatches && specificMatches.length > 0) {
@@ -2014,7 +2000,7 @@ export class ConferenceScraper {
     const response = await fetchWithRetry(url, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.5',
       },
     });
@@ -2123,7 +2109,7 @@ export class ConferenceScraper {
 export async function scrapeConference(
   year: number,
   month: 4 | 10,
-  config: Partial<ScraperConfig> = {}
+  config: Partial<ScraperConfig> = {},
 ): Promise<Conference> {
   const scraper = new ConferenceScraper(config);
   return scraper.scrapeConference(year, month);
@@ -2142,7 +2128,7 @@ export function __parsersForTesting(config: Partial<ScraperConfig> = {}) {
       html: string,
       year: number,
       monthStr: string,
-      langCode: string
+      langCode: string,
     ): Session[];
     extractSessionsWithCircuitBreaker(
       html: string,
@@ -2150,35 +2136,22 @@ export function __parsersForTesting(config: Partial<ScraperConfig> = {}) {
       monthStr: string,
       langCode: string,
       url: string,
-      httpStatus: number
+      httpStatus: number,
     ): Session[];
   };
   return {
-    viaDocMap: (html: string, langCode = 'eng') =>
-      scraper.extractSessionsViaDocMap(html, langCode),
+    viaDocMap: (html: string, langCode = 'eng') => scraper.extractSessionsViaDocMap(html, langCode),
     viaDataContentType: (html: string, langCode = 'eng') =>
       scraper.extractSessionsViaDataContentType(html, langCode),
-    viaClassNames: (
-      html: string,
-      year: number,
-      monthStr: string,
-      langCode = 'eng'
-    ) => scraper.extractSessionsViaClassNames(html, year, monthStr, langCode),
+    viaClassNames: (html: string, year: number, monthStr: string, langCode = 'eng') =>
+      scraper.extractSessionsViaClassNames(html, year, monthStr, langCode),
     withCircuitBreaker: (
       html: string,
       year: number,
       monthStr: string,
       langCode = 'eng',
       url = 'https://example.test/fixture',
-      httpStatus = 200
-    ) =>
-      scraper.extractSessionsWithCircuitBreaker(
-        html,
-        year,
-        monthStr,
-        langCode,
-        url,
-        httpStatus
-      ),
+      httpStatus = 200,
+    ) => scraper.extractSessionsWithCircuitBreaker(html, year, monthStr, langCode, url, httpStatus),
   };
 }

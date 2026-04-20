@@ -39,7 +39,7 @@ describe('buildConferenceSquareImageUrl', () => {
   it('produces the exact expected square URL format', () => {
     const hash = 'abc123def456abc1';
     expect(buildConferenceSquareImageUrl(hash)).toBe(
-      `https://www.churchofjesuschrist.org/imgs/${hash}/square/1500,1500/0/default`
+      `https://www.churchofjesuschrist.org/imgs/${hash}/square/1500,1500/0/default`,
     );
   });
 
@@ -94,8 +94,7 @@ describe('extractOgImageHash', () => {
 
 const COLLECTION_URL_APRIL_2025 =
   'https://www.churchofjesuschrist.org/media/collection/april-2025-general-conference?lang=eng';
-const FALLBACK_URL =
-  'https://www.churchofjesuschrist.org/feature/general-conference?lang=eng';
+const FALLBACK_URL = 'https://www.churchofjesuschrist.org/feature/general-conference?lang=eng';
 const SAMPLE_HASH = 'confhash1234abcd';
 
 function makeHtmlResponse(hash: string, status = 200): Response {
@@ -225,7 +224,7 @@ function makeTalk(slug: string, order: number) {
 function makeConferenceOutput(
   year: number,
   month: number,
-  conferenceImageUrl?: string | null
+  conferenceImageUrl?: string | null,
 ): ConferenceOutput {
   return {
     scraped_at: `${year}-${String(month).padStart(2, '0')}-01T00:00:00Z`,
@@ -317,7 +316,7 @@ describe('RSS channel image rotation (gc_podcast-8t0)', () => {
   it('multi-conference: older conference image not used when newer has image', () => {
     const conferences = [
       makeConferenceOutput(2024, 10, CONFERENCE_IMAGE_OCT_2025), // older but has image
-      makeConferenceOutput(2025, 4, null),                        // newer but no image
+      makeConferenceOutput(2025, 4, null), // newer but no image
     ];
     // April 2025 has no image; October 2024 does — October 2024 wins
     // (most-recent WITH image, not most-recent overall).

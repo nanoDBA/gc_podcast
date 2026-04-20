@@ -11,18 +11,11 @@
  *   - isAudioValidationEnabled respects the env var
  */
 import { describe, it, expect, afterEach, beforeEach, vi } from 'vitest';
-import {
-  checkAudioUrl,
-  isAudioValidationEnabled,
-  __retryTuning,
-} from '../src/scraper.js';
+import { checkAudioUrl, isAudioValidationEnabled, __retryTuning } from '../src/scraper.js';
 
 const originalTuning = { ...__retryTuning };
 
-function makeResponse(
-  status: number,
-  headers: Record<string, string> = {}
-): Response {
+function makeResponse(status: number, headers: Record<string, string> = {}): Response {
   return new Response(null, { status, headers });
 }
 
@@ -50,7 +43,7 @@ describe('checkAudioUrl', () => {
   it('returns valid=true for a 200 response with audio/mpeg content-type', async () => {
     vi.stubGlobal(
       'fetch',
-      vi.fn().mockResolvedValue(makeResponse(200, { 'content-type': 'audio/mpeg' }))
+      vi.fn().mockResolvedValue(makeResponse(200, { 'content-type': 'audio/mpeg' })),
     );
     const result = await checkAudioUrl('https://assets.example.test/talk.mp3');
     expect(result.valid).toBe(true);
@@ -61,7 +54,7 @@ describe('checkAudioUrl', () => {
   it('returns valid=false for a 200 response with text/html (error page)', async () => {
     vi.stubGlobal(
       'fetch',
-      vi.fn().mockResolvedValue(makeResponse(200, { 'content-type': 'text/html; charset=utf-8' }))
+      vi.fn().mockResolvedValue(makeResponse(200, { 'content-type': 'text/html; charset=utf-8' })),
     );
     const result = await checkAudioUrl('https://assets.example.test/talk.mp3');
     expect(result.valid).toBe(false);
@@ -92,19 +85,21 @@ describe('checkAudioUrl', () => {
   it('returns valid=false for 200 with application/json content-type', async () => {
     vi.stubGlobal(
       'fetch',
-      vi.fn().mockResolvedValue(makeResponse(200, { 'content-type': 'application/json' }))
+      vi.fn().mockResolvedValue(makeResponse(200, { 'content-type': 'application/json' })),
     );
     const result = await checkAudioUrl('https://assets.example.test/talk.mp3');
     expect(result.valid).toBe(false);
   });
 
   it('passes method=HEAD to fetch', async () => {
-    const mockFetch = vi.fn().mockResolvedValue(makeResponse(200, { 'content-type': 'audio/mpeg' }));
+    const mockFetch = vi
+      .fn()
+      .mockResolvedValue(makeResponse(200, { 'content-type': 'audio/mpeg' }));
     vi.stubGlobal('fetch', mockFetch);
     await checkAudioUrl('https://assets.example.test/talk.mp3');
     expect(mockFetch).toHaveBeenCalledWith(
       'https://assets.example.test/talk.mp3',
-      expect.objectContaining({ method: 'HEAD' })
+      expect.objectContaining({ method: 'HEAD' }),
     );
   });
 });

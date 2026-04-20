@@ -131,7 +131,6 @@ async function main(): Promise<void> {
       totalTalks += session.talks.length;
     }
     console.log(`Total talks: ${totalTalks}`);
-
   } catch (error) {
     console.error('Error scraping conference:', error);
     process.exit(1);

@@ -186,7 +186,7 @@ export async function isIncomplete(filePath: string): Promise<IncompleteResult> 
   if (!validation.success) {
     reasons.push(
       `schema validation failed: ${validation.error.issues
-        .map(i => `${i.path.join('.') || '<root>'}: ${i.message}`)
+        .map((i) => `${i.path.join('.') || '<root>'}: ${i.message}`)
         .join('; ')}`,
     );
   }
@@ -220,10 +220,7 @@ export async function isIncomplete(filePath: string): Promise<IncompleteResult> 
         if (!talkAudioUrl || talkAudioUrl.trim() === '') {
           reasons.push(`${tLabel}: missing audio.url`);
         }
-        if (
-          talk.audio?.duration_ms === undefined ||
-          talk.audio?.duration_ms === null
-        ) {
+        if (talk.audio?.duration_ms === undefined || talk.audio?.duration_ms === null) {
           reasons.push(`${tLabel}: missing audio.duration_ms`);
         }
       });
@@ -278,7 +275,7 @@ async function main() {
     // Skip if file exists and skipExisting is true
     // But re-scrape incomplete files (missing talks, audio, or too few sessions)
     let disableCache = false;
-    if (config.skipExisting && await fileExists(outputPath)) {
+    if (config.skipExisting && (await fileExists(outputPath))) {
       const result = await isIncomplete(outputPath);
       if (result.incomplete) {
         log.warn('Conference flagged as incomplete, will re-scrape', {
@@ -314,7 +311,9 @@ async function main() {
       };
 
       atomicWriteFileSync(outputPath, JSON.stringify(output, null, 2));
-      console.log(`  → ${conference.sessions.length} sessions, ${conference.sessions.reduce((t, s) => t + s.talks.length, 0)} talks`);
+      console.log(
+        `  → ${conference.sessions.length} sessions, ${conference.sessions.reduce((t, s) => t + s.talks.length, 0)} talks`,
+      );
       scraped++;
     } catch (error) {
       if (error instanceof ParserCircuitBreakerError) {

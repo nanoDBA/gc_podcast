@@ -7,8 +7,7 @@ import { uuidv5 } from '../src/uuid.js';
 const DNS_NAMESPACE = '6ba7b810-9dad-11d1-80b4-00c04fd430c8';
 const URL_NAMESPACE = '6ba7b811-9dad-11d1-80b4-00c04fd430c8';
 
-const UUID_V5_REGEX =
-  /^[0-9a-f]{8}-[0-9a-f]{4}-5[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
+const UUID_V5_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-5[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
 
 describe('uuidv5', () => {
   it('is deterministic: same input yields the same UUID', () => {
@@ -32,11 +31,7 @@ describe('uuidv5', () => {
     //   UUID('2ed6657d-e927-568b-95e1-2665a8aea6a2')
     //   >>> uuid.uuid5(uuid.NAMESPACE_DNS, "python.org")
     //   UUID('886313e1-3b8a-5372-9b90-0c9aee199e5d')
-    expect(uuidv5('www.example.com', DNS_NAMESPACE)).toBe(
-      '2ed6657d-e927-568b-95e1-2665a8aea6a2'
-    );
-    expect(uuidv5('python.org', DNS_NAMESPACE)).toBe(
-      '886313e1-3b8a-5372-9b90-0c9aee199e5d'
-    );
+    expect(uuidv5('www.example.com', DNS_NAMESPACE)).toBe('2ed6657d-e927-568b-95e1-2665a8aea6a2');
+    expect(uuidv5('python.org', DNS_NAMESPACE)).toBe('886313e1-3b8a-5372-9b90-0c9aee199e5d');
   });
 });
