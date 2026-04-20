@@ -258,6 +258,46 @@ jobs:
             echo "Portuguese scrape failed; skipping Portuguese feed generation"
           fi
 
+      - name: Emit scrape metrics to step summary
+        if: always()
+        run: |
+          {
+            echo "# Scrape Metrics"
+            echo ""
+            echo "| Language | Attempted | Scraped | Skipped | Failed | Duration |"
+            echo "|----------|-----------|---------|---------|--------|----------|"
+
+            for lang in eng spa por; do
+              metrics_file="./output/.metrics-${lang}.json"
+              if [ -f "$metrics_file" ]; then
+                attempted=$(jq '.conferences_attempted' "$metrics_file")
+                scraped=$(jq '.conferences_scraped' "$metrics_file")
+                skipped=$(jq '.conferences_skipped' "$metrics_file")
+                failed=$(jq '.conferences_failed' "$metrics_file")
+                duration_s=$(jq 'if .duration_ms then (.duration_ms / 1000 | floor) else 0 end' "$metrics_file")
+
+                # Language display name
+                case "$lang" in
+                  eng) lang_name="English" ;;
+                  spa) lang_name="Spanish" ;;
+                  por) lang_name="Portuguese" ;;
+                esac
+
+                echo "| $lang_name | $attempted | $scraped | $skipped | $failed | ${duration_s}s |"
+              fi
+            done
+
+            echo ""
+            echo "Feed URLs:"
+            echo "- English: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/audio.xml"
+            if [ "${{ steps.scrape_spa.outcome }}" = "success" ]; then
+              echo "- Spanish: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/audio-es.xml"
+            fi
+            if [ "${{ steps.scrape_por.outcome }}" = "success" ]; then
+              echo "- Portuguese: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/audio-pt.xml"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Check for changes
         id: changes
         run: |

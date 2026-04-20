@@ -335,16 +335,30 @@ async function main() {
   console.log(`Skipped: ${skipped}`);
   console.log(`Failed: ${failed}`);
 
-  log.info('Scrape run complete', {
-    scraped,
-    skipped,
-    failed,
+  const metrics = {
+    language: config.language,
+    conferences_attempted: conferences.length,
+    conferences_scraped: scraped,
+    conferences_skipped: skipped,
+    conferences_failed: failed,
     duration_ms,
     startYear: config.startYear,
     endYear: config.endYear,
-    language: config.language,
-    outputDir: config.outputDir,
-  });
+    timestamp: new Date().toISOString(),
+  };
+
+  // Write metrics file for workflow consumption
+  const metricsPath = path.join(config.outputDir, `.metrics-${config.language}.json`);
+  try {
+    await fs.writeFile(metricsPath, JSON.stringify(metrics, null, 2));
+  } catch (err) {
+    log.warn('Failed to write metrics file', {
+      path: metricsPath,
+      error: err instanceof Error ? err.message : String(err),
+    });
+  }
+
+  log.info('Scrape run complete', metrics);
 }
 
 main().catch((err) => {
