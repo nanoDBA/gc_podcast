@@ -258,6 +258,14 @@ jobs:
             echo "Portuguese scrape failed; skipping Portuguese feed generation"
           fi
 
+      - name: Generate landing page (docs/index.html)
+        # Landing page derives the GitHub Pages base URL client-side from
+        # window.location, so no base-url arg is needed here.
+        run: |
+          npx tsx src/generate-index.ts \
+            --output ./output \
+            --index ./docs/index.html
+
       - name: Emit scrape metrics to step summary
         if: always()
         run: |
