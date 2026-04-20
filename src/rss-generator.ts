@@ -144,19 +144,65 @@ function estimateFileSize(durationMs?: number): number {
 }
 
 /**
- * Get conference date from year/month
+ * General Conference session schedule (Mountain Daylight Time, UTC-6).
+ *
+ * Each entry maps a canonical session-order index (1-based, matching
+ * Session.order) to { dayOffset, hourUtc } where:
+ *   - dayOffset: days after the first Saturday of the conference weekend
+ *     (0 = Saturday, 1 = Sunday)
+ *   - hourUtc: wall-clock start hour in UTC (MDT = UTC-6)
+ *
+ * Known GC schedule (subject to occasional changes):
+ *   1 – Saturday Morning   10:00 MDT → 16:00 UTC, day+0
+ *   2 – Saturday Afternoon 14:00 MDT → 20:00 UTC, day+0
+ *   3 – Saturday Evening   18:00 MDT → 00:00 UTC, day+1 (midnight crossing)
+ *   4 – Sunday Morning     10:00 MDT → 16:00 UTC, day+1
+ *   5 – Sunday Afternoon   14:00 MDT → 20:00 UTC, day+1
+ *
+ * Sessions beyond order 5 (rare) fall back to Sunday Afternoon + their
+ * excess order as an extra hour offset so they remain unique.
  */
-function getConferenceDate(year: number, month: 4 | 10, dayOffset: number = 0): Date {
-  // General Conference is typically first weekend of April/October
-  // Saturday of first full weekend
-  const date = new Date(year, month - 1, 1);
-  // Find first Saturday
-  while (date.getDay() !== 6) {
-    date.setDate(date.getDate() + 1);
-  }
-  date.setDate(date.getDate() + dayOffset);
-  date.setHours(10, 0, 0, 0); // 10 AM MDT
-  return date;
+const SESSION_SCHEDULE: Record<number, { dayOffset: number; hourUtc: number }> = {
+  1: { dayOffset: 0, hourUtc: 16 }, // Saturday Morning
+  2: { dayOffset: 0, hourUtc: 20 }, // Saturday Afternoon
+  3: { dayOffset: 1, hourUtc: 0  }, // Saturday Evening (midnight UTC)
+  4: { dayOffset: 1, hourUtc: 16 }, // Sunday Morning
+  5: { dayOffset: 1, hourUtc: 20 }, // Sunday Afternoon
+};
+
+/**
+ * Compute the UTC timestamp for the start of a specific session.
+ *
+ * The first Saturday of the conference weekend is used as the anchor.
+ * Per-talk pubDates are derived by adding `(talk.order * 60)` seconds to
+ * this session-start timestamp, giving each talk a unique, strictly
+ * monotonically increasing time within the session.
+ *
+ * Invariant: pubDate must be strictly monotonically DECREASING when items
+ * are emitted newest-to-oldest (top item in the feed has the highest
+ * pubDate). This function provides the per-session anchor; callers are
+ * responsible for emitting items in descending pubDate order.
+ */
+function getSessionStartUtc(year: number, month: 4 | 10, sessionOrder: number): Date {
+  // Find the first Saturday of the conference month (UTC midnight).
+  const firstOfMonth = new Date(Date.UTC(year, month - 1, 1));
+  // getUTCDay(): 0=Sun, 6=Sat
+  const dayOfWeek = firstOfMonth.getUTCDay();
+  const daysUntilSaturday = dayOfWeek === 6 ? 0 : (6 - dayOfWeek + 7) % 7;
+  const firstSaturdayMs =
+    firstOfMonth.getTime() + daysUntilSaturday * 24 * 60 * 60 * 1000;
+
+  const schedule = SESSION_SCHEDULE[sessionOrder] ?? {
+    // Fallback for unexpected session orders: Sunday afternoon + extra hours
+    dayOffset: 1,
+    hourUtc: 20 + (sessionOrder - 5),
+  };
+
+  return new Date(
+    firstSaturdayMs +
+      schedule.dayOffset * 24 * 60 * 60 * 1000 +
+      schedule.hourUtc * 60 * 60 * 1000
+  );
 }
 
 /**
@@ -323,38 +369,52 @@ export function generateRssFeed(
     return dateB - dateA;
   });
 
-  // Generate items
+  // Generate items — newest first (conferences descending, sessions descending,
+  // talks descending) so that <pubDate> is strictly monotonically decreasing
+  // from the top item to the bottom item of the feed.
+  //
+  // Per-item pubDate invariant: each item receives
+  //   sessionStart + (talk.order * 60 s)
+  // The session item itself receives sessionStart (talk.order offset = 0).
+  // Because sessions are scheduled at distinct UTC hours, and talks within a
+  // session each get a unique +60 s offset, every pubDate in the feed is unique.
   const items: string[] = [];
 
   for (const confOutput of sortedConferences) {
     const conf = confOutput.conference;
-    const baseDate = getConferenceDate(conf.year, conf.month as 4 | 10);
 
-    // Sort sessions by order explicitly
-    const sortedSessions = [...conf.sessions].sort((a, b) => a.order - b.order);
+    // Sort sessions DESCENDING so the last session of the conference (highest
+    // pubDate) is emitted first, preserving newest-to-oldest feed order.
+    const sortedSessions = [...conf.sessions].sort((a, b) => b.order - a.order);
 
     for (const session of sortedSessions) {
-      // Determine session day offset (Saturday = 0, Sunday = 1)
-      const isSunday = session.name.toLowerCase().includes('sunday');
-      const sessionDate = new Date(baseDate);
-      if (isSunday) sessionDate.setDate(sessionDate.getDate() + 1);
+      const sessionStart = getSessionStartUtc(
+        conf.year,
+        conf.month as 4 | 10,
+        session.order
+      );
 
-      // Add session episode
-      if (opts.includeSessions && session.audio?.url) {
-        items.push(generateSessionItem(conf, session, sessionDate));
-      }
-
-      // Add talk episodes (sorted by order)
+      // Add talk episodes sorted DESCENDING — last talk first in feed,
+      // highest pubDate first.
       if (opts.includeTalks) {
-        const sortedTalks = [...session.talks].sort((a, b) => a.order - b.order);
+        const sortedTalks = [...session.talks].sort((a, b) => b.order - a.order);
         for (const talk of sortedTalks) {
           if (talk.audio?.url) {
-            // Stagger talk times by order
-            const talkDate = new Date(sessionDate);
-            talkDate.setMinutes(talkDate.getMinutes() + talk.order * 15);
+            // Each talk's pubDate = sessionStart + (order × 60 s).
+            // Order is 1-based, so talk 1 → +60 s, talk 2 → +120 s, etc.
+            const talkDate = new Date(
+              sessionStart.getTime() + talk.order * 60 * 1000
+            );
             items.push(generateTalkItem(conf, session, talk, talkDate));
           }
         }
+      }
+
+      // Add session episode AFTER all talks so it appears after (lower pubDate
+      // than) any individual talk from this session when emitted in order.
+      // The session item uses sessionStart with no additional offset.
+      if (opts.includeSessions && session.audio?.url) {
+        items.push(generateSessionItem(conf, session, sessionStart));
       }
     }
   }
