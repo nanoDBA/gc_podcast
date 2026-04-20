@@ -30,6 +30,10 @@ import {
 import { LANGUAGES } from './languages.js';
 import { ApiResponseSchema, detectApiDrift } from './schemas.js';
 import { log } from './logger.js';
+import {
+  extractImageFromTalkHtml,
+  extractImageFromBioHtml,
+} from './image-extractor.js';
 
 /**
  * Per-run dedup of API drift warnings. Keyed on the JSON-stringified union
@@ -380,6 +384,12 @@ interface ApiResponse {
 export class ConferenceScraper {
   private config: ScraperConfig;
   private lastRequestTime = 0;
+  /**
+   * Per-run bio image dedup cache. Keyed on speaker name; value is a Promise
+   * that resolves to the canonical image URL (or undefined on 404/no-image).
+   * Each speaker's bio page is fetched at most once per scraper instance.
+   */
+  private bioImageCache = new Map<string, Promise<string | undefined>>();
 
   constructor(config: Partial<ScraperConfig> = {}) {
     this.config = { ...DEFAULT_CONFIG, ...config };
@@ -911,7 +921,14 @@ export class ConferenceScraper {
   }
 
   /**
-   * Enrich sessions and talks with audio information
+   * Enrich sessions and talks with audio information and talk/speaker images.
+   *
+   * Image enrichment strategy (per decision gc_podcast-gbt):
+   *   1. extractPageData returns an image_url extracted from the talk page
+   *      (og:image > __INITIAL_STATE__ > body-img).
+   *   2. If the talk page yields no image, fall back to the speaker bio page
+   *      (og:image > body-img). Bio pages are deduplicated within this run via
+   *      bioImageCache — each speaker is fetched at most once.
    */
   private async enrichWithAudio(sessions: Session[]): Promise<void> {
     const enrichLog = log.child({ language: this.config.language });
@@ -938,7 +955,7 @@ export class ConferenceScraper {
         }
       }
 
-      // Fetch talk audio and speaker details if configured
+      // Fetch talk audio, speaker details, and images if configured
       if (this.config.includeTalkAudio) {
         for (const talk of session.talks) {
           if (talk.url) {
@@ -951,6 +968,9 @@ export class ConferenceScraper {
               if (talkData.speaker) {
                 talk.speaker = talkData.speaker;
               }
+              if (talkData.image_url) {
+                talk.image_url = talkData.image_url;
+              }
             } catch (error) {
               sessionLog.warn('Failed to fetch talk details', {
                 talkTitle: talk.title,
@@ -962,6 +982,21 @@ export class ConferenceScraper {
                   : { error: String(error) }),
               });
             }
+
+            // Bio fallback: if talk page yielded no image, try speaker bio.
+            if (!talk.image_url && talk.speaker?.name && talk.speaker.bio_url) {
+              const bioImageUrl = await this.fetchBioImageCached(
+                talk.speaker.name,
+                talk.speaker.bio_url,
+                sessionLog
+              );
+              if (bioImageUrl) {
+                // Populate both the talk (for the itunes:image emission) and
+                // the speaker (so the same portrait is reusable downstream).
+                talk.image_url = bioImageUrl;
+                talk.speaker.image_url = bioImageUrl;
+              }
+            }
           }
         }
       }
@@ -969,12 +1004,88 @@ export class ConferenceScraper {
   }
 
   /**
-   * Extract audio and speaker data from a page using the API
+   * Fetch a speaker's bio page and extract a portrait image URL.
+   *
+   * Results are memoized in bioImageCache (keyed on speaker name) so each
+   * speaker is fetched at most once per scraper run regardless of how many
+   * talks they give.
+   *
+   * Returns undefined on 404, parse failure, or when no IIIF image is found.
+   */
+  private fetchBioImageCached(
+    speakerName: string,
+    bioUrl: string,
+    parentLog: ReturnType<typeof log.child>
+  ): Promise<string | undefined> {
+    const cached = this.bioImageCache.get(speakerName);
+    if (cached !== undefined) {
+      return cached;
+    }
+
+    const promise = this.fetchBioImage(speakerName, bioUrl, parentLog);
+    this.bioImageCache.set(speakerName, promise);
+    return promise;
+  }
+
+  /**
+   * Perform the actual bio page fetch and image extraction.
+   * Never throws — returns undefined on any failure.
+   */
+  private async fetchBioImage(
+    speakerName: string,
+    bioUrl: string,
+    parentLog: ReturnType<typeof log.child>
+  ): Promise<string | undefined> {
+    const imgLog = parentLog.child({ module: 'image-extractor', speakerName, bioUrl });
+    try {
+      const html = await this.fetchWithRateLimit(bioUrl);
+      // fetchWithRateLimit throws on non-OK responses that are permanent
+      // (404 etc.), so reaching here means we have response body text.
+      const extracted = extractImageFromBioHtml(html);
+      if (extracted) {
+        imgLog.debug('speaker bio image extracted', {
+          source: extracted.source,
+          hash: extracted.hash,
+        });
+        return extracted.canonicalUrl;
+      }
+      imgLog.debug('speaker bio page had no IIIF image');
+      return undefined;
+    } catch (error) {
+      // 404 for deceased speakers is expected — log at debug, not warn.
+      const isNotFound =
+        error instanceof Error && error.message.startsWith('HTTP 404');
+      if (isNotFound) {
+        imgLog.debug('speaker bio page returned 404 (likely deceased)');
+      } else {
+        imgLog.warn('failed to fetch speaker bio image', {
+          ...(error instanceof Error
+            ? { error: error.message }
+            : { error: String(error) }),
+        });
+      }
+      return undefined;
+    }
+  }
+
+  /**
+   * Extract audio, speaker data, and talk image from a page using the API.
+   *
+   * image_url extraction strategy:
+   *   - API path: the content.body fragment does not carry og:image or
+   *     __INITIAL_STATE__, but it may contain IIIF <img> tags. We run
+   *     extractImageFromTalkHtml against the body fragment — body-img
+   *     extraction will fire for any IIIF src found there.
+   *   - HTML path: we have the full rendered page, so all three strategies
+   *     (og:image, __INITIAL_STATE__, body-img) are tried.
    */
   private async extractPageData(url: string): Promise<{
     audio?: AudioAsset;
     speaker?: Speaker;
+    image_url?: string;
   }> {
+    const imgLog = log.child({ module: 'image-extractor' });
+
     // Convert page URL to API URL
     // e.g., /study/general-conference/2025/10/12stevenson?lang=eng
     // becomes: /study/api/v3/language-pages/type/content?lang=eng&uri=/general-conference/2025/10/12stevenson
@@ -983,9 +1094,18 @@ export class ConferenceScraper {
     if (!pathMatch) {
       // Fall back to HTML scraping if URL doesn't match expected pattern
       const html = await this.fetchWithRateLimit(url);
+      const extracted = extractImageFromTalkHtml(html);
+      if (extracted) {
+        imgLog.debug('talk image extracted (html-fallback)', {
+          url,
+          source: extracted.source,
+          hash: extracted.hash,
+        });
+      }
       return {
         audio: this.extractAudioFromHtml(html),
         speaker: this.extractSpeakerFromHtml(html),
+        image_url: extracted?.canonicalUrl,
       };
     }
 
@@ -1002,7 +1122,20 @@ export class ConferenceScraper {
       const audio = this.extractAudioFromApi(apiResponse);
       const speaker = this.extractSpeakerFromApi(apiResponse);
 
-      return { audio, speaker };
+      // API body is an HTML fragment; body-img extraction handles IIIF <img>
+      // tags embedded in the article. og:image and __INITIAL_STATE__ are only
+      // present in full-page HTML so those strategies will no-op here.
+      const extracted = extractImageFromTalkHtml(apiResponse.content.body);
+      if (extracted) {
+        imgLog.debug('talk image extracted (api-body)', {
+          url,
+          apiUrl,
+          source: extracted.source,
+          hash: extracted.hash,
+        });
+      }
+
+      return { audio, speaker, image_url: extracted?.canonicalUrl };
     } catch (error) {
       log.warn('API fetch failed, falling back to HTML scraping', {
         url,
@@ -1013,9 +1146,18 @@ export class ConferenceScraper {
           : { error: String(error) }),
       });
       const html = await this.fetchWithRateLimit(url);
+      const extracted = extractImageFromTalkHtml(html);
+      if (extracted) {
+        imgLog.debug('talk image extracted (api-fallback-html)', {
+          url,
+          source: extracted.source,
+          hash: extracted.hash,
+        });
+      }
       return {
         audio: this.extractAudioFromHtml(html),
         speaker: this.extractSpeakerFromHtml(html),
+        image_url: extracted?.canonicalUrl,
       };
     }
   }
