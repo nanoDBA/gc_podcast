@@ -95,13 +95,24 @@ const DEFAULT_OPTIONS: RssGeneratorOptions = {
 /**
  * Escape XML special characters
  */
-function escapeXml(text: string): string {
+export function escapeXml(text: string): string {
   return text
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&apos;');
+}
+
+/**
+ * Wrap arbitrary content in a CDATA section, safely handling content that
+ * itself contains the CDATA terminator `]]>`. The classic XML trick is to
+ * split the terminator across two CDATA sections: `]]]]><![CDATA[>` — the
+ * first `]]>` closes the section, then a new CDATA reopens with the
+ * remaining `>` character.
+ */
+export function wrapCdata(content: string): string {
+  return '<![CDATA[' + content.replace(/\]\]>/g, ']]]]><![CDATA[>') + ']]>';
 }
 
 /**
@@ -188,14 +199,14 @@ function generateTalkItem(
   return `
     <item>
       <title>${escapeXml(title)}</title>
-      <description><![CDATA[${description}]]></description>
+      <description>${wrapCdata(description)}</description>
       <enclosure url="${escapeXml(talk.audio.url)}" length="${fileSize}" type="audio/mpeg"/>
       <guid isPermaLink="false">${guid}</guid>
       <pubDate>${formatRfc2822Date(pubDate)}</pubDate>
       <itunes:title>${escapeXml(title)}</itunes:title>
       <itunes:author>${escapeXml(talk.speaker.name)}</itunes:author>
       <itunes:duration>${duration}</itunes:duration>
-      <itunes:summary><![CDATA[${description}]]></itunes:summary>
+      <itunes:summary>${wrapCdata(description)}</itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:season>${conference.year}</itunes:season>
       <itunes:episode>${talk.order}</itunes:episode>
@@ -222,14 +233,14 @@ function generateSessionItem(
   return `
     <item>
       <title>${escapeXml(title)}</title>
-      <description><![CDATA[${description}]]></description>
+      <description>${wrapCdata(description)}</description>
       <enclosure url="${escapeXml(session.audio.url)}" length="${fileSize}" type="audio/mpeg"/>
       <guid isPermaLink="false">${guid}</guid>
       <pubDate>${formatRfc2822Date(pubDate)}</pubDate>
       <itunes:title>${escapeXml(session.name)} (Full Session)</itunes:title>
       <itunes:author>${escapeXml(PODCAST_CONFIG.author)}</itunes:author>
       <itunes:duration>${duration}</itunes:duration>
-      <itunes:summary><![CDATA[${description}]]></itunes:summary>
+      <itunes:summary>${wrapCdata(description)}</itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:season>${conference.year}</itunes:season>
       <itunes:episode>${session.order * 100}</itunes:episode>
@@ -351,7 +362,7 @@ export function generateRssFeed(
   xmlns:podcast="https://podcastindex.org/namespace/1.0">
   <channel>
     <title>${escapeXml(config.title)}</title>
-    <description><![CDATA[${config.description}]]></description>
+    <description>${wrapCdata(config.description)}</description>
     <link>${escapeXml(config.websiteUrl)}</link>
     <language>${config.language}</language>
     <copyright>${escapeXml(config.copyright)}</copyright>
@@ -360,7 +371,7 @@ export function generateRssFeed(
     <podcast:guid>${podcastGuid}</podcast:guid>
 
     <itunes:author>${escapeXml(config.author)}</itunes:author>
-    <itunes:summary><![CDATA[${config.description}]]></itunes:summary>
+    <itunes:summary>${wrapCdata(config.description)}</itunes:summary>
     <itunes:type>episodic</itunes:type>
     <itunes:owner>
       <itunes:name>${escapeXml(config.author)}</itunes:name>
