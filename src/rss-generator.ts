@@ -195,6 +195,12 @@ function generateTalkItem(
   const description = buildTalkDescription(conference, session, talk);
   const duration = formatDuration(talk.duration_ms);
   const fileSize = estimateFileSize(talk.duration_ms);
+  // Per-item artwork: prefer talk-level, fall back to speaker portrait.
+  // Phase 4 populates these fields; for now they're typically absent.
+  const itemImageUrl = talk.image_url ?? talk.speaker.image_url;
+  const itemImageTag = itemImageUrl
+    ? `\n      <itunes:image href="${escapeXml(itemImageUrl)}"/>`
+    : '';
 
   return `
     <item>
@@ -210,7 +216,7 @@ function generateTalkItem(
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:season>${conference.year}</itunes:season>
       <itunes:episode>${talk.order}</itunes:episode>
-      <link>${escapeXml(talk.url)}</link>
+      <link>${escapeXml(talk.url)}</link>${itemImageTag}
     </item>`;
 }
 
@@ -229,6 +235,11 @@ function generateSessionItem(
   const description = buildSessionDescription(conference, session);
   const duration = formatDuration(session.duration_ms);
   const fileSize = estimateFileSize(session.duration_ms);
+  // Per-item artwork: session-level only (no fallback). Phase 4 may
+  // populate this; for now it's typically absent.
+  const itemImageTag = session.image_url
+    ? `\n      <itunes:image href="${escapeXml(session.image_url)}"/>`
+    : '';
 
   return `
     <item>
@@ -244,7 +255,7 @@ function generateSessionItem(
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:season>${conference.year}</itunes:season>
       <itunes:episode>${session.order * 100}</itunes:episode>
-      <link>${escapeXml(session.url)}</link>
+      <link>${escapeXml(session.url)}</link>${itemImageTag}
     </item>`;
 }
 

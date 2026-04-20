@@ -29,6 +29,7 @@ export interface Speaker {
   role_tag: SpeakerRoleTag;        // Simplified classification for filtering
   calling?: string;                // Full calling text: "Of the Quorum of the Twelve Apostles"
   bio_url?: string;                // Link to speaker bio page
+  image_url?: string;              // Speaker portrait URL, populated by Phase 4 bio page scraping.
 }
 
 /**
@@ -42,6 +43,7 @@ export interface Talk {
   speaker: Speaker;
   audio?: AudioAsset;              // Individual talk audio
   duration_ms?: number;            // Talk duration in milliseconds
+  image_url?: string;              // Episode-level artwork. Optional. See SPEC.md.
 }
 
 /**
@@ -55,6 +57,7 @@ export interface Session {
   audio?: AudioAsset;              // Full session audio (if available)
   duration_ms?: number;            // Total session duration
   talks: Talk[];
+  image_url?: string;              // Episode-level artwork. Optional. See SPEC.md.
 }
 
 /**

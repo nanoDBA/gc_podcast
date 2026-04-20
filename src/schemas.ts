@@ -34,6 +34,7 @@ export const SpeakerSchema = z.object({
   role_tag: SpeakerRoleTagSchema,
   calling: z.string().optional(),
   bio_url: z.string().optional(),
+  image_url: z.string().optional(),
 });
 
 // --- Talk / Session / Conference -------------------------------------------
@@ -46,6 +47,7 @@ export const TalkSchema = z.object({
   speaker: SpeakerSchema,
   audio: AudioAssetSchema.optional(),
   duration_ms: z.number().optional(),
+  image_url: z.string().optional(),
 });
 
 export const SessionSchema = z.object({
@@ -56,6 +58,7 @@ export const SessionSchema = z.object({
   audio: AudioAssetSchema.optional(),
   duration_ms: z.number().optional(),
   talks: z.array(TalkSchema),
+  image_url: z.string().optional(),
 });
 
 export const ConferenceSchema = z.object({
