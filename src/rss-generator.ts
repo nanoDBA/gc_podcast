@@ -7,6 +7,25 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import { ConferenceOutput, Conference, Session, Talk } from './types.js';
 import { LANGUAGES, LanguageCode } from './languages.js';
+import { uuidv5 } from './uuid.js';
+
+/**
+ * Podcasting 2.0 namespace UUID for `<podcast:guid>` derivation.
+ * Per spec: https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#guid
+ */
+const PODCAST_NAMESPACE_UUID = 'ead4c236-bf58-58c6-a2c6-a6b28d128cb6';
+
+/**
+ * Normalize a feed URL per the podcast:guid spec: strip protocol, trailing
+ * slash, and lowercase the host portion. Used as the `name` input to v5.
+ */
+function normalizeFeedUrlForGuid(url: string): string {
+  let s = url.replace(/^https?:\/\//i, '');
+  s = s.replace(/\/$/, '');
+  const slash = s.indexOf('/');
+  if (slash === -1) return s.toLowerCase();
+  return s.slice(0, slash).toLowerCase() + s.slice(slash);
+}
 
 // Podcast metadata
 const PODCAST_CONFIG = {
@@ -322,12 +341,14 @@ export function generateRssFeed(
   const langSuffix = opts.language === 'eng' ? '' : `-${getLanguageRssConfig(opts.language || 'eng').language}`;
   const feedUrl = `${opts.feedBaseUrl}/audio${langSuffix}.xml`;
   const buildDate = formatRfc2822Date(new Date());
+  const podcastGuid = uuidv5(normalizeFeedUrlForGuid(feedUrl), PODCAST_NAMESPACE_UUID);
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
   xmlns:content="http://purl.org/rss/1.0/modules/content/"
-  xmlns:atom="http://www.w3.org/2005/Atom">
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:podcast="https://podcastindex.org/namespace/1.0">
   <channel>
     <title>${escapeXml(config.title)}</title>
     <description><![CDATA[${config.description}]]></description>
@@ -336,6 +357,7 @@ export function generateRssFeed(
     <copyright>${escapeXml(config.copyright)}</copyright>
     <lastBuildDate>${buildDate}</lastBuildDate>
     <atom:link href="${escapeXml(feedUrl)}" rel="self" type="application/rss+xml"/>
+    <podcast:guid>${podcastGuid}</podcast:guid>
 
     <itunes:author>${escapeXml(config.author)}</itunes:author>
     <itunes:summary><![CDATA[${config.description}]]></itunes:summary>
