@@ -143,6 +143,7 @@ jobs:
             gc-cache-
 
       - name: Scrape conferences (English)
+        id: scrape_eng
         run: |
           # Retry with exponential backoff: 3 attempts with 30s, 60s, 120s delays
           ATTEMPT=1
@@ -173,6 +174,7 @@ jobs:
       # (LANGUAGES / LANGUAGE_CODES). Adding a new language here is a separate
       # follow-up — ideally a matrix refactor that reads from that config.
       - name: Scrape conferences (Spanish)
+        id: scrape_spa
         if: ${{ inputs.languages == 'all' || inputs.languages == 'spa' || inputs.languages == '' }}
         run: |
           # Retry with exponential backoff: 3 attempts with 30s, 60s, 120s delays
@@ -194,6 +196,7 @@ jobs:
         continue-on-error: true
 
       - name: Scrape conferences (Portuguese)
+        id: scrape_por
         if: ${{ inputs.languages == 'all' || inputs.languages == 'por' || inputs.languages == '' }}
         run: |
           # Retry with exponential backoff: 3 attempts with 30s, 60s, 120s delays
@@ -217,12 +220,43 @@ jobs:
       - name: Generate RSS feeds (all languages)
         run: |
           mkdir -p docs
+          BASE_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          MIN_YEAR=${{ steps.minyear.outputs.min_year }}
+
+          # Generate English feed (always, since English scrape is required)
+          echo "Generating English feed..."
           npx tsx src/generate-feed.ts \
             --output ./output \
             --feed ./docs/audio.xml \
-            --all-languages \
-            --min-year ${{ steps.minyear.outputs.min_year }} \
-            --base-url "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+            --language eng \
+            --min-year "$MIN_YEAR" \
+            --base-url "$BASE_URL"
+
+          # Generate Spanish feed only if scrape succeeded
+          if [ "${{ steps.scrape_spa.outcome }}" = "success" ]; then
+            echo "Generating Spanish feed..."
+            npx tsx src/generate-feed.ts \
+              --output ./output \
+              --feed ./docs/audio-es.xml \
+              --language spa \
+              --min-year "$MIN_YEAR" \
+              --base-url "$BASE_URL"
+          else
+            echo "Spanish scrape failed; skipping Spanish feed generation"
+          fi
+
+          # Generate Portuguese feed only if scrape succeeded
+          if [ "${{ steps.scrape_por.outcome }}" = "success" ]; then
+            echo "Generating Portuguese feed..."
+            npx tsx src/generate-feed.ts \
+              --output ./output \
+              --feed ./docs/audio-pt.xml \
+              --language por \
+              --min-year "$MIN_YEAR" \
+              --base-url "$BASE_URL"
+          else
+            echo "Portuguese scrape failed; skipping Portuguese feed generation"
+          fi
 
       - name: Check for changes
         id: changes
