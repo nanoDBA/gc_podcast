@@ -244,4 +244,4 @@ MIT
 
 ## Disclaimer
 
-Unofficial project. This repository hosts code that generates podcast-friendly RSS feeds pointing at audio hosted by The Church of Jesus Christ of Latter-day Saints. Audio and imagery remain the property of their rightful owners; all URLs in the generated feeds hotlink back to `churchofjesuschrist.org`. The project author(s) are not affiliated with or endorsed by the Church.
+Unofficial project. This repository hosts code that generates podcast-friendly RSS feeds pointing at audio hosted by The Church of Jesus Christ of Latter-day Saints. Audio and imagery remain the property of their rightful owners; all URLs in the generated feeds hotlink back to `churchofjesuschrist.org` and/or CDNs.
