@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-04-21T15:47:12.333Z",
+  "scraped_at": "2026-04-21T16:23:36.234Z",
   "version": "1.0",
   "conference": {
     "year": 2026,
@@ -30,7 +30,8 @@
               "language": "en",
               "duration_ms": 159590
             },
-            "duration_ms": 159590
+            "duration_ms": 159590,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/7di4rmbr3hvv44bdpgjvnnrxia7wajz5jbuqr7c3/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Solemn Assembly",
@@ -48,7 +49,8 @@
               "language": "en",
               "duration_ms": 578910
             },
-            "duration_ms": 578910
+            "duration_ms": 578910,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/xqyajds142unpme5guheyw1u6v3375djpgaw63sg/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "About His Business",
@@ -66,7 +68,8 @@
               "language": "en",
               "duration_ms": 680750
             },
-            "duration_ms": 680750
+            "duration_ms": 680750,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/1yhzl9w6fcm7at7lutnmp4dq29bupz35kxne4fwu/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Ministering—“That Ye Love One Another; as I Have Loved You”",
@@ -84,7 +87,8 @@
               "language": "en",
               "duration_ms": 535600
             },
-            "duration_ms": 535600
+            "duration_ms": 535600,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/71a8ios5dh7jmcbcmrh6by1aeybj2w76lwz2c2ny/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Come Home",
@@ -103,7 +107,7 @@
               "duration_ms": 787550
             },
             "duration_ms": 787550,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/m4bm6mveb5rxslflm89da7wk6rsxwhjotq8us4j3/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/kuukt6mdqdzjd6fgmcwng1ozledfy60s83ba9rfb/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "All Who Have Endured Valiantly",
@@ -121,7 +125,8 @@
               "language": "en",
               "duration_ms": 778540
             },
-            "duration_ms": 778540
+            "duration_ms": 778540,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/ibjynpzh92ctp5jb5d52w0litgecjiwn56afk26y/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Follow the Prophet; He Knows the Way",
@@ -140,7 +145,7 @@
               "duration_ms": 488520
             },
             "duration_ms": 488520,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/q31xhu8pi9818414lsns9zday3cimolmgkvg2kvm/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/srs63hh3q0vztdywcb3gvbsuyadw5c88y9ktquvr/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Tithing—Putting God First",
@@ -158,7 +163,8 @@
               "language": "en",
               "duration_ms": 511340
             },
-            "duration_ms": 511340
+            "duration_ms": 511340,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/vhim4s8mgfwn4545eb0ocmrzqypgqr4diifdgxvz/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Prayers for Peace",
@@ -176,16 +182,17 @@
               "language": "en",
               "duration_ms": 792630
             },
-            "duration_ms": 792630
+            "duration_ms": 792630,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/4kn8jwxcclgtvtatkug9j7n13gde8s1289ztxasj/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
           "url": "https://assets.churchofjesuschrist.org/lybextubbxf2hwx4ff7eutvjgy6xib68h7qasbix-128k-en.mp3",
           "quality": "128k",
           "language": "en",
-          "duration_ms": 7109140
+          "duration_ms": 7109170
         },
-        "duration_ms": 7109140
+        "duration_ms": 7109170
       },
       {
         "name": "Saturday Afternoon Session",
@@ -209,7 +216,8 @@
               "language": "en",
               "duration_ms": 310080
             },
-            "duration_ms": 310080
+            "duration_ms": 310080,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/agcwcjldr8f4q65c9q7h0f3c7ypdwiotbk4z5q77/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Church Auditing Department Report, 2025",
@@ -227,7 +235,8 @@
               "language": "en",
               "duration_ms": 104870
             },
-            "duration_ms": 104870
+            "duration_ms": 104870,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/3l5f4n08254kvtdc8hxmao7l0ku2mmdit925gjug/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Lost Luggage, Redeemed Souls",
@@ -246,7 +255,7 @@
               "duration_ms": 675940
             },
             "duration_ms": 675940,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/0667c301505e3a508dcdf09d915fbe998789b878/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/tlg0niclvq5p4t0vl97dz4wtqoa8ev2qv2w0gkxy/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Christ—Author and Finisher of Our Faith",
@@ -265,7 +274,7 @@
               "duration_ms": 509340
             },
             "duration_ms": 509340,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/s9mvuceqi2j74fihkpj5158pxtn5z8qzkce99r2i/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/sesoks1mgm4a8vgo42nfp8snd94bq243rn5h847y/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "“I Will Give Away All My Sins to Know Thee”",
@@ -284,7 +293,7 @@
               "duration_ms": 505370
             },
             "duration_ms": 505370,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/t6b68njdiijgqcj3udlisjoxjdmazf56c1ohx3hz/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/uscw724r8zqekmjr7ost6ryniu91bijxyd8tt5ml/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Jesus Christ Is Not Our Burden; He Is Our Relief",
@@ -302,7 +311,8 @@
               "language": "en",
               "duration_ms": 556690
             },
-            "duration_ms": 556690
+            "duration_ms": 556690,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/7nk7lbkcd7lazs3w6ltjoo8jh8u63xdtduxke4dx/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Love All; Love Each",
@@ -320,7 +330,8 @@
               "language": "en",
               "duration_ms": 687120
             },
-            "duration_ms": 687120
+            "duration_ms": 687120,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/oj5yyiglixvzren591kjnk7usz9jt6ovstl9jdww/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Jesus Christ Is the Way",
@@ -339,7 +350,7 @@
               "duration_ms": 495130
             },
             "duration_ms": 495130,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/fmw06rl0j9coeoo4qz3o4r9pazsba4op9ima8lq2/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/8kxhbafstla1u6vilocg3rgkn1nmf613yjxl3eg2/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "He Knows You by Name",
@@ -357,7 +368,8 @@
               "language": "en",
               "duration_ms": 568870
             },
-            "duration_ms": 568870
+            "duration_ms": 568870,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/simzeu8kaytlkrz9v4u3pz63rhw09ajcquuenc8e/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Jesus Christ—the True Vine",
@@ -375,16 +387,17 @@
               "language": "en",
               "duration_ms": 700070
             },
-            "duration_ms": 700070
+            "duration_ms": 700070,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/m1ochv2jv1251c0asnt4c8oc6nw1hchbs1qiz8xd/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
           "url": "https://assets.churchofjesuschrist.org/ksv1lz1v2mhkdi3lixm49fwk0mcbtlbtba812fd8-128k-en.mp3",
           "quality": "128k",
           "language": "en",
-          "duration_ms": 7109400
+          "duration_ms": 7109470
         },
-        "duration_ms": 7109400
+        "duration_ms": 7109470
       },
       {
         "name": "Sunday Morning Session",
@@ -408,7 +421,8 @@
               "language": "en",
               "duration_ms": 747750
             },
-            "duration_ms": 747750
+            "duration_ms": 747750,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/tx9vqk3zs2eoylb8q1lnazdbg5uol5lzih4e4yfl/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Best Days and Worst Days",
@@ -426,7 +440,8 @@
               "language": "en",
               "duration_ms": 519490
             },
-            "duration_ms": 519490
+            "duration_ms": 519490,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/qhemwyu8ehx1ujciyb9b8sk3xjqt6re45uylvymz/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "I Feel My Savior’s Love",
@@ -445,7 +460,7 @@
               "duration_ms": 474440
             },
             "duration_ms": 474440,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/qq45eg945645x4tx0p6g2pm4grf8z8shft0xwmmb/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/1n0y9vuswwuo7svar9y85e3fjh2bocxytf7erms1/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Choose Jesus Christ as Your Guide",
@@ -463,7 +478,8 @@
               "language": "en",
               "duration_ms": 560790
             },
-            "duration_ms": 560790
+            "duration_ms": 560790,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/zpn53xdxlezatnixmtl4h5kcy56f6yo7hwq4cdio/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "He Is Risen",
@@ -482,7 +498,7 @@
               "duration_ms": 621090
             },
             "duration_ms": 621090,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/dt7xvjejg8f1rdsbvw0ynn1y6u7dm7wxif0oqary/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/eh9rufgf90el7s0s7kec3mgx3sf1prcazte5wbvz/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Because of Jesus Christ",
@@ -501,7 +517,7 @@
               "duration_ms": 660460
             },
             "duration_ms": 660460,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/b0rq1vchped3p1d8xiz54ksou1g3rfkkg0vlgl8q/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/jb5uzfe7pvy1z9z4205qd5xcyenfswz0aum0iz95/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "The Joy of a Covenant Relationship with God",
@@ -519,7 +535,8 @@
               "language": "en",
               "duration_ms": 619450
             },
-            "duration_ms": 619450
+            "duration_ms": 619450,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/londltgjdry709r2cr7satoqwl5srrewtys64ahe/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "A Peculiar Treasure",
@@ -537,7 +554,8 @@
               "language": "en",
               "duration_ms": 503770
             },
-            "duration_ms": 503770
+            "duration_ms": 503770,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/kyixqx93kbk4wzcis7wh5ksdnnesr5w0zkl5ykzj/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Alive in Christ",
@@ -556,16 +574,16 @@
               "duration_ms": 817980
             },
             "duration_ms": 817980,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/af3dca94009a11ee8c1feeeeac1e258a5942df12/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/zomba0e1oove1nvezn7lsb9l6hgfxkxbgnx2xbsa/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
           "url": "https://assets.churchofjesuschrist.org/0kh1j3jwcb0ptio34h508971buyvmx7xajptp29v-128k-en.mp3",
           "quality": "128k",
           "language": "en",
-          "duration_ms": 7123550
+          "duration_ms": 7123620
         },
-        "duration_ms": 7123550
+        "duration_ms": 7123620
       },
       {
         "name": "Sunday Afternoon Session",
@@ -590,7 +608,7 @@
               "duration_ms": 730730
             },
             "duration_ms": 730730,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/0h32a0iw3nhi4vqqtx9s8yeqixt8fkq95rmhrtuo/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/wbxbxpfo4o1gx9hx7jmu9fe6im809oz87b00fk3f/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Remember, Remember",
@@ -608,7 +626,8 @@
               "language": "en",
               "duration_ms": 480450
             },
-            "duration_ms": 480450
+            "duration_ms": 480450,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/95muj48egmb0jjlqvlc1wtgyq8dqh91i4lygt6gu/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "I Glory in My Jesus",
@@ -626,7 +645,8 @@
               "language": "en",
               "duration_ms": 508840
             },
-            "duration_ms": 508840
+            "duration_ms": 508840,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/k9isuaoeee0fedf2zilx4g68pjm1aqj9m66blkzf/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "“Here Am I, Send Me”",
@@ -645,7 +665,7 @@
               "duration_ms": 523620
             },
             "duration_ms": 523620,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/wy00gtr4qgwncmoqco1y7pschbtpvf1t8v37xiav/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/cgkpdffa2eoqnwn5zp07g1hu8rdkceard64ewghj/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Eternal Marriage Is an Eternal Journey",
@@ -663,7 +683,8 @@
               "language": "en",
               "duration_ms": 702070
             },
-            "duration_ms": 702070
+            "duration_ms": 702070,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/927lkm4ne7lsq5fcz35skzls2twyozogz21mqm1w/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Keys, Covenants, and Easter",
@@ -682,7 +703,7 @@
               "duration_ms": 692320
             },
             "duration_ms": 692320,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/c0jhwscdxk0tmmb9ggqp9avrey5odiz0y560hhdo/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/rt8bdb264fmf2d2yatr13p5z9enzs6gkl1yzedng/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Come unto Christ—Together",
@@ -701,7 +722,7 @@
               "duration_ms": 517120
             },
             "duration_ms": 517120,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/zy369qio55sp2nwd7ngmk575bb5qnwh7lg66zpph/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/76fijcyeqv4qixgr4hrh6tnf3rk7l2jlnjj19tb0/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "’Tis Eastertide: No One Walks Alone",
@@ -719,7 +740,8 @@
               "language": "en",
               "duration_ms": 669200
             },
-            "duration_ms": 669200
+            "duration_ms": 669200,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/eaatubntp206iwnupdvtpqs9e9320s3f9zlshc0t/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Closing Remarks",
@@ -737,16 +759,17 @@
               "language": "en",
               "duration_ms": 176080
             },
-            "duration_ms": 176080
+            "duration_ms": 176080,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/75oyrny2cw3zko3pvfxm6hlapg5e29nljs7uiew7/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
           "url": "https://assets.churchofjesuschrist.org/f84ggb720fugb4ydur1czcnm4tt9z0kor3xdd37w-128k-en.mp3",
           "quality": "128k",
           "language": "en",
-          "duration_ms": 7109070
+          "duration_ms": 7109100
         },
-        "duration_ms": 7109070
+        "duration_ms": 7109100
       }
     ],
     "conference_image_url": "https://www.churchofjesuschrist.org/imgs/bd28805cb67a5524cd310c394c06f1dfbe19cf86/square/1500,1500/0/default"

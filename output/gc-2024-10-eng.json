@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-04-21T15:44:37.378Z",
+  "scraped_at": "2026-04-21T16:21:27.904Z",
   "version": "1.0",
   "conference": {
     "year": 2024,
@@ -30,7 +30,8 @@
               "language": "en",
               "duration_ms": 256533
             },
-            "duration_ms": 256533
+            "duration_ms": 256533,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/8026901a833511efae28022e7e432ed95151b97b/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "The Triumph of Hope",
@@ -49,7 +50,7 @@
               "duration_ms": 811800
             },
             "duration_ms": 811800,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/48znnokl4pdc6fqmtivqrgk1ldljsgjeq4yt98uk/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/eeb6678a833511ef9b3a0626c361eb55d5d19cbc/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Live Up to Your Privileges",
@@ -67,7 +68,8 @@
               "language": "en",
               "duration_ms": 705566
             },
-            "duration_ms": 705566
+            "duration_ms": 705566,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/6e9fb22b833811ef9b3a0626c361eb5566ff7f77/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "God’s Favourite",
@@ -85,7 +87,8 @@
               "language": "en",
               "duration_ms": 631400
             },
-            "duration_ms": 631400
+            "duration_ms": 631400,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/c7655f9d833811ef9b3a0626c361eb550c951c32/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "“This Is My Gospel”—“This Is My Church”",
@@ -103,7 +106,8 @@
               "language": "en",
               "duration_ms": 829000
             },
-            "duration_ms": 829000
+            "duration_ms": 829000,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/2c3c1f77833b11ef9b3a0626c361eb55b63860a2/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Trusting Our Father",
@@ -121,7 +125,8 @@
               "language": "en",
               "duration_ms": 620000
             },
-            "duration_ms": 620000
+            "duration_ms": 620000,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/13cc3f00833d11efae28022e7e432ed90f07ccc8/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "God Loves All His Children",
@@ -139,7 +144,8 @@
               "language": "en",
               "duration_ms": 576533
             },
-            "duration_ms": 576533
+            "duration_ms": 576533,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/fb871a37833e11efae28022e7e432ed9240788b7/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Following Christ",
@@ -158,7 +164,7 @@
               "duration_ms": 810976
             },
             "duration_ms": 810976,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/nwmmld376mp0dm69yrnkfxswt5ldrf0aipfwfavo/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/3e87be14834111efae28022e7e432ed99fca88f6/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
@@ -192,7 +198,7 @@
               "duration_ms": 791566
             },
             "duration_ms": 791566,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/bc87khf5ivlhg1oi32h7ylg6mseh5opy2nfxectm/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/44eecaf2835611efae28022e7e432ed96a68d5f0/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Bonded to Jesus Christ: Becoming the Salt of the Earth",
@@ -210,7 +216,8 @@
               "language": "en",
               "duration_ms": 649466
             },
-            "duration_ms": 649466
+            "duration_ms": 649466,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/6de4fcd6835711ef9b3a0626c361eb5516cdade7/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "His Hand Ready to Help Us",
@@ -229,7 +236,7 @@
               "duration_ms": 613433
             },
             "duration_ms": 613433,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/0c525b153089b3ea4503c533e2ebae229118a926/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/ae084a4a835911ef9b3a0626c361eb558432084d/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Welcome to the Church of Joy",
@@ -247,7 +254,8 @@
               "language": "en",
               "duration_ms": 781766
             },
-            "duration_ms": 781766
+            "duration_ms": 781766,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/24283322835b11ef9b3a0626c361eb55454dc62d/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "“Ye Are My Friends”",
@@ -265,7 +273,8 @@
               "language": "en",
               "duration_ms": 648933
             },
-            "duration_ms": 648933
+            "duration_ms": 648933,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/4535960b835d11ef9b3a0626c361eb55eac3a91a/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Be Thou Clean",
@@ -283,7 +292,8 @@
               "language": "en",
               "duration_ms": 583333
             },
-            "duration_ms": 583333
+            "duration_ms": 583333,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/258a5c45835f11efae28022e7e432ed94288f7f9/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "The Wind Did Never Cease to Blow",
@@ -301,7 +311,8 @@
               "language": "en",
               "duration_ms": 585833
             },
-            "duration_ms": 585833
+            "duration_ms": 585833,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/08d2449b836011ef9b3a0626c361eb5544a6d0eb/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Aligning Our Will with His",
@@ -319,7 +330,8 @@
               "language": "en",
               "duration_ms": 920033
             },
-            "duration_ms": 920033
+            "duration_ms": 920033,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/2a0d6e46836211ef9b3a0626c361eb55990a8365/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
@@ -352,7 +364,8 @@
               "language": "en",
               "duration_ms": 857200
             },
-            "duration_ms": 857200
+            "duration_ms": 857200,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/705a4a65837911ef9b3a0626c361eb553aed0052/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "The Joy of Our Redemption",
@@ -371,7 +384,7 @@
               "duration_ms": 729433
             },
             "duration_ms": 729433,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/3egtfotbivg1uyphjcctoulfl26syjjj3c6qrj2a/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/f7aa07d8837911ef9b3a0626c361eb551ae1ab1f/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "The Man Who Communed with Jehovah",
@@ -389,7 +402,8 @@
               "language": "en",
               "duration_ms": 668066
             },
-            "duration_ms": 668066
+            "duration_ms": 668066,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/7fda4f62837c11ef9b3a0626c361eb55435b5a69/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Embrace the Lord’s Gift of Repentance",
@@ -407,7 +421,8 @@
               "language": "en",
               "duration_ms": 694600
             },
-            "duration_ms": 694600
+            "duration_ms": 694600,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/12186eff837f11efae28022e7e432ed9872f676b/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "In the Space of Not Many Years",
@@ -425,7 +440,8 @@
               "language": "en",
               "duration_ms": 976400
             },
-            "duration_ms": 976400
+            "duration_ms": 976400,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/b5ecc85a838011efae28022e7e432ed9876c1855/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
@@ -458,7 +474,8 @@
               "language": "en",
               "duration_ms": 923433
             },
-            "duration_ms": 923433
+            "duration_ms": 923433,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/4b8cee8e83ff11efae28022e7e432ed9297fbbe5/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Seeking Answers to Spiritual Questions",
@@ -476,7 +493,8 @@
               "language": "en",
               "duration_ms": 747233
             },
-            "duration_ms": 747233
+            "duration_ms": 747233,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/449031a2840011ef9b3a0626c361eb55c4148f0b/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Mortality Works!",
@@ -495,7 +513,7 @@
               "duration_ms": 659291
             },
             "duration_ms": 659291,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/ylvbypumck6qxf257hqt0re44jbz7br55cxxvatx/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/ffe56152840111efae28022e7e432ed91b4f8910/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Seek Him with All Your Heart",
@@ -514,7 +532,7 @@
               "duration_ms": 723566
             },
             "duration_ms": 723566,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/cb8egzrb6pvu4dwmm01xswfdf92m4urbd1159dui/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/e5154beb840311efae28022e7e432ed99fed7862/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Days Never to Be Forgotten",
@@ -533,7 +551,7 @@
               "duration_ms": 859033
             },
             "duration_ms": 859033,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/pefobae9no77737dxi1nnvnpmpu83y25kcpdud6z/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/d5d286fe840511ef9b3a0626c361eb55b18ddf2e/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "O Youth of the Noble Birthright",
@@ -551,7 +569,8 @@
               "language": "en",
               "duration_ms": 752900
             },
-            "duration_ms": 752900
+            "duration_ms": 752900,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/9c2484ca840711efae28022e7e432ed97b29ee2f/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Simple Is the Doctrine of Jesus Christ",
@@ -569,7 +588,8 @@
               "language": "en",
               "duration_ms": 966466
             },
-            "duration_ms": 966466
+            "duration_ms": 966466,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/88e6bd39840c11ef9b3a0626c361eb551a0bbeef/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
@@ -602,7 +622,8 @@
               "language": "en",
               "duration_ms": 871533
             },
-            "duration_ms": 871533
+            "duration_ms": 871533,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/648aa083842011efae28022e7e432ed903417ac0/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "The Words of Christ and the Holy Ghost Will Lead Us to the Truth",
@@ -620,7 +641,8 @@
               "language": "en",
               "duration_ms": 606566
             },
-            "duration_ms": 606566
+            "duration_ms": 606566,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/3cd8d057842211efae28022e7e432ed94d46e443/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "“Behold I Am the Light Which Ye Shall Hold Up”",
@@ -639,7 +661,7 @@
               "duration_ms": 809033
             },
             "duration_ms": 809033,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/q2hsjwzt50a9vt39mx4hwb22y87avg5bc7jzb0r6/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/2f88d032842311ef9b3a0626c361eb5535f70948/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Sacred Scriptures—the Foundations of Faith",
@@ -658,7 +680,7 @@
               "duration_ms": 847266
             },
             "duration_ms": 847266,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/b990ej57e4wz255387dbhitl193tateafri9sw5i/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/5062355e842611ef9b3a0626c361eb5559545945/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Sons and Daughters of God",
@@ -676,7 +698,8 @@
               "language": "en",
               "duration_ms": 597833
             },
-            "duration_ms": 597833
+            "duration_ms": 597833,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/1921a621842711efae28022e7e432ed9b1fc1b9f/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Focus on Jesus Christ and His Gospel",
@@ -695,7 +718,7 @@
               "duration_ms": 650300
             },
             "duration_ms": 650300,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/1k3x40lf3aimgtfwa8v8mswn2yoft1z8xev1btkl/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/4ea7f05b842811ef9b3a0626c361eb553e3c96eb/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "The Lord Jesus Christ Will Come Again",
@@ -714,7 +737,7 @@
               "duration_ms": 889722
             },
             "duration_ms": 889722,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/2da38655a9aa11eeb96deeeeac1e869bcb7f246f/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/d845175d828d11efae28022e7e432ed9301316a5/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
