@@ -1363,13 +1363,21 @@ export class ConferenceScraper {
    * Fetch the conference-branded hero image for a specific conference.
    *
    * Source: `https://www.churchofjesuschrist.org/media/collection/<month>-<year>-general-conference?lang=eng`
-   * Fallback (404 on collection page): `https://www.churchofjesuschrist.org/feature/general-conference?lang=eng`
    *
-   * Returns an Apple-compliant 1500×1500 square IIIF URL (built via
+   * Returns an Apple-compliant 3000×3000 square IIIF URL (built via
    * buildConferenceSquareImageUrl), or null on failure (non-fatal).
    *
    * Only months 4 (April) and 10 (October) are valid GC months. Any other
    * month value short-circuits to null without fetching.
+   *
+   * gc_podcast-vce: no longer falls back to `/feature/general-conference`
+   * when the per-conference collection page 404s. That fallback page's
+   * og:image is an evergreen banner (Good Shepherd) that is NOT specific
+   * to any particular conference, so using it defeats the purpose of
+   * per-cycle rotation in generateRssFeed. When a collection page is
+   * missing — typically because the cycle hasn't yet been published by
+   * the Church — we return null and let rotation pick the previous
+   * conference's branded art instead.
    */
   async fetchConferenceImage(year: number, month: number): Promise<string | null> {
     if (month !== 4 && month !== 10) {
@@ -1378,49 +1386,26 @@ export class ConferenceScraper {
 
     const monthName = month === 4 ? 'april' : 'october';
     const collectionUrl = `${BASE_URL}/media/collection/${monthName}-${year}-general-conference?lang=eng`;
-    const fallbackUrl = `${BASE_URL}/feature/general-conference?lang=eng`;
 
-    const tryFetchHash = async (url: string): Promise<string | null> => {
-      try {
-        const response = await fetchWithRetry(url);
-        if (!response.ok) {
-          return null;
-        }
+    try {
+      const response = await fetchWithRetry(collectionUrl);
+      if (response.ok) {
         const html = await response.text();
         const hash = extractOgImageHash(html);
-        return hash ?? null;
-      } catch {
-        return null;
+        if (hash) {
+          log.info('conference image extracted from collection page', {
+            collectionUrl,
+            hash,
+          });
+          return buildConferenceSquareImageUrl(hash);
+        }
       }
-    };
-
-    // Try collection page first.
-    let hash = await tryFetchHash(collectionUrl);
-    if (hash) {
-      log.info('conference image extracted from collection page', {
-        collectionUrl,
-        hash,
-      });
-      return buildConferenceSquareImageUrl(hash);
+    } catch {
+      // fall through to null below
     }
 
-    // 404 or failure — try the generic fallback.
-    log.warn('conference collection page unavailable, trying fallback', {
+    log.warn('conference collection page unavailable; skipping per-conference art', {
       collectionUrl,
-      fallbackUrl,
-    });
-    hash = await tryFetchHash(fallbackUrl);
-    if (hash) {
-      log.warn('conference image extracted from fallback page', {
-        fallbackUrl,
-        hash,
-      });
-      return buildConferenceSquareImageUrl(hash);
-    }
-
-    log.warn('conference image unavailable (both collection and fallback failed)', {
-      collectionUrl,
-      fallbackUrl,
       year,
       month,
     });

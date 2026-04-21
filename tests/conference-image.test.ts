@@ -161,34 +161,19 @@ describe('fetchConferenceImage', () => {
     expect(mockFetch).not.toHaveBeenCalled();
   });
 
-  it('falls back to /feature/general-conference when collection page returns 404', async () => {
-    const mockFetch = vi
-      .fn()
-      // Collection page: 404
-      .mockResolvedValueOnce(makeEmptyResponse(404))
-      // Fallback page: 200 with an og:image
-      .mockResolvedValueOnce(makeHtmlResponse(SAMPLE_HASH));
-    vi.stubGlobal('fetch', mockFetch);
-    const scraper = new ConferenceScraper({ useCache: false });
-
-    const result = await scraper.fetchConferenceImage(2025, 4);
-    expect(result).toBe(buildConferenceSquareImageUrl(SAMPLE_HASH));
-
-    // Verify fallback URL was called.
-    const secondCallUrl = mockFetch.mock.calls[1][0] as string;
-    expect(secondCallUrl).toBe(FALLBACK_URL);
-  });
-
-  it('returns null (does not throw) when both collection and fallback fail', async () => {
-    const mockFetch = vi
-      .fn()
-      .mockResolvedValueOnce(makeEmptyResponse(404))
-      .mockResolvedValueOnce(makeEmptyResponse(404));
+  it('returns null and does NOT fall back to /feature/general-conference when collection page 404s (gc_podcast-vce)', async () => {
+    // Collection page 404s and there is no secondary fetch — the generic
+    // feature page's og:image is an evergreen banner (not per-conference),
+    // so we deliberately don't consult it. Rotation in generateRssFeed
+    // picks up the previous conference's art when this returns null.
+    const mockFetch = vi.fn().mockResolvedValueOnce(makeEmptyResponse(404));
     vi.stubGlobal('fetch', mockFetch);
     const scraper = new ConferenceScraper({ useCache: false });
 
     const result = await scraper.fetchConferenceImage(2025, 4);
     expect(result).toBeNull();
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).not.toBe(FALLBACK_URL);
   });
 
   it('returns null (does not throw) on network error', async () => {
