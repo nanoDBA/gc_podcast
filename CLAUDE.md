@@ -52,18 +52,40 @@ bd close <id>         # Complete work
 
 ## Build & Test
 
-_Add your build and test commands here_
-
 ```bash
-# Example:
-# npm install
-# npm test
+npm install              # Install dependencies
+npm test                 # Run Vitest test suite (192 tests)
+npx tsc --noEmit         # Type-check without emitting
+npm run lint             # ESLint on src/ and tests/
+npm run format:check     # Prettier check
+npm run dev              # Scrape a single conference (current)
+npm run feed             # Generate RSS feeds from output/ JSON
+npm run update           # Full pipeline: scrape-all + feed generation
 ```
 
 ## Architecture Overview
 
-_Add a brief overview of your project architecture_
+TypeScript Node.js project that scrapes LDS General Conference talk metadata and audio URLs, then generates podcast-compatible RSS feeds hosted on GitHub Pages.
+
+**Key modules:**
+- `scraper.ts` — Conference scraping engine (API-first discovery with HTML fallback, 3 parser strategies, circuit breaker, retry with backoff)
+- `rss-generator.ts` — iTunes + Podcasting 2.0 RSS feed generation with per-item artwork
+- `scrape-all.ts` — Batch orchestrator with incomplete-conference detection and atomic writes
+- `image-extractor.ts` — IIIF image hash extraction from Church CDN URLs
+- `schemas.ts` — Zod runtime validation with API drift detection
+- `migrations.ts` — Schema versioning (v1.0) with migration scaffolding
+
+**Data flow:** scrape → JSON files in `output/` → RSS feeds in `docs/` → GitHub Pages deployment
+
+**Languages:** English (`eng`), Spanish (`spa`), Portuguese (`por`) — configured in `languages.ts`
 
 ## Conventions & Patterns
 
-_Add your project-specific conventions here_
+- **Issue tracking:** Beads (`bd`) exclusively — never TodoWrite, TaskCreate, or markdown TODOs
+- **Decision traceability:** Beads issue IDs in code comments (e.g., `gc_podcast-xxx`)
+- **CI:** SHA-pinned GitHub Actions with Dependabot; workflows in `.github/workflows/`
+- **Code quality:** Prettier + ESLint + Husky pre-commit hooks via lint-staged
+- **Testing:** Vitest with HTML fixture files in `tests/fixtures/`
+- **Logging:** Structured JSON lines to stderr, filterable via `LOG_LEVEL` env var
+- **File safety:** Atomic writes to prevent corruption during scrape
+- **Persistent knowledge:** `bd remember` (not MEMORY.md files)
