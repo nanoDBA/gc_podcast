@@ -144,6 +144,7 @@ export interface IncompleteResult {
  *   - any session has an empty talks array (talks not yet published)
  *   - any session is missing an `audio.url` or the url is empty/whitespace
  *   - any talk is missing `audio.url` or `audio.duration_ms`
+ *   - `conference.conference_image_url` is missing (channel artwork, gc_podcast-8t0)
  *
  * All matching reasons are collected and returned together so callers can
  * log WHY a file is being re-scraped.
@@ -189,6 +190,16 @@ export async function isIncomplete(filePath: string): Promise<IncompleteResult> 
         .map((i) => `${i.path.join('.') || '<root>'}: ${i.message}`)
         .join('; ')}`,
     );
+  }
+
+  // Flag conferences scraped before the image pipeline shipped (gc_podcast-8t0).
+  // Missing conference_image_url means the output predates per-conference
+  // artwork extraction and should be re-scraped to populate image fields.
+  // Note: field is optional (`undefined` when pre-pipeline) and may be
+  // explicitly set to `null` when the scraper tried but the collection page
+  // was unavailable — only `undefined` should trigger a re-scrape.
+  if (data?.conference && !('conference_image_url' in data.conference)) {
+    reasons.push('conference is missing conference_image_url (pre-image-pipeline output)');
   }
 
   const sessions = data?.conference?.sessions;

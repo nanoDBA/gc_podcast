@@ -55,18 +55,25 @@ function makeSession(idx: number, overrides: Partial<Session> = {}): Session {
   };
 }
 
-function makeOutput(sessions: Session[]): ConferenceOutput {
+function makeOutput(
+  sessions: Session[],
+  overrides: { omitConferenceImage?: boolean } = {},
+): ConferenceOutput {
+  const conference: ConferenceOutput['conference'] = {
+    year: 2025,
+    month: 10,
+    name: 'October 2025 general conference',
+    url: 'https://example.com/conf',
+    language: 'eng',
+    sessions,
+  };
+  if (!overrides.omitConferenceImage) {
+    conference.conference_image_url = 'https://example.com/conference-art.jpg';
+  }
   return {
     scraped_at: new Date().toISOString(),
     version: '1.0',
-    conference: {
-      year: 2025,
-      month: 10,
-      name: 'October 2025 general conference',
-      url: 'https://example.com/conf',
-      language: 'eng',
-      sessions,
-    },
+    conference,
   };
 }
 
@@ -148,5 +155,24 @@ describe('isIncomplete — partial session detection', () => {
     const reasonText = result.reasons.join(' | ');
     expect(reasonText).toMatch(/2 session/);
     expect(reasonText).toMatch(/floor/i);
+  });
+
+  it('flags a conference missing conference_image_url (pre-image-pipeline output)', async () => {
+    const sessions = [1, 2, 3, 4, 5].map((i) => makeSession(i));
+    writeOutput(makeOutput(sessions, { omitConferenceImage: true }));
+    const result = await isIncomplete(tmpFile);
+    expect(result.incomplete).toBe(true);
+    const reasonText = result.reasons.join(' | ');
+    expect(reasonText).toMatch(/conference_image_url/);
+    expect(reasonText).toMatch(/pre-image-pipeline/);
+  });
+
+  it('treats an explicit null conference_image_url as complete (scraper tried but collection page unavailable)', async () => {
+    const sessions = [1, 2, 3, 4, 5].map((i) => makeSession(i));
+    const output = makeOutput(sessions);
+    output.conference.conference_image_url = null;
+    writeOutput(output);
+    const result = await isIncomplete(tmpFile);
+    expect(result).toEqual({ incomplete: false, reasons: [] });
   });
 });
