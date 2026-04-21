@@ -2,7 +2,7 @@
 
 ## Reporting Security Vulnerabilities
 
-If you discover a security vulnerability in this repository, please report it responsibly by emailing security@example.com rather than using the public issue tracker.
+If you discover a security vulnerability in this repository, please report it responsibly by [contacting Lars directly](https://linktr.ee/nanodba) rather than using the public issue tracker.
 
 Please include the following information:
 - Description of the vulnerability
