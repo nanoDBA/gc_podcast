@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-01-08T15:01:27.207Z",
+  "scraped_at": "2026-04-21T15:44:37.378Z",
   "version": "1.0",
   "conference": {
     "year": 2024,
@@ -22,8 +22,7 @@
             "speaker": {
               "name": "Presented by President Henry B. Eyring",
               "role_tag": "first-presidency",
-              "calling": "Second Counselor in the First Presidency",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/presented-by-president-henry-b-eyring?lang=eng"
+              "calling": "Second Counselor in the First Presidency"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/e6fa64f880ff11efae28022e7e432ed98f153e55-128k-en.mp3",
@@ -41,8 +40,7 @@
             "speaker": {
               "name": "Elder Neil L. Andersen",
               "role_tag": "quorum-of-the-twelve",
-              "calling": "Of the Quorum of the Twelve Apostles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-neil-l-andersen?lang=eng"
+              "calling": "Of the Quorum of the Twelve Apostles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/d50d775680ff11efae28022e7e432ed942dd14f4-128k-en.mp3",
@@ -50,7 +48,8 @@
               "language": "en",
               "duration_ms": 811800
             },
-            "duration_ms": 811800
+            "duration_ms": 811800,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/48znnokl4pdc6fqmtivqrgk1ldljsgjeq4yt98uk/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Live Up to Your Privileges",
@@ -60,8 +59,7 @@
             "speaker": {
               "name": "President Emily Belle Freeman",
               "role_tag": null,
-              "calling": "Young Women General President",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/president-emily-belle-freeman?lang=eng"
+              "calling": "Young Women General President"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/aa71b88080ff11efae28022e7e432ed943a94e88-128k-en.mp3",
@@ -79,8 +77,7 @@
             "speaker": {
               "name": "Elder Karl D. Hirst",
               "role_tag": null,
-              "calling": "Of the Seventy",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-karl-d-hirst?lang=eng"
+              "calling": "Of the Seventy"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/c0e7fed580ff11efae28022e7e432ed9dae16505-128k-en.mp3",
@@ -98,8 +95,7 @@
             "speaker": {
               "name": "Elder Dale G. Renlund",
               "role_tag": "quorum-of-the-twelve",
-              "calling": "Of the Quorum of the Twelve Apostles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-dale-g-renlund?lang=eng"
+              "calling": "Of the Quorum of the Twelve Apostles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/8b18835d80ff11efae28022e7e432ed9e1ff687c-128k-en.mp3",
@@ -117,8 +113,7 @@
             "speaker": {
               "name": "Elder David P. Homer",
               "role_tag": null,
-              "calling": "Of the Seventy",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-david-p-homer?lang=eng"
+              "calling": "Of the Seventy"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/a66f6a1f80ff11efae28022e7e432ed904170eb5-128k-en.mp3",
@@ -136,8 +131,7 @@
             "speaker": {
               "name": "Elder Gregorio E. Casillas",
               "role_tag": null,
-              "calling": "Of the Seventy",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-gregorio-e-casillas?lang=eng"
+              "calling": "Of the Seventy"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/b6e436b280ff11efae28022e7e432ed982d350a6-128k-en.mp3",
@@ -155,8 +149,7 @@
             "speaker": {
               "name": "President Dallin H. Oaks",
               "role_tag": "first-presidency",
-              "calling": "First Counselor in the First Presidency",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/president-dallin-h-oaks?lang=eng"
+              "calling": "First Counselor in the First Presidency"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/98ba59ce80ff11efae28022e7e432ed973dff5bb-128k-en.mp3",
@@ -164,7 +157,8 @@
               "language": "en",
               "duration_ms": 810976
             },
-            "duration_ms": 810976
+            "duration_ms": 810976,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/nwmmld376mp0dm69yrnkfxswt5ldrf0aipfwfavo/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
@@ -189,8 +183,7 @@
             "speaker": {
               "name": "Elder D. Todd Christofferson",
               "role_tag": "quorum-of-the-twelve",
-              "calling": "Of the Quorum of the Twelve Apostles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-d-todd-christofferson?lang=eng"
+              "calling": "Of the Quorum of the Twelve Apostles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/914c98a580fa11ef9b3a0626c361eb55ba7af13f-128k-en.mp3",
@@ -198,7 +191,8 @@
               "language": "en",
               "duration_ms": 791566
             },
-            "duration_ms": 791566
+            "duration_ms": 791566,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/bc87khf5ivlhg1oi32h7ylg6mseh5opy2nfxectm/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Bonded to Jesus Christ: Becoming the Salt of the Earth",
@@ -208,8 +202,7 @@
             "speaker": {
               "name": "Elder José A. Teixeira",
               "role_tag": null,
-              "calling": "Of the Presidency of the Seventy",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-jos-a-teixeira?lang=eng"
+              "calling": "Of the Presidency of the Seventy"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/92db28f980fa11ef9b3a0626c361eb55f3dee9e1-128k-en.mp3",
@@ -227,8 +220,7 @@
             "speaker": {
               "name": "Elder Juan Pablo Villar",
               "role_tag": null,
-              "calling": "Of the Seventy",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-juan-pablo-villar?lang=eng"
+              "calling": "Of the Seventy"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/9363e15b80fa11ef9b3a0626c361eb550c933d18-128k-en.mp3",
@@ -236,7 +228,8 @@
               "language": "en",
               "duration_ms": 613433
             },
-            "duration_ms": 613433
+            "duration_ms": 613433,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/0c525b153089b3ea4503c533e2ebae229118a926/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Welcome to the Church of Joy",
@@ -246,8 +239,7 @@
             "speaker": {
               "name": "Elder Patrick Kearon",
               "role_tag": "quorum-of-the-twelve",
-              "calling": "Of the Quorum of the Twelve Apostles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-patrick-kearon?lang=eng"
+              "calling": "Of the Quorum of the Twelve Apostles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/93eb3a2d80fa11ef9b3a0626c361eb55ea63fa85-128k-en.mp3",
@@ -265,8 +257,7 @@
             "speaker": {
               "name": "Elder David L. Buckner",
               "role_tag": null,
-              "calling": "Of the Seventy",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-david-l-buckner?lang=eng"
+              "calling": "Of the Seventy"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/9248d3a580fa11ef9b3a0626c361eb55cf82e7eb-128k-en.mp3",
@@ -284,8 +275,7 @@
             "speaker": {
               "name": "Elder D. Martin Goury",
               "role_tag": null,
-              "calling": "Of the Seventy",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-d-martin-goury?lang=eng"
+              "calling": "Of the Seventy"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/914b120480fa11ef9b3a0626c361eb551d5e1349-128k-en.mp3",
@@ -303,8 +293,7 @@
             "speaker": {
               "name": "Elder Aroldo B. Cavalcante",
               "role_tag": null,
-              "calling": "Of the Seventy",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-aroldo-b-cavalcante?lang=eng"
+              "calling": "Of the Seventy"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/909e56cf80fa11ef9b3a0626c361eb553bf46fe0-128k-en.mp3",
@@ -322,8 +311,7 @@
             "speaker": {
               "name": "Elder Ulisses Soares",
               "role_tag": "quorum-of-the-twelve",
-              "calling": "Of the Quorum of the Twelve Apostles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-ulisses-soares?lang=eng"
+              "calling": "Of the Quorum of the Twelve Apostles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/9509f16280fa11ef9b3a0626c361eb557e607bc9-128k-en.mp3",
@@ -356,8 +344,7 @@
             "speaker": {
               "name": "Elder Gerrit W. Gong",
               "role_tag": "quorum-of-the-twelve",
-              "calling": "Of the Quorum of the Twelve Apostles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-gerrit-w-gong?lang=eng"
+              "calling": "Of the Quorum of the Twelve Apostles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/cd644b9d810011efae28022e7e432ed9938be022-128k-en.mp3",
@@ -375,8 +362,7 @@
             "speaker": {
               "name": "Sister Kristin M. Yee",
               "role_tag": null,
-              "calling": "Second Counselor in the Relief Society General Presidency",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/sister-kristin-m-yee?lang=eng"
+              "calling": "Second Counselor in the Relief Society General Presidency"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/e4b78470810011efae28022e7e432ed901e812db-128k-en.mp3",
@@ -384,7 +370,8 @@
               "language": "en",
               "duration_ms": 729433
             },
-            "duration_ms": 729433
+            "duration_ms": 729433,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/3egtfotbivg1uyphjcctoulfl26syjjj3c6qrj2a/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "The Man Who Communed with Jehovah",
@@ -394,8 +381,7 @@
             "speaker": {
               "name": "Elder Kyle S. McKay",
               "role_tag": null,
-              "calling": "Of the Seventy",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-kyle-s-mckay?lang=eng"
+              "calling": "Of the Seventy"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/ee6c9051810011efae28022e7e432ed9ffbcfbec-128k-en.mp3",
@@ -413,8 +399,7 @@
             "speaker": {
               "name": "Elder Jorge M. Alvarado",
               "role_tag": null,
-              "calling": "Of the Seventy",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-jorge-m-alvarado?lang=eng"
+              "calling": "Of the Seventy"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/d3db6a8f810011efae28022e7e432ed915c38719-128k-en.mp3",
@@ -432,8 +417,7 @@
             "speaker": {
               "name": "Elder David A. Bednar",
               "role_tag": "quorum-of-the-twelve",
-              "calling": "Of the Quorum of the Twelve Apostles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-david-a-bednar?lang=eng"
+              "calling": "Of the Quorum of the Twelve Apostles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/c79c0a4c810011efae28022e7e432ed91c175474-128k-en.mp3",
@@ -466,8 +450,7 @@
             "speaker": {
               "name": "President Jeffrey R. Holland",
               "role_tag": "quorum-of-the-twelve",
-              "calling": "Acting President of the Quorum of the Twelve Apostles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/president-jeffrey-r-holland?lang=eng"
+              "calling": "Acting President of the Quorum of the Twelve Apostles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/669e501d810311ef9b3a0626c361eb5531c7a97a-128k-en.mp3",
@@ -485,8 +468,7 @@
             "speaker": {
               "name": "Sister Tracy Y. Browning",
               "role_tag": null,
-              "calling": "Second Counselor in the Primary General Presidency",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/sister-tracy-y-browning?lang=eng"
+              "calling": "Second Counselor in the Primary General Presidency"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/81e9c532810311ef9b3a0626c361eb55231c0464-128k-en.mp3",
@@ -504,8 +486,7 @@
             "speaker": {
               "name": "Elder Brook P. Hales",
               "role_tag": null,
-              "calling": "Of the Seventy",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-brook-p-hales?lang=eng"
+              "calling": "Of the Seventy"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/3b413d18810311ef9b3a0626c361eb55668f4d77-128k-en.mp3",
@@ -513,7 +494,8 @@
               "language": "en",
               "duration_ms": 659291
             },
-            "duration_ms": 659291
+            "duration_ms": 659291,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/ylvbypumck6qxf257hqt0re44jbz7br55cxxvatx/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Seek Him with All Your Heart",
@@ -523,8 +505,7 @@
             "speaker": {
               "name": "Bishop L. Todd Budge",
               "role_tag": null,
-              "calling": "Second Counselor in the Presiding Bishopric",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/bishop-l-todd-budge?lang=eng"
+              "calling": "Second Counselor in the Presiding Bishopric"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/742328ae810311ef9b3a0626c361eb551cf90e6c-128k-en.mp3",
@@ -532,7 +513,8 @@
               "language": "en",
               "duration_ms": 723566
             },
-            "duration_ms": 723566
+            "duration_ms": 723566,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/cb8egzrb6pvu4dwmm01xswfdf92m4urbd1159dui/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Days Never to Be Forgotten",
@@ -542,8 +524,7 @@
             "speaker": {
               "name": "Elder Gary E. Stevenson",
               "role_tag": "quorum-of-the-twelve",
-              "calling": "Of the Quorum of the Twelve Apostles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-gary-e-stevenson?lang=eng"
+              "calling": "Of the Quorum of the Twelve Apostles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/4b699759810311ef9b3a0626c361eb553e57554b-128k-en.mp3",
@@ -551,7 +532,8 @@
               "language": "en",
               "duration_ms": 859033
             },
-            "duration_ms": 859033
+            "duration_ms": 859033,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/pefobae9no77737dxi1nnvnpmpu83y25kcpdud6z/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "O Youth of the Noble Birthright",
@@ -561,8 +543,7 @@
             "speaker": {
               "name": "Brother Bradley R. Wilcox",
               "role_tag": null,
-              "calling": "First Counselor in the Young Men General Presidency",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/brother-bradley-r-wilcox?lang=eng"
+              "calling": "First Counselor in the Young Men General Presidency"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/301d10d7810311ef9b3a0626c361eb557457ded0-128k-en.mp3",
@@ -580,8 +561,7 @@
             "speaker": {
               "name": "President Henry B. Eyring",
               "role_tag": "first-presidency",
-              "calling": "Second Counselor in the First Presidency",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/president-henry-b-eyring?lang=eng"
+              "calling": "Second Counselor in the First Presidency"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/523f29fb810311ef9b3a0626c361eb556e2e1020-128k-en.mp3",
@@ -614,8 +594,7 @@
             "speaker": {
               "name": "Elder Dieter F. Uchtdorf",
               "role_tag": "quorum-of-the-twelve",
-              "calling": "Of the Quorum of the Twelve Apostles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-dieter-f-uchtdorf?lang=eng"
+              "calling": "Of the Quorum of the Twelve Apostles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/9693d395810311efae28022e7e432ed9f53a8880-128k-en.mp3",
@@ -633,8 +612,7 @@
             "speaker": {
               "name": "Elder Takashi Wada",
               "role_tag": null,
-              "calling": "Of the Seventy",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-takashi-wada?lang=eng"
+              "calling": "Of the Seventy"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/dbfef9ad810311efae28022e7e432ed9b285e037-128k-en.mp3",
@@ -652,8 +630,7 @@
             "speaker": {
               "name": "Elder Ronald A. Rasband",
               "role_tag": "quorum-of-the-twelve",
-              "calling": "Of the Quorum of the Twelve Apostles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-ronald-a-rasband?lang=eng"
+              "calling": "Of the Quorum of the Twelve Apostles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/af3c633a810311efae28022e7e432ed96dea0f6f-128k-en.mp3",
@@ -661,7 +638,8 @@
               "language": "en",
               "duration_ms": 809033
             },
-            "duration_ms": 809033
+            "duration_ms": 809033,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/q2hsjwzt50a9vt39mx4hwb22y87avg5bc7jzb0r6/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Sacred Scriptures—the Foundations of Faith",
@@ -671,8 +649,7 @@
             "speaker": {
               "name": "Elder Quentin L. Cook",
               "role_tag": "quorum-of-the-twelve",
-              "calling": "Of the Quorum of the Twelve Apostles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-quentin-l-cook?lang=eng"
+              "calling": "Of the Quorum of the Twelve Apostles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/a57c5ad9810311efae28022e7e432ed92812b8bd-128k-en.mp3",
@@ -680,7 +657,8 @@
               "language": "en",
               "duration_ms": 847266
             },
-            "duration_ms": 847266
+            "duration_ms": 847266,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/b990ej57e4wz255387dbhitl193tateafri9sw5i/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Sons and Daughters of God",
@@ -690,8 +668,7 @@
             "speaker": {
               "name": "Elder Rubén V. Alliaud",
               "role_tag": null,
-              "calling": "Of the Seventy",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-rubn-v-alliaud?lang=eng"
+              "calling": "Of the Seventy"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/be61302b810311efae28022e7e432ed978b12d68-128k-en.mp3",
@@ -709,8 +686,7 @@
             "speaker": {
               "name": "Elder I. Raymond Egbo",
               "role_tag": null,
-              "calling": "Of the Seventy",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/elder-i-raymond-egbo?lang=eng"
+              "calling": "Of the Seventy"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/9adfae16810311efae28022e7e432ed96a29a79d-128k-en.mp3",
@@ -718,7 +694,8 @@
               "language": "en",
               "duration_ms": 650300
             },
-            "duration_ms": 650300
+            "duration_ms": 650300,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/1k3x40lf3aimgtfwa8v8mswn2yoft1z8xev1btkl/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "The Lord Jesus Christ Will Come Again",
@@ -728,8 +705,7 @@
             "speaker": {
               "name": "President Russell M. Nelson",
               "role_tag": "first-presidency",
-              "calling": "President of The Church of Jesus Christ of Latter-day Saints",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/president-russell-m-nelson?lang=eng"
+              "calling": "President of The Church of Jesus Christ of Latter-day Saints"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/c33d3cbc810311efae28022e7e432ed99cbf6e3c-128k-en.mp3",
@@ -737,7 +713,8 @@
               "language": "en",
               "duration_ms": 889722
             },
-            "duration_ms": 889722
+            "duration_ms": 889722,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/2da38655a9aa11eeb96deeeeac1e869bcb7f246f/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
@@ -748,6 +725,7 @@
         },
         "duration_ms": 6785145
       }
-    ]
+    ],
+    "conference_image_url": "https://www.churchofjesuschrist.org/imgs/4kjpahrj015593n6vfw57sjoo6w9clo2ensncxm1/square/1500,1500/0/default"
   }
 }

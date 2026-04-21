@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-04-09T12:01:38.224Z",
+  "scraped_at": "2026-04-21T15:57:08.050Z",
   "version": "1.0",
   "conference": {
     "year": 2026,
@@ -15,13 +15,14 @@
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-morning-session?lang=por",
         "talks": [
           {
-            "title": "Dallin H. Oaks",
+            "title": "Introdução",
             "slug": "11oaks",
             "order": 1,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/11oaks?lang=por",
             "speaker": {
-              "name": "Dallin H. Oaks",
-              "role_tag": null
+              "name": "Presidente Dallin H. Oaks",
+              "role_tag": null,
+              "calling": "Presidente de A Igreja de Jesus Cristo dos Santos dos Últimos Dias"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/fozrhzk4k8pbhn334j7q4p83xwzxh6la412umuqm-128k-pt.mp3",
@@ -39,8 +40,7 @@
             "speaker": {
               "name": "Apresentada pelo presidente D. Todd Christofferson",
               "role_tag": null,
-              "calling": "Segundo conselheiro na Primeira Presidência",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/apresentada-pelo-presidente-d-todd-christofferson?lang=por"
+              "calling": "Segundo conselheiro na Primeira Presidência"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/0qu1ws69wt0miq0utmsd9y7xuuob2gidm50iulz8-128k-pt.mp3",
@@ -51,13 +51,14 @@
             "duration_ms": 578410
           },
           {
-            "title": "Patrick Kearon",
+            "title": "O negócio do Senhor",
             "slug": "13kearon",
             "order": 3,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/13kearon?lang=por",
             "speaker": {
-              "name": "Patrick Kearon",
-              "role_tag": null
+              "name": "Élder Patrick Kearon",
+              "role_tag": null,
+              "calling": "Do Quórum dos Doze Apóstolos"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/dnw3tfg22dmuh4058tbhiu3k5quskor1g1foocow-128k-pt.mp3",
@@ -68,13 +69,14 @@
             "duration_ms": 680180
           },
           {
-            "title": "Kristin M. Yee",
+            "title": "Ministrar — “Que vos ameis uns aos outros, como eu vos amei a vós”",
             "slug": "14yee",
             "order": 4,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/14yee?lang=por",
             "speaker": {
-              "name": "Kristin M. Yee",
-              "role_tag": null
+              "name": "Irmã Kristin M. Yee",
+              "role_tag": null,
+              "calling": "Segunda conselheira na presidência geral da Sociedade de Socorro"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/1yyfewcwqn9b0tojb87aet8zprs6x0iupl0el4o2-128k-pt.mp3",
@@ -85,13 +87,14 @@
             "duration_ms": 535070
           },
           {
-            "title": "Clark G. Gilbert",
+            "title": "Ao lar voltai",
             "slug": "15gilbert",
             "order": 5,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/15gilbert?lang=por",
             "speaker": {
-              "name": "Clark G. Gilbert",
-              "role_tag": null
+              "name": "Élder Clark G. Gilbert",
+              "role_tag": null,
+              "calling": "Do Quórum dos Doze Apóstolos"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/2feyy5nz83xrjuhi8mvpfh9rxxn5yxurpkde52z5-128k-pt.mp3",
@@ -99,16 +102,18 @@
               "language": "pt",
               "duration_ms": 787020
             },
-            "duration_ms": 787020
+            "duration_ms": 787020,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/m4bm6mveb5rxslflm89da7wk6rsxwhjotq8us4j3/full/!1400%2C1400/0/default.jpg"
           },
           {
-            "title": "David A. Bednar",
+            "title": "Todos os que tiverem perseverado valentemente",
             "slug": "16bednar",
             "order": 6,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/16bednar?lang=por",
             "speaker": {
-              "name": "David A. Bednar",
-              "role_tag": null
+              "name": "Élder David A. Bednar",
+              "role_tag": null,
+              "calling": "Do Quórum dos Doze Apóstolos"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/ev751yz43bv9l8yawg1tk3hul02e72koi7dv50ss-128k-pt.mp3",
@@ -119,13 +124,14 @@
             "duration_ms": 778010
           },
           {
-            "title": "Michael John U. Teh",
+            "title": "“Segue o profeta, não vais errar”",
             "slug": "17teh",
             "order": 7,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/17teh?lang=por",
             "speaker": {
-              "name": "Michael John U. Teh",
-              "role_tag": null
+              "name": "Élder Michael John U. Teh",
+              "role_tag": null,
+              "calling": "Dos setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/a5oqenwr9t91ln0deqtyvdhff5eby1w5ps5jpw6n-128k-pt.mp3",
@@ -133,16 +139,18 @@
               "language": "pt",
               "duration_ms": 487990
             },
-            "duration_ms": 487990
+            "duration_ms": 487990,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/q31xhu8pi9818414lsns9zday3cimolmgkvg2kvm/full/!1400%2C1400/0/default.jpg"
           },
           {
-            "title": "Jorge T. Becerra",
+            "title": "Dízimo — Colocar Deus em primeiro lugar",
             "slug": "18becerra",
             "order": 8,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/18becerra?lang=por",
             "speaker": {
-              "name": "Jorge T. Becerra",
-              "role_tag": null
+              "name": "Élder Jorge T. Becerra",
+              "role_tag": null,
+              "calling": "Dos setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/ahsofgxi7cz2bvd6s8cwauf6l5dcakxynwz0j47o-128k-pt.mp3",
@@ -153,13 +161,14 @@
             "duration_ms": 510780
           },
           {
-            "title": "Henry B. Eyring",
+            "title": "Orações pela paz",
             "slug": "19eyring",
             "order": 9,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/19eyring?lang=por",
             "speaker": {
-              "name": "Henry B. Eyring",
-              "role_tag": null
+              "name": "Presidente Henry B. Eyring",
+              "role_tag": null,
+              "calling": "Primeiro conselheiro na Primeira Presidência"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/3a2cdtx86ic1mob6k9ixmkyk6yd60axb2eif6v9i-128k-pt.mp3",
@@ -185,13 +194,32 @@
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-afternoon-session?lang=por",
         "talks": [
           {
-            "title": "Jared B. Larson",
-            "slug": "22larson",
+            "title": "Apoio às autoridades gerais, aos setentas de área e aos líderes gerais",
+            "slug": "21christofferson",
             "order": 1,
+            "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/21christofferson?lang=por",
+            "speaker": {
+              "name": "Apresentado pelo presidente D. Todd Christofferson",
+              "role_tag": null,
+              "calling": "Segundo conselheiro na Primeira Presidência"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/s3oepr64xlzwwcu14wrf41wba8np99vfk3h0laus-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 309510
+            },
+            "duration_ms": 309510
+          },
+          {
+            "title": "Relatório do Departamento de Auditoria da Igreja, 2025",
+            "slug": "22larson",
+            "order": 2,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/22larson?lang=por",
             "speaker": {
-              "name": "Jared B. Larson",
-              "role_tag": null
+              "name": "Apresentado por Jared B. Larson",
+              "role_tag": null,
+              "calling": "Diretor administrativo, Departamento de Auditoria da Igreja"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/f5qo5zyfbzomms84sr12z30u5rvqfakq2xb5vzez-128k-pt.mp3",
@@ -202,13 +230,14 @@
             "duration_ms": 104340
           },
           {
-            "title": "Gary E. Stevenson",
+            "title": "Bagagem extraviada, almas redimidas",
             "slug": "23stevenson",
-            "order": 2,
+            "order": 3,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/23stevenson?lang=por",
             "speaker": {
-              "name": "Gary E. Stevenson",
-              "role_tag": null
+              "name": "Élder Gary E. Stevenson",
+              "role_tag": null,
+              "calling": "Do Quórum dos Doze Apóstolos"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/4ynvhyqhlwdifxkhsr6f42dpvhd2mac2lz91untm-128k-pt.mp3",
@@ -216,16 +245,18 @@
               "language": "pt",
               "duration_ms": 675410
             },
-            "duration_ms": 675410
+            "duration_ms": 675410,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/0667c301505e3a508dcdf09d915fbe998789b878/full/!1400%2C1400/0/default.jpg"
           },
           {
-            "title": "Eduardo F. Ortega",
+            "title": "Cristo: Autor e aperfeiçoador de nossa fé",
             "slug": "24ortega",
-            "order": 3,
+            "order": 4,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/24ortega?lang=por",
             "speaker": {
-              "name": "Eduardo F. Ortega",
-              "role_tag": null
+              "name": "Élder Eduardo F. Ortega",
+              "role_tag": null,
+              "calling": "Dos setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/ylr12nrk99ffheb0zkbyeidbomtf2pzuzr4pgbhk-128k-pt.mp3",
@@ -233,16 +264,18 @@
               "language": "pt",
               "duration_ms": 508810
             },
-            "duration_ms": 508810
+            "duration_ms": 508810,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/s9mvuceqi2j74fihkpj5158pxtn5z8qzkce99r2i/full/!1400%2C1400/0/default.jpg"
           },
           {
-            "title": "Wan-Liang Wu",
+            "title": "“Abandonarei todos os meus pecados para conhecer-te”",
             "slug": "25wu",
-            "order": 4,
+            "order": 5,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/25wu?lang=por",
             "speaker": {
-              "name": "Wan-Liang Wu",
-              "role_tag": null
+              "name": "Élder Wan-Liang Wu",
+              "role_tag": null,
+              "calling": "Dos setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/y7ofqds5hf0v9d55j1g0awt6d9ps99903kx6qmkh-128k-pt.mp3",
@@ -250,16 +283,18 @@
               "language": "pt",
               "duration_ms": 504870
             },
-            "duration_ms": 504870
+            "duration_ms": 504870,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/t6b68njdiijgqcj3udlisjoxjdmazf56c1ohx3hz/full/!1400%2C1400/0/default.jpg"
           },
           {
-            "title": "David J. Wunderli",
+            "title": "Jesus Cristo não é nosso fardo; Ele é nossa fonte de alívio",
             "slug": "26wunderli",
-            "order": 5,
+            "order": 6,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/26wunderli?lang=por",
             "speaker": {
-              "name": "David J. Wunderli",
-              "role_tag": null
+              "name": "Irmão David J. Wunderli",
+              "role_tag": null,
+              "calling": "Primeiro conselheiro na presidência geral dos Rapazes"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/w1ez62m90m9kjin7kd0v9tlfuu0z165hxo55tgej-128k-pt.mp3",
@@ -272,13 +307,12 @@
           {
             "title": "Ame a todos, ame a cada um",
             "slug": "27causse",
-            "order": 6,
+            "order": 7,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/27causse?lang=por",
             "speaker": {
               "name": "Élder Gérald Caussé",
               "role_tag": null,
-              "calling": "Do Quórum dos Doze Apóstolos",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/lder-grald-causs?lang=por"
+              "calling": "Do Quórum dos Doze Apóstolos"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/1tn2yl6im756powr864edt9kiukp490ozflhe7cz-128k-pt.mp3",
@@ -289,13 +323,14 @@
             "duration_ms": 686590
           },
           {
-            "title": "Brian J. Holmes",
+            "title": "Jesus Cristo é o caminho",
             "slug": "28holmes",
-            "order": 7,
+            "order": 8,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/28holmes?lang=por",
             "speaker": {
-              "name": "Brian J. Holmes",
-              "role_tag": null
+              "name": "Élder Brian J. Holmes",
+              "role_tag": null,
+              "calling": "Dos setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/1qsu5aio67pkh6trqdf05mjamjv94j75d8m3ujml-128k-pt.mp3",
@@ -303,16 +338,18 @@
               "language": "pt",
               "duration_ms": 494590
             },
-            "duration_ms": 494590
+            "duration_ms": 494590,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/fmw06rl0j9coeoo4qz3o4r9pazsba4op9ima8lq2/full/!1400%2C1400/0/default.jpg"
           },
           {
-            "title": "Clement M. Matswagothata",
+            "title": "Ele conhece vocês pelo nome",
             "slug": "29matswagothata",
-            "order": 8,
+            "order": 9,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/29matswagothata?lang=por",
             "speaker": {
-              "name": "Clement M. Matswagothata",
-              "role_tag": null
+              "name": "Élder Clement M. Matswagothata",
+              "role_tag": null,
+              "calling": "Dos setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/lny5zqa676qr4a8r441cqplh5akcjyqlbp7u79xg-128k-pt.mp3",
@@ -323,13 +360,14 @@
             "duration_ms": 568370
           },
           {
-            "title": "Ulisses Soares",
+            "title": "Jesus Cristo — A Videira Verdadeira",
             "slug": "210soares",
-            "order": 9,
+            "order": 10,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/210soares?lang=por",
             "speaker": {
-              "name": "Ulisses Soares",
-              "role_tag": null
+              "name": "Élder Ulisses Soares",
+              "role_tag": null,
+              "calling": "Do Quórum dos Doze Apóstolos"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/z8qo01vuhhynzoqdd1ru3bc078wa3zuoxy2ojgis-128k-pt.mp3",
@@ -355,13 +393,14 @@
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-morning-session?lang=por",
         "talks": [
           {
-            "title": "Dieter F. Uchtdorf",
+            "title": "A descoberta do sepulcro vazio",
             "slug": "41uchtdorf",
             "order": 1,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/41uchtdorf?lang=por",
             "speaker": {
-              "name": "Dieter F. Uchtdorf",
-              "role_tag": null
+              "name": "Presidente Dieter F. Uchtdorf",
+              "role_tag": null,
+              "calling": "Presidente em exercício do Quórum dos Doze Apóstolos"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/koctkw8neeukrsbdybk6gjl0uf9a47foeehb09xr-128k-pt.mp3",
@@ -372,13 +411,14 @@
             "duration_ms": 747180
           },
           {
-            "title": "Emily Belle Freeman",
+            "title": "Os melhores e os piores dias",
             "slug": "42freeman",
             "order": 2,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/42freeman?lang=por",
             "speaker": {
-              "name": "Emily Belle Freeman",
-              "role_tag": null
+              "name": "Presidente Emily Belle Freeman",
+              "role_tag": null,
+              "calling": "Presidente geral das Moças"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/neyzk4zbgz9e43yu7xoh21ynmngafdigyvpe3265-128k-pt.mp3",
@@ -389,13 +429,14 @@
             "duration_ms": 518950
           },
           {
-            "title": "Pedro X. Larreal",
+            "title": "Sinto o amor do Salvador",
             "slug": "43larreal",
             "order": 3,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/43larreal?lang=por",
             "speaker": {
-              "name": "Pedro X. Larreal",
-              "role_tag": null
+              "name": "Élder Pedro X. Larreal",
+              "role_tag": null,
+              "calling": "Dos setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/3ogaryfx5tb93d5tr1io9s9cipb2mx2rfc1dk5hh-128k-pt.mp3",
@@ -403,16 +444,18 @@
               "language": "pt",
               "duration_ms": 473940
             },
-            "duration_ms": 473940
+            "duration_ms": 473940,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/qq45eg945645x4tx0p6g2pm4grf8z8shft0xwmmb/full/!1400%2C1400/0/default.jpg"
           },
           {
-            "title": "Edward B. Rowe",
+            "title": "Escolher Jesus Cristo como seu guia",
             "slug": "44rowe",
             "order": 4,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/44rowe?lang=por",
             "speaker": {
-              "name": "Edward B. Rowe",
-              "role_tag": null
+              "name": "Élder Edward B. Rowe",
+              "role_tag": null,
+              "calling": "Dos setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/9ssgr2bzm1ot5beiq7x5u80zd4a2gyj4vivd2lou-128k-pt.mp3",
@@ -423,13 +466,14 @@
             "duration_ms": 560290
           },
           {
-            "title": "Ronald A. Rasband",
+            "title": "Ele ressuscitou",
             "slug": "45rasband",
             "order": 5,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/45rasband?lang=por",
             "speaker": {
-              "name": "Ronald A. Rasband",
-              "role_tag": null
+              "name": "Élder Ronald A. Rasband",
+              "role_tag": null,
+              "calling": "Do Quórum dos Doze Apóstolos"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/r7pd6t2teawgdnrb9wv74iiczdmbplqiidrfsxg3-128k-pt.mp3",
@@ -437,16 +481,18 @@
               "language": "pt",
               "duration_ms": 620550
             },
-            "duration_ms": 620550
+            "duration_ms": 620550,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/dt7xvjejg8f1rdsbvw0ynn1y6u7dm7wxif0oqary/full/!1400%2C1400/0/default.jpg"
           },
           {
-            "title": "Dale G. Renlund",
+            "title": "Graças a Jesus Cristo",
             "slug": "46renlund",
             "order": 6,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/46renlund?lang=por",
             "speaker": {
-              "name": "Dale G. Renlund",
-              "role_tag": null
+              "name": "Élder Dale G. Renlund",
+              "role_tag": null,
+              "calling": "Do Quórum dos Doze Apóstolos"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/bhyf8bl2w6bfjp43drz3xlzf216ds1uwv61s3pnv-128k-pt.mp3",
@@ -454,16 +500,18 @@
               "language": "pt",
               "duration_ms": 659930
             },
-            "duration_ms": 659930
+            "duration_ms": 659930,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/b0rq1vchped3p1d8xiz54ksou1g3rfkkg0vlgl8q/full/!1400%2C1400/0/default.jpg"
           },
           {
-            "title": "Thierry K. Mutombo",
+            "title": "A alegria de um relacionamento por convênio com Deus",
             "slug": "47mutombo",
             "order": 7,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/47mutombo?lang=por",
             "speaker": {
-              "name": "Thierry K. Mutombo",
-              "role_tag": null
+              "name": "Élder Thierry K. Mutombo",
+              "role_tag": null,
+              "calling": "Dos setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/vd4q14zz2fnzpwyig6vtb6dfijsp755rxsz9yhrq-128k-pt.mp3",
@@ -474,13 +522,14 @@
             "duration_ms": 618920
           },
           {
-            "title": "Alan R. Walker",
+            "title": "Um tesouro peculiar",
             "slug": "48walker",
             "order": 8,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/48walker?lang=por",
             "speaker": {
-              "name": "Alan R. Walker",
-              "role_tag": null
+              "name": "Élder Alan R. Walker",
+              "role_tag": null,
+              "calling": "Dos setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/eixzvv7jm2tdv5ajwmiewowi7zow27vhy7tjovu0-128k-pt.mp3",
@@ -491,13 +540,14 @@
             "duration_ms": 503270
           },
           {
-            "title": "Dallin H. Oaks",
+            "title": "Vivos em Cristo",
             "slug": "49oaks",
             "order": 9,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/49oaks?lang=por",
             "speaker": {
-              "name": "Dallin H. Oaks",
-              "role_tag": null
+              "name": "Presidente Dallin H. Oaks",
+              "role_tag": null,
+              "calling": "Presidente de A Igreja de Jesus Cristo dos Santos dos Últimos Dias"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/ypzn9d7tegq0xe412i1564210lms46c7kqemhtjb-128k-pt.mp3",
@@ -505,7 +555,8 @@
               "language": "pt",
               "duration_ms": 817450
             },
-            "duration_ms": 817450
+            "duration_ms": 817450,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/af3dca94009a11ee8c1feeeeac1e258a5942df12/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
@@ -523,13 +574,14 @@
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-afternoon-session?lang=por",
         "talks": [
           {
-            "title": "D. Todd Christofferson",
+            "title": "O caráter de Cristo",
             "slug": "51christofferson",
             "order": 1,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/51christofferson?lang=por",
             "speaker": {
-              "name": "D. Todd Christofferson",
-              "role_tag": null
+              "name": "Presidente D. Todd Christofferson",
+              "role_tag": null,
+              "calling": "Segundo conselheiro na Primeira Presidência"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/1gqwe07ar4myt4c9mdgmgsbawm4rni7ro4e44ca1-128k-pt.mp3",
@@ -537,7 +589,8 @@
               "language": "pt",
               "duration_ms": 730200
             },
-            "duration_ms": 730200
+            "duration_ms": 730200,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/0h32a0iw3nhi4vqqtx9s8yeqixt8fkq95rmhrtuo/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Lembrai-vos, lembrai-vos",
@@ -545,18 +598,27 @@
             "order": 2,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/52wong?lang=por",
             "speaker": {
-              "name": "Conferência Geral de Abril de 2026",
-              "role_tag": null
-            }
+              "name": "Élder Chi Hong (Sam) Wong",
+              "role_tag": null,
+              "calling": "Dos setenta"
+            },
+            "audio": {
+              "url": "https://assets.churchofjesuschrist.org/ipgxsfgy4au5xfrcuc0p85mlvt57idavzc5exl60-128k-pt.mp3",
+              "quality": "128k",
+              "language": "pt",
+              "duration_ms": 479910
+            },
+            "duration_ms": 479910
           },
           {
-            "title": "Aaron T. Hall",
+            "title": "“Glorio-me em meu Jesus”",
             "slug": "53hall",
             "order": 3,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/53hall?lang=por",
             "speaker": {
-              "name": "Aaron T. Hall",
-              "role_tag": null
+              "name": "Élder Aaron T. Hall",
+              "role_tag": null,
+              "calling": "Dos setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/klfboy2dgd4j0wj7pgma20qk7xzof4u8766oyxma-128k-pt.mp3",
@@ -567,13 +629,14 @@
             "duration_ms": 508340
           },
           {
-            "title": "Susan H. Porter",
+            "title": "“Eis-me aqui, envia-me”",
             "slug": "54porter",
             "order": 4,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/54porter?lang=por",
             "speaker": {
-              "name": "Susan H. Porter",
-              "role_tag": null
+              "name": "Presidente Susan H. Porter",
+              "role_tag": null,
+              "calling": "Presidente geral da Primária"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/rcax9bqjylv1ocdk5pol99mvqycqy8d0ofuwt1hx-128k-pt.mp3",
@@ -581,16 +644,18 @@
               "language": "pt",
               "duration_ms": 523059
             },
-            "duration_ms": 523059
+            "duration_ms": 523059,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/wy00gtr4qgwncmoqco1y7pschbtpvf1t8v37xiav/full/!1400%2C1400/0/default.jpg"
           },
           {
-            "title": "Neil L. Andersen",
+            "title": "O casamento eterno é uma jornada eterna",
             "slug": "55andersen",
             "order": 5,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=por",
             "speaker": {
-              "name": "Neil L. Andersen",
-              "role_tag": null
+              "name": "Élder Neil L. Andersen",
+              "role_tag": null,
+              "calling": "Do Quórum dos Doze Apóstolos"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/49cs3x10hfibekxos2lum39gdjyyyvvkc48wo0sd-128k-pt.mp3",
@@ -601,13 +666,14 @@
             "duration_ms": 701530
           },
           {
-            "title": "Quentin L. Cook",
+            "title": "Chaves, convênios e a Páscoa",
             "slug": "56cook",
             "order": 6,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/56cook?lang=por",
             "speaker": {
-              "name": "Quentin L. Cook",
-              "role_tag": null
+              "name": "Élder Quentin L. Cook",
+              "role_tag": null,
+              "calling": "Do Quórum dos Doze Apóstolos"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/440rk6vi37t6d82sn3jn3vkipdfocruc9m6hu5e6-128k-pt.mp3",
@@ -615,16 +681,18 @@
               "language": "pt",
               "duration_ms": 691820
             },
-            "duration_ms": 691820
+            "duration_ms": 691820,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/c0jhwscdxk0tmmb9ggqp9avrey5odiz0y560hhdo/full/!1400%2C1400/0/default.jpg"
           },
           {
-            "title": "Taniela B. Wakolo",
+            "title": "Achegar-nos a Cristo — Juntos",
             "slug": "57wakolo",
             "order": 7,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/57wakolo?lang=por",
             "speaker": {
-              "name": "Taniela B. Wakolo",
-              "role_tag": null
+              "name": "Élder Taniela B. Wakolo",
+              "role_tag": null,
+              "calling": "Dos setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/fhtwftvmo5f2onwmongkqfd15mrkgu5njjw1l2fu-128k-pt.mp3",
@@ -632,16 +700,18 @@
               "language": "pt",
               "duration_ms": 516549
             },
-            "duration_ms": 516549
+            "duration_ms": 516549,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/zy369qio55sp2nwd7ngmk575bb5qnwh7lg66zpph/full/!1400%2C1400/0/default.jpg"
           },
           {
-            "title": "Gerrit W. Gong",
+            "title": "É Páscoa: Ninguém anda sozinho",
             "slug": "58gong",
             "order": 8,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=por",
             "speaker": {
-              "name": "Gerrit W. Gong",
-              "role_tag": null
+              "name": "Élder Gerrit W. Gong",
+              "role_tag": null,
+              "calling": "Do Quórum dos Doze Apóstolos"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/4rw9bh9w45tcxma0h2xua43apc91hd2w8y0uub3t-128k-pt.mp3",
@@ -652,13 +722,14 @@
             "duration_ms": 668700
           },
           {
-            "title": "Dallin H. Oaks",
+            "title": "Considerações finais",
             "slug": "59oaks",
             "order": 9,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/59oaks?lang=por",
             "speaker": {
-              "name": "Dallin H. Oaks",
-              "role_tag": null
+              "name": "Presidente Dallin H. Oaks",
+              "role_tag": null,
+              "calling": "Presidente de A Igreja de Jesus Cristo dos Santos dos Últimos Dias"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/896u3ub5j71e62nodt76o2fgt0d0pj6bej0yjm25-128k-pt.mp3",
@@ -673,10 +744,11 @@
           "url": "https://assets.churchofjesuschrist.org/lc7xhk3zatf75mznt3d8d26730yau21d9qoh28aa-128k-pt.mp3",
           "quality": "128k",
           "language": "pt",
-          "duration_ms": 7109100
+          "duration_ms": 7109140
         },
-        "duration_ms": 7109100
+        "duration_ms": 7109140
       }
-    ]
+    ],
+    "conference_image_url": "https://www.churchofjesuschrist.org/imgs/bd28805cb67a5524cd310c394c06f1dfbe19cf86/square/1500,1500/0/default"
   }
 }

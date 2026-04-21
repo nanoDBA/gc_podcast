@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-01-08T15:05:12.943Z",
+  "scraped_at": "2026-04-21T15:49:04.655Z",
   "version": "1.0",
   "conference": {
     "year": 2024,
@@ -22,8 +22,7 @@
             "speaker": {
               "name": "Presentado por el presidente Henry B. Eyring",
               "role_tag": null,
-              "calling": "Segundo Consejero de la Primera Presidencia",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/presentado-por-el-presidente-henry-b-eyring?lang=spa"
+              "calling": "Segundo Consejero de la Primera Presidencia"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/321f79a8803511efa27d0286e0573c63adbe9b57-128k-es.mp3",
@@ -41,8 +40,7 @@
             "speaker": {
               "name": "Por el élder Neil L. Andersen",
               "role_tag": null,
-              "calling": "Del Cuórum de los Doce Apóstoles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-neil-l-andersen?lang=spa"
+              "calling": "Del Cuórum de los Doce Apóstoles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/2cae177f803511efa44102d0ea8598454b0c72e3-128k-es.mp3",
@@ -50,7 +48,8 @@
               "language": "es",
               "duration_ms": 811800
             },
-            "duration_ms": 811800
+            "duration_ms": 811800,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/48znnokl4pdc6fqmtivqrgk1ldljsgjeq4yt98uk/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Vivan a la altura de sus privilegios",
@@ -60,8 +59,7 @@
             "speaker": {
               "name": "Por la presidenta Emily Belle Freeman",
               "role_tag": null,
-              "calling": "Presidenta General de las Mujeres Jóvenes",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-la-presidenta-emily-belle-freeman?lang=spa"
+              "calling": "Presidenta General de las Mujeres Jóvenes"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/3963fc80803511ef86bc063a8fac2bb359db1c4c-128k-es.mp3",
@@ -79,8 +77,7 @@
             "speaker": {
               "name": "Por el élder Karl D. Hirst",
               "role_tag": null,
-              "calling": "De los Setenta",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-karl-d-hirst?lang=spa"
+              "calling": "De los Setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/35d7c713803511efa27d0286e0573c63b3b8af0a-128k-es.mp3",
@@ -98,8 +95,7 @@
             "speaker": {
               "name": "Por el élder Dale G. Renlund",
               "role_tag": null,
-              "calling": "Del Cuórum de los Doce Apóstoles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-dale-g-renlund?lang=spa"
+              "calling": "Del Cuórum de los Doce Apóstoles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/30ba4412803511efa27d0286e0573c63c2ba8f9b-128k-es.mp3",
@@ -117,8 +113,7 @@
             "speaker": {
               "name": "Por el élder David P. Homer",
               "role_tag": null,
-              "calling": "De los Setenta",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-david-p-homer?lang=spa"
+              "calling": "De los Setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/35b80a09803511efa27d0286e0573c63a96db891-128k-es.mp3",
@@ -136,8 +131,7 @@
             "speaker": {
               "name": "Por el élder Gregorio E. Casillas",
               "role_tag": null,
-              "calling": "De los Setenta",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-gregorio-e-casillas?lang=spa"
+              "calling": "De los Setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/2ad949f0803511efa27d0286e0573c63b0ba867a-128k-es.mp3",
@@ -155,8 +149,7 @@
             "speaker": {
               "name": "Por el presidente Dallin H. Oaks",
               "role_tag": null,
-              "calling": "Primer Consejero de la Primera Presidencia",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-presidente-dallin-h-oaks?lang=spa"
+              "calling": "Primer Consejero de la Primera Presidencia"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/3c41c71b803511efa27d0286e0573c63b41712e3-128k-es.mp3",
@@ -164,7 +157,8 @@
               "language": "es",
               "duration_ms": 810976
             },
-            "duration_ms": 810976
+            "duration_ms": 810976,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/nwmmld376mp0dm69yrnkfxswt5ldrf0aipfwfavo/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
@@ -189,8 +183,7 @@
             "speaker": {
               "name": "Por el élder D. Todd Christofferson",
               "role_tag": null,
-              "calling": "Del Cuórum de los Doce Apóstoles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-d-todd-christofferson?lang=spa"
+              "calling": "Del Cuórum de los Doce Apóstoles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/91f0a14980fa11ef9b3a0626c361eb555936d3af-128k-es.mp3",
@@ -198,7 +191,8 @@
               "language": "es",
               "duration_ms": 791566
             },
-            "duration_ms": 791566
+            "duration_ms": 791566,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/bc87khf5ivlhg1oi32h7ylg6mseh5opy2nfxectm/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Unidos a Jesucristo: Llegar a ser la sal de la tierra",
@@ -208,8 +202,7 @@
             "speaker": {
               "name": "Por el élder José A. Teixeira",
               "role_tag": null,
-              "calling": "De la Presidencia de los Setenta",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-jos-a-teixeira?lang=spa"
+              "calling": "De la Presidencia de los Setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/932bba3380fa11ef9b3a0626c361eb5521b6e958-128k-es.mp3",
@@ -227,8 +220,7 @@
             "speaker": {
               "name": "Por el élder Juan Pablo Villar",
               "role_tag": null,
-              "calling": "De los Setenta",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-juan-pablo-villar?lang=spa"
+              "calling": "De los Setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/93b3fd6580fa11ef9b3a0626c361eb5556226a89-128k-es.mp3",
@@ -236,7 +228,8 @@
               "language": "es",
               "duration_ms": 613433
             },
-            "duration_ms": 613433
+            "duration_ms": 613433,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/0c525b153089b3ea4503c533e2ebae229118a926/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Bienvenidos a la Iglesia de gozo",
@@ -246,8 +239,7 @@
             "speaker": {
               "name": "Por el élder Patrick Kearon",
               "role_tag": null,
-              "calling": "Del Cuórum de los Doce Apóstoles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-patrick-kearon?lang=spa"
+              "calling": "Del Cuórum de los Doce Apóstoles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/943c67a780fa11ef9b3a0626c361eb5501b1cf64-128k-es.mp3",
@@ -265,8 +257,7 @@
             "speaker": {
               "name": "Por el élder David L. Buckner",
               "role_tag": null,
-              "calling": "De los Setenta",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-david-l-buckner?lang=spa"
+              "calling": "De los Setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/929d5c7f80fa11ef9b3a0626c361eb55af61c0a5-128k-es.mp3",
@@ -284,8 +275,7 @@
             "speaker": {
               "name": "Por el élder D. Martin Goury",
               "role_tag": null,
-              "calling": "De los Setenta",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-d-martin-goury?lang=spa"
+              "calling": "De los Setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/91ef1aa880fa11ef9b3a0626c361eb55929a0daf-128k-es.mp3",
@@ -303,8 +293,7 @@
             "speaker": {
               "name": "Por el élder Aroldo B. Cavalcante",
               "role_tag": null,
-              "calling": "De los Setenta",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-aroldo-b-cavalcante?lang=spa"
+              "calling": "De los Setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/90f550a980fa11ef9b3a0626c361eb55bda56386-128k-es.mp3",
@@ -322,8 +311,7 @@
             "speaker": {
               "name": "Por el élder Ulisses Soares",
               "role_tag": null,
-              "calling": "Del Cuórum de los Doce Apóstoles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-ulisses-soares?lang=spa"
+              "calling": "Del Cuórum de los Doce Apóstoles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/9558fbfc80fa11ef9b3a0626c361eb558279f9c4-128k-es.mp3",
@@ -356,8 +344,7 @@
             "speaker": {
               "name": "Por el élder Gerrit W. Gong",
               "role_tag": null,
-              "calling": "Del Cuórum de los Doce Apóstoles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-gerrit-w-gong?lang=spa"
+              "calling": "Del Cuórum de los Doce Apóstoles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/f16ae10580fc11ef8bff02d0ea8598455d5aa12d-128k-es.mp3",
@@ -375,8 +362,7 @@
             "speaker": {
               "name": "Por la hermana Kristin M. Yee",
               "role_tag": null,
-              "calling": "Segunda Consejera de la Presidencia General de la Sociedad de Socorro",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-la-hermana-kristin-m-yee?lang=spa"
+              "calling": "Segunda Consejera de la Presidencia General de la Sociedad de Socorro"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/ef41710080fc11ef8bff02d0ea859845686f94a4-128k-es.mp3",
@@ -384,7 +370,8 @@
               "language": "es",
               "duration_ms": 729433
             },
-            "duration_ms": 729433
+            "duration_ms": 729433,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/3egtfotbivg1uyphjcctoulfl26syjjj3c6qrj2a/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "El hombre que estuvo en comunión con Jehová",
@@ -394,8 +381,7 @@
             "speaker": {
               "name": "Por el élder Kyle S. McKay",
               "role_tag": null,
-              "calling": "De los Setenta",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-kyle-s-mckay?lang=spa"
+              "calling": "De los Setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/f7dca91d80fc11ef8bff02d0ea859845066ce653-128k-es.mp3",
@@ -413,8 +399,7 @@
             "speaker": {
               "name": "Por el élder Jorge M. Alvarado",
               "role_tag": null,
-              "calling": "De los Setenta",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-jorge-m-alvarado?lang=spa"
+              "calling": "De los Setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/f5cdf05980fc11ef95e00286e0573c630469954d-128k-es.mp3",
@@ -432,8 +417,7 @@
             "speaker": {
               "name": "Por el élder David A. Bednar",
               "role_tag": null,
-              "calling": "Del Cuórum de los Doce Apóstoles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-david-a-bednar?lang=spa"
+              "calling": "Del Cuórum de los Doce Apóstoles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/f03260e680fc11ef8bff02d0ea859845a68f8df1-128k-es.mp3",
@@ -466,8 +450,7 @@
             "speaker": {
               "name": "Por el presidente Jeffrey R. Holland",
               "role_tag": null,
-              "calling": "Presidente en Funciones del Cuórum de los Doce Apóstoles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-presidente-jeffrey-r-holland?lang=spa"
+              "calling": "Presidente en Funciones del Cuórum de los Doce Apóstoles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/80dc646a80fd11ef95e00286e0573c63dce1a9ac-128k-es.mp3",
@@ -485,8 +468,7 @@
             "speaker": {
               "name": "Por la hermana Tracy Y. Browning",
               "role_tag": null,
-              "calling": "Segunda Consejera de la Presidencia General de la Primaria",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-la-hermana-tracy-y-browning?lang=spa"
+              "calling": "Segunda Consejera de la Presidencia General de la Primaria"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/7f4baf4880fd11ef8bff02d0ea859845ae88856a-128k-es.mp3",
@@ -504,8 +486,7 @@
             "speaker": {
               "name": "Por el élder Brook P. Hales",
               "role_tag": null,
-              "calling": "De los Setenta",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-brook-p-hales?lang=spa"
+              "calling": "De los Setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/79814dba80fd11ef95e00286e0573c639f2c393c-128k-es.mp3",
@@ -513,7 +494,8 @@
               "language": "es",
               "duration_ms": 659291
             },
-            "duration_ms": 659291
+            "duration_ms": 659291,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/ylvbypumck6qxf257hqt0re44jbz7br55cxxvatx/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Búsquenlo con todo el corazón",
@@ -523,8 +505,7 @@
             "speaker": {
               "name": "Por el obispo L. Todd Budge",
               "role_tag": null,
-              "calling": "Segundo Consejero del Obispado Presidente",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-obispo-l-todd-budge?lang=spa"
+              "calling": "Segundo Consejero del Obispado Presidente"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/85be649b80fd11ef95e00286e0573c63d0eeafdc-128k-es.mp3",
@@ -532,7 +513,8 @@
               "language": "es",
               "duration_ms": 723566
             },
-            "duration_ms": 723566
+            "duration_ms": 723566,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/cb8egzrb6pvu4dwmm01xswfdf92m4urbd1159dui/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Días inolvidables",
@@ -542,8 +524,7 @@
             "speaker": {
               "name": "Por el élder Gary E. Stevenson",
               "role_tag": null,
-              "calling": "Del Cuórum de los Doce Apóstoles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-gary-e-stevenson?lang=spa"
+              "calling": "Del Cuórum de los Doce Apóstoles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/80cf694b80fd11ef8bff02d0ea8598458bdd1fa4-128k-es.mp3",
@@ -551,7 +532,8 @@
               "language": "es",
               "duration_ms": 859033
             },
-            "duration_ms": 859033
+            "duration_ms": 859033,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/pefobae9no77737dxi1nnvnpmpu83y25kcpdud6z/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Oh, jóvenes herederos de la noble primogenitura",
@@ -561,8 +543,7 @@
             "speaker": {
               "name": "Por el hermano Bradley R. Wilcox",
               "role_tag": null,
-              "calling": "Primer Consejero de la Presidencia General de los Hombres Jóvenes",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-hermano-bradley-r-wilcox?lang=spa"
+              "calling": "Primer Consejero de la Presidencia General de los Hombres Jóvenes"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/7b81609b80fd11ef8bff02d0ea859845b9e6621a-128k-es.mp3",
@@ -580,8 +561,7 @@
             "speaker": {
               "name": "Por el presidente Henry B. Eyring",
               "role_tag": null,
-              "calling": "Segundo Consejero de la Primera Presidencia",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-presidente-henry-b-eyring?lang=spa"
+              "calling": "Segundo Consejero de la Primera Presidencia"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/7e03a1b880fd11ef95e00286e0573c63e5e35959-128k-es.mp3",
@@ -614,8 +594,7 @@
             "speaker": {
               "name": "Por el élder Dieter F. Uchtdorf",
               "role_tag": null,
-              "calling": "Del Cuórum de los Doce Apóstoles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-dieter-f-uchtdorf?lang=spa"
+              "calling": "Del Cuórum de los Doce Apóstoles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/0076db9080fe11ef8bff02d0ea859845f92a25b5-128k-es.mp3",
@@ -633,8 +612,7 @@
             "speaker": {
               "name": "Por el élder Takashi Wada",
               "role_tag": null,
-              "calling": "De los Setenta",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-takashi-wada?lang=spa"
+              "calling": "De los Setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/0b0c2db580fe11ef91a7063a8fac2bb34aaa67b6-128k-es.mp3",
@@ -652,8 +630,7 @@
             "speaker": {
               "name": "Por el élder Ronald A. Rasband",
               "role_tag": null,
-              "calling": "Del Cuórum de los Doce Apóstoles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-ronald-a-rasband?lang=spa"
+              "calling": "Del Cuórum de los Doce Apóstoles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/09650d5680fe11ef91a7063a8fac2bb3da70a8ba-128k-es.mp3",
@@ -661,7 +638,8 @@
               "language": "es",
               "duration_ms": 809033
             },
-            "duration_ms": 809033
+            "duration_ms": 809033,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/q2hsjwzt50a9vt39mx4hwb22y87avg5bc7jzb0r6/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Las Sagradas Escrituras: El fundamento de la fe",
@@ -671,8 +649,7 @@
             "speaker": {
               "name": "Por el élder Quentin L. Cook",
               "role_tag": null,
-              "calling": "Del Cuórum de los Doce Apóstoles",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-quentin-l-cook?lang=spa"
+              "calling": "Del Cuórum de los Doce Apóstoles"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/0568451b80fe11ef8bff02d0ea859845307de2eb-128k-es.mp3",
@@ -680,7 +657,8 @@
               "language": "es",
               "duration_ms": 847266
             },
-            "duration_ms": 847266
+            "duration_ms": 847266,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/b990ej57e4wz255387dbhitl193tateafri9sw5i/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Hijos e hijas de Dios",
@@ -690,8 +668,7 @@
             "speaker": {
               "name": "Por el élder Rubén V. Alliaud",
               "role_tag": null,
-              "calling": "De los Setenta",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-rubn-v-alliaud?lang=spa"
+              "calling": "De los Setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/ff235bc880fd11ef95e00286e0573c63e10050fe-128k-es.mp3",
@@ -709,8 +686,7 @@
             "speaker": {
               "name": "Por el élder I. Raymond Egbo",
               "role_tag": null,
-              "calling": "De los Setenta",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-lder-i-raymond-egbo?lang=spa"
+              "calling": "De los Setenta"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/0980367880fe11ef91a7063a8fac2bb3332e138a-128k-es.mp3",
@@ -718,7 +694,8 @@
               "language": "es",
               "duration_ms": 650300
             },
-            "duration_ms": 650300
+            "duration_ms": 650300,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/1k3x40lf3aimgtfwa8v8mswn2yoft1z8xev1btkl/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "El Señor Jesucristo vendrá de nuevo",
@@ -728,8 +705,7 @@
             "speaker": {
               "name": "Por el presidente Russell M. Nelson",
               "role_tag": null,
-              "calling": "Presidente de La Iglesia de Jesucristo de los Santos de los Últimos Días",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/por-el-presidente-russell-m-nelson?lang=spa"
+              "calling": "Presidente de La Iglesia de Jesucristo de los Santos de los Últimos Días"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/07a9d32580fe11ef95e00286e0573c6390a02fc4-128k-es.mp3",
@@ -737,7 +713,8 @@
               "language": "es",
               "duration_ms": 889722
             },
-            "duration_ms": 889722
+            "duration_ms": 889722,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/2da38655a9aa11eeb96deeeeac1e869bcb7f246f/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
@@ -748,6 +725,7 @@
         },
         "duration_ms": 6785145
       }
-    ]
+    ],
+    "conference_image_url": "https://www.churchofjesuschrist.org/imgs/4kjpahrj015593n6vfw57sjoo6w9clo2ensncxm1/square/1500,1500/0/default"
   }
 }

@@ -126,6 +126,33 @@
       padding: 20px;
     }
     .feature h3 { margin-top: 0; color: #2c5282; }
+    .conferences {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .conference-item {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 15px;
+    }
+    .conference-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .session-count {
+      background: #edf2f7;
+      color: #2c5282;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .conference-item p { margin: 8px 0 0 0; color: #666; font-size: 0.95em; }
     .steps { counter-reset: step; }
     .steps li {
       counter-increment: step;
@@ -155,9 +182,17 @@
       color: #666;
       font-size: 0.9em;
     }
+    .last-updated {
+      color: #999;
+      font-size: 0.85em;
+      margin-top: 20px;
+    }
     @media (max-width: 600px) {
       body { padding: 20px 15px; }
       .feed-url { font-size: 12px; }
+      .conferences {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -182,33 +217,82 @@
       <p>Each talk available separately (10-20 minutes each)</p>
     </div>
     <div class="feature">
-      <h3>Recent Conferences</h3>
-      <p>April 2026 conference currently available</p>
+      <h3>Per-Episode Artwork</h3>
+      <p>Speaker portraits appear beside every talk in supported apps</p>
     </div>
     <div class="feature">
       <h3>Multi-Language</h3>
       <p>English, Spanish, and Portuguese feeds</p>
     </div>
+    <div class="feature">
+      <h3>Podcasting 2.0</h3>
+      <p>Stable <code>&lt;podcast:guid&gt;</code> so your subscription survives URL changes</p>
+    </div>
+    <div class="feature">
+      <h3>Seasonal Channel Art</h3>
+      <p>Channel image rotates each April and October to match the current conference</p>
+    </div>
   </div>
+
+  <h2>Recent Conferences</h2>
+  <div class="conferences">
+    <div class="conference-item">
+      <div class="conference-header">
+        <strong>April 2026</strong>
+        <span class="session-count">4 sessions</span>
+      </div>
+      <p>April 2026 general conference</p>
+    </div>
+    <div class="conference-item">
+      <div class="conference-header">
+        <strong>October 2025</strong>
+        <span class="session-count">5 sessions</span>
+      </div>
+      <p>October 2025 general conference</p>
+    </div>
+    <div class="conference-item">
+      <div class="conference-header">
+        <strong>April 2025</strong>
+        <span class="session-count">5 sessions</span>
+      </div>
+      <p>April 2025 general conference</p>
+    </div>
+    <div class="conference-item">
+      <div class="conference-header">
+        <strong>October 2024</strong>
+        <span class="session-count">5 sessions</span>
+      </div>
+      <p>October 2024 general conference</p>
+    </div>
+    <div class="conference-item">
+      <div class="conference-header">
+        <strong>April 2024</strong>
+        <span class="session-count">5 sessions</span>
+      </div>
+      <p>April 2024 general conference</p>
+    </div>
+  </div>
+
 
   <h2>Available Feeds</h2>
   <div class="feed-list">
     <div class="feed-item">
       <strong>English</strong>
-      <span class="feed-url-small" id="feedEng">audio.xml</span>
-      <button class="btn-copy" onclick="copyFeed('feedEng')">Copy</button>
+      <span class="feed-url-small" id="feedENG">audio.xml</span>
+      <button class="btn-copy" onclick="copyFeed('feedENG')">Copy</button>
     </div>
     <div class="feed-item">
       <strong>Spanish</strong>
-      <span class="feed-url-small" id="feedSpa">audio-es.xml</span>
-      <button class="btn-copy" onclick="copyFeed('feedSpa')">Copy</button>
+      <span class="feed-url-small" id="feedSPA">audio-es.xml</span>
+      <button class="btn-copy" onclick="copyFeed('feedSPA')">Copy</button>
     </div>
     <div class="feed-item">
       <strong>Portuguese</strong>
-      <span class="feed-url-small" id="feedPor">audio-pt.xml</span>
-      <button class="btn-copy" onclick="copyFeed('feedPor')">Copy</button>
+      <span class="feed-url-small" id="feedPOR">audio-pt.xml</span>
+      <button class="btn-copy" onclick="copyFeed('feedPOR')">Copy</button>
     </div>
   </div>
+
 
   <h2>One-Click Subscribe</h2>
   <div class="subscribe-buttons" id="subscribeButtons">
@@ -218,6 +302,7 @@
     <a class="subscribe-btn castro" href="#" id="castroLink">Castro</a>
     <a class="subscribe-btn rss" href="#" id="rssLink">RSS Feed</a>
   </div>
+
 
   <h2>Manual Subscribe</h2>
   <ol class="steps">
@@ -254,18 +339,19 @@
     <p>
       <a href="https://github.com/nanoDBA/gc_podcast">View on GitHub</a>
     </p>
+    <div class="last-updated">Last updated: <span id="lastUpdated">2026-04-21T15:57:09.982Z</span> UTC</div>
   </footer>
 
   <script>
     const baseUrl = window.location.hostname !== 'localhost'
-      ? window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '')
+      ? window.location.origin + window.location.pathname.replace(//[^/]*$/, '')
       : 'https://nanodba.github.io/gc_podcast';
 
     // Update all feed URLs
     document.getElementById('feedUrl').textContent = baseUrl + '/audio.xml';
-    document.getElementById('feedEng').textContent = baseUrl + '/audio.xml';
-    document.getElementById('feedSpa').textContent = baseUrl + '/audio-es.xml';
-    document.getElementById('feedPor').textContent = baseUrl + '/audio-pt.xml';
+    document.getElementById('feedENG').textContent = baseUrl + '/audio.xml';
+    document.getElementById('feedSPA').textContent = baseUrl + '/audio-es.xml';
+    document.getElementById('feedPOR').textContent = baseUrl + '/audio-pt.xml';
 
     function copyFeedUrl() {
       copyToClipboard(document.getElementById('feedUrl').textContent, event.target);
@@ -290,7 +376,7 @@
     // Set up one-click subscribe links
     // Reference: https://github.com/nathangathright/podcast-platform-links
     const feedUrl = baseUrl + '/audio.xml';
-    const feedUrlNoProtocol = feedUrl.replace(/^https?:\/\//, '');
+    const feedUrlNoProtocol = feedUrl.replace(/^https?:\/\/, '');
     const encodedFeed = encodeURIComponent(feedUrl);
 
     // Apple Podcasts - uses podcast:// with URL (no protocol)
