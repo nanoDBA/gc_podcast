@@ -61,4 +61,23 @@ describe('ApiResponseSchema', () => {
     const result = ApiResponseSchema.safeParse(minimal);
     expect(result.success).toBe(true);
   });
+
+  it('accepts meta.ogTagImageUrl (gc_podcast-e62 talk hero image field)', () => {
+    const withOg = {
+      meta: {
+        title: 'All Who Have Endured Valiantly',
+        audio: [{ mediaUrl: 'https://example.com/a.mp3', variant: 'audio' }],
+        ogTagImageUrl:
+          'https://www.churchofjesuschrist.org/imgs/ibjynpzh92ctp5jb5d52w0litgecjiwn56afk26y/full/%21192%2C/0/default',
+      },
+      content: { body: '<html></html>' },
+    };
+    const result = ApiResponseSchema.safeParse(withOg);
+    expect(result.success).toBe(true);
+    if (result.success) {
+      expect(result.data.meta.ogTagImageUrl).toContain(
+        'ibjynpzh92ctp5jb5d52w0litgecjiwn56afk26y',
+      );
+    }
+  });
 });

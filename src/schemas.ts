@@ -107,6 +107,13 @@ export const ApiResponseSchema = z.object({
     title: z.string(),
     audio: z.array(ApiAudioEntrySchema).optional(),
     pageAttributes: z.record(z.string()).optional(),
+    /**
+     * Full og:image URL as served by the upstream page's <meta property="og:image">.
+     * Present in the API response even though the article fragment at
+     * content.body omits the <head>. Used by the talk-image extractor to find
+     * the hero image without a second HTML fetch (gc_podcast-e62).
+     */
+    ogTagImageUrl: z.string().optional(),
   }),
   content: z.object({
     body: z.string(),

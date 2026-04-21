@@ -80,6 +80,8 @@ import {
   extractImageFromBioHtml,
   extractOgImageHash,
   buildConferenceSquareImageUrl,
+  extractHash,
+  buildCanonicalImageUrl,
 } from './image-extractor.js';
 
 /**
@@ -412,6 +414,12 @@ interface ApiResponse {
     title: string;
     audio?: ApiAudioEntry[];
     pageAttributes?: Record<string, string>;
+    /**
+     * og:image URL exposed by the API (mirrors the HTML <head> meta tag).
+     * Lets extractPageData reach the talk hero image without fetching the
+     * full HTML page (gc_podcast-e62).
+     */
+    ogTagImageUrl?: string;
   };
   content: {
     body: string;
@@ -1597,10 +1605,11 @@ export class ConferenceScraper {
    * Extract audio, speaker data, and talk image from a page using the API.
    *
    * image_url extraction strategy:
-   *   - API path: the content.body fragment does not carry og:image or
-   *     __INITIAL_STATE__, but it may contain IIIF <img> tags. We run
-   *     extractImageFromTalkHtml against the body fragment — body-img
-   *     extraction will fire for any IIIF src found there.
+   *   - API path: prefer apiResponse.meta.ogTagImageUrl (mirrors the page's
+   *     <meta property="og:image">); this is the talk hero image the user
+   *     sees on the page. If absent, fall back to scanning content.body for
+   *     an IIIF <img> tag (body-img). og:image and __INITIAL_STATE__ live in
+   *     the <head> of the full HTML and are not present in the body fragment.
    *   - HTML path: we have the full rendered page, so all three strategies
    *     (og:image, __INITIAL_STATE__, body-img) are tried.
    */
@@ -1647,20 +1656,43 @@ export class ConferenceScraper {
       const audio = this.extractAudioFromApi(apiResponse);
       const speaker = this.extractSpeakerFromApi(apiResponse);
 
-      // API body is an HTML fragment; body-img extraction handles IIIF <img>
-      // tags embedded in the article. og:image and __INITIAL_STATE__ are only
-      // present in full-page HTML so those strategies will no-op here.
-      const extracted = extractImageFromTalkHtml(apiResponse.content.body);
-      if (extracted) {
-        imgLog.debug('talk image extracted (api-body)', {
-          url,
-          apiUrl,
-          source: extracted.source,
-          hash: extracted.hash,
-        });
+      // Prefer the API's meta.ogTagImageUrl — this is the same URL emitted in
+      // the HTML <head>'s og:image tag and reliably points at the talk hero
+      // image. The article fragment at content.body omits the <head>, so
+      // without this we would miss the hero image for every talk whose body
+      // has no inline IIIF <img> (gc_podcast-e62).
+      let imageUrl: string | undefined;
+      const metaOgUrl = apiResponse.meta.ogTagImageUrl;
+      if (metaOgUrl) {
+        const hash = extractHash(metaOgUrl);
+        if (hash) {
+          imageUrl = buildCanonicalImageUrl(hash);
+          imgLog.debug('talk image extracted (api-meta-og)', {
+            url,
+            apiUrl,
+            hash,
+          });
+        }
       }
 
-      return { audio, speaker, image_url: extracted?.canonicalUrl };
+      // Fallback: scan the body fragment for an IIIF <img> tag. Needed for
+      // older content where meta.ogTagImageUrl is missing or points at a
+      // non-Church URL (og:image and __INITIAL_STATE__ are head-only, so
+      // those strategies always no-op against a body fragment).
+      if (!imageUrl) {
+        const extracted = extractImageFromTalkHtml(apiResponse.content.body);
+        if (extracted) {
+          imageUrl = extracted.canonicalUrl;
+          imgLog.debug('talk image extracted (api-body)', {
+            url,
+            apiUrl,
+            source: extracted.source,
+            hash: extracted.hash,
+          });
+        }
+      }
+
+      return { audio, speaker, image_url: imageUrl };
     } catch (error) {
       log.warn('API fetch failed, falling back to HTML scraping', {
         url,
