@@ -371,14 +371,43 @@ export function generateRssFeed(
     return dateB - dateA;
   });
 
-  // Use the most-recent conference's branded image for the channel artwork
-  // (gc_podcast-8t0). Each April/October cycle publishes a distinct hero
-  // painting at /media/collection/<month>-<year>-general-conference, which
-  // the scraper captures into `conference_image_url`. Falls back to
-  // PODCAST_CONFIG.imageUrl when no conference has a populated value.
-  const mostRecentWithImage = sortedConferences.find((c) => c.conference.conference_image_url);
-  if (mostRecentWithImage?.conference.conference_image_url) {
-    config.imageUrl = mostRecentWithImage.conference.conference_image_url;
+  // Channel artwork: prefer the first talk's hero image from the most-recent
+  // conference's first session (gc_podcast-8t0 / new behaviour chosen by user).
+  //
+  // Rationale: the original source — the /media/collection og:image — only
+  // publishes a few weeks after each conference, and the Church tends to
+  // reuse shepherd iconography across cycles, so visually the channel art
+  // rarely appears to change. Talk hero images (a 1920x1080 video-frame
+  // capture of each speaker) are visually distinct per cycle and available
+  // immediately when a conference is scraped.
+  //
+  // Tradeoff: talk hero images are not square (sized !1400,1400 = fit
+  // within 1400x1400, preserving aspect ratio → ~1400x787 for 16:9
+  // sources). That's below Apple Podcasts' 1400x1400 square spec and may
+  // be rejected by the Apple directory; most third-party readers accept
+  // non-square artwork.
+  //
+  // Fallback chain:
+  //   1. most-recent conference's first session's first talk.image_url
+  //   2. most-recent conference.conference_image_url (legacy)
+  //   3. PODCAST_CONFIG.imageUrl (pre-2024 default)
+  const firstTalkHero = (() => {
+    for (const c of sortedConferences) {
+      for (const session of c.conference.sessions) {
+        for (const talk of session.talks) {
+          if (talk.image_url) return talk.image_url;
+        }
+      }
+    }
+    return undefined;
+  })();
+  if (firstTalkHero) {
+    config.imageUrl = firstTalkHero;
+  } else {
+    const mostRecentWithImage = sortedConferences.find((c) => c.conference.conference_image_url);
+    if (mostRecentWithImage?.conference.conference_image_url) {
+      config.imageUrl = mostRecentWithImage.conference.conference_image_url;
+    }
   }
 
   // Generate items — newest first (conferences descending, sessions descending,

@@ -182,12 +182,19 @@ describe('RSS feed – per-item <itunes:image> integration (multi-talk)', () => 
     expect(itemImageHref(itemB)).toContain(iiifSuffix);
   });
 
-  it('per-talk IIIF image URLs appear only inside <item> blocks, not at channel level', () => {
-    // Strip every <item>...</item> block from the feed. The IIIF per-talk and
-    // per-speaker URLs we injected must not survive outside those blocks.
+  it('speaker IIIF image URLs never bleed to channel level', () => {
+    // Strip every <item>...</item> block from the feed. Speaker-only image
+    // URLs must not survive outside item blocks; the first talk's hero IS
+    // intentionally used as the channel image (gc_podcast-9ut follow-up —
+    // talk-hero-over-collection-painting behaviour), so IIIF_TALK_IMAGE
+    // legitimately appears at channel level.
     const feedWithoutItems = feed.replace(/<item>[\s\S]*?<\/item>/g, '');
-    expect(feedWithoutItems).not.toContain(IIIF_TALK_IMAGE);
     expect(feedWithoutItems).not.toContain(IIIF_SPEAKER_A_IMAGE);
     expect(feedWithoutItems).not.toContain(IIIF_SPEAKER_C_IMAGE);
+  });
+
+  it('first talk hero image IS used at channel level (gc_podcast-9ut follow-up)', () => {
+    const feedWithoutItems = feed.replace(/<item>[\s\S]*?<\/item>/g, '');
+    expect(feedWithoutItems).toContain(IIIF_TALK_IMAGE);
   });
 });
