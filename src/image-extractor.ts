@@ -81,19 +81,20 @@ export function buildCanonicalImageUrl(hash: string): string {
 }
 
 /**
- * Build an Apple-compliant 1500×1500 square IIIF URL for a conference hero
+ * Build an Apple-compliant 3000×3000 square IIIF URL for a conference hero
  * image (gc_podcast-8t0).
  *
  * Uses the IIIF `square` region parameter (geometric centre crop) followed by
- * a 1500×1500 size, meeting the iTunes channel artwork minimum of 1400×1400
- * with Apple's recommended 3000×3000 as the ceiling.
+ * a 3000×3000 size — Apple's recommended maximum for podcast artwork, safely
+ * above the 1400×1400 iTunes minimum. Higher-resolution URLs also double as a
+ * cache-buster when clients have stickily cached a prior channel-image URL.
  *
  * This is intentionally DIFFERENT from buildCanonicalImageUrl: per-item images
  * use the `full` region with best-fit sizing; channel images use `square` crop
- * at a fixed 1500×1500.
+ * at a fixed 3000×3000.
  */
 export function buildConferenceSquareImageUrl(hash: string): string {
-  return `https://www.churchofjesuschrist.org/imgs/${hash}/square/1500,1500/0/default`;
+  return `https://www.churchofjesuschrist.org/imgs/${hash}/square/3000,3000/0/default`;
 }
 
 /**

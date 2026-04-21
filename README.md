@@ -168,7 +168,7 @@ Conference data is stored as JSON. See [SPEC.md](./SPEC.md) for the authoritativ
     "year": 2026,
     "month": 4,
     "name": "April 2026 general conference",
-    "conference_image_url": "https://www.churchofjesuschrist.org/imgs/<hash>/square/1500,1500/0/default",
+    "conference_image_url": "https://www.churchofjesuschrist.org/imgs/<hash>/square/3000,3000/0/default",
     "sessions": [
       {
         "name": "Saturday Morning Session",
