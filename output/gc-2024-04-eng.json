@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-04-21T19:07:35.586Z",
+  "scraped_at": "2026-04-21T19:50:15.961Z",
   "version": "1.0",
   "conference": {
     "year": 2024,
@@ -730,6 +730,6 @@
         "duration_ms": 7108434
       }
     ],
-    "conference_image_url": "https://www.churchofjesuschrist.org/imgs/525086c4c22d11eebef2eeeeac1e2ff8be72073b/square/3000,3000/0/default"
+    "conference_image_url": "https://www.churchofjesuschrist.org/imgs/525086c4c22d11eebef2eeeeac1e2ff8be72073b/square/1500,1500/0/default"
   }
 }
