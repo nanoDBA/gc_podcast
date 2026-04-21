@@ -205,7 +205,7 @@ describe('fetchConferenceImage', () => {
 // ---------------------------------------------------------------------------
 
 const DEFAULT_CHANNEL_IMAGE =
-  'https://www.churchofjesuschrist.org/imgs/5uahv05h1s6416y49vw745z70juiiffhiq0vn8a2/full/!1400,/0/default';
+  'https://www.churchofjesuschrist.org/imgs/k1fqj0dhdmlvazviec1fi2d8vug406va413iel1a/square/1080,1080/0/default';
 
 const CONFERENCE_IMAGE_APR_2025 =
   'https://www.churchofjesuschrist.org/imgs/apr2025hash/square/3000,3000/0/default';
@@ -264,27 +264,9 @@ function getChannelImageUrl(feed: string): string | null {
   return m ? m[1] : null;
 }
 
-describe('RSS channel image rotation (gc_podcast-8t0)', () => {
-  it('uses conference_image_url for <itunes:image> when set', () => {
+describe('RSS channel image (gc_podcast-aq7 hardcoded Conference Center)', () => {
+  it('uses the hardcoded PODCAST_CONFIG.imageUrl for <itunes:image>', () => {
     const conferences = [makeConferenceOutput(2025, 4, CONFERENCE_IMAGE_APR_2025)];
-    const feed = generateRssFeed(conferences, {
-      feedBaseUrl: 'https://example.test/gc',
-      language: 'eng',
-    });
-    expect(getChannelItuniesImage(feed)).toBe(CONFERENCE_IMAGE_APR_2025);
-  });
-
-  it('uses conference_image_url for <image><url> when set', () => {
-    const conferences = [makeConferenceOutput(2025, 4, CONFERENCE_IMAGE_APR_2025)];
-    const feed = generateRssFeed(conferences, {
-      feedBaseUrl: 'https://example.test/gc',
-      language: 'eng',
-    });
-    expect(getChannelImageUrl(feed)).toBe(CONFERENCE_IMAGE_APR_2025);
-  });
-
-  it('falls back to default PODCAST_CONFIG.imageUrl when no conference has the field', () => {
-    const conferences = [makeConferenceOutput(2025, 4, null)];
     const feed = generateRssFeed(conferences, {
       feedBaseUrl: 'https://example.test/gc',
       language: 'eng',
@@ -292,16 +274,18 @@ describe('RSS channel image rotation (gc_podcast-8t0)', () => {
     expect(getChannelItuniesImage(feed)).toBe(DEFAULT_CHANNEL_IMAGE);
   });
 
-  it('falls back to default when conference_image_url is undefined', () => {
-    const conferences = [makeConferenceOutput(2025, 4, undefined)];
+  it('uses the hardcoded PODCAST_CONFIG.imageUrl for <image><url>', () => {
+    const conferences = [makeConferenceOutput(2025, 4, CONFERENCE_IMAGE_APR_2025)];
     const feed = generateRssFeed(conferences, {
       feedBaseUrl: 'https://example.test/gc',
       language: 'eng',
     });
-    expect(getChannelItuniesImage(feed)).toBe(DEFAULT_CHANNEL_IMAGE);
+    expect(getChannelImageUrl(feed)).toBe(DEFAULT_CHANNEL_IMAGE);
   });
 
-  it('multi-conference: most-recent conference image wins (2025-10 over 2025-04)', () => {
+  it('ignores per-conference conference_image_url for channel art (no rotation)', () => {
+    // Both conferences have different paintings; channel must still use the
+    // hardcoded Conference Center image, proving rotation is disabled.
     const conferences = [
       makeConferenceOutput(2025, 4, CONFERENCE_IMAGE_APR_2025),
       makeConferenceOutput(2025, 10, CONFERENCE_IMAGE_OCT_2025),
@@ -310,26 +294,23 @@ describe('RSS channel image rotation (gc_podcast-8t0)', () => {
       feedBaseUrl: 'https://example.test/gc',
       language: 'eng',
     });
-    // October 2025 is more recent — its image must win.
-    expect(getChannelItuniesImage(feed)).toBe(CONFERENCE_IMAGE_OCT_2025);
+    expect(getChannelItuniesImage(feed)).toBe(DEFAULT_CHANNEL_IMAGE);
     expect(getChannelItuniesImage(feed)).not.toBe(CONFERENCE_IMAGE_APR_2025);
+    expect(getChannelItuniesImage(feed)).not.toBe(CONFERENCE_IMAGE_OCT_2025);
   });
 
-  it('multi-conference: older conference image not used when newer has image', () => {
-    const conferences = [
-      makeConferenceOutput(2024, 10, CONFERENCE_IMAGE_OCT_2025), // older but has image
-      makeConferenceOutput(2025, 4, null), // newer but no image
-    ];
-    // April 2025 has no image; October 2024 does — October 2024 wins
-    // (most-recent WITH image, not most-recent overall).
+  it('honours options.imageUrl override when caller passes one', () => {
+    const override = 'https://example.test/custom-channel-art.jpg';
+    const conferences = [makeConferenceOutput(2025, 4, CONFERENCE_IMAGE_APR_2025)];
     const feed = generateRssFeed(conferences, {
       feedBaseUrl: 'https://example.test/gc',
       language: 'eng',
+      imageUrl: override,
     });
-    expect(getChannelItuniesImage(feed)).toBe(CONFERENCE_IMAGE_OCT_2025);
+    expect(getChannelItuniesImage(feed)).toBe(override);
   });
 
-  it('per-item <itunes:image> is unaffected by conference_image_url', () => {
+  it('per-item <itunes:image> is unaffected by the channel image', () => {
     const talkImage =
       'https://www.churchofjesuschrist.org/imgs/talkimg/full/!1400%2C1400/0/default.jpg';
     const conf = makeConferenceOutput(2025, 4, CONFERENCE_IMAGE_APR_2025);
@@ -339,8 +320,8 @@ describe('RSS channel image rotation (gc_podcast-8t0)', () => {
       feedBaseUrl: 'https://example.test/gc',
       language: 'eng',
     });
-    // Channel uses the conference image, not the talk image.
-    expect(getChannelItuniesImage(feed)).toBe(CONFERENCE_IMAGE_APR_2025);
+    // Channel uses the hardcoded Conference Center image.
+    expect(getChannelItuniesImage(feed)).toBe(DEFAULT_CHANNEL_IMAGE);
     // Item uses the talk image.
     const itemBlock = feed.match(/<item>[\s\S]*?<\/item>/)?.[0] ?? '';
     expect(itemBlock).toContain(talkImage);

@@ -40,8 +40,16 @@ const PODCAST_CONFIG = {
   category: 'Religion & Spirituality',
   subcategory: 'Christianity',
   explicit: false,
+  // Hand-curated channel art: Conference Center exterior from the Saturday
+  // Morning Session page's og:image (gc_podcast-fho follow-up). This is
+  // visually distinct from the per-cycle conference paintings and represents
+  // the physical venue of General Conference — an evergreen "brand" for the
+  // feed. Native source is 1920x1080, so 1080x1080 is the max square crop
+  // supported by the Church's IIIF endpoint (the server rejects 1400+ since
+  // it cannot upscale). This is under Apple Podcasts' 1400x1400 spec minimum
+  // but most readers accept it.
   imageUrl:
-    'https://www.churchofjesuschrist.org/imgs/5uahv05h1s6416y49vw745z70juiiffhiq0vn8a2/full/!1400,/0/default',
+    'https://www.churchofjesuschrist.org/imgs/k1fqj0dhdmlvazviec1fi2d8vug406va413iel1a/square/1080,1080/0/default',
   websiteUrl: 'https://www.churchofjesuschrist.org/study/general-conference',
   copyright: `© ${new Date().getFullYear()} by Intellectual Reserve, Inc. All rights reserved.`,
 };
@@ -367,13 +375,12 @@ export function generateRssFeed(
     return dateB - dateA;
   });
 
-  // Use the most-recent conference's branded image for the channel artwork
-  // (gc_podcast-8t0). Falls back to PODCAST_CONFIG.imageUrl when no
-  // conference has a populated conference_image_url.
-  const mostRecentWithImage = sortedConferences.find((c) => c.conference.conference_image_url);
-  if (mostRecentWithImage?.conference.conference_image_url) {
-    config.imageUrl = mostRecentWithImage.conference.conference_image_url;
-  }
+  // Channel artwork is hardcoded to the Conference Center image in
+  // PODCAST_CONFIG.imageUrl (see comment on that field). The per-conference
+  // painting rotation (gc_podcast-8t0) is intentionally disabled — subscribers
+  // wanted a single recognisable brand image, not a painting that changes
+  // every six months. conference_image_url is still scraped and used for
+  // per-item artwork on session episodes where talk-level image is absent.
 
   // Generate items — newest first (conferences descending, sessions descending,
   // talks descending) so that <pubDate> is strictly monotonically decreasing
