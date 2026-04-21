@@ -39,7 +39,7 @@ describe('buildConferenceSquareImageUrl', () => {
   it('produces the exact expected square URL format', () => {
     const hash = 'abc123def456abc1';
     expect(buildConferenceSquareImageUrl(hash)).toBe(
-      `https://www.churchofjesuschrist.org/imgs/${hash}/square/3000,3000/0/default`,
+      `https://www.churchofjesuschrist.org/imgs/${hash}/square/1500,1500/0/default`,
     );
   });
 
@@ -49,12 +49,13 @@ describe('buildConferenceSquareImageUrl', () => {
     expect(url).not.toContain('/full/');
   });
 
-  it('uses 3000,3000 (not percent-encoded)', () => {
+  it('uses 1500,1500 — the largest size the Church IIIF server serves (gc_podcast-9ut)', () => {
     const url = buildConferenceSquareImageUrl('testhash');
-    expect(url).toContain('3000,3000');
-    expect(url).not.toContain('3000%2C3000');
-    // Ensure we're not regressing to the old 1500,1500 size
-    expect(url).not.toContain('1500,1500');
+    expect(url).toContain('1500,1500');
+    expect(url).not.toContain('1500%2C1500');
+    // 3000×3000 exceeded the source's native resolution and returned
+    // HTTP 400 from the Church IIIF server — must not regress to that.
+    expect(url).not.toContain('3000,3000');
   });
 
   it('is different from buildCanonicalImageUrl output', async () => {
@@ -193,9 +194,9 @@ const DEFAULT_CHANNEL_IMAGE =
   'https://www.churchofjesuschrist.org/imgs/5uahv05h1s6416y49vw745z70juiiffhiq0vn8a2/full/!1400,/0/default';
 
 const CONFERENCE_IMAGE_APR_2025 =
-  'https://www.churchofjesuschrist.org/imgs/apr2025hash/square/3000,3000/0/default';
+  'https://www.churchofjesuschrist.org/imgs/apr2025hash/square/1500,1500/0/default';
 const CONFERENCE_IMAGE_OCT_2025 =
-  'https://www.churchofjesuschrist.org/imgs/oct2025hash/square/3000,3000/0/default';
+  'https://www.churchofjesuschrist.org/imgs/oct2025hash/square/1500,1500/0/default';
 
 function makeTalk(slug: string, order: number) {
   return {
