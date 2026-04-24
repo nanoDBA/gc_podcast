@@ -324,7 +324,7 @@ function buildTalkDescription(conference: Conference, session: Session, talk: Ta
         : 'Quorum of the Twelve Apostles';
     desc += `<p><small>Speaker: ${roleLabel}</small></p>`;
   }
-  desc += `<p><a href="${talk.url}">Read or listen on churchofjesuschrist.org</a></p>`;
+  desc += `<p><a href="${talk.url}">Read or stream on churchofjesuschrist.org</a></p>`;
   return desc;
 }
 
