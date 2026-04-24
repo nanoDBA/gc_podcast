@@ -324,6 +324,7 @@ function buildTalkDescription(conference: Conference, session: Session, talk: Ta
         : 'Quorum of the Twelve Apostles';
     desc += `<p><small>Speaker: ${roleLabel}</small></p>`;
   }
+  desc += `<p><a href="${talk.url}">Read or listen on churchofjesuschrist.org</a></p>`;
   return desc;
 }
 
@@ -336,9 +337,10 @@ function buildSessionDescription(conference: Conference, session: Session): stri
   desc += `<p>Full session recording including all talks and musical numbers.</p>`;
   desc += `<p><strong>Speakers:</strong></p><ul>`;
   for (const talk of session.talks) {
-    desc += `<li>${talk.speaker.name} - "${talk.title}"</li>`;
+    desc += `<li><a href="${talk.url}">${talk.speaker.name} - "${talk.title}"</a></li>`;
   }
   desc += `</ul>`;
+  desc += `<p><a href="${session.url}">View session on churchofjesuschrist.org</a></p>`;
   return desc;
 }
 
@@ -371,42 +373,37 @@ export function generateRssFeed(
     return dateB - dateA;
   });
 
-  // Channel artwork: prefer the first talk's hero image from the most-recent
-  // conference's first session (gc_podcast-8t0 / new behaviour chosen by user).
+  // Channel artwork: prefer conference_image_url (gc_podcast-gx9).
   //
-  // Rationale: the original source — the /media/collection og:image — only
-  // publishes a few weeks after each conference, and the Church tends to
-  // reuse shepherd iconography across cycles, so visually the channel art
-  // rarely appears to change. Talk hero images (a 1920x1080 video-frame
-  // capture of each speaker) are visually distinct per cycle and available
-  // immediately when a conference is scraped.
-  //
-  // Tradeoff: talk hero images are not square (sized !1400,1400 = fit
-  // within 1400x1400, preserving aspect ratio → ~1400x787 for 16:9
-  // sources). That's below Apple Podcasts' 1400x1400 square spec and may
-  // be rejected by the Apple directory; most third-party readers accept
-  // non-square artwork.
+  // Rationale: conference_image_url is sourced from the /media/collection
+  // og:image and is sized 1500x1500 — a proper square that satisfies Apple
+  // Podcasts' 1400x1400 minimum and square-image requirement. Talk hero
+  // images (1920x1080 video-frame captures) are 16:9, which renders as
+  // ~1400x787 when fit into Apple's square canvas — technically non-compliant
+  // and may be rejected by the Apple Podcasts directory.
   //
   // Fallback chain:
-  //   1. most-recent conference's first session's first talk.image_url
-  //   2. most-recent conference.conference_image_url (legacy)
-  //   3. PODCAST_CONFIG.imageUrl (pre-2024 default)
-  const firstTalkHero = (() => {
-    for (const c of sortedConferences) {
-      for (const session of c.conference.sessions) {
-        for (const talk of session.talks) {
-          if (talk.image_url) return talk.image_url;
+  //   1. most-recent conference with a non-null conference_image_url (square, Apple-compliant)
+  //   2. first talk.image_url from the most-recent conference (16:9 fallback)
+  //   3. PODCAST_CONFIG.imageUrl (pre-2024 hardcoded default)
+  const mostRecentWithConferenceImage = sortedConferences.find(
+    (c) => c.conference.conference_image_url,
+  );
+  if (mostRecentWithConferenceImage?.conference.conference_image_url) {
+    config.imageUrl = mostRecentWithConferenceImage.conference.conference_image_url;
+  } else {
+    const firstTalkHero = (() => {
+      for (const c of sortedConferences) {
+        for (const session of c.conference.sessions) {
+          for (const talk of session.talks) {
+            if (talk.image_url) return talk.image_url;
+          }
         }
       }
-    }
-    return undefined;
-  })();
-  if (firstTalkHero) {
-    config.imageUrl = firstTalkHero;
-  } else {
-    const mostRecentWithImage = sortedConferences.find((c) => c.conference.conference_image_url);
-    if (mostRecentWithImage?.conference.conference_image_url) {
-      config.imageUrl = mostRecentWithImage.conference.conference_image_url;
+      return undefined;
+    })();
+    if (firstTalkHero) {
+      config.imageUrl = firstTalkHero;
     }
   }
 
