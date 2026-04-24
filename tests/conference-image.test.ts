@@ -162,18 +162,41 @@ describe('fetchConferenceImage', () => {
     expect(mockFetch).not.toHaveBeenCalled();
   });
 
-  it('returns null and does NOT fall back to /feature/general-conference when collection page 404s (gc_podcast-vce)', async () => {
-    // Collection page 404s and there is no secondary fetch — the generic
-    // feature page's og:image is an evergreen banner (not per-conference),
-    // so we deliberately don't consult it. Rotation in generateRssFeed
-    // picks up the previous conference's art when this returns null.
-    const mockFetch = vi.fn().mockResolvedValueOnce(makeEmptyResponse(404));
+  it('falls back to GC landing page when collection page 404s (gc_podcast-gx9)', async () => {
+    // Collection page 404s → fallback fetches the main GC landing page
+    // and extracts the conference thumbnail hash from nearby HTML.
+    const landingHtml = `<html><body>
+      <img src="https://www.churchofjesuschrist.org/imgs/${SAMPLE_HASH}/full/%2160%2C/0/default">
+      <a href="/study/general-conference/2025/04?lang=eng">April 2025</a>
+    </body></html>`;
+    const mockFetch = vi
+      .fn()
+      .mockResolvedValueOnce(makeEmptyResponse(404))
+      .mockResolvedValueOnce(
+        new Response(landingHtml, {
+          status: 200,
+          headers: { 'content-type': 'text/html' },
+        }),
+      );
+    vi.stubGlobal('fetch', mockFetch);
+    const scraper = new ConferenceScraper({ useCache: false });
+
+    const result = await scraper.fetchConferenceImage(2025, 4);
+    expect(result).toBe(buildConferenceSquareImageUrl(SAMPLE_HASH));
+    expect(mockFetch).toHaveBeenCalledTimes(2);
+  });
+
+  it('returns null when both collection and landing page fail (gc_podcast-vce)', async () => {
+    const mockFetch = vi
+      .fn()
+      .mockResolvedValueOnce(makeEmptyResponse(404))
+      .mockResolvedValueOnce(makeEmptyResponse(500));
     vi.stubGlobal('fetch', mockFetch);
     const scraper = new ConferenceScraper({ useCache: false });
 
     const result = await scraper.fetchConferenceImage(2025, 4);
     expect(result).toBeNull();
-    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch).toHaveBeenCalledTimes(2);
     expect(mockFetch.mock.calls[0][0]).not.toBe(FALLBACK_URL);
   });
 

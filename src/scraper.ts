@@ -1404,7 +1404,45 @@ export class ConferenceScraper {
       // fall through to null below
     }
 
-    log.warn('conference collection page unavailable; skipping per-conference art', {
+    // Fallback: the /media/collection page may not exist yet for recent
+    // conferences, but the main GC landing page lists all conferences with
+    // thumbnail IIIF images. Scrape the landing page and look for the img
+    // associated with this conference's year/month (gc_podcast-gx9).
+    const monthPad = month.toString().padStart(2, '0');
+    const landingUrl = `${BASE_URL}/study/general-conference?lang=eng`;
+    try {
+      const landingResp = await fetchWithRetry(landingUrl);
+      if (landingResp.ok) {
+        const landingHtml = await landingResp.text();
+        // Find a chunk of HTML surrounding a link to this conference
+        // e.g. /study/general-conference/2026/04
+        const confPattern = `/study/general-conference/${year}/${monthPad}`;
+        const idx = landingHtml.indexOf(confPattern);
+        if (idx !== -1) {
+          // Extract a window of HTML around the match to find the nearby img
+          const windowStart = Math.max(0, idx - 1000);
+          const windowEnd = Math.min(landingHtml.length, idx + 1000);
+          const windowHtml = landingHtml.slice(windowStart, windowEnd);
+          // Look for an IIIF hash in any img src in this window
+          const hashMatch = windowHtml.match(
+            /churchofjesuschrist\.org\/imgs\/([a-z0-9]+)\/full\//i,
+          );
+          if (hashMatch?.[1]) {
+            const hash = hashMatch[1].toLowerCase();
+            log.info('conference image extracted from GC landing page fallback', {
+              year,
+              month,
+              hash,
+            });
+            return buildConferenceSquareImageUrl(hash);
+          }
+        }
+      }
+    } catch {
+      // fall through to null below
+    }
+
+    log.warn('conference image unavailable from both collection and landing pages', {
       collectionUrl,
       year,
       month,
