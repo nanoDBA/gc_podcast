@@ -332,7 +332,7 @@ function generateHtml(conferences: RecentConference[]): string {
 
   <div class="feed-box">
     <strong>Podcast Feed URL:</strong>
-    <div class="feed-url" id="feedUrl">https://YOUR_USERNAME.github.io/gc_podcast/audio.xml</div>
+    <div class="feed-url" id="feedUrl">${BASE_FEED_URL}/audio.xml</div>
     <a href="audio.xml" class="btn">View Feed</a>
     <button class="btn btn-secondary" onclick="copyFeedUrl()">Copy URL</button>
   </div>
