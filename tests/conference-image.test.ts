@@ -250,45 +250,44 @@ function getChannelImageUrl(feed: string): string | null {
   return m ? m[1] : null;
 }
 
-describe('RSS channel image rotation (gc_podcast-8t0)', () => {
+describe('RSS channel image rotation (gc_podcast-gx9)', () => {
   const APR_2026_TALK_HERO =
     'https://www.churchofjesuschrist.org/imgs/apr2026talkhero/full/!1400%2C1400/0/default.jpg';
   const OCT_2025_TALK_HERO =
     'https://www.churchofjesuschrist.org/imgs/oct2025talkhero/full/!1400%2C1400/0/default.jpg';
 
-  it('uses most-recent conference first-talk hero as the channel image', () => {
+  it('prefers conference_image_url over talk hero when both are present', () => {
     const conf = makeConferenceOutput(2025, 10, CONFERENCE_IMAGE_OCT_2025);
     conf.conference.sessions[0].talks[0].image_url = OCT_2025_TALK_HERO;
     const feed = generateRssFeed([conf], {
       feedBaseUrl: 'https://example.test/gc',
       language: 'eng',
     });
-    expect(getChannelItuniesImage(feed)).toBe(OCT_2025_TALK_HERO);
-    expect(getChannelImageUrl(feed)).toBe(OCT_2025_TALK_HERO);
+    // conference_image_url is 1500x1500 square — Apple-compliant; it wins.
+    expect(getChannelItuniesImage(feed)).toBe(CONFERENCE_IMAGE_OCT_2025);
+    expect(getChannelImageUrl(feed)).toBe(CONFERENCE_IMAGE_OCT_2025);
   });
 
-  it('first-talk hero takes precedence over conference_image_url', () => {
+  it('conference_image_url takes precedence over first-talk hero', () => {
     const conf = makeConferenceOutput(2025, 4, CONFERENCE_IMAGE_APR_2025);
     conf.conference.sessions[0].talks[0].image_url = APR_2026_TALK_HERO;
     const feed = generateRssFeed([conf], {
       feedBaseUrl: 'https://example.test/gc',
       language: 'eng',
     });
-    // The user chose talk-hero-over-collection-painting (see rss-generator.ts
-    // comment) because collection paintings lag publication and visually
-    // repeat shepherd iconography across cycles.
-    expect(getChannelItuniesImage(feed)).toBe(APR_2026_TALK_HERO);
-    expect(getChannelItuniesImage(feed)).not.toBe(CONFERENCE_IMAGE_APR_2025);
+    // gc_podcast-gx9: prefer square conference image over 16:9 talk hero.
+    expect(getChannelItuniesImage(feed)).toBe(CONFERENCE_IMAGE_APR_2025);
+    expect(getChannelItuniesImage(feed)).not.toBe(APR_2026_TALK_HERO);
   });
 
-  it('falls back to conference_image_url when no talk has image_url', () => {
-    const conf = makeConferenceOutput(2025, 4, CONFERENCE_IMAGE_APR_2025);
-    // Leave talk.image_url undefined.
+  it('falls back to talk.image_url when conference_image_url is absent', () => {
+    const conf = makeConferenceOutput(2025, 4, null);
+    conf.conference.sessions[0].talks[0].image_url = APR_2026_TALK_HERO;
     const feed = generateRssFeed([conf], {
       feedBaseUrl: 'https://example.test/gc',
       language: 'eng',
     });
-    expect(getChannelItuniesImage(feed)).toBe(CONFERENCE_IMAGE_APR_2025);
+    expect(getChannelItuniesImage(feed)).toBe(APR_2026_TALK_HERO);
   });
 
   it('falls back to PODCAST_CONFIG.imageUrl when neither talk nor conference has an image', () => {
@@ -300,7 +299,7 @@ describe('RSS channel image rotation (gc_podcast-8t0)', () => {
     expect(getChannelItuniesImage(feed)).toBe(DEFAULT_CHANNEL_IMAGE);
   });
 
-  it('multi-conference: most-recent conference first-talk hero wins', () => {
+  it('multi-conference: most-recent conference_image_url wins', () => {
     const apr = makeConferenceOutput(2025, 4, CONFERENCE_IMAGE_APR_2025);
     apr.conference.sessions[0].talks[0].image_url =
       'https://www.churchofjesuschrist.org/imgs/apr2025talkhero/full/!1400%2C1400/0/default.jpg';
@@ -310,13 +309,13 @@ describe('RSS channel image rotation (gc_podcast-8t0)', () => {
       feedBaseUrl: 'https://example.test/gc',
       language: 'eng',
     });
-    // October 2025 is more recent; its talk hero must win over April 2025's.
-    expect(getChannelItuniesImage(feed)).toBe(OCT_2025_TALK_HERO);
+    // October 2025 is more recent; its conference_image_url wins.
+    expect(getChannelItuniesImage(feed)).toBe(CONFERENCE_IMAGE_OCT_2025);
   });
 
-  it('multi-conference: falls through to older conference when newer has no talk image', () => {
+  it('multi-conference: falls through to older conference_image_url when newer has none', () => {
     const newer = makeConferenceOutput(2026, 4, null);
-    // newer conference has no talk image at all (e.g. scrape incomplete)
+    // newer conference has no conference_image_url (e.g. scrape too early)
     newer.conference.sessions[0].talks = [];
     const older = makeConferenceOutput(2025, 10, CONFERENCE_IMAGE_OCT_2025);
     older.conference.sessions[0].talks[0].image_url = OCT_2025_TALK_HERO;
@@ -324,7 +323,7 @@ describe('RSS channel image rotation (gc_podcast-8t0)', () => {
       feedBaseUrl: 'https://example.test/gc',
       language: 'eng',
     });
-    // newer has no talk image → scan older → Oct 2025 talk hero wins.
-    expect(getChannelItuniesImage(feed)).toBe(OCT_2025_TALK_HERO);
+    // newer has no conference_image_url → fall through to older → Oct 2025 conference image wins.
+    expect(getChannelItuniesImage(feed)).toBe(CONFERENCE_IMAGE_OCT_2025);
   });
 });
