@@ -10,7 +10,7 @@
     <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     <language>pt</language>
     <copyright>© 2026 by Intellectual Reserve, Inc. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 01 May 2026 17:47:20 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2026 18:16:07 GMT</lastBuildDate>
     <generator>gc-podcast-scraper/1.0.0</generator>
     <atom:link href="https://nanodba.github.io/gc_podcast/audio-pt.xml" rel="self" type="application/rss+xml"/>
     <podcast:guid>0891ca77-3c5a-5c93-9b43-7f3a542b47e3</podcast:guid>
@@ -26,9 +26,9 @@
     <itunes:category text="Religion &amp; Spirituality">
       <itunes:category text="Christianity"/>
     </itunes:category>
-    <itunes:image href="https://www.churchofjesuschrist.org/imgs/s1du36854oeygpk5w04dar2vhijkxysmtn2wv1cf/square/1500,1500/0/default?v=2026-04"/>
+    <itunes:image href="https://nanodba.github.io/gc_podcast/channel-art-april-2026.jpg?v=2026-04"/>
     <image>
-      <url>https://www.churchofjesuschrist.org/imgs/s1du36854oeygpk5w04dar2vhijkxysmtn2wv1cf/square/1500,1500/0/default?v=2026-04</url>
+      <url>https://nanodba.github.io/gc_podcast/channel-art-april-2026.jpg?v=2026-04</url>
       <title>Conferência Geral - A Igreja de Jesus Cristo dos Santos dos Últimos Dias</title>
       <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     </image>
