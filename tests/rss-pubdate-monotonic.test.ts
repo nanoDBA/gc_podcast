@@ -179,9 +179,15 @@ describe('RSS feed pubDate monotonic ordering', () => {
 
   it('within a single session, later talks have later pubDates than earlier talks', () => {
     // In the feed, talks appear in descending order (latest first).
-    // Extract October 2025 Saturday Morning items specifically.
+    // Extract October 2025 Saturday Morning TALK items specifically. Match
+    // against the <guid>, which encodes only the talk slug — the session
+    // item's description also contains talk-slug substrings (the speaker
+    // links), so a naive `b.includes('oct25-sat-am-t')` filter would falsely
+    // match the session item too (gc_podcast-oav).
     const itemBlocks = feed.match(/<item>[\s\S]*?<\/item>/g) ?? [];
-    const oct25SatAmTalkItems = itemBlocks.filter((b) => b.includes('oct25-sat-am-t'));
+    const oct25SatAmTalkItems = itemBlocks.filter((b) =>
+      /<guid[^>]*>gc-2025-10-saturday-morning-session-oct25-sat-am-t\d+<\/guid>/.test(b),
+    );
     // There are 3 talks; they should appear in feed as t3, t2, t1 (descending).
     expect(oct25SatAmTalkItems.length).toBe(3);
 
@@ -206,8 +212,12 @@ describe('RSS feed pubDate monotonic ordering', () => {
     expect(sessionItem).toBeDefined();
     const sessionTs = Date.parse(sessionItem!.match(/<pubDate>([^<]+)<\/pubDate>/)![1]);
 
-    // Find all talk items for the same session
-    const talkItems = itemBlocks.filter((b) => b.includes('oct25-sat-am-t'));
+    // Find all talk items for the same session. Match against the <guid>
+    // to avoid false-matching the session item, whose description embeds
+    // talk-slug substrings via per-talk speaker links (gc_podcast-oav).
+    const talkItems = itemBlocks.filter((b) =>
+      /<guid[^>]*>gc-2025-10-saturday-morning-session-oct25-sat-am-t\d+<\/guid>/.test(b),
+    );
     expect(talkItems.length).toBeGreaterThan(0);
     for (const talkItem of talkItems) {
       const talkTs = Date.parse(talkItem.match(/<pubDate>([^<]+)<\/pubDate>/)![1]);
