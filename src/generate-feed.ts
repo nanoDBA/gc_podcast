@@ -41,9 +41,16 @@ async function main() {
   }
 
   if (generateAll) {
-    // Generate feeds for all languages
+    // Generate feeds for all languages.
+    //
+    // gc_podcast-bf8: audio-en.xml is published alongside audio.xml as a
+    // byte-equivalent alias. Pocket Casts pins to the first-seen channel
+    // artwork per feed URL even after the image URL changes, so users on
+    // that client can re-subscribe to the audio-en.xml URL to force a
+    // fresh artwork fetch. Both files regenerate together to stay in sync.
     const languages = [
       { code: 'eng', file: 'audio.xml' },
+      { code: 'eng', file: 'audio-en.xml' },
       { code: 'spa', file: 'audio-es.xml' },
       { code: 'por', file: 'audio-pt.xml' },
     ];

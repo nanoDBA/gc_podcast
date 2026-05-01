@@ -232,6 +232,18 @@ jobs:
             --min-year "$MIN_YEAR" \
             --base-url "$BASE_URL"
 
+          # gc_podcast-bf8: also publish audio-en.xml as a parallel English
+          # feed. Pocket Casts pins channel artwork per feed URL; users on
+          # that client can re-subscribe to the alias URL to force a fresh
+          # artwork fetch when the original feed is stuck on stale art.
+          echo "Generating English alias feed (audio-en.xml)..."
+          npx tsx src/generate-feed.ts \
+            --output ./output \
+            --feed ./docs/audio-en.xml \
+            --language eng \
+            --min-year "$MIN_YEAR" \
+            --base-url "$BASE_URL"
+
           # Generate Spanish feed only if scrape succeeded
           if [ "${{ steps.scrape_spa.outcome }}" = "success" ]; then
             echo "Generating Spanish feed..."
