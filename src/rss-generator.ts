@@ -142,6 +142,11 @@ function formatRfc2822Date(date: Date): string {
   return date.toUTCString();
 }
 
+function appendCacheBust(url: string, version: string): string {
+  const sep = url.includes('?') ? '&' : '?';
+  return `${url}${sep}v=${version}`;
+}
+
 /**
  * Estimate file size from duration (128kbps = 16KB/sec)
  */
@@ -389,8 +394,15 @@ export function generateRssFeed(
   const mostRecentWithConferenceImage = sortedConferences.find(
     (c) => c.conference.conference_image_url,
   );
-  if (mostRecentWithConferenceImage?.conference.conference_image_url) {
-    config.imageUrl = mostRecentWithConferenceImage.conference.conference_image_url;
+  const conferenceImageSource = mostRecentWithConferenceImage?.conference;
+  if (conferenceImageSource?.conference_image_url) {
+    // gc_podcast-due: append ?v=<YYYY-MM> to defeat aggressive client-side
+    // artwork caching (Pocket Casts, Apple Podcasts) that may pin to the
+    // first-seen channel image even after the IIIF hash changes. Stable
+    // across rebuilds within a cycle; rotates only when a new conference's
+    // art lands.
+    const cycle = `${conferenceImageSource.year}-${String(conferenceImageSource.month).padStart(2, '0')}`;
+    config.imageUrl = appendCacheBust(conferenceImageSource.conference_image_url, cycle);
   } else {
     const firstTalkHero = (() => {
       for (const c of sortedConferences) {
