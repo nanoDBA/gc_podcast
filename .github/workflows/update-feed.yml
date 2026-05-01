@@ -232,17 +232,6 @@ jobs:
             --min-year "$MIN_YEAR" \
             --base-url "$BASE_URL"
 
-          # gc_podcast-bf8: publish audio-en.xml as an alias of audio.xml so
-          # users on caching-aggressive clients (Pocket Casts) can re-subscribe
-          # to a fresh URL when channel artwork won't refresh on the original.
-          echo "Generating English alias feed (audio-en.xml)..."
-          npx tsx src/generate-feed.ts \
-            --output ./output \
-            --feed ./docs/audio-en.xml \
-            --language eng \
-            --min-year "$MIN_YEAR" \
-            --base-url "$BASE_URL"
-
           # Generate Spanish feed only if scrape succeeded
           if [ "${{ steps.scrape_spa.outcome }}" = "success" ]; then
             echo "Generating Spanish feed..."

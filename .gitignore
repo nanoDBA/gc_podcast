@@ -24,6 +24,7 @@ Thumbs.db
 *.png
 *.jpg
 *.jpeg
+!docs/channel-art-*.jpg
 
 # Logs
 *.log
