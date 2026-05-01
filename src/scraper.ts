@@ -82,6 +82,7 @@ import {
   buildConferenceSquareImageUrl,
   extractHash,
   buildCanonicalImageUrl,
+  isCanonicalChannelImageHash,
 } from './image-extractor.js';
 
 /**
@@ -1392,12 +1393,21 @@ export class ConferenceScraper {
       if (response.ok) {
         const html = await response.text();
         const hash = extractOgImageHash(html);
-        if (hash) {
+        if (hash && isCanonicalChannelImageHash(hash)) {
           log.info('conference image extracted from collection page', {
             collectionUrl,
             hash,
           });
           return buildConferenceSquareImageUrl(hash);
+        }
+        if (hash) {
+          // gc_podcast-fpx: reject non-canonical (SHA-1-style hex) hashes.
+          // These typically refer to evergreen banners or undersized assets
+          // that fail the /square/1500,1500 IIIF crop.
+          log.warn('conference image: rejected non-canonical hash from collection page', {
+            collectionUrl,
+            hash,
+          });
         }
       }
     } catch {
@@ -1429,12 +1439,20 @@ export class ConferenceScraper {
           );
           if (hashMatch?.[1]) {
             const hash = hashMatch[1].toLowerCase();
-            log.info('conference image extracted from GC landing page fallback', {
+            if (isCanonicalChannelImageHash(hash)) {
+              log.info('conference image extracted from GC landing page fallback', {
+                year,
+                month,
+                hash,
+              });
+              return buildConferenceSquareImageUrl(hash);
+            }
+            // gc_podcast-fpx: reject non-canonical (SHA-1-style hex) hashes.
+            log.warn('conference image: rejected non-canonical hash from landing page', {
               year,
               month,
               hash,
             });
-            return buildConferenceSquareImageUrl(hash);
           }
         }
       }

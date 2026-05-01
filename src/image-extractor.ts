@@ -81,6 +81,35 @@ export function buildCanonicalImageUrl(hash: string): string {
 }
 
 /**
+ * Detect whether `hash` looks like a canonical Church IIIF asset hash suitable
+ * for use as a podcast channel image (gc_podcast-fpx).
+ *
+ * Empirically, conference hero hashes that successfully serve `/square/1500,1500`
+ * are 40-character base32-style identifiers containing letters g-z (e.g.
+ * `s1du36854oeygpk5w04dar2vhijkxysmtn2wv1cf`,
+ * `zb8ulamgq3e3g70jd6q9odrzisz7ap1kgzztmyra`,
+ * `rh1ugr50sjbpepbf5f8mqppasje9opcozk5jxrua`).
+ *
+ * Conversely, certain Church pages (notably the legacy `/feature/general-conference`
+ * og:image, which is the evergreen Good Shepherd banner) expose 40-char SHA-1
+ * hex hashes such as `bd28805cb67a5524cd310c394c06f1dfbe19cf86`. The underlying
+ * source for those hex-named assets is too small to support a 1500×1500 square
+ * crop — the IIIF endpoint returns HTTP 400 for them. They also typically refer
+ * to evergreen banners rather than per-conference hero artwork, so they should
+ * not be used as channel art.
+ *
+ * Heuristic: a canonical channel-art hash MUST contain at least one character
+ * outside the hex range `[0-9a-f]` (i.e. a letter g-z). This rejects pure-hex
+ * SHA-1 style identifiers while allowing the alphanumeric IIIF hashes the
+ * Church CDN uses for hero art.
+ */
+export function isCanonicalChannelImageHash(hash: string): boolean {
+  if (!hash) return false;
+  // Reject anything that's exclusively hex (legacy SHA-1-style asset IDs).
+  return /[g-z]/i.test(hash);
+}
+
+/**
  * Build an Apple-compliant 1500×1500 square IIIF URL for a conference hero
  * image (gc_podcast-8t0).
  *
