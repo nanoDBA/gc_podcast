@@ -41,9 +41,16 @@ async function main() {
   }
 
   if (generateAll) {
-    // Generate feeds for all languages
+    // Generate feeds for all languages.
+    //
+    // gc_podcast-bf8: audio-en.xml is published as a byte-equivalent alias of
+    // audio.xml so users on caching-aggressive clients (notably Pocket Casts)
+    // can re-subscribe to a fresh URL when channel artwork updates that the
+    // client refuses to refresh on the original feed. Both files are kept in
+    // sync by regenerating both on every build.
     const languages = [
       { code: 'eng', file: 'audio.xml' },
+      { code: 'eng', file: 'audio-en.xml' },
       { code: 'spa', file: 'audio-es.xml' },
       { code: 'por', file: 'audio-pt.xml' },
     ];
