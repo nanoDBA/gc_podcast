@@ -35,6 +35,7 @@ function makeTalk(overrides: Partial<Talk> = {}): Talk {
       duration_ms: 600000,
     },
     duration_ms: 600000,
+    image_url: 'https://www.churchofjesuschrist.org/imgs/abc/full/!1400%2C1400/0/default.jpg',
     ...overrides,
   };
 }
@@ -57,12 +58,14 @@ function makeSession(idx: number, overrides: Partial<Session> = {}): Session {
 
 function makeOutput(
   sessions: Session[],
-  overrides: { omitConferenceImage?: boolean } = {},
+  overrides: { omitConferenceImage?: boolean; year?: number; month?: number } = {},
 ): ConferenceOutput {
+  const year = overrides.year ?? 2025;
+  const month = overrides.month ?? 10;
   const conference: ConferenceOutput['conference'] = {
-    year: 2025,
-    month: 10,
-    name: 'October 2025 general conference',
+    year,
+    month,
+    name: `${month === 4 ? 'April' : 'October'} ${year} general conference`,
     url: 'https://example.com/conf',
     language: 'eng',
     sessions,
@@ -172,6 +175,47 @@ describe('isIncomplete — partial session detection', () => {
     const output = makeOutput(sessions);
     output.conference.conference_image_url = null;
     writeOutput(output);
+    const result = await isIncomplete(tmpFile);
+    expect(result).toEqual({ incomplete: false, reasons: [] });
+  });
+
+  // ---------------------------------------------------------------------------
+  // Per-talk image_url coverage (gc_podcast-e5c)
+  // ---------------------------------------------------------------------------
+
+  it('flags a 2024+ conference where a talk is missing image_url', async () => {
+    const sessions = [1, 2, 3, 4, 5].map((i) => makeSession(i));
+    sessions[0].talks[0] = makeTalk({ order: 1, slug: 's1-t1', image_url: undefined });
+    writeOutput(makeOutput(sessions, { year: 2026, month: 4 }));
+    const result = await isIncomplete(tmpFile);
+    expect(result.incomplete).toBe(true);
+    const reasonText = result.reasons.join(' | ');
+    expect(reasonText).toMatch(/missing image_url/);
+  });
+
+  it('flags a 2024+ conference where a talk has empty-string image_url', async () => {
+    const sessions = [1, 2, 3, 4, 5].map((i) => makeSession(i));
+    sessions[1].talks[0] = makeTalk({ order: 1, slug: 's2-t1', image_url: '   ' });
+    writeOutput(makeOutput(sessions, { year: 2024, month: 10 }));
+    const result = await isIncomplete(tmpFile);
+    expect(result.incomplete).toBe(true);
+    const reasonText = result.reasons.join(' | ');
+    expect(reasonText).toMatch(/missing image_url/);
+  });
+
+  it('does NOT flag a pre-2024 conference where talks lack image_url', async () => {
+    const sessions = [1, 2, 3, 4, 5].map((i) => makeSession(i));
+    sessions.forEach((s) => {
+      s.talks = s.talks.map((t) => makeTalk({ ...t, image_url: undefined }));
+    });
+    writeOutput(makeOutput(sessions, { year: 2020, month: 4 }));
+    const result = await isIncomplete(tmpFile);
+    expect(result).toEqual({ incomplete: false, reasons: [] });
+  });
+
+  it('does not flag a 2024+ conference where every talk has a valid image_url', async () => {
+    const sessions = [1, 2, 3, 4, 5].map((i) => makeSession(i));
+    writeOutput(makeOutput(sessions, { year: 2026, month: 4 }));
     const result = await isIncomplete(tmpFile);
     expect(result).toEqual({ incomplete: false, reasons: [] });
   });

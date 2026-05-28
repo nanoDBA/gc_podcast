@@ -128,6 +128,22 @@ async function fileExists(filePath: string): Promise<boolean> {
 const MIN_SESSIONS_HARD_FLOOR = 3;
 
 /**
+ * Earliest conference year for which per-talk `image_url` is required
+ * (gc_podcast-e5c). The Church began publishing canonical per-talk hero
+ * artwork (`meta.ogTagImageUrl`) consistently from 2024 onward. Audit
+ * gc_podcast-6c1 found that scrapes captured shortly after a conference
+ * sometimes miss images because the CDN takes hours/days to publish
+ * per-language artwork — and the file then looked "complete" because
+ * `isIncomplete()` only checked audio.
+ *
+ * Pre-2024 conferences are excluded from this check because their
+ * per-talk artwork coverage is sparse and inconsistent upstream;
+ * flagging them would trigger endless re-scrape attempts that cannot
+ * be resolved without a manual override.
+ */
+const PER_TALK_IMAGE_MIN_YEAR = 2024;
+
+/**
  * Result of the `isIncomplete` check. When `incomplete` is true, `reasons`
  * contains one or more human-readable strings describing why.
  */
@@ -145,6 +161,8 @@ export interface IncompleteResult {
  *   - any session is missing an `audio.url` or the url is empty/whitespace
  *   - any talk is missing `audio.url` or `audio.duration_ms`
  *   - `conference.conference_image_url` is missing (channel artwork, gc_podcast-8t0)
+ *   - for conferences from PER_TALK_IMAGE_MIN_YEAR onward, any talk is
+ *     missing `image_url` (per-talk artwork, gc_podcast-e5c)
  *
  * All matching reasons are collected and returned together so callers can
  * log WHY a file is being re-scraped.
@@ -212,6 +230,10 @@ export async function isIncomplete(filePath: string): Promise<IncompleteResult> 
       );
     }
 
+    const conferenceYear = data?.conference?.year;
+    const requirePerTalkImage =
+      typeof conferenceYear === 'number' && conferenceYear >= PER_TALK_IMAGE_MIN_YEAR;
+
     sessions.forEach((session, sIdx) => {
       const sLabel = `session[${sIdx}]${session?.name ? ` "${session.name}"` : ''}`;
 
@@ -233,6 +255,9 @@ export async function isIncomplete(filePath: string): Promise<IncompleteResult> 
         }
         if (talk.audio?.duration_ms === undefined || talk.audio?.duration_ms === null) {
           reasons.push(`${tLabel}: missing audio.duration_ms`);
+        }
+        if (requirePerTalkImage && (!talk.image_url || talk.image_url.trim() === '')) {
+          reasons.push(`${tLabel}: missing image_url`);
         }
       });
     });
