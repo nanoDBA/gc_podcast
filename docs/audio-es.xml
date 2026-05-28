@@ -10,7 +10,7 @@
     <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     <language>es</language>
     <copyright>© 2026 by Intellectual Reserve, Inc. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 28 May 2026 16:24:32 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2026 22:07:02 GMT</lastBuildDate>
     <generator>gc-podcast-scraper/1.1.0</generator>
     <atom:link href="https://nanodba.github.io/gc_podcast/audio-es.xml" rel="self" type="application/rss+xml"/>
     <podcast:guid>bd280f81-486c-5076-83ba-f7ce644b0fb7</podcast:guid>
@@ -26,9 +26,9 @@
     <itunes:category text="Religion &amp; Spirituality">
       <itunes:category text="Christianity"/>
     </itunes:category>
-    <itunes:image href="https://nanodba.github.io/gc_podcast/channel-art-april-2026.jpg?v=2026-04"/>
+    <itunes:image href="https://www.churchofjesuschrist.org/imgs/agpdbi5uihlmuiu64c3ikjzpeucram2koakqzdzk/square/1500,1500/0/default?v=2026-04"/>
     <image>
-      <url>https://nanodba.github.io/gc_podcast/channel-art-april-2026.jpg?v=2026-04</url>
+      <url>https://www.churchofjesuschrist.org/imgs/agpdbi5uihlmuiu64c3ikjzpeucram2koakqzdzk/square/1500,1500/0/default?v=2026-04</url>
       <title>Conferencia General - La Iglesia de Jesucristo de los Santos de los Últimos Días</title>
       <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     </image>
@@ -47,22 +47,24 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>9</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/59oaks?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/75oyrny2cw3zko3pvfxm6hlapg5e29nljs7uiew7/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
-      <title>Por el élder Gerrit W. Gong | Es Pascua de Resurrección: Nadie camina solo | April 2026</title>
-      <description><![CDATA[<p><strong>Es Pascua de Resurrección: Nadie camina solo</strong></p><p>By Por el élder Gerrit W. Gong<br/><em>Del Cuórum de los Doce Apóstoles</em></p><p>Conferencia General de abril de 2026 - Sesión del domingo por la tarde</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=spa">Read or stream on churchofjesuschrist.org</a></p>]]></description>
+      <title>Por el élder Gerrit W. Gong | Es Pascua de Resurrección: nadie camina solo | April 2026</title>
+      <description><![CDATA[<p><strong>Es Pascua de Resurrección: nadie camina solo</strong></p><p>By Por el élder Gerrit W. Gong<br/><em>Del Cuórum de los Doce Apóstoles</em></p><p>Conferencia General de abril de 2026 - Sesión del domingo por la tarde</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=spa">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/80tsxyf682pignrjox9wjkztha7s1awbwnv9q0ip-128k-es.mp3" length="10699200" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-afternoon-session-58gong</guid>
       <pubDate>Sun, 05 Apr 2026 16:08:00 GMT</pubDate>
-      <itunes:title>Por el élder Gerrit W. Gong | Es Pascua de Resurrección: Nadie camina solo | April 2026</itunes:title>
+      <itunes:title>Por el élder Gerrit W. Gong | Es Pascua de Resurrección: nadie camina solo | April 2026</itunes:title>
       <itunes:author>Por el élder Gerrit W. Gong</itunes:author>
       <itunes:duration>00:11:08</itunes:duration>
-      <itunes:summary><![CDATA[<p><strong>Es Pascua de Resurrección: Nadie camina solo</strong></p><p>By Por el élder Gerrit W. Gong<br/><em>Del Cuórum de los Doce Apóstoles</em></p><p>Conferencia General de abril de 2026 - Sesión del domingo por la tarde</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=spa">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
+      <itunes:summary><![CDATA[<p><strong>Es Pascua de Resurrección: nadie camina solo</strong></p><p>By Por el élder Gerrit W. Gong<br/><em>Del Cuórum de los Doce Apóstoles</em></p><p>Conferencia General de abril de 2026 - Sesión del domingo por la tarde</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=spa">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:season>2026</itunes:season>
       <itunes:episode>8</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/eaatubntp206iwnupdvtpqs9e9320s3f9zlshc0t/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -79,7 +81,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>7</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/57wakolo?lang=spa</link>
-      <itunes:image href="https://www.churchofjesuschrist.org/imgs/zy369qio55sp2nwd7ngmk575bb5qnwh7lg66zpph/full/!1400%2C1400/0/default.jpg"/>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/76fijcyeqv4qixgr4hrh6tnf3rk7l2jlnjj19tb0/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -96,7 +98,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>6</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/56cook?lang=spa</link>
-      <itunes:image href="https://www.churchofjesuschrist.org/imgs/c0jhwscdxk0tmmb9ggqp9avrey5odiz0y560hhdo/full/!1400%2C1400/0/default.jpg"/>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/rt8bdb264fmf2d2yatr13p5z9enzs6gkl1yzedng/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -113,6 +115,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>5</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/927lkm4ne7lsq5fcz35skzls2twyozogz21mqm1w/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -129,7 +132,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>4</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/54porter?lang=spa</link>
-      <itunes:image href="https://www.churchofjesuschrist.org/imgs/wy00gtr4qgwncmoqco1y7pschbtpvf1t8v37xiav/full/!1400%2C1400/0/default.jpg"/>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/cgkpdffa2eoqnwn5zp07g1hu8rdkceard64ewghj/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -146,6 +149,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>3</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/53hall?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/k9isuaoeee0fedf2zilx4g68pjm1aqj9m66blkzf/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -162,6 +166,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>2</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/52wong?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/95muj48egmb0jjlqvlc1wtgyq8dqh91i4lygt6gu/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -178,19 +183,19 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>1</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/51christofferson?lang=spa</link>
-      <itunes:image href="https://www.churchofjesuschrist.org/imgs/0h32a0iw3nhi4vqqtx9s8yeqixt8fkq95rmhrtuo/full/!1400%2C1400/0/default.jpg"/>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/wbxbxpfo4o1gx9hx7jmu9fe6im809oz87b00fk3f/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
       <title>Sesión del domingo por la tarde (Full Session) - Conferencia General de abril de 2026</title>
-      <description><![CDATA[<p><strong>Sesión del domingo por la tarde</strong></p><p>Conferencia General de abril de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/51christofferson?lang=spa">Por el presidente D. Todd Christofferson - "El carácter de Cristo"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/52wong?lang=spa">Por el élder Chi Hong (Sam) Wong - "Recordad, recordad"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/53hall?lang=spa">Por el élder Aaron T. Hall - "Me glorío en mi Jesús"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/54porter?lang=spa">Por la presidenta Susan H. Porter - "“Heme aquí; envíame”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=spa">Por el élder Neil L. Andersen - "El matrimonio eterno es un viaje eterno"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/56cook?lang=spa">Por el élder Quentin L. Cook - "Las llaves, los convenios y la Pascua de Resurrección"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/57wakolo?lang=spa">Por el élder Taniela B. Wakolo - "Venir a Cristo… juntos"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=spa">Por el élder Gerrit W. Gong - "Es Pascua de Resurrección: Nadie camina solo"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/59oaks?lang=spa">Por el presidente Dallin H. Oaks - "Comentarios finales"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-afternoon-session?lang=spa">View session on churchofjesuschrist.org</a></p>]]></description>
+      <description><![CDATA[<p><strong>Sesión del domingo por la tarde</strong></p><p>Conferencia General de abril de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/51christofferson?lang=spa">Por el presidente D. Todd Christofferson - "El carácter de Cristo"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/52wong?lang=spa">Por el élder Chi Hong (Sam) Wong - "Recordad, recordad"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/53hall?lang=spa">Por el élder Aaron T. Hall - "Me glorío en mi Jesús"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/54porter?lang=spa">Por la presidenta Susan H. Porter - "“Heme aquí; envíame”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=spa">Por el élder Neil L. Andersen - "El matrimonio eterno es un viaje eterno"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/56cook?lang=spa">Por el élder Quentin L. Cook - "Las llaves, los convenios y la Pascua de Resurrección"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/57wakolo?lang=spa">Por el élder Taniela B. Wakolo - "Venir a Cristo… juntos"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=spa">Por el élder Gerrit W. Gong - "Es Pascua de Resurrección: nadie camina solo"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/59oaks?lang=spa">Por el presidente Dallin H. Oaks - "Comentarios finales"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-afternoon-session?lang=spa">View session on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/nlcx0q3hwmv169jdivywid083rj5e8ij94xlhda8-128k-es.mp3" length="113746240" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-afternoon-session-full</guid>
       <pubDate>Sun, 05 Apr 2026 16:00:00 GMT</pubDate>
       <itunes:title>Sesión del domingo por la tarde (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:58:29</itunes:duration>
-      <itunes:summary><![CDATA[<p><strong>Sesión del domingo por la tarde</strong></p><p>Conferencia General de abril de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/51christofferson?lang=spa">Por el presidente D. Todd Christofferson - "El carácter de Cristo"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/52wong?lang=spa">Por el élder Chi Hong (Sam) Wong - "Recordad, recordad"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/53hall?lang=spa">Por el élder Aaron T. Hall - "Me glorío en mi Jesús"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/54porter?lang=spa">Por la presidenta Susan H. Porter - "“Heme aquí; envíame”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=spa">Por el élder Neil L. Andersen - "El matrimonio eterno es un viaje eterno"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/56cook?lang=spa">Por el élder Quentin L. Cook - "Las llaves, los convenios y la Pascua de Resurrección"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/57wakolo?lang=spa">Por el élder Taniela B. Wakolo - "Venir a Cristo… juntos"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=spa">Por el élder Gerrit W. Gong - "Es Pascua de Resurrección: Nadie camina solo"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/59oaks?lang=spa">Por el presidente Dallin H. Oaks - "Comentarios finales"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-afternoon-session?lang=spa">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
+      <itunes:summary><![CDATA[<p><strong>Sesión del domingo por la tarde</strong></p><p>Conferencia General de abril de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/51christofferson?lang=spa">Por el presidente D. Todd Christofferson - "El carácter de Cristo"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/52wong?lang=spa">Por el élder Chi Hong (Sam) Wong - "Recordad, recordad"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/53hall?lang=spa">Por el élder Aaron T. Hall - "Me glorío en mi Jesús"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/54porter?lang=spa">Por la presidenta Susan H. Porter - "“Heme aquí; envíame”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=spa">Por el élder Neil L. Andersen - "El matrimonio eterno es un viaje eterno"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/56cook?lang=spa">Por el élder Quentin L. Cook - "Las llaves, los convenios y la Pascua de Resurrección"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/57wakolo?lang=spa">Por el élder Taniela B. Wakolo - "Venir a Cristo… juntos"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=spa">Por el élder Gerrit W. Gong - "Es Pascua de Resurrección: nadie camina solo"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/59oaks?lang=spa">Por el presidente Dallin H. Oaks - "Comentarios finales"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-afternoon-session?lang=spa">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:season>2026</itunes:season>
       <itunes:episode>400</itunes:episode>
@@ -211,7 +216,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>9</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/49oaks?lang=spa</link>
-      <itunes:image href="https://www.churchofjesuschrist.org/imgs/af3dca94009a11ee8c1feeeeac1e258a5942df12/full/!1400%2C1400/0/default.jpg"/>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/zomba0e1oove1nvezn7lsb9l6hgfxkxbgnx2xbsa/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -228,6 +233,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>8</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/48walker?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/kyixqx93kbk4wzcis7wh5ksdnnesr5w0zkl5ykzj/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -244,6 +250,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>7</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/47mutombo?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/londltgjdry709r2cr7satoqwl5srrewtys64ahe/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -260,7 +267,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>6</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/46renlund?lang=spa</link>
-      <itunes:image href="https://www.churchofjesuschrist.org/imgs/b0rq1vchped3p1d8xiz54ksou1g3rfkkg0vlgl8q/full/!1400%2C1400/0/default.jpg"/>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/jb5uzfe7pvy1z9z4205qd5xcyenfswz0aum0iz95/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -277,7 +284,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>5</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/45rasband?lang=spa</link>
-      <itunes:image href="https://www.churchofjesuschrist.org/imgs/dt7xvjejg8f1rdsbvw0ynn1y6u7dm7wxif0oqary/full/!1400%2C1400/0/default.jpg"/>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/eh9rufgf90el7s0s7kec3mgx3sf1prcazte5wbvz/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -294,6 +301,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>4</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/44rowe?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/zpn53xdxlezatnixmtl4h5kcy56f6yo7hwq4cdio/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -310,7 +318,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>3</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/43larreal?lang=spa</link>
-      <itunes:image href="https://www.churchofjesuschrist.org/imgs/qq45eg945645x4tx0p6g2pm4grf8z8shft0xwmmb/full/!1400%2C1400/0/default.jpg"/>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/1n0y9vuswwuo7svar9y85e3fjh2bocxytf7erms1/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -327,6 +335,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>2</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/42freeman?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/qhemwyu8ehx1ujciyb9b8sk3xjqt6re45uylvymz/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -343,6 +352,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>1</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/41uchtdorf?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/tx9vqk3zs2eoylb8q1lnazdbg5uol5lzih4e4yfl/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -375,6 +385,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>10</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/210soares?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/m1ochv2jv1251c0asnt4c8oc6nw1hchbs1qiz8xd/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -391,6 +402,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>9</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/29matswagothata?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/simzeu8kaytlkrz9v4u3pz63rhw09ajcquuenc8e/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -407,7 +419,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>8</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/28holmes?lang=spa</link>
-      <itunes:image href="https://www.churchofjesuschrist.org/imgs/fmw06rl0j9coeoo4qz3o4r9pazsba4op9ima8lq2/full/!1400%2C1400/0/default.jpg"/>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/8kxhbafstla1u6vilocg3rgkn1nmf613yjxl3eg2/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -424,6 +436,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>7</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/27causse?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/oj5yyiglixvzren591kjnk7usz9jt6ovstl9jdww/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -440,6 +453,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>6</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/26wunderli?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/7nk7lbkcd7lazs3w6ltjoo8jh8u63xdtduxke4dx/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -456,7 +470,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>5</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/25wu?lang=spa</link>
-      <itunes:image href="https://www.churchofjesuschrist.org/imgs/t6b68njdiijgqcj3udlisjoxjdmazf56c1ohx3hz/full/!1400%2C1400/0/default.jpg"/>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/uscw724r8zqekmjr7ost6ryniu91bijxyd8tt5ml/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -473,7 +487,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>4</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/24ortega?lang=spa</link>
-      <itunes:image href="https://www.churchofjesuschrist.org/imgs/s9mvuceqi2j74fihkpj5158pxtn5z8qzkce99r2i/full/!1400%2C1400/0/default.jpg"/>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/sesoks1mgm4a8vgo42nfp8snd94bq243rn5h847y/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -490,7 +504,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>3</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/23stevenson?lang=spa</link>
-      <itunes:image href="https://www.churchofjesuschrist.org/imgs/0667c301505e3a508dcdf09d915fbe998789b878/full/!1400%2C1400/0/default.jpg"/>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/tlg0niclvq5p4t0vl97dz4wtqoa8ev2qv2w0gkxy/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -507,34 +521,36 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>2</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/22larson?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/3l5f4n08254kvtdc8hxmao7l0ku2mmdit925gjug/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
-      <title>Presentado por el presidente D. Todd Christofferson | Sostenimiento de las Autoridades Generales, los Setentas de Área y los Oficiales Generales | April 2026</title>
-      <description><![CDATA[<p><strong>Sostenimiento de las Autoridades Generales, los Setentas de Área y los Oficiales Generales</strong></p><p>By Presentado por el presidente D. Todd Christofferson<br/><em>Segundo Consejero de la Primera Presidencia</em></p><p>Conferencia General de abril de 2026 - Sesión del sábado por la tarde</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/21christofferson?lang=spa">Read or stream on churchofjesuschrist.org</a></p>]]></description>
+      <title>Presentado por el presidente D. Todd Christofferson | Sostenimiento de las Autoridades Generales, los Setenta de Área y los Oficiales Generales | April 2026</title>
+      <description><![CDATA[<p><strong>Sostenimiento de las Autoridades Generales, los Setenta de Área y los Oficiales Generales</strong></p><p>By Presentado por el presidente D. Todd Christofferson<br/><em>Segundo Consejero de la Primera Presidencia</em></p><p>Conferencia General de abril de 2026 - Sesión del sábado por la tarde</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/21christofferson?lang=spa">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/s6umkhe07is0rexrq1h8ggz3lbz0i5srvblty7g4-128k-es.mp3" length="4952160" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-saturday-afternoon-session-21christofferson</guid>
       <pubDate>Sat, 04 Apr 2026 20:01:00 GMT</pubDate>
-      <itunes:title>Presentado por el presidente D. Todd Christofferson | Sostenimiento de las Autoridades Generales, los Setentas de Área y los Oficiales Generales | April 2026</itunes:title>
+      <itunes:title>Presentado por el presidente D. Todd Christofferson | Sostenimiento de las Autoridades Generales, los Setenta de Área y los Oficiales Generales | April 2026</itunes:title>
       <itunes:author>Presentado por el presidente D. Todd Christofferson</itunes:author>
       <itunes:duration>00:05:09</itunes:duration>
-      <itunes:summary><![CDATA[<p><strong>Sostenimiento de las Autoridades Generales, los Setentas de Área y los Oficiales Generales</strong></p><p>By Presentado por el presidente D. Todd Christofferson<br/><em>Segundo Consejero de la Primera Presidencia</em></p><p>Conferencia General de abril de 2026 - Sesión del sábado por la tarde</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/21christofferson?lang=spa">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
+      <itunes:summary><![CDATA[<p><strong>Sostenimiento de las Autoridades Generales, los Setenta de Área y los Oficiales Generales</strong></p><p>By Presentado por el presidente D. Todd Christofferson<br/><em>Segundo Consejero de la Primera Presidencia</em></p><p>Conferencia General de abril de 2026 - Sesión del sábado por la tarde</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/21christofferson?lang=spa">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:season>2026</itunes:season>
       <itunes:episode>1</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/21christofferson?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/agcwcjldr8f4q65c9q7h0f3c7ypdwiotbk4z5q77/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
       <title>Sesión del sábado por la tarde (Full Session) - Conferencia General de abril de 2026</title>
-      <description><![CDATA[<p><strong>Sesión del sábado por la tarde</strong></p><p>Conferencia General de abril de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/21christofferson?lang=spa">Presentado por el presidente D. Todd Christofferson - "Sostenimiento de las Autoridades Generales, los Setentas de Área y los Oficiales Generales"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/22larson?lang=spa">Presentado por Jared B. Larson - "Informe del Departamento de Auditorías de la Iglesia de 2025"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/23stevenson?lang=spa">Por el élder Gary E. Stevenson - "Equipaje perdido, almas redimidas"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/24ortega?lang=spa">Por el élder Eduardo F. Ortega - "Cristo, Autor y Perfeccionador de nuestra fe"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/25wu?lang=spa">Por el élder Wan-Liang Wu - "“Abandonaré todos mis pecados para conocerte”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/26wunderli?lang=spa">por el Hermano David J. Wunderli - "Jesucristo no es nuestra carga; Él es nuestro alivio"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/27causse?lang=spa">Por el élder Gérald Caussé - "Amar a todos; amar a cada persona"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/28holmes?lang=spa">Por el élder Brian J. Holmes - "Jesucristo es el camino"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/29matswagothata?lang=spa">Por el élder Clement M. Matswagothata - "Él los conoce por su nombre"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/210soares?lang=spa">Por el élder Ulisses Soares - "Jesucristo: la Vid verdadera"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-afternoon-session?lang=spa">View session on churchofjesuschrist.org</a></p>]]></description>
+      <description><![CDATA[<p><strong>Sesión del sábado por la tarde</strong></p><p>Conferencia General de abril de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/21christofferson?lang=spa">Presentado por el presidente D. Todd Christofferson - "Sostenimiento de las Autoridades Generales, los Setenta de Área y los Oficiales Generales"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/22larson?lang=spa">Presentado por Jared B. Larson - "Informe del Departamento de Auditorías de la Iglesia de 2025"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/23stevenson?lang=spa">Por el élder Gary E. Stevenson - "Equipaje perdido, almas redimidas"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/24ortega?lang=spa">Por el élder Eduardo F. Ortega - "Cristo, Autor y Perfeccionador de nuestra fe"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/25wu?lang=spa">Por el élder Wan-Liang Wu - "“Abandonaré todos mis pecados para conocerte”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/26wunderli?lang=spa">por el Hermano David J. Wunderli - "Jesucristo no es nuestra carga; Él es nuestro alivio"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/27causse?lang=spa">Por el élder Gérald Caussé - "Amar a todos; amar a cada persona"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/28holmes?lang=spa">Por el élder Brian J. Holmes - "Jesucristo es el camino"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/29matswagothata?lang=spa">Por el élder Clement M. Matswagothata - "Él los conoce por su nombre"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/210soares?lang=spa">Por el élder Ulisses Soares - "Jesucristo: la Vid verdadera"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-afternoon-session?lang=spa">View session on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/hni10kbq409p2ml2zezewkil2srrn7c3lnizw2as-128k-es.mp3" length="113751520" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-saturday-afternoon-session-full</guid>
       <pubDate>Sat, 04 Apr 2026 20:00:00 GMT</pubDate>
       <itunes:title>Sesión del sábado por la tarde (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:58:29</itunes:duration>
-      <itunes:summary><![CDATA[<p><strong>Sesión del sábado por la tarde</strong></p><p>Conferencia General de abril de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/21christofferson?lang=spa">Presentado por el presidente D. Todd Christofferson - "Sostenimiento de las Autoridades Generales, los Setentas de Área y los Oficiales Generales"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/22larson?lang=spa">Presentado por Jared B. Larson - "Informe del Departamento de Auditorías de la Iglesia de 2025"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/23stevenson?lang=spa">Por el élder Gary E. Stevenson - "Equipaje perdido, almas redimidas"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/24ortega?lang=spa">Por el élder Eduardo F. Ortega - "Cristo, Autor y Perfeccionador de nuestra fe"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/25wu?lang=spa">Por el élder Wan-Liang Wu - "“Abandonaré todos mis pecados para conocerte”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/26wunderli?lang=spa">por el Hermano David J. Wunderli - "Jesucristo no es nuestra carga; Él es nuestro alivio"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/27causse?lang=spa">Por el élder Gérald Caussé - "Amar a todos; amar a cada persona"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/28holmes?lang=spa">Por el élder Brian J. Holmes - "Jesucristo es el camino"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/29matswagothata?lang=spa">Por el élder Clement M. Matswagothata - "Él los conoce por su nombre"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/210soares?lang=spa">Por el élder Ulisses Soares - "Jesucristo: la Vid verdadera"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-afternoon-session?lang=spa">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
+      <itunes:summary><![CDATA[<p><strong>Sesión del sábado por la tarde</strong></p><p>Conferencia General de abril de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/21christofferson?lang=spa">Presentado por el presidente D. Todd Christofferson - "Sostenimiento de las Autoridades Generales, los Setenta de Área y los Oficiales Generales"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/22larson?lang=spa">Presentado por Jared B. Larson - "Informe del Departamento de Auditorías de la Iglesia de 2025"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/23stevenson?lang=spa">Por el élder Gary E. Stevenson - "Equipaje perdido, almas redimidas"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/24ortega?lang=spa">Por el élder Eduardo F. Ortega - "Cristo, Autor y Perfeccionador de nuestra fe"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/25wu?lang=spa">Por el élder Wan-Liang Wu - "“Abandonaré todos mis pecados para conocerte”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/26wunderli?lang=spa">por el Hermano David J. Wunderli - "Jesucristo no es nuestra carga; Él es nuestro alivio"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/27causse?lang=spa">Por el élder Gérald Caussé - "Amar a todos; amar a cada persona"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/28holmes?lang=spa">Por el élder Brian J. Holmes - "Jesucristo es el camino"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/29matswagothata?lang=spa">Por el élder Clement M. Matswagothata - "Él los conoce por su nombre"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/210soares?lang=spa">Por el élder Ulisses Soares - "Jesucristo: la Vid verdadera"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-afternoon-session?lang=spa">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:season>2026</itunes:season>
       <itunes:episode>200</itunes:episode>
@@ -555,22 +571,24 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>9</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/19eyring?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/4kn8jwxcclgtvtatkug9j7n13gde8s1289ztxasj/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
-      <title>Por el élder Jorge T. Becerra | El diezmo: Poner a Dios en primer lugar | April 2026</title>
-      <description><![CDATA[<p><strong>El diezmo: Poner a Dios en primer lugar</strong></p><p>By Por el élder Jorge T. Becerra<br/><em>De los Setenta</em></p><p>Conferencia General de abril de 2026 - Sesión del sábado por la mañana</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/18becerra?lang=spa">Read or stream on churchofjesuschrist.org</a></p>]]></description>
+      <title>Por el élder Jorge T. Becerra | El diezmo: poner a Dios en primer lugar | April 2026</title>
+      <description><![CDATA[<p><strong>El diezmo: poner a Dios en primer lugar</strong></p><p>By Por el élder Jorge T. Becerra<br/><em>De los Setenta</em></p><p>Conferencia General de abril de 2026 - Sesión del sábado por la mañana</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/18becerra?lang=spa">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/ydy06ol07kjmg7fv1gh1g02xawq8p054uq559lmk-128k-es.mp3" length="8172480" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-saturday-morning-session-18becerra</guid>
       <pubDate>Sat, 04 Apr 2026 16:08:00 GMT</pubDate>
-      <itunes:title>Por el élder Jorge T. Becerra | El diezmo: Poner a Dios en primer lugar | April 2026</itunes:title>
+      <itunes:title>Por el élder Jorge T. Becerra | El diezmo: poner a Dios en primer lugar | April 2026</itunes:title>
       <itunes:author>Por el élder Jorge T. Becerra</itunes:author>
       <itunes:duration>00:08:30</itunes:duration>
-      <itunes:summary><![CDATA[<p><strong>El diezmo: Poner a Dios en primer lugar</strong></p><p>By Por el élder Jorge T. Becerra<br/><em>De los Setenta</em></p><p>Conferencia General de abril de 2026 - Sesión del sábado por la mañana</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/18becerra?lang=spa">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
+      <itunes:summary><![CDATA[<p><strong>El diezmo: poner a Dios en primer lugar</strong></p><p>By Por el élder Jorge T. Becerra<br/><em>De los Setenta</em></p><p>Conferencia General de abril de 2026 - Sesión del sábado por la mañana</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/18becerra?lang=spa">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:season>2026</itunes:season>
       <itunes:episode>8</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/18becerra?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/vhim4s8mgfwn4545eb0ocmrzqypgqr4diifdgxvz/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -587,7 +605,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>7</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/17teh?lang=spa</link>
-      <itunes:image href="https://www.churchofjesuschrist.org/imgs/q31xhu8pi9818414lsns9zday3cimolmgkvg2kvm/full/!1400%2C1400/0/default.jpg"/>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/srs63hh3q0vztdywcb3gvbsuyadw5c88y9ktquvr/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -604,6 +622,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>6</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/16bednar?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/ibjynpzh92ctp5jb5d52w0litgecjiwn56afk26y/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -620,7 +639,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>5</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/15gilbert?lang=spa</link>
-      <itunes:image href="https://www.churchofjesuschrist.org/imgs/m4bm6mveb5rxslflm89da7wk6rsxwhjotq8us4j3/full/!1400%2C1400/0/default.jpg"/>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/kuukt6mdqdzjd6fgmcwng1ozledfy60s83ba9rfb/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -637,6 +656,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>4</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/14yee?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/71a8ios5dh7jmcbcmrh6by1aeybj2w76lwz2c2ny/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -653,6 +673,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>3</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/13kearon?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/1yhzl9w6fcm7at7lutnmp4dq29bupz35kxne4fwu/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -669,6 +690,7 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>2</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/12christofferson?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/xqyajds142unpme5guheyw1u6v3375djpgaw63sg/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
@@ -685,18 +707,19 @@
       <itunes:season>2026</itunes:season>
       <itunes:episode>1</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/11oaks?lang=spa</link>
+      <itunes:image href="https://www.churchofjesuschrist.org/imgs/7di4rmbr3hvv44bdpgjvnnrxia7wajz5jbuqr7c3/full/!1400%2C1400/0/default.jpg"/>
     </item>
 
     <item>
       <title>Sesión del sábado por la mañana (Full Session) - Conferencia General de abril de 2026</title>
-      <description><![CDATA[<p><strong>Sesión del sábado por la mañana</strong></p><p>Conferencia General de abril de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/11oaks?lang=spa">Por el presidente Dallin H. Oaks - "Introducción"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/12christofferson?lang=spa">Presentado por el presidente D. Todd Christofferson - "Asamblea solemne"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/13kearon?lang=spa">Por el élder Patrick Kearon - "En Sus asuntos"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/14yee?lang=spa">Por la hermana Kristin M. Yee - "Ministrar: “Que os améis unos a otros; como yo os he amado”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/15gilbert?lang=spa">Por el élder Clark G. Gilbert - "Vengan a casa"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/16bednar?lang=spa">Por el élder David A. Bednar - "Todos los que valientemente hayan perseverado"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/17teh?lang=spa">Por el élder Michael John U. Teh - "Sigue al profeta, lo que él dice manda el Señor"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/18becerra?lang=spa">Por el élder Jorge T. Becerra - "El diezmo: Poner a Dios en primer lugar"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/19eyring?lang=spa">Por el presidente Henry B. Eyring - "Oraciones pidiendo paz"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-morning-session?lang=spa">View session on churchofjesuschrist.org</a></p>]]></description>
+      <description><![CDATA[<p><strong>Sesión del sábado por la mañana</strong></p><p>Conferencia General de abril de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/11oaks?lang=spa">Por el presidente Dallin H. Oaks - "Introducción"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/12christofferson?lang=spa">Presentado por el presidente D. Todd Christofferson - "Asamblea solemne"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/13kearon?lang=spa">Por el élder Patrick Kearon - "En Sus asuntos"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/14yee?lang=spa">Por la hermana Kristin M. Yee - "Ministrar: “Que os améis unos a otros; como yo os he amado”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/15gilbert?lang=spa">Por el élder Clark G. Gilbert - "Vengan a casa"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/16bednar?lang=spa">Por el élder David A. Bednar - "Todos los que valientemente hayan perseverado"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/17teh?lang=spa">Por el élder Michael John U. Teh - "Sigue al profeta, lo que él dice manda el Señor"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/18becerra?lang=spa">Por el élder Jorge T. Becerra - "El diezmo: poner a Dios en primer lugar"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/19eyring?lang=spa">Por el presidente Henry B. Eyring - "Oraciones pidiendo paz"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-morning-session?lang=spa">View session on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/86au11so9zecph6r3emlvc502ct4p95okhh9afyc-128k-es.mp3" length="113747200" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-saturday-morning-session-full</guid>
       <pubDate>Sat, 04 Apr 2026 16:00:00 GMT</pubDate>
       <itunes:title>Sesión del sábado por la mañana (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:58:29</itunes:duration>
-      <itunes:summary><![CDATA[<p><strong>Sesión del sábado por la mañana</strong></p><p>Conferencia General de abril de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/11oaks?lang=spa">Por el presidente Dallin H. Oaks - "Introducción"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/12christofferson?lang=spa">Presentado por el presidente D. Todd Christofferson - "Asamblea solemne"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/13kearon?lang=spa">Por el élder Patrick Kearon - "En Sus asuntos"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/14yee?lang=spa">Por la hermana Kristin M. Yee - "Ministrar: “Que os améis unos a otros; como yo os he amado”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/15gilbert?lang=spa">Por el élder Clark G. Gilbert - "Vengan a casa"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/16bednar?lang=spa">Por el élder David A. Bednar - "Todos los que valientemente hayan perseverado"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/17teh?lang=spa">Por el élder Michael John U. Teh - "Sigue al profeta, lo que él dice manda el Señor"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/18becerra?lang=spa">Por el élder Jorge T. Becerra - "El diezmo: Poner a Dios en primer lugar"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/19eyring?lang=spa">Por el presidente Henry B. Eyring - "Oraciones pidiendo paz"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-morning-session?lang=spa">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
+      <itunes:summary><![CDATA[<p><strong>Sesión del sábado por la mañana</strong></p><p>Conferencia General de abril de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/11oaks?lang=spa">Por el presidente Dallin H. Oaks - "Introducción"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/12christofferson?lang=spa">Presentado por el presidente D. Todd Christofferson - "Asamblea solemne"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/13kearon?lang=spa">Por el élder Patrick Kearon - "En Sus asuntos"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/14yee?lang=spa">Por la hermana Kristin M. Yee - "Ministrar: “Que os améis unos a otros; como yo os he amado”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/15gilbert?lang=spa">Por el élder Clark G. Gilbert - "Vengan a casa"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/16bednar?lang=spa">Por el élder David A. Bednar - "Todos los que valientemente hayan perseverado"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/17teh?lang=spa">Por el élder Michael John U. Teh - "Sigue al profeta, lo que él dice manda el Señor"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/18becerra?lang=spa">Por el élder Jorge T. Becerra - "El diezmo: poner a Dios en primer lugar"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/19eyring?lang=spa">Por el presidente Henry B. Eyring - "Oraciones pidiendo paz"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-morning-session?lang=spa">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:season>2026</itunes:season>
       <itunes:episode>100</itunes:episode>

@@ -21,6 +21,9 @@ import {
 import { ConferenceScraper, __retryTuning } from '../src/scraper.js';
 import { generateRssFeed } from '../src/rss-generator.js';
 import type { ConferenceOutput } from '../src/types.js';
+import * as fs from 'fs/promises';
+import * as path from 'path';
+import { fileURLToPath } from 'url';
 
 const originalTuning = { ...__retryTuning };
 
@@ -298,6 +301,76 @@ describe('fetchConferenceImage', () => {
     const result = await scraper.fetchConferenceImage(2026, 4);
     expect(result).toBeNull();
     expect(result ?? '').not.toContain(POISONED_HASH);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Manual conference image override (gc_podcast-uuc)
+// ---------------------------------------------------------------------------
+
+const OVERRIDES_PATH = path.join(
+  path.dirname(fileURLToPath(import.meta.url)),
+  '..',
+  'config',
+  'conference-image-overrides.json',
+);
+
+describe('fetchConferenceImage — manual override (gc_podcast-uuc)', () => {
+  const OVERRIDE_URL = 'https://nanodba.github.io/gc_podcast/channel-art-april-2026.jpg';
+  let savedOverrides: string | null = null;
+
+  beforeEach(async () => {
+    try {
+      savedOverrides = await fs.readFile(OVERRIDES_PATH, 'utf-8');
+    } catch {
+      savedOverrides = null;
+    }
+  });
+
+  afterEach(async () => {
+    if (savedOverrides !== null) {
+      await fs.writeFile(OVERRIDES_PATH, savedOverrides, 'utf-8');
+    } else {
+      await fs.rm(OVERRIDES_PATH, { force: true });
+    }
+  });
+
+  async function writeOverrides(map: Record<string, string>): Promise<void> {
+    await fs.mkdir(path.dirname(OVERRIDES_PATH), { recursive: true });
+    await fs.writeFile(OVERRIDES_PATH, JSON.stringify(map, null, 2), 'utf-8');
+  }
+
+  it('returns the override URL and skips network fetch when the key matches', async () => {
+    await writeOverrides({ '2026-04-eng': OVERRIDE_URL });
+    const mockFetch = vi.fn();
+    vi.stubGlobal('fetch', mockFetch);
+    const scraper = new ConferenceScraper({ useCache: false });
+
+    const result = await scraper.fetchConferenceImage(2026, 4);
+
+    expect(result).toBe(OVERRIDE_URL);
+    expect(mockFetch).not.toHaveBeenCalled();
+  });
+
+  it('builds the lookup key from the configured language (no cross-language match)', async () => {
+    await writeOverrides({ '2026-04-eng': OVERRIDE_URL });
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(makeHtmlResponse(SAMPLE_HASH)));
+    const scraper = new ConferenceScraper({ useCache: false, language: 'spa' });
+
+    const result = await scraper.fetchConferenceImage(2026, 4);
+
+    expect(result).toBe(buildConferenceSquareImageUrl(SAMPLE_HASH));
+  });
+
+  it('ignores a malformed overrides file and scrapes normally', async () => {
+    await fs.mkdir(path.dirname(OVERRIDES_PATH), { recursive: true });
+    await fs.writeFile(OVERRIDES_PATH, '{ not valid json', 'utf-8');
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(makeHtmlResponse(SAMPLE_HASH)));
+    const scraper = new ConferenceScraper({ useCache: false });
+
+    const result = await scraper.fetchConferenceImage(2025, 4);
+
+    expect(result).toBe(buildConferenceSquareImageUrl(SAMPLE_HASH));
   });
 });
 

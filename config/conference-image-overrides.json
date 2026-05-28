@@ -1,0 +1,3 @@
+{
+  "_comment": "Manual channel-image overrides (gc_podcast-uuc). Key format: \"YYYY-MM-<lang>\", e.g. \"2026-04-eng\", \"2025-10-spa\". Value: a full image URL. A matching entry makes the scraper return that URL and skip extraction, so a hand-picked / self-hosted channel image survives re-scrapes. Keys starting with _ are ignored."
+}

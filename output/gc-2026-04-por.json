@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-04-21T15:57:08.050Z",
+  "scraped_at": "2026-05-28T22:05:54.324Z",
   "version": "1.0",
   "conference": {
     "year": 2026,
@@ -30,7 +30,8 @@
               "language": "pt",
               "duration_ms": 159090
             },
-            "duration_ms": 159090
+            "duration_ms": 159090,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/7di4rmbr3hvv44bdpgjvnnrxia7wajz5jbuqr7c3/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Assembleia solene",
@@ -48,10 +49,11 @@
               "language": "pt",
               "duration_ms": 578410
             },
-            "duration_ms": 578410
+            "duration_ms": 578410,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/xqyajds142unpme5guheyw1u6v3375djpgaw63sg/full/!1400%2C1400/0/default.jpg"
           },
           {
-            "title": "O negócio do Senhor",
+            "title": "Os negócios do Senhor",
             "slug": "13kearon",
             "order": 3,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/13kearon?lang=por",
@@ -66,7 +68,8 @@
               "language": "pt",
               "duration_ms": 680180
             },
-            "duration_ms": 680180
+            "duration_ms": 680180,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/1yhzl9w6fcm7at7lutnmp4dq29bupz35kxne4fwu/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Ministrar — “Que vos ameis uns aos outros, como eu vos amei a vós”",
@@ -84,10 +87,11 @@
               "language": "pt",
               "duration_ms": 535070
             },
-            "duration_ms": 535070
+            "duration_ms": 535070,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/71a8ios5dh7jmcbcmrh6by1aeybj2w76lwz2c2ny/full/!1400%2C1400/0/default.jpg"
           },
           {
-            "title": "Ao lar voltai",
+            "title": "“Ao lar voltai”",
             "slug": "15gilbert",
             "order": 5,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/15gilbert?lang=por",
@@ -103,10 +107,10 @@
               "duration_ms": 787020
             },
             "duration_ms": 787020,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/m4bm6mveb5rxslflm89da7wk6rsxwhjotq8us4j3/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/kuukt6mdqdzjd6fgmcwng1ozledfy60s83ba9rfb/full/!1400%2C1400/0/default.jpg"
           },
           {
-            "title": "Todos os que tiverem perseverado valentemente",
+            "title": "“Todos os que tiverem perseverado valentemente”",
             "slug": "16bednar",
             "order": 6,
             "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/04/16bednar?lang=por",
@@ -121,7 +125,8 @@
               "language": "pt",
               "duration_ms": 778010
             },
-            "duration_ms": 778010
+            "duration_ms": 778010,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/ibjynpzh92ctp5jb5d52w0litgecjiwn56afk26y/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "“Segue o profeta, não vais errar”",
@@ -140,7 +145,7 @@
               "duration_ms": 487990
             },
             "duration_ms": 487990,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/q31xhu8pi9818414lsns9zday3cimolmgkvg2kvm/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/srs63hh3q0vztdywcb3gvbsuyadw5c88y9ktquvr/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Dízimo — Colocar Deus em primeiro lugar",
@@ -158,7 +163,8 @@
               "language": "pt",
               "duration_ms": 510780
             },
-            "duration_ms": 510780
+            "duration_ms": 510780,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/vhim4s8mgfwn4545eb0ocmrzqypgqr4diifdgxvz/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Orações pela paz",
@@ -176,7 +182,8 @@
               "language": "pt",
               "duration_ms": 792090
             },
-            "duration_ms": 792090
+            "duration_ms": 792090,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/4kn8jwxcclgtvtatkug9j7n13gde8s1289ztxasj/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
@@ -209,7 +216,8 @@
               "language": "pt",
               "duration_ms": 309510
             },
-            "duration_ms": 309510
+            "duration_ms": 309510,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/agcwcjldr8f4q65c9q7h0f3c7ypdwiotbk4z5q77/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Relatório do Departamento de Auditoria da Igreja, 2025",
@@ -227,7 +235,8 @@
               "language": "pt",
               "duration_ms": 104340
             },
-            "duration_ms": 104340
+            "duration_ms": 104340,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/3l5f4n08254kvtdc8hxmao7l0ku2mmdit925gjug/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Bagagem extraviada, almas redimidas",
@@ -246,7 +255,7 @@
               "duration_ms": 675410
             },
             "duration_ms": 675410,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/0667c301505e3a508dcdf09d915fbe998789b878/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/tlg0niclvq5p4t0vl97dz4wtqoa8ev2qv2w0gkxy/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Cristo: Autor e aperfeiçoador de nossa fé",
@@ -265,7 +274,7 @@
               "duration_ms": 508810
             },
             "duration_ms": 508810,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/s9mvuceqi2j74fihkpj5158pxtn5z8qzkce99r2i/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/sesoks1mgm4a8vgo42nfp8snd94bq243rn5h847y/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "“Abandonarei todos os meus pecados para conhecer-te”",
@@ -284,7 +293,7 @@
               "duration_ms": 504870
             },
             "duration_ms": 504870,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/t6b68njdiijgqcj3udlisjoxjdmazf56c1ohx3hz/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/uscw724r8zqekmjr7ost6ryniu91bijxyd8tt5ml/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Jesus Cristo não é nosso fardo; Ele é nossa fonte de alívio",
@@ -302,7 +311,8 @@
               "language": "pt",
               "duration_ms": 556190
             },
-            "duration_ms": 556190
+            "duration_ms": 556190,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/7nk7lbkcd7lazs3w6ltjoo8jh8u63xdtduxke4dx/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Ame a todos, ame a cada um",
@@ -320,7 +330,8 @@
               "language": "pt",
               "duration_ms": 686590
             },
-            "duration_ms": 686590
+            "duration_ms": 686590,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/oj5yyiglixvzren591kjnk7usz9jt6ovstl9jdww/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Jesus Cristo é o caminho",
@@ -339,7 +350,7 @@
               "duration_ms": 494590
             },
             "duration_ms": 494590,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/fmw06rl0j9coeoo4qz3o4r9pazsba4op9ima8lq2/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/8kxhbafstla1u6vilocg3rgkn1nmf613yjxl3eg2/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Ele conhece vocês pelo nome",
@@ -357,7 +368,8 @@
               "language": "pt",
               "duration_ms": 568370
             },
-            "duration_ms": 568370
+            "duration_ms": 568370,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/simzeu8kaytlkrz9v4u3pz63rhw09ajcquuenc8e/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Jesus Cristo — A Videira Verdadeira",
@@ -375,7 +387,8 @@
               "language": "pt",
               "duration_ms": 699530
             },
-            "duration_ms": 699530
+            "duration_ms": 699530,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/m1ochv2jv1251c0asnt4c8oc6nw1hchbs1qiz8xd/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
@@ -408,7 +421,8 @@
               "language": "pt",
               "duration_ms": 747180
             },
-            "duration_ms": 747180
+            "duration_ms": 747180,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/tx9vqk3zs2eoylb8q1lnazdbg5uol5lzih4e4yfl/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Os melhores e os piores dias",
@@ -426,7 +440,8 @@
               "language": "pt",
               "duration_ms": 518950
             },
-            "duration_ms": 518950
+            "duration_ms": 518950,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/qhemwyu8ehx1ujciyb9b8sk3xjqt6re45uylvymz/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Sinto o amor do Salvador",
@@ -445,7 +460,7 @@
               "duration_ms": 473940
             },
             "duration_ms": 473940,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/qq45eg945645x4tx0p6g2pm4grf8z8shft0xwmmb/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/1n0y9vuswwuo7svar9y85e3fjh2bocxytf7erms1/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Escolher Jesus Cristo como seu guia",
@@ -463,7 +478,8 @@
               "language": "pt",
               "duration_ms": 560290
             },
-            "duration_ms": 560290
+            "duration_ms": 560290,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/zpn53xdxlezatnixmtl4h5kcy56f6yo7hwq4cdio/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Ele ressuscitou",
@@ -482,7 +498,7 @@
               "duration_ms": 620550
             },
             "duration_ms": 620550,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/dt7xvjejg8f1rdsbvw0ynn1y6u7dm7wxif0oqary/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/eh9rufgf90el7s0s7kec3mgx3sf1prcazte5wbvz/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Graças a Jesus Cristo",
@@ -501,7 +517,7 @@
               "duration_ms": 659930
             },
             "duration_ms": 659930,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/b0rq1vchped3p1d8xiz54ksou1g3rfkkg0vlgl8q/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/jb5uzfe7pvy1z9z4205qd5xcyenfswz0aum0iz95/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "A alegria de um relacionamento por convênio com Deus",
@@ -519,7 +535,8 @@
               "language": "pt",
               "duration_ms": 618920
             },
-            "duration_ms": 618920
+            "duration_ms": 618920,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/londltgjdry709r2cr7satoqwl5srrewtys64ahe/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Um tesouro peculiar",
@@ -537,7 +554,8 @@
               "language": "pt",
               "duration_ms": 503270
             },
-            "duration_ms": 503270
+            "duration_ms": 503270,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/kyixqx93kbk4wzcis7wh5ksdnnesr5w0zkl5ykzj/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Vivos em Cristo",
@@ -556,7 +574,7 @@
               "duration_ms": 817450
             },
             "duration_ms": 817450,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/af3dca94009a11ee8c1feeeeac1e258a5942df12/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/zomba0e1oove1nvezn7lsb9l6hgfxkxbgnx2xbsa/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
@@ -590,7 +608,7 @@
               "duration_ms": 730200
             },
             "duration_ms": 730200,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/0h32a0iw3nhi4vqqtx9s8yeqixt8fkq95rmhrtuo/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/wbxbxpfo4o1gx9hx7jmu9fe6im809oz87b00fk3f/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Lembrai-vos, lembrai-vos",
@@ -608,7 +626,8 @@
               "language": "pt",
               "duration_ms": 479910
             },
-            "duration_ms": 479910
+            "duration_ms": 479910,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/95muj48egmb0jjlqvlc1wtgyq8dqh91i4lygt6gu/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "“Glorio-me em meu Jesus”",
@@ -626,7 +645,8 @@
               "language": "pt",
               "duration_ms": 508340
             },
-            "duration_ms": 508340
+            "duration_ms": 508340,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/k9isuaoeee0fedf2zilx4g68pjm1aqj9m66blkzf/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "“Eis-me aqui, envia-me”",
@@ -645,7 +665,7 @@
               "duration_ms": 523059
             },
             "duration_ms": 523059,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/wy00gtr4qgwncmoqco1y7pschbtpvf1t8v37xiav/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/cgkpdffa2eoqnwn5zp07g1hu8rdkceard64ewghj/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "O casamento eterno é uma jornada eterna",
@@ -663,7 +683,8 @@
               "language": "pt",
               "duration_ms": 701530
             },
-            "duration_ms": 701530
+            "duration_ms": 701530,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/927lkm4ne7lsq5fcz35skzls2twyozogz21mqm1w/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Chaves, convênios e a Páscoa",
@@ -682,7 +703,7 @@
               "duration_ms": 691820
             },
             "duration_ms": 691820,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/c0jhwscdxk0tmmb9ggqp9avrey5odiz0y560hhdo/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/rt8bdb264fmf2d2yatr13p5z9enzs6gkl1yzedng/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Achegar-nos a Cristo — Juntos",
@@ -701,7 +722,7 @@
               "duration_ms": 516549
             },
             "duration_ms": 516549,
-            "image_url": "https://www.churchofjesuschrist.org/imgs/zy369qio55sp2nwd7ngmk575bb5qnwh7lg66zpph/full/!1400%2C1400/0/default.jpg"
+            "image_url": "https://www.churchofjesuschrist.org/imgs/76fijcyeqv4qixgr4hrh6tnf3rk7l2jlnjj19tb0/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "É Páscoa: Ninguém anda sozinho",
@@ -719,7 +740,8 @@
               "language": "pt",
               "duration_ms": 668700
             },
-            "duration_ms": 668700
+            "duration_ms": 668700,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/eaatubntp206iwnupdvtpqs9e9320s3f9zlshc0t/full/!1400%2C1400/0/default.jpg"
           },
           {
             "title": "Considerações finais",
@@ -737,7 +759,8 @@
               "language": "pt",
               "duration_ms": 175510
             },
-            "duration_ms": 175510
+            "duration_ms": 175510,
+            "image_url": "https://www.churchofjesuschrist.org/imgs/75oyrny2cw3zko3pvfxm6hlapg5e29nljs7uiew7/full/!1400%2C1400/0/default.jpg"
           }
         ],
         "audio": {
@@ -749,6 +772,6 @@
         "duration_ms": 7109140
       }
     ],
-    "conference_image_url": "https://nanodba.github.io/gc_podcast/channel-art-april-2026.jpg"
+    "conference_image_url": "https://www.churchofjesuschrist.org/imgs/agpdbi5uihlmuiu64c3ikjzpeucram2koakqzdzk/square/1500,1500/0/default"
   }
 }

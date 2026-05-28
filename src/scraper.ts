@@ -5,6 +5,7 @@
 
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import { fileURLToPath } from 'url';
 import {
   findAll,
   findByDataContentType,
@@ -1385,6 +1386,29 @@ export class ConferenceScraper {
       return null;
     }
 
+    // gc_podcast-uuc: a manual override in config/conference-image-overrides.json
+    // wins over scraping so a hand-picked / self-hosted channel image survives
+    // re-scrapes. Keyed by `${year}-${MM}-${language}`. A missing, empty, or
+    // malformed file means "no override" and extraction proceeds normally.
+    const overrideKey = `${year}-${String(month).padStart(2, '0')}-${this.config.language}`;
+    try {
+      const overridesPath = path.join(
+        path.dirname(fileURLToPath(import.meta.url)),
+        '..',
+        'config',
+        'conference-image-overrides.json',
+      );
+      const raw = await fs.readFile(overridesPath, 'utf-8');
+      const overrides = JSON.parse(raw) as Record<string, unknown>;
+      const override = overrides[overrideKey];
+      if (typeof override === 'string' && override.length > 0) {
+        log.info('conference image: using manual override', { key: overrideKey, url: override });
+        return override;
+      }
+    } catch {
+      // No usable override file — fall through to normal extraction.
+    }
+
     const monthName = month === 4 ? 'april' : 'october';
     const collectionUrl = `${BASE_URL}/media/collection/${monthName}-${year}-general-conference?lang=eng`;
 
@@ -1720,7 +1744,15 @@ export class ConferenceScraper {
       // older content where meta.ogTagImageUrl is missing or points at a
       // non-Church URL (og:image and __INITIAL_STATE__ are head-only, so
       // those strategies always no-op against a body fragment).
-      if (!imageUrl) {
+      //
+      // GUARD (gc_podcast-6u8): only trust the body-img fallback when
+      // meta.ogTagImageUrl was present. When it is absent the CDN has not yet
+      // published the talk hero image; the body fragment then contains only
+      // inline article photos whose hashes are non-canonical. Storing those
+      // hashes silently as image_url produces wrong artwork and masks the gap
+      // from the isIncomplete check — prefer null so the conference gets
+      // re-scraped once the CDN catches up.
+      if (!imageUrl && metaOgUrl) {
         const extracted = extractImageFromTalkHtml(apiResponse.content.body);
         if (extracted) {
           imageUrl = extracted.canonicalUrl;
