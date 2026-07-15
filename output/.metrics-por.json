@@ -1,11 +1,11 @@
 {
   "language": "por",
   "conferences_attempted": 5,
-  "conferences_scraped": 4,
-  "conferences_skipped": 1,
+  "conferences_scraped": 1,
+  "conferences_skipped": 4,
   "conferences_failed": 0,
-  "duration_ms": 225044,
+  "duration_ms": 48344,
   "startYear": 2024,
   "endYear": 2026,
-  "timestamp": "2026-06-15T14:21:31.564Z"
+  "timestamp": "2026-07-15T12:34:34.811Z"
 }
