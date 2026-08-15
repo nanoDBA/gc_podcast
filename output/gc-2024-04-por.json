@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-15T12:34:34.804Z",
+  "scraped_at": "2026-08-15T12:40:22.545Z",
   "version": "1.0",
   "conference": {
     "year": 2024,
@@ -708,8 +708,7 @@
             "speaker": {
               "name": "Presidente Russell M. Nelson",
               "role_tag": null,
-              "calling": "Presidente de A Igreja de Jesus Cristo dos Santos dos Últimos Dias",
-              "bio_url": "https://www.churchofjesuschrist.org/learn/presidente-russell-m-nelson?lang=por"
+              "calling": "Presidente de A Igreja de Jesus Cristo dos Santos dos Últimos Dias"
             },
             "audio": {
               "url": "https://assets.churchofjesuschrist.org/557db83cf5cc11eeb8b4eeeeac1e173c344ad45a-32k-pt.mp3",
