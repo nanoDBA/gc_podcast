@@ -1,0 +1,42 @@
+{
+  "scraped_at": "2026-10-01T14:19:56.242Z",
+  "version": "1.0",
+  "conference": {
+    "year": 2026,
+    "month": 10,
+    "name": "Conferência Geral de Outubro de 2026",
+    "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/10?lang=por",
+    "language": "por",
+    "sessions": [
+      {
+        "name": "Sessão da manhã de sábado",
+        "slug": "saturday-morning-session",
+        "order": 1,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/10/saturday-morning-session?lang=por",
+        "talks": []
+      },
+      {
+        "name": "Sessão da tarde de sábado",
+        "slug": "saturday-afternoon-session",
+        "order": 2,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/10/saturday-afternoon-session?lang=por",
+        "talks": []
+      },
+      {
+        "name": "Sessão da manhã de domingo",
+        "slug": "sunday-morning-session",
+        "order": 3,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/10/sunday-morning-session?lang=por",
+        "talks": []
+      },
+      {
+        "name": "Sessão da tarde de domingo",
+        "slug": "sunday-afternoon-session",
+        "order": 4,
+        "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/10/sunday-afternoon-session?lang=por",
+        "talks": []
+      }
+    ],
+    "conference_image_url": "https://www.churchofjesuschrist.org/imgs/vtwgahamt3hj8yamw2scfy4cjsly43w596w30ds3/square/1500,1500/0/default"
+  }
+}
