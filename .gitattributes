@@ -1,7 +1,8 @@
 # Line-ending policy: this repository always stores LF.
 #
-# Why this file exists: the working tree lives on a synced folder (Google Drive /
-# Syncthing), which rewrites text files to CRLF behind git's back. Without `text`
+# Why this file exists: the working tree lives on a synced folder (OneDrive here;
+# Google Drive / Syncthing elsewhere) and is edited by Windows tools that write
+# CRLF behind git's back. Without `text`
 # attributes git compares raw bytes, so every synced file shows as wholly modified
 # and real changes get buried in thousand-line whitespace diffs.
 #
