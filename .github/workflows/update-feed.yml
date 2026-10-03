@@ -373,11 +373,15 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: `Site drift detected: ${context.workflow} run ${context.runNumber}`,
-              body: `The drift canary (\`src/check-drift.ts\`) found that a fresh scrape of the latest complete conference no longer matches the committed data. The Church website source or API has probably changed.
-
-See the "Check for site drift (canary)" step in [the run](${runUrl}).
-
-The feed update itself was not blocked. Investigate the scraper and close this issue when resolved.`,
+              // Joined lines, not a multi-line template literal: a line at
+              // column 0 would end the YAML `script: |` block.
+              body: [
+                'The drift canary (`src/check-drift.ts`) found that a fresh scrape of the latest complete conference no longer matches the committed data. The Church website source or API has probably changed.',
+                '',
+                `See the "Check for site drift (canary)" step in [the run](${runUrl}).`,
+                '',
+                'The feed update itself was not blocked. Investigate the scraper and close this issue when resolved.'
+              ].join('\n'),
               labels: ['site-drift', 'automated']
             });
 
