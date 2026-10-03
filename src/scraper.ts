@@ -963,7 +963,11 @@ export class ConferenceScraper {
         });
       }
 
-      if (talks.length > 0) {
+      // Keep a session that has a session link even when no talks are listed
+      // yet: talks are published progressively, and dropping the bare session
+      // would lose its session-level audio and let a 3-of-4-session file look
+      // complete (isIncomplete only sees sessions that are present).
+      if (talks.length > 0 || sessionUrl) {
         sessions.push({
           name: header.title,
           slug: sessionSlug || `session-${i + 1}`,
@@ -1799,6 +1803,15 @@ export class ConferenceScraper {
     // Get audio URL from meta.audio array
     const audioEntry = apiResponse.meta.audio?.find((a) => a.variant === 'audio');
     if (!audioEntry?.mediaUrl) {
+      // Absent/empty meta.audio just means "not published yet" (quiet). A
+      // populated array without an 'audio' variant means the upstream field
+      // moved: surface it in CI logs instead of silently losing the MP3.
+      if (apiResponse.meta.audio && apiResponse.meta.audio.length > 0) {
+        log.warn('meta.audio present but has no "audio" variant (possible API drift)', {
+          title: apiResponse.meta.title,
+          variants: apiResponse.meta.audio.map((a) => a.variant),
+        });
+      }
       return undefined;
     }
 
@@ -2243,8 +2256,10 @@ export function __parsersForTesting(config: Partial<ScraperConfig> = {}) {
       url: string,
       httpStatus: number,
     ): Session[];
+    extractAudioFromApi(apiResponse: ApiResponse): AudioAsset | undefined;
   };
   return {
+    audioFromApi: (apiResponse: ApiResponse) => scraper.extractAudioFromApi(apiResponse),
     viaDocMap: (html: string, langCode = 'eng') => scraper.extractSessionsViaDocMap(html, langCode),
     viaDataContentType: (html: string, langCode = 'eng') =>
       scraper.extractSessionsViaDataContentType(html, langCode),

@@ -142,6 +142,11 @@ function formatRfc2822Date(date: Date): string {
   return date.toUTCString();
 }
 
+/** True when an audio asset has a non-blank URL (blank enclosures must never be emitted). */
+function hasAudioUrl<T extends { url: string }>(audio?: T): audio is T {
+  return !!audio?.url && audio.url.trim() !== '';
+}
+
 function appendCacheBust(url: string, version: string): string {
   const sep = url.includes('?') ? '&' : '?';
   return `${url}${sep}v=${version}`;
@@ -242,7 +247,7 @@ function generateTalkItem(
   talk: Talk,
   pubDate: Date,
 ): string {
-  if (!talk.audio?.url) return '';
+  if (!hasAudioUrl(talk.audio)) return '';
 
   const guid = generateGuid(conference, session, talk);
   const confName = formatConferenceShortName(conference);
@@ -280,7 +285,7 @@ function generateTalkItem(
  * Generate RSS item for a full session
  */
 function generateSessionItem(conference: Conference, session: Session, pubDate: Date): string {
-  if (!session.audio?.url) return '';
+  if (!hasAudioUrl(session.audio)) return '';
 
   const guid = generateGuid(conference, session);
   const title = `${session.name} (Full Session) - ${conference.name}`;
@@ -445,7 +450,7 @@ export function generateRssFeed(
       if (opts.includeTalks) {
         const sortedTalks = [...session.talks].sort((a, b) => b.order - a.order);
         for (const talk of sortedTalks) {
-          if (talk.audio?.url) {
+          if (hasAudioUrl(talk.audio)) {
             // Each talk's pubDate = sessionStart + (order × 60 s).
             // Order is 1-based, so talk 1 → +60 s, talk 2 → +120 s, etc.
             const talkDate = new Date(sessionStart.getTime() + talk.order * 60 * 1000);
@@ -457,7 +462,7 @@ export function generateRssFeed(
       // Add session episode AFTER all talks so it appears after (lower pubDate
       // than) any individual talk from this session when emitted in order.
       // The session item uses sessionStart with no additional offset.
-      if (opts.includeSessions && session.audio?.url) {
+      if (opts.includeSessions && hasAudioUrl(session.audio)) {
         items.push(generateSessionItem(conf, session, sessionStart));
       }
     }

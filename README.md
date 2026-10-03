@@ -100,6 +100,14 @@ npm run dev -- -y 2024 -m 4           # April 2024
 npm run dev -- -y 2025 -m 10 -l spa   # October 2025, Spanish
 ```
 
+### Check for Site Drift
+
+```bash
+npm run check-drift -- -l all         # Live re-scrape of the latest complete conference vs committed JSON
+```
+
+Exits 1 if talks or audio disappear (the Church site changed). CI runs it on every feed update and opens a `site-drift` issue on failure.
+
 ### Scrape Multiple Conferences
 
 ```bash
