@@ -75,9 +75,7 @@ describe('ApiResponseSchema', () => {
     const result = ApiResponseSchema.safeParse(withOg);
     expect(result.success).toBe(true);
     if (result.success) {
-      expect(result.data.meta.ogTagImageUrl).toContain(
-        'ibjynpzh92ctp5jb5d52w0litgecjiwn56afk26y',
-      );
+      expect(result.data.meta.ogTagImageUrl).toContain('ibjynpzh92ctp5jb5d52w0litgecjiwn56afk26y');
     }
   });
 });

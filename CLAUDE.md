@@ -61,6 +61,7 @@ npm run format:check     # Prettier check
 npm run dev              # Scrape a single conference (current)
 npm run feed             # Generate RSS feeds from output/ JSON
 npm run update           # Full pipeline: scrape-all + feed generation
+npm run check-feed-health # Check the published feeds: current-conference episodes present once due
 ```
 
 ## Architecture Overview
