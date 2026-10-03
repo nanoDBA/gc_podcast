@@ -60,6 +60,7 @@ npm run lint             # ESLint on src/ and tests/
 npm run format:check     # Prettier check
 npm run dev              # Scrape a single conference (current)
 npm run feed             # Generate RSS feeds from output/ JSON
+npm run check-drift      # Canary: live re-scrape of latest complete conference vs committed JSON
 npm run update           # Full pipeline: scrape-all + feed generation
 ```
 

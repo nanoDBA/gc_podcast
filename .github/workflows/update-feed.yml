@@ -9,7 +9,7 @@ name: Update Podcast Feed
 #     * contents:write  — write scraped conference data and feed XMLs to output/ and docs/
 #     * pages:write     — enable GitHub Pages deployment via Pages API in deploy job
 #     * id-token:write  — OpenID Connect token for GitHub Pages environment
-#     * issues:write    — file alerts on scrape failures for operator review
+#     * issues:write    — file alerts on scrape failures and site-drift detections for operator review
 #   - deploy job:
 #     * pages:write     — deploy built artifacts to GitHub Pages
 #     * id-token:write  — OpenID Connect token for secure GitHub Pages deployment
@@ -130,6 +130,14 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Check for site drift (canary)
+        # Live, uncached re-scrape of the latest complete conference compared
+        # with the committed JSON. Never blocks the feed update; a failure
+        # opens a `site-drift` issue in the step below.
+        id: drift
+        run: npx tsx src/check-drift.ts -l all
+        continue-on-error: true
 
       - name: Restore cache
         # Key is per-commit so each run has its own save slot, but restore-keys
@@ -337,6 +345,41 @@ jobs:
 
           $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
+
+      - name: Alert on site drift
+        if: always() && steps.drift.outcome == 'failure'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const { data: open } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'site-drift',
+              state: 'open',
+              per_page: 1
+            });
+            if (open.length > 0) {
+              // Avoid one issue per scheduled run while drift persists.
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: open[0].number,
+                body: `Drift canary still failing: [run ${context.runNumber}](${runUrl}).`
+              });
+              return;
+            }
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Site drift detected: ${context.workflow} run ${context.runNumber}`,
+              body: `The drift canary (\`src/check-drift.ts\`) found that a fresh scrape of the latest complete conference no longer matches the committed data. The Church website source or API has probably changed.
+
+See the "Check for site drift (canary)" step in [the run](${runUrl}).
+
+The feed update itself was not blocked. Investigate the scraper and close this issue when resolved.`,
+              labels: ['site-drift', 'automated']
+            });
 
       - name: Alert on workflow failure
         if: failure()

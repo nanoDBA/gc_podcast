@@ -9,6 +9,7 @@
     "generate-index": "npx tsx src/generate-index.ts",
     "scrape-all": "npx tsx src/scrape-all.ts",
     "update": "npm run scrape-all && npm run feed",
+    "check-drift": "npx tsx src/check-drift.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint src tests --ext .ts",
