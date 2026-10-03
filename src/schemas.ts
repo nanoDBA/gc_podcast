@@ -150,6 +150,28 @@ export type ApiResponseZ = z.infer<typeof ApiResponseSchema>;
 // detectApiDrift is pragmatic: it does NOT recurse deeply into every schema.
 // We only watch the three surfaces scraper.ts actually touches.
 
+/**
+ * Fields the live content API sends that the scraper deliberately does not
+ * read. Observed on every response as of 2026-10-03; without this list the
+ * drift warning fired on every run and would bury a genuinely new field.
+ * Add a key here only after confirming the scraper does not need it.
+ */
+export const IGNORED_API_KEYS: ReadonlySet<string> = new Set([
+  'pids',
+  'tableOfContentsUri',
+  'uri',
+  'verified',
+  'restricted',
+  'meta.archived',
+  'meta.canonicalUrl',
+  'meta.contentType',
+  'meta.scopedClassName',
+  'meta.structuredData',
+  'meta.hasChat',
+  'content.head',
+  'content.footnotes',
+]);
+
 /** Well-formed drift report produced by {@link detectApiDrift}. */
 export interface DriftReport<T> {
   /** True when zod safeParse succeeded (may still have drift signals). */
@@ -274,7 +296,7 @@ export function detectApiDrift<T>(parsed: unknown, schema: z.ZodType<T>): DriftR
     ok: true,
     data: result.data,
     issues: [],
-    unknownKeys,
+    unknownKeys: unknownKeys.filter((key) => !IGNORED_API_KEYS.has(key)),
     softSignals,
   };
 }

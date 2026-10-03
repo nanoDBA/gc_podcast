@@ -8,7 +8,7 @@
  *   - a structurally wrong payload fails safeParse and reports issues
  */
 import { describe, it, expect } from 'vitest';
-import { ApiResponseSchema, detectApiDrift } from '../src/schemas.js';
+import { ApiResponseSchema, IGNORED_API_KEYS, detectApiDrift } from '../src/schemas.js';
 
 const MINIMAL_VALID = () => ({
   meta: {
@@ -39,6 +39,19 @@ describe('detectApiDrift', () => {
     expect(report.ok).toBe(true);
     expect(report.unknownKeys).toContain('newTopLevelField');
     expect(report.unknownKeys).toContain('meta.newMetaField');
+  });
+
+  it('does not flag the fields the live API already sends but we never read', () => {
+    // gc_podcast drift-baseline: these keys arrived on every response as of
+    // 2026-10-03, so warning on them every run buried any real drift signal.
+    const raw = MINIMAL_VALID() as Record<string, unknown>;
+    for (const key of IGNORED_API_KEYS) {
+      const [head, tail] = key.split('.');
+      if (tail) (raw[head] as Record<string, unknown>)[tail] = 'x';
+      else raw[head] = 'x';
+    }
+    const report = detectApiDrift(raw, ApiResponseSchema);
+    expect(report.unknownKeys).toEqual([]);
   });
 
   it('completely wrong shape fails safeParse and reports zod issues', () => {
