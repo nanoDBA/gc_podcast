@@ -37,3 +37,15 @@ npm-debug.log*
 .dolt/
 *.db
 .beads-credential-key
+
+# Local secrets (public repo: never commit)
+.env
+.env.*
+!.env.example
+
+# Local-only agent instructions (machine paths, cross-project pointers)
+CLAUDE.local.md
+
+# Beads runtime files outside .beads/.gitignore (that file is managed by bd init)
+.beads.gate.lock
+.beads/dolt-server-config.yaml
