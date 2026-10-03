@@ -7,10 +7,11 @@ import * as fs from 'fs/promises';
 import * as fsSync from 'fs';
 import * as path from 'path';
 import { scrapeConference, ParserCircuitBreakerError } from './scraper.js';
-import { ConferenceOutput, Language } from './types.js';
+import { Conference, ConferenceOutput, Language } from './types.js';
 import { ConferenceOutputSchema } from './schemas.js';
 import { validateVersion, VersionMismatchError, CURRENT_SCHEMA_VERSION } from './migrations.js';
 import { log } from './logger.js';
+import { mergePreviousScrape } from './merge-previous.js';
 
 /**
  * Version string written into every freshly-scraped output JSON.
@@ -266,6 +267,16 @@ export async function isIncomplete(filePath: string): Promise<IncompleteResult> 
   return { incomplete: reasons.length > 0, reasons };
 }
 
+async function withPreviousData(outputPath: string, fresh: Conference): Promise<Conference> {
+  try {
+    const prev = JSON.parse(await fs.readFile(outputPath, 'utf-8')) as ConferenceOutput;
+    if (!prev?.conference?.sessions) return fresh;
+    return mergePreviousScrape(prev.conference, fresh);
+  } catch {
+    return fresh; // no previous file or unreadable: nothing to preserve
+  }
+}
+
 async function main() {
   const config = parseArgs();
 
@@ -334,11 +345,15 @@ async function main() {
     console.log(`[scrape] ${conf.year} ${conf.month === 4 ? 'April' : 'October'}...`);
 
     try {
-      const conference = await scrapeConference(conf.year, conf.month, {
+      let conference = await scrapeConference(conf.year, conf.month, {
         language: config.language,
         useCache: !disableCache,
         cacheDir: '.cache',
       });
+
+      // Never regress: keep audio/artwork an earlier scrape already captured
+      // when this scrape lost it (transient failure, site briefly dropping a field).
+      conference = await withPreviousData(outputPath, conference);
 
       const output: ConferenceOutput = {
         scraped_at: new Date().toISOString(),
