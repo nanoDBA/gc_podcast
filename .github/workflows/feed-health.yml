@@ -1,0 +1,95 @@
+name: Feed Health
+
+# Checks the PUBLISHED feeds (what podcast apps fetch from GitHub Pages), not
+# the scraper: current-conference sessions/talks present once due, feed still
+# being rebuilt during the conference window, enclosures reachable. Any upstream
+# failure (site change, scraper bug, broken workflow, failed deploy) surfaces
+# here as a late or missing episode.
+#
+# Deliberately a separate workflow: it only reads public URLs, so a fault in
+# this file or script can never stop update-feed.yml from publishing.
+#
+# Permissions: contents:read to check out the script; issues:write to open a
+# `feed-health` issue (or comment on the open one) when the check fails.
+
+on:
+  schedule:
+    # Conference window (Apr/Oct 1st-16th): every 6 hours.
+    - cron: '30 */6 1-16 4,10 *'
+    # Rest of the year: weekly enclosure/feed sanity check (Monday).
+    - cron: '30 12 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: feed-health
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check published feeds
+        # pipefail: without it the step would take tee's exit code and never fail.
+        run: |
+          set -o pipefail
+          npx tsx src/check-feed-health.ts --base-url "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}" | tee feed-health.txt
+
+      - name: Alert on unhealthy feed
+        if: failure()
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.existsSync('feed-health.txt') ? fs.readFileSync('feed-health.txt', 'utf8') : '(no report)';
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            // Joined lines, not a multi-line template literal: a line at
+            // column 0 would end the YAML `script: |` block.
+            const body = [
+              `Feed health check failed ([run ${context.runNumber}](${runUrl})).`,
+              '',
+              '```',
+              report.trim(),
+              '```'
+            ].join('\n');
+            const { data: open } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'feed-health',
+              state: 'open',
+              per_page: 1
+            });
+            if (open.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: open[0].number,
+                body
+              });
+              return;
+            }
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Published feed unhealthy: episodes late, missing or unreachable',
+              body,
+              labels: ['feed-health', 'automated']
+            });
