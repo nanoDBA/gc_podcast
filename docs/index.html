@@ -68,6 +68,7 @@
       margin-bottom: 10px;
     }
     .feed-item strong { min-width: 90px; }
+    .feed-url, .feed-url-small { -webkit-user-select: all; user-select: all; }
     .feed-url-small {
       flex: 1;
       font-family: 'SF Mono', Monaco, monospace;
@@ -204,7 +205,7 @@
     <strong>Podcast Feed URL:</strong>
     <div class="feed-url" id="feedUrl">https://nanodba.github.io/gc_podcast/audio.xml</div>
     <a href="audio.xml" class="btn">View Feed</a>
-    <button class="btn btn-secondary" onclick="copyFeedUrl()">Copy URL</button>
+    <button class="btn btn-secondary" onclick="copyFeed('feedUrl', this)">Copy URL</button>
   </div>
 
   <div class="features">
@@ -279,17 +280,17 @@
     <div class="feed-item">
       <strong>English</strong>
       <span class="feed-url-small" id="feedENG">audio.xml</span>
-      <button class="btn-copy" onclick="copyFeed('feedENG')">Copy</button>
+      <button class="btn-copy" onclick="copyFeed('feedENG', this)">Copy</button>
     </div>
     <div class="feed-item">
       <strong>Spanish</strong>
       <span class="feed-url-small" id="feedSPA">audio-es.xml</span>
-      <button class="btn-copy" onclick="copyFeed('feedSPA')">Copy</button>
+      <button class="btn-copy" onclick="copyFeed('feedSPA', this)">Copy</button>
     </div>
     <div class="feed-item">
       <strong>Portuguese</strong>
       <span class="feed-url-small" id="feedPOR">audio-pt.xml</span>
-      <button class="btn-copy" onclick="copyFeed('feedPOR')">Copy</button>
+      <button class="btn-copy" onclick="copyFeed('feedPOR', this)">Copy</button>
     </div>
   </div>
 
@@ -338,12 +339,12 @@
     <p>
       <a href="https://github.com/nanoDBA/gc_podcast">View on GitHub</a>
     </p>
-    <div class="last-updated">Last updated: <span id="lastUpdated">2026-10-04T18:02:35.727Z</span> UTC</div>
+    <div class="last-updated">Last updated: <span id="lastUpdated">2026-10-04T18:05:17.656Z</span> UTC</div>
   </footer>
 
   <script>
     const baseUrl = window.location.hostname !== 'localhost'
-      ? window.location.origin + window.location.pathname.replace(//[^/]*$/, '')
+      ? window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '')
       : 'https://nanodba.github.io/gc_podcast';
 
     // Update all feed URLs
@@ -352,30 +353,69 @@
     document.getElementById('feedSPA').textContent = baseUrl + '/audio-es.xml';
     document.getElementById('feedPOR').textContent = baseUrl + '/audio-pt.xml';
 
-    function copyFeedUrl() {
-      copyToClipboard(document.getElementById('feedUrl').textContent, event.target);
-    }
-
-    function copyFeed(id) {
-      copyToClipboard(document.getElementById(id).textContent, event.target);
-    }
-
-    function copyToClipboard(text, btn) {
-      navigator.clipboard.writeText(text).then(() => {
-        const original = btn.textContent;
-        btn.textContent = 'Copied!';
-        btn.classList.add('copied');
+    // Copy that works on iOS Safari and in-app browsers (gc_podcast iOS copy
+    // bug): async Clipboard API first, then a selection + execCommand fallback
+    // done the way WebKit requires, then select the text and ask for a long-press.
+    function copyFeed(id, btn) {
+      const el = document.getElementById(id);
+      const text = el.textContent.trim();
+      const done = (ok) => {
+        const original = btn.dataset.label || btn.textContent;
+        btn.dataset.label = original;
+        btn.textContent = ok ? 'Copied!' : 'Press and hold to copy';
+        btn.classList.toggle('copied', ok);
+        if (!ok) selectText(el);
         setTimeout(() => {
           btn.textContent = original;
           btn.classList.remove('copied');
-        }, 1500);
-      });
+        }, ok ? 1500 : 4000);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => done(true), () => done(legacyCopy(text)));
+      } else {
+        done(legacyCopy(text));
+      }
+    }
+
+    function legacyCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.contentEditable = 'true';
+      ta.style.position = 'fixed';
+      ta.style.top = '0';
+      ta.style.opacity = '0';
+      ta.style.fontSize = '16px'; // below 16px iOS zooms the page on focus
+      document.body.appendChild(ta);
+      const range = document.createRange();
+      range.selectNodeContents(ta);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      ta.setSelectionRange(0, text.length); // iOS ignores ta.select()
+      let ok = false;
+      try {
+        ok = document.execCommand('copy');
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(ta);
+      sel.removeAllRanges();
+      return ok;
+    }
+
+    function selectText(el) {
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
     }
 
     // Set up one-click subscribe links
     // Reference: https://github.com/nathangathright/podcast-platform-links
     const feedUrl = baseUrl + '/audio.xml';
-    const feedUrlNoProtocol = feedUrl.replace(/^https?:\/\/, '');
+    const feedUrlNoProtocol = feedUrl.replace(/^https?:\/\//, '');
     const encodedFeed = encodeURIComponent(feedUrl);
 
     // Apple Podcasts - uses podcast:// with URL (no protocol)
