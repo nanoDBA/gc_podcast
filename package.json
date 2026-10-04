@@ -1,6 +1,6 @@
 {
   "name": "gc-podcast-scraper",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "General Conference metadata and audio link extractor",
   "type": "module",
   "scripts": {
