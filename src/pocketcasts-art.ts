@@ -13,8 +13,8 @@
  */
 import { fingerprintDistance, fingerprintJpeg } from './image-fingerprint.js';
 
-/** Our published feeds, including the alternate English address. */
-export const POCKETCASTS_FEED_FILES = ['audio.xml', 'audio-en.xml', 'audio-es.xml', 'audio-pt.xml'];
+/** Our published feeds. */
+export const POCKETCASTS_FEED_FILES = ['audio.xml', 'audio-es.xml', 'audio-pt.xml'];
 
 /**
  * Same picture re-encoded by Pocket Casts at 400px scores ~0.2; different

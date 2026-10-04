@@ -68,7 +68,7 @@ interface RssGeneratorOptions {
   /** Base URL where the feed will be hosted */
   feedBaseUrl?: string;
   /**
-   * File name the feed is published as (e.g. "audio-en.xml"). Drives the
+   * File name the feed is published as (e.g. "audio-es.xml"). Drives the
    * atom:link rel="self" URL and therefore podcast:guid. Defaults to the
    * per-language name (audio.xml / audio-es.xml / audio-pt.xml).
    */
@@ -508,7 +508,7 @@ export async function generateAndSaveFeed(
   const imageOverrides =
     options?.imageOverrides ?? (await loadImageOverrides(options?.imageOverridesPath));
   // Name the file actually written in the self link, so an alias such as
-  // audio-en.xml is not folded back into audio.xml (gc_podcast-bf8).
+  // any feed published under another file name names itself (gc_podcast-bf8).
   const feed = generateRssFeed(conferences, {
     ...options,
     imageOverrides,

@@ -70,7 +70,7 @@ describe('RSS feed Podcasting 2.0 namespace', () => {
   });
 });
 
-// gc_podcast-bf8 alias feed: audio-en.xml must name ITSELF in atom:link
+// gc_podcast-bf8: a feed published under another file name must name ITSELF in atom:link
 // rel="self" (and so get its own podcast:guid). Otherwise apps that honor the
 // self link or match on podcast:guid fold it back into audio.xml.
 describe('self link names the file actually published', () => {
@@ -84,10 +84,10 @@ describe('self link names the file actually published', () => {
     );
   });
 
-  it('uses the alias file name and a distinct podcast:guid for audio-en.xml', () => {
+  it('uses the published file name and a distinct podcast:guid for another file', () => {
     const main = generateRssFeed(makeSynthetic(), base);
-    const alias = generateRssFeed(makeSynthetic(), { ...base, feedFile: 'audio-en.xml' });
-    expect(selfOf(alias)).toBe('https://example.test/gc/audio-en.xml');
+    const alias = generateRssFeed(makeSynthetic(), { ...base, feedFile: 'audio-alt.xml' });
+    expect(selfOf(alias)).toBe('https://example.test/gc/audio-alt.xml');
     expect(guidOf(alias)).not.toBe(guidOf(main));
   });
 
