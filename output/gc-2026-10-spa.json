@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-04T14:24:24.707Z",
+  "scraped_at": "2026-10-04T14:59:21.361Z",
   "version": "1.0",
   "conference": {
     "year": 2026,
@@ -51,6 +51,6 @@
         "talks": []
       }
     ],
-    "conference_image_url": "https://www.churchofjesuschrist.org/imgs/vtwgahamt3hj8yamw2scfy4cjsly43w596w30ds3/square/1500,1500/0/default"
+    "conference_image_url": "https://nanodba.github.io/gc_podcast/channel-art-october-2026-es-pt.jpg"
   }
 }

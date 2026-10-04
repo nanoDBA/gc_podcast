@@ -10,7 +10,7 @@
     <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     <language>en</language>
     <copyright>© 2026 by Intellectual Reserve, Inc. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 04 Oct 2026 14:25:03 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 15:00:01 GMT</lastBuildDate>
     <generator>gc-podcast-scraper/1.2.0</generator>
     <atom:link href="https://nanoDBA.github.io/gc_podcast/audio.xml" rel="self" type="application/rss+xml"/>
     <podcast:guid>a4fcacd4-7d70-52bd-865c-5aa9265bd20d</podcast:guid>
@@ -26,9 +26,9 @@
     <itunes:category text="Religion &amp; Spirituality">
       <itunes:category text="Christianity"/>
     </itunes:category>
-    <itunes:image href="https://www.churchofjesuschrist.org/imgs/vtwgahamt3hj8yamw2scfy4cjsly43w596w30ds3/square/1500,1500/0/default?v=2026-10"/>
+    <itunes:image href="https://nanodba.github.io/gc_podcast/channel-art-october-2026-en.jpg?v=2026-10"/>
     <image>
-      <url>https://www.churchofjesuschrist.org/imgs/vtwgahamt3hj8yamw2scfy4cjsly43w596w30ds3/square/1500,1500/0/default?v=2026-10</url>
+      <url>https://nanodba.github.io/gc_podcast/channel-art-october-2026-en.jpg?v=2026-10</url>
       <title>General Conference - The Church of Jesus Christ of Latter-day Saints</title>
       <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     </image>
@@ -44,7 +44,7 @@
       <itunes:duration>01:59:37</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Saturday Afternoon Session</strong></p><p>October 2026 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/10/saturday-afternoon-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
+      <itunes:season>202610</itunes:season>
       <itunes:episode>200</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/10/saturday-afternoon-session?lang=eng</link>
     </item>
@@ -60,7 +60,7 @@
       <itunes:duration>01:56:24</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Saturday Morning Session</strong></p><p>October 2026 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/10/saturday-morning-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
+      <itunes:season>202610</itunes:season>
       <itunes:episode>100</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/10/saturday-morning-session?lang=eng</link>
     </item>
@@ -70,14 +70,14 @@
       <description><![CDATA[<p><strong>Closing Remarks</strong></p><p>By President Dallin H. Oaks<br/><em>President of The Church of Jesus Christ of Latter-day Saints</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><small>Speaker: First Presidency</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/59oaks?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/l66awxxycj8ifet93izjar84wvvu7k2ioj5mupz6-128k-en.mp3" length="2817280" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-afternoon-session-59oaks</guid>
-      <pubDate>Sun, 05 Apr 2026 16:09:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 20:09:00 GMT</pubDate>
       <itunes:title>President Dallin H. Oaks | Closing Remarks | April 2026</itunes:title>
       <itunes:author>President Dallin H. Oaks</itunes:author>
       <itunes:duration>00:02:56</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Closing Remarks</strong></p><p>By President Dallin H. Oaks<br/><em>President of The Church of Jesus Christ of Latter-day Saints</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><small>Speaker: First Presidency</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/59oaks?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>9</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>59</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/59oaks?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/75oyrny2cw3zko3pvfxm6hlapg5e29nljs7uiew7/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -87,14 +87,14 @@
       <description><![CDATA[<p><strong>’Tis Eastertide: No One Walks Alone</strong></p><p>By Elder Gerrit W. Gong<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/ca6qcutqpwsky40azve38ch9gck5kk11qlkiwg00-128k-en.mp3" length="10707200" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-afternoon-session-58gong</guid>
-      <pubDate>Sun, 05 Apr 2026 16:08:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 20:08:00 GMT</pubDate>
       <itunes:title>Elder Gerrit W. Gong | ’Tis Eastertide: No One Walks Alone | April 2026</itunes:title>
       <itunes:author>Elder Gerrit W. Gong</itunes:author>
       <itunes:duration>00:11:09</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>’Tis Eastertide: No One Walks Alone</strong></p><p>By Elder Gerrit W. Gong<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>8</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>58</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/eaatubntp206iwnupdvtpqs9e9320s3f9zlshc0t/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -104,14 +104,14 @@
       <description><![CDATA[<p><strong>Come unto Christ—Together</strong></p><p>By Elder Taniela B. Wakolo<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/57wakolo?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/rt3ruv05ut32ntskcxl629lb9vd6oafafg8hhrtl-128k-en.mp3" length="8273920" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-afternoon-session-57wakolo</guid>
-      <pubDate>Sun, 05 Apr 2026 16:07:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 20:07:00 GMT</pubDate>
       <itunes:title>Elder Taniela B. Wakolo | Come unto Christ—Together | April 2026</itunes:title>
       <itunes:author>Elder Taniela B. Wakolo</itunes:author>
       <itunes:duration>00:08:37</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Come unto Christ—Together</strong></p><p>By Elder Taniela B. Wakolo<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/57wakolo?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>7</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>57</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/57wakolo?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/76fijcyeqv4qixgr4hrh6tnf3rk7l2jlnjj19tb0/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -121,14 +121,14 @@
       <description><![CDATA[<p><strong>Keys, Covenants, and Easter</strong></p><p>By Elder Quentin L. Cook<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/56cook?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/a0ikyusnmid6yi75wh1eoflwzejxbsulqqdo4kzt-128k-en.mp3" length="11077120" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-afternoon-session-56cook</guid>
-      <pubDate>Sun, 05 Apr 2026 16:06:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 20:06:00 GMT</pubDate>
       <itunes:title>Elder Quentin L. Cook | Keys, Covenants, and Easter | April 2026</itunes:title>
       <itunes:author>Elder Quentin L. Cook</itunes:author>
       <itunes:duration>00:11:32</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Keys, Covenants, and Easter</strong></p><p>By Elder Quentin L. Cook<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/56cook?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>6</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>56</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/56cook?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/rt8bdb264fmf2d2yatr13p5z9enzs6gkl1yzedng/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -138,14 +138,14 @@
       <description><![CDATA[<p><strong>Eternal Marriage Is an Eternal Journey</strong></p><p>By Elder Neil L. Andersen<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/y66s81zg8ikr2l0d956z37tsarcopzexcogr8u99-128k-en.mp3" length="11233120" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-afternoon-session-55andersen</guid>
-      <pubDate>Sun, 05 Apr 2026 16:05:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 20:05:00 GMT</pubDate>
       <itunes:title>Elder Neil L. Andersen | Eternal Marriage Is an Eternal Journey | April 2026</itunes:title>
       <itunes:author>Elder Neil L. Andersen</itunes:author>
       <itunes:duration>00:11:42</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Eternal Marriage Is an Eternal Journey</strong></p><p>By Elder Neil L. Andersen<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>5</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>55</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/927lkm4ne7lsq5fcz35skzls2twyozogz21mqm1w/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -155,14 +155,14 @@
       <description><![CDATA[<p><strong>“Here Am I, Send Me”</strong></p><p>By President Susan H. Porter<br/><em>Primary General President</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/54porter?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/x9clbk1xcjl7zti5thezkcufxt5s72yj5ncfll82-128k-en.mp3" length="8377920" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-afternoon-session-54porter</guid>
-      <pubDate>Sun, 05 Apr 2026 16:04:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 20:04:00 GMT</pubDate>
       <itunes:title>President Susan H. Porter | “Here Am I, Send Me” | April 2026</itunes:title>
       <itunes:author>President Susan H. Porter</itunes:author>
       <itunes:duration>00:08:43</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>“Here Am I, Send Me”</strong></p><p>By President Susan H. Porter<br/><em>Primary General President</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/54porter?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>4</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>54</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/54porter?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/cgkpdffa2eoqnwn5zp07g1hu8rdkceard64ewghj/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -172,14 +172,14 @@
       <description><![CDATA[<p><strong>I Glory in My Jesus</strong></p><p>By Elder Aaron T. Hall<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/53hall?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/7o7cq78jmiwkkgvjzo2kbl4o1bq4syk8fl9alce8-128k-en.mp3" length="8141440" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-afternoon-session-53hall</guid>
-      <pubDate>Sun, 05 Apr 2026 16:03:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 20:03:00 GMT</pubDate>
       <itunes:title>Elder Aaron T. Hall | I Glory in My Jesus | April 2026</itunes:title>
       <itunes:author>Elder Aaron T. Hall</itunes:author>
       <itunes:duration>00:08:28</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>I Glory in My Jesus</strong></p><p>By Elder Aaron T. Hall<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/53hall?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>3</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>53</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/53hall?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/k9isuaoeee0fedf2zilx4g68pjm1aqj9m66blkzf/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -189,14 +189,14 @@
       <description><![CDATA[<p><strong>Remember, Remember</strong></p><p>By Elder Chi Hong (Sam) Wong<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/52wong?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/68jm6mvckrcej07n1cba1gmrs3nlbvw2mzky5miv-128k-en.mp3" length="7687200" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-afternoon-session-52wong</guid>
-      <pubDate>Sun, 05 Apr 2026 16:02:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 20:02:00 GMT</pubDate>
       <itunes:title>Elder Chi Hong (Sam) Wong | Remember, Remember | April 2026</itunes:title>
       <itunes:author>Elder Chi Hong (Sam) Wong</itunes:author>
       <itunes:duration>00:08:00</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Remember, Remember</strong></p><p>By Elder Chi Hong (Sam) Wong<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/52wong?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>2</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>52</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/52wong?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/95muj48egmb0jjlqvlc1wtgyq8dqh91i4lygt6gu/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -206,14 +206,14 @@
       <description><![CDATA[<p><strong>The Character of Christ</strong></p><p>By President D. Todd Christofferson<br/><em>Second Counselor in the First Presidency</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><small>Speaker: First Presidency</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/51christofferson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/e7w4rp9xbff65fi0i7dqbf3qzffk3mpdsba8ijtp-128k-en.mp3" length="11691680" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-afternoon-session-51christofferson</guid>
-      <pubDate>Sun, 05 Apr 2026 16:01:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 20:01:00 GMT</pubDate>
       <itunes:title>President D. Todd Christofferson | The Character of Christ | April 2026</itunes:title>
       <itunes:author>President D. Todd Christofferson</itunes:author>
       <itunes:duration>00:12:10</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Character of Christ</strong></p><p>By President D. Todd Christofferson<br/><em>Second Counselor in the First Presidency</em></p><p>April 2026 general conference - Sunday Afternoon Session</p><p><small>Speaker: First Presidency</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/51christofferson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>1</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>51</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/51christofferson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/wbxbxpfo4o1gx9hx7jmu9fe6im809oz87b00fk3f/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -223,14 +223,14 @@
       <description><![CDATA[<p><strong>Sunday Afternoon Session</strong></p><p>April 2026 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/51christofferson?lang=eng">President D. Todd Christofferson - "The Character of Christ"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/52wong?lang=eng">Elder Chi Hong (Sam) Wong - "Remember, Remember"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/53hall?lang=eng">Elder Aaron T. Hall - "I Glory in My Jesus"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/54porter?lang=eng">President Susan H. Porter - "“Here Am I, Send Me”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=eng">Elder Neil L. Andersen - "Eternal Marriage Is an Eternal Journey"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/56cook?lang=eng">Elder Quentin L. Cook - "Keys, Covenants, and Easter"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/57wakolo?lang=eng">Elder Taniela B. Wakolo - "Come unto Christ—Together"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=eng">Elder Gerrit W. Gong - "’Tis Eastertide: No One Walks Alone"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/59oaks?lang=eng">President Dallin H. Oaks - "Closing Remarks"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-afternoon-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/f84ggb720fugb4ydur1czcnm4tt9z0kor3xdd37w-128k-en.mp3" length="113745600" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-afternoon-session-full</guid>
-      <pubDate>Sun, 05 Apr 2026 16:00:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 20:00:00 GMT</pubDate>
       <itunes:title>Sunday Afternoon Session (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:58:29</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Sunday Afternoon Session</strong></p><p>April 2026 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/51christofferson?lang=eng">President D. Todd Christofferson - "The Character of Christ"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/52wong?lang=eng">Elder Chi Hong (Sam) Wong - "Remember, Remember"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/53hall?lang=eng">Elder Aaron T. Hall - "I Glory in My Jesus"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/54porter?lang=eng">President Susan H. Porter - "“Here Am I, Send Me”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=eng">Elder Neil L. Andersen - "Eternal Marriage Is an Eternal Journey"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/56cook?lang=eng">Elder Quentin L. Cook - "Keys, Covenants, and Easter"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/57wakolo?lang=eng">Elder Taniela B. Wakolo - "Come unto Christ—Together"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/58gong?lang=eng">Elder Gerrit W. Gong - "’Tis Eastertide: No One Walks Alone"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/59oaks?lang=eng">President Dallin H. Oaks - "Closing Remarks"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-afternoon-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>400</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>500</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-afternoon-session?lang=eng</link>
     </item>
 
@@ -239,14 +239,14 @@
       <description><![CDATA[<p><strong>Alive in Christ</strong></p><p>By President Dallin H. Oaks<br/><em>President of The Church of Jesus Christ of Latter-day Saints</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><small>Speaker: First Presidency</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/49oaks?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/tco9uxq9rmy3218fxamd9whrr6m2nvwfzcp27l42-128k-en.mp3" length="13087680" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-morning-session-49oaks</guid>
-      <pubDate>Sun, 05 Apr 2026 00:09:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 16:09:00 GMT</pubDate>
       <itunes:title>President Dallin H. Oaks | Alive in Christ | April 2026</itunes:title>
       <itunes:author>President Dallin H. Oaks</itunes:author>
       <itunes:duration>00:13:37</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Alive in Christ</strong></p><p>By President Dallin H. Oaks<br/><em>President of The Church of Jesus Christ of Latter-day Saints</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><small>Speaker: First Presidency</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/49oaks?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>9</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>49</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/49oaks?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/zomba0e1oove1nvezn7lsb9l6hgfxkxbgnx2xbsa/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -256,14 +256,14 @@
       <description><![CDATA[<p><strong>A Peculiar Treasure</strong></p><p>By Elder Alan R. Walker<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/48walker?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/t69cad4xyzicz6zqrrqour8v6528jyztmctb6a5d-128k-en.mp3" length="8060320" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-morning-session-48walker</guid>
-      <pubDate>Sun, 05 Apr 2026 00:08:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 16:08:00 GMT</pubDate>
       <itunes:title>Elder Alan R. Walker | A Peculiar Treasure | April 2026</itunes:title>
       <itunes:author>Elder Alan R. Walker</itunes:author>
       <itunes:duration>00:08:23</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>A Peculiar Treasure</strong></p><p>By Elder Alan R. Walker<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/48walker?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>8</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>48</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/48walker?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/kyixqx93kbk4wzcis7wh5ksdnnesr5w0zkl5ykzj/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -273,14 +273,14 @@
       <description><![CDATA[<p><strong>The Joy of a Covenant Relationship with God</strong></p><p>By Elder Thierry K. Mutombo<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/47mutombo?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/5sjq7nipv3hcxb6nf8sjg0j74udigyact0qj16cg-128k-en.mp3" length="9911200" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-morning-session-47mutombo</guid>
-      <pubDate>Sun, 05 Apr 2026 00:07:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 16:07:00 GMT</pubDate>
       <itunes:title>Elder Thierry K. Mutombo | The Joy of a Covenant Relationship with God | April 2026</itunes:title>
       <itunes:author>Elder Thierry K. Mutombo</itunes:author>
       <itunes:duration>00:10:19</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Joy of a Covenant Relationship with God</strong></p><p>By Elder Thierry K. Mutombo<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/47mutombo?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>7</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>47</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/47mutombo?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/londltgjdry709r2cr7satoqwl5srrewtys64ahe/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -290,14 +290,14 @@
       <description><![CDATA[<p><strong>Because of Jesus Christ</strong></p><p>By Elder Dale G. Renlund<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/46renlund?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/zl46y0kbbduibglsnxodxiz1crz0wqzimduxn25r-128k-en.mp3" length="10567360" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-morning-session-46renlund</guid>
-      <pubDate>Sun, 05 Apr 2026 00:06:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 16:06:00 GMT</pubDate>
       <itunes:title>Elder Dale G. Renlund | Because of Jesus Christ | April 2026</itunes:title>
       <itunes:author>Elder Dale G. Renlund</itunes:author>
       <itunes:duration>00:11:00</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Because of Jesus Christ</strong></p><p>By Elder Dale G. Renlund<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/46renlund?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>6</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>46</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/46renlund?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/jb5uzfe7pvy1z9z4205qd5xcyenfswz0aum0iz95/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -307,14 +307,14 @@
       <description><![CDATA[<p><strong>He Is Risen</strong></p><p>By Elder Ronald A. Rasband<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/45rasband?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/y7gqrc06qwccv2m11f9tqzh6wp7ff9ucemgqq18g-128k-en.mp3" length="9937440" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-morning-session-45rasband</guid>
-      <pubDate>Sun, 05 Apr 2026 00:05:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 16:05:00 GMT</pubDate>
       <itunes:title>Elder Ronald A. Rasband | He Is Risen | April 2026</itunes:title>
       <itunes:author>Elder Ronald A. Rasband</itunes:author>
       <itunes:duration>00:10:21</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>He Is Risen</strong></p><p>By Elder Ronald A. Rasband<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/45rasband?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>5</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>45</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/45rasband?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/eh9rufgf90el7s0s7kec3mgx3sf1prcazte5wbvz/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -324,14 +324,14 @@
       <description><![CDATA[<p><strong>Choose Jesus Christ as Your Guide</strong></p><p>By Elder Edward B. Rowe<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/44rowe?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/3i2e4fzzftrdjr7m8fxdx8vguib7h70asumdgnwd-128k-en.mp3" length="8972640" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-morning-session-44rowe</guid>
-      <pubDate>Sun, 05 Apr 2026 00:04:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 16:04:00 GMT</pubDate>
       <itunes:title>Elder Edward B. Rowe | Choose Jesus Christ as Your Guide | April 2026</itunes:title>
       <itunes:author>Elder Edward B. Rowe</itunes:author>
       <itunes:duration>00:09:20</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Choose Jesus Christ as Your Guide</strong></p><p>By Elder Edward B. Rowe<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/44rowe?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>4</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>44</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/44rowe?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/zpn53xdxlezatnixmtl4h5kcy56f6yo7hwq4cdio/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -341,14 +341,14 @@
       <description><![CDATA[<p><strong>I Feel My Savior’s Love</strong></p><p>By Elder Pedro X. Larreal<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/43larreal?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/s9uezgcrou2i3gh93s57lxhbkbuwag7msg6yp161-128k-en.mp3" length="7591040" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-morning-session-43larreal</guid>
-      <pubDate>Sun, 05 Apr 2026 00:03:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 16:03:00 GMT</pubDate>
       <itunes:title>Elder Pedro X. Larreal | I Feel My Savior’s Love | April 2026</itunes:title>
       <itunes:author>Elder Pedro X. Larreal</itunes:author>
       <itunes:duration>00:07:54</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>I Feel My Savior’s Love</strong></p><p>By Elder Pedro X. Larreal<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/43larreal?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>3</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>43</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/43larreal?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/1n0y9vuswwuo7svar9y85e3fjh2bocxytf7erms1/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -358,14 +358,14 @@
       <description><![CDATA[<p><strong>Best Days and Worst Days</strong></p><p>By President Emily Belle Freeman<br/><em>Young Women General President</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/42freeman?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/399xzzcdtaxbyusiq3w6e5yn12mo8s0to58bzv1v-128k-en.mp3" length="8311840" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-morning-session-42freeman</guid>
-      <pubDate>Sun, 05 Apr 2026 00:02:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 16:02:00 GMT</pubDate>
       <itunes:title>President Emily Belle Freeman | Best Days and Worst Days | April 2026</itunes:title>
       <itunes:author>President Emily Belle Freeman</itunes:author>
       <itunes:duration>00:08:39</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Best Days and Worst Days</strong></p><p>By President Emily Belle Freeman<br/><em>Young Women General President</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/42freeman?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>2</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>42</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/42freeman?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/qhemwyu8ehx1ujciyb9b8sk3xjqt6re45uylvymz/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -375,14 +375,14 @@
       <description><![CDATA[<p><strong>Encounter at the Empty Tomb</strong></p><p>By President Dieter F. Uchtdorf<br/><em>Acting President of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/41uchtdorf?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/r25iylnzloy3drk96cz9q5nmmgm98e4fvibperlq-128k-en.mp3" length="11964000" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-morning-session-41uchtdorf</guid>
-      <pubDate>Sun, 05 Apr 2026 00:01:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 16:01:00 GMT</pubDate>
       <itunes:title>President Dieter F. Uchtdorf | Encounter at the Empty Tomb | April 2026</itunes:title>
       <itunes:author>President Dieter F. Uchtdorf</itunes:author>
       <itunes:duration>00:12:27</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Encounter at the Empty Tomb</strong></p><p>By President Dieter F. Uchtdorf<br/><em>Acting President of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Sunday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/41uchtdorf?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>1</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>41</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/41uchtdorf?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/tx9vqk3zs2eoylb8q1lnazdbg5uol5lzih4e4yfl/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -392,14 +392,14 @@
       <description><![CDATA[<p><strong>Sunday Morning Session</strong></p><p>April 2026 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/41uchtdorf?lang=eng">President Dieter F. Uchtdorf - "Encounter at the Empty Tomb"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/42freeman?lang=eng">President Emily Belle Freeman - "Best Days and Worst Days"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/43larreal?lang=eng">Elder Pedro X. Larreal - "I Feel My Savior’s Love"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/44rowe?lang=eng">Elder Edward B. Rowe - "Choose Jesus Christ as Your Guide"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/45rasband?lang=eng">Elder Ronald A. Rasband - "He Is Risen"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/46renlund?lang=eng">Elder Dale G. Renlund - "Because of Jesus Christ"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/47mutombo?lang=eng">Elder Thierry K. Mutombo - "The Joy of a Covenant Relationship with God"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/48walker?lang=eng">Elder Alan R. Walker - "A Peculiar Treasure"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/49oaks?lang=eng">President Dallin H. Oaks - "Alive in Christ"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-morning-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></description>
       <enclosure url="https://assets.churchofjesuschrist.org/0kh1j3jwcb0ptio34h508971buyvmx7xajptp29v-128k-en.mp3" length="113977920" type="audio/mpeg"/>
       <guid isPermaLink="false">gc-2026-4-sunday-morning-session-full</guid>
-      <pubDate>Sun, 05 Apr 2026 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 05 Apr 2026 16:00:00 GMT</pubDate>
       <itunes:title>Sunday Morning Session (Full Session)</itunes:title>
       <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
       <itunes:duration>01:58:43</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Sunday Morning Session</strong></p><p>April 2026 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/41uchtdorf?lang=eng">President Dieter F. Uchtdorf - "Encounter at the Empty Tomb"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/42freeman?lang=eng">President Emily Belle Freeman - "Best Days and Worst Days"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/43larreal?lang=eng">Elder Pedro X. Larreal - "I Feel My Savior’s Love"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/44rowe?lang=eng">Elder Edward B. Rowe - "Choose Jesus Christ as Your Guide"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/45rasband?lang=eng">Elder Ronald A. Rasband - "He Is Risen"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/46renlund?lang=eng">Elder Dale G. Renlund - "Because of Jesus Christ"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/47mutombo?lang=eng">Elder Thierry K. Mutombo - "The Joy of a Covenant Relationship with God"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/48walker?lang=eng">Elder Alan R. Walker - "A Peculiar Treasure"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/49oaks?lang=eng">President Dallin H. Oaks - "Alive in Christ"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-morning-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>300</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>400</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/sunday-morning-session?lang=eng</link>
     </item>
 
@@ -414,8 +414,8 @@
       <itunes:duration>00:11:40</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Jesus Christ—the True Vine</strong></p><p>By Elder Ulisses Soares<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Saturday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/210soares?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>10</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>210</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/210soares?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/m1ochv2jv1251c0asnt4c8oc6nw1hchbs1qiz8xd/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -431,8 +431,8 @@
       <itunes:duration>00:09:28</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>He Knows You by Name</strong></p><p>By Elder Clement M. Matswagothata<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Saturday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/29matswagothata?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>9</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>29</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/29matswagothata?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/simzeu8kaytlkrz9v4u3pz63rhw09ajcquuenc8e/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -448,8 +448,8 @@
       <itunes:duration>00:08:15</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Jesus Christ Is the Way</strong></p><p>By Elder Brian J. Holmes<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Saturday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/28holmes?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>8</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>28</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/28holmes?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/8kxhbafstla1u6vilocg3rgkn1nmf613yjxl3eg2/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -465,8 +465,8 @@
       <itunes:duration>00:11:27</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Love All; Love Each</strong></p><p>By Elder Gérald Caussé<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Saturday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/27causse?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>7</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>27</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/27causse?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/oj5yyiglixvzren591kjnk7usz9jt6ovstl9jdww/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -482,8 +482,8 @@
       <itunes:duration>00:09:16</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Jesus Christ Is Not Our Burden; He Is Our Relief</strong></p><p>By Brother David J. Wunderli<br/><em>First Counselor in the Young Men General Presidency</em></p><p>April 2026 general conference - Saturday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/26wunderli?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>6</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>26</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/26wunderli?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/7nk7lbkcd7lazs3w6ltjoo8jh8u63xdtduxke4dx/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -499,8 +499,8 @@
       <itunes:duration>00:08:25</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>“I Will Give Away All My Sins to Know Thee”</strong></p><p>By Elder Wan-Liang Wu<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Saturday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/25wu?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>5</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>25</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/25wu?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/uscw724r8zqekmjr7ost6ryniu91bijxyd8tt5ml/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -516,8 +516,8 @@
       <itunes:duration>00:08:29</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Christ—Author and Finisher of Our Faith</strong></p><p>By Elder Eduardo F. Ortega<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Saturday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/24ortega?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>4</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>24</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/24ortega?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/sesoks1mgm4a8vgo42nfp8snd94bq243rn5h847y/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -533,8 +533,8 @@
       <itunes:duration>00:11:15</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Lost Luggage, Redeemed Souls</strong></p><p>By Elder Gary E. Stevenson<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Saturday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/23stevenson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>3</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>23</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/23stevenson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/tlg0niclvq5p4t0vl97dz4wtqoa8ev2qv2w0gkxy/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -550,8 +550,8 @@
       <itunes:duration>00:01:44</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Church Auditing Department Report, 2025</strong></p><p>By Presented by Jared B. Larson<br/><em>Managing Director, Church Auditing Department</em></p><p>April 2026 general conference - Saturday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/22larson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>2</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>22</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/22larson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/3l5f4n08254kvtdc8hxmao7l0ku2mmdit925gjug/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -567,8 +567,8 @@
       <itunes:duration>00:05:10</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Sustaining of General Authorities, Area Seventies, and General Officers</strong></p><p>By Presented by President D. Todd Christofferson<br/><em>Second Counselor in the First Presidency</em></p><p>April 2026 general conference - Saturday Afternoon Session</p><p><small>Speaker: First Presidency</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/21christofferson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>1</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>21</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/21christofferson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/agcwcjldr8f4q65c9q7h0f3c7ypdwiotbk4z5q77/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -584,7 +584,7 @@
       <itunes:duration>01:58:29</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Saturday Afternoon Session</strong></p><p>April 2026 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/21christofferson?lang=eng">Presented by President D. Todd Christofferson - "Sustaining of General Authorities, Area Seventies, and General Officers"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/22larson?lang=eng">Presented by Jared B. Larson - "Church Auditing Department Report, 2025"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/23stevenson?lang=eng">Elder Gary E. Stevenson - "Lost Luggage, Redeemed Souls"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/24ortega?lang=eng">Elder Eduardo F. Ortega - "Christ—Author and Finisher of Our Faith"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/25wu?lang=eng">Elder Wan-Liang Wu - "“I Will Give Away All My Sins to Know Thee”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/26wunderli?lang=eng">Brother David J. Wunderli - "Jesus Christ Is Not Our Burden; He Is Our Relief"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/27causse?lang=eng">Elder Gérald Caussé - "Love All; Love Each"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/28holmes?lang=eng">Elder Brian J. Holmes - "Jesus Christ Is the Way"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/29matswagothata?lang=eng">Elder Clement M. Matswagothata - "He Knows You by Name"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/210soares?lang=eng">Elder Ulisses Soares - "Jesus Christ—the True Vine"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-afternoon-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
+      <itunes:season>202604</itunes:season>
       <itunes:episode>200</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-afternoon-session?lang=eng</link>
     </item>
@@ -600,8 +600,8 @@
       <itunes:duration>00:13:12</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Prayers for Peace</strong></p><p>By President Henry B. Eyring<br/><em>First Counselor in the First Presidency</em></p><p>April 2026 general conference - Saturday Morning Session</p><p><small>Speaker: First Presidency</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/19eyring?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>9</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>19</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/19eyring?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/4kn8jwxcclgtvtatkug9j7n13gde8s1289ztxasj/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -617,8 +617,8 @@
       <itunes:duration>00:08:31</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Tithing—Putting God First</strong></p><p>By Elder Jorge T. Becerra<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Saturday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/18becerra?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>8</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>18</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/18becerra?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/vhim4s8mgfwn4545eb0ocmrzqypgqr4diifdgxvz/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -634,8 +634,8 @@
       <itunes:duration>00:08:08</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Follow the Prophet; He Knows the Way</strong></p><p>By Elder Michael John U. Teh<br/><em>Of the Seventy</em></p><p>April 2026 general conference - Saturday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/17teh?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>7</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>17</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/17teh?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/srs63hh3q0vztdywcb3gvbsuyadw5c88y9ktquvr/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -651,8 +651,8 @@
       <itunes:duration>00:12:58</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>All Who Have Endured Valiantly</strong></p><p>By Elder David A. Bednar<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Saturday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/16bednar?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>6</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>16</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/16bednar?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/ibjynpzh92ctp5jb5d52w0litgecjiwn56afk26y/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -668,8 +668,8 @@
       <itunes:duration>00:13:07</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Come Home</strong></p><p>By Elder Clark G. Gilbert<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Saturday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/15gilbert?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>5</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>15</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/15gilbert?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/kuukt6mdqdzjd6fgmcwng1ozledfy60s83ba9rfb/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -685,8 +685,8 @@
       <itunes:duration>00:08:55</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Ministering—“That Ye Love One Another; as I Have Loved You”</strong></p><p>By Sister Kristin M. Yee<br/><em>Second Counselor in the Relief Society General Presidency</em></p><p>April 2026 general conference - Saturday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/14yee?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>4</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>14</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/14yee?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/71a8ios5dh7jmcbcmrh6by1aeybj2w76lwz2c2ny/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -702,8 +702,8 @@
       <itunes:duration>00:11:20</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>About His Business</strong></p><p>By Elder Patrick Kearon<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2026 general conference - Saturday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/13kearon?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>3</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>13</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/13kearon?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/1yhzl9w6fcm7at7lutnmp4dq29bupz35kxne4fwu/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -719,8 +719,8 @@
       <itunes:duration>00:09:38</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Solemn Assembly</strong></p><p>By Presented by President D. Todd Christofferson<br/><em>Second Counselor in the First Presidency</em></p><p>April 2026 general conference - Saturday Morning Session</p><p><small>Speaker: First Presidency</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/12christofferson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>2</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>12</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/12christofferson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/xqyajds142unpme5guheyw1u6v3375djpgaw63sg/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -736,8 +736,8 @@
       <itunes:duration>00:02:39</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Introduction</strong></p><p>By President Dallin H. Oaks<br/><em>President of The Church of Jesus Christ of Latter-day Saints</em></p><p>April 2026 general conference - Saturday Morning Session</p><p><small>Speaker: First Presidency</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/11oaks?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
-      <itunes:episode>1</itunes:episode>
+      <itunes:season>202604</itunes:season>
+      <itunes:episode>11</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/11oaks?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/7di4rmbr3hvv44bdpgjvnnrxia7wajz5jbuqr7c3/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -753,7 +753,7 @@
       <itunes:duration>01:58:29</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Saturday Morning Session</strong></p><p>April 2026 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/11oaks?lang=eng">President Dallin H. Oaks - "Introduction"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/12christofferson?lang=eng">Presented by President D. Todd Christofferson - "Solemn Assembly"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/13kearon?lang=eng">Elder Patrick Kearon - "About His Business"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/14yee?lang=eng">Sister Kristin M. Yee - "Ministering—“That Ye Love One Another; as I Have Loved You”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/15gilbert?lang=eng">Elder Clark G. Gilbert - "Come Home"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/16bednar?lang=eng">Elder David A. Bednar - "All Who Have Endured Valiantly"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/17teh?lang=eng">Elder Michael John U. Teh - "Follow the Prophet; He Knows the Way"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/18becerra?lang=eng">Elder Jorge T. Becerra - "Tithing—Putting God First"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/19eyring?lang=eng">President Henry B. Eyring - "Prayers for Peace"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-morning-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2026</itunes:season>
+      <itunes:season>202604</itunes:season>
       <itunes:episode>100</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2026/04/saturday-morning-session?lang=eng</link>
     </item>
@@ -769,8 +769,8 @@
       <itunes:duration>00:17:22</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Family-Centered Gospel of Jesus Christ</strong></p><p>By President Dallin H. Oaks<br/><em>President of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Sunday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/58oaks?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>8</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>58</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/58oaks?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/z7rdiziwqnh9jy6pmbpymit75dv08f30ceu9eulg/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -786,8 +786,8 @@
       <itunes:duration>00:09:46</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Book of Mormon—an Immeasurable Treasure on Our Journey</strong></p><p>By Elder Ozani Farias<br/><em>Of the Seventy</em></p><p>October 2025 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/57farias?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>7</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>57</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/57farias?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/mn9i6nuomce30xz268zasz8vs8un8b2k50trmhgv/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -803,8 +803,8 @@
       <itunes:duration>00:10:38</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Good News Recipe</strong></p><p>By Elder John D. Amos<br/><em>Of the Seventy</em></p><p>October 2025 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/56amos?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>6</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>56</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/56amos?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/20acd0w0yl4a837poswr3it5h4ysa5tqhrym2mw0/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -820,8 +820,8 @@
       <itunes:duration>00:13:21</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Taking on the Name of Jesus Christ</strong></p><p>By Elder Dale G. Renlund<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Sunday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/55renlund?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>5</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>55</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/55renlund?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/xtjhfoiqxs0cjnbgj4ky735u55n2bzgj5xphuokn/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -837,8 +837,8 @@
       <itunes:duration>00:10:52</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Smiling Faces and Grateful Hearts</strong></p><p>By Elder Carlos A. Godoy<br/><em>Of the Seventy</em></p><p>October 2025 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/54godoy?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>4</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>54</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/54godoy?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/16ztewfviovqltbye89jlmt0e2mglvgkczfm4j7b/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -854,8 +854,8 @@
       <itunes:duration>00:10:42</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Forsake Not Your Own Mercy</strong></p><p>By Elder Matthew S. Holland<br/><em>Of the Seventy</em></p><p>October 2025 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/53holland?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>3</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>53</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/53holland?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/t7l7kjwub4kpwj2hto4w8qga2cpnyhge0uos5e4w/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -871,8 +871,8 @@
       <itunes:duration>00:11:00</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Name by Which Ye Are Called</strong></p><p>By Elder B. Corey Cuvelier<br/><em>Of the Seventy</em></p><p>October 2025 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/52cuvelier?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>2</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>52</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/52cuvelier?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/etftfrmx47avlmnjl52stutyz1420xdd7ibd6koa/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -888,8 +888,8 @@
       <itunes:duration>00:14:25</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>They Are Their Own Judges</strong></p><p>By Elder David A. Bednar<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Sunday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/51bednar?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>1</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>51</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/51bednar?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/4yjfavehvsxcb0pqgz29nrf7n0au0epml9rskt2y/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -905,7 +905,7 @@
       <itunes:duration>02:04:16</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Sunday Afternoon Session</strong></p><p>October 2025 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/51bednar?lang=eng">Elder David A. Bednar - "They Are Their Own Judges"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/52cuvelier?lang=eng">Elder B. Corey Cuvelier - "The Name by Which Ye Are Called"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/53holland?lang=eng">Elder Matthew S. Holland - "Forsake Not Your Own Mercy"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/54godoy?lang=eng">Elder Carlos A. Godoy - "Smiling Faces and Grateful Hearts"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/55renlund?lang=eng">Elder Dale G. Renlund - "Taking on the Name of Jesus Christ"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/56amos?lang=eng">Elder John D. Amos - "The Good News Recipe"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/57farias?lang=eng">Elder Ozani Farias - "The Book of Mormon—an Immeasurable Treasure on Our Journey"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/58oaks?lang=eng">President Dallin H. Oaks - "The Family-Centered Gospel of Jesus Christ"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/sunday-afternoon-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
+      <itunes:season>202510</itunes:season>
       <itunes:episode>500</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/sunday-afternoon-session?lang=eng</link>
     </item>
@@ -921,8 +921,8 @@
       <itunes:duration>00:13:10</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Proved and Strengthened in Christ</strong></p><p>By Elder Henry B. Eyring<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Sunday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/47eyring?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>7</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>47</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/47eyring?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/dx2ek69ip0e4x4r8nuhhxoydjxyn4c8kdpw4cp1y/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -938,8 +938,8 @@
       <itunes:duration>00:11:07</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Prophets of God</strong></p><p>By Sister Andrea Muñoz Spannaus<br/><em>Second Counselor in the Young Women General Presidency</em></p><p>October 2025 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/46spannaus?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>6</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>46</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/46spannaus?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/kjs6522dh4ne0w1eh4wd7nahvahzmbo2gnwg2z1j/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -955,8 +955,8 @@
       <itunes:duration>00:14:13</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Look to God and Live</strong></p><p>By Elder D. Todd Christofferson<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Sunday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/45christofferson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>5</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>45</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/45christofferson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/4t19hdima1krupx3tac3qjn8mxqlq0q5rq5dk0bb/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -972,8 +972,8 @@
       <itunes:duration>00:10:27</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Power of Ministering to the One</strong></p><p>By Elder Peter M. Johnson<br/><em>Of the Seventy</em></p><p>October 2025 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/44johnson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>4</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>44</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/44johnson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/la40n52tgwv61b2wson73z5vy6h5g7wa36sb3xmj/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -989,8 +989,8 @@
       <itunes:duration>00:15:07</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Adorned with the Virtue of Temperance</strong></p><p>By Elder Ulisses Soares<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Sunday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/43soares?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>3</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>43</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/43soares?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/yrxdvushzjadnnamza87adgwwmbifgtveml1lfn2/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1006,8 +1006,8 @@
       <itunes:duration>00:10:27</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Go and Do Likewise</strong></p><p>By Elder James E. Evanson<br/><em>Of the Seventy</em></p><p>October 2025 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/42evanson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>2</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>42</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/42evanson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/c98d03wv2p93b8o3uc8t92jcgxszui5rxulu6l83/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1023,8 +1023,8 @@
       <itunes:duration>00:17:23</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>And Now I See</strong></p><p>By Elder Jeffrey R. Holland<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Sunday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/41holland?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>1</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>41</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/41holland?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/rus5xa3w95j8uuq4yozwg2hk7i7vabr6txxymd6q/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1040,7 +1040,7 @@
       <itunes:duration>01:59:28</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Sunday Morning Session</strong></p><p>October 2025 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/41holland?lang=eng">Elder Jeffrey R. Holland - "And Now I See"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/42evanson?lang=eng">Elder James E. Evanson - "Go and Do Likewise"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/43soares?lang=eng">Elder Ulisses Soares - "Adorned with the Virtue of Temperance"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/44johnson?lang=eng">Elder Peter M. Johnson - "The Power of Ministering to the One"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/45christofferson?lang=eng">Elder D. Todd Christofferson - "Look to God and Live"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/46spannaus?lang=eng">Sister Andrea Muñoz Spannaus - "Prophets of God"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/47eyring?lang=eng">Elder Henry B. Eyring - "Proved and Strengthened in Christ"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/sunday-morning-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
+      <itunes:season>202510</itunes:season>
       <itunes:episode>400</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/sunday-morning-session?lang=eng</link>
     </item>
@@ -1056,8 +1056,8 @@
       <itunes:duration>00:14:33</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Atoning Love of Jesus Christ</strong></p><p>By Elder Neil L. Andersen<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Saturday Evening Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/35andersen?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>5</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>35</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/35andersen?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/dbuahig7d9mp2eyt4ym5r5v6huxzljmnhb2j32ox/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1073,8 +1073,8 @@
       <itunes:duration>00:12:13</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Remembering the Sheep</strong></p><p>By Elder William K. Jackson<br/><em>Of the Seventy</em></p><p>October 2025 general conference - Saturday Evening Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/34jackson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>4</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>34</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/34jackson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/tm1blwjf8y69wfdvwl1nowpsh11znqqdi8zcc89q/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1090,8 +1090,8 @@
       <itunes:duration>00:11:41</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>“Lovest Thou Me?”</strong></p><p>By Elder Steven C. Barlow<br/><em>Of the Seventy</em></p><p>October 2025 general conference - Saturday Evening Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/33barlow?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>3</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>33</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/33barlow?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/ms2doag6b2agggzpkce9tfsas49fxb9asqi92wre/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1107,8 +1107,8 @@
       <itunes:duration>00:11:52</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Cheering Each Other On</strong></p><p>By Sister J. Anette Dennis<br/><em>First Counselor in the Relief Society General Presidency</em></p><p>October 2025 general conference - Saturday Evening Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/32dennis?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>2</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>32</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/32dennis?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/nhteus5ug4sc9nzz5aowab6qgmwkvm0ip7q7n814/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1124,8 +1124,8 @@
       <itunes:duration>00:14:18</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Jesus Christ and Your New Beginning</strong></p><p>By Elder Patrick Kearon<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Saturday Evening Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/31kearon?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>1</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>31</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/31kearon?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/wuniha7eo576f1c6gq9q8goivifurpz4p9uu0kwn/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1141,7 +1141,7 @@
       <itunes:duration>01:35:23</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Saturday Evening Session</strong></p><p>October 2025 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/31kearon?lang=eng">Elder Patrick Kearon - "Jesus Christ and Your New Beginning"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/32dennis?lang=eng">Sister J. Anette Dennis - "Cheering Each Other On"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/33barlow?lang=eng">Elder Steven C. Barlow - "“Lovest Thou Me?”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/34jackson?lang=eng">Elder William K. Jackson - "Remembering the Sheep"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/35andersen?lang=eng">Elder Neil L. Andersen - "The Atoning Love of Jesus Christ"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/saturday-evening-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
+      <itunes:season>202510</itunes:season>
       <itunes:episode>300</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/saturday-evening-session?lang=eng</link>
     </item>
@@ -1157,8 +1157,8 @@
       <itunes:duration>00:14:54</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Lord Is Hastening His Work</strong></p><p>By Elder Quentin L. Cook<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Saturday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/27cook?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>7</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>27</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/27cook?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/icqm02179z2g4z4lvddkbwpsyk17w4xb0hk7sn27/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1174,8 +1174,8 @@
       <itunes:duration>00:11:17</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Simplicity in Christ</strong></p><p>By Elder Michael Cziesla<br/><em>Of the Seventy</em></p><p>October 2025 general conference - Saturday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/26cziesla?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>6</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>26</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/26cziesla?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/q760ppctkrsjukd71zw4mn8kf9kkcn5zmfgpmzye/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1191,8 +1191,8 @@
       <itunes:duration>00:14:02</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>No One Sits Alone</strong></p><p>By Elder Gerrit W. Gong<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Saturday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/25gong?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>5</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>25</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/25gong?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/erq8kg104bmpm6x48jnas9vor9tth26wbf0s48o1/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1208,8 +1208,8 @@
       <itunes:duration>00:12:16</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Eternal Gift of Testimony</strong></p><p>By Elder Kevin G. Brown<br/><em>Of the Seventy</em></p><p>October 2025 general conference - Saturday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/24brown?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>4</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>24</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/24brown?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/vvh7sohevnhipj1rfefre5w57l5i0zqrfdj0io62/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1225,8 +1225,8 @@
       <itunes:duration>00:11:23</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Humble Souls at Altars Kneel</strong></p><p>By Elder Jeremy R. Jaggi<br/><em>Of the Seventy</em></p><p>October 2025 general conference - Saturday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/23jaggi?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>3</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>23</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/23jaggi?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/py2ewsly893dbufulfhlc2mlvnzmbaksct3pp9a9/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1242,8 +1242,8 @@
       <itunes:duration>00:11:21</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>That All May Be Edified</strong></p><p>By Brother Chad H Webb<br/><em>First Counselor in the Sunday School General Presidency</em></p><p>October 2025 general conference - Saturday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/22webb?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>2</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>22</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/22webb?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/pyn0ph75j1773hb8cp02zkwsyq1e62di2x58qyl1/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1259,8 +1259,8 @@
       <itunes:duration>00:13:57</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Family Proclamation—Words from God</strong></p><p>By Elder Ronald A. Rasband<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Saturday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/21rasband?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>1</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>21</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/21rasband?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/es6d8ewsclcxs9jsvz3o6ynarw0uyeuec1b3gq4q/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1276,7 +1276,7 @@
       <itunes:duration>02:02:27</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Saturday Afternoon Session</strong></p><p>October 2025 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/21rasband?lang=eng">Elder Ronald A. Rasband - "The Family Proclamation—Words from God"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/22webb?lang=eng">Brother Chad H Webb - "That All May Be Edified"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/23jaggi?lang=eng">Elder Jeremy R. Jaggi - "Humble Souls at Altars Kneel"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/24brown?lang=eng">Elder Kevin G. Brown - "The Eternal Gift of Testimony"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/25gong?lang=eng">Elder Gerrit W. Gong - "No One Sits Alone"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/26cziesla?lang=eng">Elder Michael Cziesla - "Simplicity in Christ"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/27cook?lang=eng">Elder Quentin L. Cook - "The Lord Is Hastening His Work"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/saturday-afternoon-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
+      <itunes:season>202510</itunes:season>
       <itunes:episode>200</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/saturday-afternoon-session?lang=eng</link>
     </item>
@@ -1292,8 +1292,8 @@
       <itunes:duration>00:15:21</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Do Your Part with All Your Heart</strong></p><p>By Elder Dieter F. Uchtdorf<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Saturday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/16uchtdorf?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>8</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>16</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/16uchtdorf?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/dmdzcwmddsglo84nyidhae7claoh0k8olkklq9ko/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1309,8 +1309,8 @@
       <itunes:duration>00:10:21</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Be Reconciled to God</strong></p><p>By Elder Kelly R. Johnson<br/><em>Of the Seventy</em></p><p>October 2025 general conference - Saturday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/17johnson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>7</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>17</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/17johnson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/opwyjua2y06mdura338e3kyz3pu8skd1yxt06zpq/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1326,8 +1326,8 @@
       <itunes:duration>00:10:45</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Know Who You Really Are</strong></p><p>By Elder Brik V. Eyre<br/><em>Of the Seventy</em></p><p>October 2025 general conference - Saturday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/15eyre?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>6</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>15</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/15eyre?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/d8a0kayll5d460knnavecy673hji1j6dyweumqqd/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1343,8 +1343,8 @@
       <itunes:duration>00:10:40</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Lord Looketh on the Heart</strong></p><p>By Elder Ronald M. Barcellos<br/><em>Of the Seventy</em></p><p>October 2025 general conference - Saturday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/14barcellos?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>5</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>14</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/14barcellos?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/ke2usefwbm8d9ul1461cb9z7dp2tz0zk4cdt7qbc/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1360,8 +1360,8 @@
       <itunes:duration>00:10:36</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Tune Your Heart to Jesus Christ: The Sacred Gift of Primary Music</strong></p><p>By Sister Tracy Y. Browning<br/><em>Second Counselor in the Primary General Presidency</em></p><p>October 2025 general conference - Saturday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/13browning?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>4</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>13</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/13browning?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/wz9avjjd6vbokhixoj3b8ueayj5q76h1odeiril2/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1377,8 +1377,8 @@
       <itunes:duration>00:13:15</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Blessed Are the Peacemakers</strong></p><p>By Elder Gary E. Stevenson<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Saturday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/12stevenson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>3</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>12</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/12stevenson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/kf8r8q4s4huj7bwsybv6uq1nkmxntxzj8duor0r7/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1394,8 +1394,8 @@
       <itunes:duration>00:03:25</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Sustaining of General Authorities, Area Seventies, and General Officers</strong></p><p>By Presented by Elder Henry B. Eyring<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Saturday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/11eyring?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>2</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>11</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/11eyring?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/e86jnoy32kz51s4kw0bu2iyfnykgf8fbnh3od53k/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1411,8 +1411,8 @@
       <itunes:duration>00:03:33</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Introduction</strong></p><p>By President Dallin H. Oaks<br/><em>President of the Quorum of the Twelve Apostles</em></p><p>October 2025 general conference - Saturday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/19oaks?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>1</itunes:episode>
+      <itunes:season>202510</itunes:season>
+      <itunes:episode>19</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/19oaks?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/dy2g13qm4wk8xxjnqqfnlg0tz4uruiejryr2pxql/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1428,7 +1428,7 @@
       <itunes:duration>01:57:12</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Saturday Morning Session</strong></p><p>October 2025 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/19oaks?lang=eng">President Dallin H. Oaks - "Introduction"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/11eyring?lang=eng">Presented by Elder Henry B. Eyring - "Sustaining of General Authorities, Area Seventies, and General Officers"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/12stevenson?lang=eng">Elder Gary E. Stevenson - "Blessed Are the Peacemakers"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/13browning?lang=eng">Sister Tracy Y. Browning - "Tune Your Heart to Jesus Christ: The Sacred Gift of Primary Music"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/14barcellos?lang=eng">Elder Ronald M. Barcellos - "The Lord Looketh on the Heart"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/15eyre?lang=eng">Elder Brik V. Eyre - "Know Who You Really Are"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/17johnson?lang=eng">Elder Kelly R. Johnson - "Be Reconciled to God"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/16uchtdorf?lang=eng">Elder Dieter F. Uchtdorf - "Do Your Part with All Your Heart"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/10/saturday-morning-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
+      <itunes:season>202510</itunes:season>
       <itunes:episode>100</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/10/saturday-morning-session?lang=eng</link>
     </item>
@@ -1444,8 +1444,8 @@
       <itunes:duration>00:11:59</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Confidence in the Presence of God</strong></p><p>By President Russell M. Nelson<br/><em>President of The Church of Jesus Christ of Latter-day Saints</em></p><p>April 2025 general conference - Sunday Afternoon Session</p><p><small>Speaker: First Presidency</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/57nelson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>7</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>57</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/57nelson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/u1w3kqlwz31momabuqno4frbltlso5i31qaflvfd/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1461,8 +1461,8 @@
       <itunes:duration>00:10:34</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Love of God</strong></p><p>By Elder Benjamin M. Z. Tai<br/><em>Of the Seventy</em></p><p>April 2025 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/56tai?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>6</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>56</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/56tai?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/qlvicmn5tvpmnudy3u9nlml4bnf3i1dv3x30n8jn/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1478,8 +1478,8 @@
       <itunes:duration>00:14:04</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Receive His Gift</strong></p><p>By Elder Patrick Kearon<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2025 general conference - Sunday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/55kearon?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>5</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>55</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/55kearon?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/lg09o6xjnb5qanmsk2la4bgh8um7eqs92rooa77i/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1495,8 +1495,8 @@
       <itunes:duration>00:11:05</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Harden Not Your Heart</strong></p><p>By Elder Christopher H. Kim<br/><em>Of the Seventy</em></p><p>April 2025 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/54kim?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>4</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>54</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/54kim?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/e66eanzrhl528vai04s8luals697lobn28zq9vr0/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1512,8 +1512,8 @@
       <itunes:duration>00:11:35</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Beware the Second Temptation</strong></p><p>By Elder Scott D. Whiting<br/><em>Of the Seventy</em></p><p>April 2025 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/53whiting?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>3</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>53</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/53whiting?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/4dl9bby9djw33bw4ea92t9a4u9kijytswtcg9q2w/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1529,8 +1529,8 @@
       <itunes:duration>00:11:29</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Charity—a Sign of True Discipleship</strong></p><p>By Elder Michael B. Strong<br/><em>Of the Seventy</em></p><p>April 2025 general conference - Sunday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/52strong?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>2</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>52</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/52strong?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/54a7grdozx9c8z5sp04epoc3y07lnp2tjzrzsc7r/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1546,8 +1546,8 @@
       <itunes:duration>00:14:49</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Reverence for Sacred Things</strong></p><p>By Elder Ulisses Soares<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2025 general conference - Sunday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/51soares?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>1</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>51</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/51soares?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/q8yqfdmoe2epq15x326lmc8c0wj7giolq7a7f947/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1563,7 +1563,7 @@
       <itunes:duration>01:54:05</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Sunday Afternoon Session</strong></p><p>April 2025 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/51soares?lang=eng">Elder Ulisses Soares - "Reverence for Sacred Things"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/52strong?lang=eng">Elder Michael B. Strong - "Charity—a Sign of True Discipleship"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/53whiting?lang=eng">Elder Scott D. Whiting - "Beware the Second Temptation"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/54kim?lang=eng">Elder Christopher H. Kim - "Harden Not Your Heart"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/55kearon?lang=eng">Elder Patrick Kearon - "Receive His Gift"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/56tai?lang=eng">Elder Benjamin M. Z. Tai - "The Love of God"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/57nelson?lang=eng">President Russell M. Nelson - "Confidence in the Presence of God"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/sunday-afternoon-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
+      <itunes:season>202504</itunes:season>
       <itunes:episode>500</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/sunday-afternoon-session?lang=eng</link>
     </item>
@@ -1579,8 +1579,8 @@
       <itunes:duration>00:14:40</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Divine Helps for Mortality</strong></p><p>By President Dallin H. Oaks<br/><em>First Counselor in the First Presidency</em></p><p>April 2025 general conference - Sunday Morning Session</p><p><small>Speaker: First Presidency</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/47oaks?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>7</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>47</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/47oaks?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/9jtt8gbc3pkb16c5k61ksccxqxt2tx17qin4mmnt/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1596,8 +1596,8 @@
       <itunes:duration>00:10:58</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Joy Through Covenant Discipleship</strong></p><p>By Elder John A. McCune<br/><em>Of the Seventy</em></p><p>April 2025 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/46mccune?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>6</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>46</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/46mccune?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/jumo1gy642gxzl6fyrgtqn4vngo19376htpm7thg/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1613,8 +1613,8 @@
       <itunes:duration>00:13:56</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Eternity’s Great Gifts: Jesus Christ’s Atonement, Resurrection, Restoration</strong></p><p>By Elder Gerrit W. Gong<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2025 general conference - Sunday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/45gong?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>5</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>45</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/45gong?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/fd9h4wcfs149ekculymu7gii04dc71xi9ldm1km4/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1630,8 +1630,8 @@
       <itunes:duration>00:11:18</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Compensating Blessings</strong></p><p>By Bishop Gérald Caussé<br/><em>Presiding Bishop</em></p><p>April 2025 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/44causse?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>4</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>44</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/44causse?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/gc59y5pduaw04y6v2vggw3o7tcrgus03w6up4qy3/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1647,8 +1647,8 @@
       <itunes:duration>00:11:44</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Your Repentance Doesn’t Burden Jesus Christ; It Brightens His Joy</strong></p><p>By Sister Tamara W. Runia<br/><em>First Counselor in the Young Women General Presidency</em></p><p>April 2025 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/43runia?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>3</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>43</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/43runia?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/m0mm7u3r4by9ws8y7wo8t1adl4ufn91alkqw954n/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1664,8 +1664,8 @@
       <itunes:duration>00:11:23</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Participate to Prepare for Christ’s Return</strong></p><p>By Elder Steven D. Shumway<br/><em>Of the Seventy</em></p><p>April 2025 general conference - Sunday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/42shumway?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>2</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>42</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/42shumway?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/u5mod7iu5g3mhouoos0nsjkixg6pcca48p3om9ag/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1681,8 +1681,8 @@
       <itunes:duration>00:15:21</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Times of Restitution of All Things</strong></p><p>By Elder David A. Bednar<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2025 general conference - Sunday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/41bednar?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>1</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>41</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/41bednar?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/vt25dbdv7m1kbrh6tgic2yji93pct2ajiyzbdjzi/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1698,7 +1698,7 @@
       <itunes:duration>01:58:29</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Sunday Morning Session</strong></p><p>April 2025 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/41bednar?lang=eng">Elder David A. Bednar - "The Times of Restitution of All Things"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/42shumway?lang=eng">Elder Steven D. Shumway - "Participate to Prepare for Christ’s Return"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/43runia?lang=eng">Sister Tamara W. Runia - "Your Repentance Doesn’t Burden Jesus Christ; It Brightens His Joy"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/44causse?lang=eng">Bishop Gérald Caussé - "Compensating Blessings"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/45gong?lang=eng">Elder Gerrit W. Gong - "Eternity’s Great Gifts: Jesus Christ’s Atonement, Resurrection, Restoration"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/46mccune?lang=eng">Elder John A. McCune - "Joy Through Covenant Discipleship"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/47oaks?lang=eng">President Dallin H. Oaks - "Divine Helps for Mortality"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/sunday-morning-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
+      <itunes:season>202504</itunes:season>
       <itunes:episode>400</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/sunday-morning-session?lang=eng</link>
     </item>
@@ -1714,8 +1714,8 @@
       <itunes:duration>00:14:14</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Worship</strong></p><p>By Elder D. Todd Christofferson<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2025 general conference - Saturday Evening Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/35christofferson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>5</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>35</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/35christofferson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/xrr8vcmq8qf4ol6op0c43rn4yv83niak62p3mght/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1731,8 +1731,8 @@
       <itunes:duration>00:10:48</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Our Heavenly Guidance System</strong></p><p>By Elder Sergio R. Vargas<br/><em>Of the Seventy</em></p><p>April 2025 general conference - Saturday Evening Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/34vargas?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>4</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>34</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/34vargas?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/cll6y3ps5rrpb888wjxfejtowgh6787fnwv0ofw4/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1748,8 +1748,8 @@
       <itunes:duration>00:11:05</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Plan of Mercy</strong></p><p>By Elder James R. Rasband<br/><em>Of the Seventy</em></p><p>April 2025 general conference - Saturday Evening Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/33rasband?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>3</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>33</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/33rasband?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/77wdfe8ef7xjbmk80imphj7jyf6sjvcjs2jtw47z/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1765,8 +1765,8 @@
       <itunes:duration>00:11:11</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Thou Art the Christ</strong></p><p>By Sister Amy A. Wright<br/><em>First Counselor in the Primary General Presidency</em></p><p>April 2025 general conference - Saturday Evening Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/32wright?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>2</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>32</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/32wright?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/b9degrfc68r4uplcucypwmpkurrloqg8j45o7d7c/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1782,8 +1782,8 @@
       <itunes:duration>00:14:26</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>And We Talk of Christ</strong></p><p>By Elder Gary E. Stevenson<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2025 general conference - Saturday Evening Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/31stevenson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>1</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>31</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/31stevenson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/blso7y9k8irap1we60euz76vo6jx8ydahupxyo7p/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1799,7 +1799,7 @@
       <itunes:duration>01:28:38</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Saturday Evening Session</strong></p><p>April 2025 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/31stevenson?lang=eng">Elder Gary E. Stevenson - "And We Talk of Christ"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/32wright?lang=eng">Sister Amy A. Wright - "Thou Art the Christ"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/33rasband?lang=eng">Elder James R. Rasband - "The Plan of Mercy"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/34vargas?lang=eng">Elder Sergio R. Vargas - "Our Heavenly Guidance System"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/35christofferson?lang=eng">Elder D. Todd Christofferson - "Worship"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/saturday-evening-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
+      <itunes:season>202504</itunes:season>
       <itunes:episode>300</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/saturday-evening-session?lang=eng</link>
     </item>
@@ -1815,8 +1815,8 @@
       <itunes:duration>00:15:04</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>“By This All Will Know That You Are My Disciples”</strong></p><p>By Elder Dieter F. Uchtdorf<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2025 general conference - Saturday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/27uchtdorf?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>7</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>27</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/27uchtdorf?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/ekgsx47zm13sfldxef3gudm406t851mgb0jyduvq/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1832,8 +1832,8 @@
       <itunes:duration>00:11:00</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>True to the Faith That Our Parents Have Cherished</strong></p><p>By Elder Hans T. Boom<br/><em>Of the Seventy</em></p><p>April 2025 general conference - Saturday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/26boom?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>6</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>26</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/26boom?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/rhwrrcsy0v5o1t6vkh01rqvjn3gbggvlt9ncewxb/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1849,8 +1849,8 @@
       <itunes:duration>00:14:09</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Personal Preparation to Meet the Savior</strong></p><p>By Elder Dale G. Renlund<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2025 general conference - Saturday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/25renlund?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>5</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>25</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/25renlund?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/wwzr6zox9kb52iy1unjnom4azano7fj2s22yot1h/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1866,8 +1866,8 @@
       <itunes:duration>00:11:16</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Faith: A Bond of Trust and Loyalty</strong></p><p>By Elder Sandino Roman<br/><em>Of the Seventy</em></p><p>April 2025 general conference - Saturday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/24roman?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>4</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>24</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/24roman?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/0sjzn98oa01drzfqig9ds8ir3jwxniqjgace2cts/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1883,8 +1883,8 @@
       <itunes:duration>00:11:02</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>“Return unto Me … That I May Heal You”</strong></p><p>By Elder S. Mark Palmer<br/><em>Of the Presidency of the Seventy</em></p><p>April 2025 general conference - Saturday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/23palmer?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>3</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>23</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/23palmer?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/u6u6gv1mk6txh50y1k70a5lkqi3i2u4z6rsfxt8i/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1900,8 +1900,8 @@
       <itunes:duration>00:11:44</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Divine Authority, Sublime Young Men</strong></p><p>By President Steven J. Lund<br/><em>Young Men General President</em></p><p>April 2025 general conference - Saturday Afternoon Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/22lund?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>2</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>22</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/22lund?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/vs5ag981osh1xzsx89zzuilr5di626iv891bt3nr/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1917,8 +1917,8 @@
       <itunes:duration>00:14:09</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Cherishing Life</strong></p><p>By Elder Neil L. Andersen<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2025 general conference - Saturday Afternoon Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/21andersen?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>1</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>21</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/21andersen?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/0w9rz0ptw4qduvw5y1hg5pvrgofwpjjb2ax7uohm/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1934,7 +1934,7 @@
       <itunes:duration>01:57:36</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Saturday Afternoon Session</strong></p><p>April 2025 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/21andersen?lang=eng">Elder Neil L. Andersen - "Cherishing Life"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/22lund?lang=eng">President Steven J. Lund - "Divine Authority, Sublime Young Men"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/23palmer?lang=eng">Elder S. Mark Palmer - "“Return unto Me … That I May Heal You”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/24roman?lang=eng">Elder Sandino Roman - "Faith: A Bond of Trust and Loyalty"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/25renlund?lang=eng">Elder Dale G. Renlund - "Personal Preparation to Meet the Savior"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/26boom?lang=eng">Elder Hans T. Boom - "True to the Faith That Our Parents Have Cherished"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/27uchtdorf?lang=eng">Elder Dieter F. Uchtdorf - "“By This All Will Know That You Are My Disciples”"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/saturday-afternoon-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
+      <itunes:season>202504</itunes:season>
       <itunes:episode>200</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/saturday-afternoon-session?lang=eng</link>
     </item>
@@ -1950,8 +1950,8 @@
       <itunes:duration>00:17:04</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>“Draw Near unto Me”</strong></p><p>By President Henry B. Eyring<br/><em>Second Counselor in the First Presidency</em></p><p>April 2025 general conference - Saturday Morning Session</p><p><small>Speaker: First Presidency</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/18eyring?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>8</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>18</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/18eyring?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/9dscua986sb9t2w3nxqrixhywfp0i3c08xg5icmz/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1967,8 +1967,8 @@
       <itunes:duration>00:10:29</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>My Love for the Savior Is My “Why”</strong></p><p>By Elder Ricardo P. Giménez<br/><em>Of the Seventy</em></p><p>April 2025 general conference - Saturday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/17gimenez?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>7</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>17</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/17gimenez?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/vtvuabe81v0dpki5jwc0e1190oq1qv5f8bexo7m3/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -1984,8 +1984,8 @@
       <itunes:duration>00:14:15</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>The Atonement of Jesus Christ Provides the Ultimate Rescue</strong></p><p>By Elder Quentin L. Cook<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2025 general conference - Saturday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/16cook?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>6</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>16</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/16cook?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/zc38zzbopb061mo1tkoxxy687wuwly69gh3e43nn/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -2001,8 +2001,8 @@
       <itunes:duration>00:14:00</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Right Before Our Eyes</strong></p><p>By Elder Ronald A. Rasband<br/><em>Of the Quorum of the Twelve Apostles</em></p><p>April 2025 general conference - Saturday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/15rasband?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>5</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>15</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/15rasband?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/bulm1n4ripp5t3mgjl06i7judu3pq5026a6rcz56/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -2018,8 +2018,8 @@
       <itunes:duration>00:11:28</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Spiritually Whole in Him</strong></p><p>By President Camille N. Johnson<br/><em>Relief Society General President</em></p><p>April 2025 general conference - Saturday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/14johnson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>4</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>14</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/14johnson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/oj63l5mrqyhm8750e16ihe6m0es9xuvpzjlt676a/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -2035,8 +2035,8 @@
       <itunes:duration>00:15:09</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>As a Little Child</strong></p><p>By President Jeffrey R. Holland<br/><em>Acting President of the Quorum of the Twelve Apostles</em></p><p>April 2025 general conference - Saturday Morning Session</p><p><small>Speaker: Quorum of the Twelve Apostles</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/13holland?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>3</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>13</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/13holland?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/e6v6f8eosyr3myvwoxy5hre4yro0kicjyv60o9bf/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -2052,8 +2052,8 @@
       <itunes:duration>00:01:43</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Church Auditing Department Report, 2024</strong></p><p>By Presented by Jared B. Larson<br/><em>Managing Director, Church Auditing Department</em></p><p>April 2025 general conference - Saturday Morning Session</p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/12larson?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>2</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>12</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/12larson?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/fq5mzp3y757tcuxg7b3m28cqqirmk0g2jo07ij9f/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -2069,8 +2069,8 @@
       <itunes:duration>00:08:23</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Sustaining of General Authorities, Area Seventies, and General Officers</strong></p><p>By Presented by President Dallin H. Oaks<br/><em>First Counselor in the First Presidency</em></p><p>April 2025 general conference - Saturday Morning Session</p><p><small>Speaker: First Presidency</small></p><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/11oaks?lang=eng">Read or stream on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
-      <itunes:episode>1</itunes:episode>
+      <itunes:season>202504</itunes:season>
+      <itunes:episode>11</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/11oaks?lang=eng</link>
       <itunes:image href="https://www.churchofjesuschrist.org/imgs/crywrj8frgh8t1qj5a2awtyf8nlyhvac0ll9qu4j/full/!1400%2C1400/0/default.jpg"/>
     </item>
@@ -2086,7 +2086,7 @@
       <itunes:duration>02:00:19</itunes:duration>
       <itunes:summary><![CDATA[<p><strong>Saturday Morning Session</strong></p><p>April 2025 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/11oaks?lang=eng">Presented by President Dallin H. Oaks - "Sustaining of General Authorities, Area Seventies, and General Officers"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/12larson?lang=eng">Presented by Jared B. Larson - "Church Auditing Department Report, 2024"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/13holland?lang=eng">President Jeffrey R. Holland - "As a Little Child"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/14johnson?lang=eng">President Camille N. Johnson - "Spiritually Whole in Him"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/15rasband?lang=eng">Elder Ronald A. Rasband - "Right Before Our Eyes"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/16cook?lang=eng">Elder Quentin L. Cook - "The Atonement of Jesus Christ Provides the Ultimate Rescue"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/17gimenez?lang=eng">Elder Ricardo P. Giménez - "My Love for the Savior Is My “Why”"</a></li><li><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/18eyring?lang=eng">President Henry B. Eyring - "“Draw Near unto Me”"</a></li></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2025/04/saturday-morning-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2025</itunes:season>
+      <itunes:season>202504</itunes:season>
       <itunes:episode>100</itunes:episode>
       <link>https://www.churchofjesuschrist.org/study/general-conference/2025/04/saturday-morning-session?lang=eng</link>
     </item>
