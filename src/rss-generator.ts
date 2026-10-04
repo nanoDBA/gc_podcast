@@ -17,6 +17,12 @@ import {
   sessionEpisodeNumber,
   talkEpisodeNumber,
 } from './session-slots.js';
+import {
+  ImageOverrides,
+  conferenceCycle,
+  loadImageOverrides,
+  selectDeliberateChannelArt,
+} from './channel-art.js';
 
 /**
  * Podcasting 2.0 namespace UUID for `<podcast:guid>` derivation.
@@ -47,10 +53,8 @@ const PODCAST_CONFIG = {
   category: 'Religion & Spirituality',
   subcategory: 'Christianity',
   explicit: false,
-  // Fallback channel art — only used when no scraped conference has a
-  // populated `conference_image_url`. In normal operation the most-recent
-  // conference's branded hero is substituted at feed-generation time
-  // (gc_podcast-8t0), so each April/October cycle rotates in its own art.
+  // Last-resort channel art — only used when no conference has deliberate
+  // art (channel-art.ts), no conference_image_url and no talk hero.
   imageUrl:
     'https://www.churchofjesuschrist.org/imgs/5uahv05h1s6416y49vw745z70juiiffhiq0vn8a2/full/!1400,/0/default',
   websiteUrl: 'https://www.churchofjesuschrist.org/study/general-conference',
@@ -80,6 +84,13 @@ interface RssGeneratorOptions {
   language?: string;
   /** Minimum conference year to include (e.g. 2026) */
   minYear?: number;
+  /**
+   * Manual channel images keyed YYYY-MM-<lang> (see channel-art.ts). Defaults
+   * to none in generateRssFeed; generateAndSaveFeed loads the config file.
+   */
+  imageOverrides?: ImageOverrides;
+  /** Path to the overrides file for generateAndSaveFeed (default: config/). */
+  imageOverridesPath?: string;
 }
 
 /**
@@ -338,31 +349,35 @@ export function generateRssFeed(
     return dateB - dateA;
   });
 
-  // Channel artwork: prefer conference_image_url (gc_podcast-gx9).
+  // Channel artwork changes only deliberately (channel-art.ts): the newest
+  // conference with a manual override or self-hosted art wins, so a new
+  // conference's auto-scraped Church image never silently replaces it
+  // (Pocket Casts locks the first art it sees per feed URL).
   //
-  // Rationale: conference_image_url is sourced from the /media/collection
-  // og:image and is sized 1500x1500 — a proper square that satisfies Apple
-  // Podcasts' 1400x1400 minimum and square-image requirement. Talk hero
-  // images (1920x1080 video-frame captures) are 16:9, which renders as
-  // ~1400x787 when fit into Apple's square canvas — technically non-compliant
-  // and may be rejected by the Apple Podcasts directory.
+  // Legacy fallback when no conference qualifies (older data):
+  //   1. most-recent conference with a non-null conference_image_url
+  //      (1500x1500 square, Apple-compliant; gc_podcast-gx9)
+  //   2. first talk.image_url (16:9 hero)
+  //   3. PODCAST_CONFIG.imageUrl
   //
-  // Fallback chain:
-  //   1. most-recent conference with a non-null conference_image_url (square, Apple-compliant)
-  //   2. first talk.image_url from the most-recent conference (16:9 fallback)
-  //   3. PODCAST_CONFIG.imageUrl (pre-2024 hardcoded default)
-  const mostRecentWithConferenceImage = sortedConferences.find(
-    (c) => c.conference.conference_image_url,
+  // gc_podcast-due: the art carries ?v=<YYYY-MM> of the conference it belongs
+  // to, so the URL is stable across rebuilds and changes only with the art.
+  const deliberate = selectDeliberateChannelArt(
+    sortedConferences.map((c) => c.conference),
+    {
+      language: opts.language || 'eng',
+      overrides: opts.imageOverrides ?? {},
+      selfHostBase: opts.feedBaseUrl || DEFAULT_OPTIONS.feedBaseUrl!,
+    },
   );
-  const conferenceImageSource = mostRecentWithConferenceImage?.conference;
-  if (conferenceImageSource?.conference_image_url) {
-    // gc_podcast-due: append ?v=<YYYY-MM> to defeat aggressive client-side
-    // artwork caching (Pocket Casts, Apple Podcasts) that may pin to the
-    // first-seen channel image even after the IIIF hash changes. Stable
-    // across rebuilds within a cycle; rotates only when a new conference's
-    // art lands.
-    const cycle = `${conferenceImageSource.year}-${String(conferenceImageSource.month).padStart(2, '0')}`;
-    config.imageUrl = appendCacheBust(conferenceImageSource.conference_image_url, cycle);
+  const legacySource = sortedConferences.find((c) => c.conference.conference_image_url)?.conference;
+  if (deliberate) {
+    config.imageUrl = appendCacheBust(deliberate.url, deliberate.cycle);
+  } else if (legacySource?.conference_image_url) {
+    config.imageUrl = appendCacheBust(
+      legacySource.conference_image_url,
+      conferenceCycle(legacySource.year, legacySource.month),
+    );
   } else {
     const firstTalkHero = (() => {
       for (const c of sortedConferences) {
@@ -528,10 +543,13 @@ export async function generateAndSaveFeed(
 ): Promise<void> {
   const language = options?.language || 'eng';
   const conferences = await loadConferences(outputDir, language);
+  const imageOverrides =
+    options?.imageOverrides ?? (await loadImageOverrides(options?.imageOverridesPath));
   // Name the file actually written in the self link, so an alias such as
   // audio-en.xml is not folded back into audio.xml (gc_podcast-bf8).
   const feed = generateRssFeed(conferences, {
     ...options,
+    imageOverrides,
     feedFile: options?.feedFile ?? path.basename(feedPath),
   });
   await fs.writeFile(feedPath, feed, 'utf-8');

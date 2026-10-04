@@ -4,6 +4,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   conferenceSaturday,
+  channelArtWarning,
   currentConference,
   evaluateFeed,
   parseFeed,
@@ -105,5 +106,52 @@ describe('evaluateFeed', () => {
     expect(blank.failures.join()).toMatch(/missing or non-https enclosure/);
     const dup = evaluateFeed(parseFeed(feedXml({ built, guids: ['a', 'a'] })), now);
     expect(dup.failures.join()).toMatch(/duplicate GUIDs: a/);
+  });
+});
+
+describe('channelArtWarning (set channel art before the conference)', () => {
+  // April 2027 conference Saturday is 2027-04-03.
+  const ALL = {
+    '2027-04-eng': 'https://x.example/en.jpg',
+    '2027-04-spa': 'https://x.example/es.jpg',
+    '2027-04-por': 'https://x.example/pt.jpg',
+  };
+  const at = (iso: string) => new Date(iso);
+
+  it('confirms the April 2027 Saturday', () => {
+    expect(conferenceSaturday(2027, 4).toISOString().slice(0, 10)).toBe('2027-04-03');
+  });
+
+  it('day -11: no warning yet', () => {
+    expect(channelArtWarning(at('2027-03-23T12:00:00Z'), {})).toBeUndefined();
+  });
+
+  it('day -10 through day -1: fails when keys are missing', () => {
+    for (const day of ['2027-03-24T00:00:00Z', '2027-03-28T12:00:00Z', '2027-04-02T23:59:00Z']) {
+      expect(channelArtWarning(at(day), {})).toBe(
+        'set channel art for 2027-04 before the conference: missing 2027-04-eng, 2027-04-spa, 2027-04-por',
+      );
+    }
+  });
+
+  it('names only the missing languages', () => {
+    const partial = { '2027-04-eng': ALL['2027-04-eng'] };
+    expect(channelArtWarning(at('2027-03-30T00:00:00Z'), partial)).toBe(
+      'set channel art for 2027-04 before the conference: missing 2027-04-spa, 2027-04-por',
+    );
+  });
+
+  it('passes when all three keys are present', () => {
+    expect(channelArtWarning(at('2027-03-30T00:00:00Z'), ALL)).toBeUndefined();
+  });
+
+  it('no warning after Saturday', () => {
+    expect(channelArtWarning(at('2027-04-04T06:00:00Z'), {})).toBeUndefined();
+    expect(channelArtWarning(at('2027-04-20T06:00:00Z'), {})).toBeUndefined();
+  });
+
+  it('covers the October conference too (2026-10-03, warning from 2026-09-23)', () => {
+    expect(channelArtWarning(at('2026-09-22T12:00:00Z'), {})).toBeUndefined();
+    expect(channelArtWarning(at('2026-09-23T00:00:00Z'), {})).toMatch(/2026-10 before/);
   });
 });

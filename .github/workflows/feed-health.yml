@@ -4,7 +4,9 @@ name: Feed Health
 # the scraper: current-conference sessions/talks present once due, feed still
 # being rebuilt during the conference window, enclosures reachable. Any upstream
 # failure (site change, scraper bug, broken workflow, failed deploy) surfaces
-# here as a late or missing episode.
+# here as a late or missing episode. From 10 days before each conference it
+# also fails if config/conference-image-overrides.json (read from the checkout)
+# lacks channel art for the upcoming conference in any language.
 #
 # Deliberately a separate workflow: it only reads public URLs, so a fault in
 # this file or script can never stop update-feed.yml from publishing.
@@ -14,6 +16,9 @@ name: Feed Health
 
 on:
   schedule:
+    # Channel-art lead-up (Mar/Sep 20th-31st): daily. Conference Saturday is
+    # Apr/Oct 1st-7th, so its 10-day warning window starts Mar/Sep 22nd-28th.
+    - cron: '30 12 20-31 3,9 *'
     # Conference window (Apr/Oct 1st-16th): every 6 hours.
     - cron: '30 */6 1-16 4,10 *'
     # Rest of the year: weekly enclosure/feed sanity check (Monday).

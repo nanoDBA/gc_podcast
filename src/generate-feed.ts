@@ -15,6 +15,7 @@ async function main() {
   let language = 'eng';
   let generateAll = false;
   let minYear: number | undefined;
+  let imageOverridesPath: string | undefined;
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
@@ -34,6 +35,8 @@ async function main() {
       generateAll = true;
     } else if (arg === '--min-year') {
       minYear = parseInt(args[++i], 10);
+    } else if (arg === '--image-overrides') {
+      imageOverridesPath = args[++i];
     } else if (arg === '--help' || arg === '-h') {
       printHelp();
       process.exit(0);
@@ -70,6 +73,7 @@ async function main() {
           includeTalks,
           language: lang.code,
           minYear,
+          imageOverridesPath,
         });
         console.log(`  Done!`);
       } catch (error) {
@@ -95,6 +99,7 @@ async function main() {
         includeTalks,
         language,
         minYear,
+        imageOverridesPath,
       });
       console.log('\nFeed generated successfully!');
     } catch (error) {
@@ -117,6 +122,7 @@ Options:
   -l, --language <code>  Language code: eng, spa, por (default: eng)
   --all-languages        Generate feeds for all languages (feed.xml, feed-spa.xml, feed-por.xml)
   --min-year <year>      Only include conferences from this year onward
+  --image-overrides <f>  Channel-art overrides JSON (default: config/conference-image-overrides.json)
   --no-sessions          Exclude full session recordings
   --no-talks             Exclude individual talk recordings
   -h, --help             Show this help message
