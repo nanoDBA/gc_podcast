@@ -25,11 +25,6 @@ https://nanodba.github.io/gc_podcast/audio-es.xml
 https://nanodba.github.io/gc_podcast/audio-pt.xml
 ```
 
-**English (alternate):** [https://nanodba.github.io/gc_podcast/audio-en.xml](https://nanodba.github.io/gc_podcast/audio-en.xml), the same episodes under a second address. Subscribe to it if your app (e.g. Pocket Casts) keeps showing outdated channel artwork for the main feed.
-```
-https://nanodba.github.io/gc_podcast/audio-en.xml
-```
-
 Works with Apple Podcasts, Overcast, Pocket Casts, Castro, and any RSS reader.
 
 > **Apple Podcasts:** don't paste the URL into Search. Search only finds shows in Apple's directory, and these feeds aren't listed, so you'll get "No Results". Use **Library → ⋯ (top right) → Follow a Show by URL**, or the one-click buttons on the [website](https://nanodba.github.io/gc_podcast/), which has a language picker.
