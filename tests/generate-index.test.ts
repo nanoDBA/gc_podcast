@@ -244,6 +244,31 @@ describe('generate-index.ts', () => {
     expect(html).toContain('id="rssLink"');
   });
 
+  // iOS Safari / in-app browsers: copy must not depend on the deprecated global
+  // `event`, and must fall back when the async Clipboard API is missing or refuses.
+  it('copy buttons pass their button and have an iOS-safe fallback', () => {
+    const outputDir = path.join(tempOutputDir, 'output');
+    fs.mkdirSync(outputDir, { recursive: true });
+    const indexPath = path.join(tempOutputDir, 'index.html');
+    execSync(`npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`, {
+      cwd: projectRoot,
+    });
+    const html = fs.readFileSync(indexPath, 'utf-8');
+    expect(html).not.toContain('event.target');
+    expect(html).toContain(`onclick="copyFeed('feedUrl', this)"`);
+    for (const lang of LANGUAGE_CODES) {
+      expect(html).toContain(`onclick="copyFeed('feed${lang.toUpperCase()}', this)"`);
+    }
+    expect(html).toContain("document.execCommand('copy')");
+    expect(html).toContain('setSelectionRange');
+    expect(html).toContain('Press and hold to copy');
+    // The page script is emitted from a TS template literal, which silently
+    // eats backslashes; a mangled regex once turned into a // comment and the
+    // whole script failed to parse (copy + subscribe links dead everywhere).
+    const script = html.split('<script>')[1].split('</script>')[0];
+    expect(() => new Function(script)).not.toThrow();
+  }, 20000);
+
   it('includes last-updated timestamp', () => {
     const fixtureConf = {
       scraped_at: '2026-04-20T00:00:00.000Z',

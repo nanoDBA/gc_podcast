@@ -8,22 +8,24 @@ Podcast RSS feed generator for General Conference audio from The Church of Jesus
 
 Add a feed URL to your podcast app:
 
-**English:**
+> **On iPhone/iPad:** press and hold a feed link below and choose **Copy Link**. GitHub's copy buttons on code blocks don't always appear on touch screens.
+
+**English:** [https://nanodba.github.io/gc_podcast/audio.xml](https://nanodba.github.io/gc_podcast/audio.xml)
 ```
 https://nanodba.github.io/gc_podcast/audio.xml
 ```
 
-**Spanish:**
+**Spanish:** [https://nanodba.github.io/gc_podcast/audio-es.xml](https://nanodba.github.io/gc_podcast/audio-es.xml)
 ```
 https://nanodba.github.io/gc_podcast/audio-es.xml
 ```
 
-**Portuguese:**
+**Portuguese:** [https://nanodba.github.io/gc_podcast/audio-pt.xml](https://nanodba.github.io/gc_podcast/audio-pt.xml)
 ```
 https://nanodba.github.io/gc_podcast/audio-pt.xml
 ```
 
-**English (alternate):** the same episodes under a second address. Subscribe to it if your app (e.g. Pocket Casts) keeps showing outdated channel artwork for the main feed.
+**English (alternate):** [https://nanodba.github.io/gc_podcast/audio-en.xml](https://nanodba.github.io/gc_podcast/audio-en.xml), the same episodes under a second address. Subscribe to it if your app (e.g. Pocket Casts) keeps showing outdated channel artwork for the main feed.
 ```
 https://nanodba.github.io/gc_podcast/audio-en.xml
 ```
