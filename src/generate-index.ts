@@ -104,7 +104,7 @@ function generateFeedListHtml(): string {
     html += `    <div class="feed-item">
       <strong>${langConfig.displayName}</strong>
       <span class="feed-url-small" id="feed${lang.toUpperCase()}">${feedFile}</span>
-      <button class="btn-copy" onclick="copyFeed('feed${lang.toUpperCase()}')">Copy</button>
+      <button class="btn-copy" onclick="copyFeed('feed${lang.toUpperCase()}', this)">Copy</button>
     </div>\n`;
   }
 
@@ -198,6 +198,7 @@ function generateHtml(conferences: RecentConference[]): string {
       margin-bottom: 10px;
     }
     .feed-item strong { min-width: 90px; }
+    .feed-url, .feed-url-small { -webkit-user-select: all; user-select: all; }
     .feed-url-small {
       flex: 1;
       font-family: 'SF Mono', Monaco, monospace;
@@ -334,7 +335,7 @@ function generateHtml(conferences: RecentConference[]): string {
     <strong>Podcast Feed URL:</strong>
     <div class="feed-url" id="feedUrl">${BASE_FEED_URL}/audio.xml</div>
     <a href="audio.xml" class="btn">View Feed</a>
-    <button class="btn btn-secondary" onclick="copyFeedUrl()">Copy URL</button>
+    <button class="btn btn-secondary" onclick="copyFeed('feedUrl', this)">Copy URL</button>
   </div>
 
   <div class="features">
@@ -409,7 +410,7 @@ ${generateSubscribeButtonsHtml()}
 
   <script>
     const baseUrl = window.location.hostname !== 'localhost'
-      ? window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '')
+      ? window.location.origin + window.location.pathname.replace(/\\/[^\\/]*$/, '')
       : '${BASE_FEED_URL}';
 
     // Update all feed URLs
@@ -418,30 +419,69 @@ ${generateSubscribeButtonsHtml()}
     document.getElementById('feedSPA').textContent = baseUrl + '/audio-es.xml';
     document.getElementById('feedPOR').textContent = baseUrl + '/audio-pt.xml';
 
-    function copyFeedUrl() {
-      copyToClipboard(document.getElementById('feedUrl').textContent, event.target);
-    }
-
-    function copyFeed(id) {
-      copyToClipboard(document.getElementById(id).textContent, event.target);
-    }
-
-    function copyToClipboard(text, btn) {
-      navigator.clipboard.writeText(text).then(() => {
-        const original = btn.textContent;
-        btn.textContent = 'Copied!';
-        btn.classList.add('copied');
+    // Copy that works on iOS Safari and in-app browsers (gc_podcast iOS copy
+    // bug): async Clipboard API first, then a selection + execCommand fallback
+    // done the way WebKit requires, then select the text and ask for a long-press.
+    function copyFeed(id, btn) {
+      const el = document.getElementById(id);
+      const text = el.textContent.trim();
+      const done = (ok) => {
+        const original = btn.dataset.label || btn.textContent;
+        btn.dataset.label = original;
+        btn.textContent = ok ? 'Copied!' : 'Press and hold to copy';
+        btn.classList.toggle('copied', ok);
+        if (!ok) selectText(el);
         setTimeout(() => {
           btn.textContent = original;
           btn.classList.remove('copied');
-        }, 1500);
-      });
+        }, ok ? 1500 : 4000);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => done(true), () => done(legacyCopy(text)));
+      } else {
+        done(legacyCopy(text));
+      }
+    }
+
+    function legacyCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.contentEditable = 'true';
+      ta.style.position = 'fixed';
+      ta.style.top = '0';
+      ta.style.opacity = '0';
+      ta.style.fontSize = '16px'; // below 16px iOS zooms the page on focus
+      document.body.appendChild(ta);
+      const range = document.createRange();
+      range.selectNodeContents(ta);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      ta.setSelectionRange(0, text.length); // iOS ignores ta.select()
+      let ok = false;
+      try {
+        ok = document.execCommand('copy');
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(ta);
+      sel.removeAllRanges();
+      return ok;
+    }
+
+    function selectText(el) {
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
     }
 
     // Set up one-click subscribe links
     // Reference: https://github.com/nathangathright/podcast-platform-links
     const feedUrl = baseUrl + '/audio.xml';
-    const feedUrlNoProtocol = feedUrl.replace(/^https?:\\/\\/, '');
+    const feedUrlNoProtocol = feedUrl.replace(/^https?:\\/\\//, '');
     const encodedFeed = encodeURIComponent(feedUrl);
 
     // Apple Podcasts - uses podcast:// with URL (no protocol)
