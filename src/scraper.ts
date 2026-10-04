@@ -5,7 +5,6 @@
 
 import * as fs from 'fs/promises';
 import * as path from 'path';
-import { fileURLToPath } from 'url';
 import {
   findAll,
   findByDataContentType,
@@ -76,6 +75,7 @@ export async function checkCacheTtl(
 import { LANGUAGES } from './languages.js';
 import { ApiResponseSchema, detectApiDrift } from './schemas.js';
 import { log } from './logger.js';
+import { loadImageOverrides, overrideKey } from './channel-art.js';
 import {
   extractImageFromTalkHtml,
   extractImageFromBioHtml,
@@ -1390,23 +1390,11 @@ export class ConferenceScraper {
     // wins over scraping so a hand-picked / self-hosted channel image survives
     // re-scrapes. Keyed by `${year}-${MM}-${language}`. A missing, empty, or
     // malformed file means "no override" and extraction proceeds normally.
-    const overrideKey = `${year}-${String(month).padStart(2, '0')}-${this.config.language}`;
-    try {
-      const overridesPath = path.join(
-        path.dirname(fileURLToPath(import.meta.url)),
-        '..',
-        'config',
-        'conference-image-overrides.json',
-      );
-      const raw = await fs.readFile(overridesPath, 'utf-8');
-      const overrides = JSON.parse(raw) as Record<string, unknown>;
-      const override = overrides[overrideKey];
-      if (typeof override === 'string' && override.length > 0) {
-        log.info('conference image: using manual override', { key: overrideKey, url: override });
-        return override;
-      }
-    } catch {
-      // No usable override file — fall through to normal extraction.
+    const key = overrideKey(year, month, this.config.language);
+    const override = (await loadImageOverrides())[key];
+    if (override) {
+      log.info('conference image: using manual override', { key, url: override });
+      return override;
     }
 
     const monthName = month === 4 ? 'april' : 'october';
