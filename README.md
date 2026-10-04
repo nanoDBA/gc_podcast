@@ -2,6 +2,8 @@
 
 Podcast RSS feed generator for General Conference audio from The Church of Jesus Christ of Latter-day Saints.
 
+**Website:** [nanodba.github.io/gc_podcast](https://nanodba.github.io/gc_podcast/) has the feed URLs, one-click subscribe buttons and recent conferences.
+
 ## Subscribe
 
 Add a feed URL to your podcast app:
@@ -19,6 +21,11 @@ https://nanodba.github.io/gc_podcast/audio-es.xml
 **Portuguese:**
 ```
 https://nanodba.github.io/gc_podcast/audio-pt.xml
+```
+
+**English (alternate):** the same episodes under a second address. Subscribe to it if your app (e.g. Pocket Casts) keeps showing outdated channel artwork for the main feed.
+```
+https://nanodba.github.io/gc_podcast/audio-en.xml
 ```
 
 Works with Apple Podcasts, Overcast, Pocket Casts, Castro, and any RSS reader.
