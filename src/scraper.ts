@@ -75,7 +75,6 @@ export async function checkCacheTtl(
 import { LANGUAGES } from './languages.js';
 import { ApiResponseSchema, detectApiDrift } from './schemas.js';
 import { log } from './logger.js';
-import { loadImageOverrides, overrideKey } from './channel-art.js';
 import {
   extractImageFromTalkHtml,
   extractImageFromBioHtml,
@@ -1386,17 +1385,9 @@ export class ConferenceScraper {
       return null;
     }
 
-    // gc_podcast-uuc: a manual override in config/conference-image-overrides.json
-    // wins over scraping so a hand-picked / self-hosted channel image survives
-    // re-scrapes. Keyed by `${year}-${MM}-${language}`. A missing, empty, or
-    // malformed file means "no override" and extraction proceeds normally.
-    const key = overrideKey(year, month, this.config.language);
-    const override = (await loadImageOverrides())[key];
-    if (override) {
-      log.info('conference image: using manual override', { key, url: override });
-      return override;
-    }
-
+    // Records the Church's own conference image as data. Channel artwork is
+    // chosen separately from config/conference-image-overrides.json
+    // (channel-art.ts); the scraper does not read overrides.
     const monthName = month === 4 ? 'april' : 'october';
     const collectionUrl = `${BASE_URL}/media/collection/${monthName}-${year}-general-conference?lang=eng`;
 

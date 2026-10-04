@@ -193,8 +193,8 @@ describe('RSS feed – per-item <itunes:image> integration (multi-talk)', () => 
     expect(feedWithoutItems).not.toContain(IIIF_SPEAKER_C_IMAGE);
   });
 
-  it('first talk hero image IS used at channel level (gc_podcast-9ut follow-up)', () => {
+  it('talk hero image is NOT used at channel level (channel art comes only from overrides)', () => {
     const feedWithoutItems = feed.replace(/<item>[\s\S]*?<\/item>/g, '');
-    expect(feedWithoutItems).toContain(IIIF_TALK_IMAGE);
+    expect(feedWithoutItems).not.toContain(IIIF_TALK_IMAGE);
   });
 });

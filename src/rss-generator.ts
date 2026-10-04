@@ -18,10 +18,10 @@ import {
   talkEpisodeNumber,
 } from './session-slots.js';
 import {
+  DEFAULT_CHANNEL_ART,
   ImageOverrides,
-  conferenceCycle,
   loadImageOverrides,
-  selectDeliberateChannelArt,
+  selectChannelArt,
 } from './channel-art.js';
 
 /**
@@ -55,8 +55,7 @@ const PODCAST_CONFIG = {
   explicit: false,
   // Last-resort channel art — only used when no conference has deliberate
   // art (channel-art.ts), no conference_image_url and no talk hero.
-  imageUrl:
-    'https://www.churchofjesuschrist.org/imgs/5uahv05h1s6416y49vw745z70juiiffhiq0vn8a2/full/!1400,/0/default',
+  imageUrl: DEFAULT_CHANNEL_ART,
   websiteUrl: 'https://www.churchofjesuschrist.org/study/general-conference',
   copyright: `© ${new Date().getFullYear()} by Intellectual Reserve, Inc. All rights reserved.`,
 };
@@ -349,50 +348,13 @@ export function generateRssFeed(
     return dateB - dateA;
   });
 
-  // Channel artwork changes only deliberately (channel-art.ts): the newest
-  // conference with a manual override or self-hosted art wins, so a new
-  // conference's auto-scraped Church image never silently replaces it
-  // (Pocket Casts locks the first art it sees per feed URL).
-  //
-  // Legacy fallback when no conference qualifies (older data):
-  //   1. most-recent conference with a non-null conference_image_url
-  //      (1500x1500 square, Apple-compliant; gc_podcast-gx9)
-  //   2. first talk.image_url (16:9 hero)
-  //   3. PODCAST_CONFIG.imageUrl
-  //
-  // gc_podcast-due: the art carries ?v=<YYYY-MM> of the conference it belongs
-  // to, so the URL is stable across rebuilds and changes only with the art.
-  const deliberate = selectDeliberateChannelArt(
-    sortedConferences.map((c) => c.conference),
-    {
-      language: opts.language || 'eng',
-      overrides: opts.imageOverrides ?? {},
-      selfHostBase: opts.feedBaseUrl || DEFAULT_OPTIONS.feedBaseUrl!,
-    },
-  );
-  const legacySource = sortedConferences.find((c) => c.conference.conference_image_url)?.conference;
-  if (deliberate) {
-    config.imageUrl = appendCacheBust(deliberate.url, deliberate.cycle);
-  } else if (legacySource?.conference_image_url) {
-    config.imageUrl = appendCacheBust(
-      legacySource.conference_image_url,
-      conferenceCycle(legacySource.year, legacySource.month),
-    );
-  } else {
-    const firstTalkHero = (() => {
-      for (const c of sortedConferences) {
-        for (const session of c.conference.sessions) {
-          for (const talk of session.talks) {
-            if (talk.image_url) return talk.image_url;
-          }
-        }
-      }
-      return undefined;
-    })();
-    if (firstTalkHero) {
-      config.imageUrl = firstTalkHero;
-    }
-  }
+  // Channel artwork comes only from config/conference-image-overrides.json
+  // (channel-art.ts): the language's newest entry, else DEFAULT_CHANNEL_ART.
+  // Never the scraped Church image or a talk hero: Pocket Casts keeps the
+  // first channel art it fetches, so it must never change by itself.
+  // gc_podcast-due: ?v=<YYYY-MM> of the override keeps the URL stable.
+  const art = selectChannelArt(opts.imageOverrides ?? {}, opts.language || 'eng');
+  if (art) config.imageUrl = appendCacheBust(art.url, art.cycle);
 
   // Generate items — newest first (conferences descending, sessions descending,
   // talks descending) so that <pubDate> is strictly monotonically decreasing
