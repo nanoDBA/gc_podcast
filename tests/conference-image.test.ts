@@ -168,15 +168,17 @@ describe('fetchConferenceImage', () => {
     expect(calledUrl).toBe(COLLECTION_URL_APRIL_2025);
   });
 
-  it('constructs the correct collection URL for month=10, year=2026', async () => {
+  // Uses a conference with no entry in config/conference-image-overrides.json:
+  // an override short-circuits extraction, so no collection URL is fetched.
+  it('constructs the correct collection URL for month=10, year=2027', async () => {
     const mockFetch = vi.fn().mockResolvedValue(makeHtmlResponse(SAMPLE_HASH));
     vi.stubGlobal('fetch', mockFetch);
     const scraper = new ConferenceScraper({ useCache: false });
 
-    await scraper.fetchConferenceImage(2026, 10);
+    await scraper.fetchConferenceImage(2027, 10);
 
     const calledUrl = mockFetch.mock.calls[0][0] as string;
-    expect(calledUrl).toContain('october-2026-general-conference');
+    expect(calledUrl).toContain('october-2027-general-conference');
   });
 
   it('returns the square image URL when collection page succeeds', async () => {
