@@ -98,7 +98,7 @@ This schedule aligns with the Church's [official release timeline](https://www.c
 
 To trigger manually: Actions > "Update Podcast Feed" > Run workflow
 
-A separate **Feed Health** workflow (`npm run check-feed-health`) checks the published feeds themselves, every 6 hours in the conference window and weekly otherwise. It opens a `feed-health` issue when the feed stops being rebuilt during conference, when full sessions are missing from the Tuesday after conference weekend, when fewer than 25 talks are present 10 days after the Saturday, or when sampled MP3 links don't respond. The thresholds are deliberately looser than the Church's timeline, because Spanish and Portuguese audio can lag.
+A separate **Feed Health** workflow (`npm run check-feed-health`) checks the published feeds themselves, every 6 hours in the conference window and weekly otherwise. It opens a `feed-health` issue when the feed stops being rebuilt during conference, when full sessions are missing from the Tuesday after conference weekend, when fewer than 25 talks are present 10 days after the Saturday, when sampled MP3 links don't respond, or when **Pocket Casts shows different channel art than the feed** (it compares Pocket Casts' own server copy with our art, picture to picture, and closes its issue automatically once they match). The thresholds are deliberately looser than the Church's timeline, because Spanish and Portuguese audio can lag.
 
 ## CLI Reference
 
