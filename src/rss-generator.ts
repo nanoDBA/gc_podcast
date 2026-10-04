@@ -10,6 +10,13 @@ import { LANGUAGES, LanguageCode } from './languages.js';
 import { uuidv5 } from './uuid.js';
 import { GENERATOR_STRING } from './version.js';
 import { validateVersion, VersionMismatchError } from './migrations.js';
+import {
+  assignSessionSlots,
+  getSlotStartUtc,
+  seasonNumber,
+  sessionEpisodeNumber,
+  talkEpisodeNumber,
+} from './session-slots.js';
 
 /**
  * Podcasting 2.0 namespace UUID for `<podcast:guid>` derivation.
@@ -157,65 +164,6 @@ function estimateFileSize(durationMs?: number): number {
 }
 
 /**
- * General Conference session schedule (Mountain Daylight Time, UTC-6).
- *
- * Each entry maps a canonical session-order index (1-based, matching
- * Session.order) to { dayOffset, hourUtc } where:
- *   - dayOffset: days after the first Saturday of the conference weekend
- *     (0 = Saturday, 1 = Sunday)
- *   - hourUtc: wall-clock start hour in UTC (MDT = UTC-6)
- *
- * Known GC schedule (subject to occasional changes):
- *   1 – Saturday Morning   10:00 MDT → 16:00 UTC, day+0
- *   2 – Saturday Afternoon 14:00 MDT → 20:00 UTC, day+0
- *   3 – Saturday Evening   18:00 MDT → 00:00 UTC, day+1 (midnight crossing)
- *   4 – Sunday Morning     10:00 MDT → 16:00 UTC, day+1
- *   5 – Sunday Afternoon   14:00 MDT → 20:00 UTC, day+1
- *
- * Sessions beyond order 5 (rare) fall back to Sunday Afternoon + their
- * excess order as an extra hour offset so they remain unique.
- */
-const SESSION_SCHEDULE: Record<number, { dayOffset: number; hourUtc: number }> = {
-  1: { dayOffset: 0, hourUtc: 16 }, // Saturday Morning
-  2: { dayOffset: 0, hourUtc: 20 }, // Saturday Afternoon
-  3: { dayOffset: 1, hourUtc: 0 }, // Saturday Evening (midnight UTC)
-  4: { dayOffset: 1, hourUtc: 16 }, // Sunday Morning
-  5: { dayOffset: 1, hourUtc: 20 }, // Sunday Afternoon
-};
-
-/**
- * Compute the UTC timestamp for the start of a specific session.
- *
- * The first Saturday of the conference weekend is used as the anchor.
- * Per-talk pubDates are derived by adding `(talk.order * 60)` seconds to
- * this session-start timestamp, giving each talk a unique, strictly
- * monotonically increasing time within the session.
- *
- * Invariant: pubDate must be strictly monotonically DECREASING when items
- * are emitted newest-to-oldest (top item in the feed has the highest
- * pubDate). This function provides the per-session anchor; callers are
- * responsible for emitting items in descending pubDate order.
- */
-function getSessionStartUtc(year: number, month: 4 | 10, sessionOrder: number): Date {
-  // Find the first Saturday of the conference month (UTC midnight).
-  const firstOfMonth = new Date(Date.UTC(year, month - 1, 1));
-  // getUTCDay(): 0=Sun, 6=Sat
-  const dayOfWeek = firstOfMonth.getUTCDay();
-  const daysUntilSaturday = dayOfWeek === 6 ? 0 : (6 - dayOfWeek + 7) % 7;
-  const firstSaturdayMs = firstOfMonth.getTime() + daysUntilSaturday * 24 * 60 * 60 * 1000;
-
-  const schedule = SESSION_SCHEDULE[sessionOrder] ?? {
-    // Fallback for unexpected session orders: Sunday afternoon + extra hours
-    dayOffset: 1,
-    hourUtc: 20 + (sessionOrder - 5),
-  };
-
-  return new Date(
-    firstSaturdayMs + schedule.dayOffset * 24 * 60 * 60 * 1000 + schedule.hourUtc * 60 * 60 * 1000,
-  );
-}
-
-/**
  * Generate episode GUID from talk/session info
  */
 function generateGuid(conference: Conference, session: Session, talk?: Talk): string {
@@ -240,6 +188,7 @@ function generateTalkItem(
   conference: Conference,
   session: Session,
   talk: Talk,
+  slot: number,
   pubDate: Date,
 ): string {
   if (!talk.audio?.url) return '';
@@ -270,8 +219,8 @@ function generateTalkItem(
       <itunes:duration>${duration}</itunes:duration>
       <itunes:summary>${wrapCdata(description)}</itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>${conference.year}</itunes:season>
-      <itunes:episode>${talk.order}</itunes:episode>
+      <itunes:season>${seasonNumber(conference)}</itunes:season>
+      <itunes:episode>${talkEpisodeNumber(talk, slot)}</itunes:episode>
       <link>${escapeXml(talk.url)}</link>${itemImageTag}
     </item>`;
 }
@@ -279,7 +228,12 @@ function generateTalkItem(
 /**
  * Generate RSS item for a full session
  */
-function generateSessionItem(conference: Conference, session: Session, pubDate: Date): string {
+function generateSessionItem(
+  conference: Conference,
+  session: Session,
+  slot: number,
+  pubDate: Date,
+): string {
   if (!session.audio?.url) return '';
 
   const guid = generateGuid(conference, session);
@@ -305,8 +259,8 @@ function generateSessionItem(conference: Conference, session: Session, pubDate: 
       <itunes:duration>${duration}</itunes:duration>
       <itunes:summary>${wrapCdata(description)}</itunes:summary>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>${conference.year}</itunes:season>
-      <itunes:episode>${session.order * 100}</itunes:episode>
+      <itunes:season>${seasonNumber(conference)}</itunes:season>
+      <itunes:episode>${sessionEpisodeNumber(slot)}</itunes:episode>
       <link>${escapeXml(session.url)}</link>${itemImageTag}
     </item>`;
 }
@@ -433,12 +387,18 @@ export function generateRssFeed(
   for (const confOutput of sortedConferences) {
     const conf = confOutput.conference;
 
-    // Sort sessions DESCENDING so the last session of the conference (highest
-    // pubDate) is emitted first, preserving newest-to-oldest feed order.
-    const sortedSessions = [...conf.sessions].sort((a, b) => b.order - a.order);
+    // Sort sessions by Church slot DESCENDING so the last session of the
+    // conference (highest pubDate) is emitted first, preserving
+    // newest-to-oldest feed order.
+    const slots = assignSessionSlots(conf.sessions);
+    const slotOf = (s: Session): number => slots.get(s) as number;
+    const sortedSessions = [...conf.sessions].sort(
+      (a, b) => slotOf(b) - slotOf(a) || b.order - a.order,
+    );
 
     for (const session of sortedSessions) {
-      const sessionStart = getSessionStartUtc(conf.year, conf.month as 4 | 10, session.order);
+      const slot = slotOf(session);
+      const sessionStart = getSlotStartUtc(conf.year, conf.month, slot);
 
       // Add talk episodes sorted DESCENDING — last talk first in feed,
       // highest pubDate first.
@@ -449,7 +409,7 @@ export function generateRssFeed(
             // Each talk's pubDate = sessionStart + (order × 60 s).
             // Order is 1-based, so talk 1 → +60 s, talk 2 → +120 s, etc.
             const talkDate = new Date(sessionStart.getTime() + talk.order * 60 * 1000);
-            items.push(generateTalkItem(conf, session, talk, talkDate));
+            items.push(generateTalkItem(conf, session, talk, slot, talkDate));
           }
         }
       }
@@ -458,7 +418,7 @@ export function generateRssFeed(
       // than) any individual talk from this session when emitted in order.
       // The session item uses sessionStart with no additional offset.
       if (opts.includeSessions && session.audio?.url) {
-        items.push(generateSessionItem(conf, session, sessionStart));
+        items.push(generateSessionItem(conf, session, slot, sessionStart));
       }
     }
   }
