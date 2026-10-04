@@ -19,6 +19,7 @@
 
 import { pathToFileURL } from 'node:url';
 import { ImageOverrides, loadImageOverrides, overrideKey } from './channel-art.js';
+import { POCKETCASTS_FEED_FILES, checkPocketCastsArt } from './pocketcasts-art.js';
 
 export const FEEDS = [
   { language: 'eng', file: 'audio.xml' },
@@ -251,6 +252,14 @@ async function main(): Promise<void> {
   anyFailed ||= artWarning !== undefined;
   console.log(`[channel-art] ${artWarning ? 'FAIL' : 'OK'} config/conference-image-overrides.json`);
   if (artWarning) console.log(`  FAIL: ${artWarning}`);
+
+  // What Pocket Casts' apps actually display (their server copy, by podcast UUID).
+  for (const file of POCKETCASTS_FEED_FILES) {
+    const pc = await checkPocketCastsArt(baseUrl, file);
+    const status = pc.matches === undefined ? 'WARN' : pc.matches ? 'OK' : 'FAIL';
+    if (pc.matches === false) anyFailed = true;
+    console.log(`[pocketcasts] ${status} ${file}: ${pc.detail}`);
+  }
   process.exitCode = anyFailed ? 1 : 0;
 }
 
