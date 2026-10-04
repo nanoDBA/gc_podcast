@@ -32,6 +32,8 @@ https://nanodba.github.io/gc_podcast/audio-en.xml
 
 Works with Apple Podcasts, Overcast, Pocket Casts, Castro, and any RSS reader.
 
+> **Apple Podcasts:** don't paste the URL into Search. Search only finds shows in Apple's directory, and these feeds aren't listed, so you'll get "No Results". Use **Library → ⋯ (top right) → Follow a Show by URL**, or the one-click buttons on the [website](https://nanodba.github.io/gc_podcast/), which has a language picker.
+
 > **Note:** If you fork this repo, your feed URLs will be at `https://YOUR_USERNAME.github.io/gc_podcast/audio.xml`
 
 ## What's Included

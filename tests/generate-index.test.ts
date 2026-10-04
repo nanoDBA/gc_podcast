@@ -269,6 +269,25 @@ describe('generate-index.ts', () => {
     expect(() => new Function(script)).not.toThrow();
   }, 20000);
 
+  // Spanish/Portuguese listeners need one-click subscribe for THEIR feed.
+  it('has a language picker that drives one-click subscribe for every feed', () => {
+    const outputDir = path.join(tempOutputDir, 'output');
+    fs.mkdirSync(outputDir, { recursive: true });
+    const indexPath = path.join(tempOutputDir, 'index.html');
+    execSync(`npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`, {
+      cwd: projectRoot,
+    });
+    const html = fs.readFileSync(indexPath, 'utf-8');
+    for (const file of ['audio.xml', 'audio-es.xml', 'audio-pt.xml']) {
+      expect(html).toContain(`data-file="${file}"`);
+    }
+    for (const lang of LANGUAGE_CODES) expect(html).toContain(LANGUAGES[lang].nativeName);
+    expect(html).toContain('function setSubscribeFeed(btn)');
+    expect(html).toContain('Follow a Show by URL');
+    const script = html.split('<script>')[1].split('</script>')[0];
+    expect(() => new Function(script)).not.toThrow();
+  }, 20000);
+
   it('includes last-updated timestamp', () => {
     const fixtureConf = {
       scraped_at: '2026-04-20T00:00:00.000Z',

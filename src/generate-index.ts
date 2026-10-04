@@ -113,8 +113,15 @@ function generateFeedListHtml(): string {
 }
 
 function generateSubscribeButtonsHtml(): string {
-  // Will be updated by client-side JavaScript
+  // Links are filled in by client-side JavaScript for the chosen language.
+  const picker = LANGUAGE_CODES.map((lang) => {
+    const file = lang === 'eng' ? 'audio.xml' : `audio-${LANGUAGES[lang].audioSuffix}.xml`;
+    return `<button type="button" class="lang-btn" data-file="${file}" data-tag="${LANGUAGES[lang].rssLanguageTag}" onclick="setSubscribeFeed(this)">${LANGUAGES[lang].nativeName}</button>`;
+  }).join('\n    ');
   return `  <h2>One-Click Subscribe</h2>
+  <div class="lang-picker" role="group" aria-label="Feed language">
+    ${picker}
+  </div>
   <div class="subscribe-buttons" id="subscribeButtons">
     <a class="subscribe-btn apple" href="#" id="appleLink">Apple Podcasts</a>
     <a class="subscribe-btn overcast" href="#" id="overcastLink">Overcast</a>
@@ -220,6 +227,17 @@ function generateHtml(conferences: RecentConference[]): string {
     }
     .btn-copy:hover { background: #0052a3; }
     .btn-copy.copied { background: #38a169; }
+    .lang-picker { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; }
+    .lang-btn {
+      padding: 8px 14px;
+      border: 1px solid #c3cfe2;
+      border-radius: 999px;
+      background: #fff;
+      color: #2c5282;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .lang-btn.active { background: #2c5282; color: #fff; border-color: #2c5282; }
     .subscribe-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -378,6 +396,7 @@ ${generateSubscribeButtonsHtml()}
     <li>Look for "Add by URL" or "Add RSS Feed"</li>
     <li>Paste the URL and confirm</li>
   </ol>
+  <p><strong>Apple Podcasts:</strong> the Search tab only finds shows listed in Apple's directory, and these feeds are not listed, so a pasted URL shows "No Results". Use <strong>Library &rarr; &hellip; (top right) &rarr; Follow a Show by URL</strong> instead, or tap the Apple Podcasts button above after choosing your language.</p>
 
   <h2>Episode Types</h2>
   <p>The feed includes two types of episodes:</p>
@@ -478,26 +497,32 @@ ${generateSubscribeButtonsHtml()}
       sel.addRange(range);
     }
 
-    // Set up one-click subscribe links
+    // One-click subscribe links for the chosen language's feed.
     // Reference: https://github.com/nathangathright/podcast-platform-links
-    const feedUrl = baseUrl + '/audio.xml';
-    const feedUrlNoProtocol = feedUrl.replace(/^https?:\\/\\//, '');
-    const encodedFeed = encodeURIComponent(feedUrl);
+    function setSubscribeFeed(btn) {
+      const feedUrl = baseUrl + '/' + btn.dataset.file;
+      const feedUrlNoProtocol = feedUrl.replace(/^https?:\\/\\//, '');
+      const encodedFeed = encodeURIComponent(feedUrl);
+      // Apple Podcasts - podcast:// with URL (no protocol)
+      document.getElementById('appleLink').href = 'podcast://' + feedUrlNoProtocol;
+      // Overcast - the one app that needs the full URL with protocol
+      document.getElementById('overcastLink').href = 'overcast://x-callback-url/add?url=' + encodedFeed;
+      // Pocket Casts - pktc://subscribe/ with URL (no protocol)
+      document.getElementById('pocketcastsLink').href = 'pktc://subscribe/' + feedUrlNoProtocol;
+      // Castro - castros:// (note the 's') with URL (no protocol)
+      document.getElementById('castroLink').href = 'castros://subscribe/' + feedUrlNoProtocol;
+      // RSS Feed (direct link)
+      document.getElementById('rssLink').href = feedUrl;
+      document.querySelectorAll('.lang-btn').forEach((b) => {
+        b.classList.toggle('active', b === btn);
+        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+      });
+    }
 
-    // Apple Podcasts - uses podcast:// with URL (no protocol)
-    document.getElementById('appleLink').href = 'podcast://' + feedUrlNoProtocol;
-
-    // Overcast - only app that requires full URL with protocol
-    document.getElementById('overcastLink').href = 'overcast://x-callback-url/add?url=' + encodedFeed;
-
-    // Pocket Casts - uses pktc://subscribe/ with URL (no protocol)
-    document.getElementById('pocketcastsLink').href = 'pktc://subscribe/' + feedUrlNoProtocol;
-
-    // Castro - uses castros:// (note the 's') with URL (no protocol)
-    document.getElementById('castroLink').href = 'castros://subscribe/' + feedUrlNoProtocol;
-
-    // RSS Feed (direct link)
-    document.getElementById('rssLink').href = feedUrl;
+    // Default to the visitor's language when we have a feed for it.
+    const langButtons = Array.from(document.querySelectorAll('.lang-btn'));
+    const preferred = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    setSubscribeFeed(langButtons.find((b) => b.dataset.tag === preferred) || langButtons[0]);
   </script>
 </body>
 </html>

@@ -19,6 +19,8 @@ export interface LanguageConfig {
   audioSuffix: string;
   /** Human-readable English display name. */
   displayName: string;
+  /** The language's name in itself (site language picker). */
+  nativeName: string;
   /** RSS `<language>` element value (BCP 47 style). */
   rssLanguageTag: string;
   /** Channel description used in the generated RSS feed. */
@@ -30,6 +32,7 @@ export interface LanguageConfig {
 export const LANGUAGES: Record<LanguageConfig['code'], LanguageConfig> = {
   eng: {
     code: 'eng',
+    nativeName: 'English',
     urlParam: 'eng',
     audioSuffix: 'en',
     displayName: 'English',
@@ -40,6 +43,7 @@ export const LANGUAGES: Record<LanguageConfig['code'], LanguageConfig> = {
   },
   spa: {
     code: 'spa',
+    nativeName: 'Español',
     urlParam: 'spa',
     audioSuffix: 'es',
     displayName: 'Spanish',
@@ -51,6 +55,7 @@ export const LANGUAGES: Record<LanguageConfig['code'], LanguageConfig> = {
   },
   por: {
     code: 'por',
+    nativeName: 'Português',
     urlParam: 'por',
     audioSuffix: 'pt',
     displayName: 'Portuguese',
