@@ -392,7 +392,6 @@ ${generateSubscribeButtonsHtml()}
     <li>Overcast</li>
     <li>Pocket Casts</li>
     <li>Castro</li>
-    <li>Google Podcasts</li>
     <li>Spotify (via RSS)</li>
     <li>Any RSS reader</li>
   </ul>
