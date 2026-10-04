@@ -10,8 +10,8 @@
     <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     <language>en</language>
     <copyright>© 2026 by Intellectual Reserve, Inc. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 04 Oct 2026 21:34:49 GMT</lastBuildDate>
-    <generator>gc-podcast-scraper/1.4.2</generator>
+    <lastBuildDate>Sun, 04 Oct 2026 21:42:43 GMT</lastBuildDate>
+    <generator>gc-podcast-scraper/1.5.0</generator>
     <atom:link href="https://nanoDBA.github.io/gc_podcast/audio.xml" rel="self" type="application/rss+xml"/>
     <podcast:guid>a4fcacd4-7d70-52bd-865c-5aa9265bd20d</podcast:guid>
 
@@ -32,6 +32,22 @@
       <title>General Conference - The Church of Jesus Christ of Latter-day Saints</title>
       <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     </image>
+
+    <item>
+      <title>Sunday Morning Session (Full Session) - October 2026 general conference</title>
+      <description><![CDATA[<p><strong>Sunday Morning Session</strong></p><p>October 2026 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/10/sunday-morning-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></description>
+      <enclosure url="https://assets.churchofjesuschrist.org/96rzkmyq79esrb3i9sft57dliosnwh81v4301xw1-128k-en.mp3" length="113741920" type="audio/mpeg"/>
+      <guid isPermaLink="false">gc-2026-10-sunday-morning-session-full</guid>
+      <pubDate>Sun, 04 Oct 2026 16:00:00 GMT</pubDate>
+      <itunes:title>Sunday Morning Session (Full Session)</itunes:title>
+      <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
+      <itunes:duration>01:58:28</itunes:duration>
+      <itunes:summary><![CDATA[<p><strong>Sunday Morning Session</strong></p><p>October 2026 general conference</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/10/sunday-morning-session?lang=eng">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>202610</itunes:season>
+      <itunes:episode>400</itunes:episode>
+      <link>https://www.churchofjesuschrist.org/study/general-conference/2026/10/sunday-morning-session?lang=eng</link>
+    </item>
 
     <item>
       <title>Saturday Afternoon Session (Full Session) - October 2026 general conference</title>
