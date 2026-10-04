@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-03T20:25:15.500Z",
+  "scraped_at": "2026-10-04T08:15:28.146Z",
   "version": "1.0",
   "conference": {
     "year": 2026,
@@ -13,14 +13,28 @@
         "slug": "saturday-morning-session",
         "order": 1,
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/10/saturday-morning-session?lang=spa",
-        "talks": []
+        "talks": [],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/2ibupjp21rdw7w79glx7m0qepjq33hlt7cqsgu09-128k-es.mp3",
+          "quality": "128k",
+          "language": "es",
+          "duration_ms": 6984480
+        },
+        "duration_ms": 6984480
       },
       {
         "name": "Sesión del sábado por la tarde",
         "slug": "saturday-afternoon-session",
         "order": 2,
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/10/saturday-afternoon-session?lang=spa",
-        "talks": []
+        "talks": [],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/mg9psefsh3t88a5om3lafcnn097109sf9v8it7kh-128k-es.mp3",
+          "quality": "128k",
+          "language": "es",
+          "duration_ms": 7177300
+        },
+        "duration_ms": 7177300
       },
       {
         "name": "Sesión del domingo por la mañana",

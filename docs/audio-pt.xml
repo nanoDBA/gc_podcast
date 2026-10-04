@@ -10,7 +10,7 @@
     <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     <language>pt</language>
     <copyright>© 2026 by Intellectual Reserve, Inc. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 03 Oct 2026 20:25:51 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 08:16:05 GMT</lastBuildDate>
     <generator>gc-podcast-scraper/1.2.0</generator>
     <atom:link href="https://nanoDBA.github.io/gc_podcast/audio-pt.xml" rel="self" type="application/rss+xml"/>
     <podcast:guid>0891ca77-3c5a-5c93-9b43-7f3a542b47e3</podcast:guid>
@@ -32,6 +32,22 @@
       <title>Conferência Geral - A Igreja de Jesus Cristo dos Santos dos Últimos Dias</title>
       <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     </image>
+
+    <item>
+      <title>Sessão da manhã de sábado (Full Session) - Conferência Geral de Outubro de 2026</title>
+      <description><![CDATA[<p><strong>Sessão da manhã de sábado</strong></p><p>Conferência Geral de Outubro de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/10/saturday-morning-session?lang=por">View session on churchofjesuschrist.org</a></p>]]></description>
+      <enclosure url="https://assets.churchofjesuschrist.org/8vo4s8dwhhap0hagaoe1yoqcbwgg2nzx9ki01efr-128k-pt.mp3" length="111751680" type="audio/mpeg"/>
+      <guid isPermaLink="false">gc-2026-10-saturday-morning-session-full</guid>
+      <pubDate>Sat, 03 Oct 2026 16:00:00 GMT</pubDate>
+      <itunes:title>Sessão da manhã de sábado (Full Session)</itunes:title>
+      <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
+      <itunes:duration>01:56:24</itunes:duration>
+      <itunes:summary><![CDATA[<p><strong>Sessão da manhã de sábado</strong></p><p>Conferência Geral de Outubro de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/10/saturday-morning-session?lang=por">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>2026</itunes:season>
+      <itunes:episode>100</itunes:episode>
+      <link>https://www.churchofjesuschrist.org/study/general-conference/2026/10/saturday-morning-session?lang=por</link>
+    </item>
 
     <item>
       <title>Presidente Dallin H. Oaks | Considerações finais | April 2026</title>
