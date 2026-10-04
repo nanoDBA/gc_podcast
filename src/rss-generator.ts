@@ -64,6 +64,12 @@ interface RssGeneratorOptions {
   includeTalks?: boolean;
   /** Base URL where the feed will be hosted */
   feedBaseUrl?: string;
+  /**
+   * File name the feed is published as (e.g. "audio-en.xml"). Drives the
+   * atom:link rel="self" URL and therefore podcast:guid. Defaults to the
+   * per-language name (audio.xml / audio-es.xml / audio-pt.xml).
+   */
+  feedFile?: string;
   /** Custom podcast title */
   title?: string;
   /** Custom podcast description */
@@ -426,7 +432,7 @@ export function generateRssFeed(
   // Build RSS feed
   const langSuffix =
     opts.language === 'eng' ? '' : `-${getLanguageRssConfig(opts.language || 'eng').language}`;
-  const feedUrl = `${opts.feedBaseUrl}/audio${langSuffix}.xml`;
+  const feedUrl = `${opts.feedBaseUrl}/${opts.feedFile ?? `audio${langSuffix}.xml`}`;
   const buildDate = formatRfc2822Date(new Date());
   const podcastGuid = uuidv5(normalizeFeedUrlForGuid(feedUrl), PODCAST_NAMESPACE_UUID);
 
@@ -522,7 +528,12 @@ export async function generateAndSaveFeed(
 ): Promise<void> {
   const language = options?.language || 'eng';
   const conferences = await loadConferences(outputDir, language);
-  const feed = generateRssFeed(conferences, options);
+  // Name the file actually written in the self link, so an alias such as
+  // audio-en.xml is not folded back into audio.xml (gc_podcast-bf8).
+  const feed = generateRssFeed(conferences, {
+    ...options,
+    feedFile: options?.feedFile ?? path.basename(feedPath),
+  });
   await fs.writeFile(feedPath, feed, 'utf-8');
   const filteredCount = options?.minYear
     ? conferences.filter((c) => c.conference.year >= options.minYear!).length

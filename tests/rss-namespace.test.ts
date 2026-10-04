@@ -69,3 +69,32 @@ describe('RSS feed Podcasting 2.0 namespace', () => {
     expect(m![1]).toMatch(UUID_V5_REGEX);
   });
 });
+
+// gc_podcast-bf8 alias feed: audio-en.xml must name ITSELF in atom:link
+// rel="self" (and so get its own podcast:guid). Otherwise apps that honor the
+// self link or match on podcast:guid fold it back into audio.xml.
+describe('self link names the file actually published', () => {
+  const selfOf = (xml: string) => xml.match(/<atom:link href="([^"]+)" rel="self"/)?.[1];
+  const guidOf = (xml: string) => xml.match(/<podcast:guid>([^<]+)<\/podcast:guid>/)?.[1];
+  const base = { feedBaseUrl: 'https://example.test/gc', language: 'eng' as const };
+
+  it('defaults to audio.xml for English (unchanged for existing subscribers)', () => {
+    expect(selfOf(generateRssFeed(makeSynthetic(), base))).toBe(
+      'https://example.test/gc/audio.xml',
+    );
+  });
+
+  it('uses the alias file name and a distinct podcast:guid for audio-en.xml', () => {
+    const main = generateRssFeed(makeSynthetic(), base);
+    const alias = generateRssFeed(makeSynthetic(), { ...base, feedFile: 'audio-en.xml' });
+    expect(selfOf(alias)).toBe('https://example.test/gc/audio-en.xml');
+    expect(guidOf(alias)).not.toBe(guidOf(main));
+  });
+
+  it('an explicit feedFile matching the default changes nothing', () => {
+    const main = generateRssFeed(makeSynthetic(), base);
+    const same = generateRssFeed(makeSynthetic(), { ...base, feedFile: 'audio.xml' });
+    expect(selfOf(same)).toBe(selfOf(main));
+    expect(guidOf(same)).toBe(guidOf(main));
+  });
+});
