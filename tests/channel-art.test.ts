@@ -12,14 +12,20 @@ import * as fs from 'fs/promises';
 import * as os from 'os';
 import * as path from 'path';
 import { generateRssFeed } from '../src/rss-generator.js';
-import { loadImageOverrides, overrideKey, selectDeliberateChannelArt } from '../src/channel-art.js';
-import type { Conference, ConferenceOutput } from '../src/types.js';
+import {
+  DEFAULT_CHANNEL_ART,
+  loadImageOverrides,
+  overrideKey,
+  selectChannelArt,
+} from '../src/channel-art.js';
+import type { ConferenceOutput } from '../src/types.js';
 
 const BASE = 'https://nanodba.github.io/gc_podcast';
 const CHURCH_OCT_2026 =
   'https://www.churchofjesuschrist.org/imgs/oct2026hash/square/1500,1500/0/default';
 const CHURCH_APR_2026 =
   'https://www.churchofjesuschrist.org/imgs/apr2026hash/square/1500,1500/0/default';
+const DEFAULT_ART = DEFAULT_CHANNEL_ART;
 const SELF_APR_2026 = `${BASE}/channel-art-april-2026.jpg`;
 const OVERRIDE_APR_2026 = `${BASE}/channel-art-april-2026-override.jpg`;
 const OVERRIDE_OCT_2026 = `${BASE}/channel-art-october-2026-en.jpg`;
@@ -58,8 +64,6 @@ function conf(year: number, month: number, imageUrl: string | null): ConferenceO
   } as unknown as ConferenceOutput;
 }
 
-const newestFirst = (...cs: ConferenceOutput[]): Conference[] => cs.map((c) => c.conference);
-
 function channelImage(feed: string): string | null {
   const withoutItems = feed.replace(/<item>[\s\S]*?<\/item>/g, '');
   return /<itunes:image\s+href="([^"]+)"\s*\/>/.exec(withoutItems)?.[1] ?? null;
@@ -72,69 +76,24 @@ describe('overrideKey', () => {
   });
 });
 
-describe('selectDeliberateChannelArt', () => {
-  const opts = (overrides: Record<string, string> = {}) => ({
-    language: 'eng',
-    overrides,
-    selfHostBase: BASE,
+describe('selectChannelArt (overrides file is the only source)', () => {
+  it('picks the newest entry for the language', () => {
+    const o = { '2026-04-eng': OVERRIDE_APR_2026, '2026-10-eng': OVERRIDE_OCT_2026 };
+    expect(selectChannelArt(o, 'eng')).toEqual({ url: OVERRIDE_OCT_2026, cycle: '2026-10' });
   });
 
-  it('new conference with only Church art and no override keeps the previous override', () => {
-    const art = selectDeliberateChannelArt(
-      newestFirst(conf(2026, 10, CHURCH_OCT_2026), conf(2026, 4, CHURCH_APR_2026)),
-      opts({ '2026-04-eng': OVERRIDE_APR_2026 }),
-    );
-    expect(art).toEqual({ url: OVERRIDE_APR_2026, cycle: '2026-04' });
+  it('ignores entries for other languages and malformed keys', () => {
+    const o = {
+      '2026-10-spa': 'x',
+      '2027-04-eng-old': 'y',
+      'latest-eng': 'z',
+      '2026-04-eng': OVERRIDE_APR_2026,
+    };
+    expect(selectChannelArt(o, 'eng')).toEqual({ url: OVERRIDE_APR_2026, cycle: '2026-04' });
   });
 
-  it('an override for the newest conference is used, even before a re-scrape', () => {
-    const art = selectDeliberateChannelArt(
-      newestFirst(conf(2026, 10, CHURCH_OCT_2026), conf(2026, 4, SELF_APR_2026)),
-      opts({ '2026-10-eng': OVERRIDE_OCT_2026 }),
-    );
-    expect(art).toEqual({ url: OVERRIDE_OCT_2026, cycle: '2026-10' });
-  });
-
-  it('overrides for another language do not count', () => {
-    const art = selectDeliberateChannelArt(
-      newestFirst(conf(2026, 10, CHURCH_OCT_2026), conf(2026, 4, SELF_APR_2026)),
-      opts({ '2026-10-spa': `${BASE}/es.jpg` }),
-    );
-    expect(art).toEqual({ url: SELF_APR_2026, cycle: '2026-04' });
-  });
-
-  it('a self-hosted conference_image_url qualifies without an override', () => {
-    const art = selectDeliberateChannelArt(
-      newestFirst(conf(2026, 4, SELF_APR_2026), conf(2025, 10, CHURCH_APR_2026)),
-      opts(),
-    );
-    expect(art).toEqual({ url: SELF_APR_2026, cycle: '2026-04' });
-  });
-
-  it('host match is case-insensitive (CI passes the owner as nanoDBA)', () => {
-    const art = selectDeliberateChannelArt(newestFirst(conf(2026, 4, SELF_APR_2026)), {
-      language: 'eng',
-      overrides: {},
-      selfHostBase: 'https://nanoDBA.github.io/gc_podcast/',
-    });
-    expect(art).toEqual({ url: SELF_APR_2026, cycle: '2026-04' });
-  });
-
-  it('a look-alike host is not self-hosted', () => {
-    const art = selectDeliberateChannelArt(
-      newestFirst(conf(2026, 4, `${BASE}-evil.example/x.jpg`)),
-      opts(),
-    );
-    expect(art).toBeUndefined();
-  });
-
-  it('returns undefined when no conference qualifies', () => {
-    expect(
-      selectDeliberateChannelArt(
-        newestFirst(conf(2026, 10, CHURCH_OCT_2026), conf(2026, 4, CHURCH_APR_2026)),
-        opts(),
-      ),
-    ).toBeUndefined();
+  it('returns undefined when the language has no entry', () => {
+    expect(selectChannelArt({ '2026-10-spa': 'x' }, 'eng')).toBeUndefined();
   });
 });
 
@@ -142,35 +101,33 @@ describe('generateRssFeed channel art policy', () => {
   const gen = (cs: ConferenceOutput[], overrides: Record<string, string> = {}) =>
     generateRssFeed(cs, { feedBaseUrl: BASE, language: 'eng', imageOverrides: overrides });
 
-  it('Church art on a new conference does not replace the previous override', () => {
+  it('Church art on a new conference never replaces the previous override', () => {
     const feed = gen([conf(2026, 4, CHURCH_APR_2026), conf(2026, 10, CHURCH_OCT_2026)], {
       '2026-04-eng': OVERRIDE_APR_2026,
     });
     expect(channelImage(feed)).toBe(`${OVERRIDE_APR_2026}?v=2026-04`);
   });
 
-  it('override present for the new conference is used with its own cycle', () => {
-    const feed = gen([conf(2026, 4, SELF_APR_2026), conf(2026, 10, CHURCH_OCT_2026)], {
-      '2026-10-eng': OVERRIDE_OCT_2026,
-    });
+  it('an override set for the next conference goes live before its data exists', () => {
+    const feed = gen([conf(2026, 4, SELF_APR_2026)], { '2026-10-eng': OVERRIDE_OCT_2026 });
     expect(channelImage(feed)).toBe(`${OVERRIDE_OCT_2026}?v=2026-10`);
   });
 
-  it('self-hosted URL is used with its own cycle', () => {
-    const feed = gen([conf(2026, 4, SELF_APR_2026), conf(2026, 10, CHURCH_OCT_2026)]);
-    expect(channelImage(feed)).toBe(`${SELF_APR_2026}?v=2026-04`);
+  it('an override older than the feed window still applies', () => {
+    const feed = gen([conf(2028, 4, CHURCH_APR_2026)], { '2026-10-eng': OVERRIDE_OCT_2026 });
+    expect(channelImage(feed)).toBe(`${OVERRIDE_OCT_2026}?v=2026-10`);
   });
 
-  it('no qualifying conference keeps the old fallback (newest conference_image_url)', () => {
-    const feed = gen([conf(2026, 4, CHURCH_APR_2026), conf(2026, 10, CHURCH_OCT_2026)]);
-    expect(channelImage(feed)).toBe(`${CHURCH_OCT_2026}?v=2026-10`);
+  it('self-hosted conference_image_url without an override is not special', () => {
+    const feed = gen([conf(2026, 10, SELF_APR_2026)]);
+    expect(channelImage(feed)).toBe(DEFAULT_ART);
   });
 
-  it('no qualifying conference and no conference art falls back to the talk hero', () => {
-    const feed = gen([conf(2026, 10, null)]);
-    expect(channelImage(feed)).toBe(
-      'https://www.churchofjesuschrist.org/imgs/hero202610/full/!1400%2C1400/0/default.jpg',
-    );
+  it('no override at all: fixed default, never scraped Church art or a talk hero', () => {
+    expect(
+      channelImage(gen([conf(2026, 4, CHURCH_APR_2026), conf(2026, 10, CHURCH_OCT_2026)])),
+    ).toBe(DEFAULT_ART);
+    expect(channelImage(gen([conf(2026, 10, null)]))).toBe(DEFAULT_ART);
   });
 });
 

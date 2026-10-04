@@ -307,76 +307,6 @@ describe('fetchConferenceImage', () => {
 });
 
 // ---------------------------------------------------------------------------
-// Manual conference image override (gc_podcast-uuc)
-// ---------------------------------------------------------------------------
-
-const OVERRIDES_PATH = path.join(
-  path.dirname(fileURLToPath(import.meta.url)),
-  '..',
-  'config',
-  'conference-image-overrides.json',
-);
-
-describe('fetchConferenceImage — manual override (gc_podcast-uuc)', () => {
-  const OVERRIDE_URL = 'https://nanodba.github.io/gc_podcast/channel-art-april-2026.jpg';
-  let savedOverrides: string | null = null;
-
-  beforeEach(async () => {
-    try {
-      savedOverrides = await fs.readFile(OVERRIDES_PATH, 'utf-8');
-    } catch {
-      savedOverrides = null;
-    }
-  });
-
-  afterEach(async () => {
-    if (savedOverrides !== null) {
-      await fs.writeFile(OVERRIDES_PATH, savedOverrides, 'utf-8');
-    } else {
-      await fs.rm(OVERRIDES_PATH, { force: true });
-    }
-  });
-
-  async function writeOverrides(map: Record<string, string>): Promise<void> {
-    await fs.mkdir(path.dirname(OVERRIDES_PATH), { recursive: true });
-    await fs.writeFile(OVERRIDES_PATH, JSON.stringify(map, null, 2), 'utf-8');
-  }
-
-  it('returns the override URL and skips network fetch when the key matches', async () => {
-    await writeOverrides({ '2026-04-eng': OVERRIDE_URL });
-    const mockFetch = vi.fn();
-    vi.stubGlobal('fetch', mockFetch);
-    const scraper = new ConferenceScraper({ useCache: false });
-
-    const result = await scraper.fetchConferenceImage(2026, 4);
-
-    expect(result).toBe(OVERRIDE_URL);
-    expect(mockFetch).not.toHaveBeenCalled();
-  });
-
-  it('builds the lookup key from the configured language (no cross-language match)', async () => {
-    await writeOverrides({ '2026-04-eng': OVERRIDE_URL });
-    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(makeHtmlResponse(SAMPLE_HASH)));
-    const scraper = new ConferenceScraper({ useCache: false, language: 'spa' });
-
-    const result = await scraper.fetchConferenceImage(2026, 4);
-
-    expect(result).toBe(buildConferenceSquareImageUrl(SAMPLE_HASH));
-  });
-
-  it('ignores a malformed overrides file and scrapes normally', async () => {
-    await fs.mkdir(path.dirname(OVERRIDES_PATH), { recursive: true });
-    await fs.writeFile(OVERRIDES_PATH, '{ not valid json', 'utf-8');
-    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(makeHtmlResponse(SAMPLE_HASH)));
-    const scraper = new ConferenceScraper({ useCache: false });
-
-    const result = await scraper.fetchConferenceImage(2025, 4);
-
-    expect(result).toBe(buildConferenceSquareImageUrl(SAMPLE_HASH));
-  });
-});
-
-// ---------------------------------------------------------------------------
 // RSS channel image rotation
 // ---------------------------------------------------------------------------
 
@@ -440,52 +370,26 @@ function getChannelImageUrl(feed: string): string | null {
   return m ? m[1] : null;
 }
 
-describe('RSS channel image rotation (gc_podcast-gx9)', () => {
-  const APR_2026_TALK_HERO =
-    'https://www.churchofjesuschrist.org/imgs/apr2026talkhero/full/!1400%2C1400/0/default.jpg';
-  const OCT_2025_TALK_HERO =
+describe('RSS channel image: scraped art is never used (v1.3.3)', () => {
+  // Channel art comes only from config/conference-image-overrides.json
+  // (channel-art.ts). Scraped conference_image_url and talk heroes used to
+  // rotate the channel image automatically (gc_podcast-gx9); Pocket Casts then
+  // kept the first one it fetched, so the auto-rotation was removed.
+  const TALK_HERO =
     'https://www.churchofjesuschrist.org/imgs/oct2025talkhero/full/!1400%2C1400/0/default.jpg';
 
-  // gc_podcast-due: channel artwork URL is suffixed with ?v=<YYYY-MM> of the
-  // most-recent conference contributing the conference_image_url.
-  const APR_2025_BUSTED = `${CONFERENCE_IMAGE_APR_2025}?v=2025-04`;
-  const OCT_2025_BUSTED = `${CONFERENCE_IMAGE_OCT_2025}?v=2025-10`;
-
-  it('prefers conference_image_url over talk hero when both are present', () => {
+  it('ignores conference_image_url and talk heroes without an override', () => {
     const conf = makeConferenceOutput(2025, 10, CONFERENCE_IMAGE_OCT_2025);
-    conf.conference.sessions[0].talks[0].image_url = OCT_2025_TALK_HERO;
+    conf.conference.sessions[0].talks[0].image_url = TALK_HERO;
     const feed = generateRssFeed([conf], {
       feedBaseUrl: 'https://example.test/gc',
       language: 'eng',
     });
-    // conference_image_url is 1500x1500 square — Apple-compliant; it wins.
-    expect(getChannelItuniesImage(feed)).toBe(OCT_2025_BUSTED);
-    expect(getChannelImageUrl(feed)).toBe(OCT_2025_BUSTED);
+    expect(getChannelItuniesImage(feed)).toBe(DEFAULT_CHANNEL_IMAGE);
+    expect(getChannelImageUrl(feed)).toBe(DEFAULT_CHANNEL_IMAGE);
   });
 
-  it('conference_image_url takes precedence over first-talk hero', () => {
-    const conf = makeConferenceOutput(2025, 4, CONFERENCE_IMAGE_APR_2025);
-    conf.conference.sessions[0].talks[0].image_url = APR_2026_TALK_HERO;
-    const feed = generateRssFeed([conf], {
-      feedBaseUrl: 'https://example.test/gc',
-      language: 'eng',
-    });
-    // gc_podcast-gx9: prefer square conference image over 16:9 talk hero.
-    expect(getChannelItuniesImage(feed)).toBe(APR_2025_BUSTED);
-    expect(getChannelItuniesImage(feed)).not.toBe(APR_2026_TALK_HERO);
-  });
-
-  it('falls back to talk.image_url when conference_image_url is absent', () => {
-    const conf = makeConferenceOutput(2025, 4, null);
-    conf.conference.sessions[0].talks[0].image_url = APR_2026_TALK_HERO;
-    const feed = generateRssFeed([conf], {
-      feedBaseUrl: 'https://example.test/gc',
-      language: 'eng',
-    });
-    expect(getChannelItuniesImage(feed)).toBe(APR_2026_TALK_HERO);
-  });
-
-  it('falls back to PODCAST_CONFIG.imageUrl when neither talk nor conference has an image', () => {
+  it('falls back to the fixed default when nothing has an image', () => {
     const conf = makeConferenceOutput(2025, 4, null);
     const feed = generateRssFeed([conf], {
       feedBaseUrl: 'https://example.test/gc',
@@ -494,41 +398,14 @@ describe('RSS channel image rotation (gc_podcast-gx9)', () => {
     expect(getChannelItuniesImage(feed)).toBe(DEFAULT_CHANNEL_IMAGE);
   });
 
-  it('multi-conference: most-recent conference_image_url wins', () => {
-    const apr = makeConferenceOutput(2025, 4, CONFERENCE_IMAGE_APR_2025);
-    apr.conference.sessions[0].talks[0].image_url =
-      'https://www.churchofjesuschrist.org/imgs/apr2025talkhero/full/!1400%2C1400/0/default.jpg';
-    const oct = makeConferenceOutput(2025, 10, CONFERENCE_IMAGE_OCT_2025);
-    oct.conference.sessions[0].talks[0].image_url = OCT_2025_TALK_HERO;
-    const feed = generateRssFeed([apr, oct], {
-      feedBaseUrl: 'https://example.test/gc',
-      language: 'eng',
-    });
-    // October 2025 is more recent; its conference_image_url wins.
-    expect(getChannelItuniesImage(feed)).toBe(OCT_2025_BUSTED);
-  });
-
-  it('multi-conference: falls through to older conference_image_url when newer has none', () => {
-    const newer = makeConferenceOutput(2026, 4, null);
-    // newer conference has no conference_image_url (e.g. scrape too early)
-    newer.conference.sessions[0].talks = [];
-    const older = makeConferenceOutput(2025, 10, CONFERENCE_IMAGE_OCT_2025);
-    older.conference.sessions[0].talks[0].image_url = OCT_2025_TALK_HERO;
-    const feed = generateRssFeed([newer, older], {
-      feedBaseUrl: 'https://example.test/gc',
-      language: 'eng',
-    });
-    // newer has no conference_image_url → fall through to older → Oct 2025 conference image wins.
-    expect(getChannelItuniesImage(feed)).toBe(OCT_2025_BUSTED);
-  });
-
-  it('appends ?v=<YYYY-MM> cache-bust to channel artwork URL (gc_podcast-due)', () => {
+  it('uses the override with ?v=<YYYY-MM> of its key (gc_podcast-due)', () => {
     const conf = makeConferenceOutput(2026, 4, CONFERENCE_IMAGE_APR_2025);
     const feed = generateRssFeed([conf], {
       feedBaseUrl: 'https://example.test/gc',
       language: 'eng',
+      imageOverrides: { '2026-04-eng': 'https://example.test/gc/art.jpg' },
     });
-    expect(getChannelItuniesImage(feed)).toBe(`${CONFERENCE_IMAGE_APR_2025}?v=2026-04`);
-    expect(getChannelImageUrl(feed)).toBe(`${CONFERENCE_IMAGE_APR_2025}?v=2026-04`);
+    expect(getChannelItuniesImage(feed)).toBe('https://example.test/gc/art.jpg?v=2026-04');
+    expect(getChannelImageUrl(feed)).toBe('https://example.test/gc/art.jpg?v=2026-04');
   });
 });
