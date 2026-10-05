@@ -6,11 +6,13 @@
 import * as fs from 'fs/promises';
 import * as fsSync from 'fs';
 import * as path from 'path';
+import { pathToFileURL } from 'url';
 import { scrapeConference, ParserCircuitBreakerError } from './scraper.js';
 import { ConferenceOutput, Language } from './types.js';
 import { ConferenceOutputSchema } from './schemas.js';
 import { validateVersion, VersionMismatchError, CURRENT_SCHEMA_VERSION } from './migrations.js';
 import { log } from './logger.js';
+import { conferenceSaturday } from './conference-calendar.js';
 
 /**
  * Version string written into every freshly-scraped output JSON.
@@ -266,6 +268,78 @@ export async function isIncomplete(filePath: string): Promise<IncompleteResult> 
   return { incomplete: reasons.length > 0, reasons };
 }
 
+/**
+ * One conference that failed to scrape in this run.
+ * `key` is the output basename (e.g. `gc-2026-10-eng`).
+ */
+export interface ScrapeFailure {
+  key: string;
+  circuitBreaker: boolean;
+  error: string;
+}
+
+export interface ScrapeOutcome {
+  failures: ScrapeFailure[];
+  /**
+   * Newest conference in the run's range and when it starts (its first
+   * Saturday, 00:00 UTC); null if the range is empty.
+   */
+  newest: { key: string; startsAt: Date } | null;
+  fatal: boolean;
+}
+
+type FailureKind = 'circuit-breaker' | 'newest-started' | 'newest-upcoming' | 'older';
+
+function classifyFailure(f: ScrapeFailure, outcome: ScrapeOutcome, now: Date): FailureKind {
+  if (f.circuitBreaker) return 'circuit-breaker';
+  if (f.key !== outcome.newest?.key) return 'older';
+  return now.getTime() >= outcome.newest.startsAt.getTime() ? 'newest-started' : 'newest-upcoming';
+}
+
+const BLOCKING_KINDS: ReadonlySet<FailureKind> = new Set(['circuit-breaker', 'newest-started']);
+
+/**
+ * Exit-code policy (gc_podcast-1gl). The workflow only retries and opens its
+ * failure issue on a non-zero exit, but the English step is required, so a
+ * failing OLD conference must not block feed generation. Non-zero only when:
+ *   - main() threw (fatal),
+ *   - the newest conference in the range failed once it has started (on or
+ *     after its first Saturday); before that it may simply be unpublished,
+ *   - the parser circuit breaker tripped anywhere (site structure changed).
+ */
+export function scrapeExitCode(outcome: ScrapeOutcome, now: Date = new Date()): 0 | 1 {
+  if (outcome.fatal) return 1;
+  const blocking = outcome.failures.some((f) =>
+    BLOCKING_KINDS.has(classifyFailure(f, outcome, now)),
+  );
+  return blocking ? 1 : 0;
+}
+
+/** Escape a GitHub Actions workflow-command message (one annotation per line). */
+function escapeAnnotation(text: string): string {
+  return text.replace(/%/g, '%25').replace(/\r/g, '%0D').replace(/\n/g, '%0A');
+}
+
+const ANNOTATION_TEXT: Record<FailureKind, string> = {
+  'circuit-breaker': 'parser circuit breaker tripped (site structure changed?)',
+  'newest-started': 'newest conference failed to scrape',
+  'newest-upcoming': 'upcoming conference failed to scrape (not started yet, tolerated)',
+  older: 'older conference failed to scrape (tolerated)',
+};
+
+/**
+ * GitHub annotation lines, one per failed conference: `::error::` for the
+ * failures that make the run exit non-zero, `::warning::` for the rest, so
+ * tolerated failures still show in the run summary.
+ */
+export function failureAnnotations(outcome: ScrapeOutcome, now: Date = new Date()): string[] {
+  return outcome.failures.map((f) => {
+    const kind = classifyFailure(f, outcome, now);
+    const level = BLOCKING_KINDS.has(kind) ? 'error' : 'warning';
+    return `::${level}::${f.key}: ${ANNOTATION_TEXT[kind]}: ${escapeAnnotation(f.error)}`;
+  });
+}
+
 async function main() {
   const config = parseArgs();
 
@@ -300,12 +374,12 @@ async function main() {
 
   let scraped = 0;
   let skipped = 0;
-  let failed = 0;
+  const failures: ScrapeFailure[] = [];
   const startTime = Date.now();
 
   for (const conf of conferences) {
-    const monthStr = conf.month.toString().padStart(2, '0');
-    const filename = `gc-${conf.year}-${monthStr}-${config.language}.json`;
+    const key = conferenceKey(conf, config.language);
+    const filename = `${key}.json`;
     const outputPath = path.join(config.outputDir, filename);
 
     // Skip if file exists and skipExisting is true
@@ -367,6 +441,7 @@ async function main() {
           outputPreserved: outputPath,
         });
         console.error(`  [circuit-breaker] ${error.message}`);
+        failures.push({ key, circuitBreaker: true, error: error.message });
       } else {
         log.error('Conference scrape failed', {
           year: conf.year,
@@ -378,8 +453,12 @@ async function main() {
             : { error: String(error) }),
         });
         console.error(`  [error] Failed: ${error}`);
+        failures.push({
+          key,
+          circuitBreaker: false,
+          error: error instanceof Error ? error.message : String(error),
+        });
       }
-      failed++;
     }
   }
 
@@ -388,14 +467,14 @@ async function main() {
   console.log('\n=== Summary ===');
   console.log(`Scraped: ${scraped}`);
   console.log(`Skipped: ${skipped}`);
-  console.log(`Failed: ${failed}`);
+  console.log(`Failed: ${failures.length}`);
 
   const metrics = {
     language: config.language,
     conferences_attempted: conferences.length,
     conferences_scraped: scraped,
     conferences_skipped: skipped,
-    conferences_failed: failed,
+    conferences_failed: failures.length,
     duration_ms,
     startYear: config.startYear,
     endYear: config.endYear,
@@ -414,13 +493,38 @@ async function main() {
   }
 
   log.info('Scrape run complete', metrics);
+
+  // Decide the exit code last, after metrics are written. Set exitCode rather
+  // than calling process.exit so pending I/O still flushes.
+  const newest = conferences[conferences.length - 1];
+  const outcome: ScrapeOutcome = {
+    failures,
+    newest: newest
+      ? {
+          key: conferenceKey(newest, config.language),
+          startsAt: conferenceSaturday(newest.year, newest.month),
+        }
+      : null,
+    fatal: false,
+  };
+  const now = new Date();
+  for (const line of failureAnnotations(outcome, now)) console.log(line);
+  process.exitCode = scrapeExitCode(outcome, now);
 }
 
-main().catch((err) => {
-  log.error('Fatal error in scrape-all main', {
-    ...(err instanceof Error
-      ? { error: err.message, stack: err.stack, name: err.name }
-      : { error: String(err) }),
+function conferenceKey(conf: { year: number; month: 4 | 10 }, language: Language): string {
+  return `gc-${conf.year}-${conf.month.toString().padStart(2, '0')}-${language}`;
+}
+
+// Run only as a script, so tests can import the pure helpers without scraping.
+if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+  main().catch((err) => {
+    log.error('Fatal error in scrape-all main', {
+      ...(err instanceof Error
+        ? { error: err.message, stack: err.stack, name: err.name }
+        : { error: String(err) }),
+    });
+    console.error(err);
+    process.exitCode = scrapeExitCode({ failures: [], newest: null, fatal: true });
   });
-  console.error(err);
-});
+}

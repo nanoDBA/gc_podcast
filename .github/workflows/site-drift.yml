@@ -1,41 +1,36 @@
-name: Feed Health
+name: Site Drift
 
-# Checks the PUBLISHED feeds (what podcast apps fetch from GitHub Pages), not
-# the scraper: current-conference sessions/talks present once due, feed still
-# being rebuilt during the conference window, enclosures reachable. Any upstream
-# failure (site change, scraper bug, broken workflow, failed deploy) surfaces
-# here as a late or missing episode. From 10 days before each conference it
-# also fails if config/conference-image-overrides.json (read from the checkout)
-# lacks channel art for the upcoming conference in any language.
+# Early warning for Church website changes that would break the scraper.
+# Re-scrapes the newest complete saved conference straight from the live site
+# (cache off) and compares it with the committed JSON in output/. Fewer
+# sessions or talks, lost audio or duration, or a changed audio URL pattern
+# fails the run; speaker-photo changes are warnings only. Spec: gc_podcast-c8i.
 #
-# Deliberately a separate workflow: it only reads public URLs, so a fault in
-# this file or script can never stop update-feed.yml from publishing.
+# Deliberately a separate workflow that only reads: a fault in this file or
+# script can never stop update-feed.yml from publishing.
 #
-# Permissions: contents:read to check out the script; issues:write to open a
-# `feed-health` issue (or comment on the open one) when the check fails.
+# Permissions: contents:read to check out the code and saved data;
+# issues:write to open a `site-drift` issue (or comment on the open one) when
+# the check fails, and to close it once a run passes.
 
 on:
   schedule:
-    # Channel-art lead-up (Mar/Sep 20th-31st): daily. Conference Saturday is
-    # Apr/Oct 1st-7th, so its 10-day warning window starts Mar/Sep 22nd-28th.
-    - cron: '30 12 20-31 3,9 *'
-    # Conference window (Apr/Oct 1st-16th): every 6 hours.
-    - cron: '30 */6 1-16 4,10 *'
-    # Rest of the year: weekly enclosure/feed sanity check (Monday).
-    - cron: '30 12 * * 1'
+    # Monthly on the 25th, so drift is found 1-2 weeks before the
+    # April/October conference weekend.
+    - cron: '30 12 25 * *'
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: feed-health
+  group: site-drift
   cancel-in-progress: true
 
 jobs:
   check:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 30
     permissions:
       contents: read
       issues: write
@@ -52,24 +47,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Check published feeds
+      - name: Check for site drift
         # pipefail: without it the step would take tee's exit code and never fail.
         run: |
           set -o pipefail
-          npx tsx src/check-feed-health.ts --base-url "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}" | tee feed-health.txt
+          npx tsx src/check-drift.ts --lang all | tee site-drift.txt
 
-      - name: Alert on unhealthy feed
+      - name: Alert on site drift
         if: failure()
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           script: |
             const fs = require('fs');
-            const report = fs.existsSync('feed-health.txt') ? fs.readFileSync('feed-health.txt', 'utf8') : '(no report)';
+            const report = fs.existsSync('site-drift.txt') ? fs.readFileSync('site-drift.txt', 'utf8') : '(no report)';
             const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
             // Joined lines, not a multi-line template literal: a line at
             // column 0 would end the YAML `script: |` block.
             const body = [
-              `Feed health check failed ([run ${context.runNumber}](${runUrl})).`,
+              `Site drift check failed ([run ${context.runNumber}](${runUrl})).`,
+              '',
+              'A fresh scrape of a saved conference no longer matches the committed copy.',
+              'The Church site may have changed; fix the scraper before the next conference.',
               '',
               '```',
               report.trim(),
@@ -78,7 +76,7 @@ jobs:
             const { data: open } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: 'feed-health',
+              labels: 'site-drift',
               state: 'open',
               per_page: 1
             });
@@ -94,24 +92,24 @@ jobs:
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: 'Published feed unhealthy: episodes late, missing or unreachable',
+              title: 'Site drift: live scrape of a saved conference lost talks, audio or sessions',
               body,
-              labels: ['feed-health', 'automated']
+              labels: ['site-drift', 'automated']
             });
 
-      - name: Close resolved feed-health issue
+      - name: Close resolved site-drift issue
         # A passing run is the verification: close the open issue with proof.
         if: success()
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           script: |
             const fs = require('fs');
-            const report = fs.existsSync('feed-health.txt') ? fs.readFileSync('feed-health.txt', 'utf8') : '(no report)';
+            const report = fs.existsSync('site-drift.txt') ? fs.readFileSync('site-drift.txt', 'utf8') : '(no report)';
             const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
             const { data: open } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: 'feed-health',
+              labels: 'site-drift',
               state: 'open'
             });
             for (const issue of open) {
@@ -119,7 +117,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: issue.number,
-                body: [`Resolved: [run ${context.runNumber}](${runUrl}) passed every check.`, '', '```', report.trim(), '```'].join('\n')
+                body: [`Resolved: [run ${context.runNumber}](${runUrl}) passed the drift check.`, '', '```', report.trim(), '```'].join('\n')
               });
               await github.rest.issues.update({
                 owner: context.repo.owner,

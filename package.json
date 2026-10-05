@@ -1,6 +1,6 @@
 {
   "name": "gc-podcast-scraper",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "General Conference metadata and audio link extractor",
   "type": "module",
   "scripts": {
@@ -10,6 +10,7 @@
     "scrape-all": "npx tsx src/scrape-all.ts",
     "update": "npm run scrape-all && npm run feed",
     "check-feed-health": "npx tsx src/check-feed-health.ts",
+    "check-drift": "npx tsx src/check-drift.ts --lang all",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint src tests --ext .ts",

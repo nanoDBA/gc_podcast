@@ -2,8 +2,8 @@
  * Published-feed health check: pure verdict logic (no network).
  */
 import { describe, it, expect } from 'vitest';
+import { conferenceSaturday } from '../src/conference-calendar.js';
 import {
-  conferenceSaturday,
   channelArtWarning,
   currentConference,
   evaluateFeed,

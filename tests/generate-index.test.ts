@@ -17,7 +17,10 @@ import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { LANGUAGES, LANGUAGE_CODES } from '../src/languages.js';
 
-describe('generate-index.ts', () => {
+// Each test spawns `npx tsx src/generate-index.ts` (~2-12s on a loaded machine
+// or CI runner). The 5s default timed out intermittently; update-feed runs this
+// suite before publishing, so a slow runner must not block the feeds.
+describe('generate-index.ts', { timeout: 30_000 }, () => {
   // Get the project root by resolving from the test directory.
   // Use fileURLToPath to correctly convert file:// URLs on Windows (avoids /C:/... -> C:\C:\... bug).
   const testFileDir = path.dirname(fileURLToPath(import.meta.url));
@@ -459,5 +462,63 @@ describe('generate-index.ts', () => {
     expect(pos2025Oct).toBeGreaterThan(-1);
     expect(pos2026 < pos2025Oct).toBe(true);
     expect(pos2025Oct < pos2025Apr).toBe(true);
+  });
+
+  describe('--min-year window (gc_podcast-qxr)', () => {
+    const writeConfs = (): { outputDir: string; indexPath: string } => {
+      const outputDir = path.join(tempOutputDir, 'output');
+      fs.mkdirSync(outputDir, { recursive: true });
+      for (const [year, month] of [
+        [2024, 10],
+        [2025, 4],
+        [2025, 10],
+        [2026, 4],
+        [2026, 10],
+      ]) {
+        const mm = String(month).padStart(2, '0');
+        const fixture = {
+          scraped_at: '2026-10-20T00:00:00.000Z',
+          version: '1.0',
+          conference: {
+            year,
+            month,
+            name: `${month === 4 ? 'April' : 'October'} ${year} general conference`,
+            url: `https://www.churchofjesuschrist.org/study/general-conference/${year}/${mm}?lang=eng`,
+            language: 'eng',
+            sessions: [],
+          },
+        };
+        fs.writeFileSync(
+          path.join(outputDir, `gc-${year}-${mm}-eng.json`),
+          JSON.stringify(fixture),
+        );
+      }
+      return { outputDir, indexPath: path.join(tempOutputDir, 'index.html') };
+    };
+
+    it('lists only conferences from min-year onward', () => {
+      const { outputDir, indexPath } = writeConfs();
+      execSync(
+        `npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}" --min-year 2025`,
+        { cwd: projectRoot },
+      );
+      const html = fs.readFileSync(indexPath, 'utf-8');
+      for (const label of ['April 2025', 'October 2025', 'April 2026', 'October 2026']) {
+        expect(html).toContain(`<strong>${label}</strong>`);
+      }
+      expect(html).not.toContain('<strong>October 2024</strong>');
+      const script = html.split('<script>')[1].split('</script>')[0];
+      expect(() => new Function(script)).not.toThrow();
+    }, 20000);
+
+    it('without the flag keeps the 5 newest', () => {
+      const { outputDir, indexPath } = writeConfs();
+      execSync(`npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`, {
+        cwd: projectRoot,
+      });
+      const html = fs.readFileSync(indexPath, 'utf-8');
+      expect(html).toContain('<strong>October 2024</strong>');
+      expect(html.match(/class="conference-item"/g)).toHaveLength(5);
+    }, 20000);
   });
 });
