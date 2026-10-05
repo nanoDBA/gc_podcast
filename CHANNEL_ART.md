@@ -35,7 +35,14 @@ opens or closes its `feed-health` issue on its own.
 
 ## Changing the art
 
-1. Add the image under `docs/`, point the override at it, merge, and wait for
+The maintainer picks the art. An agent prepares candidates (frames, crops) as
+a contact sheet, shows them, and waits for the maintainer to name the one to
+use, per language, before step 1. "Pick something better" is a request for
+candidates, not approval. Claude Code enforces this: `.claude/settings.json`
+has ask rules on the overrides file, so any edit to it prompts the maintainer,
+even in bypass-permissions mode.
+
+1. Add the chosen image under `docs/`, point the override at it, merge, and wait for
    the Pages deploy. Confirm the live feed's channel `<itunes:image>` is the new
    URL.
 2. Only then create the next `?pc=N` entry: search Pocket Casts for

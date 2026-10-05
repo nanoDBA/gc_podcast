@@ -1,10 +1,11 @@
 /**
  * Channel-art policy: the feed's channel image only changes deliberately.
  *
- * Pocket Casts locks the first channel art it sees for a feed URL and never
- * refreshes it, so an automatic switch to the Church's new conference image
- * (scraped as soon as a conference starts) puts permanently wrong art into
- * that app. Channel art therefore comes from ONE place only:
+ * A person chooses the art; nothing here picks it. Podcast apps copy the
+ * channel art and refresh it slowly (Pocket Casts: hours at its origin, then
+ * up to 7 days in its CDN; see CHANNEL_ART.md), so an automatic switch to the
+ * Church's conference image would show unchosen art for days. Channel art
+ * therefore comes from ONE place only:
  * config/conference-image-overrides.json. Each language uses its newest entry
  * (by YYYY-MM in the key), independent of which conferences are in the feed
  * window. A language with no entry gets DEFAULT_CHANNEL_ART. Scraped Church

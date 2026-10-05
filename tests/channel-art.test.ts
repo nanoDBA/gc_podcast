@@ -1,11 +1,10 @@
 /**
  * Deliberate channel art (no silent auto-switch).
  *
- * Pocket Casts locks the first channel art it sees for a feed URL, so the
- * channel image may only change when someone chooses it: a manual override in
- * config/conference-image-overrides.json, or art self-hosted on the feed's own
- * GitHub Pages site. A new conference that only carries the Church's
- * auto-extracted image must not move the channel art.
+ * The channel image changes only when a person chooses it, through an entry
+ * in config/conference-image-overrides.json. Neither the Church's
+ * auto-extracted conference image nor self-hosted art without an entry moves
+ * the channel art (apps refresh copied art slowly; see CHANNEL_ART.md).
  */
 import { describe, it, expect } from 'vitest';
 import * as fs from 'fs/promises';

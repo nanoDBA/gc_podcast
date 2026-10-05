@@ -30,8 +30,10 @@ Thumbs.db
 *.log
 npm-debug.log*
 
-# AI context (local only)
-.claude/
+# AI context (local only), except the shared settings that hold the
+# human gate on channel-art selection (CHANNEL_ART.md)
+.claude/*
+!.claude/settings.json
 
 # Beads / Dolt files (added by bd init)
 .dolt/
