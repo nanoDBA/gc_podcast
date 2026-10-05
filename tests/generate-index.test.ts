@@ -17,7 +17,10 @@ import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { LANGUAGES, LANGUAGE_CODES } from '../src/languages.js';
 
-describe('generate-index.ts', () => {
+// Each test spawns `npx tsx src/generate-index.ts` (~2-12s on a loaded machine
+// or CI runner). The 5s default timed out intermittently; update-feed runs this
+// suite before publishing, so a slow runner must not block the feeds.
+describe('generate-index.ts', { timeout: 30_000 }, () => {
   // Get the project root by resolving from the test directory.
   // Use fileURLToPath to correctly convert file:// URLs on Windows (avoids /C:/... -> C:\C:\... bug).
   const testFileDir = path.dirname(fileURLToPath(import.meta.url));
