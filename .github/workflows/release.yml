@@ -1,10 +1,15 @@
 name: Release
 
-# Every version bump on main becomes a GitHub release, so merged work is
-# visible as a release without anyone remembering to cut one. Runs when
-# package.json changes; does nothing if the tag v<version> already exists.
+# Every version bump on main becomes a GitHub release, but only once CI has
+# passed on that exact commit (gc_podcast-e88). Runs when package.json
+# changes; does nothing if the tag v<version> already exists. A red, cancelled
+# or missing CI run fails this workflow instead of releasing.
 #
-# Permissions: contents:write to create the tag and release.
+# Relies on ci.yml running on every push to main that touches package.json
+# (its paths-ignore covers only feed output).
+#
+# Permissions: contents:write to create the tag and release; actions:read to
+# look up the CI run for the commit.
 
 on:
   push:
@@ -21,20 +26,59 @@ concurrency:
 jobs:
   release:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 30
     permissions:
       contents: write
+      actions: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
-      - name: Create release for a new version
+      - name: Check for a new version
+        id: version
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           VERSION="v$(node -p "require('./package.json').version")"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           if gh release view "$VERSION" >/dev/null 2>&1; then
             echo "$VERSION already released; nothing to do."
-            exit 0
+            echo "new=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "new=true" >> "$GITHUB_OUTPUT"
           fi
-          gh release create "$VERSION" --target "$GITHUB_SHA" --title "$VERSION" --generate-notes
+
+      - name: Wait for CI on this commit
+        if: steps.version.outputs.new == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          # Up to 20 minutes: CI takes ~2, and may not have registered yet.
+          for _ in $(seq 60); do
+            RUN=$(gh run list --workflow ci.yml --commit "$GITHUB_SHA" --event push \
+              --json status,conclusion,url --jq '.[0] // {}')
+            STATUS=$(echo "$RUN" | jq -r '.status // "missing"')
+            if [ "$STATUS" = "completed" ]; then
+              CONCLUSION=$(echo "$RUN" | jq -r '.conclusion')
+              if [ "$CONCLUSION" = "success" ]; then
+                echo "CI passed on $GITHUB_SHA."
+                exit 0
+              fi
+              echo "::error::Not releasing $VERSION: CI on $GITHUB_SHA concluded '$CONCLUSION' ($(echo "$RUN" | jq -r '.url'))."
+              exit 1
+            fi
+            echo "CI on $GITHUB_SHA: $STATUS; waiting."
+            sleep 20
+          done
+          echo "::error::Not releasing $VERSION: no completed CI run for $GITHUB_SHA after 20 minutes."
+          exit 1
+
+      - name: Create release
+        if: steps.version.outputs.new == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          gh release create "$VERSION" --target "$GITHUB_SHA" \
+            --title "$VERSION" --generate-notes

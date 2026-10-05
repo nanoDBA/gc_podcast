@@ -91,5 +91,5 @@ TypeScript Node.js project that scrapes LDS General Conference talk metadata and
 - **Logging:** Structured JSON lines to stderr, filterable via `LOG_LEVEL` env var
 - **File safety:** Atomic writes to prevent corruption during scrape
 - **Persistent knowledge:** `bd remember` (not MEMORY.md files)
-- **Shipping:** PR → `gh pr checks <n> --watch` until CI is green → merge (authorized in this repo). A PR that changes behavior bumps `version` in `package.json`; `release.yml` then cuts the GitHub release.
+- **Shipping:** PR → `gh pr checks <n> --watch` until CI is green → merge (authorized in this repo). A PR that changes behavior bumps the version with `npm version <major|minor|patch> --no-git-tag-version` (updates package.json and the lockfile; a test fails if they differ); `release.yml` cuts the GitHub release once CI on that commit passes.
 - **Channel art:** read `CHANNEL_ART.md` before changing artwork or answering "the art is wrong".
