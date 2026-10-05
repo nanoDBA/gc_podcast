@@ -18,6 +18,7 @@
  */
 
 import { pathToFileURL } from 'node:url';
+import { conferenceSaturday } from './conference-calendar.js';
 import { ImageOverrides, loadImageOverrides, overrideKey } from './channel-art.js';
 import { POCKETCASTS_FEED_FILES, checkPocketCastsArt } from './pocketcasts-art.js';
 
@@ -60,13 +61,6 @@ export interface HealthResult {
   ok: boolean;
   failures: string[];
   notes: string[];
-}
-
-/** General Conference is held on the first full weekend: the first Saturday of April/October. */
-export function conferenceSaturday(year: number, month: 4 | 10): Date {
-  const first = new Date(Date.UTC(year, month - 1, 1));
-  const offset = (6 - first.getUTCDay() + 7) % 7;
-  return new Date(Date.UTC(year, month - 1, 1 + offset));
 }
 
 /** The most recent conference whose Saturday is on or before `now`. */
