@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-04T21:42:14.457Z",
+  "scraped_at": "2026-10-05T08:45:18.460Z",
   "version": "1.0",
   "conference": {
     "year": 2026,
@@ -55,7 +55,14 @@
         "slug": "sunday-afternoon-session",
         "order": 4,
         "url": "https://www.churchofjesuschrist.org/study/general-conference/2026/10/sunday-afternoon-session?lang=eng",
-        "talks": []
+        "talks": [],
+        "audio": {
+          "url": "https://assets.churchofjesuschrist.org/ev8eo9jbsyx3h0qd6tv4w1ggnj02t6i7mxqmykvf-128k-en.mp3",
+          "quality": "128k",
+          "language": "en",
+          "duration_ms": 7120980
+        },
+        "duration_ms": 7120980
       }
     ],
     "conference_image_url": "https://www.churchofjesuschrist.org/imgs/vtwgahamt3hj8yamw2scfy4cjsly43w596w30ds3/square/1500,1500/0/default"

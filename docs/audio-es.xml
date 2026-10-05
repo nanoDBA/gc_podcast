@@ -10,7 +10,7 @@
     <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     <language>es</language>
     <copyright>© 2026 by Intellectual Reserve, Inc. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 04 Oct 2026 21:42:44 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 08:46:08 GMT</lastBuildDate>
     <generator>gc-podcast-scraper/1.5.0</generator>
     <atom:link href="https://nanoDBA.github.io/gc_podcast/audio-es.xml" rel="self" type="application/rss+xml"/>
     <podcast:guid>bd280f81-486c-5076-83ba-f7ce644b0fb7</podcast:guid>
@@ -32,6 +32,22 @@
       <title>Conferencia General - La Iglesia de Jesucristo de los Santos de los Últimos Días</title>
       <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     </image>
+
+    <item>
+      <title>Sesión del domingo por la tarde (Full Session) - Conferencia General de octubre de 2026</title>
+      <description><![CDATA[<p><strong>Sesión del domingo por la tarde</strong></p><p>Conferencia General de octubre de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/10/sunday-afternoon-session?lang=spa">View session on churchofjesuschrist.org</a></p>]]></description>
+      <enclosure url="https://assets.churchofjesuschrist.org/maqxehxjoxqu0oid5is3bwf516yjc2acxp6lmw79-128k-es.mp3" length="113935680" type="audio/mpeg"/>
+      <guid isPermaLink="false">gc-2026-10-sunday-afternoon-session-full</guid>
+      <pubDate>Sun, 04 Oct 2026 20:00:00 GMT</pubDate>
+      <itunes:title>Sesión del domingo por la tarde (Full Session)</itunes:title>
+      <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
+      <itunes:duration>01:58:40</itunes:duration>
+      <itunes:summary><![CDATA[<p><strong>Sesión del domingo por la tarde</strong></p><p>Conferencia General de octubre de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/10/sunday-afternoon-session?lang=spa">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>202610</itunes:season>
+      <itunes:episode>500</itunes:episode>
+      <link>https://www.churchofjesuschrist.org/study/general-conference/2026/10/sunday-afternoon-session?lang=spa</link>
+    </item>
 
     <item>
       <title>Sesión del sábado por la tarde (Full Session) - Conferencia General de octubre de 2026</title>
