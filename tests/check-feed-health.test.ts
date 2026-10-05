@@ -155,3 +155,33 @@ describe('channelArtWarning (set channel art before the conference)', () => {
     expect(channelArtWarning(at('2026-09-23T00:00:00Z'), {})).toMatch(/2026-10 before/);
   });
 });
+
+describe('channel summary and episode numbering', () => {
+  const now = new Date('2026-10-20T00:00:00Z');
+  const item = (guid: string, season: number, episode: number) => `<item>
+      <enclosure url="https://assets.example.org/${guid}.mp3" length="1" type="audio/mpeg"/>
+      <guid isPermaLink="false">${guid}</guid>
+      <itunes:season>${season}</itunes:season><itunes:episode>${episode}</itunes:episode>
+    </item>`;
+  const xml = (items: string[]) =>
+    `<rss><channel><lastBuildDate>Mon, 19 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://example.org/audio.xml" rel="self" type="application/rss+xml"/>
+    <podcast:guid>a4fcacd4-0000</podcast:guid>
+    <itunes:image href="https://example.org/art.jpg?v=2026-10"/>
+    ${items.join('\n')}</channel></rss>`;
+
+  it('reports the channel self link, art and podcast GUID', () => {
+    const result = evaluateFeed(parseFeed(xml([item('a', 202610, 100)])), now);
+    expect(result.notes).toContain(
+      'channel: self=https://example.org/audio.xml art=https://example.org/art.jpg?v=2026-10 podcast:guid=a4fcacd4-0000',
+    );
+  });
+
+  it('fails on two items with the same season and episode', () => {
+    const result = evaluateFeed(
+      parseFeed(xml([item('a', 202610, 200), item('b', 202610, 200), item('c', 202604, 200)])),
+      now,
+    );
+    expect(result.failures).toContain('duplicate season/episode: S202610E200');
+  });
+});
