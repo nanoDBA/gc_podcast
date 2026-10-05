@@ -45,12 +45,47 @@ export function sameArt(distance: number): boolean {
   return distance <= SAME_ART_MAX_DISTANCE;
 }
 
-async function bytes(url: string): Promise<{ data: Uint8Array; lastModified: string }> {
+/** Cloudflare lifetime for Pocket Casts artwork when the header is absent. */
+const DEFAULT_CDN_MAX_AGE = 604800;
+
+export function maxAgeSeconds(cacheControl: string | null): number {
+  const m = /max-age=(\d+)/.exec(cacheControl ?? '');
+  return m ? Number(m[1]) : DEFAULT_CDN_MAX_AGE;
+}
+
+export interface CdnVerdict {
+  state: 'mismatch' | 'propagating' | 'ok';
+  /** When every CDN edge is guaranteed to serve the origin's copy. */
+  allEdgesFreshBy?: Date;
+}
+
+/**
+ * Pocket Casts serves artwork through Cloudflare (max-age 7 days). An edge
+ * matching our art proves nothing for listeners on other edges, so judge the
+ * ORIGIN copy, and treat a correct origin as "propagating" until origin
+ * update + max-age, when every edge has had to re-fetch it.
+ */
+export function cdnVerdict(input: {
+  originDistance: number;
+  originLastModified: Date;
+  maxAgeSeconds: number;
+  now: Date;
+}): CdnVerdict {
+  if (!sameArt(input.originDistance)) return { state: 'mismatch' };
+  const allEdgesFreshBy = new Date(input.originLastModified.getTime() + input.maxAgeSeconds * 1000);
+  return { state: input.now < allEdgesFreshBy ? 'propagating' : 'ok', allEdgesFreshBy };
+}
+
+async function bytes(
+  url: string,
+): Promise<{ data: Uint8Array; lastModified: string; cacheControl: string | null; cache: string }> {
   const res = await fetch(url, { signal: AbortSignal.timeout(30_000) });
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
   return {
     data: new Uint8Array(await res.arrayBuffer()),
     lastModified: res.headers.get('last-modified') ?? 'unknown',
+    cacheControl: res.headers.get('cache-control'),
+    cache: res.headers.get('cf-cache-status') ?? '?',
   };
 }
 
@@ -88,10 +123,31 @@ export async function checkPocketCastsArt(
   }
   try {
     const uuid = await resolveUuid(feedUrl);
-    const [ours, theirs] = await Promise.all([bytes(oursUrl), bytes(SERVER_ART(uuid))]);
-    const distance = fingerprintDistance(fingerprintJpeg(ours.data), fingerprintJpeg(theirs.data));
-    const where = `uuid ${uuid}, Pocket Casts copy updated ${theirs.lastModified}, distance ${distance.toFixed(1)}`;
-    if (sameArt(distance)) return { file, matches: true, detail: where };
+    // The origin copy (a unique query bypasses Cloudflare's cache) is the truth;
+    // the plain URL is what apps on THIS runner's edge would get right now.
+    const [ours, origin, edge] = await Promise.all([
+      bytes(oursUrl),
+      bytes(`${SERVER_ART(uuid)}?origin=${Date.now()}`),
+      bytes(SERVER_ART(uuid)),
+    ]);
+    const oursFp = fingerprintJpeg(ours.data);
+    const originDistance = fingerprintDistance(oursFp, fingerprintJpeg(origin.data));
+    const edgeDistance = fingerprintDistance(oursFp, fingerprintJpeg(edge.data));
+    const verdict = cdnVerdict({
+      originDistance,
+      originLastModified: new Date(origin.lastModified),
+      maxAgeSeconds: maxAgeSeconds(edge.cacheControl ?? origin.cacheControl),
+      now: new Date(),
+    });
+    const where = `uuid ${uuid}; origin updated ${origin.lastModified} (distance ${originDistance.toFixed(1)}); this runner's edge ${edge.cache}, updated ${edge.lastModified} (distance ${edgeDistance.toFixed(1)})`;
+    if (verdict.state === 'ok') return { file, matches: true, detail: where };
+    if (verdict.state === 'propagating') {
+      return {
+        file,
+        matches: false,
+        detail: `Pocket Casts has the new art, but CDN edges may serve the old copy until ${verdict.allEdgesFreshBy?.toISOString()} (7-day cache); "Refresh artwork" in the app cannot bypass it. ${where}`,
+      };
+    }
     // Same request as the app's pull-to-refresh; a one-shot nudge per run.
     await fetch(`${REFRESH_URL}?podcast_uuid=${uuid}`, {
       signal: AbortSignal.timeout(30_000),
@@ -99,7 +155,7 @@ export async function checkPocketCastsArt(
     return {
       file,
       matches: false,
-      detail: `Pocket Casts shows different channel art (${where}); refresh requested. Expect a lag of a few hours right after an art change.`,
+      detail: `Pocket Casts has different channel art at its origin (${where}); refresh requested. Expect a lag of hours after an art change.`,
     };
   } catch (err) {
     return { file, detail: `Pocket Casts unreachable or unexpected response: ${String(err)}` };
