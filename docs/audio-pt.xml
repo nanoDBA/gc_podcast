@@ -10,8 +10,8 @@
     <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     <language>pt</language>
     <copyright>© 2026 by Intellectual Reserve, Inc. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 05 Oct 2026 12:26:45 GMT</lastBuildDate>
-    <generator>gc-podcast-scraper/1.6.3</generator>
+    <lastBuildDate>Mon, 05 Oct 2026 21:25:50 GMT</lastBuildDate>
+    <generator>gc-podcast-scraper/1.7.1</generator>
     <atom:link href="https://nanoDBA.github.io/gc_podcast/audio-pt.xml" rel="self" type="application/rss+xml"/>
     <podcast:guid>0891ca77-3c5a-5c93-9b43-7f3a542b47e3</podcast:guid>
 
@@ -32,6 +32,38 @@
       <title>Conferência Geral - A Igreja de Jesus Cristo dos Santos dos Últimos Dias</title>
       <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     </image>
+
+    <item>
+      <title>Sessão da tarde de domingo (Full Session) - Conferência Geral de Outubro de 2026</title>
+      <description><![CDATA[<p><strong>Sessão da tarde de domingo</strong></p><p>Conferência Geral de Outubro de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/10/sunday-afternoon-session?lang=por">View session on churchofjesuschrist.org</a></p>]]></description>
+      <enclosure url="https://assets.churchofjesuschrist.org/wv5svt0ifraxeb99lr8ng4axlssi3nxnvpdhbg5y-128k-pt.mp3" length="113935680" type="audio/mpeg"/>
+      <guid isPermaLink="false">gc-2026-10-sunday-afternoon-session-full</guid>
+      <pubDate>Sun, 04 Oct 2026 20:00:00 GMT</pubDate>
+      <itunes:title>Sessão da tarde de domingo (Full Session)</itunes:title>
+      <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
+      <itunes:duration>01:58:40</itunes:duration>
+      <itunes:summary><![CDATA[<p><strong>Sessão da tarde de domingo</strong></p><p>Conferência Geral de Outubro de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/10/sunday-afternoon-session?lang=por">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>202610</itunes:season>
+      <itunes:episode>500</itunes:episode>
+      <link>https://www.churchofjesuschrist.org/study/general-conference/2026/10/sunday-afternoon-session?lang=por</link>
+    </item>
+
+    <item>
+      <title>Sessão da manhã de domingo (Full Session) - Conferência Geral de Outubro de 2026</title>
+      <description><![CDATA[<p><strong>Sessão da manhã de domingo</strong></p><p>Conferência Geral de Outubro de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/10/sunday-morning-session?lang=por">View session on churchofjesuschrist.org</a></p>]]></description>
+      <enclosure url="https://assets.churchofjesuschrist.org/np2kj3v5wkp45l4y6ei2l0m55ojhkcfysn44v95y-128k-pt.mp3" length="113741920" type="audio/mpeg"/>
+      <guid isPermaLink="false">gc-2026-10-sunday-morning-session-full</guid>
+      <pubDate>Sun, 04 Oct 2026 16:00:00 GMT</pubDate>
+      <itunes:title>Sessão da manhã de domingo (Full Session)</itunes:title>
+      <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
+      <itunes:duration>01:58:28</itunes:duration>
+      <itunes:summary><![CDATA[<p><strong>Sessão da manhã de domingo</strong></p><p>Conferência Geral de Outubro de 2026</p><p>Full session recording including all talks and musical numbers.</p><p><strong>Speakers:</strong></p><ul></ul><p><a href="https://www.churchofjesuschrist.org/study/general-conference/2026/10/sunday-morning-session?lang=por">View session on churchofjesuschrist.org</a></p>]]></itunes:summary>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>202610</itunes:season>
+      <itunes:episode>400</itunes:episode>
+      <link>https://www.churchofjesuschrist.org/study/general-conference/2026/10/sunday-morning-session?lang=por</link>
+    </item>
 
     <item>
       <title>Sessão da tarde de sábado (Full Session) - Conferência Geral de Outubro de 2026</title>
