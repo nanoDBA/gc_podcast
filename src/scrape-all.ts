@@ -12,6 +12,7 @@ import { ConferenceOutput, Language } from './types.js';
 import { ConferenceOutputSchema } from './schemas.js';
 import { validateVersion, VersionMismatchError, CURRENT_SCHEMA_VERSION } from './migrations.js';
 import { log } from './logger.js';
+import { conferenceSaturday } from './conference-calendar.js';
 
 /**
  * Version string written into every freshly-scraped output JSON.
@@ -279,22 +280,38 @@ export interface ScrapeFailure {
 
 export interface ScrapeOutcome {
   failures: ScrapeFailure[];
-  /** Key of the newest conference in the run's range; null if the range is empty. */
-  newestKey: string | null;
+  /**
+   * Newest conference in the run's range and when it starts (its first
+   * Saturday, 00:00 UTC); null if the range is empty.
+   */
+  newest: { key: string; startsAt: Date } | null;
   fatal: boolean;
 }
+
+type FailureKind = 'circuit-breaker' | 'newest-started' | 'newest-upcoming' | 'older';
+
+function classifyFailure(f: ScrapeFailure, outcome: ScrapeOutcome, now: Date): FailureKind {
+  if (f.circuitBreaker) return 'circuit-breaker';
+  if (f.key !== outcome.newest?.key) return 'older';
+  return now.getTime() >= outcome.newest.startsAt.getTime() ? 'newest-started' : 'newest-upcoming';
+}
+
+const BLOCKING_KINDS: ReadonlySet<FailureKind> = new Set(['circuit-breaker', 'newest-started']);
 
 /**
  * Exit-code policy (gc_podcast-1gl). The workflow only retries and opens its
  * failure issue on a non-zero exit, but the English step is required, so a
  * failing OLD conference must not block feed generation. Non-zero only when:
  *   - main() threw (fatal),
- *   - the newest conference in the range failed (the one listeners wait for),
+ *   - the newest conference in the range failed once it has started (on or
+ *     after its first Saturday); before that it may simply be unpublished,
  *   - the parser circuit breaker tripped anywhere (site structure changed).
  */
-export function scrapeExitCode(outcome: ScrapeOutcome): 0 | 1 {
+export function scrapeExitCode(outcome: ScrapeOutcome, now: Date = new Date()): 0 | 1 {
   if (outcome.fatal) return 1;
-  const blocking = outcome.failures.some((f) => f.circuitBreaker || f.key === outcome.newestKey);
+  const blocking = outcome.failures.some((f) =>
+    BLOCKING_KINDS.has(classifyFailure(f, outcome, now)),
+  );
   return blocking ? 1 : 0;
 }
 
@@ -303,20 +320,23 @@ function escapeAnnotation(text: string): string {
   return text.replace(/%/g, '%25').replace(/\r/g, '%0D').replace(/\n/g, '%0A');
 }
 
+const ANNOTATION_TEXT: Record<FailureKind, string> = {
+  'circuit-breaker': 'parser circuit breaker tripped (site structure changed?)',
+  'newest-started': 'newest conference failed to scrape',
+  'newest-upcoming': 'upcoming conference failed to scrape (not started yet, tolerated)',
+  older: 'older conference failed to scrape (tolerated)',
+};
+
 /**
  * GitHub annotation lines, one per failed conference: `::error::` for the
  * failures that make the run exit non-zero, `::warning::` for the rest, so
  * tolerated failures still show in the run summary.
  */
-export function failureAnnotations(outcome: ScrapeOutcome): string[] {
+export function failureAnnotations(outcome: ScrapeOutcome, now: Date = new Date()): string[] {
   return outcome.failures.map((f) => {
-    if (f.circuitBreaker) {
-      return `::error::${f.key}: parser circuit breaker tripped (site structure changed?): ${escapeAnnotation(f.error)}`;
-    }
-    if (f.key === outcome.newestKey) {
-      return `::error::${f.key}: newest conference failed to scrape: ${escapeAnnotation(f.error)}`;
-    }
-    return `::warning::${f.key}: older conference failed to scrape (tolerated): ${escapeAnnotation(f.error)}`;
+    const kind = classifyFailure(f, outcome, now);
+    const level = BLOCKING_KINDS.has(kind) ? 'error' : 'warning';
+    return `::${level}::${f.key}: ${ANNOTATION_TEXT[kind]}: ${escapeAnnotation(f.error)}`;
   });
 }
 
@@ -479,11 +499,17 @@ async function main() {
   const newest = conferences[conferences.length - 1];
   const outcome: ScrapeOutcome = {
     failures,
-    newestKey: newest ? conferenceKey(newest, config.language) : null,
+    newest: newest
+      ? {
+          key: conferenceKey(newest, config.language),
+          startsAt: conferenceSaturday(newest.year, newest.month),
+        }
+      : null,
     fatal: false,
   };
-  for (const line of failureAnnotations(outcome)) console.log(line);
-  process.exitCode = scrapeExitCode(outcome);
+  const now = new Date();
+  for (const line of failureAnnotations(outcome, now)) console.log(line);
+  process.exitCode = scrapeExitCode(outcome, now);
 }
 
 function conferenceKey(conf: { year: number; month: 4 | 10 }, language: Language): string {
@@ -499,6 +525,6 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
         : { error: String(err) }),
     });
     console.error(err);
-    process.exitCode = scrapeExitCode({ failures: [], newestKey: null, fatal: true });
+    process.exitCode = scrapeExitCode({ failures: [], newest: null, fatal: true });
   });
 }
