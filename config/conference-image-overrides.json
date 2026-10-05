@@ -1,7 +1,7 @@
 {
   "_comment": "Channel artwork for each feed (the ONLY source; gc_podcast-uuc, v1.3.3). Key \"YYYY-MM-<lang>\" (eng/spa/por), value: full image URL. Each language uses its newest entry; a language with no entry gets the fixed default. Scraped Church images are never used for the channel. Set the next conference's entries BEFORE its window opens (Feed Health warns 10 days before). Keys starting with _ are ignored.",
   "2026-04-eng": "https://nanodba.github.io/gc_podcast/channel-art-april-2026.jpg",
-  "2026-10-eng": "https://nanodba.github.io/gc_podcast/channel-art-october-2026-en.jpg",
+  "2026-10-eng": "https://nanodba.github.io/gc_podcast/channel-art-october-2026-en-temple.jpg",
   "2026-10-spa": "https://nanodba.github.io/gc_podcast/channel-art-october-2026-es.jpg",
   "2026-10-por": "https://nanodba.github.io/gc_podcast/channel-art-october-2026-pt.jpg"
 }
