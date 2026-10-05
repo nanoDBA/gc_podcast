@@ -74,9 +74,11 @@ function getMonthName(month: number): string {
   return months[month - 1] || '';
 }
 
-function generateRecentConferencesHtml(conferences: RecentConference[]): string {
-  // Take 5 most recent
-  const recent = conferences.slice(0, 5);
+// Without a min-year the list is capped at the 5 newest; with one it shows every
+// conference the feeds contain (gc_podcast-qxr).
+function generateRecentConferencesHtml(conferences: RecentConference[], minYear?: number): string {
+  const recent =
+    minYear === undefined ? conferences.slice(0, 5) : conferences.filter((c) => c.year >= minYear);
 
   let html = '  <h2>Recent Conferences</h2>\n  <div class="conferences">\n';
 
@@ -132,7 +134,7 @@ function generateSubscribeButtonsHtml(): string {
 `;
 }
 
-function generateHtml(conferences: RecentConference[]): string {
+function generateHtml(conferences: RecentConference[], minYear?: number): string {
   const lastUpdated = new Date().toISOString();
 
   return `<!DOCTYPE html>
@@ -383,7 +385,7 @@ function generateHtml(conferences: RecentConference[]): string {
     </div>
   </div>
 
-${generateRecentConferencesHtml(conferences)}
+${generateRecentConferencesHtml(conferences, minYear)}
 
 ${generateFeedListHtml()}
 
@@ -534,6 +536,7 @@ async function main() {
 
   let outputDir = './output';
   let indexPath = './docs/index.html';
+  let minYear: number | undefined;
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
@@ -541,6 +544,12 @@ async function main() {
       outputDir = args[++i];
     } else if (arg === '--index' || arg === '-i') {
       indexPath = args[++i];
+    } else if (arg === '--min-year') {
+      minYear = parseInt(args[++i], 10);
+      if (!Number.isInteger(minYear)) {
+        console.error('--min-year needs a year such as 2025');
+        process.exit(1);
+      }
     } else if (arg === '--help' || arg === '-h') {
       printHelp();
       process.exit(0);
@@ -556,7 +565,7 @@ async function main() {
     }
 
     // Generate HTML
-    const html = generateHtml(conferences);
+    const html = generateHtml(conferences, minYear);
 
     // Ensure docs directory exists
     const docsDir = path.dirname(indexPath);
@@ -580,6 +589,7 @@ Usage: npx tsx src/generate-index.ts [options]
 Options:
   --output, -o <dir>     Path to output directory with JSON files (default: ./output)
   --index, -i <path>     Path to output index.html file (default: ./docs/index.html)
+  --min-year <year>      Only list conferences from this year onward (match generate-feed.ts)
   --help, -h             Show this help message
 `);
 }

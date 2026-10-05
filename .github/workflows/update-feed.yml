@@ -268,7 +268,8 @@ jobs:
         run: |
           npx tsx src/generate-index.ts \
             --output ./output \
-            --index ./docs/index.html
+            --index ./docs/index.html \
+            --min-year "${{ steps.minyear.outputs.min_year }}"
 
       - name: Emit scrape metrics to step summary
         if: always()
