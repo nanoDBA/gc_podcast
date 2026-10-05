@@ -1,0 +1,40 @@
+name: Release
+
+# Every version bump on main becomes a GitHub release, so merged work is
+# visible as a release without anyone remembering to cut one. Runs when
+# package.json changes; does nothing if the tag v<version> already exists.
+#
+# Permissions: contents:write to create the tag and release.
+
+on:
+  push:
+    branches: [main]
+    paths: [package.json]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Create release for a new version
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="v$(node -p "require('./package.json').version")"
+          if gh release view "$VERSION" >/dev/null 2>&1; then
+            echo "$VERSION already released; nothing to do."
+            exit 0
+          fi
+          gh release create "$VERSION" --target "$GITHUB_SHA" --title "$VERSION" --generate-notes

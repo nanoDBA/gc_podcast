@@ -54,7 +54,7 @@ bd close <id>         # Complete work
 
 ```bash
 npm install              # Install dependencies
-npm test                 # Run Vitest test suite (192 tests)
+npm test                 # Run Vitest test suite
 npx tsc --noEmit         # Type-check without emitting
 npm run lint             # ESLint on src/ and tests/
 npm run format:check     # Prettier check
@@ -91,3 +91,5 @@ TypeScript Node.js project that scrapes LDS General Conference talk metadata and
 - **Logging:** Structured JSON lines to stderr, filterable via `LOG_LEVEL` env var
 - **File safety:** Atomic writes to prevent corruption during scrape
 - **Persistent knowledge:** `bd remember` (not MEMORY.md files)
+- **Shipping:** PR → `gh pr checks <n> --watch` until CI is green → merge (authorized in this repo). A PR that changes behavior bumps `version` in `package.json`; `release.yml` then cuts the GitHub release.
+- **Channel art:** read `CHANNEL_ART.md` before changing artwork or answering "the art is wrong".
