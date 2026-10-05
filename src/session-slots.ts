@@ -18,6 +18,7 @@
  */
 
 import { Conference, Session, Talk } from './types.js';
+import { conferenceSaturday } from './conference-calendar.js';
 
 const SLOT_BY_SLUG_PREFIX: ReadonlyArray<readonly [string, number]> = [
   ['saturday-morning-session', 1],
@@ -64,9 +65,7 @@ export function assignSessionSlots(sessions: readonly Session[]): Map<Session, n
  * afternoon plus one hour per extra slot so they remain unique.
  */
 export function getSlotStartUtc(year: number, month: number, slot: number): Date {
-  const firstOfMonth = new Date(Date.UTC(year, month - 1, 1));
-  const daysUntilSaturday = (6 - firstOfMonth.getUTCDay() + 7) % 7;
-  const firstSaturdayMs = firstOfMonth.getTime() + daysUntilSaturday * DAY_MS;
+  const firstSaturdayMs = conferenceSaturday(year, month).getTime();
   const schedule = SLOT_SCHEDULE[slot] ?? { dayOffset: 1, hourUtc: 20 + (slot - 5) };
   return new Date(firstSaturdayMs + schedule.dayOffset * DAY_MS + schedule.hourUtc * HOUR_MS);
 }
