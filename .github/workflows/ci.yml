@@ -1,0 +1,54 @@
+name: CI
+
+# Quality gates on every PR and every push to main: type-check, lint, format,
+# tests. Before this, those gates ran only inside update-feed.yml, i.e. after
+# a merge, so a broken merge first surfaced as a failed feed publish.
+#
+# Not a required status check: update-feed.yml pushes feed commits straight to
+# main, and branch protection that requires checks would reject those pushes.
+# Watch it with `gh pr checks <n> --watch` before merging.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    # Feed-only commits from update-feed.yml change nothing these gates check.
+    paths-ignore:
+      - 'docs/**'
+      - 'output/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type-check
+        run: npx tsc --noEmit
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Format
+        run: npm run format:check
+
+      - name: Run tests
+        run: npm test
