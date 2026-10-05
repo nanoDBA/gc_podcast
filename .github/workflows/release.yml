@@ -19,8 +19,10 @@ on:
 permissions:
   contents: read
 
+# One group per commit: a shared group keeps only one pending run, so a third
+# quick bump would silently drop the second version's release.
 concurrency:
-  group: release
+  group: release-${{ github.sha }}
   cancel-in-progress: false
 
 jobs:

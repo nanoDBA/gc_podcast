@@ -22,9 +22,11 @@ on:
 permissions:
   contents: read
 
+# PRs: one group per branch, superseded runs cancelled. Pushes to main: one
+# group per commit, so no run is ever cancelled or dropped from the queue
+# (GitHub keeps only one pending run per group); release.yml waits on it.
 concurrency:
-  group: ci-${{ github.ref }}
-  # Cancel superseded PR runs only: a push run on main is what release.yml waits on.
+  group: ci-${{ github.event_name == 'pull_request' && github.ref || github.sha }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
