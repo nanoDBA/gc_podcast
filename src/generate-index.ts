@@ -8,8 +8,8 @@
 import fs from 'fs';
 import path from 'path';
 import { Conference } from './types.js';
-import { LANGUAGES, LANGUAGE_CODES } from './languages.js';
-import { SESSION_HOURS_TEXT, TALK_MINUTES_TEXT } from './episode-lengths.js';
+import { LANGUAGES, LANGUAGE_CODES, type LanguageCode } from './languages.js';
+import { SITE_STRINGS, type SiteStrings } from './site-strings.js';
 
 const REPOSITORY_URL = 'https://github.com/nanoDBA/gc_podcast';
 const BASE_FEED_URL = 'https://nanodba.github.io/gc_podcast';
@@ -17,7 +17,8 @@ const BASE_FEED_URL = 'https://nanodba.github.io/gc_podcast';
 interface RecentConference {
   year: number;
   month: number;
-  name: string;
+  /** The Church's own conference name per language, from the scraped data. */
+  names: Partial<Record<LanguageCode, string>>;
   sessionCount: number;
 }
 
@@ -36,10 +37,23 @@ async function loadConferenceData(outputDir: string): Promise<RecentConference[]
       const data = JSON.parse(content);
       const conf = data.conference as Conference;
 
+      const names: Partial<Record<LanguageCode, string>> = { eng: conf.name };
+      for (const lang of LANGUAGE_CODES) {
+        if (lang === 'eng') continue;
+        const sibling = path.join(outputDir, file.replace(/-eng\.json$/, `-${lang}.json`));
+        if (!fs.existsSync(sibling)) continue;
+        try {
+          names[lang] = (
+            JSON.parse(fs.readFileSync(sibling, 'utf-8')).conference as Conference
+          ).name;
+        } catch {
+          // fall back to the page language's own wording
+        }
+      }
       conferences.push({
         year: conf.year,
         month: conf.month,
-        name: conf.name,
+        names,
         sessionCount: conf.sessions.length,
       });
     } catch (error) {
@@ -57,39 +71,26 @@ async function loadConferenceData(outputDir: string): Promise<RecentConference[]
   return conferences;
 }
 
-function getMonthName(month: number): string {
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-  return months[month - 1] || '';
-}
-
 // Without a min-year the list is capped at the 5 newest; with one it shows every
 // conference the feeds contain (gc_podcast-qxr).
-function generateRecentConferencesHtml(conferences: RecentConference[], minYear?: number): string {
+function generateRecentConferencesHtml(
+  t: SiteStrings,
+  lang: LanguageCode,
+  conferences: RecentConference[],
+  minYear?: number,
+): string {
   const recent =
     minYear === undefined ? conferences.slice(0, 5) : conferences.filter((c) => c.year >= minYear);
 
-  let html = '  <h2>Recent Conferences</h2>\n  <div class="conferences">\n';
+  let html = `  <h2>${t.recentConferences}</h2>\n  <div class="conferences">\n`;
 
   for (const conf of recent) {
     html += `    <div class="conference-item">
       <div class="conference-header">
-        <strong>${getMonthName(conf.month)} ${conf.year}</strong>
-        <span class="session-count">${conf.sessionCount} session${conf.sessionCount !== 1 ? 's' : ''}</span>
+        <strong>${t.conferenceDate(conf.month, conf.year)}</strong>
+        <span class="session-count">${t.sessionCount(conf.sessionCount)}</span>
       </div>
-      <p>${conf.name}</p>
+      <p>${conf.names[lang] ?? t.conferenceName(conf.month, conf.year)}</p>
     </div>\n`;
   }
 
@@ -97,17 +98,17 @@ function generateRecentConferencesHtml(conferences: RecentConference[], minYear?
   return html;
 }
 
-function generateFeedListHtml(): string {
-  let html = '  <h2>Available Feeds</h2>\n  <div class="feed-list">\n';
+function generateFeedListHtml(t: SiteStrings): string {
+  let html = `  <h2>${t.availableFeeds}</h2>\n  <div class="feed-list">\n`;
 
   for (const lang of LANGUAGE_CODES) {
     const langConfig = LANGUAGES[lang];
     const feedFile = lang === 'eng' ? 'audio.xml' : `audio-${langConfig.audioSuffix}.xml`;
 
     html += `    <div class="feed-item">
-      <strong>${langConfig.displayName}</strong>
+      <strong>${t.languageNames[lang]}</strong>
       <span class="feed-url-small" id="feed${lang.toUpperCase()}">${feedFile}</span>
-      <button class="btn-copy" onclick="copyFeed('feed${lang.toUpperCase()}', this)">Copy</button>
+      <button class="btn-copy" onclick="copyFeed('feed${lang.toUpperCase()}', this)">${t.copy}</button>
     </div>\n`;
   }
 
@@ -115,14 +116,14 @@ function generateFeedListHtml(): string {
   return html;
 }
 
-function generateSubscribeButtonsHtml(): string {
+function generateSubscribeButtonsHtml(t: SiteStrings): string {
   // Links are filled in by client-side JavaScript for the chosen language.
   const picker = LANGUAGE_CODES.map((lang) => {
     const file = lang === 'eng' ? 'audio.xml' : `audio-${LANGUAGES[lang].audioSuffix}.xml`;
     return `<button type="button" class="lang-btn" data-file="${file}" data-tag="${LANGUAGES[lang].rssLanguageTag}" onclick="setSubscribeFeed(this)">${LANGUAGES[lang].nativeName}</button>`;
   }).join('\n    ');
-  return `  <h2>One-Click Subscribe</h2>
-  <div class="lang-picker" role="group" aria-label="Feed language">
+  return `  <h2>${t.oneClickSubscribe}</h2>
+  <div class="lang-picker" role="group" aria-label="${t.feedLanguageLabel}">
     ${picker}
   </div>
   <div class="subscribe-buttons" id="subscribeButtons">
@@ -130,21 +131,26 @@ function generateSubscribeButtonsHtml(): string {
     <a class="subscribe-btn overcast" href="#" id="overcastLink">Overcast</a>
     <a class="subscribe-btn pocketcasts" href="#" id="pocketcastsLink">Pocket Casts</a>
     <a class="subscribe-btn castro" href="#" id="castroLink">Castro</a>
-    <a class="subscribe-btn rss" href="#" id="rssLink">RSS Feed</a>
+    <a class="subscribe-btn rss" href="#" id="rssLink">${t.rssFeed}</a>
   </div>
 `;
 }
 
-function generateHtml(conferences: RecentConference[], minYear?: number): string {
+function generateHtml(
+  lang: LanguageCode,
+  conferences: RecentConference[],
+  minYear?: number,
+): string {
+  const t = SITE_STRINGS[lang]!;
   const lastUpdated = new Date().toISOString();
 
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="${t.htmlLang}">
 <head>
-  <title>General Conference Podcast</title>
+  <title>${t.title}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Subscribe to general conference audio from The Church of Jesus Christ of Latter-day Saints">
+  <meta name="description" content="${t.metaDescription}">
   <style>
     * { box-sizing: border-box; }
     body {
@@ -351,85 +357,59 @@ function generateHtml(conferences: RecentConference[], minYear?: number): string
   </style>
 </head>
 <body>
-  <h1>General Conference Podcast</h1>
-  <p class="subtitle">Audio from general conference, the worldwide gathering of The Church of Jesus Christ of Latter-day Saints</p>
+  <h1>${t.title}</h1>
+  <p class="subtitle">${t.subtitle}</p>
 
   <div class="feed-box">
-    <strong>Podcast Feed URL:</strong>
+    <strong>${t.feedUrlLabel}</strong>
     <div class="feed-url" id="feedUrl">${BASE_FEED_URL}/audio.xml</div>
-    <a href="audio.xml" class="btn">View Feed</a>
-    <button class="btn btn-secondary" onclick="copyFeed('feedUrl', this)">Copy URL</button>
+    <a href="audio.xml" class="btn">${t.viewFeed}</a>
+    <button class="btn btn-secondary" onclick="copyFeed('feedUrl', this)">${t.copyUrl}</button>
   </div>
 
   <div class="features">
-    <div class="feature">
-      <h3>Full Sessions</h3>
-      <p>Complete session recordings (about ${SESSION_HOURS_TEXT} hours) including all talks and music</p>
-    </div>
-    <div class="feature">
-      <h3>Individual Talks</h3>
-      <p>Each talk available separately (about ${TALK_MINUTES_TEXT} minutes each)</p>
-    </div>
-    <div class="feature">
-      <h3>Per-Episode Artwork</h3>
-      <p>Speaker portraits appear beside every talk in supported apps</p>
-    </div>
-    <div class="feature">
-      <h3>Multi-Language</h3>
-      <p>English, Spanish, and Portuguese feeds</p>
-    </div>
-    <div class="feature">
-      <h3>Podcasting 2.0</h3>
-      <p>Stable <code>&lt;podcast:guid&gt;</code> so your subscription survives URL changes</p>
-    </div>
-    <div class="feature">
-      <h3>Seasonal Channel Art</h3>
-      <p>Channel image rotates each April and October to match the current conference</p>
-    </div>
+${t.features
+  .map(
+    (f) => `    <div class="feature">
+      <h3>${f.title}</h3>
+      <p>${f.html}</p>
+    </div>`,
+  )
+  .join('\n')}
   </div>
 
-${generateRecentConferencesHtml(conferences, minYear)}
+${generateRecentConferencesHtml(t, lang, conferences, minYear)}
 
-${generateFeedListHtml()}
+${generateFeedListHtml(t)}
 
-${generateSubscribeButtonsHtml()}
+${generateSubscribeButtonsHtml(t)}
 
-  <h2>Manual Subscribe</h2>
+  <h2>${t.manualSubscribe}</h2>
   <ol class="steps">
-    <li>Copy a feed URL above</li>
-    <li>Open your podcast app</li>
-    <li>Look for "Add by URL" or "Add RSS Feed"</li>
-    <li>Paste the URL and confirm</li>
+${t.manualSteps.map((step) => `    <li>${step}</li>`).join('\n')}
   </ol>
-  <p><strong>Apple Podcasts:</strong> the Search tab only finds shows listed in Apple's directory, and these feeds are not listed, so a pasted URL shows "No Results". Use <strong>Library &rarr; &hellip; (top right) &rarr; Follow a Show by URL</strong> instead, or tap the Apple Podcasts button above after choosing your language.</p>
+  <p>${t.appleNoteHtml}</p>
 
-  <h2>Episode Types</h2>
-  <p>The feed includes two types of episodes:</p>
+  <h2>${t.episodeTypes}</h2>
+  <p>${t.episodeTypesIntro}</p>
   <ul>
-    <li><strong>Full Session</strong> - Complete session recording (about ${SESSION_HOURS_TEXT} hours). Great for listening to an entire session.</li>
-    <li><strong>Individual Talks</strong> - Each speaker's talk separately (about ${TALK_MINUTES_TEXT} min). Perfect for focused study.</li>
+${t.episodeTypeItemsHtml.map((item) => `    <li>${item}</li>`).join('\n')}
   </ul>
 
-  <h2>Supported Apps</h2>
-  <p>This feed works with any podcast app that supports RSS:</p>
+  <h2>${t.supportedApps}</h2>
+  <p>${t.supportedAppsIntro}</p>
   <ul>
-    <li>Apple Podcasts</li>
-    <li>Overcast</li>
-    <li>Pocket Casts</li>
-    <li>Castro</li>
-    <li>Spotify (via RSS)</li>
-    <li>Any RSS reader</li>
+${t.supportedAppItems.map((app) => `    <li>${app}</li>`).join('\n')}
   </ul>
 
   <footer>
     <p>
-      Audio content from <a href="https://www.churchofjesuschrist.org/study/general-conference">churchofjesuschrist.org</a>.
-      This is an unofficial feed for personal use.
+      ${t.footerSourceHtml('https://www.churchofjesuschrist.org/study/general-conference')}
     </p>
     <p>
-      <a href="${REPOSITORY_URL}">View on GitHub</a>
+      <a href="${REPOSITORY_URL}">${t.viewOnGitHub}</a>
     </p>
-    <div class="last-updated">Last updated: <span id="lastUpdated">${lastUpdated}</span> UTC</div>
+    <div class="last-updated">${t.lastUpdated} <span id="lastUpdated">${lastUpdated}</span> UTC</div>
   </footer>
 
   <script>
@@ -452,7 +432,7 @@ ${generateSubscribeButtonsHtml()}
       const done = (ok) => {
         const original = btn.dataset.label || btn.textContent;
         btn.dataset.label = original;
-        btn.textContent = ok ? 'Copied!' : 'Press and hold to copy';
+        btn.textContent = ok ? ${JSON.stringify(t.copied)} : ${JSON.stringify(t.pressAndHoldToCopy)};
         btn.classList.toggle('copied', ok);
         if (!ok) selectText(el);
         setTimeout(() => {
@@ -568,7 +548,7 @@ async function main() {
     }
 
     // Generate HTML
-    const html = generateHtml(conferences, minYear);
+    const html = generateHtml('eng', conferences, minYear);
 
     // Ensure docs directory exists
     const docsDir = path.dirname(indexPath);
