@@ -1,6 +1,6 @@
 {
   "name": "gc-podcast-scraper",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "General Conference metadata and audio link extractor",
   "type": "module",
   "scripts": {
@@ -36,7 +36,7 @@
     "eslint": "^9.0.0",
     "husky": "^9.0.0",
     "jpeg-js": "^0.4.4",
-    "lint-staged": "^15.0.0",
+    "lint-staged": "^17.6.0",
     "prettier": "^3.0.0",
     "tsx": "^4.0.0",
     "typescript": "^5.3.0",

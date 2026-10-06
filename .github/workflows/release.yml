@@ -1,86 +1,53 @@
 name: Release
 
-# Every version bump on main becomes a GitHub release, but only once CI has
-# passed on that exact commit (gc_podcast-e88). Runs when package.json
-# changes; does nothing if the tag v<version> already exists. A red, cancelled
-# or missing CI run fails this workflow instead of releasing.
+# Every version bump on main becomes a GitHub release, but only from a commit
+# whose CI passed (gc_podcast-e88). Runs when a CI push run on main finishes:
+# if it passed and the commit's package.json version has no release yet, it
+# creates one at that commit. Red CI never releases (the CI run itself shows
+# red); re-running CI to green releases with no further action.
 #
 # Relies on ci.yml running on every push to main that touches package.json
-# (its paths-ignore covers only feed output).
+# (its paths-ignore covers only feed output). workflow_run always uses this
+# file from the default branch.
 #
-# Permissions: contents:write to create the tag and release; actions:read to
-# look up the CI run for the commit.
+# Permissions: contents:write to create the tag and release.
 
 on:
-  push:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
     branches: [main]
-    paths: [package.json]
 
 permissions:
   contents: read
 
-# One group per commit: a shared group keeps only one pending run, so a third
-# quick bump would silently drop the second version's release.
+# One group per commit: a shared group keeps only one pending run, so a quick
+# second bump could silently drop the first version's release.
 concurrency:
-  group: release-${{ github.sha }}
+  group: release-${{ github.event.workflow_run.head_sha }}
   cancel-in-progress: false
 
 jobs:
   release:
+    if: github.event.workflow_run.event == 'push' && github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 5
     permissions:
       contents: write
-      actions: read
     steps:
-      - name: Checkout repository
+      - name: Checkout the CI-tested commit
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
 
-      - name: Check for a new version
-        id: version
+      - name: Create release for a new version
         env:
           GH_TOKEN: ${{ github.token }}
+          SHA: ${{ github.event.workflow_run.head_sha }}
         run: |
           VERSION="v$(node -p "require('./package.json').version")"
-          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           if gh release view "$VERSION" >/dev/null 2>&1; then
             echo "$VERSION already released; nothing to do."
-            echo "new=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "new=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
-
-      - name: Wait for CI on this commit
-        if: steps.version.outputs.new == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          VERSION: ${{ steps.version.outputs.version }}
-        run: |
-          # Up to 20 minutes: CI takes ~2, and may not have registered yet.
-          for _ in $(seq 60); do
-            RUN=$(gh run list --workflow ci.yml --commit "$GITHUB_SHA" --event push \
-              --json status,conclusion,url --jq '.[0] // {}')
-            STATUS=$(echo "$RUN" | jq -r '.status // "missing"')
-            if [ "$STATUS" = "completed" ]; then
-              CONCLUSION=$(echo "$RUN" | jq -r '.conclusion')
-              if [ "$CONCLUSION" = "success" ]; then
-                echo "CI passed on $GITHUB_SHA."
-                exit 0
-              fi
-              echo "::error::Not releasing $VERSION: CI on $GITHUB_SHA concluded '$CONCLUSION' ($(echo "$RUN" | jq -r '.url'))."
-              exit 1
-            fi
-            echo "CI on $GITHUB_SHA: $STATUS; waiting."
-            sleep 20
-          done
-          echo "::error::Not releasing $VERSION: no completed CI run for $GITHUB_SHA after 20 minutes."
-          exit 1
-
-      - name: Create release
-        if: steps.version.outputs.new == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          VERSION: ${{ steps.version.outputs.version }}
-        run: |
-          gh release create "$VERSION" --target "$GITHUB_SHA" \
-            --title "$VERSION" --generate-notes
+          gh release create "$VERSION" --target "$SHA" --title "$VERSION" --generate-notes

@@ -6,9 +6,9 @@ name: CI
 #
 # Not a required status check: update-feed.yml pushes feed commits straight to
 # main, and branch protection that requires checks would reject those pushes.
-# Watch it with `gh pr checks <n> --watch` before merging. release.yml waits for
-# this workflow's push run on a version-bump commit and releases only if it
-# passed, so keep paths-ignore limited to feed output.
+# Watch it with `gh pr checks <n> --watch` before merging. release.yml starts
+# when this workflow's push run on main passes (it matches the name "CI": keep
+# it), so keep paths-ignore limited to feed output.
 
 on:
   pull_request:
@@ -24,7 +24,7 @@ permissions:
 
 # PRs: one group per branch, superseded runs cancelled. Pushes to main: one
 # group per commit, so no run is ever cancelled or dropped from the queue
-# (GitHub keeps only one pending run per group); release.yml waits on it.
+# (GitHub keeps only one pending run per group); release.yml follows it.
 concurrency:
   group: ci-${{ github.event_name == 'pull_request' && github.ref || github.sha }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
