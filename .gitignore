@@ -34,6 +34,9 @@ npm-debug.log*
 # human gate on channel-art selection (CHANNEL_ART.md)
 .claude/*
 !.claude/settings.json
+# Other agents' local folders (Codex hooks, installed skills)
+.agents/
+.codex/
 
 # Beads / Dolt files (added by bd init)
 .dolt/
