@@ -144,7 +144,7 @@ function generateHtml(conferences: RecentConference[], minYear?: number): string
   <title>General Conference Podcast</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Subscribe to General Conference audio from The Church of Jesus Christ of Latter-day Saints">
+  <meta name="description" content="Subscribe to general conference audio from The Church of Jesus Christ of Latter-day Saints">
   <style>
     * { box-sizing: border-box; }
     body {
@@ -352,7 +352,7 @@ function generateHtml(conferences: RecentConference[], minYear?: number): string
 </head>
 <body>
   <h1>General Conference Podcast</h1>
-  <p class="subtitle">Audio recordings from General Conference of The Church of Jesus Christ of Latter-day Saints</p>
+  <p class="subtitle">Audio from general conference, the worldwide gathering of The Church of Jesus Christ of Latter-day Saints</p>
 
   <div class="feed-box">
     <strong>Podcast Feed URL:</strong>

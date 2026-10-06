@@ -44,9 +44,6 @@ function normalizeFeedUrlForGuid(url: string): string {
 
 // Podcast metadata
 const PODCAST_CONFIG = {
-  title: 'General Conference - The Church of Jesus Christ of Latter-day Saints',
-  description:
-    'Audio recordings from General Conference of The Church of Jesus Christ of Latter-day Saints. Includes talks from Church leaders delivered during the semi-annual worldwide broadcasts.',
   author: 'The Church of Jesus Christ of Latter-day Saints',
   email: 'noreply@churchofjesuschrist.org',
   language: 'en',
