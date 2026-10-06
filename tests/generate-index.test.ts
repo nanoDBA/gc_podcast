@@ -605,7 +605,11 @@ describe('generate-index.ts', { timeout: 30_000 }, () => {
 
 // The publish workflow commits docs/ with `git add docs/`; a page that
 // .gitignore swallows (the repo ignores *.html) would never go live.
+// --no-index: without it git skips files it already tracks, so the check could
+// never fail once the pages are committed (review of #88).
 describe('published language pages are not git-ignored', () => {
+  const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+
   it('docs/index.html and every language folder page can be committed', () => {
     const pages = [
       'docs/index.html',
@@ -614,13 +618,14 @@ describe('published language pages are not git-ignored', () => {
       ),
     ];
     for (const page of pages) {
-      let ignored = true;
+      // Exit 0 = ignored, 1 = not ignored, anything else = git itself failed.
+      let status = 0;
       try {
-        execSync(`git check-ignore -q "${page}"`, { stdio: 'ignore' });
-      } catch {
-        ignored = false; // exit 1: not ignored
+        execSync(`git check-ignore -q --no-index "${page}"`, { cwd: projectRoot, stdio: 'ignore' });
+      } catch (err) {
+        status = (err as { status?: number }).status ?? -1;
       }
-      expect(ignored, `${page} is git-ignored`).toBe(false);
+      expect(status, `${page}: 0 means git-ignored, other non-1 means git failed`).toBe(1);
     }
   });
 });

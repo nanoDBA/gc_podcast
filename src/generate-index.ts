@@ -44,9 +44,10 @@ async function loadConferenceData(outputDir: string): Promise<RecentConference[]
         const sibling = path.join(outputDir, file.replace(/-eng\.json$/, `-${lang}.json`));
         if (!fs.existsSync(sibling)) continue;
         try {
-          names[lang] = (
-            JSON.parse(fs.readFileSync(sibling, 'utf-8')).conference as Conference
-          ).name;
+          const name = (JSON.parse(fs.readFileSync(sibling, 'utf-8')).conference as Conference)
+            .name;
+          // The scraper's last-resort name is English; let the page's own wording win then.
+          if (name && name !== conf.name && !/General Conference$/.test(name)) names[lang] = name;
         } catch {
           // fall back to the page language's own wording
         }
