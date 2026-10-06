@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-05T23:31:29.321Z",
+  "scraped_at": "2026-10-06T08:49:08.827Z",
   "version": "1.0",
   "conference": {
     "year": 2026,
@@ -32,9 +32,9 @@
           "url": "https://assets.churchofjesuschrist.org/mg9psefsh3t88a5om3lafcnn097109sf9v8it7kh-128k-es.mp3",
           "quality": "128k",
           "language": "es",
-          "duration_ms": 7177300
+          "duration_ms": 7177370
         },
-        "duration_ms": 7177300
+        "duration_ms": 7177370
       },
       {
         "name": "Sesión del domingo por la mañana",
