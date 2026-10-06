@@ -3,6 +3,10 @@
 <head>
   <title>General Conference Podcast</title>
   <meta charset="utf-8">
+  <link rel="alternate" hreflang="en" href="https://nanodba.github.io/gc_podcast/">
+  <link rel="alternate" hreflang="es" href="https://nanodba.github.io/gc_podcast/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://nanodba.github.io/gc_podcast/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://nanodba.github.io/gc_podcast/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Subscribe to general conference audio from The Church of Jesus Christ of Latter-day Saints">
   <style>
@@ -189,6 +193,9 @@
       align-items: center;
       justify-content: center;
     }
+    .lang-nav { text-align: right; font-size: 0.95em; color: #666; }
+    .lang-nav a { color: #2c5282; }
+    .lang-nav [aria-current] { font-weight: 600; }
     footer {
       margin-top: 60px;
       padding-top: 20px;
@@ -211,6 +218,7 @@
   </style>
 </head>
 <body>
+  <nav class="lang-nav" aria-label="Page language"><span aria-current="page" lang="en">English</span> · <a href="es/" hreflang="es" lang="es">Español</a> · <a href="pt/" hreflang="pt-BR" lang="pt-BR">Português</a></nav>
   <h1>General Conference Podcast</h1>
   <p class="subtitle">Audio from general conference, the worldwide gathering of The Church of Jesus Christ of Latter-day Saints</p>
 
@@ -243,8 +251,8 @@
       <p>Stable <code>&lt;podcast:guid&gt;</code> so your subscription survives URL changes</p>
     </div>
     <div class="feature">
-      <h3>Seasonal Channel Art</h3>
-      <p>Channel image rotates each April and October to match the current conference</p>
+      <h3>Conference Channel Art</h3>
+      <p>A channel image chosen for each conference and each language</p>
     </div>
   </div>
 
@@ -352,19 +360,26 @@
 
   <footer>
     <p>
-      Audio content from <a href="https://www.churchofjesuschrist.org/study/general-conference">churchofjesuschrist.org</a>.
+      Audio content from <a href="https://www.churchofjesuschrist.org/study/general-conference?lang=eng">churchofjesuschrist.org</a>.
       This is an unofficial feed for personal use.
     </p>
     <p>
       <a href="https://github.com/nanoDBA/gc_podcast">View on GitHub</a>
     </p>
-    <div class="last-updated">Last updated: <span id="lastUpdated">2026-10-06T12:39:59.874Z</span> UTC</div>
+    <div class="last-updated">Last updated: <span id="lastUpdated">2026-10-06T13:00:44.552Z</span> UTC</div>
   </footer>
 
   <script>
-    const baseUrl = window.location.hostname !== 'localhost'
-      ? window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '')
-      : 'https://nanodba.github.io/gc_podcast';
+    // Site root (where the feeds live), from this page's folder; no regex, the
+    // template literal would eat its backslashes.
+    const ROOT_REL = './';
+    const PAGE_FEED_TAG = 'en';
+    const IS_ROOT_PAGE = true;
+    let baseUrl = 'https://nanodba.github.io/gc_podcast';
+    if (window.location.hostname !== 'localhost') {
+      baseUrl = new URL(ROOT_REL, window.location.href).href;
+      if (baseUrl.endsWith('/')) baseUrl = baseUrl.slice(0, -1);
+    }
 
     // Update all feed URLs
     document.getElementById('feedUrl').textContent = baseUrl + '/audio.xml';
@@ -381,7 +396,7 @@
       const done = (ok) => {
         const original = btn.dataset.label || btn.textContent;
         btn.dataset.label = original;
-        btn.textContent = ok ? 'Copied!' : 'Press and hold to copy';
+        btn.textContent = ok ? "Copied!" : "Press and hold to copy";
         btn.classList.toggle('copied', ok);
         if (!ok) selectText(el);
         setTimeout(() => {
@@ -453,9 +468,12 @@
       });
     }
 
-    // Default to the visitor's language when we have a feed for it.
+    // es/pt pages subscribe to their own feed; the English root page still
+    // defaults to the visitor's language when we have a feed for it.
     const langButtons = Array.from(document.querySelectorAll('.lang-btn'));
-    const preferred = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    const preferred = IS_ROOT_PAGE
+      ? (navigator.language || 'en').slice(0, 2).toLowerCase()
+      : PAGE_FEED_TAG;
     setSubscribeFeed(langButtons.find((b) => b.dataset.tag === preferred) || langButtons[0]);
   </script>
 </body>

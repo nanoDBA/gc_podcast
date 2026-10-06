@@ -2,7 +2,7 @@
 
 Podcast RSS feed generator for general conference audio from The Church of Jesus Christ of Latter-day Saints.
 
-**Website:** [nanodba.github.io/gc_podcast](https://nanodba.github.io/gc_podcast/) has the feed URLs, one-click subscribe buttons and recent conferences.
+**Website:** [nanodba.github.io/gc_podcast](https://nanodba.github.io/gc_podcast/) has the feed URLs, one-click subscribe buttons and recent conferences, in English, [Español](https://nanodba.github.io/gc_podcast/es/) and [Português](https://nanodba.github.io/gc_podcast/pt/).
 
 ## Subscribe
 

@@ -521,4 +521,84 @@ describe('generate-index.ts', { timeout: 30_000 }, () => {
       expect(html.match(/class="conference-item"/g)).toHaveLength(5);
     }, 20000);
   });
+  // Site i18n: one page per feed language, wording from src/site-strings.ts.
+  describe('language pages (/, /es/, /pt/)', () => {
+    const generate = (): Record<'eng' | 'spa' | 'por', string> => {
+      const outputDir = path.join(tempOutputDir, 'output');
+      fs.mkdirSync(outputDir, { recursive: true });
+      const names = {
+        eng: 'October 2026 general conference',
+        spa: 'Conferencia General de octubre de 2026',
+        por: 'Conferência Geral de Outubro de 2026',
+      };
+      for (const [lang, name] of Object.entries(names)) {
+        fs.writeFileSync(
+          path.join(outputDir, `gc-2026-10-${lang}.json`),
+          JSON.stringify({
+            scraped_at: '2026-10-06T00:00:00.000Z',
+            version: '1.0',
+            conference: { year: 2026, month: 10, name, url: 'x', language: lang, sessions: [] },
+          }),
+        );
+      }
+      const indexPath = path.join(tempOutputDir, 'site', 'index.html');
+      execSync(`npx tsx src/generate-index.ts --output "${outputDir}" --index "${indexPath}"`, {
+        cwd: projectRoot,
+      });
+      const read = (rel: string) => fs.readFileSync(path.join(tempOutputDir, 'site', rel), 'utf-8');
+      return { eng: read('index.html'), spa: read('es/index.html'), por: read('pt/index.html') };
+    };
+
+    it('writes a page per language with its lang tag and hreflang links to all three', () => {
+      const pages = generate();
+      expect(pages.eng).toContain('<html lang="en">');
+      expect(pages.spa).toContain('<html lang="es">');
+      expect(pages.por).toContain('<html lang="pt-BR">');
+      for (const html of Object.values(pages)) {
+        expect(html).toContain('hreflang="en" href="https://nanodba.github.io/gc_podcast/"');
+        expect(html).toContain('hreflang="es" href="https://nanodba.github.io/gc_podcast/es/"');
+        expect(html).toContain('hreflang="pt-BR" href="https://nanodba.github.io/gc_podcast/pt/"');
+        expect(html).toContain('hreflang="x-default"');
+        const script = html.split('<script>')[1].split('</script>')[0];
+        expect(() => new Function(script)).not.toThrow();
+      }
+    }, 30000);
+
+    it('es and pt pages carry no English interface text', () => {
+      const pages = generate();
+      for (const html of [pages.spa, pages.por]) {
+        for (const english of [
+          'Recent Conferences',
+          'Manual Subscribe',
+          'Episode Types',
+          'Copy URL',
+          'Last updated',
+        ]) {
+          expect(html).not.toContain(english);
+        }
+      }
+      expect(pages.spa).toContain('la reunión mundial de La Iglesia de Jesucristo');
+      expect(pages.por).toContain('uma reunião mundial de A Igreja de Jesus Cristo');
+    }, 30000);
+
+    it('each page leads with its own feed and links between languages', () => {
+      const pages = generate();
+      expect(pages.eng).toContain('href="audio.xml" class="btn"');
+      expect(pages.spa).toContain('href="../audio-es.xml" class="btn"');
+      expect(pages.por).toContain('href="../audio-pt.xml" class="btn"');
+      expect(pages.spa).toContain("const PAGE_FEED_TAG = 'es'");
+      expect(pages.por).toContain("const PAGE_FEED_TAG = 'pt'");
+      expect(pages.spa).toContain('<a href="../pt/" hreflang="pt-BR" lang="pt-BR">Português</a>');
+      expect(pages.eng).toContain('<a href="es/" hreflang="es" lang="es">Español</a>');
+      expect(pages.spa).toContain('study/general-conference?lang=spa');
+    }, 30000);
+
+    it("uses the Church's own conference name from each language's data", () => {
+      const pages = generate();
+      expect(pages.spa).toContain('<p>Conferencia General de octubre de 2026</p>');
+      expect(pages.spa).toContain('<strong>Octubre de 2026</strong>');
+      expect(pages.por).toContain('<p>Conferência Geral de Outubro de 2026</p>');
+      expect(pages.eng).toContain('<p>October 2026 general conference</p>');
+    }, 30000);
+  });
 });

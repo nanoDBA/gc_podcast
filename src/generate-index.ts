@@ -1,8 +1,9 @@
 /**
- * CLI to generate docs/index.html from feed metadata
+ * CLI to generate the landing pages from feed metadata.
  *
- * Reads all output/gc-*.json files + feed XML files in docs/ and produces
- * docs/index.html with feed URLs, recent conferences, and subscribe buttons.
+ * Reads output/gc-*.json and writes one page per feed language: --index
+ * (English, docs/index.html) plus es/index.html and pt/index.html beside it.
+ * Wording lives in site-strings.ts; this file owns structure.
  */
 
 import fs from 'fs';
@@ -136,19 +137,50 @@ function generateSubscribeButtonsHtml(t: SiteStrings): string {
 `;
 }
 
+/** Page folder under the site root: '' for English, 'es/' and 'pt/' for the others. */
+function pageDir(lang: LanguageCode): string {
+  return lang === 'eng' ? '' : `${LANGUAGES[lang].audioSuffix}/`;
+}
+
+function feedFile(lang: LanguageCode): string {
+  return lang === 'eng' ? 'audio.xml' : `audio-${LANGUAGES[lang].audioSuffix}.xml`;
+}
+
+function generateLanguageNavHtml(t: SiteStrings, lang: LanguageCode, rootRel: string): string {
+  const links = LANGUAGE_CODES.map((other) => {
+    const tag = SITE_STRINGS[other].htmlLang;
+    const name = LANGUAGES[other].nativeName;
+    return other === lang
+      ? `<span aria-current="page" lang="${tag}">${name}</span>`
+      : `<a href="${rootRel}${pageDir(other)}" hreflang="${tag}" lang="${tag}">${name}</a>`;
+  }).join(' · ');
+  return `  <nav class="lang-nav" aria-label="${t.languageNavLabel}">${links}</nav>`;
+}
+
 function generateHtml(
   lang: LanguageCode,
   conferences: RecentConference[],
   minYear?: number,
 ): string {
-  const t = SITE_STRINGS[lang]!;
+  const t = SITE_STRINGS[lang];
   const lastUpdated = new Date().toISOString();
+  // Relative path from this page back to the site root (feeds live there).
+  const rootRel = lang === 'eng' ? '' : '../';
+  const ownFeed = feedFile(lang);
+  const alternates = [
+    ...LANGUAGE_CODES.map(
+      (other) =>
+        `  <link rel="alternate" hreflang="${SITE_STRINGS[other].htmlLang}" href="${BASE_FEED_URL}/${pageDir(other)}">`,
+    ),
+    `  <link rel="alternate" hreflang="x-default" href="${BASE_FEED_URL}/">`,
+  ].join('\n');
 
   return `<!DOCTYPE html>
 <html lang="${t.htmlLang}">
 <head>
   <title>${t.title}</title>
   <meta charset="utf-8">
+${alternates}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="${t.metaDescription}">
   <style>
@@ -335,6 +367,9 @@ function generateHtml(
       align-items: center;
       justify-content: center;
     }
+    .lang-nav { text-align: right; font-size: 0.95em; color: #666; }
+    .lang-nav a { color: #2c5282; }
+    .lang-nav [aria-current] { font-weight: 600; }
     footer {
       margin-top: 60px;
       padding-top: 20px;
@@ -357,13 +392,14 @@ function generateHtml(
   </style>
 </head>
 <body>
+${generateLanguageNavHtml(t, lang, rootRel)}
   <h1>${t.title}</h1>
   <p class="subtitle">${t.subtitle}</p>
 
   <div class="feed-box">
     <strong>${t.feedUrlLabel}</strong>
-    <div class="feed-url" id="feedUrl">${BASE_FEED_URL}/audio.xml</div>
-    <a href="audio.xml" class="btn">${t.viewFeed}</a>
+    <div class="feed-url" id="feedUrl">${BASE_FEED_URL}/${ownFeed}</div>
+    <a href="${rootRel}${ownFeed}" class="btn">${t.viewFeed}</a>
     <button class="btn btn-secondary" onclick="copyFeed('feedUrl', this)">${t.copyUrl}</button>
   </div>
 
@@ -404,7 +440,7 @@ ${t.supportedAppItems.map((app) => `    <li>${app}</li>`).join('\n')}
 
   <footer>
     <p>
-      ${t.footerSourceHtml('https://www.churchofjesuschrist.org/study/general-conference')}
+      ${t.footerSourceHtml(`https://www.churchofjesuschrist.org/study/general-conference?lang=${LANGUAGES[lang].urlParam}`)}
     </p>
     <p>
       <a href="${REPOSITORY_URL}">${t.viewOnGitHub}</a>
@@ -413,12 +449,19 @@ ${t.supportedAppItems.map((app) => `    <li>${app}</li>`).join('\n')}
   </footer>
 
   <script>
-    const baseUrl = window.location.hostname !== 'localhost'
-      ? window.location.origin + window.location.pathname.replace(/\\/[^\\/]*$/, '')
-      : '${BASE_FEED_URL}';
+    // Site root (where the feeds live), from this page's folder; no regex, the
+    // template literal would eat its backslashes.
+    const ROOT_REL = '${rootRel || './'}';
+    const PAGE_FEED_TAG = '${LANGUAGES[lang].rssLanguageTag}';
+    const IS_ROOT_PAGE = ${lang === 'eng'};
+    let baseUrl = '${BASE_FEED_URL}';
+    if (window.location.hostname !== 'localhost') {
+      baseUrl = new URL(ROOT_REL, window.location.href).href;
+      if (baseUrl.endsWith('/')) baseUrl = baseUrl.slice(0, -1);
+    }
 
     // Update all feed URLs
-    document.getElementById('feedUrl').textContent = baseUrl + '/audio.xml';
+    document.getElementById('feedUrl').textContent = baseUrl + '/${ownFeed}';
     document.getElementById('feedENG').textContent = baseUrl + '/audio.xml';
     document.getElementById('feedSPA').textContent = baseUrl + '/audio-es.xml';
     document.getElementById('feedPOR').textContent = baseUrl + '/audio-pt.xml';
@@ -504,9 +547,12 @@ ${t.supportedAppItems.map((app) => `    <li>${app}</li>`).join('\n')}
       });
     }
 
-    // Default to the visitor's language when we have a feed for it.
+    // es/pt pages subscribe to their own feed; the English root page still
+    // defaults to the visitor's language when we have a feed for it.
     const langButtons = Array.from(document.querySelectorAll('.lang-btn'));
-    const preferred = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    const preferred = IS_ROOT_PAGE
+      ? (navigator.language || 'en').slice(0, 2).toLowerCase()
+      : PAGE_FEED_TAG;
     setSubscribeFeed(langButtons.find((b) => b.dataset.tag === preferred) || langButtons[0]);
   </script>
 </body>
@@ -548,17 +594,15 @@ async function main() {
     }
 
     // Generate HTML
-    const html = generateHtml('eng', conferences, minYear);
-
-    // Ensure docs directory exists
-    const docsDir = path.dirname(indexPath);
-    if (!fs.existsSync(docsDir)) {
-      fs.mkdirSync(docsDir, { recursive: true });
+    // One page per language: --index for English, es/ and pt/ beside it.
+    const siteRoot = path.dirname(indexPath);
+    for (const lang of LANGUAGE_CODES) {
+      const pagePath =
+        lang === 'eng' ? indexPath : path.join(siteRoot, pageDir(lang), 'index.html');
+      fs.mkdirSync(path.dirname(pagePath), { recursive: true });
+      fs.writeFileSync(pagePath, generateHtml(lang, conferences, minYear), 'utf-8');
+      console.log(`Generated ${pagePath}`);
     }
-
-    // Write HTML file
-    fs.writeFileSync(indexPath, html, 'utf-8');
-    console.log(`Generated ${indexPath}`);
   } catch (error) {
     console.error('Failed to generate index:', error);
     process.exit(1);
@@ -571,7 +615,7 @@ Usage: npx tsx src/generate-index.ts [options]
 
 Options:
   --output, -o <dir>     Path to output directory with JSON files (default: ./output)
-  --index, -i <path>     Path to output index.html file (default: ./docs/index.html)
+  --index, -i <path>     English page; es/ and pt/ pages go beside it (default: ./docs/index.html)
   --min-year <year>      Only list conferences from this year onward (match generate-feed.ts)
   --help, -h             Show this help message
 `);
