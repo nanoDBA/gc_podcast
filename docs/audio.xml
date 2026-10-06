@@ -6,17 +6,17 @@
   xmlns:podcast="https://podcastindex.org/namespace/1.0">
   <channel>
     <title>General Conference - The Church of Jesus Christ of Latter-day Saints</title>
-    <description><![CDATA[Audio recordings from General Conference of The Church of Jesus Christ of Latter-day Saints. Includes talks from Church leaders delivered during the semi-annual worldwide broadcasts.]]></description>
+    <description><![CDATA[Audio recordings of general conference, the worldwide gathering of The Church of Jesus Christ of Latter-day Saints. Includes talks from Church leaders delivered during the semiannual worldwide broadcasts.]]></description>
     <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     <language>en</language>
     <copyright>© 2026 by Intellectual Reserve, Inc. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 06 Oct 2026 08:49:56 GMT</lastBuildDate>
-    <generator>gc-podcast-scraper/1.7.2</generator>
+    <lastBuildDate>Tue, 06 Oct 2026 19:22:31 GMT</lastBuildDate>
+    <generator>gc-podcast-scraper/1.8.0</generator>
     <atom:link href="https://nanoDBA.github.io/gc_podcast/audio.xml" rel="self" type="application/rss+xml"/>
     <podcast:guid>a4fcacd4-7d70-52bd-865c-5aa9265bd20d</podcast:guid>
 
     <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
-    <itunes:summary><![CDATA[Audio recordings from General Conference of The Church of Jesus Christ of Latter-day Saints. Includes talks from Church leaders delivered during the semi-annual worldwide broadcasts.]]></itunes:summary>
+    <itunes:summary><![CDATA[Audio recordings of general conference, the worldwide gathering of The Church of Jesus Christ of Latter-day Saints. Includes talks from Church leaders delivered during the semiannual worldwide broadcasts.]]></itunes:summary>
     <itunes:type>episodic</itunes:type>
     <itunes:owner>
       <itunes:name>The Church of Jesus Christ of Latter-day Saints</itunes:name>

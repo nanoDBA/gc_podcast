@@ -5,18 +5,18 @@
   xmlns:atom="http://www.w3.org/2005/Atom"
   xmlns:podcast="https://podcastindex.org/namespace/1.0">
   <channel>
-    <title>Conferência Geral - A Igreja de Jesus Cristo dos Santos dos Últimos Dias</title>
-    <description><![CDATA[Gravações de áudio da Conferência Geral de A Igreja de Jesus Cristo dos Santos dos Últimos Dias. Inclui discursos de líderes da Igreja das transmissões mundiais semestrais.]]></description>
+    <title>Conferência geral - A Igreja de Jesus Cristo dos Santos dos Últimos Dias</title>
+    <description><![CDATA[Gravações de áudio da conferência geral de A Igreja de Jesus Cristo dos Santos dos Últimos Dias. Inclui discursos de líderes da Igreja das transmissões mundiais semestrais.]]></description>
     <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     <language>pt</language>
     <copyright>© 2026 by Intellectual Reserve, Inc. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 06 Oct 2026 08:49:56 GMT</lastBuildDate>
-    <generator>gc-podcast-scraper/1.7.2</generator>
+    <lastBuildDate>Tue, 06 Oct 2026 19:22:32 GMT</lastBuildDate>
+    <generator>gc-podcast-scraper/1.8.0</generator>
     <atom:link href="https://nanoDBA.github.io/gc_podcast/audio-pt.xml" rel="self" type="application/rss+xml"/>
     <podcast:guid>0891ca77-3c5a-5c93-9b43-7f3a542b47e3</podcast:guid>
 
     <itunes:author>The Church of Jesus Christ of Latter-day Saints</itunes:author>
-    <itunes:summary><![CDATA[Gravações de áudio da Conferência Geral de A Igreja de Jesus Cristo dos Santos dos Últimos Dias. Inclui discursos de líderes da Igreja das transmissões mundiais semestrais.]]></itunes:summary>
+    <itunes:summary><![CDATA[Gravações de áudio da conferência geral de A Igreja de Jesus Cristo dos Santos dos Últimos Dias. Inclui discursos de líderes da Igreja das transmissões mundiais semestrais.]]></itunes:summary>
     <itunes:type>episodic</itunes:type>
     <itunes:owner>
       <itunes:name>The Church of Jesus Christ of Latter-day Saints</itunes:name>
@@ -29,7 +29,7 @@
     <itunes:image href="https://nanodba.github.io/gc_podcast/channel-art-october-2026-pt.jpg?v=2026-10"/>
     <image>
       <url>https://nanodba.github.io/gc_podcast/channel-art-october-2026-pt.jpg?v=2026-10</url>
-      <title>Conferência Geral - A Igreja de Jesus Cristo dos Santos dos Últimos Dias</title>
+      <title>Conferência geral - A Igreja de Jesus Cristo dos Santos dos Últimos Dias</title>
       <link>https://www.churchofjesuschrist.org/study/general-conference</link>
     </image>
 
