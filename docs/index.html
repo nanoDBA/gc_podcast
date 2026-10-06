@@ -165,7 +165,8 @@
       font-weight: 500;
     }
     .conference-item p { margin: 8px 0 0 0; color: #666; font-size: 0.95em; }
-    .steps { counter-reset: step; }
+    /* Custom numbered circles replace the native markers (Safari showed both). */
+    .steps { counter-reset: step; list-style: none; padding-left: 0; }
     .steps li {
       counter-increment: step;
       margin: 15px 0;
@@ -176,6 +177,7 @@
       content: counter(step);
       position: absolute;
       left: 0;
+      top: 0;
       width: 24px;
       height: 24px;
       background: #0066cc;
@@ -276,6 +278,13 @@
       </div>
       <p>April 2025 general conference</p>
     </div>
+    <div class="conference-item">
+      <div class="conference-header">
+        <strong>October 2024</strong>
+        <span class="session-count">5 sessions</span>
+      </div>
+      <p>October 2024 general conference</p>
+    </div>
   </div>
 
 
@@ -349,7 +358,7 @@
     <p>
       <a href="https://github.com/nanoDBA/gc_podcast">View on GitHub</a>
     </p>
-    <div class="last-updated">Last updated: <span id="lastUpdated">2026-10-06T08:49:57.184Z</span> UTC</div>
+    <div class="last-updated">Last updated: <span id="lastUpdated">2026-10-06T12:19:15.901Z</span> UTC</div>
   </footer>
 
   <script>
