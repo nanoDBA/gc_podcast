@@ -33,10 +33,10 @@ Works with Apple Podcasts, Overcast, Pocket Casts, Castro, and any RSS reader.
 
 ## What's Included
 
-- **Full Sessions**: Complete 2-hour session recordings with all talks and music
-- **Individual Talks**: Each speaker's talk separately (10-20 min)
+- **Full Sessions**: Complete session recordings (about 1½–2 hours) with all talks and music
+- **Individual Talks**: Each speaker's talk separately (about 7–17 min)
 - **Per-Episode Artwork**: Speaker portraits appear next to each talk in supported podcast clients (`<itunes:image>` per item)
-- **Conference-Branded Channel Art**: Channel artwork rotates each April/October to match the current conference's hero imagery
+- **Conference Channel Art**: Channel artwork for each conference and language, chosen by the maintainer (see [CHANNEL_ART.md](CHANNEL_ART.md))
 - **Podcasting 2.0 compliant**: Stable `<podcast:guid>` derived from the feed URL so clients can track you across URL changes
 - **Three Languages**: English, Spanish, Portuguese — each a separate feed with its own audio
 - **Recent Conferences**: The feed auto-updates as new conferences are published; default window is 2026+
