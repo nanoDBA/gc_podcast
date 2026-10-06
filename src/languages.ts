@@ -39,7 +39,7 @@ export const LANGUAGES: Record<LanguageConfig['code'], LanguageConfig> = {
     rssLanguageTag: 'en',
     channelTitle: 'General Conference - The Church of Jesus Christ of Latter-day Saints',
     channelDescription:
-      'Audio recordings from General Conference of The Church of Jesus Christ of Latter-day Saints. Includes talks from Church leaders delivered during the semi-annual worldwide broadcasts.',
+      'Audio recordings of general conference, the worldwide gathering of The Church of Jesus Christ of Latter-day Saints. Includes talks from Church leaders delivered during the semiannual worldwide broadcasts.',
   },
   spa: {
     code: 'spa',
@@ -49,9 +49,9 @@ export const LANGUAGES: Record<LanguageConfig['code'], LanguageConfig> = {
     displayName: 'Spanish',
     rssLanguageTag: 'es',
     channelTitle:
-      'Conferencia General - La Iglesia de Jesucristo de los Santos de los Últimos Días',
+      'Conferencia general - La Iglesia de Jesucristo de los Santos de los Últimos Días',
     channelDescription:
-      'Grabaciones de audio de la Conferencia General de La Iglesia de Jesucristo de los Santos de los Últimos Días. Incluye discursos de líderes de la Iglesia de las transmisiones mundiales semestrales.',
+      'Grabaciones de audio de la conferencia general de La Iglesia de Jesucristo de los Santos de los Últimos Días. Incluye discursos de líderes de la Iglesia de las transmisiones mundiales semestrales.',
   },
   por: {
     code: 'por',
@@ -60,9 +60,9 @@ export const LANGUAGES: Record<LanguageConfig['code'], LanguageConfig> = {
     audioSuffix: 'pt',
     displayName: 'Portuguese',
     rssLanguageTag: 'pt',
-    channelTitle: 'Conferência Geral - A Igreja de Jesus Cristo dos Santos dos Últimos Dias',
+    channelTitle: 'Conferência geral - A Igreja de Jesus Cristo dos Santos dos Últimos Dias',
     channelDescription:
-      'Gravações de áudio da Conferência Geral de A Igreja de Jesus Cristo dos Santos dos Últimos Dias. Inclui discursos de líderes da Igreja das transmissões mundiais semestrais.',
+      'Gravações de áudio da conferência geral de A Igreja de Jesus Cristo dos Santos dos Últimos Dias. Inclui discursos de líderes da Igreja das transmissões mundiais semestrais.',
   },
 };
 
