@@ -9,6 +9,7 @@ import fs from 'fs';
 import path from 'path';
 import { Conference } from './types.js';
 import { LANGUAGES, LANGUAGE_CODES } from './languages.js';
+import { SESSION_HOURS_TEXT, TALK_MINUTES_TEXT } from './episode-lengths.js';
 
 const REPOSITORY_URL = 'https://github.com/nanoDBA/gc_podcast';
 const BASE_FEED_URL = 'https://nanodba.github.io/gc_podcast';
@@ -363,11 +364,11 @@ function generateHtml(conferences: RecentConference[], minYear?: number): string
   <div class="features">
     <div class="feature">
       <h3>Full Sessions</h3>
-      <p>Complete 2-hour session recordings including all talks and music</p>
+      <p>Complete session recordings (about ${SESSION_HOURS_TEXT} hours) including all talks and music</p>
     </div>
     <div class="feature">
       <h3>Individual Talks</h3>
-      <p>Each talk available separately (10-20 minutes each)</p>
+      <p>Each talk available separately (about ${TALK_MINUTES_TEXT} minutes each)</p>
     </div>
     <div class="feature">
       <h3>Per-Episode Artwork</h3>
@@ -405,8 +406,8 @@ ${generateSubscribeButtonsHtml()}
   <h2>Episode Types</h2>
   <p>The feed includes two types of episodes:</p>
   <ul>
-    <li><strong>Full Session</strong> - Complete session recording (~2 hours). Great for listening to an entire session.</li>
-    <li><strong>Individual Talks</strong> - Each speaker's talk separately (10-20 min). Perfect for focused study.</li>
+    <li><strong>Full Session</strong> - Complete session recording (about ${SESSION_HOURS_TEXT} hours). Great for listening to an entire session.</li>
+    <li><strong>Individual Talks</strong> - Each speaker's talk separately (about ${TALK_MINUTES_TEXT} min). Perfect for focused study.</li>
   </ul>
 
   <h2>Supported Apps</h2>
