@@ -304,7 +304,8 @@ function generateHtml(conferences: RecentConference[], minYear?: number): string
       font-weight: 500;
     }
     .conference-item p { margin: 8px 0 0 0; color: #666; font-size: 0.95em; }
-    .steps { counter-reset: step; }
+    /* Custom numbered circles replace the native markers (Safari showed both). */
+    .steps { counter-reset: step; list-style: none; padding-left: 0; }
     .steps li {
       counter-increment: step;
       margin: 15px 0;
@@ -315,6 +316,7 @@ function generateHtml(conferences: RecentConference[], minYear?: number): string
       content: counter(step);
       position: absolute;
       left: 0;
+      top: 0;
       width: 24px;
       height: 24px;
       background: #0066cc;
