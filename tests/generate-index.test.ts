@@ -602,3 +602,25 @@ describe('generate-index.ts', { timeout: 30_000 }, () => {
     }, 30000);
   });
 });
+
+// The publish workflow commits docs/ with `git add docs/`; a page that
+// .gitignore swallows (the repo ignores *.html) would never go live.
+describe('published language pages are not git-ignored', () => {
+  it('docs/index.html and every language folder page can be committed', () => {
+    const pages = [
+      'docs/index.html',
+      ...LANGUAGE_CODES.filter((l) => l !== 'eng').map(
+        (l) => `docs/${LANGUAGES[l].audioSuffix}/index.html`,
+      ),
+    ];
+    for (const page of pages) {
+      let ignored = true;
+      try {
+        execSync(`git check-ignore -q "${page}"`, { stdio: 'ignore' });
+      } catch {
+        ignored = false; // exit 1: not ignored
+      }
+      expect(ignored, `${page} is git-ignored`).toBe(false);
+    }
+  });
+});

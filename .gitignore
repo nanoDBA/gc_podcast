@@ -18,6 +18,8 @@ Thumbs.db
 # Downloaded/reference files (not part of the project)
 *.html
 !docs/index.html
+# Language pages from generate-index.ts (docs/es/, docs/pt/)
+!docs/*/index.html
 !tests/fixtures/*.html
 *_files/
 *.pdf
